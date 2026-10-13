@@ -1,0 +1,12 @@
+name = "HilbertSmith"
+version = "0.1.0"
+defaultTargets = ["HilbertSmith"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.34.1"
+
+[[lean_lib]]
+name = "HilbertSmith"
+srcDir = "src"
