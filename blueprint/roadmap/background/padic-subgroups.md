@@ -2,6 +2,9 @@
 article_id: af_cdb04d6efb42de992158c489
 declaration: theorem
 origin: background
+lean: HilbertSmith.denseRange_intCast HilbertSmith.closed_smul_mem HilbertSmith.closed_eq_dvd_pow HilbertSmith.isOpen_dvd_pow HilbertSmith.toZModPow_surjective HilbertSmith.quotientSpanPowEquiv
+statement: formalized
+proof: formalized
 ---
 
 # Closed subgroups of $\Zp$
