@@ -1,6 +1,9 @@
 # Sources
 
-No sources recorded yet.
+- [OpenAI preprint source map](preprint.md) — the adopted source,
+  with every label mapped to its roadmap article.
+- [Background reference map](background.md) — external results the
+  proof uses, and survey-only references.
 
 <!-- AUTHORING NOTES — these comments are not published.
 

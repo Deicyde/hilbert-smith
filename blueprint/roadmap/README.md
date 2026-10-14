@@ -1,28 +1,30 @@
+---
+article_id: af_dd7f6d0ba0f31fe583ddd2fd
+---
+
 # HilbertSmith roadmap
 
-No chapters yet.
+A Lean 4 formalization of the OpenAI proof of the Hilbert--Smith
+conjecture in every finite dimension. The book states the main
+theorems, builds a sheaf-theoretic signature invariant with a fixed
+integral lattice, prepares local tests from a hypothetical faithful
+$p$-adic action, and derives a contradiction from equal character
+parts.
+
+## Chapters
+
+- [Main theorems](main-theorem/README.md)
+- [Background prerequisites](background/README.md)
+- [Sheaf categories and homotopy invariance](sheaf-categories/README.md)
+- [Localization, germs, and dense subcategories](localization/README.md)
+- [A bounded lattice on the test sphere](sphere-lattice/README.md)
+- [Preparing local tests](local-tests/README.md)
+- [Character classes and the contradiction](character-classes/README.md)
 
 <!-- AUTHORING NOTES — these comments are not published.
 
-     Replace the line above with a short statement of the goal, then link each
-     chapter below in reading order. This page is the book's preface and table
-     of contents; keep it short.
-
+     This page is the book's preface and table of contents; keep it short.
      A chapter is a DIRECTORY holding a README.md. That README.md *is* the
      chapter: it carries the narrative prose, and the formalizable statements
      beside it are placed into that prose where they are first used.
-
-         roadmap/
-           README.md              <- this page
-           first-chapter/
-             README.md            <- the chapter, with its exposition
-             some-definition.md   <- a formalizable leaf
-             main-result.md
-
-     A chapter directory WITHOUT a README.md is not a chapter. Its pages
-     collapse to the top level and the published book has no structure. Write
-     the chapter as `<chapter>/README.md`, never as a sibling file beside the
-     directory, then run `autoform check`.
-
-     Add a `## Chapters` heading once there is more than one chapter to list.
 -->
