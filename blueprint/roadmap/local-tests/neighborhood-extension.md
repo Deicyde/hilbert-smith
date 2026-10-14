@@ -2,6 +2,9 @@
 article_id: af_d7786de054afb8354874b1de
 declaration: lemma
 origin: cited
+lean: HilbertSmith.homotopyExtension
+statement: formalized
+proof: formalized
 ---
 
 # Homotopy extension

@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmith.FiniteChases
+import HilbertSmith.HomotopyExtension
 
 namespace HilbertSmith
 
