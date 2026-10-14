@@ -2,6 +2,9 @@
 article_id: af_0a60c47824a088017bd7b348
 declaration: lemma
 origin: cited
+lean: HilbertSmith.exists_open_disjoint_smul HilbertSmith.sheet_open HilbertSmith.sheet_pairwise_disjoint HilbertSmith.sheet_union HilbertSmith.sheetImage_open HilbertSmith.sheetImage_nonempty HilbertSmith.sheet_homeomorph HilbertSmith.sheet_unique HilbertSmith.sheet_exists HilbertSmith.sheetCoord HilbertSmith.sheetCoord_mem HilbertSmith.sheetCoord_unique HilbertSmith.shift_mem HilbertSmith.sheetCoord_shift HilbertSmith.sheetCoord_locallyConstant HilbertSmith.sheetBeta HilbertSmith.sheetBeta_locallyConstant HilbertSmith.sheetBeta_equivariant HilbertSmith.exp_pow_nat HilbertSmith.zeta_pow_eq_one HilbertSmith.cyclicChar HilbertSmith.cyclic_card HilbertSmith.sheetBeta_cyclic_equivariant HilbertSmith.sheetBeta_cyclic_mem
+statement: formalized
+proof: formalized
 ---
 
 # Finite quotient sheets

@@ -3,6 +3,7 @@ import HilbertSmith.FiniteChases
 import HilbertSmith.HomotopyExtension
 import HilbertSmith.CollapseCompactification
 import HilbertSmith.PadicSubgroups
+import HilbertSmith.QuotientSheets
 
 namespace HilbertSmith
 
