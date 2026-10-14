@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmith.FiniteChases
 
 namespace HilbertSmith
 

@@ -2,6 +2,9 @@
 article_id: af_816166160854d60d699adae3
 declaration: lemma
 origin: cited
+lean: HilbertSmith.fiveTermChase HilbertSmith.squareChase
+statement: formalized
+proof: formalized
 ---
 
 # Finite diagram chases
@@ -17,6 +20,12 @@ annihilated by $4q$ (the cokernel even by $2q$).
 *Proof sketch.* Two elementary diagram chases: lift through exact
 rows, clearing denominators at each of the three bounded stages
 for the five-term chase, and through the square for the second.
+
+The kernel bound for $f_1$ is unused by the chase and is kept to
+match the source's symmetric statement. The cokernel bound for
+$f_5$ is likewise unused and kept for the same reason. In the
+square, the kernel bound for $i$ is unused and kept for the same
+reason.
 
 ## Sources
 
