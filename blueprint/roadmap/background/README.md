@@ -24,6 +24,10 @@ the full citations and which articles use them.
 - [Stacks derived facts](stacks-derived.md)
 - [Balmer--Walter localization](balmer-walter.md)
 
+## Triangular Witt foundations
+
+- [Symmetric forms and orthogonal sums](symmetric-forms.md)
+
 ## Homotopy, semialgebraic, and combinatorial inputs
 
 - [Serre odd-sphere maps](serre-maps.md)
