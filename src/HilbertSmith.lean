@@ -4,6 +4,7 @@ import HilbertSmith.HomotopyExtension
 import HilbertSmith.CollapseCompactification
 import HilbertSmith.PadicSubgroups
 import HilbertSmith.QuotientSheets
+import HilbertSmith.SymmetricForms
 
 namespace HilbertSmith
 

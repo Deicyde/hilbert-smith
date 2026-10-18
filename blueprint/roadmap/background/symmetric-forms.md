@@ -2,6 +2,9 @@
 article_id: af_d1f52d172a4a78c42c217880
 declaration: theorem
 origin: background
+lean: HilbertSmith.Duality HilbertSmith.Duality.transpose HilbertSmith.Duality.IsSymmetric HilbertSmith.Duality.dualBiprodHom HilbertSmith.Duality.dualBiprodInv HilbertSmith.Duality.dualBiprodIso HilbertSmith.comp_lift HilbertSmith.lift_map HilbertSmith.Duality.map_hom_naturality HilbertSmith.Duality.map_map_op HilbertSmith.Duality.inv_map_hom HilbertSmith.Duality.orthSum HilbertSmith.Duality.orthSum_symm
+statement: formalized
+proof: formalized
 ---
 
 # Symmetric forms and orthogonal sums
