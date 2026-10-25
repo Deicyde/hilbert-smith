@@ -2,6 +2,9 @@
 article_id: af_628e87b1a6b095bba5ebe198
 declaration: theorem
 origin: cited
+lean: HilbertSmith.TriangulatedSubcategory HilbertSmith.isIso_of_isIso_comp_both HilbertSmith.TriangulatedSubcategory.mem_add_shift_one HilbertSmith.TriangulatedSubcategory.mem_add_shift_neg_one
+statement: formalized
+proof: formalized
 ---
 
 # Adjacent shifts in dense subcategories

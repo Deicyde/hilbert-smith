@@ -5,6 +5,7 @@ import HilbertSmith.CollapseCompactification
 import HilbertSmith.PadicSubgroups
 import HilbertSmith.QuotientSheets
 import HilbertSmith.SymmetricForms
+import HilbertSmith.AdjacentShifts
 
 namespace HilbertSmith
 
