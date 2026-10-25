@@ -47,6 +47,7 @@ content are folded into chapter prose rather than given articles.
 | `thm:germs` | 165-219 | Germ description | [Germ description](../roadmap/localization/germs.md) |
 | `thm:witt-localization` | 227-293 | Witt localization | [Witt localization](../roadmap/localization/witt-localization.md) |
 | `prop:open-cover` | 301-334 | Open cover dense inclusion | [Open cover dense inclusion](../roadmap/localization/open-cover.md) |
+| `loc:eq-adjacent-shifts` | 366-378 | Adjacent shifts in dense subcategories | [Adjacent shifts](../roadmap/localization/adjacent-shifts.md) |
 | `thm:dense-doubling` | 344-460 | Dense doubling | [Dense doubling](../roadmap/localization/dense-doubling.md) |
 | `loc:cor-open-cover-bound` | 462-472 | Open-cover exponent-two bound | [Open-cover bound](../roadmap/localization/open-cover-bound.md) |
 

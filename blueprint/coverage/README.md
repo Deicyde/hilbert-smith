@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | §1 main statements and endgame interface | `DECOMPOSED` | Three leaves in the [main-theorem chapter](../roadmap/main-theorem/README.md) state the conjecture, the $p$-adic exclusion, and the almost-periodic consequence, with proofs linked to the endgame. |
 | §2 sheaf categories and homotopy invariance | `DECOMPOSED` | Eight leaves in the [sheaf-categories chapter](../roadmap/sheaf-categories/README.md) cover the test categories, duality, pushforward, and the cylinder relation through homotopy invariance. |
-| §3 localization and density bounds | `DECOMPOSED` | Seven leaves in the [localization chapter](../roadmap/localization/README.md) cover cutoff, germs, Witt localization, and the exponent-two dense bounds. |
+| §3 localization and density bounds | `DECOMPOSED` | Eight leaves in the [localization chapter](../roadmap/localization/README.md) cover cutoff, germs, Witt localization, the adjacent-shifts density step, and the exponent-two dense bounds. |
 | §4 sphere lattice and action interface | `DECOMPOSED` | Eight leaves in the [sphere-lattice chapter](../roadmap/sphere-lattice/README.md) cover the point calculation, bounded comparison, the fixed lattice, degree, and contractible localization. |
 | §5 local tests | `DECOMPOSED` | Eight leaves in the [local-tests chapter](../roadmap/local-tests/README.md) cover the chart reduction, the averaged test, orbit cohomology, and moving a test into a prescribed region. |
 | §6 character classes and contradiction | `DECOMPOSED` | Eight leaves in the [character-classes chapter](../roadmap/character-classes/README.md) cover the character decomposition, class construction, naturality, equal parts, and the chart contradiction. |

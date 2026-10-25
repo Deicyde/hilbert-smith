@@ -25,4 +25,5 @@ extension by zero when $U \subset X$ is open.
 
 - [Open cover dense inclusion](open-cover.md)
 - [Dense doubling](dense-doubling.md)
+- [Adjacent shifts](adjacent-shifts.md)
 - [Open-cover bound](open-cover-bound.md)
