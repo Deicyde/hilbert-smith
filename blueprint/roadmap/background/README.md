@@ -27,6 +27,7 @@ the full citations and which articles use them.
 ## Triangular Witt foundations
 
 - [Symmetric forms and orthogonal sums](symmetric-forms.md)
+- [Transpose involution and orthogonal sums](transpose-involution.md)
 
 ## Homotopy, semialgebraic, and combinatorial inputs
 
