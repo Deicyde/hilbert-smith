@@ -2,6 +2,9 @@
 article_id: af_479039fd868fecf1de23882d
 declaration: theorem
 origin: background
+lean: HilbertSmith.Duality.IsInvolutive HilbertSmith.Duality.biduality_map HilbertSmith.Duality.transpose_transpose HilbertSmith.Duality.transpose_add HilbertSmith.Duality.transpose_zero HilbertSmith.map_comp_map HilbertSmith.Duality.transpose_orthSum
+statement: formalized
+proof: formalized
 ---
 
 # Transpose involution and orthogonal sums

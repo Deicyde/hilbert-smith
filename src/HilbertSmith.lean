@@ -6,6 +6,7 @@ import HilbertSmith.PadicSubgroups
 import HilbertSmith.QuotientSheets
 import HilbertSmith.SymmetricForms
 import HilbertSmith.AdjacentShifts
+import HilbertSmith.TransposeInvolution
 
 namespace HilbertSmith
 
