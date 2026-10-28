@@ -9,7 +9,7 @@
 | §5 local tests | `DECOMPOSED` | Eight leaves in the [local-tests chapter](../roadmap/local-tests/README.md) cover the chart reduction, the averaged test, orbit cohomology, and moving a test into a prescribed region. |
 | §6 character classes and contradiction | `DECOMPOSED` | Eight leaves in the [character-classes chapter](../roadmap/character-classes/README.md) cover the character decomposition, class construction, naturality, equal parts, and the chart contradiction. |
 | Appendix duality signs | `DECOMPOSED` | Two leaves in the [sheaf-categories chapter](../roadmap/sheaf-categories/README.md) (the [sign conventions](../roadmap/sheaf-categories/sign-conventions.md) and the [product shift sign](../roadmap/sheaf-categories/product-shift-sign.md)) cover the appendix material used by the endpoint calculation. |
-| External background results | `DECOMPOSED` | Fifteen leaves in the [background chapter](../roadmap/background/README.md) state every load-bearing external prerequisite, mapped in the [background reference map](../sources/background.md). |
+| External background results | `DECOMPOSED` | Sixteen leaves in the [background chapter](../roadmap/background/README.md) state every load-bearing external prerequisite, mapped in the [background reference map](../sources/background.md). |
 | Survey and antecedent material | `OUT` | The introduction's survey of regularity lines, dimension theory, symplectic methods, and antecedent formalisms is context only; no proof depends on it. Listed without articles in the [background reference map](../sources/background.md). |
 
 <!-- AUTHORING NOTES — these comments are not published.
