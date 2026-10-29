@@ -2,6 +2,9 @@
 article_id: af_3a6f44637ad2d03d57ea2f3c
 declaration: lemma
 origin: background
+lean: HilbertSmith.Duality.symmetrization
+statement: formalized
+proof: formalized
 ---
 
 # Symmetrization by averaging

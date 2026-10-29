@@ -7,6 +7,7 @@ import HilbertSmith.QuotientSheets
 import HilbertSmith.SymmetricForms
 import HilbertSmith.AdjacentShifts
 import HilbertSmith.TransposeInvolution
+import HilbertSmith.Symmetrization
 
 namespace HilbertSmith
 
