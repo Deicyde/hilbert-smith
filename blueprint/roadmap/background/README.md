@@ -29,6 +29,7 @@ the full citations and which articles use them.
 - [Symmetric forms and orthogonal sums](symmetric-forms.md)
 - [Transpose involution and orthogonal sums](transpose-involution.md)
 - [Symmetrization by averaging](symmetrization.md)
+- [Symmetric forms under addition](symmetric-addition.md)
 
 ## Homotopy, semialgebraic, and combinatorial inputs
 
