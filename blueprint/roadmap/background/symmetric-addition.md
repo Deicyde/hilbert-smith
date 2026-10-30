@@ -2,6 +2,9 @@
 article_id: af_ee3cd22f7f8bde28485e7a55
 declaration: lemma
 origin: background
+lean: HilbertSmith.Duality.transpose_neg HilbertSmith.Duality.symmetric_zero HilbertSmith.Duality.symmetric_add HilbertSmith.Duality.symmetric_neg
+statement: formalized
+proof: formalized
 ---
 
 # Symmetric forms under addition
