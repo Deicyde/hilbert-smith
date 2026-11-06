@@ -11,6 +11,7 @@ import HilbertSmith.Symmetrization
 import HilbertSmith.SymmetricAddition
 import HilbertSmith.Statements
 import HilbertSmith.Topology.InvariantOpens
+import HilbertSmith.Topology.KernelQuotient
 
 namespace HilbertSmith
 
