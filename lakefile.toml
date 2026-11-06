@@ -34,3 +34,12 @@ srcDir = "src"
 [[lean_lib]]
 name = "HSBridge"
 srcDir = "src"
+
+# The statements without second countability (`NonSCChallenge` imports only Mathlib) and their
+# solution (imports Mathlib and HSGeneral), for leanprover/comparator and SafeVerify
+# (`comparator_nonsc.json`). Not default targets: comparator builds them itself.
+[[lean_lib]]
+name = "NonSCChallenge"
+
+[[lean_lib]]
+name = "NonSCSolution"
