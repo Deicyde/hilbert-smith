@@ -1,6 +1,7 @@
 import HilbertSmith.Statements
 import HSGeneral.Padic
 import HSGeneral.FormalConjectures
+import HSGeneral.Group
 
 /-!
 # HS_proof's theorems without second countability
