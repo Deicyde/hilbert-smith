@@ -2,10 +2,23 @@ name = "HilbertSmith"
 version = "0.1.0"
 defaultTargets = ["HilbertSmith"]
 
+# Pinned to HS_proof's toolchain, Mathlib and TauCeti, so that one build can hold both routes.
 [[require]]
 name = "mathlib"
+scope = "leanprover-community"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "v4.34.1"
+rev = "1a547d8a48a8fa7877d2decb69d7294723bb0187"
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti"
+rev = "c7af81f021f76fa11afcd61c894e5fc861ab6e78"
+
+# adbrw/HS_proof, used as a dependency; this repository contains none of its code.
+[[require]]
+name = "hsformal"
+git = "https://github.com/adbrw/HS_proof"
+rev = "5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862"
 
 [[lean_lib]]
 name = "HilbertSmith"
