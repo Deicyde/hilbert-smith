@@ -1,6 +1,6 @@
 name = "HilbertSmith"
 version = "0.1.0"
-defaultTargets = ["HilbertSmith"]
+defaultTargets = ["HilbertSmith", "HSGeneral", "HSBridge"]
 
 # Pinned to HS_proof's toolchain, Mathlib and TauCeti, so that one build can hold both routes.
 [[require]]
@@ -20,6 +20,17 @@ name = "hsformal"
 git = "https://github.com/adbrw/HS_proof"
 rev = "5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862"
 
+# OpenAI's route, and Mathlib-only results both routes use. Never imports HSFormal.
 [[lean_lib]]
 name = "HilbertSmith"
+srcDir = "src"
+
+# HS_proof's theorems without second countability: imports HSFormal and HilbertSmith.
+[[lean_lib]]
+name = "HSGeneral"
+srcDir = "src"
+
+# The comparison of the two routes: the only library that imports both.
+[[lean_lib]]
+name = "HSBridge"
 srcDir = "src"

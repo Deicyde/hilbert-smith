@@ -9,6 +9,7 @@ import HilbertSmith.AdjacentShifts
 import HilbertSmith.TransposeInvolution
 import HilbertSmith.Symmetrization
 import HilbertSmith.SymmetricAddition
+import HilbertSmith.Statements
 
 namespace HilbertSmith
 
