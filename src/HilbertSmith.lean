@@ -10,6 +10,7 @@ import HilbertSmith.TransposeInvolution
 import HilbertSmith.Symmetrization
 import HilbertSmith.SymmetricAddition
 import HilbertSmith.Statements
+import HilbertSmith.Topology.InvariantOpens
 
 namespace HilbertSmith
 
