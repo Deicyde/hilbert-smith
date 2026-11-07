@@ -13,13 +13,13 @@ a published input on its own.
 Assumed, as the fields of `LocalInputs O`:
 * `Orientation OP`: the facts about the orientation predicate `OP` that §5 uses: the step
   `G = 2H` of Proposition 5.1, and persistence under the replacements of §5.
-* `AveragedTest d`: Lemma 5.3 in OpenAI's pinch form (05:148-149); (5.1) follows
-  (`HilbertSmith.Interface.aqc_homotopic_id`).
 * `OrbitNull d δD`: Lemmas 5.4 and 5.5 combined, in the form the proof of Proposition 5.8 uses.
 
 Stated here and proved:
 * `CollapseInput`: Lemma 5.2 (the extended action is continuous; the orbit space is metrizable),
   proved as `HilbertSmith.Interface.collapseInput`.
+* `AveragedTest d`: Lemma 5.3 in OpenAI's pinch form (05:148-149), proved as
+  `HilbertSmith.Interface.averagedTest`; (5.1) follows (`HilbertSmith.Interface.aqc_homotopic_id`).
 * `PinchTransport d`: the pinch transport of the first paragraph of the proof of Proposition 5.8,
   proved as `HilbertSmith.Interface.pinchTransport`.
 * `SheetsInput`: what §6 uses of Lemma 5.6, the region `V` and its multiplier `β`, proved as
@@ -43,10 +43,9 @@ Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLA
   brief); the pinch maps are `LocalAction.pinch`.
 
 Scope and non-vacuity. Each assumed input is stated for the actions OpenAI's text covers, or more:
-`Orientation` for any action (its first field for connected `W`); `AveragedTest` for any action on a
-nonempty `W`; `OrbitNull` for odd `d ≥ 3`, true when the maps
-`D k` of the interface really have degree `k`. `LocalAction`s of every kind are quantified over, but
-each input assumes what its lemma needs, so each holds by the cited result.
+`Orientation` for any action (its first field for connected `W`); `OrbitNull` for odd `d ≥ 3`, true
+when the maps `D k` of the interface really have degree `k`. `LocalAction`s of every kind are
+quantified over, but each input assumes what its lemma needs, so each holds by the cited result.
 -/
 
 namespace HilbertSmith.Interface
@@ -88,7 +87,7 @@ pinch `P_{z,r}` (`LocalAction.pinch`) supported in a round ball `B̄(z, r) ⊆ W
 Departure (decision 1 of the lead's B-M4 brief): OpenAI states `deg(aqc) = 1` (5.1) in the same
 lemma; here it is the theorem `HilbertSmith.Interface.aqc_homotopic_id`, since `P_{z,r} c ≃ id`
 (`LocalAction.pinch_comp_c_homotopic`). The pinch `P` is chosen in `LocalAction.pinch`, as the
-proof of the lemma allows (05:153-157). -/
+proof of the lemma allows (05:153-157). Proved as `HilbertSmith.Interface.averagedTest`. -/
 def AveragedTest (d : ℕ) : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] (A : LocalAction p d), A.W.Nonempty →
     ∃ (j : ℕ) (a : C((A.restrict j).Y, Sphere d)) (z : A.E) (r : ℝ) (hr : 0 < r)
@@ -153,13 +152,11 @@ cap-by-cap boxes. -/
 def ClosePairBasis (d : ℕ) : Prop :=
   ∀ z : ClosePair d, HasGoodBasisAt z
 
-/-- **The §5 inputs the route still assumes**, for the interface `O`: orientation, Lemma 5.3 in
-pinch form, and Lemmas 5.4 and 5.5 combined. -/
+/-- **The §5 inputs the route still assumes**, for the interface `O`: orientation, and Lemmas 5.4
+and 5.5 combined. -/
 structure LocalInputs (O : OAIInterface) : Prop where
   /-- The orientation facts of §5, for the interface's `OP` (05:68-72, 05:75-80, 05:181-182). -/
   orientation : Orientation O.OP
-  /-- Lemma 5.3 in pinch form (05:135-183), in every odd dimension `2j + 3`. -/
-  averagedTest : ∀ j, AveragedTest (2 * j + 3)
   /-- Lemmas 5.4 and 5.5, combined (05:209-377, 05:506-512), for the interface's degree maps. -/
   orbitNull : ∀ j, OrbitNull (2 * j + 3) (O.δD j)
 
