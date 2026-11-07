@@ -1,0 +1,10 @@
+{
+  "challenge_module": "NonSCChallenge",
+  "solution_module": "NonSCSolution",
+  "theorem_names": [
+    "Hilbert5.hilbert_smith_padic_formulation",
+    "hilbert_smith_noSC"
+  ],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

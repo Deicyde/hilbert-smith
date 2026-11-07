@@ -1,12 +1,50 @@
 name = "HilbertSmith"
 version = "0.1.0"
-defaultTargets = ["HilbertSmith"]
+defaultTargets = ["HilbertSmith", "HSGeneral", "HSBridge"]
 
+# Pinned to HS_proof's toolchain, Mathlib and TauCeti, so that one build can hold both routes.
 [[require]]
 name = "mathlib"
+scope = "leanprover-community"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "v4.34.1"
+rev = "1a547d8a48a8fa7877d2decb69d7294723bb0187"
 
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti"
+rev = "c7af81f021f76fa11afcd61c894e5fc861ab6e78"
+
+# adbrw/HS_proof, used as a dependency. This repository calls its declarations and copies none of
+# its proofs or prose. The binder lists of `PadicExclusion` and `HilbertSmith` in
+# `HilbertSmith/Statements.lean` match HS_proof's on purpose, so that the comparisons close by
+# `Iff.rfl`.
+[[require]]
+name = "hsformal"
+git = "https://github.com/adbrw/HS_proof"
+rev = "5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862"
+
+# OpenAI's route, and Mathlib-only results both routes use. Never imports HSFormal.
 [[lean_lib]]
 name = "HilbertSmith"
 srcDir = "src"
+
+# HS_proof's theorems without second countability (the group case for groups and manifolds in
+# `Type` only): imports HSFormal and HilbertSmith, calls HSFormal's declarations, and copies none
+# of its proofs or prose.
+[[lean_lib]]
+name = "HSGeneral"
+srcDir = "src"
+
+# The comparison of the two routes: the only library that imports both.
+[[lean_lib]]
+name = "HSBridge"
+srcDir = "src"
+
+# The statements without second countability (`NonSCChallenge` imports only Mathlib) and their
+# solution (imports Mathlib and HSGeneral), for leanprover/comparator and SafeVerify
+# (`comparator_nonsc.json`). Not default targets: comparator builds them itself.
+[[lean_lib]]
+name = "NonSCChallenge"
+
+[[lean_lib]]
+name = "NonSCSolution"
