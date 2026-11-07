@@ -17,5 +17,7 @@ conjecture for second-countable manifolds and groups. This library removes those
   real-analytic conclusion) is not proved here.
 
 The code imports `HSFormal` and calls its declarations; it copies none of HS_proof's proofs or
-text. Each file lists the `HSFormal` declarations it uses.
+prose. Each file lists the `HSFormal` declarations it uses. The binder lists of `PadicExclusion`
+and `HilbertSmith` in `HilbertSmith/Statements.lean` match HS_proof's on purpose, so that the
+comparisons with HS_proof close by `Iff.rfl`.
 -/

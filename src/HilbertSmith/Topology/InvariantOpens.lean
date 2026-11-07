@@ -23,7 +23,8 @@ topology behind that reduction (HSproof.tex, the proof of Corollary 1.2). It imp
   into itself by every element of every `K j`.
 * `HilbertSmith.exists_subgroup_invariant_opens_secondCountable`: the same for a subgroup that is
   the union of an increasing sequence of compact sets; the open set is then mapped onto itself.
-* `HilbertSmith.invariantMulAction`: the restriction of an action to an invariant open set, with
+* `HilbertSmith.invariantMulAction`: the restriction of an action to an invariant open set (from
+  Mathlib's action on a `SubMulAction`), with
   `HilbertSmith.continuousSMul_invariantMulAction` and
   `HilbertSmith.faithfulSMul_invariantMulAction`.
 
@@ -206,13 +207,19 @@ section Restriction
 variable {G X : Type*} [Monoid G] [TopologicalSpace X] [MulAction G X] (U : Opens X)
   (hU : ∀ g : G, ∀ x ∈ U, g • x ∈ U)
 
-/-- The restriction of an action to an open set that every element maps into itself. -/
+/-- An open set that every element maps into itself, as a `SubMulAction`. -/
+@[to_additive /-- An open set that every element maps into itself, as a `SubAddAction`. -/]
+def invariantSubMulAction : SubMulAction G X where
+  carrier := U
+  smul_mem' g x hx := hU g x hx
+
+/-- The restriction of an action to an open set that every element maps into itself: Mathlib's
+action of `G` on the `SubMulAction` `invariantSubMulAction U hU`, on the open set's own type. -/
 @[instance_reducible, to_additive
-  /-- The restriction of an additive action to an open set that every element maps into itself. -/]
-def invariantMulAction : MulAction G U where
-  smul g x := ⟨g • x.1, hU g x.1 x.2⟩
-  one_smul x := Subtype.ext (one_smul G x.1)
-  mul_smul g h x := Subtype.ext (mul_smul g h x.1)
+  /-- The restriction of an additive action to an open set that every element maps into itself:
+  Mathlib's action on the `SubAddAction` `invariantSubAddAction U hU`. -/]
+def invariantMulAction : MulAction G U :=
+  inferInstanceAs (MulAction G (invariantSubMulAction U hU))
 
 /-- The restricted action is the ambient action on underlying points. -/
 @[to_additive /-- The restricted action is the ambient action on underlying points. -/]
@@ -227,8 +234,7 @@ theorem coe_smul_invariantMulAction (g : G) (x : U) :
 theorem continuousSMul_invariantMulAction [TopologicalSpace G] [ContinuousSMul G X] :
     letI := invariantMulAction U hU
     ContinuousSMul G U :=
-  letI := invariantMulAction U hU
-  ⟨(continuous_fst.smul (continuous_subtype_val.comp continuous_snd)).subtype_mk _⟩
+  SMulMemClass.continuousSMul (invariantSubMulAction U hU)
 
 /-- The restriction of an action to an invariant open set is faithful if any two distinct elements
 already act differently on some point of the set. -/

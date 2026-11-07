@@ -78,6 +78,14 @@ Internal lemmas:
   and `HSFormal.GY.LocalExpStructure.isLieGroup`;
 * through `HSGeneral.of_faithfulSMul_topInterior`, HS_proof's topological interior of a manifold
   with boundary (see `HSGeneral/Interior.lean`).
+
+## References
+
+* [Pa19] J. Pardon, *Totally disconnected groups (not) acting on two-manifolds*, in Breadth in
+  Contemporary Topology, Proc. Sympos. Pure Math. 102 (2019), 187–193.
+* [Tao11] T. Tao, *The Hilbert–Smith conjecture*, blog post, 13 August 2011,
+  https://terrytao.wordpress.com/2011/08/13/the-hilbert-smith-conjecture/
+* The HS paper: HS_proof's `HSproof.tex`, Corollary 1.2 (Hilbert–Smith).
 -/
 
 open Set Topology TopologicalSpace Pointwise

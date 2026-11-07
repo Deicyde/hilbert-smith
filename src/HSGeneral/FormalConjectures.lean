@@ -24,6 +24,9 @@ This file restates `Hilbert5.hilbert_smith_padic_formulation` from Formal Conjec
 `namespace`, `open` and `variable` lines, the docstring and the statement are Formal Conjectures'
 text; the `@[category …, AMS …]` attribute, which Formal Conjectures defines, is omitted. The
 proof is `HSGeneral.padicExclusionNoSC`.
+
+The equivalence with `Hilbert5.hilbert_smith_conjecture` stated in that docstring is Formal
+Conjectures' remark: it is not formalized here, and that conjecture is not proved here.
 -/
 
 namespace Hilbert5

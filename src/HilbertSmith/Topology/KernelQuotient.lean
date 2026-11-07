@@ -132,15 +132,23 @@ theorem mk_smul_actionKer (g : H) (x : X) : (g : H ⧸ actionKer H X) • x = g 
 instance : FaithfulSMul (H ⧸ actionKer H X) X :=
   ⟨fun h => QuotientGroup.kerLift_injective _ (Equiv.ext h)⟩
 
+/-- The kernel is the intersection of the stabilizers of all points. -/
+theorem actionKer_eq_iInf_stabilizer : actionKer H X = ⨅ x : X, MulAction.stabilizer H x := by
+  ext g
+  simp [Subgroup.mem_iInf]
+
 variable [TopologicalSpace H] [TopologicalSpace X] [ContinuousSMul H X]
 
-/-- The kernel of a continuous action on a Hausdorff space is closed. -/
-instance [T2Space X] : IsClosed (actionKer H X : Set H) := by
-  have : (actionKer H X : Set H) = ⋂ x : X, {g | g • x = x} := by
-    ext g
-    simp
-  rw [this]
-  exact isClosed_iInter fun x => isClosed_eq (continuous_id.smul continuous_const) continuous_const
+/-- For a continuous action on a T₁ space, the stabilizer of a point `x` is closed: it is the
+preimage of the closed set `{x}` under the orbit map `g ↦ g • x`. -/
+theorem isClosed_stabilizer [T1Space X] (x : X) : IsClosed (MulAction.stabilizer H x : Set H) :=
+  isClosed_singleton.preimage (continuous_id.smul continuous_const)
+
+/-- For a continuous action on a T₁ space, the kernel is closed, as an intersection of closed
+stabilizers. -/
+instance [T1Space X] : IsClosed (actionKer H X : Set H) := by
+  rw [actionKer_eq_iInf_stabilizer, Subgroup.coe_iInf]
+  exact isClosed_iInter isClosed_stabilizer
 
 instance [IsTopologicalGroup H] : ContinuousSMul (H ⧸ actionKer H X) X := by
   refine ⟨(QuotientGroup.isOpenQuotientMap_mk.prodMap IsOpenQuotientMap.id).continuous_comp_iff.1
