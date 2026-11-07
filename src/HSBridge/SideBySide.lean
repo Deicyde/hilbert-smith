@@ -7,8 +7,9 @@ import HilbertSmith.Interface.Main
 /-!
 # The two routes side by side
 
-Both routes prove p-adic exclusion for second-countable manifolds, the statement
-`HilbertSmith.Statements.PadicExclusion` (OpenAI's Theorem 1.2).
+Both routes conclude p-adic exclusion for second-countable manifolds, the statement
+`HilbertSmith.Statements.PadicExclusion` (OpenAI's Theorem 1.2): HS_proof's route unconditionally,
+OpenAI's from `OAIInterface` and `LocalInputs`, neither of which is discharged yet.
 
 * `HSBridge.statements_agree` (in `HSBridge.Statements`): it is HS_proof's
   `HSFormal.PadicExclusion`, by `Iff.rfl`.
@@ -29,7 +30,8 @@ The same conclusion with two sets of hypotheses, and an asymmetry:
   `HSFormal.LTheory.lowerLModel` (used in `HSFormal.padicExclusion_of_model`), and Newman's
   theorem by `HSFormal.Newman.newmanPrimeOrder`.
 * OpenAI's route discharges neither yet. `OAIInterface` needs the sheaf model of §§2–4 (B-M7).
-  `LocalInputs` collects, from §5: Proposition 5.1 without orientation (`ChartReduction`, assumed;
+  `LocalInputs` collects, from §5: what §6 uses of Proposition 5.1 (`ChartReduction`: a faithful
+  action of `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space; assumed;
   stated with second countability as in OpenAI's standing hypotheses; B-M3 is to prove it, and a
   form without second countability, from `HilbertSmith.NewmanInput`, which `HSBridge.newmanInput`
   discharges from HS_proof), the orientation facts, Lemma 5.2 (`CollapseInput`), Lemma 5.3 with
@@ -38,21 +40,41 @@ The same conclusion with two sets of hypotheses, and an asymmetry:
   `HilbertSmith.homotopyExtension`), as are Definition 6.3, Propositions 5.8, 6.4–6.7 and
   Theorem 6.8 from the interface.
 
+In this build, `ChartReduction` (whose hypotheses include a faithful action of `ℤ_[p]` on a
+manifold) can be discharged ex falso from `HSBridge.hs_route_univ`. So B-M3's proof of it must
+pass `#assert_route_pure … allowing HSBridge.newmanInput`, as `oai_route` passes
+`#assert_route_pure` below.
+
+The interface's weakest point of non-vacuity is `OAIInvariant.isTest_closePair`: a model needs a
+triangulation of the close-pair test `C_d` (semialgebraic, or Whitehead's for a smooth manifold
+with boundary), or another proof of Proposition 6.6. The cross-polytope variant of the close-pair
+test (plan item B-P, on `isTest_closePair`) would avoid it; that choice is made before B-M7.
+
 So this file compares proof architectures modulo interfaces, not two complete proofs.
 
 ## The purity audit
 
 `HSFormal.padicExclusion` proves every statement of the form "hypotheses imply p-adic exclusion",
 so `oai_route` means something only because its proof does not use HS_proof. The commands at the
-end of this file check that in the build and print the reports in the build log: `oai_route`
-reaches no constant of `HSFormal`, while `hs_route` and `hs_route_of_inputs` reach HS_proof's
-L-theory (`HSFormal.LTheory.*`).
+end of this file check that in the build and print the reports in the build log:
+
+* `oai_route` reaches no constant of HS_proof (guarded by `#guard_msgs`);
+* `hs_route`'s proof reaches HS_proof's L-theory (`HSFormal.LTheory.*`), checked from its value;
+* `hs_route_of_inputs` mentions `HSFormal.LTheory.*` already in its signature (its hypothesis
+  `𝕃 : HSFormal.LTheory.LowerLTheory`, and the type of `HSFormal.padicExclusion_of_inputs`), so
+  that check is signature-level;
+* the interface fields `oai_route` assumes, generated from the structures `OAIInterface` and
+  `LocalInputs` (guarded, so adding or removing a field fails the build), with `chartReduction`
+  flagged;
+* D1's module table (plan item D1, §5.2): the HS_proof modules each HS_proof theorem reaches, split
+  into the shared front (the import closure, inside HS_proof, of the modules whose declarations
+  OpenAI's front would reuse: 46 modules at the pinned HS_proof) and the back end.
 
 ## The two interfaces, kind by kind
 
-`HSBridge.interfaceComparison` is B1's table (plan item B1, §4) with a declaration name in every
-cell; the names are checked when this file is compiled, so the table cannot cite a declaration
-that does not exist.
+`HSBridge.interfaceComparison` is B1's table (plan item B1, §4). Every non-empty cell is a list of
+declaration names, checked when this file is compiled, so the table cannot cite a declaration that
+does not exist; two cells are empty, as in B1.
 -/
 
 namespace HSBridge
@@ -93,7 +115,8 @@ structure ComparisonRow where
   /-- How they differ. -/
   note : String
 
-/-- **The two interfaces, kind by kind** (plan item B1, §4). Every name is a checked literal. -/
+/-- **The two interfaces, kind by kind** (plan item B1, §4). Every non-empty cell is a list of
+checked name literals. -/
 def interfaceComparison : List ComparisonRow := [
   ⟨"The group",
     [``HSFormal.LTheory.LowerLTheory.L],
@@ -152,13 +175,18 @@ def interfaceComparison : List ComparisonRow := [
     [``HilbertSmith.Interface.OrbitCharacterTheory.form_cls,
       ``HilbertSmith.Interface.OAIInvariant.mapD],
     "a signature after iterated boundaries vs a rational sphere class"⟩,
+  ⟨"Reading a number",
+    [``HSFormal.FibreSignature],
+    [``HilbertSmith.Interface.OAIInvariant.lattice],
+    "an integer tail of a signature vs the coefficient of u_d, implicit in the lattice"⟩,
   ⟨"Characters",
-    [``HSFormal.ControlData.SheetData],
+    [``HSFormal.ControlData.SheetData, ``HSFormal.SignatureDecomposition.prime_dvd_signature],
     [``HilbertSmith.Interface.OrbitCharacterTheory.proj,
       ``HilbertSmith.Interface.OrbitCharacterTheory.proj_mul,
       ``HilbertSmith.Interface.OrbitCharacterTheory.proj_sum,
       ``HilbertSmith.Interface.OrbitCharacterTheory.proj_adj],
-    "proved on the algebra side in HS_proof; sheaf fields (Lemmas 6.1, 6.2) in OpenAI's"⟩,
+    "proved on the algebra side in HS_proof (SheetData is only the hypotheses of the cyclotomic \
+      divisibility); sheaf fields (Lemmas 6.1, 6.2) in OpenAI's"⟩,
   ⟨"Covariance of the pieces",
     [``HSFormal.LTheory.SupportHom.cutBdry_natural],
     [``HilbertSmith.Interface.OrbitCharacterTheory.push,
@@ -178,25 +206,125 @@ def interfaceComparison : List ComparisonRow := [
     [``HilbertSmith.Interface.OrbitCharacterTheory.false_of_test],
     "1 is not in pZ vs m does not divide 4 L_d for m = p^k > 4 L_d"⟩,
   ⟨"Topological inputs",
-    [``HSFormal.NewmanPrimeOrder],
-    [``HilbertSmith.Interface.LocalInputs, ``HilbertSmith.NewmanInput],
-    "overlap on Newman and the chart; OpenAI adds Čech cohomology and Serre's theorem"⟩
+    [``HSFormal.NewmanPrimeOrder, ``HSFormal.exists_chartData],
+    [``HilbertSmith.Interface.LocalInputs, ``HilbertSmith.Interface.ChartReduction,
+      ``HilbertSmith.NewmanInput],
+    "overlap on Newman and the chart; OpenAI adds Čech cohomology and Serre's theorem"⟩,
+  ⟨"Second countability",
+    [``HSFormal.PadicExclusion],
+    [``HilbertSmith.Interface.ChartReduction, ``HilbertSmith.Statements.PadicExclusion],
+    "both conclude the second-countable statement here; OpenAI's proof of Proposition 5.1 does \
+      not use second countability, and B-M3 is to prove ChartReduction without it"⟩
 ]
 
 /-! ### The audit, printed in the build log -/
 
-/-- info: route audit: 'HSBridge.oai_route' depends on no constant from HSFormal -/
+/-- info: route audit: 'HSBridge.oai_route' depends on no constant from HS_proof -/
 #guard_msgs in
 #assert_route_pure oai_route
 
 #route_report oai_route
 
-#assert_route_reaches hs_route HSFormal.LTheory
+/--
+info: route audit: the value of 'HSBridge.hs_route' depends on constants from modules under
+  'HSFormal.LTheory'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_reaches_by_value hs_route HSFormal.LTheory
 
 #route_report hs_route
 
+-- Signature-level: `hs_route_of_inputs` takes `𝕃 : HSFormal.LTheory.LowerLTheory`.
+/--
+info: route audit: 'HSBridge.hs_route_of_inputs' depends on constants from modules under
+  'HSFormal.LTheory'
+-/
+#guard_msgs (whitespace := lax) in
 #assert_route_reaches hs_route_of_inputs HSFormal.LTheory
 
 #route_report hs_route_of_inputs
+
+/-! ### The interface fields `oai_route` assumes -/
+
+/--
+info: route assumptions of 'HSBridge.oai_route':
+O : HilbertSmith.Interface.OAIInterface
+  δD
+  OP
+  inv (HilbertSmith.Interface.OAIInvariant, expanded)
+    IsTest
+    isTest_sphere
+    isTest_closePair
+    E
+    grp
+    map
+    map_id
+    map_comp
+    map_homotopic
+    u
+    L
+    L_pos
+    lattice
+    u_nontorsion
+    mapD
+    Q
+    cat
+    preadd
+    biprod
+    dual
+    dualAdd
+    WQ
+    wgrp
+    witt
+    ℓ
+    pushQ
+    wmap
+    wmap_cls
+    ℓ_natural
+  chars (HilbertSmith.Interface.OrbitCharacterTheory, expanded)
+    form
+    form_cls
+    proj
+    proj_mul
+    proj_sum
+    proj_adj
+    push
+    twist
+T : HilbertSmith.Interface.LocalInputs O
+  chartReduction
+    flagged: assumed; stated with second countability; B-M3 proves it, and a form without it,
+    from NewmanInput
+  orientation (HilbertSmith.Interface.Orientation, expanded)
+    exists_restrict
+    restrict
+    stabilize
+  collapse
+  averagedTest
+  orbitNull
+  sheets
+  sphereBasis
+  closePairBasis
+-/
+#guard_msgs (whitespace := lax) in
+#route_assumptions oai_route
+  flag chartReduction "assumed; stated with second countability; B-M3 proves it, and a form \
+    without it, from NewmanInput"
+  expanding HilbertSmith.Interface.OAIInvariant HilbertSmith.Interface.OrbitCharacterTheory
+    HilbertSmith.Interface.Orientation
+
+/-! ### D1's module table: HS_proof's shared front against its back end
+
+The front is the import closure, inside HS_proof, of the eleven modules whose declarations
+OpenAI's front would reuse (plan item D1, §5.2). Unguarded: the lists depend on the HS_proof pin;
+the stable fact, that `hs_route` reaches `HSFormal.LTheory`, is guarded above. -/
+
+#route_modules hs_route front HSFormal.WeakInputs HSFormal.Reduction HSFormal.MontgomeryPrime
+  HSFormal.PadicSubgroups HSFormal.PadicStabilizers HSFormal.FreePoint HSFormal.FixedData
+  HSFormal.Newman.Newman HSFormal.Newman.Degree HSFormal.Inputs.GY.NSSIsLie HSFormal.Inputs.Lemma7
+
+#route_modules hs_route_of_inputs front HSFormal.WeakInputs HSFormal.Reduction
+  HSFormal.MontgomeryPrime HSFormal.PadicSubgroups HSFormal.PadicStabilizers HSFormal.FreePoint
+  HSFormal.FixedData HSFormal.Newman.Newman HSFormal.Newman.Degree HSFormal.Inputs.GY.NSSIsLie
+  HSFormal.Inputs.Lemma7
 
 end HSBridge

@@ -28,10 +28,16 @@ sheaves. Every field's docstring says why OpenAI's model satisfies it, with the 
 numbering (and `06:` for lines of `sections/06-character-classes.tex`).
 
 Non-vacuity: every field holds for OpenAI's `E_d = W_d(𝒯(-))` and `𝒬_U(X) = 𝒯(X)/𝒯(U)` by the
-cited result. `E`, `Q` and `WQ` are total, so that no field needs a dependent type; a model may put
-junk values off test spaces, since every property assumes `IsTest`. A wrongly stated field would
-make the interface unsatisfiable, never unsound: the conclusion of the formal layer is a fixed
-Mathlib statement.
+cited result. `E`, `Q` and `WQ` are total, so that no field needs a dependent type. Off test spaces,
+and for non-open `U`, a model may take zero categories and zero groups: every field either assumes
+`IsTest` (or `Admissible`), or, like `wmap_cls`, holds for any duality-preserving functor, the zero
+functor included (plan item B-P, "Lean-level obligations"). There is also a size obligation:
+`E X`, `Q X U` (with `Category.{0}`) and `WQ X U` live in `Type`, so a model replaces the test
+categories by small skeleta (they are essentially small, 02:91-96, 03:253-257) and must prove the
+Hom types of the quotient categories small. The zero model (every group and category zero)
+satisfies every field except `u_nontorsion`; with `form_cls`, trivial quotient categories are
+excluded too. So the hypotheses carry content. A wrongly stated field would make the interface
+unsatisfiable, never unsound: the conclusion of the formal layer is a fixed Mathlib statement.
 -/
 
 namespace HilbertSmith.Interface
@@ -64,21 +70,22 @@ structure OAIInvariant (d : ℕ) (δD : DegreeMaps d) where
   /-- [SHEAF] Proposition 2.5: the identity acts as the identity. -/
   map_id : ∀ (X : Type) [TopologicalSpace X], IsTest X →
     map (ContinuousMap.id X) = AddMonoidHom.id _
-  /-- [SHEAF] Proposition 2.5: direct images are compatible with composition. -/
+  /-- [SHEAF] Proposition 2.5 (02:300-312): direct images are compatible with composition. -/
   map_comp : ∀ {X Y Z : Type} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z],
     IsTest X → IsTest Y → IsTest Z → ∀ (f : C(X, Y)) (g : C(Y, Z)),
     map (g.comp f) = (map g).comp (map f)
-  /-- [SHEAF] Theorem 2.9 (homotopy invariance): homotopic maps of test spaces induce equal maps
-  `E_r(X) → E_r(Y)`. -/
+  /-- [SHEAF] Theorem 2.9 (homotopy invariance; statement 02:701-714, proof 02:716-736): homotopic
+  maps of test spaces induce equal maps `E_r(X) → E_r(Y)`. -/
   map_homotopic : ∀ {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y],
     IsTest X → IsTest Y → ∀ {f g : C(X, Y)}, f.Homotopic g → map f = map g
   /-- [SHEAF] The orientation class `u_d ∈ E_d(S^d)`: the class of the constant sheaf with the
   orientation pairing (§4, used in Theorem 4.7; 05:84-85: "Its orientation form represents
   `u_d`"). -/
   u : E (Sphere d)
-  /-- [SHEAF] The denominator `L_d = 2^{e_d}` of Theorem 4.7; only `0 < L` is used. -/
+  /-- [SHEAF] The denominator `L_d = 2^{e_d}` of Theorem 4.7 (04:370-386); only `0 < L` is
+  used. -/
   L : ℕ
-  /-- [SHEAF] Theorem 4.7: `L_d` is a positive power of `2`. -/
+  /-- [SHEAF] Theorem 4.7: `L_d` is a positive power of `2` (04:373-374). -/
   L_pos : 0 < L
   /-- [SHEAF] Theorem 4.7, both lines of its display at once: `E_d(S^d) ⊗ ℚ = ℚ ū_d`, and the
   image of `E_d(S^d)` in `E_d(S^d) ⊗ ℚ` lies in `L_d⁻¹ ℤ ū_d`; that is, `L_d x ⊗ 1` is an integer
@@ -164,13 +171,21 @@ space and every admissible test `t : Y → X`. `OP` is the orientation-preservat
 local actions.
 
 Non-vacuity: with OpenAI's `A_t = Rf_{t*}ℂ_{S^d}`, `f_t = t ∘ q ∘ c` (6.4), every field holds by the
-cited result. -/
+cited result. The structure quantifies over every `LocalAction`, while §6 has standing hypotheses
+(06:3-14: `O` connected, the action faithful and orientation-preserving, `deg(aqc) = 1`). That is
+fine, because each field needs only part of them, and assumes that part: Lemma 6.1 (`proj`,
+`proj_mul`, `proj_sum`) needs only `W⁺` compact metrizable (06:55-58), which holds for every local
+action; Lemma 6.2 (`proj_adj`) needs only orientation preservation (06:160-170), assumed as `OP A`;
+Proposition 6.7 (`twist`) needs only the multiplier `β` (06:421-435), assumed as
+`SheetMultiplier`. -/
 structure OrbitCharacterTheory {d : ℕ} {δD : DegreeMaps d} (I : OAIInvariant d δD)
     (OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction p k → Prop) where
   /-- [SHEAF] The test form (6.4): the image in `𝒬_U(X)` of `A_t = Rf_{t*}ℂ_{S^d}`,
   `f_t = t ∘ q ∘ c`, with `α_t` the pushforward of the orientation pairing of `S^d` with
   coefficient form `B(z, w) = Re(z w̄)`. `A_t` lies in `𝒯(X)` (two copies of a compact polyhedron
-  generator), and its form exists by Propositions 2.3 and 2.5 (06:118-120). -/
+  generator), and its form exists by Propositions 2.3 and 2.5 (06:118-120). The orientation of
+  `S^d` is the one that defines `u` (05:82-85, 06:13-14); with the opposite orientation `form_cls`
+  fails by a sign, which a model fixes by replacing `u` with `−u`. -/
   form : ∀ {p : ℕ} [Fact p.Prime] (A : LocalAction p d) {X : Type} [TopologicalSpace X],
     C(A.Y, X) → ∀ U : Set X, Form (I.dual X U)
   /-- [SHEAF] `[A_t, α_t] = 2 (f_t)_* u_d`, read through `ℓ_U`, which is induced by the quotient
@@ -183,12 +198,16 @@ structure OrbitCharacterTheory {d : ℕ} {δD : DegreeMaps d} (I : OAIInvariant 
     I.ℓ X U h.isTest h.good (2 • I.map (t.comp A.qc) I.u) = (I.witt X U).cls (form A t U)
   /-- [SHEAF] The character projectors `eᵢ` for a partition `κ : Λ → Fin m` of the characters
   (06:210-217): germs at `X ∖ U` of the projectors of `B_{Dᵢ} ⊆ A_t|_{X ∖ b_t}`, from Lemma 6.1,
-  the identification (6.5) and Theorem 3.3. -/
+  the identification (6.5) and Theorem 3.3. Lemma 6.1 uses Lemma 5.4 again, in its sheaf form
+  `Rr_* ℝ = r_* ℝ` for the orbit map of `W⁺` (06:55-58); the topological input `OrbitNull` (or a
+  separate topological `OrbitInjectivity`) does not cover that use, which stays inside this
+  field. -/
   proj : ∀ {p : ℕ} [Fact p.Prime] (A : LocalAction p d) {X : Type} [TopologicalSpace X]
     (t : C(A.Y, X)) (U : Set X) {m : ℕ}, (Λ p → Fin m) → Fin m →
     ((form A t U).obj ⟶ (form A t U).obj)
   /-- [SHEAF] (6.6), first identity `eᵢ eⱼ = δᵢⱼ eᵢ`: the character decomposition (6.1) and its
-  compatibility with `Rt_*` (6.2) of Lemma 6.1, carried to the quotient by Theorem 3.3. -/
+  compatibility with `Rt_*` (6.2) of Lemma 6.1, carried to the quotient by Theorem 3.3. Lemma 6.1
+  rests on the sheaf form of Lemma 5.4, `Rr_* = r_*` (06:55-58), see `proj`. -/
   proj_mul : ∀ {p : ℕ} [Fact p.Prime] (A : LocalAction p d) {X : Type} [TopologicalSpace X]
     (t : C(A.Y, X)) (U : Set X), Admissible I A t U → ∀ {m : ℕ} (κ : Λ p → Fin m) (i j : Fin m),
     proj A t U κ i ≫ proj A t U κ j = if i = j then proj A t U κ i else 0
@@ -214,7 +233,7 @@ structure OrbitCharacterTheory {d : ℕ} {δD : DegreeMaps d} (I : OAIInvariant 
       ∀ {m : ℕ} (κ : Λ p → Fin m) (i : Fin m),
         e.iso.inv ≫ (I.pushQ g U U' hg).F.map (proj A t U κ i) ≫ e.iso.hom =
           proj A (g.comp t) U' κ i
-  /-- [SHEAF, given the sheet multiplier `β` of Lemma 6.1's `SheetMultiplier`] The proof of
+  /-- [SHEAF, given the sheet multiplier `β` of Lemma 5.6 (`SheetMultiplier`)] The proof of
   Proposition 6.7 (06:421-442): if `h` is constant off a sheet region `V`, multiplication by `β`
   is an isometry of `(A_h, α_h)` over `X ∖ {b}` (it is a real isometry since `|β| = 1`) with
   `T M_β = M_{ζ⁻¹} M_β T`, so it conjugates `eᵢ` to `e_{i−1}`; by Theorem 3.3 it is an isometry
@@ -233,7 +252,10 @@ structure OAIInterface where
   /-- The degree maps `D k` on `S^{2j+3}`. -/
   δD : ∀ j : ℕ, DegreeMaps (2 * j + 3)
   /-- Orientation preservation of a local action: every element of `ℤ_[p]` acts by an
-  orientation-preserving homeomorphism of `W` (PLAN §3.2: a parameter of the route). -/
+  orientation-preserving homeomorphism of `W` (PLAN §3.2: a parameter of the route). Whether a
+  homeomorphism of `W` preserves orientation does not depend on which orientation of `W` (or of
+  `S^d`, through `LocalAction.sphereEquiv`) is used to test it, so `OP` involves no choice of
+  orientation. -/
   OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction p k → Prop
   /-- The invariant `E_{2j+3}`. -/
   inv : ∀ j : ℕ, OAIInvariant (2 * j + 3) (δD j)

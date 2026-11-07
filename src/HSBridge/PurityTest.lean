@@ -1,17 +1,29 @@
+import HSBridge.PurityFixtures.Clean
 import HilbertSmith
 import HSBridge.Purity
+import HSBridge.PurityFixtures.Tainted
 import HSBridge.Statements
 import HSFormal.Universe
+import FCChallenge
+import FCSolution
 
 /-!
 # Tests for the route-separation audit
 
 These tests are part of the build: each `#guard_msgs` fails the build if the audit's verdict
-changes. They show that `#assert_route_pure` catches a theorem that uses HS_proof's
-`HSFormal.padicExclusion`, directly or through our own declarations, and also a declaration of
-`HSFormal` outside the `HSFormal` namespace; that it passes honest theorems; and that its
-allow-list admits exactly the paths through the allowed constants. The last test checks the import
-boundary: no module of the library `HilbertSmith` imports `HSFormal`.
+changes. They show that `#assert_route_pure`
+
+* catches a theorem that uses HS_proof's `HSFormal.padicExclusion`, directly, through our own
+  declarations, or as an ex-falso interface field, and a constant of an HS_proof module outside
+  the `HSFormal` namespace;
+* catches a theorem of HS_proof's library `FCSolution` whose name Lean attributes to
+  `FCChallenge`, and refuses to decide when a name is held by an HS_proof module and by another;
+* passes honest theorems, including one from a module that imports HS_proof;
+* refuses allow-lists that name an HS_proof constant, a constant that is not a declared discharge,
+  or a constant the theorem does not reach.
+
+The last tests check the import boundary: no module of the library `HilbertSmith` imports
+HS_proof. Messages are guarded without counts, so that a new HS_proof pin does not break them.
 
 The declarations here are planted for the tests and are used nowhere else.
 -/
@@ -40,12 +52,18 @@ structure FakeInterface : Prop where
 theorem fakeInterface : FakeInterface :=
   ⟨HSBridge.statements_agree.2 HSFormal.padicExclusion⟩
 
-/-- A use of a constant that lies outside the `HSFormal` namespace but belongs to an `HSFormal`
-module: the congruence lemma of Mathlib's `Homeomorph.addRight`, which Lean generated inside
-HS_proof. The audit attributes constants by module, so it reports this (harmless) use: it errs on
-the safe side. -/
-theorem outsideNamespace (x y : ℝ) (h : x = y) :
-    Homeomorph.addRight x = Homeomorph.addRight y :=
+/-- A use of a constant that lies outside the `HSFormal` namespace but belongs to an HS_proof
+module: the congruence lemma of Mathlib's `Homeomorph.smulOfNeZero`, which Lean realized inside
+`HSFormal.ChartData`. The audit attributes constants by module, so it reports this (harmless) use:
+it errs on the safe side. -/
+theorem outsideNamespace (c d : ℝ) (h : c = d) (hc : c ≠ 0) :
+    Homeomorph.smulOfNeZero (α := ℝ) c hc = Homeomorph.smulOfNeZero d (h ▸ hc) :=
+  Homeomorph.smulOfNeZero.congr_simp c d h hc
+
+/-- A use of `Homeomorph.addRight.congr_simp`, of which the build holds two copies: one realized in
+`HSBridge.PurityFixtures.Clean` (imported first, so Lean's index names that module) and one in
+`HSFormal.ChartData`. -/
+theorem twoCopies (x y : ℝ) (h : x = y) : Homeomorph.addRight x = Homeomorph.addRight y :=
   Homeomorph.addRight.congr_simp x y h
 
 /-- A theorem using both an allowed constant and HS_proof's theorem. -/
@@ -64,143 +82,231 @@ theorem honest (h : HilbertSmith.Statements.PadicExclusion.{0}) :
 theorem usesNewman : HilbertSmith.NewmanInput.{0} :=
   HSBridge.newmanInput
 
+/-- A theorem whose hypothesis is HS_proof's statement, used only to test
+`#assert_route_reaches_by_value`. -/
+theorem viaHypothesis (h : HSFormal.PadicExclusion) : HilbertSmith.Statements.PadicExclusion.{0} :=
+  h
+
+/-- A theorem using a clean constant of a module that imports HS_proof. -/
+theorem usesTaintedModule (n : ℕ) : 2 * n = n + n :=
+  HSBridge.PurityFixtures.two_mul_eq_add n
+
 /-! ### The audit's verdicts -/
 
 -- Planted violations are caught: directly, through a declaration of our own, as an ex-falso
 -- interface field, and next to an allowed constant.
 
 /--
-error: route audit: 'HSBridge.PurityTest.planted' depends on HSFormal; entry points:
+error: route audit: 'HSBridge.PurityTest.planted' depends on HS_proof; entry points:
   HSFormal.PadicExclusion
   HSFormal.padicExclusion
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure planted
 
 /--
-error: route audit: 'HSBridge.PurityTest.laundered' depends on HSFormal; entry points:
+error: route audit: 'HSBridge.PurityTest.laundered' depends on HS_proof; entry points:
   HSFormal.PadicExclusion
   HSFormal.padicExclusion
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure laundered
 
 /--
-error: route audit: 'HSBridge.PurityTest.fakeInterface' depends on HSFormal; entry points:
+error: route audit: 'HSBridge.PurityTest.fakeInterface' depends on HS_proof; entry points:
   HSFormal.PadicExclusion
   HSFormal.padicExclusion
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure fakeInterface
 
 /--
-error: route audit: 'HSBridge.PurityTest.plantedWithNewman' depends on HSFormal; entry points:
+error: route audit: 'HSBridge.PurityTest.plantedWithNewman' depends on HS_proof; entry points:
   HSFormal.PadicExclusion
   HSFormal.padicExclusion
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure plantedWithNewman allowing HSBridge.newmanInput
 
 /--
-error: route audit: 'HSFormal.padicExclusion' depends on HSFormal; entry points:
+error: route audit: 'HSFormal.padicExclusion' depends on HS_proof; entry points:
   HSFormal.padicExclusion
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure HSFormal.padicExclusion
 
 -- Constants are attributed by module, so a constant outside the `HSFormal` namespace is caught.
 
 /--
-error: route audit: 'HSBridge.PurityTest.outsideNamespace' depends on HSFormal; entry points:
-  Homeomorph.addRight.congr_simp
+error: route audit: 'HSBridge.PurityTest.outsideNamespace' depends on HS_proof; entry points:
+  Homeomorph.smulOfNeZero.congr_simp
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure outsideNamespace
 
--- Honest declarations pass: our own, a theorem of OpenAI's route, and the compared statement.
+/-! ### Names held by several modules
 
-/-- info: route audit: 'HSBridge.PurityTest.honest' depends on no constant from HSFormal -/
-#guard_msgs in
-#assert_route_pure honest
+`FCChallenge` (statement, proof `sorry`, imports only Mathlib) and `FCSolution` (the same statement,
+proved from HS_proof) both declare
+`Hilbert5.hilbert_smith_padic_formulation.variants.second_countable`. Lean accepts importing both,
+in either order. With `FCChallenge` imported first, as here, Lean's index of declaring modules names
+`FCChallenge`, while the kernel holds `FCSolution`'s body, which uses
+`HSFormal.Universe.padicExclusion_univ`. An audit that trusted the index and counted only modules
+under `HSFormal` as HS_proof would not enter the constant (`FCChallenge` imports no HS_proof module)
+and would pass it. Both modules belong to HS_proof's package, so the audit catches it.
 
-/-- info: route audit: 'HilbertSmith.closed_eq_dvd_pow' depends on no constant from HSFormal -/
-#guard_msgs in
-#assert_route_pure HilbertSmith.closed_eq_dvd_pow
-
-/-- info: route audit: 'HilbertSmith.Statements.PadicExclusion' depends on no constant from HSFormal -/
-#guard_msgs in
-#assert_route_pure HilbertSmith.Statements.PadicExclusion
-
--- The allow-list admits exactly the paths through the allowed constants, and a stale entry fails.
+No theorem of ours is built on it here: `#print axioms` reads the axioms recorded for the module
+Lean's index names, so it would report `sorryAx` for such a theorem although the kernel holds the
+proof from HS_proof. The audit is run on the constant itself. -/
 
 /--
-error: route audit: 'HSBridge.PurityTest.usesNewman' depends on HSFormal; entry points:
+error: route audit: 'Hilbert5.hilbert_smith_padic_formulation.variants.second_countable' depends
+  on HS_proof; entry points:
+  Hilbert5.hilbert_smith_padic_formulation.variants.second_countable
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure Hilbert5.hilbert_smith_padic_formulation.variants.second_countable
+
+-- A name held by an HS_proof module and a module free of HS_proof: the audit refuses to decide.
+
+/--
+error: route audit: 'HSBridge.PurityTest.twoCopies' depends on constants of ambiguous provenance,
+  declared by modules of different kinds:
+  Homeomorph.addRight.congr_simp
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure twoCopies
+
+-- Honest declarations pass: our own, a theorem of OpenAI's route, the compared statement, and a
+-- clean constant of a module that imports HS_proof, used directly and through our own theorem.
+
+/-- info: route audit: 'HSBridge.PurityTest.honest' depends on no constant from HS_proof -/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure honest
+
+/-- info: route audit: 'HilbertSmith.closed_eq_dvd_pow' depends on no constant from HS_proof -/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure HilbertSmith.closed_eq_dvd_pow
+
+/--
+info: route audit: 'HilbertSmith.Statements.PadicExclusion' depends on no constant from HS_proof
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure HilbertSmith.Statements.PadicExclusion
+
+/--
+info: route audit: 'HSBridge.PurityFixtures.two_mul_eq_add' depends on no constant from HS_proof
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure HSBridge.PurityFixtures.two_mul_eq_add
+
+/--
+info: route audit: 'HSBridge.PurityTest.usesTaintedModule' depends on no constant from HS_proof
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure usesTaintedModule
+
+-- The allow-list admits exactly the paths through the declared discharges; it refuses an HS_proof
+-- constant, a constant that is not a declared discharge, and a stale entry.
+
+/--
+error: route audit: 'HSBridge.PurityTest.usesNewman' depends on HS_proof; entry points:
   HSFormal.newman_rigidity'
   HSFormal.Newman.newmanPrimeOrder
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure usesNewman
 
 /--
-info: route audit: 'HSBridge.PurityTest.usesNewman' depends on no constant from HSFormal except through:
+info: route audit: 'HSBridge.PurityTest.usesNewman' depends on no constant from HS_proof
+  except through:
   HSBridge.newmanInput
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure usesNewman allowing HSBridge.newmanInput
 
 /--
-info: route audit: 'HSBridge.PurityTest.laundered' depends on no constant from HSFormal except through:
+error: route audit: an allow-list may not name constants of HS_proof:
+  HSFormal.padicExclusion
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure planted allowing HSFormal.padicExclusion
+
+/--
+error: route audit: not declared discharges (HSBridge.Purity.declaredDischarges):
   HSBridge.PurityTest.planted
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure laundered allowing planted
 
 /--
 error: route audit: 'HSBridge.PurityTest.planted' does not depend on the allowed constants:
   HSBridge.newmanInput
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_route_pure planted allowing HSBridge.newmanInput
 
--- The report counts what a declaration reaches inside `HSFormal`, by module.
+-- The report counts what a declaration reaches inside HS_proof, by module (unguarded: the counts
+-- depend on the HS_proof pin).
 
-/-- info: route audit: 'HSBridge.PurityTest.honest' depends on no constant from HSFormal -/
-#guard_msgs in
+/-- info: route audit: 'HSBridge.PurityTest.honest' depends on no constant from HS_proof -/
+#guard_msgs (whitespace := lax) in
 #route_report honest
 
-/--
-info: route audit: 'HSBridge.PurityTest.usesNewman' depends on 376 constants from HSFormal; by module:
-  HSFormal.MontgomeryPrime: 5
-  HSFormal.Newman: 370
-  HSFormal.WeakInputs: 1
-entry points into HSFormal:
-  HSFormal.newman_rigidity'
-  HSFormal.Newman.newmanPrimeOrder
--/
-#guard_msgs in
 #route_report usesNewman
 
 -- The positive check: the planted theorem goes through HS_proof's L-theory; Newman does not.
-/-- info: route audit: 'HSBridge.PurityTest.planted' depends on 9035 constants from modules under 'HSFormal.LTheory' -/
-#guard_msgs in
+
+/--
+info: route audit: 'HSBridge.PurityTest.planted' depends on constants from modules under
+  'HSFormal.LTheory'
+-/
+#guard_msgs (whitespace := lax) in
 #assert_route_reaches planted HSFormal.LTheory
 
 /--
-error: route audit: 'HSBridge.PurityTest.usesNewman' depends on no constant from modules under 'HSFormal.LTheory'
+info: route audit: the value of 'HSBridge.PurityTest.planted' depends on constants from modules
+  under 'HSFormal.LTheory'
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
+#assert_route_reaches_by_value planted HSFormal.LTheory
+
+/--
+error: route audit: 'HSBridge.PurityTest.usesNewman' depends on no constant from modules under
+  'HSFormal.LTheory'
+-/
+#guard_msgs (whitespace := lax) in
 #assert_route_reaches usesNewman HSFormal.LTheory
 
+-- `viaHypothesis` mentions `HSFormal.PadicExclusion` only in its hypothesis: the type-level check
+-- sees it, the value-level check does not.
+
+/--
+info: route audit: 'HSBridge.PurityTest.viaHypothesis' depends on constants from modules under
+  'HSFormal'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_reaches viaHypothesis HSFormal
+
+/--
+error: route audit: the value of 'HSBridge.PurityTest.viaHypothesis' depends on no constant from
+  modules under 'HSFormal'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_reaches_by_value viaHypothesis HSFormal
+
 -- The import boundary: no module of OpenAI's route imports HS_proof; the bridge's modules do.
-/-- info: import boundary: no imported module of 'HilbertSmith' imports HSFormal -/
-#guard_msgs in
+
+/-- info: import boundary: no imported module of 'HilbertSmith' imports HS_proof -/
+#guard_msgs (whitespace := lax) in
 #assert_import_boundary HilbertSmith
 
 /--
-error: import boundary: these modules of 'HSBridge' import HSFormal:
+error: import boundary: these modules of 'HSBridge' import HS_proof:
+  HSBridge.PurityFixtures.Tainted
   HSBridge.Statements
 -/
-#guard_msgs in
+#guard_msgs (whitespace := lax) in
 #assert_import_boundary HSBridge
 
 end HSBridge.PurityTest
