@@ -46,56 +46,77 @@ theorem blowup_of_le {s : ℝ} {u : E} (h : 1 ≤ s * ‖u‖) : blowup s u = �
 @[simp] theorem blowup_zero (u : E) : blowup 0 u = u := by
   simp [blowup]
 
-omit [NormedSpace ℝ E] in
-/-- A map into `E⁺` tends to `∞` when, eventually, its finite values have large norm. -/
-theorem tendsto_infty_of_norm {α : Type*} {l : Filter α} {f : α → OnePoint E}
-    (h : ∀ R : ℝ, ∀ᶠ a in l, ∀ u : E, f a = ↑u → R < ‖u‖) : Tendsto f l (𝓝 ∞) := by
-  rw [hasBasis_nhds_infty.tendsto_right_iff]
-  rintro K ⟨-, hK⟩
-  obtain ⟨R, hR⟩ := hK.isBounded.subset_closedBall 0
-  filter_upwards [h R] with a ha
-  generalize f a = y at ha ⊢
-  induction y using OnePoint.rec with
-  | infty => exact Or.inr rfl
-  | coe u =>
-    refine Or.inl ⟨u, fun huK => ?_, rfl⟩
-    have := mem_closedBall_zero_iff.1 (hR huK)
-    linarith [ha u rfl]
+/-- The blow-up does not shrink norms: if `s ≥ 0` and `ρ_s(u) = y` is finite, then `‖u‖ ≤ ‖y‖`. -/
+theorem norm_le_of_blowup_eq {s : ℝ} (hs : 0 ≤ s) {u y : E} (h : blowup s u = y) :
+    ‖u‖ ≤ ‖y‖ := by
+  by_cases hsu : s * ‖u‖ < 1
+  · rw [blowup_of_lt hsu, coe_eq_coe] at h
+    have h0 : 0 < 1 - s * ‖u‖ := sub_pos.2 hsu
+    rw [← h, norm_smul, Real.norm_eq_abs, abs_inv, abs_of_pos h0, le_inv_mul_iff₀ h0]
+    nlinarith [mul_nonneg hs (norm_nonneg u), norm_nonneg u]
+  · rw [blowup_of_le (not_lt.1 hsu)] at h
+    exact absurd h (infty_ne_coe y)
 
-/-- **The radial blow-up is continuous** in the point and the parameter. -/
-theorem Continuous.blowup {X : Type*} [TopologicalSpace X] {σ : X → ℝ} {U : X → E}
+omit [NormedSpace ℝ E] in
+/-- **A criterion for tending to `∞` in `E⁺`**: it is enough that, for every bound `R`, the finite
+values eventually have norm greater than `R`. -/
+theorem tendsto_nhds_infty_of_norm {α : Type*} {l : Filter α} {f : α → OnePoint E}
+    (h : ∀ R : ℝ, ∀ᶠ a in l, ∀ y : E, f a = y → R < ‖y‖) : Tendsto f l (𝓝 ∞) := by
+  refine hasBasis_nhds_infty.tendsto_right_iff.2 fun K hK => ?_
+  obtain ⟨R, hR⟩ := hK.2.isBounded.subset_closedBall 0
+  filter_upwards [h R] with a ha
+  rcases eq_or_ne (f a) ∞ with hfa | hfa
+  · exact Or.inr hfa
+  · obtain ⟨y, hy⟩ := ne_infty_iff_exists.1 hfa
+    refine Or.inl ⟨y, fun hyK => ?_, hy⟩
+    have h₁ := ha y hy.symm
+    have h₂ := mem_closedBall_zero_iff.1 (hR hyK)
+    linarith
+
+/-- **The radial blow-up is continuous** in the point and the parameter. Where `σ‖U‖ < 1` it is
+given by a continuous formula; where `σ‖U‖ ≥ 1` it is `∞`, and nearby the factor
+`(1 − σ‖U‖)⁻¹` is large while `‖U‖` stays away from `0`. -/
+theorem continuous_blowup {X : Type*} [TopologicalSpace X] {σ : X → ℝ} {U : X → E}
     (hσ : Continuous σ) (hU : Continuous U) : Continuous fun x => blowup (σ x) (U x) := by
-  rw [continuous_iff_continuousAt]
-  intro x₀
-  have hm : Continuous fun x => σ x * ‖U x‖ := hσ.mul hU.norm
-  by_cases h : σ x₀ * ‖U x₀‖ < 1
-  · have hev : ∀ᶠ x in 𝓝 x₀, σ x * ‖U x‖ < 1 := hm.continuousAt.eventually (gt_mem_nhds h)
-    have hc : ContinuousAt (fun x => (((1 - σ x * ‖U x‖)⁻¹ • U x : E) : OnePoint E)) x₀ :=
-      continuous_coe.continuousAt.comp
-        (((continuousAt_const.sub hm.continuousAt).inv₀ (sub_ne_zero.2 h.ne')).smul hU.continuousAt)
-    refine hc.congr ?_
-    filter_upwards [hev] with x hx
-    rw [blowup_of_lt hx]
-  · rw [not_lt] at h
-    rw [ContinuousAt, blowup_of_le h]
-    refine tendsto_infty_of_norm fun R => ?_
-    have hU0 : 0 < ‖U x₀‖ := by
-      by_contra hneg
-      rw [le_antisymm (not_lt.1 hneg) (norm_nonneg _), mul_zero] at h
-      linarith
-    set R' := max R 0
-    have hR' : 0 ≤ R' := le_max_right R 0
-    have hcont : Continuous fun x => ‖U x‖ - R' * (1 - σ x * ‖U x‖) := by fun_prop
-    have h0 : 0 < ‖U x₀‖ - R' * (1 - σ x₀ * ‖U x₀‖) := by nlinarith
-    filter_upwards [hcont.continuousAt.eventually (lt_mem_nhds h0)] with x hx u hu
-    by_cases hlt : σ x * ‖U x‖ < 1
-    · rw [blowup_of_lt hlt] at hu
-      obtain rfl := (coe_injective hu).symm
-      have hpos : 0 < 1 - σ x * ‖U x‖ := by linarith
-      rw [norm_smul, norm_inv, Real.norm_of_nonneg hpos.le, inv_mul_eq_div, lt_div_iff₀ hpos]
-      nlinarith [le_max_left R 0]
-    · rw [blowup_of_le (not_lt.1 hlt)] at hu
-      exact absurd hu (infty_ne_coe u)
+  have hg : Continuous fun x => σ x * ‖U x‖ := hσ.mul hU.norm
+  refine continuous_iff_continuousAt.2 fun x₀ => ?_
+  by_cases h₀ : σ x₀ * ‖U x₀‖ < 1
+  · have hev : (fun x => (((1 - σ x * ‖U x‖)⁻¹ • U x : E) : OnePoint E)) =ᶠ[𝓝 x₀]
+        fun x => blowup (σ x) (U x) := by
+      filter_upwards [(isOpen_lt hg continuous_const).mem_nhds h₀] with x hx
+      exact (blowup_of_lt hx).symm
+    refine ContinuousAt.congr ?_ hev
+    exact continuous_coe.continuousAt.comp
+      (((continuous_const.sub hg).continuousAt.inv₀ (sub_pos.2 h₀).ne').smul hU.continuousAt)
+  · replace h₀ := not_lt.1 h₀
+    change Tendsto _ _ (𝓝 (blowup (σ x₀) (U x₀)))
+    rw [blowup_of_le h₀]
+    have hU₀ : 0 < ‖U x₀‖ := by
+      refine (norm_nonneg _).lt_of_ne fun hU₀ => ?_
+      rw [← hU₀, mul_zero] at h₀
+      exact absurd h₀ (by norm_num)
+    refine tendsto_nhds_infty_of_norm fun R => ?_
+    set a := ‖U x₀‖ / 2
+    set ε := a / (|R| + 1)
+    have ha : 0 < a := half_pos hU₀
+    have hε : 0 < ε := div_pos ha (by positivity)
+    have hεR : ε * |R| < a := by
+      rw [div_mul_eq_mul_div, div_lt_iff₀ (by positivity)]
+      nlinarith
+    filter_upwards [(hU.norm.tendsto x₀).eventually (lt_mem_nhds (half_lt_self hU₀)),
+      (hg.tendsto x₀).eventually (lt_mem_nhds (by linarith : 1 - ε < σ x₀ * ‖U x₀‖))]
+      with x hUx hgx y hy
+    by_cases hx : σ x * ‖U x‖ < 1
+    · rw [blowup_of_lt hx, coe_eq_coe] at hy
+      have h0 : 0 < 1 - σ x * ‖U x‖ := sub_pos.2 hx
+      rw [← hy, norm_smul, Real.norm_eq_abs, abs_inv, abs_of_pos h0, lt_inv_mul_iff₀ h0]
+      calc (1 - σ x * ‖U x‖) * R ≤ (1 - σ x * ‖U x‖) * |R| :=
+            mul_le_mul_of_nonneg_left (le_abs_self R) h0.le
+        _ ≤ ε * |R| := mul_le_mul_of_nonneg_right (by linarith) (abs_nonneg R)
+        _ < a := hεR
+        _ < ‖U x‖ := hUx
+    · rw [blowup_of_le (not_lt.1 hx)] at hy
+      exact absurd hy (infty_ne_coe y)
 
 /-- **The pinch** `Ψ_{z,r,s} : E⁺ → E⁺`: `∞ ↦ ∞` and `v ↦ ρ_s((v − z)/r)`. -/
 def pinchE (z : E) (r s : ℝ) (v : OnePoint E) : OnePoint E :=
@@ -113,13 +134,36 @@ theorem pinchE_zero_one_zero (v : OnePoint E) : pinchE 0 1 0 v = v := by
 /-- `Ψ_{z,r,1}` sends every point outside the closed ball `B̄(z, r)` to `∞`. -/
 theorem pinchE_one_of_notMem {z v : E} {r : ℝ} (hr : 0 < r) (hv : v ∉ closedBall z r) :
     pinchE z r 1 v = ∞ := by
-  rw [pinchE_coe]
-  apply blowup_of_le
-  rw [mem_closedBall, dist_eq_norm, not_le] at hv
-  rw [one_mul, norm_smul, norm_inv, Real.norm_of_nonneg hr.le, inv_mul_eq_div, le_div_iff₀ hr]
-  linarith
+  rw [mem_closedBall, not_le] at hv
+  refine blowup_of_le ?_
+  rw [one_mul, norm_smul, Real.norm_eq_abs, abs_inv, abs_of_pos hr, ← dist_eq_norm,
+    le_inv_mul_iff₀ hr, mul_one]
+  exact hv.le
+
+/-- **Points far from the centre are sent far out**: if `r ≤ r₁`, `‖z‖ ≤ m` and
+`r₁ (|R| + 1) + m < ‖v‖`, then a finite value `y = Ψ_{z,r,s}(v)` has `R < ‖y‖`. -/
+theorem lt_norm_of_pinchE_eq {z v y : E} {r s r₁ m R : ℝ} (hr : 0 < r) (hs : 0 ≤ s)
+    (hr₁ : r ≤ r₁) (hz : ‖z‖ ≤ m) (hv : r₁ * (|R| + 1) + m < ‖v‖)
+    (h : pinchE z r s v = y) : R < ‖y‖ := by
+  refine lt_of_lt_of_le ?_ (norm_le_of_blowup_eq hs h)
+  rw [norm_smul, Real.norm_eq_abs, abs_inv, abs_of_pos hr, lt_inv_mul_iff₀ hr]
+  calc r * R ≤ r₁ * |R| :=
+        (mul_le_mul_of_nonneg_left (le_abs_self R) hr.le).trans
+          (mul_le_mul_of_nonneg_right hr₁ (abs_nonneg R))
+    _ < ‖v‖ - ‖z‖ := by nlinarith
+    _ ≤ ‖v - z‖ := norm_sub_norm_le v z
 
 variable [ProperSpace E]
+
+omit [NormedSpace ℝ E] in
+/-- Near `∞`, the finite points of `E⁺` have large norm. -/
+theorem eventually_nhds_infty_lt_norm (M : ℝ) :
+    ∀ᶠ v : OnePoint E in 𝓝 ∞, ∀ e : E, v = e → M < ‖e‖ := by
+  rw [nhds_infty_eq, eventually_sup, eventually_map, coclosedCompact_eq_cocompact,
+    eventually_pure]
+  refine ⟨(tendsto_norm_cocompact_atTop.eventually_gt_atTop M).mono fun e he e' h => ?_,
+    fun e h => absurd h (infty_ne_coe e)⟩
+  rwa [← coe_injective h]
 
 /-- **Pinches depend continuously on their parameters**: `(x, v) ↦ Ψ_{z(x),r(x),s(x)}(v)` is
 continuous for continuous `z`, `r > 0` and `s ≥ 0`. At a finite point this is the continuity of
@@ -128,67 +172,42 @@ theorem continuous_pinchE {X : Type*} [TopologicalSpace X] {z : X → E} {r s : 
     (hz : Continuous z) (hr : Continuous r) (hs : Continuous s) (hr0 : ∀ x, 0 < r x)
     (hs0 : ∀ x, 0 ≤ s x) :
     Continuous fun q : X × OnePoint E => pinchE (z q.1) (r q.1) (s q.1) q.2 := by
-  rw [continuous_iff_continuousAt]
-  rintro ⟨x₀, v₀⟩
+  refine continuous_iff_continuousAt.2 fun ⟨x₀, v₀⟩ => ?_
   induction v₀ using OnePoint.rec with
-  | coe v₀ =>
-    have he : IsOpenEmbedding (Prod.map id ((↑) : E → OnePoint E) : X × E → X × OnePoint E) :=
-      IsOpenEmbedding.id.prodMap isOpenEmbedding_coe
-    refine (he.continuousAt_iff (x := (x₀, v₀))).1 ?_
-    exact (Continuous.blowup (hs.comp continuous_fst)
-      (((hr.comp continuous_fst).inv₀ fun q => (hr0 q.1).ne').smul
-        (continuous_snd.sub (hz.comp continuous_fst)))).continuousAt
   | infty =>
-    refine tendsto_infty_of_norm fun R => ?_
-    set R' := max R 0
-    have hR' : 0 ≤ R' := le_max_right R 0
-    have h1 : ∀ᶠ x in 𝓝 x₀, ‖z x‖ < ‖z x₀‖ + 1 :=
-      hz.norm.continuousAt.eventually (gt_mem_nhds (lt_add_one _))
-    have h2 : ∀ᶠ x in 𝓝 x₀, r x < r x₀ + 1 :=
-      hr.continuousAt.eventually (gt_mem_nhds (lt_add_one _))
-    set M := R' * (r x₀ + 1) + ‖z x₀‖ + 1
-    have h3 : ∀ᶠ v in 𝓝 (∞ : OnePoint E), ∀ u : E, v = ↑u → M < ‖u‖ := by
-      filter_upwards [hasBasis_nhds_infty.mem_of_mem (i := closedBall (0 : E) M)
-        ⟨isClosed_closedBall, isCompact_closedBall _ _⟩] with v hv u hvu
-      subst hvu
-      rcases hv with ⟨u', hu', huu⟩ | hv
-      · obtain rfl := coe_injective huu
-        simpa [mem_closedBall_zero_iff] using hu'
-      · exact absurd hv (coe_ne_infty u)
-    rw [nhds_prod_eq]
-    filter_upwards [(h1.and h2).prod_mk h3]
-    rintro ⟨x, v⟩ ⟨⟨hz1, hr1⟩, hv⟩ u hu
+    -- Near `(x₀, ∞)`, `r < 2 r(x₀)`, `‖z‖ < ‖z(x₀)‖ + 1` and `‖v‖` is large.
+    refine tendsto_nhds_infty_of_norm fun R => ?_
+    have hr₀ := hr0 x₀
+    filter_upwards [((hr.comp continuous_fst).tendsto (x₀, ∞)).eventually
+        (gt_mem_nhds (by linarith : r x₀ < 2 * r x₀)),
+      ((hz.norm.comp continuous_fst).tendsto (x₀, ∞)).eventually
+        (gt_mem_nhds (lt_add_one ‖z x₀‖)),
+      (continuous_snd.tendsto (x₀, ∞)).eventually
+        (eventually_nhds_infty_lt_norm (2 * r x₀ * (|R| + 1) + (‖z x₀‖ + 1)))]
+    rintro ⟨x, v⟩ hrx hzx hv y hy
     induction v using OnePoint.rec with
-    | infty => exact absurd hu (infty_ne_coe u)
-    | coe v =>
-      have hvM := hv v rfl
-      have hw : R' < ‖(r x)⁻¹ • (v - z x)‖ := by
-        rw [norm_smul, norm_inv, Real.norm_of_nonneg (hr0 x).le, inv_mul_eq_div,
-          lt_div_iff₀ (hr0 x)]
-        have := norm_sub_norm_le v (z x)
-        nlinarith [mul_le_mul_of_nonneg_left hr1.le hR']
-      change blowup (s x) ((r x)⁻¹ • (v - z x)) = ↑u at hu
-      set w := (r x)⁻¹ • (v - z x)
-      by_cases hlt : s x * ‖w‖ < 1
-      · rw [blowup_of_lt hlt] at hu
-        obtain rfl := (coe_injective hu).symm
-        have hpos : 0 < 1 - s x * ‖w‖ := by linarith
-        have hle : 1 - s x * ‖w‖ ≤ 1 := by nlinarith [hs0 x, norm_nonneg w]
-        rw [norm_smul, norm_inv, Real.norm_of_nonneg hpos.le]
-        calc R ≤ R' := le_max_left R 0
-          _ < ‖w‖ := hw
-          _ ≤ (1 - s x * ‖w‖)⁻¹ * ‖w‖ :=
-            le_mul_of_one_le_left (norm_nonneg w) ((one_le_inv₀ hpos).2 hle)
-      · rw [blowup_of_le (not_lt.1 hlt)] at hu
-        exact absurd hu (infty_ne_coe u)
+    | infty => exact absurd hy (infty_ne_coe y)
+    | coe v => exact lt_norm_of_pinchE_eq (hr0 x) (hs0 x) hrx.le hzx.le (hv v rfl) hy
+  | coe v₀ =>
+    have hc : Continuous fun q : X × E => pinchE (z q.1) (r q.1) (s q.1) q.2 :=
+      continuous_blowup (hs.comp continuous_fst)
+        (((hr.comp continuous_fst).inv₀ fun q => (hr0 q.1).ne').smul
+          (continuous_snd.sub (hz.comp continuous_fst)))
+    exact (IsOpenEmbedding.id.prodMap isOpenEmbedding_coe).continuousAt_iff
+      (g := fun q : X × OnePoint E => pinchE (z q.1) (r q.1) (s q.1) q.2) (x := (x₀, v₀)) |>.1
+        hc.continuousAt
 
 /-- The pinch `Ψ_{z,r,s}` as a continuous map, for `r > 0` and `s ≥ 0`. -/
 def pinchEMap (z : E) (r s : ℝ) (hr : 0 < r) (hs : 0 ≤ s) : C(OnePoint E, OnePoint E) where
   toFun := pinchE z r s
-  continuous_toFun :=
-    (continuous_pinchE (X := Unit) continuous_const continuous_const continuous_const
-      (fun _ => hr) fun _ => hs).comp
-      ((continuous_const : Continuous fun _ => ()).prodMk continuous_id)
+  continuous_toFun := by
+    refine (OnePoint.continuous_iff _).2 ⟨?_, ?_⟩
+    · refine tendsto_nhds_infty_of_norm fun R => ?_
+      rw [coclosedCompact_eq_cocompact]
+      filter_upwards [tendsto_norm_cocompact_atTop.eventually_gt_atTop (r * (|R| + 1) + ‖z‖)]
+        with v hv y hy
+      exact lt_norm_of_pinchE_eq hr hs le_rfl le_rfl hv hy
+    · exact continuous_blowup continuous_const ((continuous_id.sub continuous_const).const_smul _)
 
 /-- **Pinches along a path of parameters are homotopic.** -/
 theorem pinchEMap_homotopic {z : C(unitInterval, E)} {r s : C(unitInterval, ℝ)}
@@ -297,40 +316,6 @@ namespace LocalAction
 
 variable {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k)
 
-/-- **Families on `W⁺` that are constant off a compact set are continuous.** If
-`F : X × E → Y` is continuous and equal to `b` at every `(x, v)` with `v` outside a compact
-`K ⊆ W`, then `(x, w) ↦ F(x, w)` on `X × W`, extended by `b` at `∞`, is continuous on
-`X × W⁺`. -/
-theorem continuous_elim_of_compact {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-    {K : Set A.E} (hK : IsCompact K) (hKW : K ⊆ A.W) {F : X × A.E → Y} (hF : Continuous F)
-    (b : Y) (hFb : ∀ x v, v ∉ K → F (x, v) = b) :
-    Continuous fun q : X × OnePoint A.W => q.2.elim b fun w => F (q.1, w) := by
-  rw [continuous_iff_continuousAt]
-  rintro ⟨x₀, v₀⟩
-  induction v₀ using OnePoint.rec with
-  | coe w₀ =>
-    have he : IsOpenEmbedding
-        (Prod.map id ((↑) : A.W → OnePoint A.W) : X × A.W → X × OnePoint A.W) :=
-      IsOpenEmbedding.id.prodMap isOpenEmbedding_coe
-    refine (he.continuousAt_iff (x := (x₀, w₀))).1 ?_
-    exact (hF.comp (continuous_fst.prodMk
-      (continuous_subtype_val.comp continuous_snd))).continuousAt
-  | infty =>
-    have hKw : IsCompact (((↑) : A.W → A.E) ⁻¹' K) := by
-      rw [Subtype.isCompact_iff, Subtype.image_preimage_coe, inter_eq_right.2 hKW]
-      exact hK
-    have hmem : (↑) '' (((↑) : A.W → A.E) ⁻¹' K)ᶜ ∪ {∞} ∈ 𝓝 (∞ : OnePoint A.W) :=
-      hasBasis_nhds_infty.mem_of_mem ⟨hKw.isClosed, hKw⟩
-    refine (continuousAt_const : ContinuousAt (fun _ => b) _).congr ?_
-    rw [nhds_prod_eq]
-    filter_upwards [prod_mem_prod univ_mem hmem]
-    rintro ⟨x, v⟩ ⟨-, hv⟩
-    rcases hv with ⟨w, hw, rfl⟩ | hv
-    · exact (hFb x w hw).symm
-    · rw [mem_singleton_iff] at hv
-      subst hv
-      rfl
-
 /-- The pinch on `W⁺` as a function: `∞ ↦ ξ = sphereEquiv ∞` and `w ↦ sphereEquiv (Ψ_{z,r,1} w)`. -/
 def pinchFun (z : A.E) (r : ℝ) (w : OnePoint A.W) : Sphere k :=
   w.elim (A.sphereEquiv ∞) fun w => A.sphereEquiv (pinchE z r 1 (w : A.E))
@@ -341,22 +326,47 @@ theorem continuous_pinchFun {X : Type*} [TopologicalSpace X] {z : X → A.E} {r 
     (hz : Continuous z) (hr : Continuous r) (hr0 : ∀ x, 0 < r x) {K : Set A.E}
     (hK : IsCompact K) (hKW : K ⊆ A.W) (hball : ∀ x, closedBall (z x) (r x) ⊆ K) :
     Continuous fun q : X × OnePoint A.W => A.pinchFun (z q.1) (r q.1) q.2 := by
-  refine A.continuous_elim_of_compact hK hKW
-    (F := fun q : X × A.E => A.sphereEquiv (pinchE (z q.1) (r q.1) 1 q.2)) ?_ _ ?_
-  · exact A.sphereEquiv.continuous.comp ((continuous_pinchE hz hr continuous_const hr0
-      fun _ => zero_le_one).comp (continuous_fst.prodMk (continuous_coe.comp continuous_snd)))
-  · intro x v hv
-    simp only
-    rw [pinchE_one_of_notMem (hr0 x) fun h => hv (hball x h)]
+  have hK' : IsCompact ((↑) ⁻¹' K : Set A.W) :=
+    IsInducing.subtypeVal.isCompact_preimage' hK (by rwa [Subtype.range_coe])
+  refine continuous_iff_continuousAt.2 fun ⟨x₀, w₀⟩ => ?_
+  induction w₀ using OnePoint.rec with
+  | infty =>
+    -- Off the preimage of `K` in `W`, every pinch of the family is `ξ`.
+    have hS := hasBasis_nhds_infty.mem_of_mem
+      ⟨hK.isClosed.preimage continuous_subtype_val, hK'⟩
+    refine continuousAt_const.congr (f := fun _ => A.sphereEquiv ∞) ?_
+    filter_upwards [continuous_snd.continuousAt.preimage_mem_nhds hS]
+    rintro ⟨x, w⟩ (⟨w', hw', rfl⟩ | hw)
+    · exact (congrArg A.sphereEquiv
+        (pinchE_one_of_notMem (hr0 x) fun h => hw' (hball x h))).symm
+    · rw [mem_singleton_iff.1 hw]
+      rfl
+  | coe w₀ =>
+    have hc : Continuous fun q : X × A.W =>
+        A.sphereEquiv (pinchE (z q.1) (r q.1) 1 ((q.2 : A.E) : OnePoint A.E)) :=
+      A.sphereEquiv.continuous.comp ((continuous_pinchE hz hr continuous_const hr0
+        fun _ => zero_le_one).comp (continuous_fst.prodMk
+          (continuous_coe.comp (continuous_subtype_val.comp continuous_snd))))
+    exact (IsOpenEmbedding.id.prodMap isOpenEmbedding_coe).continuousAt_iff
+      (g := fun q : X × OnePoint A.W => A.pinchFun (z q.1) (r q.1) q.2) (x := (x₀, w₀)) |>.1
+        hc.continuousAt
 
 /-- **The pinch** `P_{z,r}` on `W⁺`, for `r > 0` and `B̄(z, r) ⊆ W` (05:156-160). -/
 def pinch (z : A.E) (r : ℝ) (hr : 0 < r) (hzr : closedBall z r ⊆ A.W) :
     C(OnePoint A.W, Sphere k) where
   toFun := A.pinchFun z r
-  continuous_toFun :=
-    (A.continuous_pinchFun (X := Unit) continuous_const continuous_const (fun _ => hr)
-      (isCompact_closedBall z r) hzr fun _ => subset_rfl).comp
-      ((continuous_const : Continuous fun _ => ()).prodMk continuous_id)
+  continuous_toFun := by
+    refine (OnePoint.continuous_iff _).2 ⟨?_, ?_⟩
+    · -- Off the preimage of `B̄(z, r)` in `W`, the pinch is `ξ`.
+      have hK' : IsCompact ((↑) ⁻¹' closedBall z r : Set A.W) :=
+        IsInducing.subtypeVal.isCompact_preimage' (isCompact_closedBall z r)
+          (by rwa [Subtype.range_coe])
+      refine tendsto_nhds_of_eventually_eq ?_
+      filter_upwards [hasBasis_coclosedCompact.mem_of_mem
+        ⟨isClosed_closedBall.preimage continuous_subtype_val, hK'⟩] with w hw
+      exact congrArg A.sphereEquiv (pinchE_one_of_notMem hr hw)
+    · exact A.sphereEquiv.continuous.comp ((pinchEMap z r 1 hr zero_le_one).continuous.comp
+        (continuous_coe.comp continuous_subtype_val))
 
 theorem pinch_apply_infty (z : A.E) (r : ℝ) (hr : 0 < r) (hzr : closedBall z r ⊆ A.W) :
     A.pinch z r hr hzr ∞ = A.sphereEquiv ∞ := rfl
