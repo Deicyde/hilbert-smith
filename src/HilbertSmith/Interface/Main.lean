@@ -4,6 +4,7 @@ import HilbertSmith.Interface.GoodBases
 import HilbertSmith.Interface.Sheets
 import HilbertSmith.Interface.ClosePair
 import HilbertSmith.Interface.MoveTest
+import HilbertSmith.Interface.OrientationFacts
 import HilbertSmith.Statements
 
 /-!
