@@ -30,7 +30,8 @@ srcDir = "src"
 name = "HSGeneral"
 srcDir = "src"
 
-# The comparison of the two routes: the only library that imports both.
+# The comparison of the two routes: checks that both conclude the same statements, records what
+# each assumes, and audits that OpenAI's route uses no constant of HS_proof.
 [[lean_lib]]
 name = "HSBridge"
 srcDir = "src"

@@ -223,9 +223,9 @@ def self_test():
         got = strip_ws(lex(text)[0])
         if got != expected:
             fail(f"self-test: normalization of {text!r}: expected {expected!r}, got {got!r}")
-    decl_text = ("namespace N\n\n/-- A docstring that is long enough to be compared by its digest. "
-                 "-/\n@[simp] theorem t (n : Nat) :\n    n + 0 = n := by\n  simp only [Nat.add_zero, "
-                 "Nat.zero_add, Nat.add_comm]\n\nend N\n")
+    decl_text = ("namespace N\n\n/-- A docstring that is long enough to be compared by its "
+                 "digest. -/\n@[simp] theorem t (n : Nat) :\n    n + 0 = n := by\n"
+                 "  simp only [Nat.add_zero, Nat.zero_add, Nat.add_comm]\n\nend N\n")
     decls = declarations(decl_text)
     if len(decls) != 1 or not decls[0].startswith("@[simp]theoremt") or "endN" in decls[0]:
         fail(f"self-test: declarations: got {decls}")

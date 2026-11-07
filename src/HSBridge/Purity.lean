@@ -391,8 +391,8 @@ def elabAssertRoutePure : CommandElab
   | _ => throwUnsupportedSyntax
 
 /-- `#assert_route_reaches c M` fails unless `c` mentions, directly or not, some constant declared
-in an HS_proof module whose name starts with `M` (for example `HSFormal.LTheory`). It checks the positive half
-of a comparison. A constant mentioned only in `c`'s type counts. -/
+in an HS_proof module whose name starts with `M` (for example `HSFormal.LTheory`). It checks the
+positive half of a comparison. A constant mentioned only in `c`'s type counts. -/
 syntax (name := assertRouteReaches) "#assert_route_reaches " ident ident : command
 
 /-- `#assert_route_reaches_by_value c M` is `#assert_route_reaches c M` with the walk started from

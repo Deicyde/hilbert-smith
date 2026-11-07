@@ -16,7 +16,8 @@ kept as a published input on its own.
   proof of Proposition 5.8.
 * `OrbitNull d δD`: Lemmas 5.4 and 5.5 combined, in the form the proof of Proposition 5.8 uses.
 * `SheetsInput`: Lemma 5.6.
-* `SphereBasis d`, `ClosePairBasis d`: good neighbourhood bases on `S^d` and `C_d` (06:357-366).
+* `SphereBasis d`, `ClosePairBasis d`: good neighbourhood bases on `S^d` (06:101-107) and `C_d`
+  (06:359-366).
 * `LocalInputs O`: all of them, for the interface `O`.
 
 Lemma 5.7 is not an input: it is Deicyde's `HilbertSmith.homotopyExtension`.
@@ -96,11 +97,11 @@ def CollapseInput : Prop :=
 pinch transport from the proof of Proposition 5.8. After replacing `ℤ_[p]` by an open subgroup
 `p^j ℤ_[p]`, there is `a : Y → S^d` with:
 * `a ∘ q ∘ c ≃ id`. OpenAI states `deg(aqc) = 1` (5.1) and, in the same statement, that `aq` is
-  homotopic on `W⁺` to a degree-one pinch `P_{z,r}` supported in a round ball in `W`
-  (05:148-149). Choosing `P` through `A.sphereEquiv` and a radial homeomorphism of the open unit
-  ball onto `ℝ^d`, `P_{z,r} ∘ c ≃ id` holds by an explicit scaling homotopy, with no degree theory.
-  So `aqc ≃ id` follows from the lemma's second assertion; stating it avoids degree theory, as B1
-  proposed.
+  homotopic on `W⁺` to "a degree-one pinch" supported in a round ball in `W` (05:148-149), with
+  the map `P` unspecified; the freedom to choose `P` is in the proof (05:153-161). Run the proof
+  with `P` chosen through `A.sphereEquiv` and a radial homeomorphism of the open unit ball onto
+  `ℝ^d`: then `P_{z,r} ∘ c ≃ id` by an explicit scaling homotopy, so `aqc ≃ id` follows with no
+  degree theory, as B1 proposed.
 * for every nonempty open `V ⊆ Y ∖ {y∞}`, `a ∘ q` is homotopic on `W⁺` to a map constant on
   `q⁻¹(Y ∖ V)`: the first paragraph of the proof of Proposition 5.8 (05:492-506) moves the pinch
   along a path in the connected `W` into a ball inside `q⁻¹(V)`.
@@ -140,8 +141,9 @@ def SheetsInput : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k), A.Faithful →
     ∀ j, 1 ≤ j → ∃ V, SheetMultiplier A j V
 
-/-- `S^d` has a basis of contractible open neighbourhoods at every point (06:357-366, applied to
-`b_t = t(y∞)` for tests `t` into `S^d`). -/
+/-- `S^d` has a basis of contractible open neighbourhoods at every point. Admissible tests need
+such a basis at `b_t = t(y∞)` (06:101-107); for tests into `S^d` the TeX does not state it, and
+small chart balls give it, as for `C_d` (06:364-366). -/
 def SphereBasis (d : ℕ) : Prop :=
   ∀ x : Sphere d, HasGoodBasisAt x
 
@@ -152,7 +154,8 @@ def ClosePairBasis (d : ℕ) : Prop :=
 
 /-- **The §5 inputs of the route**, for the interface `O`. -/
 structure LocalInputs (O : OAIInterface) : Prop where
-  /-- Proposition 5.1 without its orientation step (05:14-73), with second countability. -/
+  /-- What §6 uses of Proposition 5.1 (05:14-73), with second countability: a faithful action of
+  `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space. -/
   chartReduction : ChartReduction.{u}
   /-- The orientation facts of §5, for the interface's `OP` (05:68-72, 05:75-80, 05:181-182). -/
   orientation : Orientation O.OP
@@ -165,7 +168,7 @@ structure LocalInputs (O : OAIInterface) : Prop where
   orbitNull : ∀ j, OrbitNull (2 * j + 3) (O.δD j)
   /-- Lemma 5.6 (05:386-434). -/
   sheets : SheetsInput
-  /-- Good neighbourhood bases on spheres (06:357-366). -/
+  /-- Good neighbourhood bases on spheres (required at `b_t`, 06:101-107). -/
   sphereBasis : ∀ d, SphereBasis d
   /-- Good neighbourhood bases on close-pair tests (06:359-366). -/
   closePairBasis : ∀ d, ClosePairBasis d

@@ -31,7 +31,8 @@ Non-vacuity: every field holds for OpenAI's `E_d = W_d(𝒯(-))` and `𝒬_U(X) 
 cited result. `E`, `Q` and `WQ` are total, so that no field needs a dependent type. Off test spaces,
 and for non-open `U`, a model may take zero categories and zero groups: every field either assumes
 `IsTest` (or `Admissible`), or, like `wmap_cls`, holds for any duality-preserving functor, the zero
-functor included (plan item B-P, "Lean-level obligations"). There is also a size obligation:
+functor included (plan item B-P, "Lean-level obligations"), or, like `lattice`, `u_nontorsion` and
+`mapD`, concerns only `S^d`, a test space by `isTest_sphere`. There is also a size obligation:
 `E X`, `Q X U` (with `Category.{0}`) and `WQ X U` live in `Type`, so a model replaces the test
 categories by small skeleta (they are essentially small, 02:91-96, 03:253-257) and must prove the
 Hom types of the quotient categories small. The zero model (every group and category zero)
@@ -253,9 +254,11 @@ structure OAIInterface where
   δD : ∀ j : ℕ, DegreeMaps (2 * j + 3)
   /-- Orientation preservation of a local action: every element of `ℤ_[p]` acts by an
   orientation-preserving homeomorphism of `W` (PLAN §3.2: a parameter of the route). Whether a
-  homeomorphism of `W` preserves orientation does not depend on which orientation of `W` (or of
-  `S^d`, through `LocalAction.sphereEquiv`) is used to test it, so `OP` involves no choice of
-  orientation. -/
+  homeomorphism of `W` preserves orientation does not depend on which of the two orientations of
+  the ambient space `A.E` (or of `S^d`, through `LocalAction.sphereEquiv`) is used to test it, so
+  `OP` involves no choice of orientation. (For a disconnected `W` other orientations of `W` exist,
+  such as one that differs on two components swapped by an element; `OP` uses only those that
+  come from `A.E`.) -/
   OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction p k → Prop
   /-- The invariant `E_{2j+3}`. -/
   inv : ∀ j : ℕ, OAIInvariant (2 * j + 3) (δD j)
