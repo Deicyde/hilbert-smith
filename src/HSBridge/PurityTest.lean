@@ -403,6 +403,15 @@ error: route audit: 'HSBridge.PurityTest.usesNewman' reaches constants under
 #guard_msgs (whitespace := lax) in
 #assert_route_avoids usesNewman modules [HSFormal.Newman.ConvexCover] constants []
 
+-- Names of private constants are matched without their private prefix: the only constant under
+-- this prefix is a private lemma of `HSFormal.Bridges`, so the prefix is not rejected as stale.
+/--
+info: route audit: 'HSBridge.PurityTest.usesNewman' avoids modules under
+  HSFormal.LTheory.PermRep.cp_mem_cycles and the constants
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids usesNewman modules [HSFormal.LTheory.PermRep.cp_mem_cycles] constants []
+
 -- It fails closed: a misspelt prefix, a listed constant outside HS_proof, or a walk that meets a
 -- constant of ambiguous provenance (the planted theorem reaches HS_proof's back end, where
 -- `HomotopyEquiv.trans.eq_1` is declared both by HS_proof and outside it) is an error, not a pass.

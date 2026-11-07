@@ -56,8 +56,11 @@ missing from the kernel environment, or when an import has no module index.
 * `#assert_route_reaches c M` and `#assert_route_reaches_by_value c M`: fails unless `c`
   mentions, directly or not, a constant of a module under `M`; the second starts the walk from
   `c`'s value only, not its type and not the types of its leading binders.
-* `#assert_route_avoids c modules [M₁, …] constants [c₁, …]`: fails if `c` reaches a constant of
-  an HS_proof module under some `Mᵢ`, or one of the constants `cⱼ`.
+* `#assert_route_avoids c modules [M₁, …] constants [c₁, …]`: fails if `c` reaches an HS_proof
+  constant under some `Mᵢ` (through the name of a module declaring it, or its own name, private
+  or not), or one of the constants `cⱼ`. It also fails if some `cⱼ` is not an HS_proof constant,
+  if some `Mᵢ` prefixes no HS_proof module or constant, or if the walk meets a constant of
+  undecided provenance.
 * `#assert_import_boundary L`: fails if a module of the library `L` imported here imports
   HS_proof, directly or not. This is the import boundary, checked in the build.
 * `#assert_route_pure c` and `#assert_route_pure c allowing a b`: fails, listing the entry points,
@@ -427,21 +430,23 @@ def elabAssertRouteReachesByValue : CommandElab
   | _ => throwUnsupportedSyntax
 
 /-- Whether `pre` prefixes the name of some loaded HS_proof module or of some constant an HS_proof
-module declares. -/
+module declares (for a private constant, its name without the private prefix). -/
 def matchesHSProof (env : Environment) (P : Provenance) (pre : Name) : Bool := Id.run do
   for i in [0:env.header.modules.size] do
     unless P.hs[i]! do continue
     if pre.isPrefixOf env.header.modules[i]!.module then return true
-    if env.header.moduleData[i]!.constNames.any pre.isPrefixOf then return true
+    if env.header.moduleData[i]!.constNames.any (pre.isPrefixOf <| privateToUserName ·) then
+      return true
   return false
 
 /-- `#assert_route_avoids c modules [M₁, …] constants [c₁, …]` fails unless `c` reaches no
 HS_proof constant under any `Mᵢ` and none of the constants `cⱼ`. A reached constant is under `Mᵢ`
-when `Mᵢ` prefixes the name of an HS_proof module declaring it, or its own name: HS_proof declares
-constants named under `HSFormal.LTheory` outside `HSFormal/LTheory/`, for instance. It checks that a discharge
-(such as `HSBridge.newmanInput`) stays away from the parts of HS_proof it should not use. It fails
-closed: every `Mᵢ` must prefix some HS_proof module or constant, every `cⱼ` must be an HS_proof
-constant, and the walk must meet no constant of undecided provenance. -/
+when `Mᵢ` prefixes the name of an HS_proof module declaring it, or its own name, with the private
+prefix `_private.<module>.0` removed (`privateToUserName`): HS_proof declares constants named
+under `HSFormal.LTheory` outside `HSFormal/LTheory/`, for instance, some of them private. It checks
+that a discharge (such as `HSBridge.newmanInput`) stays away from the parts of HS_proof it should
+not use. It fails closed: every `Mᵢ` must prefix some HS_proof module or constant, every `cⱼ`
+must be an HS_proof constant, and the walk must meet no constant of undecided provenance. -/
 syntax (name := assertRouteAvoids) "#assert_route_avoids " ident
   ppSpace &"modules" " [" ident,* "]" ppSpace &"constants" " [" ident,* "]" : command
 
@@ -463,7 +468,7 @@ def elabAssertRouteAvoids : CommandElab
     throwIfUndecided c res
     let reached := res.reached.toArray
     let under (pre : Name) (d : Name) : Bool :=
-      pre.isPrefixOf d || (P.hsHolders env d).any pre.isPrefixOf
+      pre.isPrefixOf (privateToUserName d) || (P.hsHolders env d).any pre.isPrefixOf
     let prefixHits := prefixes.filter fun pre => reached.any (under pre)
     let constHits := consts.filter res.reached.contains
     let list (ns : Array Name) : MessageData :=

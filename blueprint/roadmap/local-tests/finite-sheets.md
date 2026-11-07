@@ -27,13 +27,15 @@ quotient map restricts to homeomorphisms on each. Constant values
 $\zeta^j$ on the pulled-back sheets give $\beta$.
 
 *Formalization.* Deicyde's declarations state the sheet structure in
-general: for a group $G$ acting on a space $E$ and an open $U$ whose
-nontrivial translates are disjoint from it, each sheet maps
-homeomorphically onto the image of $U$ in $E/G$ (`sheet_homeomorph`),
-and for $G = \Z/m$ the function $\beta$ takes values in
-$\{1, \zeta, \ldots, \zeta^{m-1}\}$ (`sheetBeta_cyclic_mem`). Such a $U$
-exists at a point with trivial stabilizer under a finite group
-(`exists_open_disjoint_smul`). Nothing applies them to
+general: for a group $G$ acting on a topological space $E$ by
+homeomorphisms (`ContinuousConstSMul`) and an open $U$ whose nontrivial
+translates are disjoint from it, each sheet maps homeomorphically onto
+the image of $U$ in $E/G$ (`sheet_homeomorph`), and for $G = \Z/m$ the
+function $\beta$ takes values in $\{1, \zeta, \ldots, \zeta^{m-1}\}$
+(`sheetBeta_cyclic_mem`). Such a $U$ exists at a point with trivial
+stabilizer when $G$ is finite and $E$ is Hausdorff (`T2Space`) and
+locally compact (`LocallyCompactSpace`), with $G$ again acting by
+homeomorphisms (`exists_open_disjoint_smul`). Nothing applies them to
 $W/(p^kG) \to Y$, and `SheetMultiplier` records $|\beta| = 1$ rather
 than the values in $\{1, \zeta, \ldots, \zeta^{m-1}\}$.
 
