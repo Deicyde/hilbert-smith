@@ -6,7 +6,7 @@ import HilbertSmith.Interface.Collapse
 
 OpenAI's Lemma 5.6 (statement 05:386-407, proof 05:409-434): for a faithful action and every
 `j ≥ 1` there are a nonempty open `V ⊆ Y ∖ {y∞}` and a locally constant `β` on `q⁻¹(V)`, with
-values `ζ^i`, such that `β(g + w) = ζ^{ḡ} β(w)` (5.2). This file proves the route's input
+values `ζ^i`, such that `β(g + w) = ζ^{ḡ} β(w)` (5.4). This file proves the route's input
 `HilbertSmith.Interface.SheetsInput`, along OpenAI's proof:
 
 * `exists_stabilizer_le` (05:410-413): some `x ∈ W` has stabilizer inside `H = p^j ℤ_[p]`;
@@ -91,7 +91,9 @@ theorem exists_stabilizer_le (hfaith : A.Faithful) {j : ℕ} (hj : 1 ≤ j) :
 /-- **Disjoint sheets around `x`** (05:417-421): if `x` is fixed only by elements of `H_j`, there
 is an `H_j`-invariant open `N ∋ x` such that `g + N` is disjoint from `N` for every `g ∉ H_j`.
 By the tube lemma on the compact set `ℤ_[p] ∖ H_j`, some open `N₀ ∋ x` satisfies
-`g + y ≠ y'` for `g ∉ H_j` and `y, y' ∈ N₀`; then `N = H_j + N₀`. -/
+`g + y ≠ y'` for `g ∉ H_j` and `y, y' ∈ N₀`; then `N = H_j + N₀`. The invariance matches
+OpenAI's picture of one sheet per class of `ℤ_[p]/H_j`; `sheetsInput` uses only the
+disjointness. -/
 theorem exists_sheet_nhds {j : ℕ} {x : A.W}
     (hx : ∀ g : ℤ_[p], g +ᵥ x = x → g ∈ padicSubgroup p j) :
     ∃ N : Set A.W, IsOpen N ∧ x ∈ N ∧ (∀ g ∈ padicSubgroup p j, ∀ y ∈ N, g +ᵥ y ∈ N) ∧

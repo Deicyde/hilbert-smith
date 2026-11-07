@@ -12,7 +12,8 @@ conjecture prove, in the form both routes are compared against:
 * `PadicExclusion`: no continuous action of the `p`-adic integers on a connected, Hausdorff,
   second-countable topological manifold is faithful (OpenAI's Theorem 1.2);
 * `PadicExclusionNoSC`: the same without second countability (equivalent to Formal Conjectures'
-  `hilbert_smith_padic_formulation`, whose binders come in a different order);
+  `hilbert_smith_padic_formulation`, whose binders come in another order, with `n` and `X`
+  implicit);
 * `HilbertSmith`: a locally compact, Hausdorff, second-countable group acting continuously and
   faithfully on a connected, Hausdorff, second-countable manifold is a Lie group (OpenAI's
   Theorem 1.1);

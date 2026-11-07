@@ -26,13 +26,25 @@ translates give $N$ with disjoint translates, and the open finite
 quotient map restricts to homeomorphisms on each. Constant values
 $\zeta^j$ on the pulled-back sheets give $\beta$.
 
-*Formalization.* `HilbertSmith.Interface.sheetsInput` proves the part
-of this statement that the contradiction uses, for the additive action
-of $\Zp$: the open set $V$ and the function $\beta$ with its
-equivariance, without the homeomorphisms onto $V$. It runs the argument
-in $W$ rather than in $Z$: the neighbourhood $N$ of $x$ is taken
-invariant under $p^kG$ with $gN \cap N = \emptyset$ for
-$g \notin p^kG$ (`exists_sheet_nhds`), and $\beta$ is
+*Formalization.* Deicyde's declarations state the sheet structure in
+general: for a group $G$ acting on a space $E$ and an open $U$ whose
+nontrivial translates are disjoint from it, each sheet maps
+homeomorphically onto the image of $U$ in $E/G$ (`sheet_homeomorph`),
+and for $G = \Z/m$ the function $\beta$ takes values in
+$\{1, \zeta, \ldots, \zeta^{m-1}\}$ (`sheetBeta_cyclic_mem`). Such a $U$
+exists at a point with trivial stabilizer under a finite group
+(`exists_open_disjoint_smul`). Nothing applies them to
+$W/(p^kG) \to Y$, and `SheetMultiplier` records $|\beta| = 1$ rather
+than the values in $\{1, \zeta, \ldots, \zeta^{m-1}\}$.
+
+The route uses `HilbertSmith.Interface.sheetsInput`, which proves what
+§6 uses, for the additive action of $\Zp$: the open set $V$, and $\beta$
+with $|\beta| = 1$, local constancy and $\beta(gw) = \zeta^{\bar
+g}\beta(w)$ (equation (5.4)). It works in $W$ rather than in
+$Z = W/p^kG$: some point $x$ has stabilizer inside $p^kG$
+(`exists_stabilizer_le`); the neighbourhood $N$ of $x$ is taken
+invariant under $p^kG$ with $gN \cap N = \emptyset$ for $g \notin p^kG$
+(`exists_sheet_nhds`); $V$ is the image of $N$, and $\beta$ is
 $\zeta^{\bar g}$ on $gN$.
 
 ## Sources

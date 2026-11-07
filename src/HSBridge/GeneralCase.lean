@@ -1,21 +1,30 @@
 import HSBridge.SideBySide
+import HSGeneral.FormalConjectures
 
 /-!
 # p-adic exclusion without second countability, two ways
 
 Two unconditional proofs of `HilbertSmith.Statements.PadicExclusionNoSC`: no continuous action of
-`ℤ_[p]` on a connected Hausdorff topological manifold, second countable or not, is faithful.
-Neither HS_proof nor OpenAI's preprint states this. Both proofs reduce it to HS_proof's
-second-countable theorem (`HSFormal.Universe.padicExclusion_univ`, restated as
-`HSBridge.hs_route_univ`), in different ways:
+`ℤ_[p]` on a connected Hausdorff topological manifold without boundary, second countable or not, is
+faithful. HS_proof's Lean library and OpenAI's preprint state it only for second-countable
+manifolds (`HSFormal.Universe.padicExclusion_univ`; 01-introduction.tex:32, 05-local-tests.tex:5).
+The HS paper's main theorem (HSproof.tex 85-96) states it without second countability, and with
+boundary, and reduces to the second-countable case at 757-768. Both proofs here end in HS_proof's
+second-countable theorem for manifolds in `Type`, `HSFormal.padicExclusion` (restated as
+`HSBridge.hs_route`), and reach it in different ways:
 
-* `HSBridge.generalCase_hs`, the HS paper's way (HSproof.tex 757-768), is Track A's
-  `HSGeneral.padicExclusionNoSC`;
-* `HSBridge.generalCase_oai`, OpenAI's way, goes through Proposition 5.1 as formalized in
+* `HSBridge.generalCase_hs`, the HS paper's reduction, is Track A's `HSGeneral.padicExclusionNoSC`;
+* `HSBridge.generalCase_oai`, OpenAI's reduction, goes through Proposition 5.1 as formalized in
   `HilbertSmith.Interface.chartReductionNoSC`.
 
+Only the reductions differ. Both proofs then use HS_proof's back end, its second-countable theorem
+with its L-theory, and neither uses OpenAI's §6. OpenAI's own route without second countability,
+`HSBridge.oai_route_noSC`, still assumes `OAIInterface` and `LocalInputs` (`Orientation`,
+`AveragedTest`, `OrbitNull`).
+
 Formal Conjectures' `Hilbert5.hilbert_smith_padic_formulation` is the same statement with its
-binders in another order; both proofs give it (the two `example`s below).
+binders in another order, and `n` and `X` implicit; both proofs give it (the two `example`s
+below, stated against the pinned declaration).
 
 ## The HS paper's reduction: a global point-set exhaustion
 
@@ -27,36 +36,47 @@ increasing union of connected open sets `V j` with compact closures, where `V (j
 the orbit of `closure (V j)` under the compact group and the point `x (j + 1)`. The union is
 σ-compact, hence second countable, and it may spread over the whole manifold: no chart is singled
 out. Newman's theorem is not used. Faithfulness on `U` comes from the classification of closed
-subgroups: the kernel on `U` would be `p ^ m ℤ_[p]` (HS_proof's
-`HSFormal.padicActionKernel_eq_power`), but `p ^ m` moves `x m`.
+subgroups of `ℤ_[p]`, in HS_proof's copy: the kernel on `U` would be `p ^ m ℤ_[p]`
+(`HSFormal.padicActionKernel_eq_power`), but `p ^ m` moves `x m`.
 
 ## OpenAI's reduction: never leaving one chart
 
-`HSBridge.padicExclusionNoSC_of_chartReduction` keeps one chart and shrinks the group. Proposition
-5.1 (05:23-66, without the orientation step at 05:68-72) uses Newman's theorem on the saturations
+`HilbertSmith.Interface.chartReductionNoSC`, used through `HSBridge.oai_reduction`, shrinks both
+the space, to a set `O` inside one chart, and the group, to an open subgroup. Proposition 5.1
+(05:23-66, without the orientation step at 05:68-72) uses Newman's theorem on the saturations
 `H_j B` to find a point near which no open subgroup acts trivially, and then a small connected open
-set `O = H B` inside one chart, invariant under an open subgroup `H ≅ ℤ_[p]` that acts on it
-faithfully. That is `ChartReductionNoSC`: a faithful action of `ℤ_[p]` on a connected open subset
-of an `n`-dimensional real normed space. Such a set is second countable because the space is, and
-it is an `n`-manifold through one chart; nothing else about `M` is used. The orientation step is not
-needed here. The price is Newman's theorem, discharged by `HSBridge.newmanInput`.
+set `O = H B` inside one chart, invariant under an open subgroup `H ≅ ℤ_[p]`. Faithfulness of `H`
+on `O` comes from the classification of closed subgroups too, in Deicyde's copy
+(`HilbertSmith.closed_eq_dvd_pow`, 05:61-64). The result, `ChartReductionNoSC`, is a faithful
+action of `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space.
+`HSBridge.padicExclusionNoSC_of_chartReduction` then makes that set a second-countable manifold:
+it is second countable because the space is, and an `n`-manifold through one chart; nothing else
+about `M` is used. The orientation step is not needed here. The price is Newman's theorem,
+discharged by `HSBridge.newmanInput`.
+
+So the contrast is whose copy of the classification of closed subgroups each reduction uses, and
+Newman's theorem.
 
 ## What each proof uses of HS_proof
 
 Both reach HS_proof's second-countable theorem, with its L-theory. The reductions differ, as the
-guarded audit at the end of the file shows:
+guarded audits here and in `HSBridge.SideBySide` show:
 * OpenAI's reduction, `HSBridge.padicExclusionNoSC_of_chartReduction`, uses no constant of HS_proof,
   and with `ChartReductionNoSC` discharged (`HSBridge.oai_reduction`) it uses HS_proof only through
-  `HSBridge.newmanInput`, which avoids the L-theory;
+  `HSBridge.newmanInput`, which avoids the L-theory and HS_proof's closed subgroups;
 * the HS paper's reduction, `HSGeneral.padicExclusionNoSC_of_SC`, uses HS_proof's classification of
   closed subgroups of `ℤ_[p]` (module `HSFormal.PadicSubgroups`), and no Newman theorem.
 
-HS_proof's second-countable theorem itself goes through its Newman theorem, so the discharge adds no
-HS_proof module to OpenAI's way: at the pin of this build, both proofs reach the same HS_proof
-modules (the unguarded `#route_modules` lists).
+HS_proof's second-countable theorem itself goes through its Newman theorem (both proofs reach
+`HSFormal.Newman`, guarded below), so the discharge adds no HS_proof module to OpenAI's way: at the
+pin of this build, both proofs reach the same HS_proof modules (the unguarded `#route_modules`
+lists).
 
-The second-countable theorem is used in universe `0` by OpenAI's way, since the chart image lives in
-a real normed space in `Type`, and in the manifold's universe by the HS paper's way.
+OpenAI's way applies the second-countable theorem in universe `0`, since the chart image lives in a
+real normed space in `Type`; the HS paper's way applies it in the manifold's universe, through
+`HSFormal.Universe.padicExclusion_univ`. That universe-`u` theorem is itself derived from the
+`Type` case (`HSFormal.Universe.padicExclusionIn_of_type`), so both proofs end in
+`HSFormal.padicExclusion`.
 -/
 
 open HilbertSmith.Interface
@@ -65,11 +85,12 @@ universe u
 
 namespace HSBridge
 
-/-- **OpenAI's reduction of the general case** (PLAN §3.5): what §6 uses of Proposition 5.1,
-without second countability, reduces p-adic exclusion in any universe to the second-countable case
-in universe `0`. A faithful action on `M` gives a faithful action on a connected open subset `W` of
-an `n`-dimensional real normed space `E`; `W` is Hausdorff and second countable as a subspace of
-`E`, and a manifold modelled on `ℝⁿ` with the single chart `W ↪ E ≃ ℝⁿ`. -/
+/-- **The last step of OpenAI's reduction of the general case** (PLAN §3.5): given what §6 uses
+of Proposition 5.1 without second countability, p-adic exclusion in any universe follows from the
+second-countable case in universe `0`. The proposition turns a faithful action on `M` into a
+faithful action on a connected open subset `W` of an `n`-dimensional real normed space `E`; this
+step makes `W` a second-countable manifold: Hausdorff and second countable as a subspace of `E`,
+and modelled on `ℝⁿ` with the single chart `W ↪ E ≃ ℝⁿ`. -/
 theorem padicExclusionNoSC_of_chartReduction (hC : ChartReductionNoSC.{u})
     (h : HilbertSmith.Statements.PadicExclusion.{0}) :
     HilbertSmith.Statements.PadicExclusionNoSC.{u} := by
@@ -89,28 +110,24 @@ theorem oai_reduction (h : HilbertSmith.Statements.PadicExclusion.{0}) :
     HilbertSmith.Statements.PadicExclusionNoSC.{u} :=
   padicExclusionNoSC_of_chartReduction (chartReductionNoSC newmanInput) h
 
-/-- **p-adic exclusion without second countability, the HS paper's way**: an invariant
-second-countable open set built by exhaustion, then HS_proof's second-countable theorem
-(Track A's `HSGeneral.padicExclusionNoSC`). -/
+/-- **p-adic exclusion without second countability, the HS paper's way**: the HS paper's
+reduction (an invariant second-countable open set built by exhaustion), then HS_proof's back end,
+its second-countable theorem (Track A's `HSGeneral.padicExclusionNoSC`). -/
 theorem generalCase_hs : HilbertSmith.Statements.PadicExclusionNoSC.{u} :=
   HSGeneral.padicExclusionNoSC
 
-/-- **p-adic exclusion without second countability, OpenAI's way**: Proposition 5.1 inside one
-chart (`HSBridge.oai_reduction`), then HS_proof's second-countable theorem in universe `0`
-(`HSBridge.hs_route_univ`). -/
+/-- **p-adic exclusion without second countability, OpenAI's way**: OpenAI's reduction
+(Proposition 5.1 inside one chart, `HSBridge.oai_reduction`), then HS_proof's back end, its
+second-countable theorem for manifolds in `Type` (`HSBridge.hs_route`). -/
 theorem generalCase_oai : HilbertSmith.Statements.PadicExclusionNoSC.{u} :=
-  oai_reduction hs_route_univ.{0}
+  oai_reduction hs_route
 
--- Formal Conjectures' statement, binders in its order, from each proof.
-example {n : ℕ} {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
-    [ChartedSpace (EuclideanSpace ℝ (Fin n)) X] (p : ℕ) [Fact p.Prime] [AddAction ℤ_[p] X]
-    [ContinuousVAdd ℤ_[p] X] : ¬ FaithfulVAdd ℤ_[p] X :=
-  generalCase_hs p n X
+-- Formal Conjectures' statement, as pinned (`HSGeneral.FormalConjectures`), from each proof.
+example : type_of% @Hilbert5.hilbert_smith_padic_formulation.{u} :=
+  fun {n} {X} _ _ _ _ p _ _ _ => generalCase_hs p n X
 
-example {n : ℕ} {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
-    [ChartedSpace (EuclideanSpace ℝ (Fin n)) X] (p : ℕ) [Fact p.Prime] [AddAction ℤ_[p] X]
-    [ContinuousVAdd ℤ_[p] X] : ¬ FaithfulVAdd ℤ_[p] X :=
-  generalCase_oai p n X
+example : type_of% @Hilbert5.hilbert_smith_padic_formulation.{u} :=
+  fun {n} {X} _ _ _ _ p _ _ _ => generalCase_oai p n X
 
 /-! ### The audit of the two reductions
 
@@ -145,6 +162,14 @@ info: route audit: 'HSGeneral.padicExclusionNoSC_of_SC' avoids modules under HSF
 #assert_route_avoids HSGeneral.padicExclusionNoSC_of_SC modules [HSFormal.Newman, HSFormal.LTheory]
   constants [HSFormal.Universe.padicExclusion_univ]
 
+/--
+info: route audit: 'HSBridge.oai_reduction' avoids modules under HSFormal.PadicSubgroups,
+  HSFormal.LTheory and the constants HSFormal.padicExclusion, HSFormal.Universe.padicExclusion_univ
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids oai_reduction modules [HSFormal.PadicSubgroups, HSFormal.LTheory]
+  constants [HSFormal.padicExclusion, HSFormal.Universe.padicExclusion_univ]
+
 #route_report padicExclusionNoSC_of_chartReduction
 
 #route_report oai_reduction
@@ -153,7 +178,7 @@ info: route audit: 'HSGeneral.padicExclusionNoSC_of_SC' avoids modules under HSF
 
 /-! ### The audit of the two proofs
 
-Both reach HS_proof's L-theory, through its second-countable theorem. -/
+Both reach HS_proof's L-theory and its Newman theorem, through its second-countable theorem. -/
 
 /--
 info: route audit: the value of 'HSBridge.generalCase_hs' depends on constants from modules under
@@ -168,6 +193,20 @@ info: route audit: the value of 'HSBridge.generalCase_oai' depends on constants 
 -/
 #guard_msgs (whitespace := lax) in
 #assert_route_reaches_by_value generalCase_oai HSFormal.LTheory
+
+/--
+info: route audit: the value of 'HSBridge.generalCase_hs' depends on constants from modules under
+  'HSFormal.Newman'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_reaches_by_value generalCase_hs HSFormal.Newman
+
+/--
+info: route audit: the value of 'HSBridge.generalCase_oai' depends on constants from modules under
+  'HSFormal.Newman'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_reaches_by_value generalCase_oai HSFormal.Newman
 
 #route_report generalCase_hs
 

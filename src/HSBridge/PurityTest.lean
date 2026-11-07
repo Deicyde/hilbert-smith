@@ -369,18 +369,8 @@ error: route assumptions: flags that match no listed field:
 #guard_msgs (whitespace := lax) in
 #route_assumptions withLaws flag fourth "no such field" expanding InnerLaws
 
--- `#assert_route_avoids`: the planted theorem reaches HS_proof's L-theory, its Newman theorem and
--- its p-adic exclusion theorem; the bridge's discharge of Newman's theorem reaches neither the
--- L-theory nor the p-adic exclusion theorem.
-
-/--
-error: route audit: 'HSBridge.PurityTest.planted' reaches constants of modules under
-  HSFormal.LTheory, HSFormal.Newman and the constants HSFormal.padicExclusion,
-  HSFormal.newman_rigidity'
--/
-#guard_msgs (whitespace := lax) in
-#assert_route_avoids planted modules [HSFormal.LTheory, HSFormal.Newman]
-  constants [HSFormal.padicExclusion, HSFormal.newman_rigidity']
+-- `#assert_route_avoids`. The bridge's discharge of Newman's theorem reaches HS_proof's Newman
+-- theorem, and neither its L-theory nor its p-adic exclusion theorem.
 
 /--
 info: route audit: 'HSBridge.PurityTest.usesNewman' avoids modules under HSFormal.LTheory and the
@@ -388,6 +378,55 @@ info: route audit: 'HSBridge.PurityTest.usesNewman' avoids modules under HSForma
 -/
 #guard_msgs (whitespace := lax) in
 #assert_route_avoids usesNewman modules [HSFormal.LTheory] constants [HSFormal.padicExclusion]
+
+/--
+error: route audit: 'HSBridge.PurityTest.usesNewman' reaches constants under HSFormal.Newman and the
+  constants HSFormal.newman_rigidity'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids usesNewman modules [HSFormal.Newman, HSFormal.LTheory]
+  constants [HSFormal.newman_rigidity', HSFormal.padicExclusion]
+
+-- Only the constant list hits: the message names no prefix.
+/--
+error: route audit: 'HSBridge.PurityTest.usesNewman' reaches the constants HSFormal.newman_rigidity'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids usesNewman modules [HSFormal.LTheory] constants [HSFormal.newman_rigidity']
+
+-- A constant is under a prefix also through its own name: no module is named under
+-- `HSFormal.Newman.ConvexCover`, a namespace of `HSFormal.Newman.CompactSupport`.
+/--
+error: route audit: 'HSBridge.PurityTest.usesNewman' reaches constants under
+  HSFormal.Newman.ConvexCover
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids usesNewman modules [HSFormal.Newman.ConvexCover] constants []
+
+-- It fails closed: a misspelt prefix, a listed constant outside HS_proof, or a walk that meets a
+-- constant of ambiguous provenance (the planted theorem reaches HS_proof's back end, where
+-- `HomotopyEquiv.trans.eq_1` is declared both by HS_proof and outside it) is an error, not a pass.
+/--
+error: route audit: prefixes of no HS_proof module or constant:
+  HSFormal.LTheroy
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids usesNewman modules [HSFormal.LTheroy] constants []
+
+/--
+error: route audit: not constants of HS_proof:
+  HilbertSmith.NewmanInput
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids usesNewman modules [HSFormal.LTheory] constants [HilbertSmith.NewmanInput]
+
+/--
+error: route audit: 'HSBridge.PurityTest.planted' depends on constants of ambiguous provenance,
+  declared by modules of different kinds:
+  HomotopyEquiv.trans.eq_1
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids planted modules [HSFormal.LTheory] constants [HSFormal.padicExclusion]
 
 -- The import boundary: no module of OpenAI's route imports HS_proof; the bridge's modules do.
 

@@ -23,25 +23,15 @@ namespace LocalAction
 
 variable {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k)
 
-/-- The action of `ℤ_[p]` on `W`, written multiplicatively. -/
-@[instance_reducible]
-def mulAct : MulAction (Multiplicative ℤ_[p]) A.W where
-  smul g w := g.toAdd +ᵥ w
-  one_smul w := zero_vadd ℤ_[p] w
-  mul_smul g h w := add_vadd g.toAdd h.toAdd w
-
-/-- The multiplicative action is jointly continuous. -/
-theorem continuousSMul_mulAct :
-    letI := A.mulAct
-    ContinuousSMul (Multiplicative ℤ_[p]) A.W :=
-  letI := A.mulAct
+/-- The action of `ℤ_[p]` on `W`, written multiplicatively (Mathlib's
+`Multiplicative.mulAction`), is jointly continuous. -/
+theorem continuousSMul_multiplicative : ContinuousSMul (Multiplicative ℤ_[p]) A.W :=
   ⟨continuous_vadd.comp (continuous_toAdd.prodMap continuous_id)⟩
 
 /-- **The extended action on `W⁺` is jointly continuous** (Lemma 5.2, 05:112-116), from Deicyde's
 `HilbertSmith.continuousSMul_onePoint` for the multiplicative action. -/
 theorem continuousVAdd_onePoint : ContinuousVAdd ℤ_[p] (OnePoint A.W) := by
-  let _ := A.mulAct
-  have := A.continuousSMul_mulAct
+  have := A.continuousSMul_multiplicative
   have h := (HilbertSmith.continuousSMul_onePoint (G := Multiplicative ℤ_[p]) A.W).continuous_smul
   refine ⟨?_⟩
   have h' := h.comp (continuous_ofAdd.prodMap continuous_id)
@@ -53,11 +43,9 @@ theorem continuousVAdd_onePoint : ContinuousVAdd ℤ_[p] (OnePoint A.W) := by
 
 /-- The orbit relation of `ℤ_[p]` on `W⁺` is that of the whole group `Multiplicative ℤ_[p]`,
 viewed as its top subgroup, for Deicyde's action on `W⁺`. -/
-theorem orbitRel_eq :
-    letI := A.mulAct
+theorem orbitRel_top_multiplicative_eq :
     MulAction.orbitRel (⊤ : Subgroup (Multiplicative ℤ_[p])) (OnePoint A.W) =
       AddAction.orbitRel ℤ_[p] (OnePoint A.W) := by
-  let _ := A.mulAct
   ext x y
   rw [MulAction.orbitRel_apply, AddAction.orbitRel_apply, MulAction.mem_orbit_iff,
     AddAction.mem_orbit_iff]
@@ -76,12 +64,11 @@ theorem orbitRel_eq :
 /-- **The orbit space `Y = W⁺/ℤ_[p]` is metrizable** (Lemma 5.2, 05:118-132), from Deicyde's
 `HilbertSmith.metrizableSpace_orbitQuotient` for the top subgroup of `Multiplicative ℤ_[p]`. -/
 theorem metrizableSpace_Y : TopologicalSpace.MetrizableSpace A.Y := by
-  let _ := A.mulAct
-  have := A.continuousSMul_mulAct
+  have := A.continuousSMul_multiplicative
   have h := HilbertSmith.metrizableSpace_orbitQuotient (G := Multiplicative ℤ_[p]) A.W ⊤
     A.isOpen (by simp)
   change TopologicalSpace.MetrizableSpace (Quotient (AddAction.orbitRel ℤ_[p] (OnePoint A.W)))
-  rwa [← A.orbitRel_eq]
+  rwa [← A.orbitRel_top_multiplicative_eq]
 
 end LocalAction
 

@@ -3,9 +3,10 @@ import HilbertSmith.Interface.LocalInputs
 /-!
 # Moving a test into a prescribed open set
 
-Proposition 5.8 of OpenAI's preprint, from the pieces of `HilbertSmith.Interface.LocalInputs`:
-the pinch transport (part of `AveragedTest`), Lemmas 5.4 and 5.5 (`OrbitNull`), Lemma 5.2
-(`CollapseInput`) and Lemma 5.7 (Deicyde's `HilbertSmith.homotopyExtension`).
+Proposition 5.8 of OpenAI's preprint, from the pinch transport (part of `AveragedTest`) and
+Lemmas 5.4 and 5.5 (`OrbitNull`), which are fields of `HilbertSmith.Interface.LocalInputs`, Lemma
+5.2 (`CollapseInput`, proved as `HilbertSmith.Interface.collapseInput`) and Lemma 5.7 (Deicyde's
+`HilbertSmith.homotopyExtension`).
 -/
 
 namespace HilbertSmith.Interface

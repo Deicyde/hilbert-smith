@@ -9,6 +9,10 @@ OpenAI gets the second from `C_d` being a smooth manifold with boundary; the TeX
 the first. This file proves both, the route's inputs `SphereBasis` and `ClosePairBasis`, with
 explicit contractions instead of charts.
 
+The contractions use `nlerp`, the normalized straight path. It is OpenAI's homotopy between the
+two projections of `C_d` (06:369-372), the map of `HilbertSmith.Interface.ClosePair.homotopic_π`.
+The caps, their paths and the boxes are in the namespace `HilbertSmith.Interface.GoodBases`.
+
 * **Caps.** On the unit sphere, a cap `{x | c < ⟨x, a⟩}` with `0 ≤ c` is closed under the
   normalized straight path `nlerp x y t = ((1 − t) x + t y) / ‖(1 − t) x + t y‖`: the inner
   product with `a` of the unnormalized point is a convex combination, above `c ≥ 0`, and
@@ -59,7 +63,7 @@ theorem inner_nlerp_nonneg {x y b : E} {t : ℝ}
   exact mul_nonneg (inv_nonneg.2 (norm_nonneg _)) h
 
 /-- On the segment, nonnegative inner products with `b` stay nonnegative after normalizing. -/
-theorem inner_nlerp_nonneg_of {x y b : E} {t : ℝ} (ht : t ∈ I) (hx : 0 ≤ inner ℝ x b)
+theorem inner_nlerp_nonneg_of_inner_nonneg {x y b : E} {t : ℝ} (ht : t ∈ I) (hx : 0 ≤ inner ℝ x b)
     (hy : 0 ≤ inner ℝ y b) : 0 ≤ inner ℝ (nlerp x y t) b :=
   inner_nlerp_nonneg (add_nonneg (mul_nonneg (by linarith [ht.2]) hx) (mul_nonneg ht.1 hy))
 
@@ -87,13 +91,15 @@ theorem le_inner_nlerp {x y b : E} (hx : ‖x‖ = 1) (hy : ‖y‖ = 1) {t : �
   exact le_mul_of_one_le_left h.le (one_le_inv₀ hpos |>.2 hle)
 
 /-- The normalized straight path is continuous wherever the unnormalized point is nonzero. -/
-theorem Continuous.nlerp {X : Type*} [TopologicalSpace X] {f g : X → E} {τ : X → ℝ}
+theorem _root_.Continuous.nlerp {X : Type*} [TopologicalSpace X] {f g : X → E} {τ : X → ℝ}
     (hf : Continuous f) (hg : Continuous g) (hτ : Continuous τ)
     (h : ∀ q, (1 - τ q) • f q + τ q • g q ≠ 0) :
     Continuous fun q => nlerp (f q) (g q) (τ q) := by
   have hv : Continuous fun q => (1 - τ q) • f q + τ q • g q :=
     ((continuous_const.sub hτ).smul hf).add (hτ.smul hg)
   exact ((continuous_norm.comp hv).inv₀ fun q => norm_ne_zero_iff.2 (h q)).smul hv
+
+namespace GoodBases
 
 /-! ### Caps -/
 
@@ -155,7 +161,7 @@ theorem dist_lt_of_mem_cap {a x : Sphere d} {ε : ℝ} (hε : 0 < ε)
   exact lt_of_pow_lt_pow_left₀ 2 hε.le hsq
 
 /-- Small caps around `a` lie in any neighbourhood of `a`: for `N ∈ 𝓝 a` there is `c` with
-`0 ≤ c < 1` and the cap `{c < ⟨x, a⟩}` inside `N`; and any larger `c' < 1` works too. -/
+`0 ≤ c < 1` and the cap `{c < ⟨x, a⟩}` inside `N`, and so does the cap for every larger `c'`. -/
 theorem exists_cap_subset {a : Sphere d} {N : Set (Sphere d)} (hN : N ∈ 𝓝 a) :
     ∃ c, 0 ≤ c ∧ c < 1 ∧ ∀ c', c ≤ c' → cap a c' ⊆ N := by
   obtain ⟨ε, hε, hball⟩ := Metric.mem_nhds_iff.1 hN
@@ -165,6 +171,10 @@ theorem exists_cap_subset {a : Sphere d} {N : Set (Sphere d)} (hN : N ∈ 𝓝 a
   refine ⟨1 - ε' ^ 2 / 2, by nlinarith, by nlinarith, fun c' hc' x hx => hball ?_⟩
   exact (dist_lt_of_mem_cap hε' (lt_of_le_of_lt hc' hx)).trans_le (min_le_left _ _)
 
+end GoodBases
+
+open GoodBases
+
 variable (d) in
 /-- **Good neighbourhood bases on `S^d`**: small caps. -/
 theorem sphereBasis : SphereBasis d := by
@@ -172,6 +182,8 @@ theorem sphereBasis : SphereBasis d := by
   obtain ⟨c, hc0, hc1, hcN⟩ := exists_cap_subset hN
   exact ⟨cap a c, hcN c le_rfl, mem_cap_self a hc1,
     ⟨isOpen_cap a c, ⟨a, mem_cap_self a hc1⟩, contractibleSpace_cap hc0 ⟨a, mem_cap_self a hc1⟩⟩⟩
+
+namespace GoodBases
 
 /-! ### Boxes in `C_d` -/
 
@@ -195,15 +207,15 @@ def box.fst {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} (z : box a₀ a₁ c₀ c�
 /-- The second coordinate of a point of a box, in its cap. -/
 def box.snd {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} (z : box a₀ a₁ c₀ c₁) : cap a₁ c₁ := ⟨z.1.1.2, z.2.2⟩
 
-theorem continuous_box_fst {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} :
+theorem box.continuous_fst {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} :
     Continuous (box.fst : box a₀ a₁ c₀ c₁ → cap a₀ c₀) :=
-  (continuous_fst.comp (continuous_subtype_val.comp continuous_subtype_val)).subtype_mk _
+  (_root_.continuous_fst.comp (continuous_subtype_val.comp continuous_subtype_val)).subtype_mk _
 
-theorem continuous_box_snd {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} :
+theorem box.continuous_snd {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} :
     Continuous (box.snd : box a₀ a₁ c₀ c₁ → cap a₁ c₁) :=
-  (continuous_snd.comp (continuous_subtype_val.comp continuous_subtype_val)).subtype_mk _
+  (_root_.continuous_snd.comp (continuous_subtype_val.comp continuous_subtype_val)).subtype_mk _
 
-theorem continuous_box_mk {X : Type*} [TopologicalSpace X] {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ}
+theorem box.continuous_mk {X : Type*} [TopologicalSpace X] {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ}
     {f : X → cap a₀ c₀} {g : X → cap a₁ c₁} (hf : Continuous f) (hg : Continuous g)
     (h : ∀ q, 0 ≤ inner ℝ ((f q : Sphere d) : E) (g q : Sphere d)) :
     Continuous fun q => box.mk (f q) (g q) (h q) :=
@@ -220,21 +232,21 @@ theorem contractibleSpace_box {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} (hc₀ : 
   -- The middle map `(x₀, x₁) ↦ (x₀, u)`.
   let f : C(box a₀ a₁ c₀ c₁, box a₀ a₁ c₀ c₁) :=
     ⟨fun z => box.mk (box.fst z) u (hu _ (box.fst z).2).le,
-      continuous_box_mk continuous_box_fst continuous_const _⟩
+      box.continuous_mk box.continuous_fst continuous_const _⟩
   have hA : (ContinuousMap.id _).Homotopic f := ⟨
     { toFun := fun q => box.mk (box.fst q.2) (capPath hc₁ (box.snd q.2) u q.1) (by
         change 0 ≤ inner ℝ (((box.fst q.2 : Sphere d) : E))
           (nlerp ((box.snd q.2 : Sphere d) : E) (u : Sphere d) q.1)
         rw [real_inner_comm]
-        refine inner_nlerp_nonneg_of q.1.2 ?_ ?_
+        refine inner_nlerp_nonneg_of_inner_nonneg q.1.2 ?_ ?_
         · rw [real_inner_comm]; exact q.2.1.2
         · rw [real_inner_comm]; exact (hu _ (box.fst q.2).2).le)
       continuous_toFun := by
-        refine continuous_box_mk (continuous_box_fst.comp continuous_snd)
+        refine box.continuous_mk (box.continuous_fst.comp continuous_snd)
           (Continuous.subtype_mk (Continuous.subtype_mk ?_ _) _) _
         exact Continuous.nlerp
           (continuous_subtype_val.comp (continuous_subtype_val.comp
-            (continuous_box_snd.comp continuous_snd)))
+            (box.continuous_snd.comp continuous_snd)))
           continuous_const (continuous_subtype_val.comp continuous_fst)
           fun q => (nlerp_mem_cap hc₁ (box.snd q.2).2 u.2 q.1.2).1
       map_zero_left := fun z => Subtype.ext <| Subtype.ext <| Prod.ext rfl <|
@@ -244,13 +256,13 @@ theorem contractibleSpace_box {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} (hc₀ : 
   have hB : f.Homotopic (ContinuousMap.const _ (box.mk ⟨a₀, ha₀⟩ u (hu a₀ ha₀).le)) := ⟨
     { toFun := fun q => box.mk (capPath hc₀ (box.fst q.2) ⟨a₀, ha₀⟩ q.1) u (by
         change 0 ≤ inner ℝ (nlerp ((box.fst q.2 : Sphere d) : E) a₀ q.1) ((u : Sphere d) : E)
-        exact inner_nlerp_nonneg_of q.1.2 (hu _ (box.fst q.2).2).le (hu a₀ ha₀).le)
+        exact inner_nlerp_nonneg_of_inner_nonneg q.1.2 (hu _ (box.fst q.2).2).le (hu a₀ ha₀).le)
       continuous_toFun := by
-        refine continuous_box_mk (Continuous.subtype_mk (Continuous.subtype_mk ?_ _) _)
+        refine box.continuous_mk (Continuous.subtype_mk (Continuous.subtype_mk ?_ _) _)
           continuous_const _
         exact Continuous.nlerp
           (continuous_subtype_val.comp (continuous_subtype_val.comp
-            (continuous_box_fst.comp continuous_snd)))
+            (box.continuous_fst.comp continuous_snd)))
           continuous_const (continuous_subtype_val.comp continuous_fst)
           fun q => (nlerp_mem_cap hc₀ (box.fst q.2).2 ha₀ q.1.2).1
       map_zero_left := fun z => Subtype.ext <| Subtype.ext <| Prod.ext
@@ -258,6 +270,8 @@ theorem contractibleSpace_box {a₀ a₁ : Sphere d} {c₀ c₁ : ℝ} (hc₀ : 
       map_one_left := fun z => Subtype.ext <| Subtype.ext <| Prod.ext
         (Subtype.ext <| nlerp_one _ a₀.2) rfl }⟩
   exact (contractible_iff_id_nullhomotopic _).2 ⟨_, hA.trans hB⟩
+
+end GoodBases
 
 variable (d) in
 /-- **Good neighbourhood bases on `C_d`**: small boxes (06:359-366). Given a neighbourhood of

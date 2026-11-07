@@ -38,8 +38,8 @@ and `LocalInputs` alone (`oai_route_noSC`, with Newman's theorem discharged from
 
 ## What each route assumes
 
-For the second-countable statement, the same conclusion with two sets of hypotheses (`hs_route`
-against `oai_route`), and an asymmetry:
+For the second-countable statement, the same conclusion with two sets of hypotheses
+(`hs_route_of_inputs` against `oai_route`), and an asymmetry:
 
 * HS_proof discharges both of its hypotheses: `LowerLTheory` by its model
   `HSFormal.LTheory.lowerLModel` (used in `HSFormal.padicExclusion_of_model`), and Newman's
@@ -51,9 +51,10 @@ against `oai_route`), and an asymmetry:
   5.1, without its orientation step (which stays the input `Orientation.exists_restrict`), from
   `HilbertSmith.NewmanInput` and without second countability
   (`HilbertSmith.Interface.chartReductionNoSC`); Lemma 5.2 (`HilbertSmith.Interface.collapseInput`);
-  Lemma 5.6 (`HilbertSmith.Interface.sheetsInput`); the neighbourhood bases of `S^d` and `C_d`
-  (`HilbertSmith.Interface.sphereBasis`, `HilbertSmith.Interface.closePairBasis`); and Lemma 5.7
-  (Deicyde's `HilbertSmith.homotopyExtension`). Newman's theorem is a hypothesis of `oai_route`;
+  what §6 uses of Lemma 5.6, the region `V` and its multiplier `β`
+  (`HilbertSmith.Interface.sheetsInput`); Lemma 5.7 (Deicyde's `HilbertSmith.homotopyExtension`);
+  and, from §6, the neighbourhood bases of `S^d` and `C_d` (`HilbertSmith.Interface.sphereBasis`,
+  `HilbertSmith.Interface.closePairBasis`). Newman's theorem is a hypothesis of `oai_route`;
   `oai_route_noSC` discharges it from HS_proof (`HSBridge.newmanInput`), as HS_proof's own route
   does (`HSFormal.Newman.newmanPrimeOrder`). Definition 6.3, Propositions 5.8, 6.4–6.7 and
   Theorem 6.8 are proved from the interface.
@@ -69,7 +70,8 @@ reaches neither HS_proof's L-theory nor its p-adic exclusion theorems.
 The interface's weakest point of non-vacuity is `OAIInvariant.isTest_closePair`: a model needs a
 triangulation of the close-pair test `C_d` (semialgebraic, or Whitehead's for a smooth manifold
 with boundary), or another proof of Proposition 6.6. The cross-polytope variant of the close-pair
-test (plan item B-P, on `isTest_closePair`) would avoid it; that choice is made before B-M7.
+test (plan item B-P, on `isTest_closePair`) would avoid it; that choice is made before the sheaf
+model of §§2–4 is built.
 
 So this file compares proof architectures modulo interfaces, not two complete proofs.
 
@@ -88,7 +90,7 @@ end of this file check that in the build and print the reports in the build log:
   that check is signature-level;
 * the interface fields `oai_route` assumes, generated from the structures `OAIInterface` and
   `LocalInputs`, and its other hypothesis `NewmanInput` (guarded, so adding or removing a field
-  fails the build);
+  fails the build), and the same list for `oai_route_noSC`, which has no `NewmanInput` (guarded);
 * D1's module table (plan item D1, §5.2): the HS_proof modules each HS_proof theorem reaches, split
   into the shared front (the import closure, inside HS_proof, of the modules whose declarations
   OpenAI's front would reuse: 46 modules at the pinned HS_proof) and the back end.
@@ -279,7 +281,7 @@ info: route audit: 'HSBridge.newmanInput' avoids modules under HSFormal.LTheory 
 #assert_route_avoids HSBridge.newmanInput modules [HSFormal.LTheory]
   constants [HSFormal.padicExclusion, HSFormal.Universe.padicExclusion_univ]
 
--- `oai_route_noSC` takes the same structures as `oai_route` (expanded above), and no `NewmanInput`.
+-- `oai_route_noSC` takes the same structures as `oai_route` (expanded below), and no `NewmanInput`.
 /--
 info: route assumptions of 'HSBridge.oai_route_noSC':
 O : HilbertSmith.Interface.OAIInterface

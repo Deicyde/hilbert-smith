@@ -18,9 +18,10 @@ Assumed, as the fields of `LocalInputs O`:
 Stated here and proved:
 * `CollapseInput`: Lemma 5.2 (the extended action is continuous; the orbit space is metrizable),
   proved as `HilbertSmith.Interface.collapseInput`.
-* `SheetsInput`: Lemma 5.6, proved as `HilbertSmith.Interface.sheetsInput`.
-* `SphereBasis d`, `ClosePairBasis d`: good neighbourhood bases on `S^d` (06:101-107) and `C_d`
-  (06:359-366), proved as `HilbertSmith.Interface.sphereBasis` and
+* `SheetsInput`: what §6 uses of Lemma 5.6, the region `V` and its multiplier `β`, proved as
+  `HilbertSmith.Interface.sheetsInput`;
+* and, from §6, `SphereBasis d` and `ClosePairBasis d`: the neighbourhood bases of `S^d`
+  (06:101-107) and `C_d` (06:355-366), proved as `HilbertSmith.Interface.sphereBasis` and
   `HilbertSmith.Interface.closePairBasis`.
 
 What §6 uses of Proposition 5.1, without its orientation step (which stays the input
@@ -37,11 +38,11 @@ Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLA
 * The pinch transport is part of `AveragedTest`: stating it alone needs OpenAI's pinch maps
   `P_{z,r}` as definitions. It is to be split off once they are defined.
 
-Scope and non-vacuity. Each input is stated for the actions OpenAI's text covers, or more:
-Lemma 5.2 for any action; Lemma 5.3 for any action on a connected `W`; `OrbitNull` for odd
-`d ≥ 3`, true when the maps `D k` of the interface really have degree `k`; Lemma 5.6 for faithful
-actions. `LocalAction`s of every kind are quantified over, but each input assumes what its lemma
-needs, so each holds by the cited result.
+Scope and non-vacuity. Each assumed input is stated for the actions OpenAI's text covers, or
+more: `Orientation` for any action (its first field for connected `W`); `AveragedTest` for any
+action on a connected `W`; `OrbitNull` for odd `d ≥ 3`, true when the maps `D k` of the interface
+really have degree `k`. `LocalAction`s of every kind are quantified over, but each input assumes
+what its lemma needs, so each holds by the cited result.
 -/
 
 namespace HilbertSmith.Interface
@@ -65,13 +66,12 @@ structure Orientation (OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction 
     OP (A.stabilize d hd)
 
 /-- **Lemma 5.2** (collapse and compactification; statement 05:88-103, proof 05:105-133), the
-parts not already proved: the action extended to `W⁺` is jointly continuous, and the orbit space
-`Y = W⁺/ℤ_[p]` is metrizable. (The
-collapse `c` is continuous by Deicyde's `HilbertSmith.continuous_collapse`, and `W⁺` is compact
-metrizable by `HilbertSmith.metrizableSpace_onePoint`.) Deicyde proves both parts for
-multiplicative actions (`HilbertSmith.continuousSMul_onePoint`,
-`HilbertSmith.metrizableSpace_orbitQuotient`); the additive bridge is
-`HilbertSmith.Interface.collapseInput`, which proves this statement. -/
+parts beyond Deicyde's multiplicative results: the action extended to `W⁺` is jointly continuous,
+and the orbit space `Y = W⁺/ℤ_[p]` is metrizable. (The collapse `c` is continuous by Deicyde's
+`HilbertSmith.continuous_collapse`, and `W⁺` is compact metrizable by
+`HilbertSmith.metrizableSpace_onePoint`.) Deicyde proves both parts for multiplicative actions
+(`HilbertSmith.continuousSMul_onePoint`, `HilbertSmith.metrizableSpace_orbitQuotient`); the
+additive bridge is `HilbertSmith.Interface.collapseInput`, which proves this statement. -/
 def CollapseInput : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k),
     ContinuousVAdd ℤ_[p] (OnePoint A.W) ∧ TopologicalSpace.MetrizableSpace A.Y
@@ -119,7 +119,7 @@ def OrbitNull (d : ℕ) (δD : DegreeMaps d) : Prop :=
       ∃ s, ((δD.comp s).comp v).Nullhomotopic
 
 /-- **Lemma 5.6** (finite quotient sheets; statement 05:386-407, proof 05:409-434): for a faithful
-action and every `j ≥ 1` there is a sheet region `V` with its multiplier `β` of (5.2). Proved as
+action and every `j ≥ 1` there is a sheet region `V` with its multiplier `β` of (5.4). Proved as
 `HilbertSmith.Interface.sheetsInput`. -/
 def SheetsInput : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k), A.Faithful →
@@ -131,9 +131,10 @@ as `HilbertSmith.Interface.sphereBasis`, with small caps. -/
 def SphereBasis (d : ℕ) : Prop :=
   ∀ x : Sphere d, HasGoodBasisAt x
 
-/-- `C_d` has a basis of contractible open neighbourhoods at every point: it is a smooth
-`2d`-manifold with boundary (06:359-366). Proved as `HilbertSmith.Interface.closePairBasis`, with
-explicit contractions. -/
+/-- `C_d` (06:355-358) has a basis of contractible open neighbourhoods at every point. OpenAI
+derives this from `C_d` being a smooth `2d`-manifold with boundary (06:359-366);
+`HilbertSmith.Interface.closePairBasis` proves it without charts, by explicit contractions of
+cap-by-cap boxes. -/
 def ClosePairBasis (d : ℕ) : Prop :=
   ∀ z : ClosePair d, HasGoodBasisAt z
 

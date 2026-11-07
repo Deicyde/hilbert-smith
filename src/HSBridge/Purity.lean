@@ -426,10 +426,22 @@ def elabAssertRouteReachesByValue : CommandElab
   | `(#assert_route_reaches_by_value $id $pre) => runAssertRouteReaches id pre true
   | _ => throwUnsupportedSyntax
 
+/-- Whether `pre` prefixes the name of some loaded HS_proof module or of some constant an HS_proof
+module declares. -/
+def matchesHSProof (env : Environment) (P : Provenance) (pre : Name) : Bool := Id.run do
+  for i in [0:env.header.modules.size] do
+    unless P.hs[i]! do continue
+    if pre.isPrefixOf env.header.modules[i]!.module then return true
+    if env.header.moduleData[i]!.constNames.any pre.isPrefixOf then return true
+  return false
+
 /-- `#assert_route_avoids c modules [M₁, …] constants [c₁, …]` fails unless `c` reaches no
-constant of an HS_proof module under any `Mᵢ` and none of the constants `cⱼ`. It checks that a
-discharge (such as `HSBridge.newmanInput`) stays away from the parts of HS_proof it should not
-use. -/
+HS_proof constant under any `Mᵢ` and none of the constants `cⱼ`. A reached constant is under `Mᵢ`
+when `Mᵢ` prefixes the name of an HS_proof module declaring it, or its own name: HS_proof declares
+constants named under `HSFormal.LTheory` outside `HSFormal/LTheory/`, for instance. It checks that a discharge
+(such as `HSBridge.newmanInput`) stays away from the parts of HS_proof it should not use. It fails
+closed: every `Mᵢ` must prefix some HS_proof module or constant, every `cⱼ` must be an HS_proof
+constant, and the walk must meet no constant of undecided provenance. -/
 syntax (name := assertRouteAvoids) "#assert_route_avoids " ident
   ppSpace &"modules" " [" ident,* "]" ppSpace &"constants" " [" ident,* "]" : command
 
@@ -441,15 +453,27 @@ def elabAssertRouteAvoids : CommandElab
     let prefixes := mods.getElems.map (·.getId)
     let env ← getEnv
     let P := provenance env
+    let notHS := consts.filter (!P.isHS env ·)
+    unless notHS.isEmpty do
+      throwError m!"route audit: not constants of HS_proof:" ++ nameLines notHS
+    let stale := prefixes.filter (!matchesHSProof env P ·)
+    unless stale.isEmpty do
+      throwError m!"route audit: prefixes of no HS_proof module or constant:" ++ nameLines stale
     let res := audit env c (descend := true) (P := P)
-    let reachedMods := res.reached.toArray.flatMap (P.hsHolders env)
-    let prefixHits := prefixes.filter fun pre => reachedMods.any pre.isPrefixOf
+    throwIfUndecided c res
+    let reached := res.reached.toArray
+    let under (pre : Name) (d : Name) : Bool :=
+      pre.isPrefixOf d || (P.hsHolders env d).any pre.isPrefixOf
+    let prefixHits := prefixes.filter fun pre => reached.any (under pre)
     let constHits := consts.filter res.reached.contains
     let list (ns : Array Name) : MessageData :=
       MessageData.joinSep (ns.toList.map toMessageData) ", "
     unless prefixHits.isEmpty && constHits.isEmpty do
-      throwError m!"route audit: '{c}' reaches constants of modules under {list prefixHits} and \
-        the constants {list constHits}"
+      let modPart := if prefixHits.isEmpty then m!"" else
+        m!"constants under {list prefixHits}"
+      let sep := if prefixHits.isEmpty || constHits.isEmpty then m!"" else m!" and "
+      let constPart := if constHits.isEmpty then m!"" else m!"the constants {list constHits}"
+      throwError m!"route audit: '{c}' reaches " ++ modPart ++ sep ++ constPart
     logInfo m!"route audit: '{c}' avoids modules under {list prefixes} and the constants \
       {list consts}"
   | _ => throwUnsupportedSyntax
