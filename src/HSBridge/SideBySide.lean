@@ -94,6 +94,8 @@ end of this file check that in the build and print the reports in the build log:
 * the interface fields `oai_route` assumes, generated from the structures `OAIInterface` and
   `LocalInputs`, and its other hypothesis `NewmanInput` (guarded, so adding or removing a field
   fails the build), and the same list for `oai_route_noSC`, which has no `NewmanInput` (guarded);
+* the orientation predicate of `OAIInterface.chars`, `LocalAction.OrientationPreserving`, printed by
+  a guarded `#check`, since the lists show the fields of `chars` but not its predicate;
 * D1's module table (plan item D1, §5.2): the HS_proof modules each HS_proof theorem reaches, split
   into the shared front (the import closure, inside HS_proof, of the modules whose declarations
   OpenAI's front would reuse: 46 modules at the pinned HS_proof) and the back end.
@@ -296,6 +298,17 @@ T : HilbertSmith.Interface.LocalInputs O
 -/
 #guard_msgs (whitespace := lax) in
 #route_assumptions oai_route_noSC
+
+-- The assumption lists print the fields of `chars`, not its predicate; this pins the predicate, so
+-- that `OrbitCharacterTheory (inv j) (fun _ => True)` (an unconditional `proj_adj`) would fail.
+/--
+info: HilbertSmith.Interface.OAIInterface.chars : (self : HilbertSmith.Interface.OAIInterface) →
+  (j : ℕ) →
+    HilbertSmith.Interface.OrbitCharacterTheory (self.inv j) fun {p} [Fact (Nat.Prime p)] {k} =>
+      HilbertSmith.Interface.LocalAction.OrientationPreserving
+-/
+#guard_msgs (whitespace := lax) in
+#check @HilbertSmith.Interface.OAIInterface.chars
 
 /--
 info: route audit: the value of 'HSBridge.hs_route' depends on constants from modules under

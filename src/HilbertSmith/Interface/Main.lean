@@ -216,8 +216,7 @@ end OrbitCharacterTheory
 /-- **The contradiction from a faithful local action** (the proof of Theorem 1.2, 06:502-516,
 after Proposition 5.1). Given a faithful action of `ℤ_[p]` on a connected open `O ⊆ ℝ^n`: an open
 subgroup acts preserving orientation (`orientation.exists_restrict`, by continuity at `0`);
-stabilize to
-`W = O × ℝ^{d−n}` with `d = 2n + 3`; Lemma 5.3 (`averagedTest`) gives the test `a`
+stabilize to `W = O × ℝ^{d−n}` with `d = 2n + 3`; Lemma 5.3 (`averagedTest`) gives the test `a`
 after a further open subgroup, with `a ∘ q` homotopic to a pinch, so (5.1) holds
 (`aqc_homotopic_id`); the pinch transport (`pinchTransport`, through `hpinch_of`) and
 Proposition 5.8 (`moveTest`) move it; and Theorem 6.8 (`false_of_test`) is the contradiction. -/

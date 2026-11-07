@@ -11,12 +11,14 @@ OpenAI's Lemma 5.3 (statement 05:135-150, proof 05:152-183), in its pinch form
 (`HilbertSmith.Interface.AveragedTest`): for a local action on a nonempty `W`, after replacing
 `ℤ_[p]` by an open subgroup, there is `a : Y → S^d` with `a ∘ q` homotopic on `W⁺` to a pinch.
 
-The proof is OpenAI's. Fix a pinch `P = P_{z,r}` (`LocalAction.pinch`). By compactness of `W⁺`
-and continuity of the extended action (Lemma 5.2), a small open subgroup `H = p^j ℤ_[p]` moves
-every value of `P` by less than `1/4`. Average over `H` with its Haar probability measure:
-`A(w) = ∫_H P(h w) dμ_H(h)` is continuous, `H`-invariant and within `1/4` of `P`, so the segments
-from `P` to `A` miss `0`, and normalizing them is a homotopy from `P` to the invariant map
-`A/‖A‖`, which descends to `Y`. (OpenAI's bound is `1/2`; any bound below `1` works.)
+The proof is OpenAI's. Fix a pinch `P = P_{z,r}` (`LocalAction.pinch`). By compactness of `W⁺` and
+continuity of the extended action (Lemma 5.2), a small open subgroup `H = p^j ℤ_[p]` moves every
+value of `P` by less than `1/4`. Here the action of `H` is `A.restrict j`, of `ℤ_[p]` through `g ↦
+p^j g`, and `μ_H` is the Haar probability measure on `ℤ_[p]`, whose image under `g ↦ p^j g` is
+OpenAI's `μ_H`. Average over `H`: `A(w) = ∫_H P(h w) dμ_H(h)` is continuous, `H`-invariant and
+within `1/4` of `P`, so the segments from `P` to `A` miss `0`, and normalizing them is a homotopy
+from `P` to the invariant map `A/‖A‖`, which descends to `Y`. (OpenAI's bound is `1/2`; any bound
+below `1` works.)
 -/
 
 namespace HilbertSmith.Interface
@@ -35,7 +37,7 @@ theorem averagedTest (d : ℕ) : AveragedTest d := by
   have hzr : closedBall z r ⊆ A.W := (closedBall_subset_ball (half_lt_self hr₀)).trans hball
   set P := A.pinch z r hr hzr
   have := A.continuousVAdd_onePoint
-  -- A small open subgroup moves every value of `P` by less than `1/4` (05:163-167).
+  -- A small open subgroup moves every value of `P` by less than `1/4` (05:163-168).
   have hG : Continuous fun q : ℤ_[p] × OnePoint A.W =>
       ‖(P (q.1 +ᵥ q.2) : EuclideanSpace ℝ (Fin (d + 1))) - P q.2‖ :=
     ((continuous_subtype_val.comp (P.continuous.comp continuous_vadd)).sub
@@ -51,20 +53,21 @@ theorem averagedTest (d : ℕ) : AveragedTest d := by
   have : TopologicalSpace.MetrizableSpace (OnePoint B.W) := metrizableSpace_onePoint B.W B.isOpen
   have : LocallyCompactSpace B.W := locallyCompactSpace_coe B.W B.isOpen
   set PB := B.pinch z r hr hzr
+  have hPB : PB = P := A.restrict_pinch j z r hr hzr
   have hbound : ∀ (g : ℤ_[p]) (w : OnePoint B.W),
       ‖(PB (g +ᵥ w) : EuclideanSpace ℝ (Fin (d + 1))) - PB w‖ < 1 / 4 := by
     intro g w
     have hw := htU (hj (mem_padicSubgroup.2 (dvd_mul_right ((p : ℤ_[p]) ^ j) g))) w (mem_univ _)
     induction w using OnePoint.rec with
     | infty => simp
-    | coe w => exact hw
+    | coe w => rw [hPB]; exact hw
   -- The Haar probability measure on `ℤ_[p]`.
   borelize ℤ_[p]
   let μ : Measure ℤ_[p] := Measure.addHaarMeasure ⊤
   have : IsProbabilityMeasure μ :=
     ⟨by simpa using
       Measure.addHaarMeasure_self (K₀ := (⊤ : TopologicalSpace.PositiveCompacts ℤ_[p]))⟩
-  -- The average `a'(w) = ∫ P(g + w) dμ(g)` (05:168-171).
+  -- The average `a'(w) = ∫ P(g + w) dμ(g)` (05:170-172).
   let F : OnePoint B.W → ℤ_[p] → EuclideanSpace ℝ (Fin (d + 1)) := fun w g => (PB (g +ᵥ w) : _)
   have hF : Continuous (Function.uncurry F) :=
     continuous_subtype_val.comp (PB.continuous.comp (continuous_vadd.comp continuous_swap))
@@ -89,7 +92,7 @@ theorem averagedTest (d : ℕ) : AveragedTest d := by
       ∫ g, (PB (g +ᵥ w) : EuclideanSpace ℝ (Fin (d + 1))) ∂μ
     simp_rw [← add_vadd]
     exact integral_add_right_eq_self (fun g => (PB (g +ᵥ w) : EuclideanSpace ℝ (Fin (d + 1)))) h
-  -- The segments from `P` to `a'` miss `0` (05:172-174).
+  -- The segments from `P` to `a'` miss `0` (05:174-176).
   have hne0 : ∀ (s : ℝ), 0 ≤ s → s ≤ 1 → ∀ w,
       (1 - s) • (PB w : EuclideanSpace ℝ (Fin (d + 1))) + s • a' w ≠ 0 := by
     intro s hs0 hs1 w h0

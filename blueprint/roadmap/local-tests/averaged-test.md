@@ -2,7 +2,7 @@
 article_id: af_ae953417fe55e04c4cac64f9
 declaration: lemma
 origin: cited
-lean: HilbertSmith.Interface.averagedTest HilbertSmith.Interface.aqc_homotopic_id HilbertSmith.Interface.LocalAction.pinch HilbertSmith.Interface.LocalAction.pinch_comp_c_homotopic
+lean: HilbertSmith.Interface.averagedTest HilbertSmith.Interface.aqc_homotopic_id HilbertSmith.Interface.LocalAction.pinch HilbertSmith.Interface.LocalAction.pinch_comp_c_homotopic HilbertSmith.Interface.LocalAction.orientationPreserving_restrict HilbertSmith.Interface.LocalAction.restrict_faithful
 ---
 
 # Averaged degree-one test
@@ -25,8 +25,12 @@ homotopic on $W^+$ to a pinch $P_{z,r}$ (`LocalAction.pinch`, with
 $P = $ `sphereEquiv` composed with the radial blow-up of the open unit
 ball). In place of $\deg(aqc) = 1$, `aqc_homotopic_id` proves
 $aqc \simeq \mathrm{id}$, since $P_{z,r} c \simeq \mathrm{id}$
-(`pinch_comp_c_homotopic`); no degree is defined. Persistence of
-orientation preservation is `LocalAction.orientationPreserving_restrict`.
+(`pinch_comp_c_homotopic`); no degree is defined. The homotopy is free:
+that it fixes $\infty$ and is constant outside $H\overline B(z, r)$
+(05:178-179) is not formalized, and no consumer uses it. Persistence of
+faithfulness and of orientation preservation is
+`LocalAction.restrict_faithful` and
+`LocalAction.orientationPreserving_restrict`.
 
 ## Sources
 

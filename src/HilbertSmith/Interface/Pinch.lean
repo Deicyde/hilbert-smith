@@ -378,6 +378,10 @@ def pinch (z : A.E) (r : ℝ) (hr : 0 < r) (hzr : closedBall z r ⊆ A.W) :
     · exact A.sphereEquiv.continuous.comp ((pinchEMap z r 1 hr zero_le_one).continuous.comp
         (continuous_coe.comp continuous_subtype_val))
 
+/-- The pinch does not depend on the action: `A.restrict j` has the same `W⁺` and pinches. -/
+theorem restrict_pinch (j : ℕ) (z : A.E) (r : ℝ) (hr : 0 < r) (hzr : closedBall z r ⊆ A.W) :
+    (A.restrict j).pinch z r hr hzr = A.pinch z r hr hzr := rfl
+
 theorem pinch_apply_infty (z : A.E) (r : ℝ) (hr : 0 < r) (hzr : closedBall z r ⊆ A.W) :
     A.pinch z r hr hzr ∞ = A.sphereEquiv ∞ := rfl
 

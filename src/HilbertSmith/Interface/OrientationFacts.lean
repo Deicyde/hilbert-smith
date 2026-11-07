@@ -17,10 +17,11 @@ degrees or homology.
   sphere of radius `1/2`, so a straight line joins them (`exists_padicSubgroup_localMap`); and on a
   connected `W` the homotopy class of a local map does not depend on `(x, ε)`
   (`localMap_homotopic_of_admissible`, along the ball paths of `exists_ballPath`).
-* `LocalAction.orientationPreserving_stabilize`: with the product orientation on `W × ℝ^m` and the
-  trivial action on `ℝ^m`, the action still preserves orientation (05:75-80). The local map of the
-  product is `(v₁, v₂) ↦ (ℓ(v₁), εv₂)`, where `ℓ` vanishes only at `0`; a homotopy of `ℓ` on the
-  punctured ball is coned off to the whole ball by `v₁ ↦ ‖v₁‖ • h(v₁)/‖h(v₁)‖`.
+* `LocalAction.orientationPreserving_stabilize`: stabilization keeps orientation preservation.
+  OpenAI gives `W = O × ℝ^{d−n}` the product orientation (05:75-80); here the local maps of
+  `W × ℝ^m` under the trivial action on `ℝ^m` are `(v₁, v₂) ↦ (ℓ(v₁), εv₂)`, where `ℓ` vanishes
+  only at `0`; a homotopy of `ℓ` on the punctured ball is coned off to the whole ball by
+  `v₁ ↦ ‖v₁‖ • h(v₁)/‖h(v₁)‖`.
 * `LocalAction.orientationPreserving_restrict` (in `Orientation.lean`): persistence under the
   replacements of Lemma 5.3 (05:181-182).
 
@@ -466,8 +467,8 @@ theorem exists_orientationPreserving_restrict (hconn : IsConnected A.W) :
 
 /-! ### Stabilization -/
 
-/-- An admissible pair of `W × ℝ^m` gives an admissible pair of `W`: by `ball_prod_same`, the ball
-of the product is the product of the balls. -/
+/-- An admissible pair of `W × ℝ^m` gives an admissible pair of `W`: the product carries the sup
+distance, so `(y, x₂)` lies in `B(x, ε)` whenever `y` lies in `B(x₁, ε)`. -/
 theorem admissible_stabilize (d : ℕ) (hd : k ≤ d) {x : A.E × EuclideanSpace ℝ (Fin (d - k))}
     {ε : ℝ} (h : (A.stabilize d hd).Admissible x ε) : A.Admissible x.1 ε := by
   refine ⟨h.1, fun y hy => ?_⟩

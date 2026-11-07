@@ -19,8 +19,8 @@ second-countable theorem for manifolds in `Type`, `HSFormal.padicExclusion` (res
 
 Only the reductions differ. Both proofs then use HS_proof's back end, its second-countable theorem
 with its L-theory, and neither uses OpenAI's §6. OpenAI's own route without second countability,
-`HSBridge.oai_route_noSC`, still assumes `OAIInterface` and `LocalInputs` (`Orientation`,
-`AveragedTest`, `OrbitNull`).
+`HSBridge.oai_route_noSC`, still assumes `OAIInterface` and `LocalInputs` (Lemmas 5.4 and 5.5
+combined, `OrbitNull`).
 
 Formal Conjectures' `Hilbert5.hilbert_smith_padic_formulation` is the same statement with its
 binders in another order, and `n` and `X` implicit; both proofs give it (the two `example`s

@@ -30,8 +30,9 @@ Stated here and proved:
   `HilbertSmith.Interface.closePairBasis`.
 
 What §6 uses of Proposition 5.1 is not an input either: `HilbertSmith.Interface.chartReductionNoSC`
-proves it from `HilbertSmith.NewmanInput`, without second countability, and
-`Orientation.exists_restrict` its orientation step. Lemma 5.7 is Deicyde's
+proves it from `HilbertSmith.NewmanInput`, without second countability, and its orientation step is
+proved separately as `LocalAction.exists_orientationPreserving_restrict`
+(`orientation.exists_restrict`). Lemma 5.7 is Deicyde's
 `HilbertSmith.homotopyExtension`.
 
 Departures:
@@ -45,7 +46,7 @@ Departures:
   brief); the pinch maps are `LocalAction.pinch`.
 * The orientation step of Proposition 5.1 is proved by continuity of the action at `0`, not by the
   preserve-or-reverse dichotomy, which needs degree theory (decision 2 of the lead's B-M4 brief;
-  `Orientation.exists_restrict`).
+  proved as `LocalAction.exists_orientationPreserving_restrict`, `orientation.exists_restrict`).
 
 Scope and non-vacuity. `OrbitNull` is stated for odd `d ≥ 3`, and is true when the maps `D k` of
 the interface really have degree `k`; it quantifies over every compact metrizable space with an
@@ -70,8 +71,9 @@ structure Orientation (OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction 
   "Faithfulness and orientation preservation persist under this replacement", 05:181-182). -/
   restrict : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k) (j : ℕ), OP A →
     OP (A.restrict j)
-  /-- With the product orientation on `W = O × ℝ^{d−n}` and the trivial action on the second
-  factor, the action still preserves orientation (05:75-80). -/
+  /-- Stabilization keeps orientation preservation. OpenAI gives `W = O × ℝ^{d−n}` the product
+  orientation (05:75-80); here the local maps of `W × ℝ^m` under the trivial action on `ℝ^m` are
+  `(v₁, v₂) ↦ (ℓ(v₁), εv₂)`. -/
   stabilize : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k) (d : ℕ) (hd : k ≤ d), OP A →
     OP (A.stabilize d hd)
 

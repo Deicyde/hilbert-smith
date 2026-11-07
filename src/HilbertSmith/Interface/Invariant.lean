@@ -261,13 +261,13 @@ structure OAIInterface where
   `LocalAction.OrientationPreserving`: every local map `v ↦ g(x + εv) − g(x)` is homotopic in
   `E ∖ {0}` to that of `0`, `v ↦ εv` (decision 3 of the lead's B-M4 brief).
 
-  OpenAI's model satisfies `proj_adj` with it. Lemma 6.2's proof uses that `g_*` is the identity
-  on the local homology `H_k(W, W ∖ x)` (06:160-162). By excision, `H_k(W, W ∖ x)` is
-  `H_k(B, B ∖ x)` for the ball `B = B(x, ε)`, which is `H̃_{k−1}(B ∖ x) ≅ H̃_{k−1}(E ∖ 0)` through
-  `v ↦ (v − x)/ε`; under these identifications `g_*` is induced by the local map of `g` at
-  `(x, ε)`, followed by the radial deformation of `E ∖ 0`. Homotopic maps induce equal maps on
-  homology, so a local map homotopic to `v ↦ εv` gives `g_* = id`. The predicate involves no choice
-  of orientation of `E`. -/
+  OpenAI's model satisfies `proj_adj` with it. Lemma 6.2's proof uses orientation preservation "by
+  naturality of orientation" (06:160-162), read as local homology (decision 3 of the lead's B-M4
+  brief). By excision and translation, both `H_k(W, W ∖ x)` and `H_k(W, W ∖ gx)` are identified
+  with `H_k(E, E ∖ 0) ≅ H̃_{k−1}(E ∖ 0)`; under these identifications `g_*` is induced by the local
+  map of `g` at `x`, since the punctured unit ball includes into `E ∖ 0` as a homotopy
+  equivalence. Homotopic local maps induce equal maps, so a local map homotopic to `v ↦ εv` gives
+  `g_* = id`. The predicate involves no choice of orientation of `E`. -/
   chars : ∀ j : ℕ, OrbitCharacterTheory (inv j) LocalAction.OrientationPreserving
 
 end

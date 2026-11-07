@@ -46,10 +46,10 @@ a faithful action of `ℤ_[p]` on a connected open subset of an `n`-dimensional 
 
 OpenAI's Proposition 5.1 says more: an open subgroup `G ≅ ℤ_[p]` acts faithfully and preserves
 orientation on a connected `G`-invariant open subset `O` of a chart of `M`, which is then regarded
-as an open subset of `ℝⁿ` (05:16-20). The formal statement drops the subgroup and the chart,
-because `Main` uses neither, and orientation preservation, which is the input
-`Orientation.exists_restrict`. It is the second-countable case of `ChartReductionNoSC`
-(`chartReduction_of_noSC`). -/
+as an open subset of `ℝⁿ` (05:16-20). The formal statement drops the subgroup and the chart, because
+`Main` uses neither, and orientation preservation, which is proved separately as
+`LocalAction.exists_orientationPreserving_restrict` (`orientation.exists_restrict`). It is the
+second-countable case of `ChartReductionNoSC` (`chartReduction_of_noSC`). -/
 def ChartReduction : Prop :=
   ∀ (p : ℕ) [Fact p.Prime] (n : ℕ) (M : Type u) [TopologicalSpace M] [T2Space M]
     [SecondCountableTopology M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [ConnectedSpace M]
