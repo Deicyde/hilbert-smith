@@ -153,7 +153,11 @@ in either order. With `FCChallenge` imported first, as here, Lean's index of dec
 `FCChallenge`, while the kernel holds `FCSolution`'s body, which uses
 `HSFormal.Universe.padicExclusion_univ`. An audit that trusted the index and counted only modules
 under `HSFormal` as HS_proof would not enter the constant (`FCChallenge` imports no HS_proof module)
-and would pass it. Both modules belong to HS_proof's package, so the audit catches it.
+and would pass it. In the other order Lean's index names `FCSolution` and the kernel holds
+`FCChallenge`'s `sorry` body, so such an audit would again pass it, while `#print axioms`, which
+reads the axioms recorded for `FCSolution`'s copy, would report no `sorryAx`: the statement would
+look proved without HS_proof. Both modules belong to HS_proof's package, so the audit catches the
+constant in either order.
 
 No theorem of ours is built on it here: `#print axioms` reads the axioms recorded for the module
 Lean's index names, so it would report `sorryAx` for such a theorem although the kernel holds the
