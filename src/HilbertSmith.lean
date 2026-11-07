@@ -11,6 +11,7 @@ import HilbertSmith.Symmetrization
 import HilbertSmith.SymmetricAddition
 import HilbertSmith.Statements
 import HilbertSmith.Inputs
+import HilbertSmith.Interface.Main
 
 namespace HilbertSmith
 

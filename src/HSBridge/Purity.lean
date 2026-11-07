@@ -14,9 +14,9 @@ The audit walks every constant a declaration depends on, through types and value
 HS_proof's library `HSFormal`. Constants are attributed to `HSFormal` by the module that declares
 them, not by their names, so that declarations outside the `HSFormal` namespace are caught too.
 This errs on the safe side: an auxiliary lemma that Lean generates on demand for a Mathlib
-definition (such as the congruence lemma `Homeomorph.addRight.congr_simp`) belongs to the module where it was
-first generated, which may be an `HSFormal` module, and then counts as `HSFormal`. The audit can
-thus report a use of `HSFormal` that is harmless, but it cannot miss one.
+definition (such as the congruence lemma `Homeomorph.addRight.congr_simp`) belongs to the module
+where it was first generated, which may be an `HSFormal` module, and then counts as `HSFormal`.
+The audit can thus report a use of `HSFormal` that is harmless, but it cannot miss one.
 
 The walk does not enter constants of modules that do not import `HSFormal`, directly or not:
 such a constant can only mention constants of its own module and the modules it imports. This
