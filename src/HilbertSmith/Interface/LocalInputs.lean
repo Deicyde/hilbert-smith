@@ -89,7 +89,9 @@ def CollapseInput : Prop :=
 /-- **Lemma 5.3** (an averaged degree-one test; statement 05:135-150, proof 05:152-183), in
 OpenAI's pinch form (05:148-149): for a local action on a nonempty `W`, after replacing `ℤ_[p]` by
 an open subgroup `p^j ℤ_[p]`, there is `a : Y → S^d` such that `a ∘ q` is homotopic on `W⁺` to a
-pinch `P_{z,r}` (`LocalAction.pinch`) supported in a round ball `B̄(z, r) ⊆ W`.
+pinch `P_{z,r}` (`LocalAction.pinch`) supported in a closed ball `B̄(z, r) ⊆ W` of `A.E`'s norm
+(OpenAI's round ball; for the stabilized `W = O × ℝ^{d−n}` it is a product of round balls, and the
+proof uses no roundness).
 
 Departure (decision 1 of the lead's B-M4 brief): OpenAI states `deg(aqc) = 1` (5.1) in the same
 lemma; here it is the theorem `HilbertSmith.Interface.aqc_homotopic_id`, since `P_{z,r} c ≃ id`

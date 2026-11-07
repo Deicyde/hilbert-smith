@@ -3,10 +3,11 @@ import HilbertSmith.Interface.LocalInputs
 /-!
 # Moving a test into a prescribed open set
 
-Proposition 5.8 of OpenAI's preprint, from the pinch transport (`PinchTransport`, used through
-`hpinch_of` with Lemma 5.3's pinch form) and Lemmas 5.4 and 5.5 (`OrbitNull`), which are fields of
-`HilbertSmith.Interface.LocalInputs`, Lemma 5.2 (`CollapseInput`, proved as
-`HilbertSmith.Interface.collapseInput`) and Lemma 5.7 (Deicyde's `HilbertSmith.homotopyExtension`).
+Proposition 5.8 of OpenAI's preprint (`moveTest`), from Lemmas 5.4 and 5.5 (`OrbitNull`, a field of
+`HilbertSmith.Interface.LocalInputs`), Lemma 5.2 (`CollapseInput`, proved as `collapseInput`) and
+Lemma 5.7 (`HilbertSmith.homotopyExtension`). Its hypothesis comes from Lemma 5.3's pinch form
+through `hpinch_of`, with the pinch transport (05:492-504) proved here as `pinchTransport` from
+`exists_ballPath`.
 -/
 
 namespace HilbertSmith.Interface

@@ -19,7 +19,11 @@ uses that `P_{z,r} c` has degree one. This file chooses `P` so that no degree is
   constant `ξ` off `K` (`LocalAction.continuous_pinchFun`, as at 05:501-504).
 * `P_{z,r} c` is homotopic to the identity (`LocalAction.pinch_comp_c_homotopic`): it is
   `sphereEquiv ∘ Ψ_{z,r,1} ∘ sphereEquiv⁻¹`, and `Ψ_{z,r,1} ≃ Ψ_{z,r,0} ≃ Ψ_{0,1,0} = id` by moving
-  the parameters. This replaces "`P_{z,r} c` has degree one".
+  the parameters. This replaces "`P_{z,r} c` has degree one" (05:158-161).
+* **Ball paths** (`exists_ballPath`, 05:495-503): in a connected open `W`, two closed balls are
+  joined by a path of centres and radii whose closed balls stay in one compact `K ⊆ W`; along it
+  the pinches form a continuous family, which gives the pinch transport
+  (`HilbertSmith.Interface.pinchTransport`).
 -/
 
 namespace HilbertSmith.Interface
@@ -246,6 +250,12 @@ theorem pinchEMap_one_homotopic_id (z : E) {r : ℝ} (hr : 0 < r) :
   change (pinchEMap z r 0 hr le_rfl).Homotopic (pinchEMap z r 1 hr zero_le_one) at h₂
   exact (h₁.trans h₂).symm
 
+end Blowup
+
+section BallPath
+
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
+
 /-- **Ball paths** (05:495-503): in a connected open `W ⊆ E`, two closed balls in `W` are joined by
 a path of centres and radii whose radii stay positive and whose closed balls all lie in one compact
 `K ⊆ W`. Join the centres by a path in `W`; its compact image has a closed `δ`-neighbourhood in `W`;
@@ -310,7 +320,7 @@ theorem exists_ballPath {W : Set E} (hW : IsOpen W) (hconn : IsConnected W)
     refine ⟨by nlinarith, fun v hv => Or.inr (closedBall_subset_closedBall ?_ hv)⟩
     nlinarith
 
-end Blowup
+end BallPath
 
 namespace LocalAction
 
@@ -396,7 +406,7 @@ theorem pinch_comp_c (z : A.E) {r : ℝ} (hr : 0 < r) (hzr : closedBall z r ⊆ 
       rfl
 
 /-- **`P_{z,r} c` is homotopic to the identity** of `S^k`, OpenAI's "`P_{z,r} c` has degree one"
-(05:160) without degrees. -/
+(05:158-161) without degrees. -/
 theorem pinch_comp_c_homotopic (z : A.E) {r : ℝ} (hr : 0 < r) (hzr : closedBall z r ⊆ A.W) :
     ((A.pinch z r hr hzr).comp A.c).Homotopic (ContinuousMap.id _) := by
   rw [A.pinch_comp_c z hr hzr]

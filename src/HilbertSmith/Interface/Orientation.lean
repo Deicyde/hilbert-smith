@@ -5,8 +5,10 @@ import HilbertSmith.Interface.Spaces
 
 OpenAI's §5 asks that the action preserve orientation (Proposition 5.1, 05:68-72; after
 stabilization, 05:75-80; under the replacements of Lemma 5.3, 05:181-182), and Lemma 6.2's proof
-uses it through local homology: `g_*` acts as the identity on `H_k(W, W ∖ x)` (06:160-162). This
-file states orientation preservation concretely, with no homology and no degree.
+uses it "by naturality of orientation" (06:160-162). Reading that as local homology (`g_*` is the
+identity on `H_k(W, W ∖ x) → H_k(W, W ∖ gx)` under the orientation classes) is decision 3 of the
+lead's B-M4 brief. This file states orientation preservation concretely, with no homology and no
+degree.
 
 For `(x, ε)` with `0 < ε` and the open ball `B(x, ε)` inside `W`, and `g ∈ ℤ_[p]`, the **local
 map** of `g` at `(x, ε)` sends a point `v ≠ 0` of the open unit ball to `g(x + εv) − g(x)`, a
@@ -14,9 +16,11 @@ nonzero vector since `g` acts injectively. An action **preserves orientation** w
 `g` and every such `(x, ε)`, this local map is homotopic, as a map into `E ∖ {0}`, to the local map
 of `0`, which is `v ↦ εv`.
 
-This implies the local-homology notion: by excision `H_k(W, W ∖ x) ≅ H̃_{k−1}(E ∖ 0)` through the
-punctured ball at `x`, `g_*` corresponds to the map induced by the local map, and homotopic maps
-induce equal maps on homology.
+This implies the local-homology notion. By excision and translation, both `H_k(W, W ∖ x)` and
+`H_k(W, W ∖ gx)` are identified with `H_k(E, E ∖ 0) ≅ H̃_{k−1}(E ∖ 0)`; under these
+identifications `g_*` is induced by the local map of `g` at `x`, since the punctured unit ball
+includes into `E ∖ 0` as a homotopy equivalence. Homotopic local maps induce equal maps, so a local
+map homotopic to `v ↦ εv` gives `g_* = id`.
 
 ## Main definitions
 
@@ -90,7 +94,7 @@ theorem localVec_eq_zero_iff (g : ℤ_[p]) {x : A.E} {ε : ℝ} (h : A.Admissibl
   rw [localVec, sub_eq_zero, Subtype.val_inj, vadd_left_cancel_iff, ballPoint,
     Subtype.mk.injEq, add_eq_left, smul_eq_zero, or_iff_right h.1.ne']
 
-/-- The local map of `0` is `v ↦ εv`. -/
+/-- For `g = 0`, the vector `g(x + εv) − g(x)` is `εv`. -/
 theorem localVec_zero {x : A.E} {ε : ℝ} (h : A.Admissible x ε) (v : ball (0 : A.E) 1) :
     A.localVec 0 h v = ε • (v : A.E) := by
   simp [localVec, ballPoint]
