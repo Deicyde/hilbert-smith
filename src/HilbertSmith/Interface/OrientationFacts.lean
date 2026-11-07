@@ -517,6 +517,95 @@ theorem orientation : Orientation LocalAction.OrientationPreserving where
   restrict A j hA := A.orientationPreserving_restrict j hA
   stabilize A d hd hA := A.orientationPreserving_stabilize d hd hA
 
+/-! ### A reflection does not preserve orientation
+
+`LocalAction.OrientationPreserving` is not trivially true: `ℤ_[2]` acting on `ℝ` by the sign
+`(−1)^{g mod 2}` makes `1` act as the reflection `w ↦ −w`, whose local map `v ↦ −v` is not
+homotopic in `ℝ ∖ {0}` to `v ↦ v`. -/
+
+namespace SignAction
+
+/-- The sign `(−1)^{g mod 2}` of `g ∈ ℤ_[2]`. -/
+def sign (g : ℤ_[2]) : ℝ := if PadicInt.toZMod g = 0 then 1 else -1
+
+theorem sign_add (g h : ℤ_[2]) : sign (g + h) = sign g * sign h := by
+  unfold sign
+  rw [map_add]
+  generalize PadicInt.toZMod g = a
+  generalize PadicInt.toZMod h = b
+  have h10 : (1 : ZMod 2) ≠ 0 := by decide
+  have h11 : (1 : ZMod 2) + 1 = 0 := by decide
+  have h01 : ∀ c : ZMod 2, c = 0 ∨ c = 1 := by decide
+  rcases h01 a with rfl | rfl <;> rcases h01 b with rfl | rfl <;> simp [h10, h11]
+
+theorem sign_zero : sign 0 = 1 := by simp [sign]
+
+theorem sign_one : sign 1 = -1 := by
+  have : (1 : ZMod 2) ≠ 0 := by decide
+  simp [sign, this]
+
+/-- The sign is locally constant: `toZMod` is constant on balls of radius `1`, whose differences lie
+in the maximal ideal, the kernel of `toZMod`. -/
+theorem continuous_sign : Continuous sign := by
+  refine ((IsLocallyConstant.iff_eventually_eq _).2 fun g => ?_).continuous
+  filter_upwards [ball_mem_nhds g one_pos] with g' hg'
+  have hmem : g' - g ∈ RingHom.ker (PadicInt.toZMod : ℤ_[2] →+* ZMod 2) := by
+    rw [PadicInt.ker_toZMod]
+    exact (IsLocalRing.mem_maximalIdeal _).2 (PadicInt.mem_nonunits.2 (by
+      simpa [dist_eq_norm] using hg'))
+  rw [RingHom.mem_ker, map_sub] at hmem
+  simp only [sign, sub_eq_zero.1 hmem]
+
+/-- The action `g • w = (−1)^{g mod 2} w` of `ℤ_[2]` on `ℝ`. -/
+@[instance_reducible]
+def act : AddAction ℤ_[2] (univ : Set ℝ) where
+  vadd g w := ⟨sign g * w, mem_univ _⟩
+  zero_vadd w := Subtype.ext (show sign 0 * (w : ℝ) = w by rw [sign_zero, one_mul])
+  add_vadd g h w := Subtype.ext
+    (show sign (g + h) * (w : ℝ) = sign g * (sign h * w) by rw [sign_add, mul_assoc])
+
+/-- **The sign action** as a local action of `ℤ_[2]` on `W = ℝ`. -/
+def signAction : LocalAction 2 1 where
+  E := ℝ
+  finrank_eq := Module.finrank_self ℝ
+  W := univ
+  isOpen := isOpen_univ
+  act := act
+  cont := @ContinuousVAdd.mk _ _ act.toVAdd _ _
+    (((continuous_sign.comp continuous_fst).mul
+      (continuous_subtype_val.comp continuous_snd)).subtype_mk _)
+
+/-- **The sign action does not preserve orientation**: at `g = 1`, `x = 0`, `ε = 1` the local map
+is `v ↦ −v`, and a homotopy to `v ↦ v` in `ℝ ∖ {0}` would pass through `0` at `v = 1/2`, by the
+intermediate value theorem. -/
+theorem not_orientationPreserving : ¬ signAction.OrientationPreserving := by
+  intro h
+  have hadm : signAction.Admissible (0 : ℝ) 1 := ⟨one_pos, subset_univ _⟩
+  obtain ⟨H⟩ := h 1 (0 : ℝ) 1 hadm
+  have hv : (1 / 2 : ℝ) ∈ puncturedBall ℝ := ⟨by rw [mem_ball_zero_iff]; norm_num, by norm_num⟩
+  let v₀ : puncturedBall signAction.E := ⟨(1 / 2 : ℝ), hv⟩
+  let f : unitInterval → ℝ := fun t => (H (t, v₀)).1
+  have hc : Continuous fun q : unitInterval × puncturedBall signAction.E => (H q).1 :=
+    continuous_subtype_val.comp H.continuous
+  have hf : Continuous f := hc.comp (continuous_id.prodMk continuous_const)
+  have h0 : f 0 = -(1 / 2) := by
+    change (H (0, v₀)).1 = _
+    rw [H.apply_zero]
+    change sign 1 * ((0 : ℝ) + (1 : ℝ) • (1 / 2 : ℝ)) - sign 1 * (0 : ℝ) = _
+    rw [sign_one]
+    norm_num
+  have h1 : f 1 = 1 / 2 := by
+    change (H (1, v₀)).1 = _
+    rw [H.apply_one]
+    change sign 0 * ((0 : ℝ) + (1 : ℝ) • (1 / 2 : ℝ)) - sign 0 * (0 : ℝ) = _
+    rw [sign_zero]
+    norm_num
+  obtain ⟨t, ht⟩ := intermediate_value_univ 0 1 hf
+    (show (0 : ℝ) ∈ Icc (f 0) (f 1) by rw [h0, h1]; constructor <;> norm_num)
+  exact (H (t, v₀)).2 (mem_singleton_iff.2 ht)
+
+end SignAction
+
 end
 
 end HilbertSmith.Interface

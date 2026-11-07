@@ -32,8 +32,7 @@ Stated here and proved:
 What §6 uses of Proposition 5.1 is not an input either: `HilbertSmith.Interface.chartReductionNoSC`
 proves it from `HilbertSmith.NewmanInput`, without second countability, and its orientation step is
 proved separately as `LocalAction.exists_orientationPreserving_restrict`
-(`orientation.exists_restrict`). Lemma 5.7 is Deicyde's
-`HilbertSmith.homotopyExtension`.
+(`orientation.exists_restrict`). Lemma 5.7 is Deicyde's `HilbertSmith.homotopyExtension`.
 
 Departures:
 * Lemmas 5.4 and 5.5 are stated about rational Čech cohomology, which neither Mathlib nor TauCeti

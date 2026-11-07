@@ -15,10 +15,10 @@ The proof is OpenAI's. Fix a pinch `P = P_{z,r}` (`LocalAction.pinch`). By compa
 continuity of the extended action (Lemma 5.2), a small open subgroup `H = p^j ℤ_[p]` moves every
 value of `P` by less than `1/4`. Here the action of `H` is `A.restrict j`, of `ℤ_[p]` through
 `g ↦ p^j g`, and `μ_H` is the Haar probability measure on `ℤ_[p]`, whose image under `g ↦ p^j g`
-is OpenAI's `μ_H`. Average over `H`: `A(w) = ∫_H P(h w) dμ_H(h)` is continuous, `H`-invariant and
-within `1/4` of `P`, so the segments from `P` to `A` miss `0`, and normalizing them is a homotopy
-from `P` to the invariant map `A/‖A‖`, which descends to `Y`. (OpenAI's bound is `1/2`; any bound
-below `1` works.)
+is OpenAI's `μ_H`. Average over `H`: `a'(w) = ∫_H P(h w) dμ_H(h)` (OpenAI's `A(w)`) is continuous,
+`H`-invariant and within `1/4` of `P`, so the segments from `P` to `a'` miss `0`, and normalizing
+them is a homotopy from `P` to the invariant map `a'/‖a'‖`, which descends to `Y`. (OpenAI's bound
+is `1/2`; any bound below `1` works.)
 -/
 
 namespace HilbertSmith.Interface
