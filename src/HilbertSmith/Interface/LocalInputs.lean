@@ -19,9 +19,10 @@ kept as a published input on its own.
   (06:359-366).
 * `LocalInputs O`: all of them, for the interface `O`.
 
-Proposition 5.1 is not an input since B-M3: `HilbertSmith.Interface.chartReductionNoSC` proves
-what §6 uses of it from `HilbertSmith.NewmanInput`, without second countability. Lemma 5.7 is not
-an input either: it is Deicyde's `HilbertSmith.homotopyExtension`.
+What §6 uses of Proposition 5.1, without its orientation step (which stays the input
+`Orientation.exists_restrict`), is not an input: `HilbertSmith.Interface.chartReductionNoSC`
+proves it from `HilbertSmith.NewmanInput`, without second countability. Lemma 5.7 is not an input
+either: it is Deicyde's `HilbertSmith.homotopyExtension`.
 
 Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLAN §3.4 amended):
 * Lemmas 5.4 and 5.5 are stated about rational Čech cohomology, which neither Mathlib nor TauCeti
@@ -45,7 +46,7 @@ open Topology Set
 
 /-- **What §5 uses about orientation preservation**, for the predicate `OP` of the interface. -/
 structure Orientation (OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction p k → Prop) : Prop where
-  /-- The last paragraph of the proof of Proposition 5.1 (05:66-72): every homeomorphism of the
+  /-- The last paragraph of the proof of Proposition 5.1 (05:68-72): every homeomorphism of the
   connected `O` preserves or reverses the orientation from the chart, so every square preserves
   it, and `G = 2H` (that is `H` for odd `p`, and `pH` for `p = 2`) acts preserving orientation. -/
   exists_restrict : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k), IsConnected A.W →

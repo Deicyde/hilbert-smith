@@ -369,6 +369,26 @@ error: route assumptions: flags that match no listed field:
 #guard_msgs (whitespace := lax) in
 #route_assumptions withLaws flag fourth "no such field" expanding InnerLaws
 
+-- `#assert_route_avoids`: the planted theorem reaches HS_proof's L-theory, its Newman theorem and
+-- its p-adic exclusion theorem; the bridge's discharge of Newman's theorem reaches neither the
+-- L-theory nor the p-adic exclusion theorem.
+
+/--
+error: route audit: 'HSBridge.PurityTest.planted' reaches constants of modules under
+  HSFormal.LTheory, HSFormal.Newman and the constants HSFormal.padicExclusion,
+  HSFormal.newman_rigidity'
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids planted modules [HSFormal.LTheory, HSFormal.Newman]
+  constants [HSFormal.padicExclusion, HSFormal.newman_rigidity']
+
+/--
+info: route audit: 'HSBridge.PurityTest.usesNewman' avoids modules under HSFormal.LTheory and the
+  constants HSFormal.padicExclusion
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_avoids usesNewman modules [HSFormal.LTheory] constants [HSFormal.padicExclusion]
+
 -- The import boundary: no module of OpenAI's route imports HS_proof; the bridge's modules do.
 
 /-- info: import boundary: no imported module of 'HilbertSmith' imports HS_proof -/

@@ -56,6 +56,8 @@ missing from the kernel environment, or when an import has no module index.
 * `#assert_route_reaches c M` and `#assert_route_reaches_by_value c M`: fails unless `c`
   mentions, directly or not, a constant of a module under `M`; the second starts the walk from
   `c`'s value only, not its type and not the types of its leading binders.
+* `#assert_route_avoids c modules [M₁, …] constants [c₁, …]`: fails if `c` reaches a constant of
+  an HS_proof module under some `Mᵢ`, or one of the constants `cⱼ`.
 * `#assert_import_boundary L`: fails if a module of the library `L` imported here imports
   HS_proof, directly or not. This is the import boundary, checked in the build.
 * `#assert_route_pure c` and `#assert_route_pure c allowing a b`: fails, listing the entry points,
@@ -422,6 +424,34 @@ def elabAssertRouteReaches : CommandElab
 @[command_elab assertRouteReachesByValue]
 def elabAssertRouteReachesByValue : CommandElab
   | `(#assert_route_reaches_by_value $id $pre) => runAssertRouteReaches id pre true
+  | _ => throwUnsupportedSyntax
+
+/-- `#assert_route_avoids c modules [M₁, …] constants [c₁, …]` fails unless `c` reaches no
+constant of an HS_proof module under any `Mᵢ` and none of the constants `cⱼ`. It checks that a
+discharge (such as `HSBridge.newmanInput`) stays away from the parts of HS_proof it should not
+use. -/
+syntax (name := assertRouteAvoids) "#assert_route_avoids " ident
+  ppSpace &"modules" " [" ident,* "]" ppSpace &"constants" " [" ident,* "]" : command
+
+@[command_elab assertRouteAvoids]
+def elabAssertRouteAvoids : CommandElab
+  | `(#assert_route_avoids $id modules [$mods,*] constants [$cs,*]) => do
+    let c ← resolveConst id
+    let consts ← cs.getElems.mapM resolveConst
+    let prefixes := mods.getElems.map (·.getId)
+    let env ← getEnv
+    let P := provenance env
+    let res := audit env c (descend := true) (P := P)
+    let reachedMods := res.reached.toArray.flatMap (P.hsHolders env)
+    let prefixHits := prefixes.filter fun pre => reachedMods.any pre.isPrefixOf
+    let constHits := consts.filter res.reached.contains
+    let list (ns : Array Name) : MessageData :=
+      MessageData.joinSep (ns.toList.map toMessageData) ", "
+    unless prefixHits.isEmpty && constHits.isEmpty do
+      throwError m!"route audit: '{c}' reaches constants of modules under {list prefixHits} and \
+        the constants {list constHits}"
+    logInfo m!"route audit: '{c}' avoids modules under {list prefixes} and the constants \
+      {list consts}"
   | _ => throwUnsupportedSyntax
 
 /-- The HS_proof modules among the import closure of `roots`, which must all be loaded. -/

@@ -20,15 +20,15 @@ it, from Newman's theorem in OpenAI's form (`HilbertSmith.NewmanInput`), along O
   `H_j` and a connected `H_j`-invariant open `O = H_j B ∋ x` inside the chart at `x`.
 * `HilbertSmith.Interface.chartReductionNoSC` (05:61-66): `H_j ≅ ℤ_[p]` acts faithfully on `O`,
   because a nonzero restriction kernel is closed, hence some `H_i`
-  (`HilbertSmith.closed_eq_dvd_pow`), and would fix the neighbourhood `O` of `x`. Carried into `ℝⁿ` by the chart
-  (`HilbertSmith.Interface.LocalAction.ofChart`), this is a faithful `LocalAction` on a connected
-  open set.
+  (`HilbertSmith.closed_eq_dvd_pow`), and would fix the neighbourhood `O` of `x`. Carried into
+  `ℝⁿ` by the chart (`HilbertSmith.Interface.LocalAction.ofChart`), this is a faithful
+  `LocalAction` on a connected open set.
 
-The orientation step of Proposition 5.1 (05:68-72) is not here: it is
-`HilbertSmith.Interface.Orientation.exists_restrict`.
+The orientation step of Proposition 5.1 (05:68-72) is not proved here: it is assumed, as the
+field `HilbertSmith.Interface.Orientation.exists_restrict` of `LocalInputs`.
 
-`ChartReduction`, the form with second countability that the route assumed until B-M3, follows
-(`chartReduction_of_noSC`).
+`ChartReduction`, the form with second countability that the route assumed before this proof,
+follows (`chartReduction_of_noSC`).
 -/
 
 namespace HilbertSmith.Interface
@@ -37,21 +37,25 @@ open Topology Set Filter Pointwise
 
 universe u
 
-/-- **What §6 uses of Proposition 5.1, for second-countable manifolds**: a faithful jointly
-continuous action of `ℤ_[p]` on a connected Hausdorff second-countable `n`-manifold gives a
-faithful action of `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space.
+/-- **The second-countable form the route assumed before `chartReductionNoSC`**: a faithful
+jointly continuous action of `ℤ_[p]` on a connected Hausdorff second-countable `n`-manifold gives
+a faithful action of `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space.
+§6 now uses `chartReductionNoSC` instead.
 
-OpenAI's Proposition 5.1 says more: an open subgroup `G ≅ ℤ_[p]` acts faithfully on a connected
-`G`-invariant open subset `O` of a chart of `M`, which is then regarded as an open subset of `ℝⁿ`
-(05:16-20). The formal statement drops the subgroup and the chart, because `Main` uses neither.
-It is the second-countable case of `ChartReductionNoSC` (`chartReduction_of_noSC`). -/
+OpenAI's Proposition 5.1 says more: an open subgroup `G ≅ ℤ_[p]` acts faithfully and preserves
+orientation on a connected `G`-invariant open subset `O` of a chart of `M`, which is then regarded
+as an open subset of `ℝⁿ` (05:16-20). The formal statement drops the subgroup and the chart,
+because `Main` uses neither, and orientation preservation, which is the input
+`Orientation.exists_restrict`. It is the second-countable case of `ChartReductionNoSC`
+(`chartReduction_of_noSC`). -/
 def ChartReduction : Prop :=
   ∀ (p : ℕ) [Fact p.Prime] (n : ℕ) (M : Type u) [TopologicalSpace M] [T2Space M]
     [SecondCountableTopology M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [ConnectedSpace M]
     [AddAction ℤ_[p] M] [ContinuousVAdd ℤ_[p] M], FaithfulVAdd ℤ_[p] M →
     ∃ A : LocalAction p n, IsConnected A.W ∧ A.Faithful
 
-/-- **What §6 uses of Proposition 5.1, without second countability** (05:14-73): a faithful
+/-- **What §6 uses of Proposition 5.1, without second countability** (statement 05:14-21, proof
+05:23-66; the orientation step 05:68-72 is not part of it): a faithful
 jointly continuous action of `ℤ_[p]` on a connected Hausdorff `n`-manifold gives a faithful action
 of `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space. Proved from
 `HilbertSmith.NewmanInput` as `chartReductionNoSC`. -/
