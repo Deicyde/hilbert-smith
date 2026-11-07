@@ -2,6 +2,7 @@ import HilbertSmith.Statements
 import HSBridge.Statements
 import HSBridge.Purity
 import HSBridge.PurityTest
+import HSBridge.SideBySide
 
 /-!
 # The two routes side by side

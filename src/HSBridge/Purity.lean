@@ -26,6 +26,7 @@ keeps the walk to the current file and `HSFormal` itself.
   i.e. those used directly by a constant that is not itself from `HSFormal`.
 * `#route_report c`: prints, as an info message, how many `HSFormal` constants `c` reaches, grouped
   by module, together with its entry points into `HSFormal`.
+* `#assert_route_reaches c M`: fails unless `c` reaches some constant of a module under `M`.
 * `#assert_import_boundary L`: fails if a module of the library `L` imported here imports
   `HSFormal`, directly or not. This is the import boundary, checked in the build.
 * `#assert_route_pure c` and `#assert_route_pure c allowing a b`: fails, listing the entry points,
@@ -214,6 +215,27 @@ def elabAssertRoutePure : CommandElab
     else
       logInfo <| m!"route audit: '{c}' depends on no constant from HSFormal except through:" ++
         nameLines allowedNames
+  | _ => throwUnsupportedSyntax
+
+/-- `#assert_route_reaches c M` fails unless `c` depends on some constant declared in a module
+whose name starts with `M` (for example `HSFormal.LTheory`). It checks the positive half of a
+comparison: that a theorem really goes through the part of `HSFormal` it is said to use. -/
+syntax (name := assertRouteReaches) "#assert_route_reaches " ident ident : command
+
+@[command_elab assertRouteReaches]
+def elabAssertRouteReaches : CommandElab
+  | `(#assert_route_reaches $id $pre) => do
+    let c ← resolveConst id
+    let env ← getEnv
+    let res := audit env c (descend := true)
+    let hits := res.reached.toArray.filter fun d =>
+      match moduleOf? env d with
+      | some m => pre.getId.isPrefixOf m
+      | none => false
+    if hits.isEmpty then
+      throwError "route audit: '{c}' depends on no constant from modules under '{pre.getId}'"
+    logInfo m!"route audit: '{c}' depends on {hits.size} constants from modules under \
+      '{pre.getId}'"
   | _ => throwUnsupportedSyntax
 
 /-- `#assert_import_boundary L` fails, listing them, if some imported module whose name has root `L`

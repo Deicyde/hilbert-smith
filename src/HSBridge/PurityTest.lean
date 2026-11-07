@@ -180,6 +180,17 @@ entry points into HSFormal:
 #guard_msgs in
 #route_report usesNewman
 
+-- The positive check: the planted theorem goes through HS_proof's L-theory; Newman does not.
+/-- info: route audit: 'HSBridge.PurityTest.planted' depends on 9035 constants from modules under 'HSFormal.LTheory' -/
+#guard_msgs in
+#assert_route_reaches planted HSFormal.LTheory
+
+/--
+error: route audit: 'HSBridge.PurityTest.usesNewman' depends on no constant from modules under 'HSFormal.LTheory'
+-/
+#guard_msgs in
+#assert_route_reaches usesNewman HSFormal.LTheory
+
 -- The import boundary: no module of OpenAI's route imports HS_proof; the bridge's modules do.
 /-- info: import boundary: no imported module of 'HilbertSmith' imports HSFormal -/
 #guard_msgs in
