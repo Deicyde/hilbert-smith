@@ -14,7 +14,8 @@ name = "TauCeti"
 git = "https://github.com/TauCetiProject/TauCeti"
 rev = "c7af81f021f76fa11afcd61c894e5fc861ab6e78"
 
-# adbrw/HS_proof, used as a dependency; this repository contains none of its code.
+# adbrw/HS_proof, used as a dependency. This repository calls its declarations and copies none of
+# its proofs or text.
 [[require]]
 name = "hsformal"
 git = "https://github.com/adbrw/HS_proof"
@@ -25,7 +26,9 @@ rev = "5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862"
 name = "HilbertSmith"
 srcDir = "src"
 
-# HS_proof's theorems without second countability: imports HSFormal and HilbertSmith.
+# HS_proof's theorems without second countability (the group case for groups and manifolds in
+# `Type` only): imports HSFormal and HilbertSmith, calls HSFormal's declarations, and copies none
+# of its proofs or text.
 [[lean_lib]]
 name = "HSGeneral"
 srcDir = "src"

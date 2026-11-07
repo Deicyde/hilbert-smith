@@ -1,4 +1,3 @@
-import HSFormal.BoundaryReduction
 import HSFormal.Inputs.GY.NSSIsLie
 import HSFormal.Inputs.Lemma7
 import HSFormal.MontgomeryPrime
@@ -6,6 +5,7 @@ import HSFormal.Newman.Newman
 import HSFormal.Reduction
 import HSFormal.Universe
 import HSFormal.WeakInputs
+import HSGeneral.Interior
 import HSGeneral.Padic
 import HilbertSmith.Statements
 import HilbertSmith.Topology.InvariantOpens
@@ -16,8 +16,12 @@ import HilbertSmith.Topology.KernelQuotient
 
 HS_proof proves the Hilbert–Smith conjecture for second-countable groups acting on
 second-countable manifolds. This file removes both assumptions, and the Hausdorff assumption on
-the group, for groups and manifolds in `Type`. The p-adic exclusion is a visible hypothesis of
-`HSGeneral.hilbertSmithNoSC_of_padicExclusion`.
+the group, for groups and manifolds in `Type` only
+(`HilbertSmith.Statements.HilbertSmithNoSC.{0, 0}`). The p-adic exclusion is a visible hypothesis
+of `HSGeneral.hilbertSmithNoSC_of_padicExclusion`.
+
+Formal Conjectures' `Hilbert5.hilbert_smith_conjecture`, which allows any universe and asks for a
+real-analytic Lie group structure, is not proved here.
 
 ## Main results
 
@@ -34,9 +38,10 @@ the group, for groups and manifolds in `Type`. The p-adic exclusion is a visible
 
 ## Proof
 
-The route is neither the HS paper's (which needs Lee's theorem, a uniform Newman theorem and the
-Gleason–Yamabe structure theorem) nor OpenAI's. Every input from HS_proof is one of its proved
-top-level statements.
+The route is neither the HS paper's nor OpenAI's. The paper's proof of Corollary 1.2 uses the
+reduction of compact groups to `ℤ_[p]` from [Pa19], Newman's theorem from [Pa19] and the
+Gleason–Yamabe structure theorem; HS_proof proves the last of these only in the form "no small
+subgroups implies Lie", which is all that is used here.
 
 1. A compact identity neighbourhood `W` lies in an open subgroup `G₀` exhausted by compact sets.
    Some connected, second-countable open set `V₀` is `G₀`-invariant
@@ -51,6 +56,28 @@ top-level statements.
    nontrivial, the quotient would contain `ℤ_[p]` ([Tao11, Lemma 7]), contradicting the p-adic
    exclusion. So `T = ⊥`, and `G` has no small subgroups.
 4. The Gleason–Yamabe theorem, which HS_proof proves without second countability, concludes.
+
+## Declarations used from HS_proof
+
+Headline theorem and statements:
+* `HSFormal.padicExclusion` (p-adic exclusion, used only in `HSGeneral.hilbertSmithNoSC`), and the
+  definitions `HSFormal.PadicExclusion`, `HSFormal.NoSmallSubgroups` and `HSFormal.IsLieGroup`.
+
+Proved inputs (HS_proof's proofs of published results it states as `Prop`s):
+* `HSFormal.Lemma7.compactTorsionFreeContainsPadic` ([Tao11, Lemma 7]);
+* `HSFormal.Newman.newmanPrimeOrder` (Newman's theorem for prime order).
+
+Internal lemmas:
+* `HSFormal.noSmallSubgroups_of_metric'` (no small subgroups, for second-countable groups and
+  manifolds);
+* `HSFormal.eq_of_iterate_eq_of_eqOn_open` (Newman's second theorem for periodic maps);
+* `HSFormal.false_of_padic_hom` (an embedded `ℤ_[p]` contradicts p-adic exclusion);
+* the steps of HS_proof's Gleason–Yamabe proof: `HSFormal.GY.nonempty_weakGleasonNorm`,
+  `HSFormal.GY.WeakGleasonNorm.nonempty_gleasonNorm`,
+  `HSFormal.GY.GleasonNorm.exists_localExpStructure`, `HSFormal.GY.LocalExpStructure.contDiffMu`
+  and `HSFormal.GY.LocalExpStructure.isLieGroup`;
+* through `HSGeneral.of_faithfulSMul_topInterior`, HS_proof's topological interior of a manifold
+  with boundary (see `HSGeneral/Interior.lean`).
 -/
 
 open Set Topology TopologicalSpace Pointwise
@@ -72,11 +99,12 @@ manifold, all of whose elements fix every point of a nonempty open set `U`, is t
 theorem eq_bot_of_isCompact_of_fixes_open (hP : HSFormal.PadicExclusion) [T2Space G]
     (K : Subgroup G) (hK : IsCompact (K : Set G)) {U : Set M} (hU : IsOpen U) (hne : U.Nonempty)
     (hfix : ∀ g ∈ K, ∀ x ∈ U, g • x = x) : K = ⊥ := by
-  refine (Subgroup.eq_bot_iff_forall K).2 fun g hg => ?_
-  by_contra hg1
+  by_contra hKbot
+  obtain ⟨⟨g, hg⟩, hg1⟩ := Subgroup.ne_bot_iff_exists_ne_one.1 hKbot
+  -- Some point `y` is moved by `g ≠ 1`.
   obtain ⟨y, hy⟩ : ∃ y : M, g • y ≠ y := by
     by_contra! h
-    exact hg1 (eq_of_smul_eq_smul (α := M) fun x => by rw [h x, one_smul])
+    exact hg1 (Subtype.ext (eq_of_smul_eq_smul (α := M) fun x => by simp [h x]))
   obtain ⟨x₀, hx₀⟩ := hne
   -- A `K`-invariant, connected, second-countable open set `V` containing `x₀` and `y`.
   obtain ⟨V, hVc, hVsc, hCV, hVinv⟩ :=
@@ -113,8 +141,9 @@ theorem eq_bot_of_isCompact_of_fixes_open (hP : HSFormal.PadicExclusion) [T2Spac
     have := congrArg (fun q : Q => ((q • (⟨y, hyV⟩ : V) : V) : M)) h
     rw [one_smul] at this
     exact this
-  obtain ⟨p, _, ι, hcont, hinj⟩ := HSFormal.Lemma7.compactTorsionFreeContainsPadic Q hnt htf
-  exact HSFormal.false_of_padic_hom hP (n := n) (M := V) ι hcont hinj
+  -- By [Tao11, Lemma 7], `Q` contains a copy of some `ℤ_[p]`, which acts faithfully on `V`.
+  obtain ⟨p, _, embed, hembed, hinj⟩ := HSFormal.Lemma7.compactTorsionFreeContainsPadic Q hnt htf
+  exact HSFormal.false_of_padic_hom hP (n := n) (M := V) embed hembed hinj
 
 omit [FaithfulSMul G M] in
 /-- **Small subgroups fix an open set.** Given the p-adic exclusion, for a locally compact group
@@ -175,65 +204,60 @@ theorem noSmallSubgroups_of_faithfulSMul (hP : HSFormal.PadicExclusion) [Locally
   obtain ⟨U, hU, hUne, O, hO, hOc, hOfix⟩ := exists_nhds_subgroup_fixes_open (n := n) (M := M)
     (G := G) hP
   refine ⟨O, hO, fun S hS => ?_⟩
-  -- The closure `T` of `S` is compact and fixes `U` pointwise, so it is trivial.
-  set T := S.topologicalClosure
-  have hTO : (T : Set G) ⊆ closure O := by
-    rw [Subgroup.topologicalClosure_coe]
-    exact closure_mono hS
-  have hT : IsCompact (T : Set G) := hOc.of_isClosed_subset S.isClosed_topologicalClosure hTO
-  have hTfix : ∀ g ∈ T, ∀ x ∈ U, g • x = x := by
-    intro g hg x hx
-    have hcl : IsClosed {g : G | g • x = x} :=
-      isClosed_eq (continuous_id.smul continuous_const) continuous_const
-    rw [← SetLike.mem_coe, Subgroup.topologicalClosure_coe] at hg
-    exact closure_minimal (fun s hs => hOfix S hS s hs x hx) hcl hg
-  have hTbot := eq_bot_of_isCompact_of_fixes_open (n := n) hP T hT hU hUne hTfix
-  exact le_bot_iff.1 (hTbot ▸ S.le_topologicalClosure)
+  -- The closure of `S` lies in the compact set `closure O`, and it fixes `U` pointwise because
+  -- each point's stabiliser is closed. So it is trivial, and so is `S`.
+  have hclosure : (S.topologicalClosure : Set G) = closure S := S.topologicalClosure_coe
+  have hbot : S.topologicalClosure = ⊥ := by
+    refine eq_bot_of_isCompact_of_fixes_open (n := n) hP _ ?_ hU hUne fun g hg x hx => ?_
+    · rw [hclosure]
+      exact hOc.of_isClosed_subset isClosed_closure (closure_mono hS)
+    · rw [← SetLike.mem_coe, hclosure] at hg
+      refine closure_minimal (fun s hs => hOfix S hS s hs x hx) ?_ hg
+      exact isClosed_eq (continuous_id.smul continuous_const) continuous_const
+  exact le_bot_iff.1 (hbot ▸ S.le_topologicalClosure)
 
 end Group
 
 /-- **The Gleason–Yamabe theorem without second countability**: a locally compact Hausdorff group
-with no small subgroups is a Lie group. HS_proof's proof of `HSFormal.NSSIsLie` does not use its
-second-countability hypothesis; this composes the steps of that proof. -/
+with no small subgroups is a Lie group. HS_proof's `HSFormal.GY.nssIsLie` assumes second
+countability but does not use it; this calls the steps of its proof directly: a weak Gleason
+norm, then a Gleason norm, then a local exponential structure whose group law is smooth. -/
 theorem isLieGroup_of_noSmallSubgroups {G : Type} [Group G] [TopologicalSpace G]
-    [IsTopologicalGroup G] [LocallyCompactSpace G] [T2Space G] (h : HSFormal.NoSmallSubgroups G) :
-    HSFormal.IsLieGroup G := by
-  obtain ⟨𝒩⟩ := HSFormal.GY.nonempty_weakGleasonNorm h
-  obtain ⟨𝒢⟩ := 𝒩.nonempty_gleasonNorm
-  obtain ⟨d, ⟨S⟩⟩ := 𝒢.exists_localExpStructure
-  exact S.isLieGroup S.contDiffMu
+    [IsTopologicalGroup G] [LocallyCompactSpace G] [T2Space G]
+    (hNSS : HSFormal.NoSmallSubgroups G) : HSFormal.IsLieGroup G :=
+  (HSFormal.GY.nonempty_weakGleasonNorm hNSS).elim fun weakNorm =>
+    weakNorm.nonempty_gleasonNorm.elim fun gleasonNorm =>
+      gleasonNorm.exists_localExpStructure.elim fun _ hexp =>
+        hexp.elim fun expStructure => expStructure.isLieGroup expStructure.contDiffMu
 
 /-- **Hilbert–Smith without countability, from p-adic exclusion.** If no continuous action of
 `ℤ_[p]` on a connected, Hausdorff, second-countable manifold is faithful, then every locally
 compact group acting continuously and faithfully on a connected, Hausdorff manifold is a Lie
-group. -/
+group, for groups and manifolds in `Type`. -/
 theorem hilbertSmithNoSC_of_padicExclusion (hP : HSFormal.PadicExclusion) :
     HilbertSmith.Statements.HilbertSmithNoSC.{0, 0} := by
   intro n M _ _ _ _ G _ _ _ _ _ _ _
   have := HilbertSmith.t2Space_of_faithfulSMul (Q := G) (X := M)
   exact isLieGroup_of_noSmallSubgroups (noSmallSubgroups_of_faithfulSMul (n := n) (M := M) hP)
 
-/-- **The Hilbert–Smith theorem without countability**: a locally compact group acting
-continuously and faithfully on a connected, Hausdorff topological manifold without boundary is a
-Lie group (groups and manifolds in `Type`). -/
+/-- **The Hilbert–Smith theorem without countability**, for groups and manifolds in `Type`: a
+locally compact group acting continuously and faithfully on a connected, Hausdorff topological
+manifold without boundary is a Lie group. Formal Conjectures' `Hilbert5.hilbert_smith_conjecture`
+(any universe, real-analytic conclusion) is not proved here. -/
 theorem hilbertSmithNoSC : HilbertSmith.Statements.HilbertSmithNoSC.{0, 0} :=
   hilbertSmithNoSC_of_padicExclusion HSFormal.padicExclusion
 
-/-- **The Hilbert–Smith theorem for manifolds with boundary, without countability**: a locally
-compact group acting continuously and faithfully on a connected, Hausdorff topological manifold
-with boundary of dimension `n + 1` is a Lie group. The action restricts to the interior, a
-connected manifold without boundary on which it is still faithful. -/
+/-- **The Hilbert–Smith theorem for manifolds with boundary, without countability**, for groups
+and manifolds in `Type`: a locally compact group acting continuously and faithfully on a
+connected, Hausdorff topological manifold with boundary of dimension `n + 1` is a Lie group. It
+follows from `HSGeneral.hilbertSmithNoSC` applied to the interior
+(`HSGeneral.of_faithfulSMul_topInterior`). -/
 theorem hilbertSmithWithBoundary_noSC {n : ℕ} {M : Type} [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanHalfSpace (n + 1)) M] [ConnectedSpace M]
     {G : Type} [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [LocallyCompactSpace G]
     [MulAction G M] [ContinuousSMul G M] [FaithfulSMul G M] :
-    HilbertSmith.Statements.IsLieGroup G := by
-  let := HSFormal.topInteriorChartedSpace (n + 1) M
-  have := connectedSpace_topInterior (d := n + 1) (X := M)
-  let := HSFormal.topInteriorMulAction (n + 1) M G
-  have := HSFormal.topInterior_continuousSMul (d := n + 1) (M := M) (G := G)
-  have := HSFormal.topInterior_faithfulSMul (d := n + 1) (M := M) (G := G)
-    HSFormal.dense_topInterior
-  exact hilbertSmithNoSC (n + 1) (HSFormal.topInterior (n + 1) M) G
+    HilbertSmith.Statements.IsLieGroup G :=
+  of_faithfulSMul_topInterior (n := n) (X := M) (G := G) fun Y _ _ _ _ _ _ _ =>
+    hilbertSmithNoSC (n + 1) Y G
 
 end HSGeneral

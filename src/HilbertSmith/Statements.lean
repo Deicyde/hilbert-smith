@@ -11,18 +11,22 @@ conjecture prove, in the form both routes are compared against:
 
 * `PadicExclusion`: no continuous action of the `p`-adic integers on a connected, Hausdorff,
   second-countable topological manifold is faithful (OpenAI's Theorem 1.2);
-* `PadicExclusionNoSC`: the same without second countability (the body of Formal Conjectures'
-  `hilbert_smith_padic_formulation`);
+* `PadicExclusionNoSC`: the same without second countability (equivalent to Formal Conjectures'
+  `hilbert_smith_padic_formulation`, whose binders come in a different order);
 * `HilbertSmith`: a locally compact, Hausdorff, second-countable group acting continuously and
   faithfully on a connected, Hausdorff, second-countable manifold is a Lie group (OpenAI's
   Theorem 1.1);
 * `HilbertSmithNoSC`: the same with no countability or separation assumption on the group and no
   second countability of the manifold.
 
-A topological manifold of dimension `n` without boundary is a `ChartedSpace` modelled on
-`EuclideanSpace ℝ (Fin n)` over its given topology; no smoothness is assumed. A group is a Lie
-group if its given topology carries an atlas modelled on some `ℝ^d` that makes it a `C^∞` Lie
-group, so the Lie structure induces the original topology.
+Here a manifold of dimension `n` is a Hausdorff space together with an atlas of charts, for its
+own topology, onto open subsets of `ℝ^n` (`EuclideanSpace ℝ (Fin n)`); no differentiable
+structure is assumed. A Lie group is a group whose own topology carries an atlas, modelled on a
+Euclidean space, in which multiplication and inversion are smooth.
+
+The binder lists of `PadicExclusion` and `HilbertSmith` deliberately coincide with those of
+HS_proof's `HSFormal.Universe.PadicExclusionIn` and `HSFormal.Universe.HilbertSmithIn`, so the
+comparisons with HS_proof close by `Iff.rfl`.
 -/
 
 open scoped Manifold ContDiff
@@ -31,8 +35,9 @@ namespace HilbertSmith.Statements
 
 universe u v
 
-/-- `G` is a Lie group in its given topology: for some `d`, the topology of `G` carries a charted
-space structure modelled on `ℝ^d` that makes `G` a `C^∞` Lie group. -/
+/-- `G` is a Lie group for the topology it already has: there are a dimension `d` and an atlas of
+charts from `G` to `ℝ^d`, compatible with that topology, for which the group operations are
+`C^∞`. -/
 def IsLieGroup (G : Type v) [Group G] [TopologicalSpace G] : Prop :=
   ∃ (d : ℕ) (_ : ChartedSpace (EuclideanSpace ℝ (Fin d)) G),
     LieGroup 𝓘(ℝ, EuclideanSpace ℝ (Fin d)) ∞ G
@@ -64,7 +69,8 @@ def HilbertSmith : Prop :=
 
 /-- **The Hilbert–Smith conjecture** without countability: a locally compact group acting
 continuously and faithfully on a connected, Hausdorff topological manifold without boundary is a
-Lie group. -/
+Lie group. This repository proves it only for groups and manifolds in `Type`
+(`HilbertSmithNoSC.{0, 0}`). -/
 def HilbertSmithNoSC : Prop :=
   ∀ (n : ℕ) (M : Type u) [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [ConnectedSpace M]

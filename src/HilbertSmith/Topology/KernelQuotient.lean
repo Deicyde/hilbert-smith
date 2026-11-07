@@ -78,7 +78,8 @@ theorem metrizableSpace_of_isCompact_of_faithfulSMul [SMul Q X] [ContinuousSMul 
   have : Encodable D := @Encodable.ofCountable _ hDc.to_subtype
   let := metrizableSpaceMetric X
   refine Metric.PiNatEmbed.TopologicalSpace.MetrizableSpace.of_countable_separating
-    (fun (d : D) (q : K) => (q : Q) • (d : X)) (fun d => continuous_subtype_val.smul continuous_const) fun q₁ q₂ hne => ?_
+    (fun (d : D) (q : K) => (q : Q) • (d : X))
+    (fun d => continuous_subtype_val.smul continuous_const) fun q₁ q₂ hne => ?_
   by_contra! h
   refine hne (Subtype.ext (eq_of_smul_eq_smul (α := X) fun x => ?_))
   exact congrFun ((continuous_const_smul _).ext_on hDd (continuous_const_smul _)

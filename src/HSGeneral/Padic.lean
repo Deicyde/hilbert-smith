@@ -1,8 +1,8 @@
-import HSFormal.BoundaryReduction
 import HSFormal.PadicSubgroups
 import HSFormal.Universe
 import HilbertSmith.Statements
 import HilbertSmith.Topology.InvariantOpens
+import HSGeneral.Interior
 
 /-!
 # p-adic exclusion without second countability
@@ -28,6 +28,16 @@ second-countable invariant open set `U` containing every `x j`. The kernel of th
 a closed subgroup of `ℤ_[p]`; if it were nontrivial it would be `p ^ m ℤ_[p]` for some `m`
 (`HSFormal.padicActionKernel_eq_power`), but `p ^ m` moves `x m`. So the action on `U` is faithful,
 contradicting the second-countable case.
+
+## Declarations used from HS_proof
+
+* `HSFormal.Universe.padicExclusion_univ`, HS_proof's headline p-adic exclusion theorem (in
+  universe `u`), and the definition `HSFormal.Universe.PadicExclusionIn`, which
+  `HilbertSmith.Statements.PadicExclusion` matches by definition;
+* the internal lemmas `HSFormal.padicActionKernel`, `HSFormal.mem_padicActionKernel` and
+  `HSFormal.padicActionKernel_eq_power` (closed subgroups of `ℤ_[p]`);
+* through `HSGeneral.of_faithfulVAdd_topInterior`, HS_proof's topological interior of a manifold
+  with boundary (see `HSGeneral/Interior.lean`).
 -/
 
 open Set TopologicalSpace
@@ -90,30 +100,15 @@ of `ℤ_[p]` on a connected, Hausdorff topological manifold without boundary is 
 theorem padicExclusionNoSC : HilbertSmith.Statements.PadicExclusionNoSC.{u} :=
   padicExclusionNoSC_of_SC HSFormal.Universe.padicExclusion_univ
 
-/-- The topological interior of a connected manifold with boundary is connected. Unlike
-`HSFormal.connectedSpace_topInterior`, the manifold may lie in any universe. -/
-theorem connectedSpace_topInterior {d : ℕ} [NeZero d] {X : Type*} [TopologicalSpace X]
-    [ChartedSpace (EuclideanHalfSpace d) X] [ConnectedSpace X] :
-    ConnectedSpace (HSFormal.topInterior d X) := by
-  have hdense : Dense (HSFormal.topInterior d X) := HSFormal.dense_topInterior
-  refine isConnected_iff_connectedSpace.mp ⟨hdense.nonempty, ?_⟩
-  exact HSFormal.isPreconnected_of_dense_of_local hdense
-    HSFormal.exists_isPreconnected_inter_topInterior
-
 /-- **p-adic exclusion for manifolds with boundary, without second countability**: for every
 prime `p`, no continuous action of `ℤ_[p]` on a connected, Hausdorff topological manifold with
-boundary of dimension `n + 1` is faithful. The action restricts to the interior, a connected
-manifold without boundary on which it is still faithful. -/
+boundary of dimension `n + 1` is faithful. A faithful action would restrict to the interior
+(`HSGeneral.of_faithfulVAdd_topInterior`), contradicting `HSGeneral.padicExclusionNoSC`. -/
 theorem padicExclusionWithBoundary_noSC {X : Type*} [TopologicalSpace X] [T2Space X]
     [ConnectedSpace X] {n : ℕ} [ChartedSpace (EuclideanHalfSpace (n + 1)) X]
     (p : ℕ) [Fact p.Prime] [AddAction ℤ_[p] X] [ContinuousVAdd ℤ_[p] X] :
-    ¬ FaithfulVAdd ℤ_[p] X := by
-  intro hF
-  let := HSFormal.topInteriorChartedSpace (n + 1) X
-  have := connectedSpace_topInterior (d := n + 1) (X := X)
-  let := HSFormal.topInteriorAddAction (n + 1) X ℤ_[p]
-  have := HSFormal.topInterior_continuousVAdd (d := n + 1) (M := X) (G := ℤ_[p])
-  exact padicExclusionNoSC p (n + 1) (HSFormal.topInterior (n + 1) X)
-    (HSFormal.topInterior_faithfulVAdd HSFormal.dense_topInterior)
+    ¬ FaithfulVAdd ℤ_[p] X := fun _ =>
+  of_faithfulVAdd_topInterior (n := n) (X := X) (G := ℤ_[p]) fun Y _ _ _ _ _ _ hY =>
+    padicExclusionNoSC p (n + 1) Y hY
 
 end HSGeneral
