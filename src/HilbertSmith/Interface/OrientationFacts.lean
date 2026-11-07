@@ -1,6 +1,5 @@
 import HilbertSmith.Interface.ChartReduction
-import HilbertSmith.Interface.Orientation
-import HilbertSmith.Interface.Pinch
+import HilbertSmith.Interface.LocalInputs
 
 /-!
 # The orientation facts of §5
@@ -83,7 +82,8 @@ theorem continuousOn_nrm : ContinuousOn (nrm : E → E) {0}ᶜ :=
 `{P}`, and the continuous `ν` vanishes off it, then `y ↦ ν y • ψ y` on `{P}`, `0` elsewhere, is
 continuous. -/
 theorem continuous_dite_smul {Y : Type*} [TopologicalSpace Y] {P : Y → Prop}
-    [∀ y, Decidable (P y)] (hP : IsOpen {y | P y}) {ν : Y → ℝ} (hν : Continuous ν) (hν0 : ∀ y, ¬ P y → ν y = 0)
+    [∀ y, Decidable (P y)] (hP : IsOpen {y | P y}) {ν : Y → ℝ} (hν : Continuous ν)
+    (hν0 : ∀ y, ¬ P y → ν y = 0)
     {ψ : {y // P y} → E} (hψ : Continuous ψ) (hψ1 : ∀ u, ‖ψ u‖ ≤ 1) :
     Continuous fun y => if h : P y then ν y • ψ ⟨y, h⟩ else 0 := by
   rw [continuous_iff_continuousAt]
@@ -126,6 +126,161 @@ theorem cone_ne_zero {f : ball (0 : E) 1 → E} {v : ball (0 : E) 1} (hv : (v : 
     (hf : f v ≠ 0) : cone f v ≠ 0 := by
   rw [cone_of_ne hv]
   exact smul_ne_zero (norm_ne_zero_iff.2 hv) (nrm_ne_zero hf)
+
+/-- The restriction of `f`, defined on the open unit ball and vanishing only at `0`, to a map from
+the punctured ball to `E ∖ {0}`. -/
+def restrictPB (f : ball (0 : E) 1 → E) (hf : Continuous f)
+    (hf0 : ∀ v : ball (0 : E) 1, (v : E) ≠ 0 → f v ≠ 0) :
+    C(puncturedBall E, ({0}ᶜ : Set E)) where
+  toFun v := ⟨f ⟨v, v.2.1⟩, hf0 _ v.2.2⟩
+  continuous_toFun :=
+    (hf.comp (continuous_subtype_val.subtype_mk fun v : puncturedBall E => v.2.1)).subtype_mk _
+
+/-- A point of the punctured ball, as a point of the ball. -/
+def toBall (v : puncturedBall E) : ball (0 : E) 1 := ⟨v, v.2.1⟩
+
+omit [NormedSpace ℝ E] in
+theorem continuous_toBall : Continuous (toBall : puncturedBall E → ball (0 : E) 1) :=
+  continuous_subtype_val.subtype_mk _
+
+section Product
+
+variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
+
+/-- The first coordinate of a point of the unit ball of `E × F`, in the unit ball of `E`. -/
+def ballFst (v : ball (0 : E × F) 1) : ball (0 : E) 1 :=
+  ⟨(v : E × F).1, mem_ball_zero_iff.2 ((norm_fst_le _).trans_lt (mem_ball_zero_iff.1 v.2))⟩
+
+omit [NormedSpace ℝ E] [NormedSpace ℝ F] in
+theorem continuous_ballFst : Continuous (ballFst : ball (0 : E × F) 1 → ball (0 : E) 1) :=
+  (continuous_fst.comp continuous_subtype_val).subtype_mk _
+
+omit [NormedSpace ℝ E] in
+/-- For `v ≠ 0` in `E × F` and `ε > 0`, the pair `(a, εv₂)` is nonzero as soon as `a ≠ 0` whenever
+`v₁ ≠ 0`. -/
+theorem pair_ne_zero (v : puncturedBall (E × F)) {a : E} (ha : (v : E × F).1 ≠ 0 → a ≠ 0)
+    {ε : ℝ} (hε : 0 < ε) : ((a, ε • (v : E × F).2) : E × F) ≠ 0 := by
+  intro h0
+  rw [Prod.mk_eq_zero] at h0
+  by_cases h1 : (v : E × F).1 = 0
+  · have h2 : (v : E × F).2 = 0 := (smul_eq_zero.1 h0.2).resolve_left hε.ne'
+    exact v.2.2 (Prod.ext h1 h2)
+  · exact ha h1 h0.1
+
+/-- **The map `(v₁, v₂) ↦ (φ(v₁), εv₂)`** on the punctured ball of `E × F`, for `φ` vanishing only
+at `0`: the shape of the local maps of a stabilized action. -/
+def stabMap (φ : ball (0 : E) 1 → E) (hφ : Continuous φ)
+    (hφ0 : ∀ v : ball (0 : E) 1, (v : E) ≠ 0 → φ v ≠ 0) {ε : ℝ} (hε : 0 < ε) :
+    C(puncturedBall (E × F), ({0}ᶜ : Set (E × F))) where
+  toFun v := ⟨(φ (ballFst (toBall v)), ε • (v : E × F).2),
+    pair_ne_zero v (hφ0 (ballFst (toBall v))) hε⟩
+  continuous_toFun := by
+    refine Continuous.subtype_mk (Continuous.prodMk ?_ ?_) _
+    · exact hφ.comp (continuous_ballFst.comp continuous_toBall)
+    · exact continuous_const.smul (continuous_snd.comp continuous_subtype_val)
+
+theorem combo_ne_zero {a : E} (ha : a ≠ 0) {c : ℝ} (hc : 0 < c) (t : unitInterval) :
+    (1 - (t : ℝ)) • a + (t : ℝ) • (c • a) ≠ 0 := by
+  rw [smul_smul, ← add_smul]
+  refine smul_ne_zero ?_ ha
+  rcases eq_or_lt_of_le t.2.2 with h | h
+  · rw [h]; simp [hc.ne']
+  · nlinarith [mul_nonneg t.2.1 hc.le]
+
+/-- **First stage**: `(φ(v₁), εv₂)` is homotopic to `(cone φ (v₁), εv₂)` along straight lines,
+since `cone φ (v₁)` is a positive multiple of `φ(v₁)` for `v₁ ≠ 0`, and both vanish at `v₁ = 0`. -/
+theorem stabMap_homotopic_cone (φ : ball (0 : E) 1 → E) (hφ : Continuous φ)
+    (hφ0 : ∀ v : ball (0 : E) 1, (v : E) ≠ 0 → φ v ≠ 0) {ε : ℝ} (hε : 0 < ε) :
+    (stabMap (F := F) φ hφ hφ0 hε).Homotopic (stabMap (F := F) (cone φ) (continuous_cone hφ hφ0)
+      (fun v hv => cone_ne_zero hv (hφ0 v hv)) hε) := by
+  have hc : ∀ w : ball (0 : E) 1, (w : E) ≠ 0 →
+      cone φ w = (‖(w : E)‖ * ‖φ w‖⁻¹) • φ w := fun w hw => by
+    rw [cone_of_ne hw, nrm, smul_smul, mul_comm]
+  have hpos : ∀ w : ball (0 : E) 1, (w : E) ≠ 0 → 0 < ‖(w : E)‖ * ‖φ w‖⁻¹ := fun w hw =>
+    mul_pos (norm_pos_iff.2 hw) (inv_pos.2 (norm_pos_iff.2 (hφ0 w hw)))
+  have hw : Continuous fun v : puncturedBall (E × F) => ballFst (toBall v) :=
+    continuous_ballFst.comp continuous_toBall
+  exact ⟨{ toFun := fun q => ⟨((1 - (q.1 : ℝ)) • φ (ballFst (toBall q.2)) +
+              (q.1 : ℝ) • cone φ (ballFst (toBall q.2)), ε • (q.2 : E × F).2),
+              pair_ne_zero q.2 (fun h1 => by
+                rw [hc _ h1]
+                exact combo_ne_zero (hφ0 _ h1) (hpos _ h1) q.1) hε⟩
+           continuous_toFun := by
+             refine Continuous.subtype_mk (Continuous.prodMk ?_ ?_) _
+             · exact ((continuous_const.sub (continuous_subtype_val.comp continuous_fst)).smul
+                 (hφ.comp (hw.comp continuous_snd))).add
+                 ((continuous_subtype_val.comp continuous_fst).smul
+                 ((continuous_cone hφ hφ0).comp (hw.comp continuous_snd)))
+             · exact continuous_const.smul (continuous_snd.comp
+                 (continuous_subtype_val.comp continuous_snd))
+           map_zero_left := fun v => Subtype.ext (by simp [stabMap])
+           map_one_left := fun v => Subtype.ext (by simp [stabMap]) }⟩
+
+/-- **Second stage**: a homotopy between the restrictions of `f₀` and `f₁` to the punctured ball
+cones off to a homotopy between `(cone f₀ (v₁), εv₂)` and `(cone f₁ (v₁), εv₂)`: on `v₁ ≠ 0` use
+`‖v₁‖ • h(v₁)/‖h(v₁)‖`, and `0` at `v₁ = 0` (continuous, since its norm is `‖v₁‖`). -/
+theorem stabMap_cone_homotopic (f₀ f₁ : ball (0 : E) 1 → E) (hf₀ : Continuous f₀)
+    (hf₁ : Continuous f₁) (hf₀0 : ∀ v : ball (0 : E) 1, (v : E) ≠ 0 → f₀ v ≠ 0)
+    (hf₁0 : ∀ v : ball (0 : E) 1, (v : E) ≠ 0 → f₁ v ≠ 0) {ε : ℝ} (hε : 0 < ε)
+    (H : (restrictPB f₀ hf₀ hf₀0).Homotopic (restrictPB f₁ hf₁ hf₁0)) :
+    (stabMap (F := F) (cone f₀) (continuous_cone hf₀ hf₀0)
+      (fun v hv => cone_ne_zero hv (hf₀0 v hv)) hε).Homotopic
+    (stabMap (F := F) (cone f₁) (continuous_cone hf₁ hf₁0)
+      (fun v hv => cone_ne_zero hv (hf₁0 v hv)) hε) := by
+  obtain ⟨H⟩ := H
+  let K : unitInterval × ball (0 : E) 1 → E := fun q =>
+    if h : (q.2 : E) ≠ 0 then ‖(q.2 : E)‖ • nrm (H (q.1, ⟨q.2, q.2.2, h⟩) : E) else 0
+  have hK : Continuous K := by
+    refine continuous_dite_smul (P := fun q : unitInterval × ball (0 : E) 1 => (q.2 : E) ≠ 0)
+      (isOpen_ne_fun (continuous_subtype_val.comp continuous_snd) continuous_const)
+      (continuous_norm.comp (continuous_subtype_val.comp continuous_snd))
+      (fun q hq => by rw [not_not] at hq; simp [hq])
+      (ψ := fun u => nrm (H (u.1.1, ⟨u.1.2, u.1.2.2, u.2⟩) : E)) ?_ fun u => norm_nrm_le _
+    refine continuousOn_nrm.comp_continuous (continuous_subtype_val.comp (H.continuous.comp ?_))
+      fun u => (H _).2
+    exact (continuous_fst.comp continuous_subtype_val).prodMk
+      ((continuous_subtype_val.comp (continuous_snd.comp continuous_subtype_val)).subtype_mk _)
+  have hK0 : ∀ q : unitInterval × ball (0 : E) 1, (q.2 : E) ≠ 0 → K q ≠ 0 := fun q hq => by
+    simp only [K]
+    split_ifs
+    exact smul_ne_zero (norm_ne_zero_iff.2 hq) (nrm_ne_zero (H _).2)
+  have hKz : ∀ q : unitInterval × ball (0 : E) 1, (q.2 : E) = 0 → K q = 0 := fun q hq => by
+    simp only [K]
+    split_ifs with h
+    · exact absurd hq h
+    · rfl
+  have hKnz : ∀ (q : unitInterval × ball (0 : E) 1) (hq : (q.2 : E) ≠ 0),
+      K q = ‖(q.2 : E)‖ • nrm (H (q.1, ⟨q.2, q.2.2, hq⟩) : E) := fun q hq => by
+    simp only [K]
+    split_ifs
+    rfl
+  have hw : Continuous fun v : puncturedBall (E × F) => ballFst (toBall v) :=
+    continuous_ballFst.comp continuous_toBall
+  refine ⟨{ toFun := fun q => ⟨(K (q.1, ballFst (toBall q.2)), ε • (q.2 : E × F).2),
+              pair_ne_zero q.2 (fun h1 => hK0 _ h1) hε⟩
+            continuous_toFun := by
+              refine Continuous.subtype_mk (Continuous.prodMk ?_ ?_) _
+              · exact hK.comp (continuous_fst.prodMk (hw.comp continuous_snd))
+              · exact continuous_const.smul (continuous_snd.comp
+                  (continuous_subtype_val.comp continuous_snd))
+            map_zero_left := fun v => ?_
+            map_one_left := fun v => ?_ }⟩
+  · refine Subtype.ext (Prod.ext ?_ rfl)
+    change K (0, ballFst (toBall v)) = cone f₀ (ballFst (toBall v))
+    by_cases hv : ((ballFst (toBall v) : ball (0 : E) 1) : E) = 0
+    · rw [hKz _ hv]
+      simp [cone, hv]
+    · rw [hKnz _ hv, H.apply_zero, cone_of_ne hv]
+      rfl
+  · refine Subtype.ext (Prod.ext ?_ rfl)
+    change K (1, ballFst (toBall v)) = cone f₁ (ballFst (toBall v))
+    by_cases hv : ((ballFst (toBall v) : ball (0 : E) 1) : E) = 0
+    · rw [hKz _ hv]
+      simp [cone, hv]
+    · rw [hKnz _ hv, H.apply_one, cone_of_ne hv]
+      rfl
+
+end Product
 
 end Straight
 
@@ -309,7 +464,57 @@ theorem exists_orientationPreserving_restrict (hconn : IsConnected A.W) :
   exact (A.localMap_homotopic_of_admissible hconn _ h h₀).trans
     ((hj _ hmem).trans (A.localMap_homotopic_of_admissible hconn 0 h₀ h))
 
+/-! ### Stabilization -/
+
+/-- An admissible pair of `W × ℝ^m` gives an admissible pair of `W`: by `ball_prod_same`, the ball
+of the product is the product of the balls. -/
+theorem admissible_stabilize (d : ℕ) (hd : k ≤ d) {x : A.E × EuclideanSpace ℝ (Fin (d - k))}
+    {ε : ℝ} (h : (A.stabilize d hd).Admissible x ε) : A.Admissible x.1 ε := by
+  refine ⟨h.1, fun y hy => ?_⟩
+  have hmem : ((y, x.2) : A.E × EuclideanSpace ℝ (Fin (d - k))) ∈ ball x ε := by
+    rw [mem_ball, Prod.dist_eq, dist_self]
+    exact max_lt (mem_ball.1 hy) h.1
+  exact (show (y, x.2) ∈ A.W ×ˢ (univ : Set (EuclideanSpace ℝ (Fin (d - k)))) from h.2 hmem).1
+
+/-- **The local vectors of `W × ℝ^m`** are `(ℓ(v₁), εv₂)`, with `ℓ` those of `W`. -/
+theorem localVec_stabilize (d : ℕ) (hd : k ≤ d) (g : ℤ_[p])
+    {x : A.E × EuclideanSpace ℝ (Fin (d - k))} {ε : ℝ} (h : (A.stabilize d hd).Admissible x ε)
+    (v : ball (0 : A.E × EuclideanSpace ℝ (Fin (d - k))) 1) :
+    ((A.stabilize d hd).localVec g h v : A.E × EuclideanSpace ℝ (Fin (d - k))) =
+      (A.localVec g (A.admissible_stabilize d hd h) (ballFst v),
+        ε • (v : A.E × EuclideanSpace ℝ (Fin (d - k))).2) := by
+  refine Prod.ext rfl ?_
+  change (x.2 + ε • (v : A.E × EuclideanSpace ℝ (Fin (d - k))).2) - x.2 = _
+  rw [add_sub_cancel_left]
+
+/-- **Stabilization keeps orientation preservation** (05:75-80): the local maps of `W × ℝ^m` are
+`(v₁, v₂) ↦ (ℓ_g(v₁), εv₂)`; straight lines join them to `(cone ℓ_g (v₁), εv₂)`, the cone of a
+homotopy `ℓ_g ≃ ℓ_0` joins those for `g` and `0`, and straight lines lead back. -/
+theorem orientationPreserving_stabilize (d : ℕ) (hd : k ≤ d) (hA : A.OrientationPreserving) :
+    (A.stabilize d hd).OrientationPreserving := by
+  intro g x ε h
+  have a := A.admissible_stabilize d hd h
+  have hne : ∀ g' : ℤ_[p], ∀ v : ball (0 : A.E) 1, (v : A.E) ≠ 0 → A.localVec g' a v ≠ 0 :=
+    fun g' v hv => mt (A.localVec_eq_zero_iff g' a v).1 hv
+  have e : ∀ g' : ℤ_[p], (A.stabilize d hd).localMap g' h =
+      stabMap (A.localVec g' a) (A.continuous_localVec g' a) (hne g') h.1 :=
+    fun g' => ContinuousMap.ext fun v => Subtype.ext (A.localVec_stabilize d hd g' h (toBall v))
+  have r : ∀ g' : ℤ_[p], A.localMap g' a =
+      restrictPB (A.localVec g' a) (A.continuous_localVec g' a) (hne g') := fun g' => rfl
+  have H := hA g x.1 ε a
+  rw [r, r] at H
+  rw [e, e]
+  exact (stabMap_homotopic_cone _ _ _ _).trans
+    ((stabMap_cone_homotopic _ _ _ _ _ _ _ H).trans (stabMap_homotopic_cone _ _ _ _).symm)
+
 end LocalAction
+
+/-- **The orientation facts of §5** for the concrete predicate
+`LocalAction.OrientationPreserving`. -/
+theorem orientation : Orientation LocalAction.OrientationPreserving where
+  exists_restrict A hconn := A.exists_orientationPreserving_restrict hconn
+  restrict A j hA := A.orientationPreserving_restrict j hA
+  stabilize A d hd hA := A.orientationPreserving_stabilize d hd hA
 
 end
 
