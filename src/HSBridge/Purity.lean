@@ -22,15 +22,18 @@ A name can be declared by several loaded modules: a theorem stated twice with th
 HS_proof's `FCChallenge` and `FCSolution` do, the first with proof `sorry`), or an auxiliary lemma
 that Lean realizes on demand in every module that needs it (such as the congruence lemma
 `Homeomorph.addRight.congr_simp`). Lean then records only the lowest-indexed module holding a copy
-(`Environment.getModuleIdxFor?`), while the kernel keeps the body of the last copy loaded. So the
-audit looks at every module holding a copy, from the module data. If those modules are of different
-kinds (HS_proof or not; importing HS_proof or not), `#assert_route_pure` fails with "ambiguous
-provenance" instead of picking one.
+(`Environment.getModuleIdxFor?`), while the kernel keeps the body of the last copy loaded, and
+`#print axioms` reads the axioms recorded for the first. So the audit reads every module holding a
+copy, and every copy's declaration, from the module data. If those modules are of different kinds
+(HS_proof or not; importing HS_proof or not), `#assert_route_pure` fails with "ambiguous
+provenance" instead of picking one. If they are of the same kind, the walk follows the
+dependencies of every copy, not only of the copy the kernel keeps.
 
 ## The walk
 
 The audit walks every constant a declaration depends on, through types and values, as Lean core's
-`CollectAxioms` does for `#print axioms`, reading the bodies the kernel holds. It enters a constant
+`CollectAxioms` does for `#print axioms`, reading the body the kernel holds, or, for a name held by
+several modules, the bodies of all copies (see Provenance). It enters a constant
 if some module holding it imports HS_proof, directly or not, or is HS_proof; it does not enter a
 constant all of whose modules are free of HS_proof. Such a module was elaborated and checked in an
 environment without HS_proof, so its declarations have proofs that use no HS_proof constant.
@@ -87,10 +90,6 @@ array on each call, so it is avoided here.) -/
 def moduleName (env : Environment) (idx : ModuleIdx) : Name :=
   env.header.modules[idx.toNat]!.module
 
-/-- The first module that declares `c`, if `c` is imported. -/
-def moduleOf? (env : Environment) (c : Name) : Option Name :=
-  (env.getModuleIdxFor? c).map (moduleName env)
-
 /-- What the audit knows about the loaded modules. -/
 structure Provenance where
   /-- For each module, by index, whether it belongs to HS_proof. -/
@@ -102,6 +101,9 @@ structure Provenance where
   copies : Std.HashMap Name (Array ModuleIdx)
   /-- Imports that have no module index (none are expected). -/
   unresolved : Array Name
+  /-- For each name declared by more than one loaded module, every copy's declaration, in module
+  order (the kernel holds the last). -/
+  infos : Std.HashMap Name (Array ConstantInfo)
 
 /-- Computes the `Provenance` of the loaded modules. A module for which `tainted` is `false`
 (Mathlib, TauCeti, Lean core, or the `HilbertSmith` library, for instance) was checked without
@@ -132,7 +134,14 @@ def provenance (env : Environment) : Provenance := Id.run do
     for c in env.header.moduleData[i]!.constNames do
       if (env.getModuleIdxFor? c).map (·.toNat) != some i then
         copies := copies.insert c ((copies.getD c #[]).push i)
-  return { hs, tainted, copies, unresolved }
+  -- Every copy's declaration, at the name's position in each holder's module data.
+  let mut infos : Std.HashMap Name (Array ConstantInfo) := {}
+  for i in [0:mods.size] do
+    let data := env.header.moduleData[i]!
+    for c in data.constNames, ci in data.constants do
+      if copies.contains c then
+        infos := infos.insert c ((infos.getD c #[]).push ci)
+  return { hs, tainted, copies, unresolved, infos }
 
 namespace Provenance
 
@@ -141,6 +150,10 @@ def holders (P : Provenance) (env : Environment) (c : Name) : Array ModuleIdx :=
   match env.getModuleIdxFor? c with
   | some i => #[i] ++ P.copies.getD c #[]
   | none => #[]
+
+/-- The modules of HS_proof that declare `c`. -/
+def hsHolders (P : Provenance) (env : Environment) (c : Name) : Array Name :=
+  (P.holders env c).filterMap fun i => if P.hs[i.toNat]! then some (moduleName env i) else none
 
 /-- Whether `c` belongs to HS_proof: some module holding it does. -/
 def isHS (P : Provenance) (env : Environment) (c : Name) : Bool :=
@@ -181,33 +194,48 @@ structure Result where
 -- Follows Lean core src/Lean/Util/CollectAxioms.lean (Copyright (c) 2020 Microsoft Corporation,
 -- Apache-2.0).
 /-- The constants a declaration mentions directly: those in its type and its value, and the
-constructors of an inductive type, as in Lean core's `CollectAxioms`; `none` if the kernel
-environment does not hold `c`. Constants are read from the kernel environment, which holds the
-checked proof terms. -/
-def directDeps (kenv : Kernel.Environment) (c : Name) : Option (Array Name) :=
-  match kenv.find? c with
-  | some (.axiomInfo v) => some v.type.getUsedConstants
-  | some (.defnInfo v) => some (v.type.getUsedConstants ++ v.value.getUsedConstants)
-  | some (.thmInfo v) => some (v.type.getUsedConstants ++ v.value.getUsedConstants)
-  | some (.opaqueInfo v) => some (v.type.getUsedConstants ++ v.value.getUsedConstants)
-  | some (.quotInfo _) => some #[]
-  | some (.ctorInfo v) => some v.type.getUsedConstants
-  | some (.recInfo v) => some v.type.getUsedConstants
-  | some (.inductInfo v) => some (v.type.getUsedConstants ++ v.ctors.toArray)
-  | none => none
+constructors of an inductive type, as in Lean core's `CollectAxioms`. -/
+def infoDeps : ConstantInfo → Array Name
+  | .axiomInfo v => v.type.getUsedConstants
+  | .defnInfo v => v.type.getUsedConstants ++ v.value.getUsedConstants
+  | .thmInfo v => v.type.getUsedConstants ++ v.value.getUsedConstants
+  | .opaqueInfo v => v.type.getUsedConstants ++ v.value.getUsedConstants
+  | .quotInfo _ => #[]
+  | .ctorInfo v => v.type.getUsedConstants
+  | .recInfo v => v.type.getUsedConstants
+  | .inductInfo v => v.type.getUsedConstants ++ v.ctors.toArray
 
-/-- The constants in the value of `c` below its leading `fun` binders, whose types repeat the
-hypotheses of `c`'s type; `none` if `c` has no value. -/
-def valueDeps (kenv : Kernel.Environment) (c : Name) : Option (Array Name) :=
+/-- The constants in the value of a declaration below its leading `fun` binders, whose types
+repeat the hypotheses of its type; `none` if it has no value. -/
+def infoValueDeps (ci : ConstantInfo) : Option (Array Name) :=
   let body : Expr → Expr := fun e => Id.run do
-    let mut e := e
-    while e.isLambda do e := e.bindingBody!
+    let mut e := e.consumeMData
+    while e.isLambda do e := e.bindingBody!.consumeMData
     return e
-  match kenv.find? c with
-  | some (.defnInfo v) => some (body v.value).getUsedConstants
-  | some (.thmInfo v) => some (body v.value).getUsedConstants
-  | some (.opaqueInfo v) => some (body v.value).getUsedConstants
+  match ci with
+  | .defnInfo v => some (body v.value).getUsedConstants
+  | .thmInfo v => some (body v.value).getUsedConstants
+  | .opaqueInfo v => some (body v.value).getUsedConstants
   | _ => none
+
+/-- The declarations of `c` to walk: every copy's, for a name held by several modules, and
+otherwise the kernel's. Empty if the kernel environment does not hold `c`. -/
+def copiesOf (kenv : Kernel.Environment) (P : Provenance) (c : Name) : Array ConstantInfo :=
+  match P.infos[c]? with
+  | some cis => cis
+  | none => (kenv.find? c).toArray
+
+/-- The constants `c` mentions directly, in any of its copies (`copiesOf`); `none` if the kernel
+environment does not hold `c`. -/
+def directDeps (kenv : Kernel.Environment) (P : Provenance) (c : Name) : Option (Array Name) :=
+  let cis := copiesOf kenv P c
+  if cis.isEmpty then none else some (cis.flatMap infoDeps)
+
+/-- The constants in the value of `c` below its leading binders, in any of its copies; `none` if no
+copy has a value. -/
+def valueDeps (kenv : Kernel.Environment) (P : Provenance) (c : Name) : Option (Array Name) :=
+  let deps := (copiesOf kenv P c).filterMap infoValueDeps
+  if deps.isEmpty then none else some deps.flatten
 
 /-- Walks every constant that `root` depends on, transitively, without entering the constants in
 `allow`, and records the HS_proof constants met. With `descend := false` the walk stops at the
@@ -216,9 +244,8 @@ through HS_proof, to report everything reached there. With `valueOnly := true` t
 `valueDeps root` instead of `directDeps root`. Constants all of whose modules are free of HS_proof
 are not entered (see `provenance`). -/
 def audit (env : Environment) (root : Name) (allow : NameSet := {}) (descend := false)
-    (valueOnly := false) : Result := Id.run do
+    (valueOnly := false) (P : Provenance := provenance env) : Result := Id.run do
   let kenv := env.checked.get
-  let P := provenance env
   let mut res : Result := { unresolved := P.unresolved }
   let mut visited : NameSet := NameSet.empty.insert root
   if P.isAmbiguous env root then
@@ -229,7 +256,7 @@ def audit (env : Environment) (root : Name) (allow : NameSet := {}) (descend := 
     res := { res with reached := res.reached.insert root, entries := res.entries.insert root }
   if (rootIsHS && !descend) || !P.mayReach env root then
     return res
-  let rootDeps := if valueOnly then valueDeps kenv root else directDeps kenv root
+  let rootDeps := if valueOnly then valueDeps kenv P root else directDeps kenv P root
   let some rootDeps := rootDeps | return { res with unknown := res.unknown.insert root }
   -- The work list holds a constant together with its direct dependencies.
   let mut stack : Array (Name × Array Name) := #[(root, rootDeps)]
@@ -255,7 +282,7 @@ def audit (env : Environment) (root : Name) (allow : NameSet := {}) (descend := 
         unless cIsHS do
           res := { res with entries := res.entries.insert d }
       if !P.mayReach env d || (dIsHS && !descend) then continue
-      match directDeps kenv d with
+      match directDeps kenv P d with
       | some ds => stack := stack.push (d, ds)
       | none => res := { res with unknown := res.unknown.insert d }
   return res
@@ -264,18 +291,6 @@ def audit (env : Environment) (root : Name) (allow : NameSet := {}) (descend := 
 def sorted (s : NameSet) : Array Name :=
   s.toArray.qsort Name.lt
 
-/-- The HS_proof constants of `res`, counted by their module's first two name components
-(for example `HSFormal.LTheory`), sorted by module. -/
-def countByModule (env : Environment) (res : Result) : Array (Name × Nat) := Id.run do
-  let mut counts : Std.HashMap Name Nat := {}
-  for c in res.reached do
-    let m := (moduleOf? env c).getD .anonymous
-    let key := match m.components with
-      | a :: b :: _ :: _ => a ++ b
-      | _ => m
-    counts := counts.insert key (counts.getD key 0 + 1)
-  return counts.toArray.qsort fun a b => Name.lt a.1 b.1
-
 /-- Resolves an identifier to exactly one constant, as `#print axioms` does. -/
 def resolveConst (id : Ident) : CommandElabM Name :=
   liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
@@ -283,6 +298,25 @@ def resolveConst (id : Ident) : CommandElabM Name :=
 /-- The names, one per indented line. -/
 def nameLines (names : Array Name) : MessageData :=
   MessageData.joinSep (names.toList.map fun n => m!"\n  {n}") ""
+
+/-- The HS_proof constants of `res`, counted by the first two name components of each HS_proof
+module holding them (for example `HSFormal.LTheory`), sorted by module. A constant held by several
+HS_proof modules counts once for each. -/
+def countByModule (env : Environment) (P : Provenance) (res : Result) : Array (Name × Nat) :=
+  Id.run do
+  let mut counts : Std.HashMap Name Nat := {}
+  for c in res.reached do
+    for m in P.hsHolders env c do
+      let key := match m.components with
+        | a :: b :: _ :: _ => a ++ b
+        | _ => m
+      counts := counts.insert key (counts.getD key 0 + 1)
+  return counts.toArray.qsort fun a b => Name.lt a.1 b.1
+
+/-- The line listing the constants of ambiguous provenance in `res`, if any. -/
+def ambiguousLine (res : Result) : MessageData :=
+  if res.ambiguous.isEmpty then m!"" else
+    m!"\nof ambiguous provenance:" ++ nameLines (sorted res.ambiguous)
 
 /-- Throws if the walk met a constant of ambiguous provenance, a constant missing from the kernel
 environment, or an import without a module index. -/
@@ -305,17 +339,16 @@ def elabRouteReport : CommandElab
   | `(#route_report $id) => do
     let c ← resolveConst id
     let env ← getEnv
-    let res := audit env c (descend := true)
+    let P := provenance env
+    let res := audit env c (descend := true) (P := P)
     if res.reached.isEmpty then
       logInfo m!"route audit: '{c}' depends on no constant from HS_proof"
     else
-      let counts := countByModule env res
+      let counts := countByModule env P res
       let lines := counts.toList.map fun (m, k) => m!"\n  {m}: {k}"
-      let ambiguous := if res.ambiguous.isEmpty then m!"" else
-        m!"\nof ambiguous provenance:" ++ nameLines (sorted res.ambiguous)
       logInfo <| m!"route audit: '{c}' depends on {res.reached.size} constants from HS_proof; \
         by module:" ++ MessageData.joinSep lines "" ++
-        m!"\nentry points into HS_proof:" ++ nameLines (sorted res.entries) ++ ambiguous
+        m!"\nentry points into HS_proof:" ++ nameLines (sorted res.entries) ++ ambiguousLine res
   | _ => throwUnsupportedSyntax
 
 /-- `#assert_route_pure c` fails, listing the entry points, if `c` depends on any constant from
@@ -341,7 +374,7 @@ def elabAssertRoutePure : CommandElab
       throwError m!"route audit: not declared discharges (HSBridge.Purity.declaredDischarges):" ++
         nameLines undeclared
     let allow := allowedNames.foldl (init := {}) NameSet.insert
-    let res := audit env c allow
+    let res := audit env c allow (P := P)
     let unused := allowedNames.filter fun a => !res.allowedMet.contains a
     unless unused.isEmpty do
       throwError m!"route audit: '{c}' does not depend on the allowed constants:" ++
@@ -358,7 +391,7 @@ def elabAssertRoutePure : CommandElab
   | _ => throwUnsupportedSyntax
 
 /-- `#assert_route_reaches c M` fails unless `c` mentions, directly or not, some constant declared
-in a module whose name starts with `M` (for example `HSFormal.LTheory`). It checks the positive half
+in an HS_proof module whose name starts with `M` (for example `HSFormal.LTheory`). It checks the positive half
 of a comparison. A constant mentioned only in `c`'s type counts. -/
 syntax (name := assertRouteReaches) "#assert_route_reaches " ident ident : command
 
@@ -371,11 +404,10 @@ syntax (name := assertRouteReachesByValue) "#assert_route_reaches_by_value " ide
 def runAssertRouteReaches (id pre : Ident) (valueOnly : Bool) : CommandElabM Unit := do
   let c ← resolveConst id
   let env ← getEnv
-  let res := audit env c (descend := true) (valueOnly := valueOnly)
+  let P := provenance env
+  let res := audit env c (descend := true) (valueOnly := valueOnly) (P := P)
   let hits := res.reached.toArray.filter fun d =>
-    match moduleOf? env d with
-    | some m => pre.getId.isPrefixOf m
-    | none => false
+    (P.hsHolders env d).any pre.getId.isPrefixOf
   let start := if valueOnly then "the value of " else ""
   if hits.isEmpty then
     throwError "route audit: {start}'{c}' depends on no constant from modules under \
@@ -407,8 +439,9 @@ def importClosure (env : Environment) (roots : Array Name) : Except MessageData 
   return (seen.toArray.filter isHSProofModule).foldl NameSet.insert {}
 
 /-- `#route_modules c front M₁ M₂ …` prints the HS_proof modules declaring a constant that `c`
-reaches, split into those in the import closure of `M₁, M₂, …` (the front) and the rest (the back
-end), with counts. It never fails, unless a module `Mᵢ` is not loaded. -/
+reaches (every HS_proof module holding it), split into those in the import closure of `M₁, M₂, …`
+(the front) and the rest (the back end), with counts, and any constants of ambiguous provenance
+met. It never fails, unless a module `Mᵢ` is not loaded. -/
 syntax (name := routeModules) "#route_modules " ident ppSpace &"front" (ppSpace ident)+ : command
 
 @[command_elab routeModules]
@@ -419,16 +452,15 @@ def elabRouteModules : CommandElab
     let frontMods ← match importClosure env (roots.map (·.getId)) with
       | .ok s => pure s
       | .error e => throwError e
-    let res := audit env c (descend := true)
+    let P := provenance env
+    let res := audit env c (descend := true) (P := P)
     let touched : NameSet := res.reached.toArray.foldl (init := {}) fun s d =>
-      match moduleOf? env d with
-      | some m => s.insert m
-      | none => s
+      (P.hsHolders env d).foldl NameSet.insert s
     let inFront := (sorted touched).filter frontMods.contains
     let back := (sorted touched).filter (!frontMods.contains ·)
     logInfo <| m!"route modules: '{c}' reaches constants of {touched.size} HS_proof modules; \
       {inFront.size} of them in the front ({frontMods.size} modules), {back.size} in the back end.\
-      \nfront:" ++ nameLines inFront ++ m!"\nback end:" ++ nameLines back
+      \nfront:" ++ nameLines inFront ++ m!"\nback end:" ++ nameLines back ++ ambiguousLine res
   | _ => throwUnsupportedSyntax
 
 /-- `#assert_import_boundary L` fails, listing them, if some imported module whose name has root `L`
@@ -461,12 +493,24 @@ def structureOf? (env : Environment) (type : Expr) : Option Name :=
   | _ => none
 
 /-- `#route_assumptions c flag f₁ "note₁" … expanding S₁ S₂ …` lists, for each hypothesis of `c`
-whose type is a structure, that structure's fields (`getStructureFieldsFlattened`). A field whose
-type, below its `∀` binders, is one of the structures `Sᵢ` is followed by `Sᵢ`'s fields, indented.
-A field named `fᵢ` is followed by its note. Under `#guard_msgs`, adding or removing a field changes
-the message and so fails the build. -/
+whose type is a structure, that structure's fields (`getStructureFieldsFlattened`), and prints any
+other hypothesis as `x : T (not a structure)`. A field whose type, below its `∀` binders, is one of
+the structures `Sᵢ` is followed by `Sᵢ`'s fields, indented, and so on recursively (a structure is
+not expanded inside itself). A field named `fᵢ`, at any depth, is followed by its note; a flag that
+matches no listed field is an error. Under `#guard_msgs`, adding or removing a field changes the
+message and so fails the build. -/
 syntax (name := routeAssumptions) "#route_assumptions " ident
   (ppSpace &"flag" ppSpace ident ppSpace str)* (ppSpace &"expanding" (ppSpace ident)+)? : command
+
+/-- The fields of the structure `s`, in order, each with the structure among `expand` that its
+type is an instance of (below its `∀` binders), if any. -/
+def fieldsWithExpansion (env : Environment) (expand : Array Name) (s : Name) :
+    MetaM (Array (Name × Option Name)) :=
+  (getStructureFieldsFlattened env s (includeSubobjectFields := false)).mapM fun f => do
+    let sub ← match getProjFnForField? env s f >>= env.find? with
+      | some info => forallTelescope info.type fun _ body => pure (structureOf? env body)
+      | none => pure none
+    return (f, sub.filter expand.contains)
 
 @[command_elab routeAssumptions]
 def elabRouteAssumptions : CommandElab
@@ -475,33 +519,40 @@ def elabRouteAssumptions : CommandElab
     let env ← getEnv
     let expand ← (exps.getD #[]).mapM resolveConst
     let flags := (fs.map (·.getId)).zip (notes.map (·.getString))
-    let fieldLines (indent : String) (s : Name) : MetaM (Array MessageData) := do
-      let mut lines := #[]
-      for f in getStructureFieldsFlattened env s (includeSubobjectFields := false) do
-        let sub ← match getProjFnForField? env s f >>= env.find? with
-          | some info => forallTelescope info.type fun _ body => pure (structureOf? env body)
-          | none => pure none
-        let sub := sub.filter expand.contains
-        let mut line := m!"\n{indent}{f}"
-        if let some t := sub then
-          line := line ++ m!" ({t}, expanded)"
-        if let some (_, note) := flags.find? (·.1 == f) then
-          line := line ++ m!"\n{indent}  flagged: {note}"
-        lines := lines.push line
-        if let some t := sub then
-          for f' in getStructureFieldsFlattened env t (includeSubobjectFields := false) do
-            lines := lines.push m!"\n{indent}  {f'}"
-      return lines
-    let msg ← liftTermElabM do
+    -- The fields of `s` at depth `depth`, as work items: depth, field, structure to expand, and
+    -- the structures already open on the path (not expanded again).
+    let items (depth : Nat) (s : Name) (open_ : List Name) :
+        MetaM (Array (Nat × Name × Option Name × List Name)) := do
+      return (← fieldsWithExpansion env expand s).map fun (f, sub) => (depth, f, sub, s :: open_)
+    let (msg, used) ← liftTermElabM do
       let some info := env.find? c | throwError "unknown constant '{c}'"
       forallTelescope info.type fun xs _ => do
         let mut msg := m!"route assumptions of '{c}':"
+        let mut used : NameSet := {}
         for x in xs do
           let t ← inferType x
-          let some s := structureOf? env t | continue
-          let lines ← fieldLines "  " s
-          msg := msg ++ m!"\n{← ppExpr x} : {← ppExpr t}" ++ MessageData.joinSep lines.toList ""
-        return msg
+          let some s := structureOf? env t
+            | msg := msg ++ m!"\n{← ppExpr x} : {← ppExpr t} (not a structure)"
+          msg := msg ++ m!"\n{← ppExpr x} : {← ppExpr t}"
+          -- Depth-first, with an explicit stack (the audit's root-package code has no recursion).
+          let mut stack := (← items 1 s []).reverse
+          while h : stack.size > 0 do
+            let (depth, f, sub, open_) := stack[stack.size - 1]
+            stack := stack.pop
+            let indent := "".pushn ' ' (2 * depth)
+            msg := msg ++ m!"\n{indent}{f}"
+            if let some t := sub then
+              msg := msg ++ m!" ({t}, expanded)"
+            if let some (_, note) := flags.find? (·.1 == f) then
+              msg := msg ++ m!"\n{indent}  flagged: {note}"
+              used := used.insert f
+            if let some t := sub then
+              unless open_.contains t do
+                stack := stack ++ (← items (depth + 1) t open_).reverse
+        return (msg, used)
+    let unmatched := (flags.map (·.1)).filter (!used.contains ·)
+    unless unmatched.isEmpty do
+      throwError m!"route assumptions: flags that match no listed field:" ++ nameLines unmatched
     logInfo msg
   | _ => throwUnsupportedSyntax
 

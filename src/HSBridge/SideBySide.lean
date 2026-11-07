@@ -185,8 +185,9 @@ def interfaceComparison : List ComparisonRow := [
       ``HilbertSmith.Interface.OrbitCharacterTheory.proj_mul,
       ``HilbertSmith.Interface.OrbitCharacterTheory.proj_sum,
       ``HilbertSmith.Interface.OrbitCharacterTheory.proj_adj],
-    "proved on the algebra side in HS_proof (SheetData is only the hypotheses of the cyclotomic \
-      divisibility); sheaf fields (Lemmas 6.1, 6.2) in OpenAI's"⟩,
+    "proved on the algebra side in HS_proof: SheetData is the hypotheses of (★), the divisibility \
+      of the fibre tail signature by p, and SignatureDecomposition.prime_dvd_signature is the \
+      cyclotomic Lemma 3.1; sheaf fields (Lemmas 6.1, 6.2) in OpenAI's"⟩,
   ⟨"Covariance of the pieces",
     [``HSFormal.LTheory.SupportHom.cutBdry_natural],
     [``HilbertSmith.Interface.OrbitCharacterTheory.push,
@@ -271,13 +272,23 @@ O : HilbertSmith.Interface.OAIInterface
     cat
     preadd
     biprod
-    dual
+    dual (HilbertSmith.Duality, expanded)
+      D
+      biduality
     dualAdd
     WQ
     wgrp
-    witt
+    witt (HilbertSmith.Interface.WittClasses, expanded)
+      cls
+      cls_isometry
+      cls_orthSum
+      cls_neg
     ℓ
-    pushQ
+    pushQ (HilbertSmith.Interface.DualFunctor, expanded)
+      F
+      additive
+      η
+      bidual
     wmap
     wmap_cls
     ℓ_natural
@@ -310,7 +321,8 @@ T : HilbertSmith.Interface.LocalInputs O
   flag chartReduction "assumed; stated with second countability; B-M3 proves it, and a form \
     without it, from NewmanInput"
   expanding HilbertSmith.Interface.OAIInvariant HilbertSmith.Interface.OrbitCharacterTheory
-    HilbertSmith.Interface.Orientation
+    HilbertSmith.Interface.Orientation HilbertSmith.Interface.WittClasses
+    HilbertSmith.Interface.DualFunctor HilbertSmith.Duality
 
 /-! ### D1's module table: HS_proof's shared front against its back end
 
