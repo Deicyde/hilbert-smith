@@ -46,8 +46,8 @@ For the second-countable statement, the same conclusion with two sets of hypothe
   theorem by `HSFormal.Newman.newmanPrimeOrder`.
 * OpenAI's route discharges neither of its interfaces yet. `OAIInterface` needs the sheaf model of
   §§2–4. `LocalInputs` collects what is still assumed from §5: the orientation facts
-  (`Orientation`), Lemma 5.3 with the pinch transport (`AveragedTest`), and Lemmas 5.4 and 5.5
-  combined (`OrbitNull`). The rest of §5 is proved without HS_proof: what §6 uses of Proposition
+  (`Orientation`), Lemma 5.3 in pinch form (`AveragedTest`), the pinch transport
+  (`PinchTransport`), and Lemmas 5.4 and 5.5 combined (`OrbitNull`). The rest of §5 is proved without HS_proof: what §6 uses of Proposition
   5.1, without its orientation step (which stays the input `Orientation.exists_restrict`), from
   `HilbertSmith.NewmanInput` and without second countability
   (`HilbertSmith.Interface.chartReductionNoSC`); Lemma 5.2 (`HilbertSmith.Interface.collapseInput`);
@@ -292,6 +292,7 @@ O : HilbertSmith.Interface.OAIInterface
 T : HilbertSmith.Interface.LocalInputs O
   orientation
   averagedTest
+  pinchTransport
   orbitNull
 -/
 #guard_msgs (whitespace := lax) in
@@ -378,6 +379,7 @@ T : HilbertSmith.Interface.LocalInputs O
     restrict
     stabilize
   averagedTest
+  pinchTransport
   orbitNull
 hN : HilbertSmith.NewmanInput (not a structure)
 -/

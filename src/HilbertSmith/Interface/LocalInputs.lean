@@ -13,8 +13,9 @@ a published input on its own.
 Assumed, as the fields of `LocalInputs O`:
 * `Orientation OP`: the facts about the orientation predicate `OP` that §5 uses: the step
   `G = 2H` of Proposition 5.1, and persistence under the replacements of §5.
-* `AveragedTest d`: Lemma 5.3, together with the pinch transport of the first paragraph of the
-  proof of Proposition 5.8.
+* `AveragedTest d`: Lemma 5.3 in OpenAI's pinch form (05:148-149); (5.1) follows
+  (`HilbertSmith.Interface.aqc_homotopic_id`).
+* `PinchTransport d`: the pinch transport of the first paragraph of the proof of Proposition 5.8.
 * `OrbitNull d δD`: Lemmas 5.4 and 5.5 combined, in the form the proof of Proposition 5.8 uses.
 
 Stated here and proved:
@@ -37,12 +38,12 @@ Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLA
   an orbit map `r`, then `v^*γ_d` vanishes after pulling back, hence vanishes (Lemma 5.4), hence
   some `D_s ∘ v` is nullhomotopic (Lemma 5.5). It splits into the two lemmas once a Čech
   cohomology of compact metrizable spaces is available.
-* The pinch transport is part of `AveragedTest`: stating it alone needs OpenAI's pinch maps
-  `P_{z,r}` as definitions. It is to be split off once they are defined.
+* Lemma 5.3 is stated in its pinch form, and (5.1) is a theorem (decision 1 of the lead's B-M4
+  brief); the pinch maps are `LocalAction.pinch`.
 
 Scope and non-vacuity. Each assumed input is stated for the actions OpenAI's text covers, or
 more: `Orientation` for any action (its first field for connected `W`); `AveragedTest` for any
-action on a connected `W`; `OrbitNull` for odd `d ≥ 3`, true when the maps `D k` of the interface
+action on a nonempty `W`; `PinchTransport` for connected `W`; `OrbitNull` for odd `d ≥ 3`, true when the maps `D k` of the interface
 really have degree `k`. `LocalAction`s of every kind are quantified over, but each input assumes
 what its lemma needs, so each holds by the cited result.
 -/
@@ -78,27 +79,37 @@ def CollapseInput : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k),
     ContinuousVAdd ℤ_[p] (OnePoint A.W) ∧ TopologicalSpace.MetrizableSpace A.Y
 
-/-- **Lemma 5.3** (an averaged degree-one test; statement 05:135-150, proof 05:152-183), with the
-pinch transport from the proof of Proposition 5.8. After replacing `ℤ_[p]` by an open subgroup
-`p^j ℤ_[p]`, there is `a : Y → S^d` with:
-* `a ∘ q ∘ c ≃ id`. OpenAI states `deg(aqc) = 1` (5.1) and, in the same statement, that `aq` is
-  homotopic on `W⁺` to "a degree-one pinch" supported in a round ball in `W` (05:148-149), with
-  the map `P` unspecified; the freedom to choose `P` is in the proof (05:153-161). Run the proof
-  with `P` chosen through `A.sphereEquiv` and a radial homeomorphism of the open unit ball onto
-  `ℝ^d`: then `P_{z,r} ∘ c ≃ id` by an explicit scaling homotopy, so `aqc ≃ id` follows with no
-  degree theory, as B1 proposed.
-* for every nonempty open `V ⊆ Y ∖ {y∞}`, `a ∘ q` is homotopic on `W⁺` to a map constant on
-  `q⁻¹(Y ∖ V)`: the first paragraph of the proof of Proposition 5.8 (05:492-506) moves the pinch
-  along a path in the connected `W` into a ball inside `q⁻¹(V)`.
+/-- **Lemma 5.3** (an averaged degree-one test; statement 05:135-150, proof 05:152-183), in
+OpenAI's pinch form (05:148-149): for a local action on a nonempty `W`, after replacing `ℤ_[p]` by
+an open subgroup `p^j ℤ_[p]`, there is `a : Y → S^d` such that `a ∘ q` is homotopic on `W⁺` to a
+pinch `P_{z,r}` (`LocalAction.pinch`) supported in a round ball `B̄(z, r) ⊆ W`.
 
-This needs `W` connected; it is applied to `W = O × ℝ^{d−n}`. -/
+Departure (decision 1 of the lead's B-M4 brief): OpenAI states `deg(aqc) = 1` (5.1) in the same
+lemma; here it is the theorem `HilbertSmith.Interface.aqc_homotopic_id`, since `P_{z,r} c ≃ id`
+(`LocalAction.pinch_comp_c_homotopic`). The pinch `P` is chosen in `LocalAction.pinch`, as the
+proof of the lemma allows (05:153-157). -/
 def AveragedTest (d : ℕ) : Prop :=
+  ∀ {p : ℕ} [Fact p.Prime] (A : LocalAction p d), A.W.Nonempty →
+    ∃ (j : ℕ) (a : C((A.restrict j).Y, Sphere d)) (z : A.E) (r : ℝ) (hr : 0 < r)
+      (hzr : Metric.closedBall z r ⊆ A.W),
+      (a.comp (A.restrict j).q).Homotopic ((A.restrict j).pinch z r hr hzr)
+
+/-- **The pinch transport** (the first paragraph of the proof of Proposition 5.8, 05:492-504): on a
+connected `W`, any two pinches with closed balls in `W` are homotopic on `W⁺`, by moving the
+centre along a path in `W` and shrinking and enlarging the radius at the ends. -/
+def PinchTransport (d : ℕ) : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] (A : LocalAction p d), IsConnected A.W →
-    ∃ (j : ℕ) (a : C((A.restrict j).Y, Sphere d)),
-      (a.comp (A.restrict j).qc).Homotopic (ContinuousMap.id _) ∧
-      ∀ V : Set (A.restrict j).Y, IsOpen V → V.Nonempty → (A.restrict j).yinf ∉ V →
-        ∃ φ : C(OnePoint (A.restrict j).W, Sphere d), (a.comp (A.restrict j).q).Homotopic φ ∧
-          ∃ b, ∀ x, (A.restrict j).q x ∉ V → φ x = b
+    ∀ (z : A.E) (r : ℝ) (hr : 0 < r) (hzr : Metric.closedBall z r ⊆ A.W)
+      (z' : A.E) (r' : ℝ) (hr' : 0 < r') (hzr' : Metric.closedBall z' r' ⊆ A.W),
+      (A.pinch z r hr hzr).Homotopic (A.pinch z' r' hr' hzr')
+
+/-- **(5.1) from Lemma 5.3's pinch form**: if `a ∘ q ≃ P_{z,r}` on `W⁺`, then `a ∘ q ∘ c ≃ id`,
+since `P_{z,r} c ≃ id` (`LocalAction.pinch_comp_c_homotopic`). OpenAI states `deg(aqc) = 1`. -/
+theorem aqc_homotopic_id {p : ℕ} [Fact p.Prime] {d : ℕ} (A : LocalAction p d)
+    (a : C(A.Y, Sphere d)) {z : A.E} {r : ℝ} {hr : 0 < r} {hzr : Metric.closedBall z r ⊆ A.W}
+    (h : (a.comp A.q).Homotopic (A.pinch z r hr hzr)) :
+    (a.comp A.qc).Homotopic (ContinuousMap.id _) :=
+  (h.comp (ContinuousMap.Homotopic.refl A.c)).trans (A.pinch_comp_c_homotopic z hr hzr)
 
 /-- **Lemmas 5.4 and 5.5, combined** (Lemma 5.4: statement 05:209-224, proof 05:226-275;
 Lemma 5.5: statement 05:287-292, proof 05:294-377; combined as in 05:506-512). Let `X` be a
@@ -140,14 +151,15 @@ cap-by-cap boxes. -/
 def ClosePairBasis (d : ℕ) : Prop :=
   ∀ z : ClosePair d, HasGoodBasisAt z
 
-/-- **The §5 inputs the route still assumes**, for the interface `O`: orientation, Lemma 5.3
-with the pinch transport, and Lemmas 5.4 and 5.5 combined. -/
+/-- **The §5 inputs the route still assumes**, for the interface `O`: orientation, Lemma 5.3,
+the pinch transport, and Lemmas 5.4 and 5.5 combined. -/
 structure LocalInputs (O : OAIInterface) : Prop where
   /-- The orientation facts of §5, for the interface's `OP` (05:68-72, 05:75-80, 05:181-182). -/
   orientation : Orientation O.OP
-  /-- Lemma 5.3 with the pinch transport (05:135-183, 05:491-506), in every odd dimension
-  `2j + 3`. -/
+  /-- Lemma 5.3 in pinch form (05:135-183), in every odd dimension `2j + 3`. -/
   averagedTest : ∀ j, AveragedTest (2 * j + 3)
+  /-- The pinch transport (05:492-504), in every odd dimension `2j + 3`. -/
+  pinchTransport : ∀ j, PinchTransport (2 * j + 3)
   /-- Lemmas 5.4 and 5.5, combined (05:209-377, 05:506-512), for the interface's degree maps. -/
   orbitNull : ∀ j, OrbitNull (2 * j + 3) (O.δD j)
 

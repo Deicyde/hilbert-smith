@@ -3,15 +3,15 @@ import HilbertSmith.Interface.LocalInputs
 /-!
 # Moving a test into a prescribed open set
 
-Proposition 5.8 of OpenAI's preprint, from the pinch transport (part of `AveragedTest`) and
-Lemmas 5.4 and 5.5 (`OrbitNull`), which are fields of `HilbertSmith.Interface.LocalInputs`, Lemma
-5.2 (`CollapseInput`, proved as `HilbertSmith.Interface.collapseInput`) and Lemma 5.7 (Deicyde's
-`HilbertSmith.homotopyExtension`).
+Proposition 5.8 of OpenAI's preprint, from the pinch transport (`PinchTransport`, used through
+`hpinch_of` with Lemma 5.3's pinch form) and Lemmas 5.4 and 5.5 (`OrbitNull`), which are fields of
+`HilbertSmith.Interface.LocalInputs`, Lemma 5.2 (`CollapseInput`, proved as
+`HilbertSmith.Interface.collapseInput`) and Lemma 5.7 (Deicyde's `HilbertSmith.homotopyExtension`).
 -/
 
 namespace HilbertSmith.Interface
 
-open Topology Set
+open Topology Set OnePoint
 
 /-- **Proposition 5.8** (moving a test into a prescribed open set). Let `a : Y → S^d` be such
 that, for every nonempty open `V ⊆ Y ∖ {y∞}`, `a ∘ q` is homotopic on `W⁺` to a map constant on
@@ -73,5 +73,42 @@ theorem moveTest {d : ℕ} {δD : DegreeMaps d} (hN : OrbitNull d δD) (hC : Col
       continuous_toFun := by fun_prop
       map_zero_left := fun y => hHt0 y
       map_one_left := fun _ => rfl }
+
+/-- **The hypothesis of `moveTest` from Lemma 5.3's pinch form and the pinch transport** (the first
+paragraph of the proof of Proposition 5.8, 05:492-506). If `a ∘ q ≃ P_{z,r}` and `P_{z,r}` is
+homotopic to every pinch with closed ball in `W`, then for every nonempty open `V ⊆ Y ∖ {y∞}`,
+`a ∘ q` is homotopic to a pinch whose ball lies in the open set `q⁻¹(V)`, which misses `∞` because
+`y∞ ∉ V`; that pinch is constant `ξ` on `q⁻¹(Y ∖ V)`. -/
+theorem hpinch_of {p : ℕ} [Fact p.Prime] {d : ℕ} (A : LocalAction p d) (a : C(A.Y, Sphere d))
+    {z : A.E} {r : ℝ} {hr : 0 < r} {hzr : Metric.closedBall z r ⊆ A.W}
+    (ha : (a.comp A.q).Homotopic (A.pinch z r hr hzr))
+    (ht : ∀ (z' : A.E) (r' : ℝ) (hr' : 0 < r') (hzr' : Metric.closedBall z' r' ⊆ A.W),
+      (A.pinch z r hr hzr).Homotopic (A.pinch z' r' hr' hzr'))
+    (V : Set A.Y) (hV : IsOpen V) (hVne : V.Nonempty) (hinf : A.yinf ∉ V) :
+    ∃ φ : C(OnePoint A.W, Sphere d), (a.comp A.q).Homotopic φ ∧
+      ∃ b, ∀ x, A.q x ∉ V → φ x = b := by
+  -- The open set `U ⊆ E` of points of `W` whose image lies in `V`.
+  set U : Set A.E := Subtype.val '' (((↑) : A.W → OnePoint A.W) ⁻¹' (A.q ⁻¹' V))
+  have hU : IsOpen U := A.isOpen.isOpenMap_subtype_val _
+    ((hV.preimage A.q.continuous).preimage OnePoint.continuous_coe)
+  obtain ⟨y, hy⟩ := hVne
+  obtain ⟨x, rfl⟩ : ∃ x, A.q x = y := Quotient.exists_rep y
+  induction x using OnePoint.rec with
+  | infty => exact absurd hy hinf
+  | coe w =>
+    obtain ⟨ε, hε, hball⟩ := Metric.isOpen_iff.1 hU w ⟨w, hy, rfl⟩
+    have hsub : Metric.closedBall (w : A.E) (ε / 2) ⊆ U :=
+      (Metric.closedBall_subset_ball (by linarith)).trans hball
+    have hsubW : Metric.closedBall (w : A.E) (ε / 2) ⊆ A.W := fun v hv => by
+      obtain ⟨w', -, rfl⟩ := hsub hv
+      exact w'.2
+    refine ⟨A.pinch w (ε / 2) (by linarith) hsubW, ha.trans (ht _ _ _ _), A.sphereEquiv ∞,
+      fun x hx => ?_⟩
+    induction x using OnePoint.rec with
+    | infty => rfl
+    | coe w' =>
+      refine A.pinch_apply_of_notMem _ _ fun hw' => hx ?_
+      obtain ⟨w'', hw'', hww⟩ := hsub hw'
+      rwa [← Subtype.ext hww]
 
 end HilbertSmith.Interface
