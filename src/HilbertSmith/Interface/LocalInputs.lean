@@ -1,5 +1,6 @@
 import HilbertSmith.Interface.Invariant
 import HilbertSmith.Interface.Orientation
+import HilbertSmith.Interface.Pinch
 
 /-!
 # The topology of §5 that the route uses
