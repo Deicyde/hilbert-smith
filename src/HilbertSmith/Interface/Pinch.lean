@@ -187,7 +187,8 @@ def pinchEMap (z : E) (r s : ℝ) (hr : 0 < r) (hs : 0 ≤ s) : C(OnePoint E, On
   toFun := pinchE z r s
   continuous_toFun :=
     (continuous_pinchE (X := Unit) continuous_const continuous_const continuous_const
-      (fun _ => hr) fun _ => hs).comp ((continuous_const : Continuous fun _ => ()).prodMk continuous_id)
+      (fun _ => hr) fun _ => hs).comp
+      ((continuous_const : Continuous fun _ => ()).prodMk continuous_id)
 
 /-- **Pinches along a path of parameters are homotopic.** -/
 theorem pinchEMap_homotopic {z : C(unitInterval, E)} {r s : C(unitInterval, ℝ)}
@@ -226,6 +227,70 @@ theorem pinchEMap_one_homotopic_id (z : E) {r : ℝ} (hr : 0 < r) :
   change (pinchEMap z r 0 hr le_rfl).Homotopic (pinchEMap z r 1 hr zero_le_one) at h₂
   exact (h₁.trans h₂).symm
 
+/-- **Ball paths** (05:495-503): in a connected open `W ⊆ E`, two closed balls in `W` are joined by
+a path of centres and radii whose radii stay positive and whose closed balls all lie in one compact
+`K ⊆ W`. Join the centres by a path in `W`; its compact image has a closed `δ`-neighbourhood in `W`;
+shrink the first radius to `ρ = min δ r₀ r₁`, move the centre along the path with radius `ρ`, and
+enlarge the radius to `r₁`. (The radius is not taken to be the distance to `E ∖ W`, which is `0`
+when `W = E`.) -/
+theorem exists_ballPath {W : Set E} (hW : IsOpen W) (hconn : IsConnected W)
+    {z₀ z₁ : E} {r₀ r₁ : ℝ} (hr₀ : 0 < r₀) (hr₁ : 0 < r₁) (h₀ : closedBall z₀ r₀ ⊆ W)
+    (h₁ : closedBall z₁ r₁ ⊆ W) :
+    ∃ (γ : Path (z₀, r₀) (z₁, r₁)) (K : Set E), IsCompact K ∧ K ⊆ W ∧
+      ∀ t, 0 < (γ t).2 ∧ closedBall (γ t).1 (γ t).2 ⊆ K := by
+  have hz₀ : z₀ ∈ W := h₀ (mem_closedBall_self hr₀.le)
+  have hz₁ : z₁ ∈ W := h₁ (mem_closedBall_self hr₁.le)
+  have hJ := (hW.isConnected_iff_isPathConnected.1 hconn).joinedIn z₀ hz₀ z₁ hz₁
+  set c := hJ.somePath
+  have hcW : range c ⊆ W := by
+    rintro _ ⟨t, rfl⟩
+    exact hJ.somePath_mem t
+  obtain ⟨δ, hδ, hδW⟩ := (isCompact_range c.continuous).exists_cthickening_subset_open hW hcW
+  set ρ := min δ (min r₀ r₁)
+  have hρ : 0 < ρ := lt_min hδ (lt_min hr₀ hr₁)
+  have hρδ : ρ ≤ δ := min_le_left _ _
+  have hρ₀ : ρ ≤ r₀ := (min_le_right _ _).trans (min_le_left _ _)
+  have hρ₁ : ρ ≤ r₁ := (min_le_right _ _).trans (min_le_right _ _)
+  set K := closedBall z₀ r₀ ∪ cthickening δ (range c) ∪ closedBall z₁ r₁
+  have hK : IsCompact K :=
+    ((isCompact_closedBall _ _).union (isCompact_range c.continuous).cthickening).union
+      (isCompact_closedBall _ _)
+  have hKW : K ⊆ W := union_subset (union_subset h₀ hδW) h₁
+  -- Shrink, move, enlarge.
+  let γ₁ : Path (z₀, r₀) (z₀, ρ) :=
+    { toFun := fun t => (z₀, (1 - t) * r₀ + t * ρ)
+      continuous_toFun := by fun_prop
+      source' := by simp
+      target' := by simp }
+  let γ₂ : Path (z₀, ρ) (z₁, ρ) :=
+    { toFun := fun t => (c t, ρ)
+      continuous_toFun := by fun_prop
+      source' := by simp
+      target' := by simp }
+  let γ₃ : Path (z₁, ρ) (z₁, r₁) :=
+    { toFun := fun t => (z₁, (1 - t) * ρ + t * r₁)
+      continuous_toFun := by fun_prop
+      source' := by simp
+      target' := by simp }
+  refine ⟨γ₁.trans (γ₂.trans γ₃), K, hK, hKW, fun t => ?_⟩
+  have hmem : (γ₁.trans (γ₂.trans γ₃)) t ∈ range (γ₁.trans (γ₂.trans γ₃)) := mem_range_self t
+  rw [Path.trans_range, Path.trans_range] at hmem
+  have h01 : ∀ s : unitInterval, (0 : ℝ) ≤ s ∧ (s : ℝ) ≤ 1 := fun s => ⟨s.2.1, s.2.2⟩
+  rcases hmem with ⟨s, hs⟩ | ⟨s, hs⟩ | ⟨s, hs⟩
+  · rw [← hs]
+    obtain ⟨hs0, hs1⟩ := h01 s
+    change 0 < (1 - (s : ℝ)) * r₀ + s * ρ ∧ closedBall z₀ ((1 - (s : ℝ)) * r₀ + s * ρ) ⊆ K
+    refine ⟨by nlinarith, fun v hv => Or.inl (Or.inl (closedBall_subset_closedBall ?_ hv))⟩
+    nlinarith
+  · rw [← hs]
+    refine ⟨hρ, fun v hv => Or.inl (Or.inr ?_)⟩
+    exact cthickening_mono hρδ _ (closedBall_subset_cthickening (mem_range_self s) ρ hv)
+  · rw [← hs]
+    obtain ⟨hs0, hs1⟩ := h01 s
+    change 0 < (1 - (s : ℝ)) * ρ + s * r₁ ∧ closedBall z₁ ((1 - (s : ℝ)) * ρ + s * r₁) ⊆ K
+    refine ⟨by nlinarith, fun v hv => Or.inr (closedBall_subset_closedBall ?_ hv)⟩
+    nlinarith
+
 end Blowup
 
 namespace LocalAction
@@ -248,7 +313,8 @@ theorem continuous_elim_of_compact {X Y : Type*} [TopologicalSpace X] [Topologic
         (Prod.map id ((↑) : A.W → OnePoint A.W) : X × A.W → X × OnePoint A.W) :=
       IsOpenEmbedding.id.prodMap isOpenEmbedding_coe
     refine (he.continuousAt_iff (x := (x₀, w₀))).1 ?_
-    exact (hF.comp (continuous_fst.prodMk (continuous_subtype_val.comp continuous_snd))).continuousAt
+    exact (hF.comp (continuous_fst.prodMk
+      (continuous_subtype_val.comp continuous_snd))).continuousAt
   | infty =>
     have hKw : IsCompact (((↑) : A.W → A.E) ⁻¹' K) := by
       rw [Subtype.isCompact_iff, Subtype.image_preimage_coe, inter_eq_right.2 hKW]

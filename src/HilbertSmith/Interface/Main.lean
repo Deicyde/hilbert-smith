@@ -216,7 +216,7 @@ after Proposition 5.1). Given a faithful action of `ℤ_[p]` on a connected open
 subgroup acts preserving orientation (`Orientation.exists_restrict`); stabilize to
 `W = O × ℝ^{d−n}` with `d = 2n + 3`; Lemma 5.3 (`LocalInputs.averagedTest`) gives the test `a`
 after a further open subgroup, with `a ∘ q` homotopic to a pinch, so (5.1) holds
-(`aqc_homotopic_id`); the pinch transport (`LocalInputs.pinchTransport`, through `hpinch_of`) and
+(`aqc_homotopic_id`); the pinch transport (`pinchTransport`, through `hpinch_of`) and
 Proposition 5.8 (`moveTest`) move it; and Theorem 6.8 (`false_of_test`) is the contradiction. -/
 theorem false_of_localAction (O : OAIInterface) (T : LocalInputs O) {p : ℕ} [Fact p.Prime]
     {n : ℕ} (A₀ : LocalAction p n) (hconn₀ : IsConnected A₀.W) (hfaith₀ : A₀.Faithful) : False := by
@@ -229,7 +229,7 @@ theorem false_of_localAction (O : OAIInterface) (T : LocalInputs O) {p : ℕ} [F
   have hconn₂ : IsConnected A₂.W := LocalAction.stabilize_isConnected _ _ _ hconn₀
   obtain ⟨j₂, a, z, r, hr, hzr, haq⟩ := T.averagedTest n A₂ hconn₂.nonempty
   have hpinch := hpinch_of _ a haq fun z' r' hr' hzr' =>
-    T.pinchTransport n (A₂.restrict j₂) hconn₂ z r hr hzr z' r' hr' hzr'
+    pinchTransport _ (A₂.restrict j₂) hconn₂ z r hr hzr z' r' hr' hzr'
   exact (O.chars n).false_of_test (A₂.restrict j₂) (T.orientation.restrict A₂ j₂ hOP₂)
     (sphereBasis _) (closePairBasis _) sheetsInput (A₂.restrict_faithful j₂ hfaith₂) a
     (aqc_homotopic_id _ a haq)

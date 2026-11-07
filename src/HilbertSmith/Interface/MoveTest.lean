@@ -74,6 +74,27 @@ theorem moveTest {d : ℕ} {δD : DegreeMaps d} (hN : OrbitNull d δD) (hC : Col
       map_zero_left := fun y => hHt0 y
       map_one_left := fun _ => rfl }
 
+/-- **The pinch transport** (the first paragraph of the proof of Proposition 5.8, 05:492-504): on a
+connected `W`, any two pinches with closed balls in `W` are homotopic on `W⁺`. Along a ball path
+(`exists_ballPath`) the pinches form a continuous family, since all their closed balls lie in one
+compact `K ⊆ W` (`LocalAction.continuous_pinchFun`). -/
+theorem pinchTransport (d : ℕ) : PinchTransport d := by
+  intro p _ A hconn z r hr hzr z' r' hr' hzr'
+  obtain ⟨γ, K, hK, hKW, hγ⟩ := exists_ballPath A.isOpen hconn hr hr' hzr hzr'
+  have hc : Continuous fun q : unitInterval × OnePoint A.W =>
+      A.pinchFun (γ q.1).1 (γ q.1).2 q.2 :=
+    A.continuous_pinchFun (z := fun t => (γ t).1) (r := fun t => (γ t).2)
+      (continuous_fst.comp γ.continuous) (continuous_snd.comp γ.continuous) (fun t => (hγ t).1)
+      hK hKW fun t => (hγ t).2
+  refine ⟨{ toFun := fun q => A.pinchFun (γ q.1).1 (γ q.1).2 q.2
+            continuous_toFun := hc
+            map_zero_left := fun w => ?_
+            map_one_left := fun w => ?_ }⟩
+  · change A.pinchFun (γ 0).1 (γ 0).2 w = A.pinchFun z r w
+    rw [γ.source]
+  · change A.pinchFun (γ 1).1 (γ 1).2 w = A.pinchFun z' r' w
+    rw [γ.target]
+
 /-- **The hypothesis of `moveTest` from Lemma 5.3's pinch form and the pinch transport** (the first
 paragraph of the proof of Proposition 5.8, 05:492-506). If `a ∘ q ≃ P_{z,r}` and `P_{z,r}` is
 homotopic to every pinch with closed ball in `W`, then for every nonempty open `V ⊆ Y ∖ {y∞}`,

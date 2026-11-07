@@ -46,9 +46,10 @@ For the second-countable statement, the same conclusion with two sets of hypothe
   theorem by `HSFormal.Newman.newmanPrimeOrder`.
 * OpenAI's route discharges neither of its interfaces yet. `OAIInterface` needs the sheaf model of
   §§2–4. `LocalInputs` collects what is still assumed from §5: the orientation facts
-  (`Orientation`), Lemma 5.3 in pinch form (`AveragedTest`), the pinch transport
-  (`PinchTransport`), and Lemmas 5.4 and 5.5 combined (`OrbitNull`). The rest of §5 is proved without HS_proof: what §6 uses of Proposition
-  5.1, without its orientation step (which stays the input `Orientation.exists_restrict`), from
+  (`Orientation`), Lemma 5.3 in pinch form (`AveragedTest`), and Lemmas 5.4 and 5.5 combined
+  (`OrbitNull`). The rest of §5 is proved without HS_proof: the pinch transport
+  (`HilbertSmith.Interface.pinchTransport`); what §6 uses of Proposition 5.1, without its
+  orientation step (which stays the input `Orientation.exists_restrict`), from
   `HilbertSmith.NewmanInput` and without second countability
   (`HilbertSmith.Interface.chartReductionNoSC`); Lemma 5.2 (`HilbertSmith.Interface.collapseInput`);
   what §6 uses of Lemma 5.6, the region `V` and its multiplier `β`
@@ -56,8 +57,8 @@ For the second-countable statement, the same conclusion with two sets of hypothe
   and, from §6, the neighbourhood bases of `S^d` and `C_d` (`HilbertSmith.Interface.sphereBasis`,
   `HilbertSmith.Interface.closePairBasis`). Newman's theorem is a hypothesis of `oai_route`;
   `oai_route_noSC` discharges it from HS_proof (`HSBridge.newmanInput`), as HS_proof's own route
-  does (`HSFormal.Newman.newmanPrimeOrder`). Definition 6.3, Propositions 5.8, 6.4–6.7 and
-  Theorem 6.8 are proved from the interface.
+  does (`HSFormal.Newman.newmanPrimeOrder`). Definition 6.3, Propositions 5.8, 6.4–6.7 and Theorem
+  6.8 are proved from the interface.
 
 In this build, any statement whose hypotheses include a faithful action of `ℤ_[p]` on a manifold
 can be discharged ex falso from HS_proof: from `HSBridge.hs_route_univ` when the manifold is second
@@ -292,7 +293,6 @@ O : HilbertSmith.Interface.OAIInterface
 T : HilbertSmith.Interface.LocalInputs O
   orientation
   averagedTest
-  pinchTransport
   orbitNull
 -/
 #guard_msgs (whitespace := lax) in
@@ -379,7 +379,6 @@ T : HilbertSmith.Interface.LocalInputs O
     restrict
     stabilize
   averagedTest
-  pinchTransport
   orbitNull
 hN : HilbertSmith.NewmanInput (not a structure)
 -/
