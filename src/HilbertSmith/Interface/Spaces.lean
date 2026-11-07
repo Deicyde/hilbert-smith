@@ -67,7 +67,7 @@ structure DegreeMaps (d : ℕ) where
 /-- `D_s = D (s + 1) ∘ ⋯ ∘ D 2`, of intended degree `(s + 1)!`: the composite of the first `s`
 maps of the telescope, onto whose last sphere a finite subtelescope retracts (proof of
 Lemma 5.5). -/
-def DegreeMaps.comp {d : ℕ} (δ : DegreeMaps d) : ℕ → C(Sphere d, Sphere d)
+noncomputable def DegreeMaps.comp {d : ℕ} (δ : DegreeMaps d) : ℕ → C(Sphere d, Sphere d)
   | 0 => ContinuousMap.id _
   | s + 1 => (δ.D (s + 2)).comp (δ.comp s)
 
