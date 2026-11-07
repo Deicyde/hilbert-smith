@@ -8,7 +8,6 @@ OpenAI's §5 prepares the local test that §6 consumes. B1 bundled it into one f
 stated as close to OpenAI's text as the formal layer allows, so that each can later be proved or
 kept as a published input on its own.
 
-* `ChartReduction`: what §6 uses of Proposition 5.1, without its orientation step.
 * `Orientation OP`: the facts about the orientation predicate `OP` that §5 uses: the step
   `G = 2H` of Proposition 5.1, and persistence under the replacements of §5.
 * `CollapseInput`: Lemma 5.2 (the extended action is continuous; the orbit space is metrizable).
@@ -20,7 +19,9 @@ kept as a published input on its own.
   (06:359-366).
 * `LocalInputs O`: all of them, for the interface `O`.
 
-Lemma 5.7 is not an input: it is Deicyde's `HilbertSmith.homotopyExtension`.
+Proposition 5.1 is not an input since B-M3: `HilbertSmith.Interface.chartReductionNoSC` proves
+what §6 uses of it from `HilbertSmith.NewmanInput`, without second countability. Lemma 5.7 is not
+an input either: it is Deicyde's `HilbertSmith.homotopyExtension`.
 
 Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLAN §3.4 amended):
 * Lemmas 5.4 and 5.5 are stated about rational Čech cohomology, which neither Mathlib nor TauCeti
@@ -31,40 +32,16 @@ Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLA
 * The pinch transport is part of `AveragedTest`: stating it alone needs OpenAI's pinch maps
   `P_{z,r}` as definitions. It is split off at B-M4, once they are defined.
 
-Scope and non-vacuity. Each input is stated for the actions OpenAI's text covers, or more: Prop 5.1
-for faithful actions on second-countable manifolds; Lemma 5.2 for any action; Lemma 5.3 for any
-action on a connected `W`; `OrbitNull` for odd `d ≥ 3`, true when the maps `D k` of the interface
-really have degree `k`; Lemma 5.6 for faithful actions. `LocalAction`s of every kind are
-quantified over, but each input assumes what its lemma needs, so each holds by the cited result.
+Scope and non-vacuity. Each input is stated for the actions OpenAI's text covers, or more:
+Lemma 5.2 for any action; Lemma 5.3 for any action on a connected `W`; `OrbitNull` for odd
+`d ≥ 3`, true when the maps `D k` of the interface really have degree `k`; Lemma 5.6 for faithful
+actions. `LocalAction`s of every kind are quantified over, but each input assumes what its lemma
+needs, so each holds by the cited result.
 -/
 
 namespace HilbertSmith.Interface
 
 open Topology Set
-
-universe u
-
-/-- **Proposition 5.1, without the orientation step** (an invariant chart subset; 05:14-21,
-proof 05:23-73), in the form §6 uses it: a faithful jointly continuous action of `ℤ_[p]` on a
-connected Hausdorff second-countable `n`-manifold gives a faithful action of `ℤ_[p]` on a connected
-open subset of an `n`-dimensional real normed space.
-
-OpenAI's Proposition 5.1 says more: an open subgroup `G ≅ ℤ_[p]` acts faithfully on a connected
-`G`-invariant open subset `O` of a chart of `M`, which is then regarded as an open subset of `ℝⁿ`
-(05:16-20). The formal statement drops the subgroup and the chart, because `Main` uses neither:
-it uses only the action on `O ⊆ ℝⁿ`, re-identifying `G` with `ℤ_[p]`. The orientation step
-(05:68-72) is `Orientation.exists_restrict`.
-
-OpenAI states it under the standing hypotheses of §5, which include second countability (05:4-6);
-its proof never uses it (PLAN §0), which B-M3 is to show by proving this statement without
-`[SecondCountableTopology M]` from `HilbertSmith.NewmanInput`. In a build that imports HS_proof,
-this statement follows ex falso from HS_proof's p-adic exclusion (`HSBridge.hs_route_univ`), so
-B-M3's proof must pass the route-separation audit with only `HSBridge.newmanInput` allowed. -/
-def ChartReduction : Prop :=
-  ∀ (p : ℕ) [Fact p.Prime] (n : ℕ) (M : Type u) [TopologicalSpace M] [T2Space M]
-    [SecondCountableTopology M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [ConnectedSpace M]
-    [AddAction ℤ_[p] M] [ContinuousVAdd ℤ_[p] M], FaithfulVAdd ℤ_[p] M →
-    ∃ A : LocalAction p n, IsConnected A.W ∧ A.Faithful
 
 /-- **What §5 uses about orientation preservation**, for the predicate `OP` of the interface. -/
 structure Orientation (OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction p k → Prop) : Prop where
@@ -154,9 +131,6 @@ def ClosePairBasis (d : ℕ) : Prop :=
 
 /-- **The §5 inputs of the route**, for the interface `O`. -/
 structure LocalInputs (O : OAIInterface) : Prop where
-  /-- What §6 uses of Proposition 5.1 (05:14-73), with second countability: a faithful action of
-  `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space. -/
-  chartReduction : ChartReduction.{u}
   /-- The orientation facts of §5, for the interface's `OP` (05:68-72, 05:75-80, 05:181-182). -/
   orientation : Orientation O.OP
   /-- Lemma 5.2 (05:88-133). -/

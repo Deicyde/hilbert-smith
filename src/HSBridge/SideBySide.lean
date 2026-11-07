@@ -9,7 +9,10 @@ import HilbertSmith.Interface.Main
 
 Both routes conclude p-adic exclusion for second-countable manifolds, the statement
 `HilbertSmith.Statements.PadicExclusion` (OpenAI's Theorem 1.2): HS_proof's route unconditionally,
-OpenAI's from `OAIInterface` and `LocalInputs`, neither of which is discharged yet.
+OpenAI's from `OAIInterface` and `LocalInputs`, neither of which is discharged yet, and Newman's
+theorem `HilbertSmith.NewmanInput`. Since B-M3, OpenAI's route also concludes the statement without
+second countability, `HilbertSmith.Statements.PadicExclusionNoSC`, from the same hypotheses
+(`oai_route_noSC`, with Newman's theorem discharged from HS_proof by `HSBridge.newmanInput`).
 
 * `HSBridge.statements_agree` (in `HSBridge.Statements`): it is HS_proof's
   `HSFormal.PadicExclusion`, by `Iff.rfl`.
@@ -20,7 +23,10 @@ OpenAI's from `OAIInterface` and `LocalInputs`, neither of which is discharged y
   and Newman's theorem `HSFormal.NewmanPrimeOrder`.
 * `HSBridge.oai_route`: OpenAI's proof at its interface level,
   `HilbertSmith.Interface.padicExclusion_of_oaiInterface`: from `OAIInterface` (the Witt groups of
-  sheaves, as §§5–6 use them) and `LocalInputs` (the topology of §5).
+  sheaves, as §§5–6 use them), `LocalInputs` (the topology of §5 not yet proved) and
+  `HilbertSmith.NewmanInput` (Newman's theorem, which Proposition 5.1 uses).
+* `HSBridge.oai_route_noSC`: the same without second countability,
+  `HilbertSmith.Interface.padicExclusion_of_oaiInterface_noSC`, with `HSBridge.newmanInput`.
 
 ## What each route assumes
 
@@ -29,21 +35,21 @@ The same conclusion with two sets of hypotheses, and an asymmetry:
 * HS_proof discharges both of its hypotheses: `LowerLTheory` by its model
   `HSFormal.LTheory.lowerLModel` (used in `HSFormal.padicExclusion_of_model`), and Newman's
   theorem by `HSFormal.Newman.newmanPrimeOrder`.
-* OpenAI's route discharges neither yet. `OAIInterface` needs the sheaf model of §§2–4 (B-M7).
-  `LocalInputs` collects, from §5: what §6 uses of Proposition 5.1 (`ChartReduction`: a faithful
-  action of `ℤ_[p]` on a connected open subset of an `n`-dimensional real normed space; assumed;
-  stated with second countability as in OpenAI's standing hypotheses; B-M3 is to prove it, and a
-  form without second countability, from `HilbertSmith.NewmanInput`, which `HSBridge.newmanInput`
-  discharges from HS_proof), the orientation facts, Lemma 5.2 (`CollapseInput`), Lemma 5.3 with
-  the pinch transport (`AveragedTest`), Lemmas 5.4 and 5.5 combined (`OrbitNull`), Lemma 5.6
-  (`SheetsInput`) and the neighbourhood bases of `S^d` and `C_d`. Lemma 5.7 is proved (Deicyde's
-  `HilbertSmith.homotopyExtension`), as are Definition 6.3, Propositions 5.8, 6.4–6.7 and
-  Theorem 6.8 from the interface.
+* OpenAI's route discharges neither of its interfaces yet. `OAIInterface` needs the sheaf model of
+  §§2–4 (B-M7). `LocalInputs` collects, from §5: the orientation facts, Lemma 5.2
+  (`CollapseInput`), Lemma 5.3 with the pinch transport (`AveragedTest`), Lemmas 5.4 and 5.5
+  combined (`OrbitNull`), Lemma 5.6 (`SheetsInput`) and the neighbourhood bases of `S^d` and
+  `C_d`. Proposition 5.1 without its orientation step is proved from `HilbertSmith.NewmanInput`,
+  without second countability (`HilbertSmith.Interface.chartReductionNoSC`); Newman's theorem
+  itself is discharged from HS_proof (`HSBridge.newmanInput`), as in HS_proof's own route. Lemma
+  5.7 is proved (Deicyde's `HilbertSmith.homotopyExtension`), as are Definition 6.3, Propositions
+  5.8, 6.4–6.7 and Theorem 6.8 from the interface.
 
-In this build, `ChartReduction` (whose hypotheses include a faithful action of `ℤ_[p]` on a
-manifold) can be discharged ex falso from `HSBridge.hs_route_univ`. So B-M3's proof of it must
-pass `#assert_route_pure … allowing HSBridge.newmanInput`, as `oai_route` passes
-`#assert_route_pure` below.
+In this build, any statement whose hypotheses include a faithful action of `ℤ_[p]` on a manifold
+can be discharged ex falso from `HSBridge.hs_route_univ`. So `oai_route` passes
+`#assert_route_pure` below, and `oai_route_noSC`, which uses `HSBridge.newmanInput`, passes
+`#assert_route_pure … allowing HSBridge.newmanInput`: everything it reaches in HS_proof is reached
+through Newman's theorem.
 
 The interface's weakest point of non-vacuity is `OAIInvariant.isTest_closePair`: a model needs a
 triangulation of the close-pair test `C_d` (semialgebraic, or Whitehead's for a smooth manifold
@@ -58,14 +64,15 @@ So this file compares proof architectures modulo interfaces, not two complete pr
 so `oai_route` means something only because its proof does not use HS_proof. The commands at the
 end of this file check that in the build and print the reports in the build log:
 
-* `oai_route` reaches no constant of HS_proof (guarded by `#guard_msgs`);
+* `oai_route` reaches no constant of HS_proof, and `oai_route_noSC` none except through
+  `HSBridge.newmanInput` (both guarded by `#guard_msgs`);
 * `hs_route`'s proof reaches HS_proof's L-theory (`HSFormal.LTheory.*`), checked from its value;
 * `hs_route_of_inputs` mentions `HSFormal.LTheory.*` already in its signature (its hypothesis
   `𝕃 : HSFormal.LTheory.LowerLTheory`, and the type of `HSFormal.padicExclusion_of_inputs`), so
   that check is signature-level;
 * the interface fields `oai_route` assumes, generated from the structures `OAIInterface` and
-  `LocalInputs` (guarded, so adding or removing a field fails the build), with `chartReduction`
-  flagged;
+  `LocalInputs`, and its other hypothesis `NewmanInput` (guarded, so adding or removing a field
+  fails the build);
 * D1's module table (plan item D1, §5.2): the HS_proof modules each HS_proof theorem reaches, split
   into the shared front (the import closure, inside HS_proof, of the modules whose declarations
   OpenAI's front would reuse: 46 modules at the pinned HS_proof) and the back end.
@@ -97,11 +104,19 @@ theorem hs_route_of_inputs (𝕃 : HSFormal.LTheory.LowerLTheory) (hN : HSFormal
   statements_agree.2 (HSFormal.padicExclusion_of_inputs 𝕃 hN)
 
 /-- **OpenAI's route at its interface level**
-(`HilbertSmith.Interface.padicExclusion_of_oaiInterface`): from OpenAI's interface and the local
-inputs of §5, the same conclusion as `hs_route`. -/
+(`HilbertSmith.Interface.padicExclusion_of_oaiInterface`): from OpenAI's interface, the local
+inputs of §5 and Newman's theorem, the same conclusion as `hs_route`. -/
 theorem oai_route (O : HilbertSmith.Interface.OAIInterface)
-    (T : HilbertSmith.Interface.LocalInputs.{u} O) : HilbertSmith.Statements.PadicExclusion.{u} :=
-  HilbertSmith.Interface.padicExclusion_of_oaiInterface O T
+    (T : HilbertSmith.Interface.LocalInputs O) (hN : HilbertSmith.NewmanInput.{u}) :
+    HilbertSmith.Statements.PadicExclusion.{u} :=
+  HilbertSmith.Interface.padicExclusion_of_oaiInterface O T hN
+
+/-- **OpenAI's route without second countability**
+(`HilbertSmith.Interface.padicExclusion_of_oaiInterface_noSC`): from OpenAI's interface and the
+local inputs of §5, with Newman's theorem discharged from HS_proof by `HSBridge.newmanInput`. -/
+theorem oai_route_noSC (O : HilbertSmith.Interface.OAIInterface)
+    (T : HilbertSmith.Interface.LocalInputs O) : HilbertSmith.Statements.PadicExclusionNoSC.{u} :=
+  HilbertSmith.Interface.padicExclusion_of_oaiInterface_noSC O T newmanInput
 
 /-- A row of the comparison of the two interfaces: a kind of property, the declarations that
 supply it on each side (empty if none), and how the two differ. -/
@@ -208,14 +223,15 @@ def interfaceComparison : List ComparisonRow := [
     "1 is not in pZ vs m does not divide 4 L_d for m = p^k > 4 L_d"⟩,
   ⟨"Topological inputs",
     [``HSFormal.NewmanPrimeOrder, ``HSFormal.exists_chartData],
-    [``HilbertSmith.Interface.LocalInputs, ``HilbertSmith.Interface.ChartReduction,
+    [``HilbertSmith.Interface.LocalInputs, ``HilbertSmith.Interface.chartReductionNoSC,
       ``HilbertSmith.NewmanInput],
     "overlap on Newman and the chart; OpenAI adds Čech cohomology and Serre's theorem"⟩,
   ⟨"Second countability",
     [``HSFormal.PadicExclusion],
-    [``HilbertSmith.Interface.ChartReduction, ``HilbertSmith.Statements.PadicExclusion],
-    "both conclude the second-countable statement here; OpenAI's proof of Proposition 5.1 does \
-      not use second countability, and B-M3 is to prove ChartReduction without it"⟩
+    [``HilbertSmith.Interface.chartReductionNoSC,
+      ``HilbertSmith.Interface.padicExclusion_of_oaiInterface_noSC],
+    "HS_proof assumes it; OpenAI's proof of Proposition 5.1 does not use it, so OpenAI's route \
+      concludes the statement without second countability"⟩
 ]
 
 /-! ### The audit, printed in the build log -/
@@ -225,6 +241,15 @@ def interfaceComparison : List ComparisonRow := [
 #assert_route_pure oai_route
 
 #route_report oai_route
+
+/--
+info: route audit: 'HSBridge.oai_route_noSC' depends on no constant from HS_proof except through:
+  HSBridge.newmanInput
+-/
+#guard_msgs (whitespace := lax) in
+#assert_route_pure oai_route_noSC allowing HSBridge.newmanInput
+
+#route_report oai_route_noSC
 
 /--
 info: route audit: the value of 'HSBridge.hs_route' depends on constants from modules under
@@ -302,9 +327,6 @@ O : HilbertSmith.Interface.OAIInterface
     push
     twist
 T : HilbertSmith.Interface.LocalInputs O
-  chartReduction
-    flagged: assumed; stated with second countability; B-M3 proves it, and a form without it,
-    from NewmanInput
   orientation (HilbertSmith.Interface.Orientation, expanded)
     exists_restrict
     restrict
@@ -315,11 +337,10 @@ T : HilbertSmith.Interface.LocalInputs O
   sheets
   sphereBasis
   closePairBasis
+hN : HilbertSmith.NewmanInput (not a structure)
 -/
 #guard_msgs (whitespace := lax) in
 #route_assumptions oai_route
-  flag chartReduction "assumed; stated with second countability; B-M3 proves it, and a form \
-    without it, from NewmanInput"
   expanding HilbertSmith.Interface.OAIInvariant HilbertSmith.Interface.OrbitCharacterTheory
     HilbertSmith.Interface.Orientation HilbertSmith.Interface.WittClasses
     HilbertSmith.Interface.DualFunctor HilbertSmith.Duality

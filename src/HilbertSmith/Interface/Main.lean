@@ -1,4 +1,5 @@
 import HilbertSmith.Interface.CharacterClasses
+import HilbertSmith.Interface.ChartReduction
 import HilbertSmith.Interface.ClosePair
 import HilbertSmith.Interface.MoveTest
 import HilbertSmith.Statements
@@ -13,9 +14,13 @@ on the invariant chart), and the proof of Theorem 1.2 (p-adic exclusion).
   character classes.
 * `OrbitCharacterTheory.false_of_test`: Theorem 6.8, for a faithful orientation-preserving action
   on `W ⊆ ℝ^d` with an averaged test `a` that can be moved into every open region.
+* `HilbertSmith.Interface.false_of_localAction`: the contradiction from a faithful action on a
+  connected open subset of `ℝ^n`.
+* `HilbertSmith.Interface.padicExclusion_of_oaiInterface_noSC`: Theorem 1.2 without second
+  countability, from `OAIInterface`, `LocalInputs` and `NewmanInput` (through Proposition 5.1,
+  `chartReductionNoSC`).
 * `HilbertSmith.Interface.padicExclusion_of_oaiInterface`: Theorem 1.2 for second-countable
-  manifolds, from `OAIInterface` and `LocalInputs`, the analogue of HS_proof's
-  `HSFormal.padicExclusion_of_inputs`.
+  manifolds, the analogue of HS_proof's `HSFormal.padicExclusion_of_inputs`.
 -/
 
 namespace HilbertSmith.Interface
@@ -204,18 +209,14 @@ theorem false_of_test (hS : SphereBasis d) (hCP : ClosePairBasis d) (hSh : Sheet
 
 end OrbitCharacterTheory
 
-/-- **p-adic exclusion from OpenAI's interface** (the proof of Theorem 1.2, 06:502-516), for
-second-countable manifolds: the analogue of HS_proof's `HSFormal.padicExclusion_of_inputs`.
-
-Given a faithful action on `M`, Proposition 5.1 (`LocalInputs.chartReduction`) gives a faithful
-action on a connected open `O ⊆ ℝ^n`; an open subgroup acts preserving orientation
-(`Orientation.exists_restrict`); stabilize to `W = O × ℝ^{d−n}` with `d = 2n + 3`; Lemma 5.3
-(`LocalInputs.averagedTest`) gives the test `a` after a further open subgroup; Proposition 5.8
-(`moveTest`) moves it; and Theorem 6.8 (`false_of_test`) is the contradiction. -/
-theorem padicExclusion_of_oaiInterface (O : OAIInterface) (T : LocalInputs.{u} O) :
-    HilbertSmith.Statements.PadicExclusion.{u} := by
-  intro p _ n M _ _ _ _ _ _ _ hfaith
-  obtain ⟨A₀, hconn₀, hfaith₀⟩ := T.chartReduction p n M hfaith
+/-- **The contradiction from a faithful local action** (the proof of Theorem 1.2, 06:502-516,
+after Proposition 5.1). Given a faithful action of `ℤ_[p]` on a connected open `O ⊆ ℝ^n`: an open
+subgroup acts preserving orientation (`Orientation.exists_restrict`); stabilize to
+`W = O × ℝ^{d−n}` with `d = 2n + 3`; Lemma 5.3 (`LocalInputs.averagedTest`) gives the test `a`
+after a further open subgroup; Proposition 5.8 (`moveTest`) moves it; and Theorem 6.8
+(`false_of_test`) is the contradiction. -/
+theorem false_of_localAction (O : OAIInterface) (T : LocalInputs O) {p : ℕ} [Fact p.Prime]
+    {n : ℕ} (A₀ : LocalAction p n) (hconn₀ : IsConnected A₀.W) (hfaith₀ : A₀.Faithful) : False := by
   obtain ⟨j₁, hOP₁⟩ := T.orientation.exists_restrict A₀ hconn₀
   have hnd : n ≤ 2 * n + 3 := by omega
   set A₂ := (A₀.restrict j₁).stabilize (2 * n + 3) hnd
@@ -227,6 +228,23 @@ theorem padicExclusion_of_oaiInterface (O : OAIInterface) (T : LocalInputs.{u} O
   exact (O.chars n).false_of_test (A₂.restrict j₂) (T.orientation.restrict A₂ j₂ hOP₂)
     (T.sphereBasis _) (T.closePairBasis _) T.sheets (A₂.restrict_faithful j₂ hfaith₂) a haqc
     fun V hV hne hinf => moveTest (T.orbitNull n) T.collapse _ a hpinch V hV hne hinf
+
+/-- **p-adic exclusion without second countability from OpenAI's interface** (the proof of
+Theorem 1.2, 06:502-516, with second countability dropped): from `OAIInterface`, `LocalInputs`
+and Newman's theorem. Proposition 5.1 (`chartReductionNoSC`, from `NewmanInput`) gives a faithful
+action on a connected open subset of `ℝ^n`, and `false_of_localAction` is the contradiction. -/
+theorem padicExclusion_of_oaiInterface_noSC (O : OAIInterface) (T : LocalInputs O)
+    (hN : NewmanInput.{u}) : HilbertSmith.Statements.PadicExclusionNoSC.{u} := by
+  intro p _ n M _ _ _ _ _ _ hfaith
+  obtain ⟨A₀, hconn₀, hfaith₀⟩ := chartReductionNoSC hN p n M hfaith
+  exact false_of_localAction O T A₀ hconn₀ hfaith₀
+
+/-- **p-adic exclusion from OpenAI's interface**, for second-countable manifolds (OpenAI's
+Theorem 1.2 as stated): the analogue of HS_proof's `HSFormal.padicExclusion_of_inputs`. It is the
+second-countable case of `padicExclusion_of_oaiInterface_noSC`. -/
+theorem padicExclusion_of_oaiInterface (O : OAIInterface) (T : LocalInputs O)
+    (hN : NewmanInput.{u}) : HilbertSmith.Statements.PadicExclusion.{u} :=
+  fun p _ n M _ _ _ _ _ _ _ hfaith => padicExclusion_of_oaiInterface_noSC O T hN p n M hfaith
 
 end
 
