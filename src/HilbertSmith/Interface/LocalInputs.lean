@@ -1,28 +1,32 @@
 import HilbertSmith.Interface.Invariant
 
 /-!
-# The topology of §5 that the route assumes
+# The topology of §5 that the route uses
 
 OpenAI's §5 prepares the local test that §6 consumes. B1 bundled it into one field
 `LocalTests.source`; following PLAN §3.2 (change 3) it is split here into its pieces, each a `Prop`
-stated as close to OpenAI's text as the formal layer allows, so that each can later be proved or
-kept as a published input on its own.
+stated as close to OpenAI's text as the formal layer allows, so that each can be proved or kept as
+a published input on its own.
 
+Assumed, as the fields of `LocalInputs O`:
 * `Orientation OP`: the facts about the orientation predicate `OP` that §5 uses: the step
   `G = 2H` of Proposition 5.1, and persistence under the replacements of §5.
-* `CollapseInput`: Lemma 5.2 (the extended action is continuous; the orbit space is metrizable).
 * `AveragedTest d`: Lemma 5.3, together with the pinch transport of the first paragraph of the
   proof of Proposition 5.8.
 * `OrbitNull d δD`: Lemmas 5.4 and 5.5 combined, in the form the proof of Proposition 5.8 uses.
-* `SheetsInput`: Lemma 5.6.
+
+Stated here and proved:
+* `CollapseInput`: Lemma 5.2 (the extended action is continuous; the orbit space is metrizable),
+  proved as `HilbertSmith.Interface.collapseInput`.
+* `SheetsInput`: Lemma 5.6, proved as `HilbertSmith.Interface.sheetsInput`.
 * `SphereBasis d`, `ClosePairBasis d`: good neighbourhood bases on `S^d` (06:101-107) and `C_d`
-  (06:359-366).
-* `LocalInputs O`: all of them, for the interface `O`.
+  (06:359-366), proved as `HilbertSmith.Interface.sphereBasis` and
+  `HilbertSmith.Interface.closePairBasis`.
 
 What §6 uses of Proposition 5.1, without its orientation step (which stays the input
-`Orientation.exists_restrict`), is not an input: `HilbertSmith.Interface.chartReductionNoSC`
-proves it from `HilbertSmith.NewmanInput`, without second countability. Lemma 5.7 is not an input
-either: it is Deicyde's `HilbertSmith.homotopyExtension`.
+`Orientation.exists_restrict`), is not an input either: `HilbertSmith.Interface.chartReductionNoSC`
+proves it from `HilbertSmith.NewmanInput`, without second countability. Lemma 5.7 is Deicyde's
+`HilbertSmith.homotopyExtension`.
 
 Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLAN §3.4 amended):
 * Lemmas 5.4 and 5.5 are stated about rational Čech cohomology, which neither Mathlib nor TauCeti
@@ -31,7 +35,7 @@ Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLA
   some `D_s ∘ v` is nullhomotopic (Lemma 5.5). It splits into the two lemmas once a Čech
   cohomology of compact metrizable spaces is available.
 * The pinch transport is part of `AveragedTest`: stating it alone needs OpenAI's pinch maps
-  `P_{z,r}` as definitions. It is split off at B-M4, once they are defined.
+  `P_{z,r}` as definitions. It is to be split off once they are defined.
 
 Scope and non-vacuity. Each input is stated for the actions OpenAI's text covers, or more:
 Lemma 5.2 for any action; Lemma 5.3 for any action on a connected `W`; `OrbitNull` for odd
@@ -66,7 +70,8 @@ parts not already proved: the action extended to `W⁺` is jointly continuous, a
 collapse `c` is continuous by Deicyde's `HilbertSmith.continuous_collapse`, and `W⁺` is compact
 metrizable by `HilbertSmith.metrizableSpace_onePoint`.) Deicyde proves both parts for
 multiplicative actions (`HilbertSmith.continuousSMul_onePoint`,
-`HilbertSmith.metrizableSpace_orbitQuotient`); passing to the additive `ℤ_[p]` is B-M3 work. -/
+`HilbertSmith.metrizableSpace_orbitQuotient`); the additive bridge is
+`HilbertSmith.Interface.collapseInput`, which proves this statement. -/
 def CollapseInput : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k),
     ContinuousVAdd ℤ_[p] (OnePoint A.W) ∧ TopologicalSpace.MetrizableSpace A.Y
@@ -114,38 +119,33 @@ def OrbitNull (d : ℕ) (δD : DegreeMaps d) : Prop :=
       ∃ s, ((δD.comp s).comp v).Nullhomotopic
 
 /-- **Lemma 5.6** (finite quotient sheets; statement 05:386-407, proof 05:409-434): for a faithful
-action and every `j ≥ 1` there is a sheet region `V` with its multiplier `β` of (5.2). -/
+action and every `j ≥ 1` there is a sheet region `V` with its multiplier `β` of (5.2). Proved as
+`HilbertSmith.Interface.sheetsInput`. -/
 def SheetsInput : Prop :=
   ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k), A.Faithful →
     ∀ j, 1 ≤ j → ∃ V, SheetMultiplier A j V
 
 /-- `S^d` has a basis of contractible open neighbourhoods at every point. Admissible tests need
-such a basis at `b_t = t(y∞)` (06:101-107); for tests into `S^d` the TeX does not state it, and
-small chart balls give it, as for `C_d` (06:364-366). -/
+such a basis at `b_t = t(y∞)` (06:101-107); for tests into `S^d` the TeX does not state it. Proved
+as `HilbertSmith.Interface.sphereBasis`, with small caps. -/
 def SphereBasis (d : ℕ) : Prop :=
   ∀ x : Sphere d, HasGoodBasisAt x
 
 /-- `C_d` has a basis of contractible open neighbourhoods at every point: it is a smooth
-`2d`-manifold with boundary (06:359-366). -/
+`2d`-manifold with boundary (06:359-366). Proved as `HilbertSmith.Interface.closePairBasis`, with
+explicit contractions. -/
 def ClosePairBasis (d : ℕ) : Prop :=
   ∀ z : ClosePair d, HasGoodBasisAt z
 
-/-- **The §5 inputs of the route**, for the interface `O`. -/
+/-- **The §5 inputs the route still assumes**, for the interface `O`: orientation, Lemma 5.3
+with the pinch transport, and Lemmas 5.4 and 5.5 combined. -/
 structure LocalInputs (O : OAIInterface) : Prop where
   /-- The orientation facts of §5, for the interface's `OP` (05:68-72, 05:75-80, 05:181-182). -/
   orientation : Orientation O.OP
-  /-- Lemma 5.2 (05:88-133). -/
-  collapse : CollapseInput
   /-- Lemma 5.3 with the pinch transport (05:135-183, 05:491-506), in every odd dimension
   `2j + 3`. -/
   averagedTest : ∀ j, AveragedTest (2 * j + 3)
   /-- Lemmas 5.4 and 5.5, combined (05:209-377, 05:506-512), for the interface's degree maps. -/
   orbitNull : ∀ j, OrbitNull (2 * j + 3) (O.δD j)
-  /-- Lemma 5.6 (05:386-434). -/
-  sheets : SheetsInput
-  /-- Good neighbourhood bases on spheres (required at `b_t`, 06:101-107). -/
-  sphereBasis : ∀ d, SphereBasis d
-  /-- Good neighbourhood bases on close-pair tests (06:359-366). -/
-  closePairBasis : ∀ d, ClosePairBasis d
 
 end HilbertSmith.Interface

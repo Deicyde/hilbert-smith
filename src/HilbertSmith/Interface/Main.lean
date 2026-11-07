@@ -1,5 +1,7 @@
 import HilbertSmith.Interface.CharacterClasses
 import HilbertSmith.Interface.ChartReduction
+import HilbertSmith.Interface.GoodBases
+import HilbertSmith.Interface.Sheets
 import HilbertSmith.Interface.ClosePair
 import HilbertSmith.Interface.MoveTest
 import HilbertSmith.Statements
@@ -226,8 +228,8 @@ theorem false_of_localAction (O : OAIInterface) (T : LocalInputs O) {p : ℕ} [F
   have hconn₂ : IsConnected A₂.W := LocalAction.stabilize_isConnected _ _ _ hconn₀
   obtain ⟨j₂, a, haqc, hpinch⟩ := T.averagedTest n A₂ hconn₂
   exact (O.chars n).false_of_test (A₂.restrict j₂) (T.orientation.restrict A₂ j₂ hOP₂)
-    (T.sphereBasis _) (T.closePairBasis _) T.sheets (A₂.restrict_faithful j₂ hfaith₂) a haqc
-    fun V hV hne hinf => moveTest (T.orbitNull n) T.collapse _ a hpinch V hV hne hinf
+    (sphereBasis _) (closePairBasis _) sheetsInput (A₂.restrict_faithful j₂ hfaith₂) a haqc
+    fun V hV hne hinf => moveTest (T.orbitNull n) collapseInput _ a hpinch V hV hne hinf
 
 /-- **p-adic exclusion without second countability from OpenAI's interface** (the proof of
 Theorem 1.2, 06:502-516, with second countability dropped): from `OAIInterface`, `LocalInputs`

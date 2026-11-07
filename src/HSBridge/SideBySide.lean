@@ -30,7 +30,7 @@ and `LocalInputs` alone (`oai_route_noSC`, with Newman's theorem discharged from
   and Newman's theorem `HSFormal.NewmanPrimeOrder`.
 * `HSBridge.oai_route`: OpenAI's proof at its interface level,
   `HilbertSmith.Interface.padicExclusion_of_oaiInterface`: from `OAIInterface` (the Witt groups of
-  sheaves, as §§5–6 use them), `LocalInputs` (the topology of §5 not yet proved) and
+  sheaves, as §§5–6 use them), `LocalInputs` (the topology of §5 still assumed) and
   `HilbertSmith.NewmanInput` (Newman's theorem, which Proposition 5.1 uses).
 * `HSBridge.oai_route_noSC`: OpenAI's route without second countability,
   `HilbertSmith.Interface.padicExclusion_of_oaiInterface_noSC`, from `OAIInterface` and
@@ -45,16 +45,18 @@ against `oai_route`), and an asymmetry:
   `HSFormal.LTheory.lowerLModel` (used in `HSFormal.padicExclusion_of_model`), and Newman's
   theorem by `HSFormal.Newman.newmanPrimeOrder`.
 * OpenAI's route discharges neither of its interfaces yet. `OAIInterface` needs the sheaf model of
-  §§2–4 (B-M7). `LocalInputs` collects, from §5: the orientation facts, Lemma 5.2
-  (`CollapseInput`), Lemma 5.3 with the pinch transport (`AveragedTest`), Lemmas 5.4 and 5.5
-  combined (`OrbitNull`), Lemma 5.6 (`SheetsInput`) and the neighbourhood bases of `S^d` and
-  `C_d`. What §6 uses of Proposition 5.1, without its orientation step (which stays the input
-  `Orientation.exists_restrict`), is proved from `HilbertSmith.NewmanInput`, without second
-  countability (`HilbertSmith.Interface.chartReductionNoSC`). Newman's theorem is a hypothesis of
-  `oai_route`; `oai_route_noSC` discharges it from HS_proof (`HSBridge.newmanInput`), as HS_proof's
-  own route does (`HSFormal.Newman.newmanPrimeOrder`). Lemma
-  5.7 is proved (Deicyde's `HilbertSmith.homotopyExtension`), as are Definition 6.3, Propositions
-  5.8, 6.4–6.7 and Theorem 6.8 from the interface.
+  §§2–4. `LocalInputs` collects what is still assumed from §5: the orientation facts
+  (`Orientation`), Lemma 5.3 with the pinch transport (`AveragedTest`), and Lemmas 5.4 and 5.5
+  combined (`OrbitNull`). The rest of §5 is proved without HS_proof: what §6 uses of Proposition
+  5.1, without its orientation step (which stays the input `Orientation.exists_restrict`), from
+  `HilbertSmith.NewmanInput` and without second countability
+  (`HilbertSmith.Interface.chartReductionNoSC`); Lemma 5.2 (`HilbertSmith.Interface.collapseInput`);
+  Lemma 5.6 (`HilbertSmith.Interface.sheetsInput`); the neighbourhood bases of `S^d` and `C_d`
+  (`HilbertSmith.Interface.sphereBasis`, `HilbertSmith.Interface.closePairBasis`); and Lemma 5.7
+  (Deicyde's `HilbertSmith.homotopyExtension`). Newman's theorem is a hypothesis of `oai_route`;
+  `oai_route_noSC` discharges it from HS_proof (`HSBridge.newmanInput`), as HS_proof's own route
+  does (`HSFormal.Newman.newmanPrimeOrder`). Definition 6.3, Propositions 5.8, 6.4–6.7 and
+  Theorem 6.8 are proved from the interface.
 
 In this build, any statement whose hypotheses include a faithful action of `ℤ_[p]` on a manifold
 can be discharged ex falso from HS_proof: from `HSBridge.hs_route_univ` when the manifold is second
@@ -287,12 +289,8 @@ O : HilbertSmith.Interface.OAIInterface
   chars
 T : HilbertSmith.Interface.LocalInputs O
   orientation
-  collapse
   averagedTest
   orbitNull
-  sheets
-  sphereBasis
-  closePairBasis
 -/
 #guard_msgs (whitespace := lax) in
 #route_assumptions oai_route_noSC
@@ -377,12 +375,8 @@ T : HilbertSmith.Interface.LocalInputs O
     exists_restrict
     restrict
     stabilize
-  collapse
   averagedTest
   orbitNull
-  sheets
-  sphereBasis
-  closePairBasis
 hN : HilbertSmith.NewmanInput (not a structure)
 -/
 #guard_msgs (whitespace := lax) in

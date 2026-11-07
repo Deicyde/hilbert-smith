@@ -2,7 +2,7 @@
 article_id: af_0a60c47824a088017bd7b348
 declaration: lemma
 origin: cited
-lean: HilbertSmith.exists_open_disjoint_smul HilbertSmith.sheet_open HilbertSmith.sheet_pairwise_disjoint HilbertSmith.sheet_union HilbertSmith.sheetImage_open HilbertSmith.sheetImage_nonempty HilbertSmith.sheet_homeomorph HilbertSmith.sheet_unique HilbertSmith.sheet_exists HilbertSmith.sheetCoord HilbertSmith.sheetCoord_mem HilbertSmith.sheetCoord_unique HilbertSmith.shift_mem HilbertSmith.sheetCoord_shift HilbertSmith.sheetCoord_locallyConstant HilbertSmith.sheetBeta HilbertSmith.sheetBeta_locallyConstant HilbertSmith.sheetBeta_equivariant HilbertSmith.exp_pow_nat HilbertSmith.zeta_pow_eq_one HilbertSmith.cyclicChar HilbertSmith.cyclic_card HilbertSmith.sheetBeta_cyclic_equivariant HilbertSmith.sheetBeta_cyclic_mem
+lean: HilbertSmith.exists_open_disjoint_smul HilbertSmith.sheet_open HilbertSmith.sheet_pairwise_disjoint HilbertSmith.sheet_union HilbertSmith.sheetImage_open HilbertSmith.sheetImage_nonempty HilbertSmith.sheet_homeomorph HilbertSmith.sheet_unique HilbertSmith.sheet_exists HilbertSmith.sheetCoord HilbertSmith.sheetCoord_mem HilbertSmith.sheetCoord_unique HilbertSmith.shift_mem HilbertSmith.sheetCoord_shift HilbertSmith.sheetCoord_locallyConstant HilbertSmith.sheetBeta HilbertSmith.sheetBeta_locallyConstant HilbertSmith.sheetBeta_equivariant HilbertSmith.exp_pow_nat HilbertSmith.zeta_pow_eq_one HilbertSmith.cyclicChar HilbertSmith.cyclic_card HilbertSmith.sheetBeta_cyclic_equivariant HilbertSmith.sheetBeta_cyclic_mem HilbertSmith.Interface.sheetsInput HilbertSmith.Interface.LocalAction.exists_stabilizer_le HilbertSmith.Interface.LocalAction.exists_sheet_nhds
 statement: formalized
 proof: formalized
 ---
@@ -25,6 +25,15 @@ $x$; disjoint neighborhoods of its orbit intersected over
 translates give $N$ with disjoint translates, and the open finite
 quotient map restricts to homeomorphisms on each. Constant values
 $\zeta^j$ on the pulled-back sheets give $\beta$.
+
+*Formalization.* `HilbertSmith.Interface.sheetsInput` proves the part
+of this statement that the contradiction uses, for the additive action
+of $\Zp$: the open set $V$ and the function $\beta$ with its
+equivariance, without the homeomorphisms onto $V$. It runs the argument
+in $W$ rather than in $Z$: the neighbourhood $N$ of $x$ is taken
+invariant under $p^kG$ with $gN \cap N = \emptyset$ for
+$g \notin p^kG$ (`exists_sheet_nhds`), and $\beta$ is
+$\zeta^{\bar g}$ on $gN$.
 
 ## Sources
 
