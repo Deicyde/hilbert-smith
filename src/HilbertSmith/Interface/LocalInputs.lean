@@ -10,12 +10,13 @@ OpenAI's §5 prepares the local test that §6 consumes. B1 bundled it into one f
 stated as close to OpenAI's text as the formal layer allows, so that each can be proved or kept as
 a published input on its own.
 
-Assumed, as the fields of `LocalInputs O`:
-* `Orientation OP`: the facts about the orientation predicate `OP` that §5 uses: the step
-  `G = 2H` of Proposition 5.1, and persistence under the replacements of §5.
+Assumed, as the only field of `LocalInputs O`:
 * `OrbitNull d δD`: Lemmas 5.4 and 5.5 combined, in the form the proof of Proposition 5.8 uses.
 
 Stated here and proved:
+* `Orientation OP`: the facts about orientation preservation that §5 uses, proved for the concrete
+  predicate `LocalAction.OrientationPreserving` (local maps homotopic to the identity's) as
+  `HilbertSmith.Interface.orientation`.
 * `CollapseInput`: Lemma 5.2 (the extended action is continuous; the orbit space is metrizable),
   proved as `HilbertSmith.Interface.collapseInput`.
 * `AveragedTest d`: Lemma 5.3 in OpenAI's pinch form (05:148-149), proved as
@@ -28,35 +29,41 @@ Stated here and proved:
   (06:101-107) and `C_d` (06:355-366), proved as `HilbertSmith.Interface.sphereBasis` and
   `HilbertSmith.Interface.closePairBasis`.
 
-What §6 uses of Proposition 5.1, without its orientation step (which stays the input
-`Orientation.exists_restrict`), is not an input either: `HilbertSmith.Interface.chartReductionNoSC`
-proves it from `HilbertSmith.NewmanInput`, without second countability. Lemma 5.7 is Deicyde's
+What §6 uses of Proposition 5.1 is not an input either: `HilbertSmith.Interface.chartReductionNoSC`
+proves it from `HilbertSmith.NewmanInput`, without second countability, and
+`Orientation.exists_restrict` its orientation step. Lemma 5.7 is Deicyde's
 `HilbertSmith.homotopyExtension`.
 
-Two departures from PLAN §3.2, accepted in the lead's review of 2026-11-07 (PLAN §3.4 amended):
+Departures:
 * Lemmas 5.4 and 5.5 are stated about rational Čech cohomology, which neither Mathlib nor TauCeti
   has. `OrbitNull` is their composite, which needs no cohomology: if `v ∘ r` is nullhomotopic for
   an orbit map `r`, then `v^*γ_d` vanishes after pulling back, hence vanishes (Lemma 5.4), hence
   some `D_s ∘ v` is nullhomotopic (Lemma 5.5). It splits into the two lemmas once a Čech
-  cohomology of compact metrizable spaces is available.
+  cohomology of compact metrizable spaces is available (accepted in the lead's review of
+  2026-11-07, PLAN §3.4 amended).
 * Lemma 5.3 is stated in its pinch form, and (5.1) is a theorem (decision 1 of the lead's B-M4
   brief); the pinch maps are `LocalAction.pinch`.
+* The orientation step of Proposition 5.1 is proved by continuity of the action at `0`, not by the
+  preserve-or-reverse dichotomy, which needs degree theory (decision 2 of the lead's B-M4 brief;
+  `Orientation.exists_restrict`).
 
-Scope and non-vacuity. Each assumed input is stated for the actions OpenAI's text covers, or more:
-`Orientation` for any action (its first field for connected `W`); `OrbitNull` for odd `d ≥ 3`, true
-when the maps `D k` of the interface really have degree `k`. `LocalAction`s of every kind are
-quantified over, but each input assumes what its lemma needs, so each holds by the cited result.
+Scope and non-vacuity. `OrbitNull` is stated for odd `d ≥ 3`, and is true when the maps `D k` of
+the interface really have degree `k`; it quantifies over every compact metrizable space with an
+action, and assumes what its lemmas need.
 -/
 
 namespace HilbertSmith.Interface
 
 open Topology Set
 
-/-- **What §5 uses about orientation preservation**, for the predicate `OP` of the interface. -/
+/-- **What §5 uses about orientation preservation**, for a predicate `OP` on local actions. It
+holds for `LocalAction.OrientationPreserving` (`HilbertSmith.Interface.orientation`). -/
 structure Orientation (OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction p k → Prop) : Prop where
-  /-- The last paragraph of the proof of Proposition 5.1 (05:68-72): every homeomorphism of the
-  connected `O` preserves or reverses the orientation from the chart, so every square preserves
-  it, and `G = 2H` (that is `H` for odd `p`, and `pH` for `p = 2`) acts preserving orientation. -/
+  /-- The last paragraph of the proof of Proposition 5.1 (05:68-72): on a connected `W`, some open
+  subgroup acts preserving orientation. OpenAI takes `G = 2H`, since every homeomorphism of the
+  connected `O` preserves or reverses the orientation, so every square preserves it; that needs
+  degree theory, and `LocalAction.exists_orientationPreserving_restrict` gets the subgroup from
+  continuity of the action at `0` instead (decision 2 of the lead's B-M4 brief). -/
   exists_restrict : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ} (A : LocalAction p k), IsConnected A.W →
     ∃ j, OP (A.restrict j)
   /-- Orientation preservation persists when `G` is replaced by an open subgroup (Lemma 5.3:
@@ -152,11 +159,8 @@ cap-by-cap boxes. -/
 def ClosePairBasis (d : ℕ) : Prop :=
   ∀ z : ClosePair d, HasGoodBasisAt z
 
-/-- **The §5 inputs the route still assumes**, for the interface `O`: orientation, and Lemmas 5.4
-and 5.5 combined. -/
+/-- **The §5 input the route still assumes**, for the interface `O`: Lemmas 5.4 and 5.5 combined. -/
 structure LocalInputs (O : OAIInterface) : Prop where
-  /-- The orientation facts of §5, for the interface's `OP` (05:68-72, 05:75-80, 05:181-182). -/
-  orientation : Orientation O.OP
   /-- Lemmas 5.4 and 5.5, combined (05:209-377, 05:506-512), for the interface's degree maps. -/
   orbitNull : ∀ j, OrbitNull (2 * j + 3) (O.δD j)
 

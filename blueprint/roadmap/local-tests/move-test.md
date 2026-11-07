@@ -2,6 +2,7 @@
 article_id: af_4a651f56b0520f1bf8c8e6cb
 declaration: theorem
 origin: cited
+lean: HilbertSmith.Interface.moveTest HilbertSmith.Interface.pinchTransport HilbertSmith.Interface.exists_ballPath HilbertSmith.Interface.hpinch_of
 ---
 
 # Moving a test
@@ -20,6 +21,11 @@ constant on $q^{-1}(F)$; the restricted orbit map meets the orbit
 pullback hypotheses, giving $(a|_F)^*\gamma_d = 0$. Odd-sphere
 nullhomotopy kills some $D_s a|_F$, and homotopy extension promotes
 the nullhomotopy to $Y$.
+
+*Formalization.* `moveTest` takes `OrbitNull` (Lemmas 5.4 and 5.5
+combined) as a hypothesis. The pinch transport is `pinchTransport`, along
+the ball paths of `exists_ballPath`, and `hpinch_of` turns it, with
+Lemma 5.3's pinch form, into `moveTest`'s hypothesis.
 
 ## Sources
 

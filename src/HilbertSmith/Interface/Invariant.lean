@@ -1,4 +1,5 @@
 import HilbertSmith.Interface.Forms
+import HilbertSmith.Interface.Orientation
 import HilbertSmith.Interface.Spaces
 
 /-!
@@ -18,9 +19,11 @@ HS_proof's `HSFormal.LTheory.LowerLTheory` states the L-theory that HS_proof's p
   06:212).
 * `OrbitCharacterTheory I OP`: the facts of §6 about the test form `(A_t, α_t)` of (6.4) and its
   character projectors: its class, the projector identities (6.6), covariance (Proposition 6.5)
-  and the sheet twist (Proposition 6.7). `OP` is the orientation-preservation predicate on local
-  actions, a parameter (PLAN §3.2, change 4).
-* `OAIInterface`: the two structures for every odd `d = 2j + 3`, with the degree maps and `OP`.
+  and the sheet twist (Proposition 6.7). `OP` is an orientation-preservation predicate on local
+  actions, a parameter of the structure.
+* `OAIInterface`: the two structures for every odd `d = 2j + 3`, with the degree maps; the
+  character theory is taken for the concrete predicate `LocalAction.OrientationPreserving`
+  (decision 3 of the lead's B-M4 brief, which supersedes PLAN §3.2, change 4).
 
 Field tags, from B1: **[SHEAF]** holds in OpenAI's model through the sheaf theory of §§2–4;
 **[FORMAL]** holds for the Witt group of any category with duality; **[TOP]** is topology without
@@ -247,23 +250,25 @@ structure OrbitCharacterTheory {d : ℕ} {δD : DegreeMaps d} (I : OAIInvariant 
     ∃ σ : (form A h U).Isometry (form A h U),
       ∀ i, σ.iso.inv ≫ proj A h U κ i ≫ σ.iso.hom = proj A h U κ (i - 1)
 
-/-- **The interface** for every odd `d = 2j + 3`: the degree maps, the orientation predicate, and
-for each `j` the invariant and the character theory. -/
+/-- **The interface** for every odd `d = 2j + 3`: the degree maps, and for each `j` the invariant
+and the character theory. -/
 structure OAIInterface where
   /-- The degree maps `D k` on `S^{2j+3}`. -/
   δD : ∀ j : ℕ, DegreeMaps (2 * j + 3)
-  /-- Orientation preservation of a local action: every element of `ℤ_[p]` acts by an
-  orientation-preserving homeomorphism of `W` (PLAN §3.2: a parameter of the route). Whether a
-  homeomorphism of `W` preserves orientation does not depend on which of the two orientations of
-  the ambient space `A.E` (or of `S^d`, through `LocalAction.sphereEquiv`) is used to test it, so
-  `OP` involves no choice of orientation. (For a disconnected `W` other orientations of `W` exist,
-  such as one that differs on two components swapped by an element; `OP` uses only those that
-  come from `A.E`.) -/
-  OP : ∀ {p : ℕ} [Fact p.Prime] {k : ℕ}, LocalAction p k → Prop
   /-- The invariant `E_{2j+3}`. -/
   inv : ∀ j : ℕ, OAIInvariant (2 * j + 3) (δD j)
-  /-- The character theory in degree `2j + 3`. -/
-  chars : ∀ j : ℕ, OrbitCharacterTheory (inv j) OP
+  /-- The character theory in degree `2j + 3`, for the orientation predicate
+  `LocalAction.OrientationPreserving`: every local map `v ↦ g(x + εv) − g(x)` is homotopic in
+  `E ∖ {0}` to that of `0`, `v ↦ εv` (decision 3 of the lead's B-M4 brief).
+
+  OpenAI's model satisfies `proj_adj` with it. Lemma 6.2's proof uses that `g_*` is the identity
+  on the local homology `H_k(W, W ∖ x)` (06:160-162). By excision, `H_k(W, W ∖ x)` is
+  `H_k(B, B ∖ x)` for the ball `B = B(x, ε)`, which is `H̃_{k−1}(B ∖ x) ≅ H̃_{k−1}(E ∖ 0)` through
+  `v ↦ (v − x)/ε`; under these identifications `g_*` is induced by the local map of `g` at
+  `(x, ε)`, followed by the radial deformation of `E ∖ 0`. Homotopic maps induce equal maps on
+  homology, so a local map homotopic to `v ↦ εv` gives `g_* = id`. The predicate involves no choice
+  of orientation of `E`. -/
+  chars : ∀ j : ℕ, OrbitCharacterTheory (inv j) LocalAction.OrientationPreserving
 
 end
 

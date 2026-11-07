@@ -24,8 +24,10 @@ it, from Newman's theorem in OpenAI's form (`HilbertSmith.NewmanInput`), along O
   `ℝⁿ` by the chart (`HilbertSmith.Interface.LocalAction.ofChart`), this is a faithful
   `LocalAction` on a connected open set.
 
-The orientation step of Proposition 5.1 (05:68-72) is not proved here: it is assumed, as the
-field `HilbertSmith.Interface.Orientation.exists_restrict` of `LocalInputs`.
+The orientation step of Proposition 5.1 (05:68-72) is not part of this statement. It is proved
+separately, from continuity of the action at `0` instead of the preserve-or-reverse dichotomy
+(decision 2 of the lead's B-M4 brief), as
+`HilbertSmith.Interface.LocalAction.exists_orientationPreserving_restrict`.
 
 `ChartReduction`, the form with second countability that the route assumed before this proof,
 follows (`chartReduction_of_noSC`).

@@ -45,11 +45,13 @@ For the second-countable statement, the same conclusion with two sets of hypothe
   `HSFormal.LTheory.lowerLModel` (used in `HSFormal.padicExclusion_of_model`), and Newman's
   theorem by `HSFormal.Newman.newmanPrimeOrder`.
 * OpenAI's route discharges neither of its interfaces yet. `OAIInterface` needs the sheaf model of
-  §§2–4. `LocalInputs` collects what is still assumed from §5: the orientation facts
-  (`Orientation`) and Lemmas 5.4 and 5.5 combined (`OrbitNull`). The rest of §5 is proved without
-  HS_proof: Lemma 5.3 in pinch form (`HilbertSmith.Interface.averagedTest`); the pinch transport
-  (`HilbertSmith.Interface.pinchTransport`); what §6 uses of Proposition 5.1, without its
-  orientation step (which stays the input `Orientation.exists_restrict`), from
+  §§2–4; its character theory is stated for the concrete orientation predicate
+  `HilbertSmith.Interface.LocalAction.OrientationPreserving`. `LocalInputs` collects what is still
+  assumed from §5: Lemmas 5.4 and 5.5 combined (`OrbitNull`). The rest of §5 is proved without
+  HS_proof: the orientation facts (`HilbertSmith.Interface.orientation`, with the orientation step
+  of Proposition 5.1 by continuity at `0`); Lemma 5.3 in pinch form
+  (`HilbertSmith.Interface.averagedTest`); the pinch transport
+  (`HilbertSmith.Interface.pinchTransport`); what §6 uses of Proposition 5.1, from
   `HilbertSmith.NewmanInput` and without second countability
   (`HilbertSmith.Interface.chartReductionNoSC`); Lemma 5.2 (`HilbertSmith.Interface.collapseInput`);
   what §6 uses of Lemma 5.6, the region `V` and its multiplier `β`
@@ -287,11 +289,9 @@ info: route audit: 'HSBridge.newmanInput' avoids modules under HSFormal.LTheory 
 info: route assumptions of 'HSBridge.oai_route_noSC':
 O : HilbertSmith.Interface.OAIInterface
   δD
-  OP
   inv
   chars
 T : HilbertSmith.Interface.LocalInputs O
-  orientation
   orbitNull
 -/
 #guard_msgs (whitespace := lax) in
@@ -322,7 +322,6 @@ info: route audit: 'HSBridge.hs_route_of_inputs' depends on constants from modul
 info: route assumptions of 'HSBridge.oai_route':
 O : HilbertSmith.Interface.OAIInterface
   δD
-  OP
   inv (HilbertSmith.Interface.OAIInvariant, expanded)
     IsTest
     isTest_sphere
@@ -373,18 +372,13 @@ O : HilbertSmith.Interface.OAIInterface
     push
     twist
 T : HilbertSmith.Interface.LocalInputs O
-  orientation (HilbertSmith.Interface.Orientation, expanded)
-    exists_restrict
-    restrict
-    stabilize
   orbitNull
 hN : HilbertSmith.NewmanInput (not a structure)
 -/
 #guard_msgs (whitespace := lax) in
 #route_assumptions oai_route
   expanding HilbertSmith.Interface.OAIInvariant HilbertSmith.Interface.OrbitCharacterTheory
-    HilbertSmith.Interface.Orientation HilbertSmith.Interface.WittClasses
-    HilbertSmith.Interface.DualFunctor HilbertSmith.Duality
+    HilbertSmith.Interface.WittClasses HilbertSmith.Interface.DualFunctor HilbertSmith.Duality
 
 /-! ### D1's module table: HS_proof's shared front against its back end
 
