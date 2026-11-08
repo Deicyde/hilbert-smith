@@ -4,12 +4,13 @@ article_id: af_dd7f6d0ba0f31fe583ddd2fd
 
 # HilbertSmith roadmap
 
-A Lean 4 formalization of the OpenAI proof of the Hilbert--Smith
+This book follows the OpenAI proof of the Hilbert--Smith
 conjecture in every finite dimension. The book states the main
 theorems, builds a sheaf-theoretic signature invariant with a fixed
 integral lattice, prepares local tests from a hypothetical faithful
 $p$-adic action, and derives a contradiction from equal character
-parts.
+parts; a final chapter compares it, stage by stage, with the proof of
+HS_proof.
 
 ## Chapters
 
@@ -20,6 +21,7 @@ parts.
 - [A bounded lattice on the test sphere](sphere-lattice/README.md)
 - [Preparing local tests](local-tests/README.md)
 - [Character classes and the contradiction](character-classes/README.md)
+- [Two routes: the HS_proof and OpenAI proofs side by side](two-routes/README.md)
 
 <!-- AUTHORING NOTES — these comments are not published.
 

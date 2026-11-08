@@ -2,7 +2,7 @@
 article_id: af_0a60c47824a088017bd7b348
 declaration: lemma
 origin: cited
-lean: HilbertSmith.exists_open_disjoint_smul HilbertSmith.sheet_open HilbertSmith.sheet_pairwise_disjoint HilbertSmith.sheet_union HilbertSmith.sheetImage_open HilbertSmith.sheetImage_nonempty HilbertSmith.sheet_homeomorph HilbertSmith.sheet_unique HilbertSmith.sheet_exists HilbertSmith.sheetCoord HilbertSmith.sheetCoord_mem HilbertSmith.sheetCoord_unique HilbertSmith.shift_mem HilbertSmith.sheetCoord_shift HilbertSmith.sheetCoord_locallyConstant HilbertSmith.sheetBeta HilbertSmith.sheetBeta_locallyConstant HilbertSmith.sheetBeta_equivariant HilbertSmith.exp_pow_nat HilbertSmith.zeta_pow_eq_one HilbertSmith.cyclicChar HilbertSmith.cyclic_card HilbertSmith.sheetBeta_cyclic_equivariant HilbertSmith.sheetBeta_cyclic_mem
+lean: HilbertSmith.exists_open_disjoint_smul HilbertSmith.sheet_open HilbertSmith.sheet_pairwise_disjoint HilbertSmith.sheet_union HilbertSmith.sheetImage_open HilbertSmith.sheetImage_nonempty HilbertSmith.sheet_homeomorph HilbertSmith.sheet_unique HilbertSmith.sheet_exists HilbertSmith.sheetCoord HilbertSmith.sheetCoord_mem HilbertSmith.sheetCoord_unique HilbertSmith.shift_mem HilbertSmith.sheetCoord_shift HilbertSmith.sheetCoord_locallyConstant HilbertSmith.sheetBeta HilbertSmith.sheetBeta_locallyConstant HilbertSmith.sheetBeta_equivariant HilbertSmith.exp_pow_nat HilbertSmith.zeta_pow_eq_one HilbertSmith.cyclicChar HilbertSmith.cyclic_card HilbertSmith.sheetBeta_cyclic_equivariant HilbertSmith.sheetBeta_cyclic_mem HilbertSmith.Interface.sheetsInput HilbertSmith.Interface.LocalAction.exists_stabilizer_le HilbertSmith.Interface.LocalAction.exists_sheet_nhds
 statement: formalized
 proof: formalized
 ---
@@ -25,6 +25,14 @@ $x$; disjoint neighborhoods of its orbit intersected over
 translates give $N$ with disjoint translates, and the open finite
 quotient map restricts to homeomorphisms on each. Constant values
 $\zeta^j$ on the pulled-back sheets give $\beta$.
+
+*Remark.* The sheets can also be found in $W$ without forming $Z$.
+By compactness of $G \setminus p^kG$, some open $\tilde N \ni x$,
+which may be taken invariant under $p^kG$, satisfies
+$g\tilde N \cap \tilde N = \emptyset$ for every $g \notin p^kG$.
+Then $V = q(\tilde N)$, the preimage $q^{-1}(V)$ is the disjoint
+union of the open sets $g\tilde N$, one for each
+$\bar g \in G/p^kG$, and $\beta = \zeta^{\bar g}$ on $g\tilde N$.
 
 ## Sources
 

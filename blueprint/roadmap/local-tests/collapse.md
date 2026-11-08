@@ -2,7 +2,7 @@
 article_id: af_e2de11f27208c9347c2a8a7f
 declaration: lemma
 origin: cited
-lean: HilbertSmith.continuous_collapse HilbertSmith.continuousSMul_onePoint HilbertSmith.osmul_infty HilbertSmith.compactSpace_onePoint HilbertSmith.metrizableSpace_onePoint HilbertSmith.compactSpace_orbitQuotient HilbertSmith.metrizableSpace_orbitQuotient
+lean: HilbertSmith.continuous_collapse HilbertSmith.continuousSMul_onePoint HilbertSmith.osmul_infty HilbertSmith.compactSpace_onePoint HilbertSmith.metrizableSpace_onePoint HilbertSmith.compactSpace_orbitQuotient HilbertSmith.metrizableSpace_orbitQuotient HilbertSmith.Interface.collapseInput
 statement: formalized
 proof: formalized
 ---

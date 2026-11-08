@@ -2,6 +2,7 @@
 article_id: af_4a651f56b0520f1bf8c8e6cb
 declaration: theorem
 origin: cited
+lean: HilbertSmith.Interface.moveTest HilbertSmith.Interface.pinchTransport HilbertSmith.Interface.exists_ballPath HilbertSmith.Interface.hpinch_of
 ---
 
 # Moving a test
