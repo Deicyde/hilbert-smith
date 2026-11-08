@@ -220,10 +220,13 @@ stage page it sits inside.
   [Lemma 5.4](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/05-local-tests.tex#L209-L275),
   [Lemma 5.5](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/05-local-tests.tex#L287-L377),
   [Proposition 5.8](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/05-local-tests.tex#L478-L517)).
-  HS_proof's order-$p$ symmetry already covers the compact set where its
-  test lives (HS paper,
+  HS_proof's order-$p$ symmetry is free on the whole compact set where
+  its test lives (HS paper,
   [lines 797-838](https://github.com/adbrw/HS_proof/blob/5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862/HSproof.tex#L797-L838)),
-  so its test never moves. This is the preprint's only use of Čech
+  and its divisibility argument is global, so its test never moves; the
+  preprint's equal-parts step needs a test constant off a sheet region,
+  and no test of degree one is (see
+  [Free sheets, and putting the test over them](free-sheets.md)). This is the preprint's only use of Čech
   cohomology and of homotopy groups of spheres; Lemma 6.1 reuses only
   the sheaf identity of Lemma 5.4
   ([lines 55-58](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/06-character-classes.tex#L55-L58)).
