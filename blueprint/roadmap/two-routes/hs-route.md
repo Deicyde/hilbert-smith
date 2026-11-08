@@ -17,9 +17,9 @@ every jointly continuous action of $\mathbb{Z}_p$ on
 $M$ has nonzero kernel: some nonzero $p$-adic integer acts as the
 identity.
 
-A *lower $L$-theory* assigns to every small additive category with
-involution $\mathcal{A}$ and every integer $n$ an abelian group
-$L_n(\mathcal{A})$, with:
+A *lower $L$-theory* assigns to every small $\mathbb{Q}$-linear additive
+category $\mathcal{A}$ with a strict involution and unitary biproducts,
+and to every integer $n$, an abelian group $L_n(\mathcal{A})$, with:
 
 - functoriality along duality-preserving functors, unitarily isomorphic
   functors inducing the same map and finite unitary sums inducing the

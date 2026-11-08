@@ -12,9 +12,9 @@ proof: formalized
 Here a topological $n$-manifold, for any $n \geq 0$, is a Hausdorff space with an atlas of charts,
 for its own topology, onto open subsets of $\mathbb{R}^n$; it has no boundary, and no
 differentiable structure is assumed. A topological group is a Lie group if, for some $d$, its own
-topology carries an atlas modelled on $\mathbb{R}^d$ in which multiplication and inversion are
-$C^\infty$. All manifolds and groups lie in the lowest universe, `Type`. Consider two
-propositions.
+topology carries a $C^\infty$ atlas (charts with smooth transition maps) modelled on
+$\mathbb{R}^d$, in which multiplication and inversion are $C^\infty$. All manifolds and groups lie
+in the lowest universe, `Type`. Consider two propositions.
 
 - *$p$-adic exclusion*: for every prime $p$, every $n \geq 0$ and every connected, Hausdorff,
   second-countable topological $n$-manifold $M$, no jointly continuous action of $\mathbb{Z}_p$ on
@@ -41,8 +41,7 @@ countability (for those, see [The theorems without second countability](general-
 
 *Proof sketch.* In each pair the two definitions quantify over the same data with the same
 hypotheses in the same order, and draw the same conclusion, so reflexivity (`Iff.rfl`) proves the
-equivalence. The same comparison holds in every universe, against HS_proof's universe-polymorphic
-forms of the two statements.
+equivalence.
 
 ## Sources
 
