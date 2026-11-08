@@ -26,28 +26,13 @@ translates give $N$ with disjoint translates, and the open finite
 quotient map restricts to homeomorphisms on each. Constant values
 $\zeta^j$ on the pulled-back sheets give $\beta$.
 
-*Formalization.* Deicyde's declarations state the sheet structure in
-general: for a group $G$ acting on a topological space $E$ by
-homeomorphisms (`ContinuousConstSMul`) and an open $U$ whose nontrivial
-translates are disjoint from it, each sheet maps homeomorphically onto
-the image of $U$ in $E/G$ (`sheet_homeomorph`), and for $G = \Z/m$ the
-function $\beta$ takes values in $\{1, \zeta, \ldots, \zeta^{m-1}\}$
-(`sheetBeta_cyclic_mem`). Such a $U$ exists at a point with trivial
-stabilizer when $G$ is finite and $E$ is Hausdorff (`T2Space`) and
-locally compact (`LocallyCompactSpace`), with $G$ again acting by
-homeomorphisms (`exists_open_disjoint_smul`). Nothing applies them to
-$W/(p^kG) \to Y$, and `SheetMultiplier` records $|\beta| = 1$ rather
-than the values in $\{1, \zeta, \ldots, \zeta^{m-1}\}$.
-
-The route uses `HilbertSmith.Interface.sheetsInput`, which proves what
-§6 uses, for the additive action of $\Zp$: the open set $V$, and $\beta$
-with $|\beta| = 1$, local constancy and $\beta(gw) = \zeta^{\bar
-g}\beta(w)$ (equation (5.4)). It works in $W$ rather than in
-$Z = W/p^kG$: some point $x$ has stabilizer inside $p^kG$
-(`exists_stabilizer_le`); the neighbourhood $N$ of $x$ is taken
-invariant under $p^kG$ with $gN \cap N = \emptyset$ for $g \notin p^kG$
-(`exists_sheet_nhds`); $V$ is the image of $N$, and $\beta$ is
-$\zeta^{\bar g}$ on $gN$.
+*Remark.* The sheets can also be found in $W$ without forming $Z$.
+By compactness of $G \setminus p^kG$, some open $\tilde N \ni x$,
+which may be taken invariant under $p^kG$, satisfies
+$g\tilde N \cap \tilde N = \emptyset$ for every $g \notin p^kG$.
+Then $V = q(\tilde N)$, the preimage $q^{-1}(V)$ is the disjoint
+union of the open sets $g\tilde N$, one for each
+$\bar g \in G/p^kG$, and $\beta = \zeta^{\bar g}$ on $g\tilde N$.
 
 ## Sources
 

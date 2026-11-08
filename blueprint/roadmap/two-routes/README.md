@@ -9,11 +9,11 @@ each other. HS_proof is A. Dabrowski's AI agents, *Integral tail
 signatures and the Hilbert–Smith conjecture* (October 8, 2026; "the HS
 paper"). OpenAI's proof is OpenAI, *The Hilbert–Smith conjecture in
 every finite dimension* (September 23, 2026; "the preprint"), the proof
-the rest of this book formalizes. Each page takes one question that both
+the rest of this book follows. Each page takes one question that both
 proofs must answer, gives each proof's answer in its own terms, and says
-what is shared, what differs, how far each side is formalized, and where
-to read further. The table below gives the whole comparison, one
-sentence per cell; the pages give the arguments.
+what is shared, what differs, and where to read further. The table below
+gives the whole comparison, one sentence per cell; the pages give the
+arguments.
 
 Both proofs aim at the same target and start the same way. Each reduces
 Hilbert–Smith to $p$-adic exclusion, the statement that $\mathbb{Z}_p$
@@ -284,79 +284,20 @@ Section 6,
 [lines 160-170](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/06-character-classes.tex#L160-L170)).
 [One chart and a small subgroup](one-chart.md) compares the two.
 
-## How to read the formal status
+## The two routes as theorems
 
-Each stage page has two table rows about Lean, "Formal status" and
-"Lean"; the rest of the page is mathematics. Four facts govern how to
-read those rows.
-
-*Here* means
-[Deicyde/hilbert-smith at `1505120`](https://github.com/Deicyde/hilbert-smith/tree/1505120556bbe2ba3c6d4e77a0c3b0365da32abd),
-branch `route/track-b`. It holds the formalization of OpenAI's route
-modulo an interface, Track A (the HS paper's removal of second
-countability, formalized on top of HS_proof's theorem), and a comparison
-library that states both routes in one build.
-
-HS_proof's Lean library proves Hilbert–Smith and $p$-adic exclusion for
-second-countable manifolds and groups with no axioms beyond `propext`,
-`Classical.choice` and `Quot.sound`
-([comparator configuration](https://github.com/adbrw/HS_proof/blob/5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862/comparator.json#L5),
-[README](https://github.com/adbrw/HS_proof/blob/5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862/README.md#L47)).
-It builds its own model of the lower $L$-theory it uses, and in several
-places argues differently from the paper; the stage pages say so where
-it happens.
-
-OpenAI's route is proved here modulo two hypotheses: an interface that
-states the properties of OpenAI's Witt groups and character projectors
-that Sections 5 and 6 use, and Lemmas 5.4 and 5.5 combined. Neither has
-a model yet. Nobody has built the sheaf theory of Sections 2 to 4
-formally, and the case that the interface can be satisfied is an
-argument in its documentation, not a proof
-([non-vacuity note](https://github.com/Deicyde/hilbert-smith/blob/1505120556bbe2ba3c6d4e77a0c3b0365da32abd/src/HilbertSmith/Interface/Invariant.lean#L33-L44)).
-So results on OpenAI's side are architecture-level: they show that the
-later steps follow from named properties, not that those properties
-hold.
-
-Such a result means something only because of an audit. HS_proof proves
-$p$-adic exclusion in the same build, so any statement whose hypotheses
-include an effective action of $\mathbb{Z}_p$ on a manifold could be
-proved ex falso, without touching the interface. Every build therefore
-checks that the proof of OpenAI's route uses no constant of HS_proof,
-with one exception: the version without second countability uses
-HS_proof's proof of Newman's theorem, which itself avoids HS_proof's
-$L$-theory and its $p$-adic exclusion theorems
-([the reason](https://github.com/Deicyde/hilbert-smith/blob/1505120556bbe2ba3c6d4e77a0c3b0365da32abd/src/HSBridge/SideBySide.lean#L65-L79),
-[the checks](https://github.com/Deicyde/hilbert-smith/blob/1505120556bbe2ba3c6d4e77a0c3b0365da32abd/src/HSBridge/SideBySide.lean#L263-L287)).
-
-The status words on the stage pages:
-
-- **proved in HS_proof**: HS_proof's Lean proves it, with
-  "second-countable case" added when it assumes second countability
-  that the paper does not.
-- **proved in HS_proof by a different argument**: proved, but not along
-  the paper's lines.
-- **proved here (Track A)**: a step of the HS paper that HS_proof's Lean
-  leaves out, proved here on top of HS_proof.
-- **proved here**: proved here without HS_proof.
-- **proved here from Newman's theorem**: the same, with Newman's theorem
-  as the only outside input.
-- **proved here from the interface**: proved from the interface fields
-  named in parentheses.
-- **assumed (OrbitNull)**: Lemmas 5.4 and 5.5 combined, the one local
-  input still assumed.
-- **assumed (interface: ...)**: a field of the interface, named in the
-  parentheses.
-- **not formalized**: no Lean on that side.
-
-The two routes as the build records them, each with its hypotheses in
-its statement:
+Each route can also be stated as one theorem with its inputs as
+hypotheses. HS_proof's route takes a lower $L$-theory and Newman's
+theorem for prime order; OpenAI's route takes a theory of Witt groups
+with the properties that the preprint's Sections 5 and 6 use, and the
+preprint's Lemmas 5.4 and 5.5 combined.
 
 - [HS_proof's route from its inputs](hs-route.md)
 - [OpenAI's route without second countability](oai-route.md)
 
 ## Read further
 
-- This book, the formalization of OpenAI's proof:
+- This book, which follows OpenAI's proof:
   [Main theorems](../main-theorem/README.md),
   [Background prerequisites](../background/README.md),
   [Sheaf categories and homotopy invariance](../sheaf-categories/README.md),
@@ -365,7 +306,7 @@ its statement:
   [Preparing local tests](../local-tests/README.md), and
   [Character classes and the contradiction](../character-classes/README.md).
 - [HSWiki](https://deicyde.github.io/hs-proof-wiki/), the book on
-  HS_proof in the order its Lean proves it:
+  HS_proof:
   [Main theorems](https://deicyde.github.io/hs-proof-wiki/roadmap/main-theorems/index.html),
   [From p-adic exclusion to Hilbert–Smith](https://deicyde.github.io/hs-proof-wiki/roadmap/reduction/index.html),
   [Lower L-theory](https://deicyde.github.io/hs-proof-wiki/roadmap/l-theory/index.html),

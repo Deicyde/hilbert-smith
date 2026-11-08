@@ -21,11 +21,6 @@ both sides. Saturation of compacts gives joint continuity at
 $\infty$. Averaging a compatible metric over $G$ and minimizing
 over orbits produces compatible (quotient) metrics.
 
-*Formalization.* The statements above are about a multiplicative action.
-`HilbertSmith.Interface.collapseInput` transports the two that the
-contradiction uses, the extension to $W^+$ and the metrizability of the
-orbit space, to the additive action of $\Zp$ through `Multiplicative`.
-
 ## Sources
 
 - [Preprint source map: `lem:collapse`](../../sources/preprint.md)

@@ -4,7 +4,7 @@ article_id: af_dd7f6d0ba0f31fe583ddd2fd
 
 # HilbertSmith roadmap
 
-A Lean 4 formalization of the OpenAI proof of the Hilbert--Smith
+This book follows the OpenAI proof of the Hilbert--Smith
 conjecture in every finite dimension. The book states the main
 theorems, builds a sheaf-theoretic signature invariant with a fixed
 integral lattice, prepares local tests from a hypothetical faithful

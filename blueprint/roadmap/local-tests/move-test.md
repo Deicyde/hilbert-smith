@@ -22,11 +22,6 @@ pullback hypotheses, giving $(a|_F)^*\gamma_d = 0$. Odd-sphere
 nullhomotopy kills some $D_s a|_F$, and homotopy extension promotes
 the nullhomotopy to $Y$.
 
-*Formalization.* `moveTest` takes `OrbitNull` (Lemmas 5.4 and 5.5
-combined) as a hypothesis. The pinch transport is `pinchTransport`, along
-the ball paths of `exists_ballPath`, and `hpinch_of` turns it, with
-Lemma 5.3's pinch form, into `moveTest`'s hypothesis.
-
 ## Sources
 
 - [Preprint source map: `prop:move-test`](../../sources/preprint.md)

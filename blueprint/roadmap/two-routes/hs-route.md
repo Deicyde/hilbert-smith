@@ -12,8 +12,7 @@ proof: formalized
 Let $\mathbb{L}$ be a lower $L$-theory, and assume Newman's theorem for
 prime order. Then for every prime $p$, every $n \geq 0$ and every
 connected, Hausdorff, second-countable topological $n$-manifold $M$
-without boundary whose underlying type lies in the lowest universe,
-every jointly continuous action of $\mathbb{Z}_p$ on
+without boundary, every jointly continuous action of $\mathbb{Z}_p$ on
 $M$ has nonzero kernel: some nonzero $p$-adic integer acts as the
 identity.
 
@@ -39,9 +38,8 @@ second-countable topological manifold $N$ without boundary with a
 compatible metric, and every nonempty open $U \subseteq N$, there is
 $\varepsilon > 0$ such that every homeomorphism $f$ of $N$ with
 $f^q = \mathrm{id}$ for a prime $q$, all of whose iterates move each
-point of $U$ by less than $\varepsilon$, is the identity. This hypothesis,
-too, quantifies only over manifolds whose underlying type lies in the
-lowest universe. It is the displacement form of Newman's theorem.
+point of $U$ by less than $\varepsilon$, is the identity. It is the
+displacement form of Newman's theorem.
 Applied to a homeomorphism of prime order that is the identity on $U$,
 it gives the form used in [One chart and a small subgroup](one-chart.md)
 for these manifolds: a periodic homeomorphism that is the identity on a
@@ -66,20 +64,20 @@ maps, which the paper cites to find a point with trivial stabilizer
 ([lines 774-779](https://github.com/adbrw/HS_proof/blob/5dee3407a627f35a2cdeb0a34ac9e0f1ee98f862/HSproof.tex#L774-L779)):
 Newman's theorem for prime order implies that a pointwise periodic
 homeomorphism of a connected manifold without boundary is periodic.
-HS_proof constructs a lower $L$-theory of its own and proves Newman's
-theorem for prime order, so the conclusion also holds outright; this
-statement keeps the two inputs visible as hypotheses.
+The ultimate lower $L$-theory is a lower $L$-theory in this sense, and
+Newman's theorem for prime order holds, so the conclusion also holds
+outright; this statement keeps the two inputs visible as hypotheses.
 
-*Proof sketch.* HS_proof follows the stages of the paper's proof of
+*Proof sketch.* The proof follows the stages of the paper's proof of
 Theorem 1.1 in the table on the [chapter page](README.md): a free point
 and one chart, the pinched coordinate average $f = s_\rho F_0$, the free
 $C_p$-sphere $T$ with its detector, the equivariant class over $T$ and
 its scalar image, divisibility of the signature tail by $p$, and the
-boundary evaluation. It departs from the paper where the stage pages
-say so. The free point comes from Montgomery's theorem, that a
-pointwise periodic homeomorphism of a connected manifold is periodic,
-which follows from Newman's theorem for prime order. Cubical chain
-models replace triangulations. Since the pinch is homotopic to the
+boundary evaluation. It departs from the paper in several places. The
+free point comes from Montgomery's theorem, that a pointwise periodic
+homeomorphism of a connected manifold is periodic, which follows from
+Newman's theorem for prime order. Cubical chain models replace
+triangulations. Since the pinch is homotopic to the
 identity, the germ is evaluated at the identity, cutting along the faces
 of a cube. The contradiction is drawn on the scalar side, from a tail
 that is eventually $\pm 1$ and also divisible by $p$. The two inputs

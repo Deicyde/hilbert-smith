@@ -9,16 +9,16 @@ proof: formalized
 
 # OpenAI's route without second countability
 
-Let OpenAI's interface be given, together with local inputs for it.
-Then for every prime $p$, every $n \geq 0$ and every connected
-Hausdorff topological $n$-manifold $M$ without boundary, in any
-universe, with no countability assumption, every jointly continuous
-action of $\mathbb{Z}_p$ on $M$ has nonzero kernel: some nonzero
-$p$-adic integer acts as the identity.
+Let a theory of Witt groups for OpenAI's proof be given, and assume
+Lemmas 5.4 and 5.5, combined as below, for its degree maps. Then for
+every prime $p$, every $n \geq 0$ and every connected Hausdorff
+topological $n$-manifold $M$ without boundary, with no countability
+assumption, every jointly continuous action of $\mathbb{Z}_p$ on $M$
+has nonzero kernel: some nonzero $p$-adic integer acts as the identity.
 
-*OpenAI's interface* supplies, for every odd $d = 2j + 3$, fixed
-self-maps $\delta_r$ of $S^d$ ($r \geq 2$) and the invariant as
-Sections 5 and 6 use it:
+*A theory of Witt groups for OpenAI's proof* supplies, for every odd
+$d = 2j + 3$, fixed self-maps $\delta_r$ of $S^d$ ($r \geq 2$), called
+its degree maps, and the invariant as Sections 5 and 6 use it:
 
 - a class of test spaces containing $S^d$ and the close-pair space
   $C_d$, and abelian groups $E_d(X)$ with pushforwards, functorial on
@@ -32,8 +32,10 @@ Sections 5 and 6 use it:
   pushforwards, and integral isomorphisms
   $\ell_U \colon E_d(X) \to W_d(\mathcal{Q}_U(X))$ for nonempty
   contractible open $U$ in a test space, natural in $X$;
-- for every local action and admissible test $t$: test forms
-  $(A_t, \alpha_t)$ whose classes are $2(f_t)_* u_d$ through $\ell_U$,
+- for every continuous action of $\mathbb{Z}_p$ on an open subset $W$ of
+  $\mathbb{R}^d$ and every admissible test $t$ on $W^+/\mathbb{Z}_p$:
+  test forms $(A_t, \alpha_t)$ whose classes are $2(f_t)_* u_d$ through
+  $\ell_U$,
   and character projectors $e_i$ with $e_i^2 = e_i$, $e_ie_j = 0$ for
   $i \neq j$ and $\sum_i e_i = 1$, self-adjoint when the action
   preserves orientation (every element's local maps homotopic to those
@@ -42,12 +44,12 @@ Sections 5 and 6 use it:
   classes, conjugated from $e_i$ to $e_{i-1}$ by an isometry when the
   test is constant off a sheet region of level $k$.
 
-*Local inputs* for it say that for every odd $d = 2j + 3$, if a compact
-metrizable space $X$ carries a continuous action of $\mathbb{Z}_p$ with
-orbit map $q \colon X \to Y$ (a quotient map whose fibres are the
-orbits), both spaces lying in the lowest universe, $F \subseteq Y$ is
-closed, and $v \colon F \to S^d$ becomes nullhomotopic when composed
-with $q$ on $q^{-1}(F)$, then
+*Lemmas 5.4 and 5.5, combined,* say that for every odd $d = 2j + 3$, if
+a compact metrizable space $X$ carries a continuous action of
+$\mathbb{Z}_p$ with orbit map $q \colon X \to Y$ (a quotient map whose
+fibres are the orbits), $F \subseteq Y$ is closed, and
+$v \colon F \to S^d$ becomes nullhomotopic when composed with $q$ on
+$q^{-1}(F)$, then
 $\delta_{s+1} \circ \cdots \circ \delta_2 \circ v$ is nullhomotopic for
 some $s \geq 0$; that composite of degree maps acts rationally as
 multiplication by $(s+1)!$.
@@ -55,19 +57,15 @@ multiplication by $(s+1)!$.
 This is Theorem 1.2 of the preprint without second countability and
 without its finite-quotient clause, with $n = 0$ allowed
 ([Theorem 1.2](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex#L30-L35)).
-The interface collects what Sections 5 and 6 use of Sections 2 to 4, of
-the test forms, of Lemmas 6.1 and 6.2, and of the identifications inside
-Propositions 6.5 and 6.7. The local inputs are Lemmas 5.4 and 5.5,
-composed as in the proof of Proposition 5.8
+The theory of Witt groups collects what Sections 5 and 6 use of
+Sections 2 to 4, of the test forms, of Lemmas 6.1 and 6.2, and of the
+identifications inside Propositions 6.5 and 6.7. Lemmas 5.4 and 5.5 are
+combined as in the proof of Proposition 5.8
 ([lines 506-512](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/05-local-tests.tex#L506-L512)).
 Newman's theorem, which Proposition 5.1 uses
 ([lines 24-29](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/05-local-tests.tex#L24-L29)),
-is not a hypothesis: its fixed-open-set form is derived here
-(by the preprint's argument inside one chart)
-from HS_proof's proof of Newman's theorem for prime order, and nothing
-else from HS_proof is used. No model of the interface or of the local
-inputs exists yet, so this is a conditional theorem; the chapter page
-explains [how to read it](README.md).
+is not a hypothesis: its fixed-open-set form follows from Newman's
+theorem for prime order by the preprint's argument inside one chart.
 
 *Proof sketch.* Suppose the action is faithful. Proposition 5.1, which
 needs only Newman's theorem, gives a faithful action of an open subgroup
