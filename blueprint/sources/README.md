@@ -4,6 +4,8 @@
   with every label mapped to its roadmap article.
 - [Background reference map](background.md) — external results the
   proof uses, and survey-only references.
+- [HS paper source map](hs-paper.md) — the HS_proof paper's sections
+  and labels, with the two-routes pages that discuss them.
 
 <!-- AUTHORING NOTES — these comments are not published.
 
