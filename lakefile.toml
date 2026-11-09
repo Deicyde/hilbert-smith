@@ -1,6 +1,6 @@
 name = "HilbertSmith"
 version = "0.1.0"
-defaultTargets = ["HilbertSmith", "HSGeneral", "HSBridge"]
+defaultTargets = ["HilbertSmith", "HSGeneral", "HSBridge", "HilbertSmithPaper"]
 
 # Pinned to HS_proof's toolchain, Mathlib and TauCeti, so that one build can hold both routes.
 [[require]]
@@ -39,6 +39,13 @@ srcDir = "src"
 # each assumes, and audits that OpenAI's route uses no constant of HS_proof.
 [[lean_lib]]
 name = "HSBridge"
+srcDir = "src"
+
+# The paper: p-adic exclusion and Hilbert-Smith along one route, written from the wiki under
+# blueprint/roadmap/paper/. Imports only Mathlib and TauCeti (checked by scripts/route_checks.py),
+# never HS_proof, HilbertSmith, HSGeneral or HSBridge.
+[[lean_lib]]
+name = "HilbertSmithPaper"
 srcDir = "src"
 
 # The statements without second countability (`NonSCChallenge` imports only Mathlib) and their
