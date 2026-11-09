@@ -1,0 +1,1 @@
+`HSP.supp S : ObjectProperty (AsymCat G X)`, using `Metric.thickening` (`Metric.thickening_empty` covers $S=\varnothing$; `Metric.infDist` would give the wrong answer at $\varnothing$). HS paper lines 176-179.

@@ -1,4 +1,5 @@
 ---
+article_id: af_b0df007bc8c5ae00fb70fedd
 declaration: lemma
 origin: bridged
 ---

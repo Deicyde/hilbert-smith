@@ -1,4 +1,5 @@
 ---
+article_id: af_b02080be1c6eb585871a5846
 declaration: def
 origin: bridged
 ---
@@ -20,4 +21,4 @@ From these, $Z_0=\{z\in S^n: d(y,z)\ge R\}$ and $Z=T\times Z_0\subset T\times S^
 
 ## Depends on
 
-- [Asymptotic categories](../categories/asymptotic-category.md)
+- [Asymptotic categories](../categories/asymptotic/asymptotic-category.md)

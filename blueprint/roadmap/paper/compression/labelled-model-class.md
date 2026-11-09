@@ -1,4 +1,5 @@
 ---
+article_id: af_08249d9c08790938869085bc
 declaration: def
 origin: bridged
 ---
@@ -9,4 +10,4 @@ $\mathfrak m_{\mathbf k}(c)=\operatorname{cls}(D(k_i),\varphi)\in\mathbb L_N(\ma
 ## Sources
 - HS paper, Section 10 (the scalar class of a labelling).
 ## Depends on
-- [Labelled models are Poincaré](labelled-model-poincare.md), [cls](../l-theory/D1.md)
+- [Labelled models are Poincaré](labelled-model-poincare.md), [cls](../l-theory/ultimate/groups/ultimate-l-group.md)

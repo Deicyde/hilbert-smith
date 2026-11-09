@@ -1,4 +1,5 @@
 ---
+article_id: af_cd693c188b7f6f80e2069c55
 declaration: lemma
 origin: bridged
 ---
@@ -25,4 +26,4 @@ Let $S\subseteq X$ be closed and invariant. Suppose there is a continuous map $c
 
 ## Proof depends on
 
-- [Functoriality of the ultimate groups](../l-theory/D2.md)
+- [Functoriality on ultimate L](../l-theory/ultimate/groups/induced-map-comp.md)

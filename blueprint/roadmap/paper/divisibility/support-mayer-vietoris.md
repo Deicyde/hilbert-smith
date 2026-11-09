@@ -1,4 +1,5 @@
 ---
+article_id: af_c7ec5f38a23631fa59204c48
 declaration: def
 origin: bridged
 ---
@@ -23,11 +24,11 @@ Let $\Lambda_X$ be the lattice of closed $C_p$-invariant subsets of $X$, ordered
 ## Depends on
 
 - [Mayer-Vietoris functor](mayer-vietoris-functor.md)
-- [Support subcategory](../categories/support-subcategory.md)
-- [Relative support calculus](../categories/relative-support-excisive.md)
-- [Induced map on ultimate L](../l-theory/ultimate/induced-map.md)
-- [Excision boundary](../l-theory/ultimate/excision-boundary.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [Support excisive pair](../categories/supports/support-excisive-pair.md)
+- [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
+- [Excision boundary](../l-theory/ultimate/boundary/excision-boundary.md)
 
 ## Proof depends on
 
-- [Mayer-Vietoris middle exactness](../l-theory/ultimate/mayer-vietoris-middle.md)
+- [Mayer-Vietoris middle exactness](../l-theory/ultimate/boundary/mayer-vietoris-middle.md)

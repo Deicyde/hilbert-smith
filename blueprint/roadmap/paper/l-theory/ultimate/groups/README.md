@@ -1,0 +1,21 @@
+---
+article_id: af_5092cd186913e372f0c25940
+---
+
+# The ultimate L-groups
+
+The lower L-groups, their colimit $\mathbb L_k$ along the transitions with the class map from level $0$, the facts about finite levels, and functoriality: induced maps, unitary invariance, additivity and equivalence invariance.
+
+- [Lower L-group](lower-l-group.md)
+- [Ultimate L-group](ultimate-l-group.md)
+- [Levels are compatible with the transition](level-compatible.md)
+- [Every element comes from a finite level](level-exhaustive.md)
+- [Classes zero in the colimit](level-kernel.md)
+- [Induced map on ultimate L](induced-map.md)
+- [The induced map at each level](induced-map-level.md)
+- [The induced map commutes with cls](induced-map-cls.md)
+- [Functoriality on ultimate L](induced-map-comp.md)
+- [Identity on ultimate L](induced-map-id.md)
+- [Unitary invariance on ultimate L](unitary-invariance.md)
+- [Additivity on ultimate L](sum-additivity.md)
+- [Equivalence invariance on ultimate L](equivalence-invariance.md)

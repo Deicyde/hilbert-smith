@@ -1,0 +1,1 @@
+Planned declaration: `HSP.signatureTail_eventually_dvd`. The conclusion is stated as `∀ᶠ i in atTop, (p:ℤ) ∣ σ i` for any representative `σ`. Use `IsPGroup.iff_orderOf`, `Subgroup.zpowers` and `Polynomial.eval_one_cyclotomic_prime_pow`. HS paper lines 367-380.

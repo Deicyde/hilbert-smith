@@ -1,4 +1,5 @@
 ---
+article_id: af_cd214288ab36ac3e7b071271
 declaration: def
 origin: bridged
 ---
@@ -10,4 +11,4 @@ $\hat A_g=\mathrm{pr}\,a_g\,\mathrm{in}$, $\hat B_{g,h}=\mathrm{pr}\,B_{g,h}\,\m
 ## Sources
 - HS paper, Section 10.
 ## Depends on
-- [Compressed complex](compressed-complex.md), [estimates](../chain-models/chain-model-estimates.md)
+- [Compressed complex](compressed-complex.md), [estimates](../chain-models/grid/chain-model-estimates.md)

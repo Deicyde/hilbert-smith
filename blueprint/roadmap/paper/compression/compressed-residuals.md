@@ -1,4 +1,5 @@
 ---
+article_id: af_a5f120c3074359723a650675
 declaration: lemma
 origin: bridged
 ---
@@ -20,4 +21,4 @@ For $i\ge i_0$ and $g,h\in G_i$, exactly:
 ## Depends on
 - [Compressed maps](compressed-maps.md)
 ## Proof depends on
-- [Product rule](compression-product-rule.md), [discarded subcomplex](discarded-subcomplex.md), [Poincaré](../chain-models/chain-model-poincare.md), [product homotopies](../chain-models/product-homotopies.md), [adjoint homotopies](../chain-models/adjoint-homotopies.md), [group approximations](../chain-models/group-approx.md)
+- [Product rule](compression-product-rule.md), [discarded subcomplex](discarded-subcomplex.md), [Poincaré](../chain-models/grid/chain-model-poincare.md), [product homotopies](../chain-models/approximations/product-homotopies.md), [adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md), [group approximations](../chain-models/approximations/group-approx.md)

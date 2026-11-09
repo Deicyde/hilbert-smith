@@ -1,4 +1,5 @@
 ---
+article_id: af_aee94f697c535a6c5504b087
 declaration: theorem
 origin: bridged
 ---
@@ -24,4 +25,4 @@ Let $s\ge1$, and let $T_1,\dots,T_s$ be closed invariant subsets covering $X$, e
 
 - [Local triviality](local-triviality.md)
 - [Abstract nilpotence](abstract-nilpotence.md)
-- [Support subcategory](../categories/support-subcategory.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)

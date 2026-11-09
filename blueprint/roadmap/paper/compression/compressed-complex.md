@@ -1,4 +1,5 @@
 ---
+article_id: af_02adcbd6d51c3607afea42ef
 declaration: def
 origin: bridged
 ---
@@ -9,4 +10,4 @@ For $i\ge i_0$, $C_i$ is the based module spanned by $R_i$, and $\mathrm{pr}_i:D
 ## Sources
 - HS paper, Section 10 (the quotient by far simplices). New: the zero levels, and labels only on retained cells.
 ## Depends on
-- [Start index](start-index.md), [control labels](../chain-models/control-labels.md), [asymptotic category](../categories/asymptotic-category.md)
+- [Start index](start-index.md), [control labels](../chain-models/grid/control-labels.md), [asymptotic category](../categories/asymptotic/asymptotic-category.md)

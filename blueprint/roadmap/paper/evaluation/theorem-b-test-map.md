@@ -1,4 +1,5 @@
 ---
+article_id: af_4e2f05506c091aca9b1e8bab
 declaration: theorem
 origin: bridged
 ---
@@ -9,6 +10,6 @@ For fixed local data, $\sigma_{\rm tail}(\Delta_{\mathbf 1}\mathfrak m_{f_T})=[(
 *Proof sketch.* [Test map to pinch](test-map-to-pinch.md) and [Theorem B](theorem-b.md). Then take a representative of the germ class.
 
 ## Depends on
-- [Theorem B](theorem-b.md), [torus test map](../chain-models/torus-test-map.md)
+- [Theorem B](theorem-b.md), [torus test map](../chain-models/approximations/torus-test-map.md)
 ## Proof depends on
 - [Test map to pinch](test-map-to-pinch.md)

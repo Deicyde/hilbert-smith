@@ -1,4 +1,5 @@
 ---
+article_id: af_8e00f9a96ef9196b6c4928d6
 declaration: def
 origin: background
 ---
@@ -9,4 +10,4 @@ Let $Q^{(1)}_i=\mathrm{Box}_{k_i}(K)$. For $1\le m<n$, $Q^{(m+1)}_i$ is the face
 ## Sources
 - New.
 ## Depends on
-- [Box hull](../chain-models/box-hull.md), [block pair](../chain-models/block-pair.md), [mesh sequence](../chain-models/mesh-sequence.md)
+- [Box hull](../chain-models/grid/box-hull.md), [block pair](../chain-models/blocks/block-pair.md), [mesh sequence](../chain-models/grid/mesh-sequence.md)

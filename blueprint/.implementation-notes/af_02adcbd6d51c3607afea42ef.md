@@ -1,0 +1,1 @@
+Planned name: `HSP.Compression.compressed`. Retained cells lie in $\mathcal B_i(t')$, so the fallback label of control-labels is never used; `buffered_restriction` (1) supplies $\tilde x_b\in U^+$. HS paper lines 985-996.

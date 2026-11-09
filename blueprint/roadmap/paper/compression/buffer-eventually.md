@@ -1,4 +1,5 @@
 ---
+article_id: af_928c4febdc156f49e7fb0876
 declaration: lemma
 origin: bridged
 ---
@@ -14,6 +15,6 @@ Let $\gamma>0$ be the $d_S$-distance between $\overline B(0,t')$ and $S^n\setmin
 ## Sources
 - HS paper, Section 10 ("retained labels have sphere radius at most $t+\kappa_i$").
 ## Depends on
-- [Retained cells](retained-cells.md), [control labels](../chain-models/control-labels.md)
+- [Retained cells](retained-cells.md), [control labels](../chain-models/grid/control-labels.md)
 ## Proof depends on
-- [Chain-model estimates](../chain-models/chain-model-estimates.md), [graph-type matrices](../corner/graph-type.md), [compact neighbourhoods](../local-data/chart/test-map-proper.md)
+- [Chain-model estimates](../chain-models/grid/chain-model-estimates.md), [graph-type matrices](../corner/actions/graph-type.md), [compact neighbourhoods](../local-data/chart/test-map-proper.md)

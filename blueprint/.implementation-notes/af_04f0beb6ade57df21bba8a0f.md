@@ -1,0 +1,1 @@
+HSP.LTheory.trans_levelBoundary : trans (levelBoundary x) = lineSign (k+j+1) • levelBoundary (trans x); `simp [lineSign]` gives the unsigned form, which is what ultimate/ultimate-boundary uses as the `DirectLimit.lift` compatibility. The verdict's off-by-one is fixed: the index is k+j+1, the dimension of the lifted pair, and its value is +1.

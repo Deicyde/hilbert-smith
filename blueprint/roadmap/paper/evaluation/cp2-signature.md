@@ -1,4 +1,5 @@
 ---
+article_id: af_c09a55143febe745b59d00d3
 declaration: lemma
 origin: background
 ---
@@ -11,6 +12,6 @@ $\sigma_{\{1\}}[P,\varphi_P]=1$ in $\mathbb Z$.
 ## Sources
 - [published: signature of $\mathbb{CP}^2$] [U].
 ## Depends on
-- [Cells of CP^2](../chain-models/cp2-cells.md), [integer signature](../signatures/integer-signature.md)
+- [Cells of CP^2](../chain-models/grid/cp2-cells.md), [integer signature](../signatures/l-four/integer-signature.md)
 ## Proof depends on
-- [Middle form](../signatures/middle-form.md)
+- [Middle form](../signatures/l-four/middle-form.md)

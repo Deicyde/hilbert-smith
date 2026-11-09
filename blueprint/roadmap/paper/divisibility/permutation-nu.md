@@ -1,4 +1,5 @@
 ---
+article_id: af_4fa7c7bff03cb4fc8566d697
 declaration: def
 origin: bridged
 ---
@@ -20,10 +21,10 @@ On the support Mayer-Vietoris functor, put $\nu_S=p\cdot\mathrm{id}-(\tau\otimes
 
 - [Support Mayer-Vietoris functor](support-mayer-vietoris.md)
 - [Natural endomorphism](natural-endomorphism.md)
-- [Permutation tensor](../categories/tensor-permutation.md)
+- [Permutation tensor](../categories/functors/tensor-permutation.md)
 
 ## Proof depends on
 
-- [Support preservation](../categories/support-preservation.md)
-- [Induced map on ultimate L](../l-theory/ultimate/induced-map.md)
-- [Naturality of the excision boundary](../l-theory/ultimate/excision-boundary-naturality.md)
+- [Permutation tensor preserves support](../categories/functors/tensor-support.md)
+- [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
+- [Naturality of the excision boundary](../l-theory/ultimate/boundary/excision-boundary-naturality.md)

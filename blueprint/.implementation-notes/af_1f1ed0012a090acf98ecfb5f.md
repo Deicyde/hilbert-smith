@@ -1,0 +1,1 @@
+`HSP.supp_karoubiFiltration`. Index by `{r : ℕ → ℝ≥0 // Tendsto r atTop (𝓝 0)}`. Splits use `Metric.cthickening (r i) S'`, which is empty when $S'=\varnothing$ (`Metric.cthickening_empty`). Do not write them with `Metric.infDist`, which is $0$ at $\varnothing$. In the model a split by $k$ is automatically $G_i$-invariant. HS paper lines 189-207.

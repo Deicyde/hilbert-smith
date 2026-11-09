@@ -1,0 +1,1 @@
+HSP.LTheory.ultBoundary. `AddCommGroup.DirectLimit.lift` with g j := (bdrySign k j) • (ultL.of (j+1)).comp (levelBoundary j). The compatibility hypothesis is the displayed computation: of_f, then trans_levelBoundary (C8 with the corrected index k+j+1), then the recursion of bdrySign. Lean gap: the index arithmetic (k-1)+(j+1) = k+j for L^p degrees needs a cast lemma.

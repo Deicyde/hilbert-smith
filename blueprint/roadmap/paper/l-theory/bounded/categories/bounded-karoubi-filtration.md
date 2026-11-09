@@ -1,0 +1,24 @@
+---
+article_id: af_15dfabb847e433932a756aef
+declaration: lemma
+origin: cited
+---
+
+# Bounded Karoubi filtrations
+
+Let $U\subset A$ be an involution-invariant Karoubi filtration, and let $C_\mathbb Z(U)\subset C_\mathbb Z(A)$ be the full subcategory of objects $M$ with every $M_n$ in $U$. For an object $M$ of $C_\mathbb Z(A)$ let $\mathcal D(M)$ be the set of diagonal idempotents $p=(p_n)$, of propagation $0$, with $p_n\in\mathcal D(M_n)$ for every $n$. With these sets, $C_\mathbb Z(U)\subset C_\mathbb Z(A)$ is an involution-invariant Karoubi filtration.
+
+*Proof sketch.*
+1. $C_\mathbb Z(U)$ is full, additive and closed under the duality, since $U$ is. It is closed under isomorphism: if $M\cong N$ with $N\in C_\mathbb Z(U)$ and both isomorphisms have propagation $\le r$, then $1_{M_n}$ factors through $\bigoplus_{|m-n|\le r}N_m\in U$, so factorization gives $p\in\mathcal D(M_n)$ with $p=1$, and $M_n$ is isomorphic to an object of $U$.
+2. Each $p\in\mathcal D(M)$ is a $C_\mathbb Z(U)$-decomposition: the degreewise splittings of $p_n$ through $E_n\in U$ and of $1-p_n$ assemble into splittings of propagation $0$. $\mathcal D(M)$ is nonempty and directed degreewise.
+3. Factorization. Let $g:V\to M$ have propagation $r$, with $V\in C_\mathbb Z(U)$. In degree $n$ the finitely many components $g_{nm}$, $|m-n|\le r$, form one map $\bigoplus_{|m-n|\le r}V_m\to M_n$ with source in $U$, so some $p_n\in\mathcal D(M_n)$ has $p_ng_{nm}=g_{nm}$ for all $m$. Then $p=(p_n)$ has $pg=g$. Maps $M\to V$ are handled in the same way.
+4. Duality. $p^*=(p_n^*)$, and $p_n\in\mathcal D(M_n)$ iff $p_n^*\in\mathcal D(M_n^*)$.
+
+## Sources
+
+- [Carlsson-Pedersen 1995, §1](../../../../../sources/paper/carlsson-pedersen-1995.md) [U]
+
+## Depends on
+
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
+- [The induced duality](bounded-duality.md)

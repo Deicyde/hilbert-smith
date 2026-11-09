@@ -1,4 +1,5 @@
 ---
+article_id: af_dd8bcb4e5ca0dc1136e6e9cf
 declaration: theorem
 origin: bridged
 ---
@@ -22,19 +23,19 @@ Let $X$ be a compact metric space with a free isometric $C_p$-action. For each $
 
 ## Depends on
 
-- [Tail signature](../signatures/tail-signature.md)
-- [Forgetting labels](../categories/forget-labels.md)
+- [Tail signature](../signatures/tail/tail-signature.md)
+- [Forgetting labels](../categories/functors/forget-labels.md)
 
 ## Proof depends on
 
 - [Trivializing closed cover](trivializing-cover.md)
 - [Nilpotence](nu-nilpotent.md)
-- [Classes over $\mathcal V$ lift](../signatures/tail-lift.md)
-- [Lifts agree eventually](../signatures/tail-lift-eventual.md)
-- [Induced map on ultimate L](../l-theory/ultimate/induced-map.md)
-- [Permutation rule on $L^p_4$](../signatures/signature-permutation.md)
-- [Signature hom](../signatures/signature-hom.md)
-- [Restriction of the signature](../signatures/signature-restrict.md)
-- [Restriction of the integer signature](../signatures/integer-signature-restrict.md)
-- [Cyclotomic lemma on $L^p_4$](../signatures/signature-cyclotomic.md)
-- [Computing the tail signature](../signatures/tail-signature-lift.md)
+- [Classes over $\mathcal V$ lift](../signatures/tail/tail-lift.md)
+- [Lifts agree eventually](../signatures/tail/tail-lift-eventual.md)
+- [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
+- [Permutation rule on $L^p_4$](../signatures/l-four/signature-permutation.md)
+- [Signature hom](../signatures/l-four/signature-hom.md)
+- [Restriction of the signature](../signatures/l-four/signature-restrict.md)
+- [Restriction of the integer signature](../signatures/l-four/integer-signature-restrict.md)
+- [Cyclotomic lemma on $L^p_4$](../signatures/l-four/signature-cyclotomic.md)
+- [Computing the tail signature](../signatures/tail/tail-signature-lift.md)

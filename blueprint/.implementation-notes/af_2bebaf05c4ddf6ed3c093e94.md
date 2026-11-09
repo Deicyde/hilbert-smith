@@ -1,0 +1,1 @@
+HSP.LTheory.ult_incl_boundary. `AddCommGroup.DirectLimit.hom_ext`; the identification of iterBoundedFunctor (incl U A) (j+1) with the inclusion of iterBounded U (j+1) is an auxiliary induction. HS paper lines 299-306.

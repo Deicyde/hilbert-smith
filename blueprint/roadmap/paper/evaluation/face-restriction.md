@@ -1,4 +1,5 @@
 ---
+article_id: af_615384191925b26d3309b000
 declaration: lemma
 origin: background
 ---
@@ -11,6 +12,6 @@ Let $Q$ be a box, and let $F$ be its face where the last arc factor is at its to
 ## Sources
 - New.
 ## Depends on
-- [Block pair](../chain-models/block-pair.md)
+- [Block pair](../chain-models/blocks/block-pair.md)
 ## Proof depends on
-- [Arc pair](../chain-models/arc-pair.md)
+- [Arc pair](../chain-models/blocks/arc-pair.md)

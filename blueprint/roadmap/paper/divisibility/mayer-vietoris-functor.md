@@ -1,4 +1,5 @@
 ---
+article_id: af_a5d65d5ee00e0150652de164
 declaration: def
 origin: background
 ---
@@ -15,3 +16,5 @@ These satisfy middle exactness: if $\partial_{A,B}x=0$, then $x=i_{A\le A\vee B}
 ## Sources
 
 - New: abstracts the hypotheses used in HS paper, Section 4.
+
+## Depends on

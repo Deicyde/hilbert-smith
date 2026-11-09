@@ -1,0 +1,1 @@
+HSP.LemmaU.of_finiteSupport. It reduces the paper to one hypothesis. Only additivity of ι and π is used; as duality functors ι is non-strict (zero objects, decision 3) and π is strict, which does not matter here. The guessed categories-chapter link is replaced by finite-support-sum.

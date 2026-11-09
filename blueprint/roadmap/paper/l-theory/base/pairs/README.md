@@ -1,0 +1,22 @@
+---
+article_id: af_156a722d426caf55a20e74b1
+---
+
+# Poincaré complexes, pairs and cobordism
+
+Strict symmetric Poincaré complexes and pairs, the pair map and its transport along isomorphisms and homotopy equivalences, the algebraic union and gluing, and cobordism, which is an equivalence relation.
+
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
+- [Strict Poincaré pair](poincare-pair.md)
+- [Pair map](pair-map.md)
+- [Pair maps of homologous data](pair-map-homotopy.md)
+- [Dual form of the pair map](dual-pair-map.md)
+- [Sums of pairs](sum-of-pairs.md)
+- [Transport of pairs along isomorphisms](pair-transport.md)
+- [Transport of pairs along homotopy equivalences](pair-transport-equivalence.md)
+- [Algebraic union](algebraic-union.md)
+- [Gluing](gluing.md)
+- [Closed gluing](gluing-closed.md)
+- [Cobordism](cobordism.md)
+- [Homotopy-isometric complexes are cobordant](cylinder-cobordism.md)
+- [Cobordism is an equivalence relation](cobordism-equivalence.md)

@@ -1,0 +1,1 @@
+HSP.LTheory.lift_closed : ∀ x : decoratedL A U k, ∃ V : UPair A U k, decoratedL.mk V.image = x. Inherits the sorry of lift_rel until that is proved; the derivation itself is sorry-free. localization-boundary chooses from it.

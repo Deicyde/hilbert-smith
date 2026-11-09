@@ -1,4 +1,5 @@
 ---
+article_id: af_918726e96ced045839d963f3
 declaration: lemma
 origin: background
 ---
@@ -11,6 +12,6 @@ Let $Q\subseteq C(k)$ be a grid box, with inclusion $\iota$ and projection $p$ o
 ## Sources
 - New. Replaces the union lemma of HS paper, Section 12.
 ## Depends on
-- [Chain-model duality](../chain-models/chain-model-duality.md), [block pair](../chain-models/block-pair.md)
+- [Chain-model duality](../chain-models/grid/chain-model-duality.md), [block pair](../chain-models/blocks/block-pair.md)
 ## Proof depends on
-- [Circle duality](../chain-models/circle-duality.md), [arc pair](../chain-models/arc-pair.md)
+- [Circle duality](../chain-models/grid/circle-duality.md), [arc pair](../chain-models/blocks/arc-pair.md)

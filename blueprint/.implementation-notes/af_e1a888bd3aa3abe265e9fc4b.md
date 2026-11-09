@@ -1,0 +1,1 @@
+HSP.LTheory.ultL.map. `AddCommGroup.DirectLimit.map` applied to fun j => LP.map (iterBoundedFunctor F j); the compatibility argument is trans_natural, transported along Nat.leRecOn. iterBoundedFunctor is an auxiliary recursion on bounded extension; it has no article of its own.

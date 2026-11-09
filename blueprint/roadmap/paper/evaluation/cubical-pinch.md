@@ -1,4 +1,5 @@
 ---
+article_id: af_770ce385c46d2bd2dd308f3f
 declaration: def
 origin: background
 ---
@@ -9,4 +10,4 @@ Put $a=1/4$, $b=1/2$, $s=R/(2\sqrt n)$, and $K=[-a,a]^n$. For $x\in T^n$ with li
 ## Sources
 - New.
 ## Depends on
-- [Fixed local data](../local-data/control/fixed-local-data.md), [cubical torus grid](../chain-models/cubical-torus-grid.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md), [cubical torus grid](../chain-models/grid/cubical-torus-grid.md)

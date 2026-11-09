@@ -1,4 +1,5 @@
 ---
+article_id: af_237b8625032bf38c38d89a65
 declaration: theorem
 origin: bridged
 ---
@@ -15,6 +16,6 @@ Fix fixed local data, and let $G_i=\mathbb Z/p^i$ with $\chi_i$ reduction mod $p
 ## Sources
 - HS paper, Section 10 (compressed realization).
 ## Depends on
-- [Compressed complex](compressed-complex.md), [graph-type action](../corner/graph-type-action.md), [labelled model class](labelled-model-class.md)
+- [Compressed complex](compressed-complex.md), [graph-type action](../corner/actions/graph-type-action.md), [labelled model class](labelled-model-class.md)
 ## Proof depends on
 - [Compressed Poincaré](compressed-poincare.md), [compressed action](compressed-action.md), [test map admissible](test-map-admissible.md), [scalar image](compressed-scalar-image.md)

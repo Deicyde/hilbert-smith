@@ -1,4 +1,5 @@
 ---
+article_id: af_2d9f1a684d6a803f07cf3fa4
 declaration: def
 origin: bridged
 ---
@@ -9,4 +10,4 @@ Let $K_t=f_T^{-1}(\overline B(0,t))\subseteq T^n$, a closed set. A cube $c$ of $
 ## Sources
 - HS paper, Section 10 (far simplices). New: the cubical cells.
 ## Depends on
-- [Torus test map](../chain-models/torus-test-map.md), [chain model](../chain-models/chain-model.md), [fixed local data](../local-data/control/fixed-local-data.md)
+- [Torus test map](../chain-models/approximations/torus-test-map.md), [chain model](../chain-models/grid/chain-model.md), [fixed local data](../local-data/control/fixed-local-data.md)

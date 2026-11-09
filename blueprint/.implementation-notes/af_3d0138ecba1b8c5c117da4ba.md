@@ -1,0 +1,1 @@
+HSP.tailSign : 𝕃 4 TailCat →+ Filter.Germ Filter.cofinite ℤ. The germ group is exactly $\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)}$ (instAddGroup in Mathlib/Order/Filter/Germ/Basic.lean). HS paper lines 308-316.

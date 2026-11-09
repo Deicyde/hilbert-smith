@@ -1,0 +1,1 @@
+HSP.LTheory.locBoundary_natural. F_U is the restriction to full subcategories (ObjectProperty.lift of F ∘ ι). The proof uses the pair formula twice instead of independence directly. HS paper lines 522-528.

@@ -1,4 +1,5 @@
 ---
+article_id: af_a5df2995f874bf59f0daaf41
 declaration: lemma
 origin: bridged
 ---
@@ -17,3 +18,5 @@ There are $s\ge1$ and closed invariant $T_1,\dots,T_s$ covering $X$, each with a
 
 - HS paper, Section 4.
 - New: an explicit saturated-ball cover.
+
+## Depends on
