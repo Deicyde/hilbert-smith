@@ -1,0 +1,8 @@
+# Compression
+
+Fix [fixed local data](../local-data/control/fixed-local-data.md) with buffers $r<R<t<u$, and put $t'=(t+u)/2$. At level $i$ the [chain model](../chain-models/chain-model.md) $D_i$ is cut down to the cells whose closed cubes meet $K_t=f_T^{-1}(\overline B(0,t))$. The discarded cells span a subcomplex, so the quotient $C_i$ inherits a differential and every structure map. Retained cells, and the discarded cells that a short word can reach from them, lie in the buffered domain $\mathcal B_i(u)$. There the [control labels](../chain-models/control-labels.md) are defined through $\pi$ and $f_T$. Nothing else ever needs a label. Every defect of compression is a word $u\,Q\,v$ that passes through a discarded cell. The [endpoint lemma](endpoint-lemma.md) factors such a word through far cells, whose labels lie in $Z$. This gives [Theorem C](theorem-c.md).
+
+Articles: [retained cells](retained-cells.md), [discarded subcomplex](discarded-subcomplex.md), [buffers hold eventually](buffer-eventually.md), [start index](start-index.md), [compressed complex](compressed-complex.md), [compressed differential](compressed-differential.md), [product rule](compression-product-rule.md), [compressed maps](compressed-maps.md), [residual identities](compressed-residuals.md), [endpoint lemma](endpoint-lemma.md), [compressed Poincaré](compressed-poincare.md), [compressed action](compressed-action.md), [admissible sphere maps](admissible-sphere-map.md), [the test map is admissible](test-map-admissible.md), [labelled models are Poincaré](labelled-model-poincare.md), [labelled model class](labelled-model-class.md), [scalar image](compressed-scalar-image.md), [Theorem C](theorem-c.md).
+
+## Sources
+- HS paper, Section 10, and the closing estimates of Section 9.
