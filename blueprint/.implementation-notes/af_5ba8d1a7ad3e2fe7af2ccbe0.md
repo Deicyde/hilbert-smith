@@ -1,0 +1,1 @@
+Plan: a `MetricSpace` structure on `A.Zplus` built with `MetricSpace.replaceTopology` (so the topology stays the subspace one), with `HSP.LocalDatum.d₁_vadd` for invariance; or state as `HSP.LocalDatum.d₁_isMetric ∧ ...` conjunction. Mathlib: `MetricSpace.replaceTopology`, `CompactSpace.uniformContinuous_of_continuous`. OpenAI 05 lines 117-131.
