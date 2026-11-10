@@ -64,6 +64,8 @@ PAPER_SOURCES = "blueprint/sources/paper"
 PAPER_NAMESPACE = "HSP"
 PAPER_FORBIDDEN_RE = re.compile(
     r"\bHSF|HS_proof|hs_proof|hsformal|adbrw|\bHSGeneral\b|\bHSBridge\b|\.lean:\d")
+# The HS paper has no license: articles cite it by section and never quote it.
+PAPER_QUOTE_RE = re.compile(r"HS paper[^\n\"\u201c]*[\"\u201c]")
 
 failures = []
 
@@ -362,6 +364,14 @@ def check_paper_clean_room():
     else:
         ok(f"paper clean room: {len(scanned)} paper files name none of HS_proof, its library or "
            "files, HSGeneral or HSBridge")
+    quotes = [f"{f.relative_to(ROOT)}:{n}" for f in articles
+              for n, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1)
+              if PAPER_QUOTE_RE.search(line)]
+    if quotes:
+        fail("paper articles quote the HS paper (cite it by section instead):\n  "
+             + "\n  ".join(quotes))
+    else:
+        ok(f"paper quotes: none of the {len(articles)} paper articles quotes the HS paper")
 
     prefix = PAPER_NAMESPACE + "."
     paper = set(articles)
