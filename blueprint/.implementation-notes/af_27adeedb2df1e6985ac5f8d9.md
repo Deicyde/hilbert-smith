@@ -1,1 +1,1 @@
-Planned name: `HSP.ChainModels.blockPair`. Grid boxes ($\ell=n$, all arcs), $T^n$ (all circles) and cylinders $C(k)\otimes I_m$ are blocks.
+Planned name: `HSP.ChainModels.blockPair` (one structure-valued def bundling $\partial Q$, the faces, $\varphi_Q$, $\varphi_{\partial Q}$, $\theta_Q$, $b_Q$, $z_Q$). The sign $(-1)^{a_j}$ in $\varphi_{\partial Q}$ is forced by the Leibniz rule of l-theory/localization/line/product-leibniz; it makes $j_\%\varphi_{\partial Q}=\partial\varphi_Q$ exact. Point factors let the evaluation faces be blocks; a point changes no block sign.

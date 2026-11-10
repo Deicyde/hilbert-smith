@@ -6,7 +6,7 @@ origin: bridged
 
 # Unitary invariance
 
-If $\eta:F\cong G$ is a unitary natural isomorphism of duality functors $\mathcal A\to\mathcal B$, then $F_*=G_*$.
+If $\eta:F\cong G$ is a unitary natural isomorphism of duality functors $\mathcal B\to\mathcal B'$, then $F_*=G_*:L_k(\mathcal B)\to L_k(\mathcal B')$.
 
 *Proof sketch.* (1) $\eta_C:FC\to GC$ is an isomorphism of complexes. (2) Naturality and unitarity give $\eta_{C\%}F_\%\phi=G_\%\phi$. (3) [Homotopy-isometry invariance](homotopy-isometry-invariance.md) with $\chi=0$.
 

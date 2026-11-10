@@ -6,7 +6,7 @@ origin: bridged
 
 # Identity induces the identity
 
-$(\mathrm{id}_{\mathcal A})_*=\mathrm{id}$ on $L^p_k(\mathcal A)$.
+For a duality category $\mathcal B$, $(\mathrm{id}_{\mathcal B})_*=\mathrm{id}$ on $L_k(\mathcal B)$.
 
 *Proof sketch.* The identity functor fixes every complex and structure.
 

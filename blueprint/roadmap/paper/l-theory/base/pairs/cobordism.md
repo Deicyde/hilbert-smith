@@ -6,7 +6,7 @@ origin: background
 
 # Cobordism
 
-Strict $k$-dimensional symmetric Poincaré complexes $(C,\phi)$ and $(C',\phi')$ in $\mathrm{Kar}\,\mathcal A$ are *cobordant* if there is a strict $(k+1)$-dimensional Poincaré pair with boundary $(C\oplus C',\phi\oplus(-\phi'))$.
+Strict $k$-dimensional symmetric Poincaré complexes $(C,\phi)$ and $(C',\phi')$ in a duality category $\mathcal B$ are *cobordant* if there is a strict $(k+1)$-dimensional Poincaré pair with boundary $(C\oplus C',\phi\oplus(-\phi'))$.
 
 ## Sources
 

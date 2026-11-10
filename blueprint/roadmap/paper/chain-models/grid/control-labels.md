@@ -5,9 +5,9 @@ origin: bridged
 ---
 # Control labels
 
-A cell $b$ of $D_i$ or $D_i^{N-*}$ with torus label $x_b$ has sphere label $s_b=f_T(x_b)$. For $v>0$, the *buffered cells* $\mathcal B_i(v)$ are those with $s_b\in\overline B(0,v)\subseteq\mathbb R^n$. Its control label is $\ell(b)=(\pi(\tilde x_b),s_b)\in T\times S^n$ when $\tilde x_b\in Z^+$, and a fixed point otherwise. For $0<v<v'$ and a matrix $u$, the *restriction* is $u^{[v,v']}=p_{v'}u\iota_v$. Here $\iota_v$ includes the span of $\mathcal B_i(v)$, $p_{v'}$ projects onto the span of $\mathcal B_i(v')$, and both modules carry the labels $\ell$. Sphere distances use the round metric $d_S$ of the [standing data](../../corner/standing-data.md).
+Fix a point $t_0\in T$. The *control label* of a cell $b$ of $D_i$, or of its dual, is $\lambda(b)=(\pi(\tilde x_b),s_b)\in T\times S^n$ if the lift $\tilde x_b\in[-2,2)^n$ of its torus label lies in $Z^+$, and $\lambda(b)=(t_0,s_b)$ otherwise. Here $\pi:Z^+\to T$ is the quotient map onto the [control space](../../local-data/control/control-space.md), $s_b$ is the [sphere label](sphere-labels.md), and $T\times S^n$ carries the maximum of $d_T$ and $d_S$ and the action of $C_p$ on $T$, as for [graph-type matrices](../../corner/actions/graph-type.md).
 
 ## Sources
 - HS paper, Sections 9-10 (labels on the buffered domain).
 ## Depends on
-- [Chain model](chain-model.md), [control space](../../local-data/control/control-space.md), [torus test map](../approximations/torus-test-map.md)
+- [Sphere labels](sphere-labels.md), [control space](../../local-data/control/control-space.md), [torus test map](../approximations/torus-test-map.md), [graph-type matrices](../../corner/actions/graph-type.md)

@@ -4,11 +4,11 @@ declaration: lemma
 origin: bridged
 ---
 
-# Negation in L^p
+# Negation in L
 
-For every strict $k$-dimensional symmetric Poincaré complex $(C,\phi)$, $-[C,\phi]=[C,-\phi]$ in $L^p_k(\mathcal A)$.
+For every strict $k$-dimensional symmetric Poincaré complex $(C,\phi)$ in a duality category $\mathcal B$, $-[C,\phi]=[C,-\phi]$ in $L_k(\mathcal B)$.
 
-*Proof sketch.* By definition of negation in [Group structure on L^p](l-group-add.md).
+*Proof sketch.* By definition of negation in [Group structure on L](l-group-add.md).
 
 ## Sources
 
@@ -16,4 +16,4 @@ For every strict $k$-dimensional symmetric Poincaré complex $(C,\phi)$, $-[C,\p
 
 ## Depends on
 
-- [Group structure on L^p](l-group-add.md)
+- [Group structure on L](l-group-add.md)

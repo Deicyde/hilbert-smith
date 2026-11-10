@@ -6,7 +6,7 @@ origin: bridged
 
 # Equivalence invariance
 
-Let $(F,\xi):\mathcal A\to\mathcal B$ and $(G,\zeta):\mathcal B\to\mathcal A$ be duality functors, with unitary natural isomorphisms $\eta:\mathrm{id}_{\mathcal A}\cong G\circ F$ and $\varepsilon:F\circ G\cong\mathrm{id}_{\mathcal B}$ (composites carry the composite duality data). Then $F_*:L^p_k(\mathcal A)\to L^p_k(\mathcal B)$ is an isomorphism with inverse $G_*$. No triangle identities are needed.
+Let $(F,\xi):\mathcal B\to\mathcal B'$ and $(G,\zeta):\mathcal B'\to\mathcal B$ be duality functors, with unitary natural isomorphisms $\eta:\mathrm{id}_{\mathcal B}\cong G\circ F$ and $\varepsilon:F\circ G\cong\mathrm{id}_{\mathcal B'}$ (composites carry the composite duality data). Then $F_*:L_k(\mathcal B)\to L_k(\mathcal B')$ is an isomorphism with inverse $G_*$. No triangle identities are needed.
 
 *Proof sketch.* [Functoriality of induced maps](induced-map-comp.md), [Unitary invariance](unitary-invariance.md) for $\eta$ and $\varepsilon$, and [Identity induces the identity](induced-map-id.md) give $G_*F_*=\mathrm{id}$ and $F_*G_*=\mathrm{id}$.
 

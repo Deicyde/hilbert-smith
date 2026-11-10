@@ -6,7 +6,7 @@ origin: background
 
 # Dual complex
 
-Complexes are $\mathbb Z$-graded chain complexes in $\mathrm{Kar}\,\mathcal A$. For a complex $C$ and $n\in\mathbb Z$, $C^{n-*}$ has $(C^{n-*})_r=C_{n-r}^*$ and $d_r=(-1)^r d^*$. A chain map $f:C\to D$ gives $f^{n-*}:D^{n-*}\to C^{n-*}$, $(f^{n-*})_r=f_{n-r}^*$.
+Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal B$. For a complex $C$ and $n\in\mathbb Z$, $C^{n-*}$ has $(C^{n-*})_r=C_{n-r}^*$ and $d_r=(-1)^r d^*$. A chain map $f:C\to D$ gives $f^{n-*}:D^{n-*}\to C^{n-*}$, $(f^{n-*})_r=f_{n-r}^*$.
 
 ## Sources
 

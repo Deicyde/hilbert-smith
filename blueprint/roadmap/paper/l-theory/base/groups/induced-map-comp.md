@@ -6,7 +6,7 @@ origin: bridged
 
 # Functoriality of induced maps
 
-For duality functors $F:\mathcal A\to\mathcal B$ and $G:\mathcal B\to\mathcal C$, $(G\circ F)_*=G_*\circ F_*$.
+For duality functors $F:\mathcal B\to\mathcal B'$ and $G:\mathcal B'\to\mathcal B''$, $(G\circ F)_*=G_*\circ F_*:L_k(\mathcal B)\to L_k(\mathcal B'')$.
 
 *Proof sketch.* $(GF)C=G(FC)$, and the composite $\xi$ gives $(GF)_\%\phi=G_\%F_\%\phi$.
 

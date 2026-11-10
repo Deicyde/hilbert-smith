@@ -6,7 +6,7 @@ origin: bridged
 
 # Strict Poincaré pair
 
-A *strict $n$-dimensional symmetric Poincaré pair* in $\mathrm{Kar}\,\mathcal A$ is $(f:C\to D,\delta\phi,\phi)$. Here $(C,\phi)$ is a strict $(n-1)$-dimensional symmetric Poincaré complex, $D_r$ is a zero object for every $r$ outside $[0,n]$, $\delta\phi\in M(D)_n$, $T\delta\phi=\delta\phi$, $\partial\delta\phi=f_\%\phi$, and the [pair map](pair-map.md) $\psi:D^{n-*}\to\mathcal C(f)$ is a chain homotopy equivalence. Its *boundary* is $(C,\phi)$. Its *chain objects* are the objects $C_r$ and $D_r$.
+A *strict $n$-dimensional symmetric Poincaré pair* in a duality category $\mathcal B$ is $(f:C\to D,\delta\phi,\phi)$. Here $(C,\phi)$ is a strict $(n-1)$-dimensional symmetric Poincaré complex, $D_r$ is a zero object for every $r$ outside $[0,n]$, $\delta\phi\in M(D)_n$, $T\delta\phi=\delta\phi$, $\partial\delta\phi=f_\%\phi$, and the [pair map](pair-map.md) $\psi:D^{n-*}\to\mathcal C(f)$ is a chain homotopy equivalence. Its *boundary* is $(C,\phi)$. Its *chain objects* are the objects $C_r$ and $D_r$.
 
 ## Sources
 

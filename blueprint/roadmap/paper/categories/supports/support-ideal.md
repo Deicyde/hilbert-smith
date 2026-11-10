@@ -8,7 +8,7 @@ origin: bridged
 
 A morphism $[u]:M\to N$ factors through an object of $\mathcal A_S$ if and only if, for every $\varepsilon>0$, eventually both endpoint labels of every nonzero entry of $u_i$ lie in the $\varepsilon$-thickening of $S$.
 
-*Proof sketch.* (⇒) Write $u_i=w_iv_i$ eventually, through $W\in\mathcal A_S$. A nonzero entry passes through a basis element $c$ of $W$, so each endpoint is within $\operatorname{prop}+d(\ell_W(c),S)$ of $S$ ([propagation of a product](../asymptotic/prop-mul.md)). (⇐) The columns and rows carrying nonzero entries form invariant sub-bases. Restricting the source to its nonzero columns gives an object of $\mathcal A_S$, through which $u$ factors by an inclusion and a projection of propagation $0$.
+*Proof sketch.* (⇒) Write $u_i=w_iv_i$ eventually, through $W\in\mathcal A_S$. A nonzero entry passes through a basis element $c$ of $W$, so each endpoint is within $\operatorname{prop}+d(\lambda_W(c),S)$ of $S$ ([propagation of a product](../asymptotic/prop-mul.md)). (⇐) The columns and rows carrying nonzero entries form invariant sub-bases. Restricting the source to its nonzero columns gives an object of $\mathcal A_S$, through which $u$ factors by an inclusion and a projection of propagation $0$.
 
 ## Sources
 

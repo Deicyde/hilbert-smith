@@ -6,7 +6,11 @@ origin: bridged
 
 # Cut boundary
 
-Let $A,B,Z$ be as in the [cut square](cut-square.md), and assume also $Z\cap B=\varnothing$, so that $Y\cap Z=\varnothing$. The cut boundary $\partial_{A,B}:\mathbb L_k(\mathcal B_{\mathbf G,Z}(X))\to\mathbb L_{k-1}(\mathcal A_Y)$ is the [excision boundary](../../l-theory/ultimate/boundary/excision-boundary.md) of the cut square, followed by the map induced by the inverse in [separated support](../supports/quotient-separation-iso.md) $\mathcal U_Y\to\mathcal A_Y$.
+Let $A,B,Z\subset X$ be closed and invariant with $Z\subset A$ and $Z\cap B=\varnothing$. Put $S=A\cup B$ and $Y=A\cap B$, so that $Y\cap Z=\varnothing$. The cut boundary
+$$\partial_{A,B}:\mathbb L_k(\mathcal A_S/\mathcal A_Z)\to\mathbb L_{k-1}(\mathcal A_Y)$$
+is the [excision boundary](../../l-theory/ultimate/boundary/excision-boundary.md) of the [cut square](cut-square.md), $\mathbb L_k(\mathcal A_S/\mathcal A_Z)\to\mathbb L_{k-1}(\mathcal U_Y)$, followed by the map induced by $\sigma:\mathcal U_Y\to\mathcal A_Y$, the inverse in [separated support](../supports/quotient-separation-iso.md) for $Y,Z\subset S$.
+
+**Remark (not formalized).** Two special cases feed the iteration along a flag. For $S=X$, the domain receives $\mathbb L_k(\mathcal B_{\mathbf G,Z}(X))$ by the map induced by the identity-on-objects isomorphism $\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\mathcal A_Z$. For $Z=\varnothing$, it receives $\mathbb L_k(\mathcal A_S)$ by the map induced by the quotient functor $\mathcal A_S\to\mathcal A_S/\mathcal A_\varnothing$. Since the target $\mathcal A_Y$ is again a support subcategory of $\mathcal A_{\mathbf G}(X)$, the next cut, inside $Y$, applies directly.
 
 ## Sources
 

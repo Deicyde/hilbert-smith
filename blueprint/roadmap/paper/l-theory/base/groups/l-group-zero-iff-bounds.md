@@ -6,7 +6,7 @@ origin: bridged
 
 # Zero classes bound
 
-$[C,\phi]=0$ in $L^p_k(\mathcal A)$ iff $(C,\phi)$ is the boundary of a strict $(k+1)$-dimensional Poincaré pair in $\mathrm{Kar}\,\mathcal A$.
+Let $(C,\phi)$ be a strict $k$-dimensional symmetric Poincaré complex in a duality category $\mathcal B$. Then $[C,\phi]=0$ in $L_k(\mathcal B)$ iff $(C,\phi)$ is the boundary of a strict $(k+1)$-dimensional Poincaré pair in $\mathcal B$.
 
 *Proof sketch.* $[C,\phi]=[0,0]$ means a pair with boundary $(C\oplus0,\phi\oplus0)$. In both directions, apply [Transport of pairs along isomorphisms](../pairs/pair-transport.md) with $s=1$ along the isomorphism $C\cong C\oplus0$ or its inverse; each carries one structure to the other.
 
@@ -16,7 +16,7 @@ $[C,\phi]=0$ in $L^p_k(\mathcal A)$ iff $(C,\phi)$ is the boundary of a strict $
 
 ## Depends on
 
-- [Group structure on L^p](l-group-add.md)
+- [Group structure on L](l-group-add.md)
 
 ## Proof depends on
 

@@ -1,1 +1,1 @@
-Planned name: `HSP.ChainModels.boxHull`. Define $J_j$ by an explicit lift of $X_j$ to an interval of $\mathbb R$ of length at most $1$.
+Planned name: `HSP.ChainModels.boxHull`. The neighbourhood notation $N_r$ moved to the cubical torus grid article (`Metric.cthickening`).

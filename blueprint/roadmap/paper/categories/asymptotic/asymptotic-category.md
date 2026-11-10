@@ -6,7 +6,7 @@ origin: bridged
 
 # Asymptotic category
 
-Let $X$ be a compact metric space with an isometric $C_p$-action and let $\mathbf G$ be a [group sequence](group-sequence.md). An object of $\mathcal A_{\mathbf G}(X)$ is a sequence $(n_i,x_i)$ with $n_i\in\mathbb N$ and $x_i:\{1..n_i\}\to X$. Its basis at $i$ is the free $G_i$-set $B_i=G_i\times\{1..n_i\}$, with labels $\ell_i(g,k)=\chi_i(g)x_i(k)$. A morphism is a sequence of $G_i$-equivariant matrices $u_i\in\mathbb Q^{B'_i\times B_i}$ with $\operatorname{prop}(u_i)\to0$, taken modulo eventual equality. The category is $\mathbb Q$-linear and additive, with the sum given by concatenating the $x_i$.
+Let $X$ be a compact metric space with an isometric $C_p$-action and let $\mathbf G$ be a [group sequence](group-sequence.md). An object of $\mathcal A_{\mathbf G}(X)$ is a sequence $(n_i,x_i)$ with $n_i\in\mathbb N$ and $x_i:\{1..n_i\}\to X$. Its basis at $i$ is the free $G_i$-set $B_i=G_i\times\{1..n_i\}$, with labels $\lambda_i(g,k)=\chi_i(g)x_i(k)$. A morphism is a sequence of $G_i$-equivariant matrices $u_i\in\mathbb Q^{B'_i\times B_i}$ with $\operatorname{prop}(u_i)\to0$, taken modulo eventual equality. The category is $\mathbb Q$-linear and additive, with the sum given by concatenating the $x_i$.
 
 ## Sources
 

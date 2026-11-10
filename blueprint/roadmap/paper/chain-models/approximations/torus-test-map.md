@@ -5,7 +5,7 @@ origin: bridged
 ---
 # Torus test map
 
-For $x\in T^n$ let $\tilde x\in[-2,2)^n$ be its lift. Define $f_T:T^n\to S^n$ by $f_T(x)=f(\tilde x)$, where $f$ is the [test map](../../local-data/chart/test-map.md). For $r<2$ the ball $\overline B(0,r)$ also denotes its image in $T^n$.
+For $x\in \mathbb T^n$ let $\tilde x\in[-2,2)^n$ be its lift. Define $f_T:\mathbb T^n\to S^n$ by $f_T(x)=f(\tilde x)$, where $f$ is the [test map](../../local-data/chart/test-map.md). For $r<2$ the ball $\overline B(0,r)$ also denotes its image in $\mathbb T^n$.
 
 ## Sources
 - New: the torus closing of the chart cube.

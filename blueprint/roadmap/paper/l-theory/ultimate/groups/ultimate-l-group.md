@@ -18,4 +18,4 @@ where $t$ is the transition map. Write $\iota_j:L^{\langle -j\rangle}_k(\mathcal
 ## Depends on
 
 - [Lower L-group](lower-l-group.md)
-- [Transition map](../../localization/line/transition-map.md)
+- [Transition map](../../localization/transitions/transition-map.md)

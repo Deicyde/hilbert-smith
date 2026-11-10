@@ -1,1 +1,1 @@
-Planned name: `HSP.ChainModels.restrict`.
+Planned name: `HSP.ChainModels.controlLabel` (renamed from $\ell$ to $\lambda$ per the interface sheet). Buffered cells and the restriction now have their own articles (grid/buffered-cells, grid/restriction).
