@@ -13,7 +13,7 @@ Let $\gamma>0$ be the $d_S$-distance between $\overline B(0,t')$ and $S^n\setmin
 *Proof sketch.* (1) A retained cube contains a point of $K_t$, so its label lies within $\kappa_i\le\epsilon_i$ of $\overline B(0,t)$. That set has positive $d_S$-distance from $S^n\setminus B(0,t')$. (2) Estimates (1). (3) Take $(v,v')=(u,u+1)$ in the estimates. Such an entry is an entry of $w^{[u,u+1]}$. For $a_g^*$ and $\delta=\pm d^*$, the transposed entry is an entry of $a_g$ or $d$ between the same two cells, and the transpose has the inverse type by the graph-type calculus.
 
 ## Sources
-- HS paper, Section 10 ("retained labels have sphere radius at most $t+\kappa_i$").
+- HS paper, Section 10 (the radius bound for retained cells).
 ## Depends on
 - [Retained cells](retained-cells.md), [control labels](../chain-models/grid/control-labels.md)
 ## Proof depends on

@@ -15,6 +15,6 @@ Let $Y_n=\{y_-,y_+\}$. Over $T\times S^n$, $\pi_+:\mathbb L_4(\mathcal A_{T\time
 Without $T$, the same steps reach $\mathbb L_4(\mathcal A_{\mathbf 1}(\{y_+\}))$, and then [forgetting labels](../categories/functors/forget-labels.md) $\Phi$ gives $\pi_+:\mathbb L_4(\mathcal A_{Y_n})\to\mathbb L_4(\mathcal V_{\mathbf 1})$.
 
 ## Sources
-- HS paper, Section 12 ("project onto one component").
+- HS paper, Section 12 (the projection to one component).
 ## Depends on
 - [Cut sets](cut-sets.md), [excision](../categories/supports/excision.md), [relabelling equivalence](../categories/functors/relabelling-equivalence.md), [induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)

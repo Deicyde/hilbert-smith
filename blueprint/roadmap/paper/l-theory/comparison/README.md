@@ -4,7 +4,7 @@ article_id: af_55e2330dca80af58fa0e4b89
 
 # Comparison with projective L-theory
 
-When the lower K-groups of $\mathcal B$ vanish, the class map $L^p_k(\mathcal B)\to\mathbb L_k(\mathcal B)$ is bijective, by the half-line comparison at each level. Lemma U, an open statement, gives this vanishing for the finite-support subcategory $\mathcal S_{\mathbf G}$ and the free categories $\mathrm{Free}(G_i)$ of the categories chapter. The coordinates of $\mathcal S_{\mathbf G}$ then detect $\mathbb L_3$, and classes in $\mathbb L_4$ have finitely many nonzero coordinates.
+When the lower K-groups of $\mathcal B$ vanish, the class map $L^p_k(\mathcal B)\to\mathbb L_k(\mathcal B)$ is bijective, by the half-line comparison at each level. Lemma U, an open statement, gives this vanishing for the finite-support subcategory $\mathcal S_{\mathbf G}$ and the free categories $\mathrm{Free}(\mathbb Q[G_i])$ of the categories chapter. The coordinates of $\mathcal S_{\mathbf G}$ then detect $\mathbb L_3$, and classes in $\mathbb L_4$ have finitely many nonzero coordinates.
 
 - [The symmetric ray](symmetric-ray.md)
 - [The endpoint of the ray](ray-endpoint.md)
