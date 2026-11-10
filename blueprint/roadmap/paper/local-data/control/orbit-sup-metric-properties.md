@@ -4,11 +4,11 @@ declaration: lemma
 origin: bridged
 ---
 
-# The orbit sup-distance is an invariant metric
+# The orbit sup-distance is a metric
 
-For a local datum, $d_1$ is a metric on $Z^+$ that induces the subspace topology of $Z^+\subseteq\mathbb R^n$, and $d_1(b\cdot z,b\cdot w)=d_1(z,w)$ for all $b\in\mathbb Z_p$ and $z,w\in Z^+$.
+For a local datum, $d_1$ is a metric on $Z^+$ that induces the subspace topology of $Z^+\subseteq\mathbb R^n$.
 
-*Proof sketch.* The metric axioms hold pointwise in $a$ and pass to the maximum. Since $|z-w|\le d_1(z,w)$, the $d_1$-topology is at least as fine as the Euclidean one. Conversely $d_1(z,\cdot)$ is continuous for the Euclidean topology, as a maximum over a compact group of a jointly continuous function, so the topologies agree. Invariance follows by reindexing $a\mapsto a+b$.
+*Proof sketch.* The metric axioms hold pointwise in $a$ and pass to the maximum. Since $|z-w|\le d_1(z,w)$, the $d_1$-topology is at least as fine as the Euclidean one. Conversely $d_1(z,\cdot)$ is continuous for the Euclidean topology, as a maximum over a compact group of a jointly continuous function, so the topologies agree.
 
 ## Sources
 
@@ -17,7 +17,3 @@ For a local datum, $d_1$ is a metric on $Z^+$ that induces the subspace topology
 ## Depends on
 
 - [The orbit sup-distance on the test region](orbit-sup-metric.md)
-
-## Proof depends on
-
-- [The test regions are invariant](../chart/test-region-invariant.md)

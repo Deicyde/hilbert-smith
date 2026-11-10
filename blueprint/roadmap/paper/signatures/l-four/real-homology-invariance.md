@@ -16,4 +16,4 @@ A chain homotopy equivalence $f$ of complexes in $\mathrm{Kar}\,\mathrm{Free}(\m
 
 ## Depends on
 
-- [Real chains and cochains](real-homology.md)
+- [Real homology](real-homology.md)

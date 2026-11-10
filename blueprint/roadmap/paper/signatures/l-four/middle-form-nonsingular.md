@@ -8,7 +8,7 @@ origin: bridged
 
 $b_C$ is nondegenerate and symmetric, and $G$ acts by $b_C$-isometries.
 
-*Proof sketch.* The structure is strictly symmetric, $T\varphi=\varphi$. In degree 2 this says $\varphi_2=(-1)^{2\cdot2}\varphi_2^T=\varphi_2^T$, which gives symmetry. The chain map $\varphi:C^{4-*}\to C$ is a homotopy equivalence, so $\varphi_2:H^2(C;\mathbb R)\to H_2(C;\mathbb R)$ is an isomorphism ([invariance](real-homology-invariance.md)). Nondegeneracy then follows from [the perfect pairing](real-evaluation-pairing.md). Invariance holds because $\varphi_2$ is equivariant and permutation matrices are orthogonal.
+*Proof sketch.* The structure is strictly symmetric, $T\varphi=\varphi$. In degree 2 this says $\varphi_2=(-1)^{2\cdot2}\varphi_2^T=\varphi_2^T$, which gives symmetry. The chain map $\varphi_\natural:C^{4-*}\to C$ is a homotopy equivalence, so it induces an isomorphism $H_2(C^{4-*};\mathbb R)\to H_2(C;\mathbb R)$ ([invariance](real-homology-invariance.md)). In degree 2 the [dual complex](../../l-theory/base/complexes/dual-complex.md) $C^{4-*}$ has the term $C_2^*$ and differentials $\pm d^T$, so $H_2(C^{4-*};\mathbb R)=H^2(C;\mathbb R)$, and the isomorphism is $[y]\mapsto[\varphi_2y]$. Nondegeneracy then follows from [the perfect pairing](real-evaluation-pairing.md). Invariance holds because $\varphi_2$ is equivariant and permutation matrices are orthogonal.
 
 ## Sources
 
@@ -21,5 +21,6 @@ $b_C$ is nondegenerate and symmetric, and $G$ acts by $b_C$-isometries.
 
 ## Proof depends on
 
+- [Dual complex](../../l-theory/base/complexes/dual-complex.md)
 - [Real homology is homotopy invariant](real-homology-invariance.md)
 - [Evaluation is a perfect pairing](real-evaluation-pairing.md)

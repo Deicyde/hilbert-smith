@@ -18,11 +18,15 @@ $\mathrm{Sign}_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to(G\to\mathbb R)$, $[C,\var
 ## Depends on
 
 - [Projective L-group](../../l-theory/base/groups/l-group.md)
-- [Group structure on L^p](../../l-theory/base/groups/l-group-add.md)
+- [Group structure on L](../../l-theory/base/groups/l-group-add.md)
 - [Complex signature](complex-signature.md)
 
 ## Proof depends on
 
 - [Cobordism](../../l-theory/base/pairs/cobordism.md)
 - [Boundaries have zero signature](boundary-signature-zero.md)
-- [Middle form of a sum](middle-form-sum.md), [of the negative](middle-form-neg.md)
+- [Middle form of a sum](middle-form-sum.md)
+- [Middle form of the negative](middle-form-neg.md)
+- [Isometry invariance](../forms/form-signature-isometry.md)
+- [Additivity](../forms/form-signature-sum.md)
+- [Negation](../forms/form-signature-neg.md)

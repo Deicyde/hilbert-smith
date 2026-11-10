@@ -6,9 +6,9 @@ origin: background
 
 # Integer tails
 
-Let $p>1$ be a natural number and $(s_k)_{k\in\mathbb{N}}$ a sequence of integers. It is impossible both that $s_k\in\{1,-1\}$ for all large $k$ and that $p\mid s_k$ for all large $k$.
+Let $p>1$ be a natural number and $(s_i)_{i\in\mathbb{N}}$ a sequence of integers. It is impossible both that $s_i\in\{1,-1\}$ for all large $i$ and that $p\mid s_i$ for all large $i$.
 
-*Proof sketch.* Take $k$ beyond both thresholds. Then $p\mid\pm1$, so $p\mid 1$ and $p=1$.
+*Proof sketch.* Take $i$ beyond both thresholds. Then $p\mid\pm1$, so $p\mid 1$ and $p=1$.
 
 ## Sources
 

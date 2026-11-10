@@ -16,7 +16,7 @@ For $H\le G$, $\sigma_H((\mathrm{res}^G_H)_*x)=\sigma_G(x)$.
 
 ## Depends on
 
-- [Restriction functor](../point-functors/restriction-functor.md)
+- [Restriction to a subgroup](../point-functors/restriction-functor.md)
 - [Integer signature](integer-signature.md)
 
 ## Proof depends on

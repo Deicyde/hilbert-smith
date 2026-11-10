@@ -18,6 +18,8 @@ Let $p$ be a prime, let $\mathbb Z_p$ act jointly continuously and faithfully on
 7. Define $a\star x=\varphi((p^ja)\cdot\varphi^{-1}(x))$ on $\Omega$. This is a jointly continuous action, because $a\mapsto p^ja$ is additive.
 8. If $|x|\le\rho_+$, then $\varphi^{-1}(x)\notin\operatorname{Fix}_j(M)$, so some $p^ja$ moves it, and $a\star x\ne x$.
 
+This result rests, through the good point, on the open statement [Newman's theorem on fixing an open set](../../inputs/newman/newman-open-set.md).
+
 ## Sources
 
 - [HS paper, Section 8](../../../../sources/hs-paper.md#section-8-geometric-data-and-quotient-representatives-geofixed-data-lines-755-846) (the chart and the small subgroup)

@@ -9,7 +9,7 @@ not_ready: true
 
 Let $A$ be a compact Hausdorff commutative topological group and $a\ne1$ in $A$. Then there is a continuous homomorphism $\chi\colon A\to\mathbb T$ to the unit circle with $\chi(a)\ne1$.
 
-Remark (not formalized). A route through Bochner's theorem: pick a continuous $f\ge0$ supported in a symmetric neighbourhood $V$ of $1$ with $a\notin V^2$, and put $\varphi=f*\tilde f$. Then $\varphi$ is continuous and positive definite, with $\varphi(a)=0<\varphi(1)$. Bochner's theorem writes $\varphi(b)=\int\chi(b)\,d\mu(\chi)$, so some $\chi$ has $\chi(a)\ne1$.
+Remark (not formalized). This is an open statement: the Lean states it now and proves it later. Planned route, through Bochner's theorem: pick a continuous $f\ge0$ supported in a symmetric neighbourhood $V$ of $1$ with $a\notin V^2$, and put $\varphi=f*\tilde f$. Then $\varphi$ is continuous and positive definite, with $\varphi(a)=0<\varphi(1)$. Bochner's theorem writes $\varphi(b)=\int\chi(b)\,d\mu(\chi)$, so some $\chi$ has $\chi(a)\ne1$.
 
 ## Sources
 

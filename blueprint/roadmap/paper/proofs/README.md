@@ -4,7 +4,7 @@ article_id: af_a3a41b7e1d0a3b48c3e0cf48
 
 # The main theorems
 
-This chapter states the two results of the paper and assembles their proofs from the local data, the later construction chapters, and the cited inputs. An $n$-manifold is a Hausdorff space with an atlas onto open subsets of $\mathbb{R}^n$, with no countability assumption, and connected spaces are nonempty.
+This chapter states the two results of the paper and assembles their proofs from the local data, the theorems of the construction chapters, and the cited inputs. Both theorems rest on open statements: the cited inputs, and those behind Theorems A and B. An $n$-manifold is a Hausdorff space with an atlas onto open subsets of $\mathbb{R}^n$, with no countability assumption, and connected spaces are nonempty.
 
 ## $p$-adic exclusion
 
@@ -16,7 +16,7 @@ The first half moves a faithful action into one chart. A point with no fixed nei
 
 - [Reduction to one chart](one-chart.md)
 
-The second half excludes such an action. Fixed local data for it feed the construction of a controlled Poincaré complex over the control space times a sphere (Theorem C, in a later chapter), whose tail of signatures is eventually $\pm1$ by evaluation (Theorem B) and eventually divisible by $p$ (Theorem A). No integer sequence does both.
+The second half excludes such an action. Fixed local data for it make the control space $T$ a compact metric space with a free isometric $C_p$-action, so they form [standing data](../corner/standing-data.md). [Theorem C](../compression/theorem-c.md) compresses the labelled chain models of the torus test map into a strict Poincaré complex over $T\times S^n$ with a graph-type homotopy action, whose image after forgetting $T$ is the class of the torus test map. [Theorem A](../corner/theorem/theorem-a.md), whose arithmetic core is [divisibility of the signature tail](../divisibility/divisibility.md), makes the [tail signature](../signatures/tail/tail-signature.md) of its iterated cut eventually divisible by $p$; [Theorem B for the test map](../evaluation/theorem-b-test-map.md) makes the same tail eventually $\pm1$. No integer sequence does both.
 
 - [Local exclusion](local-exclusion.md)
 - [Integer tails](integer-tails.md)
@@ -42,7 +42,7 @@ A group acting faithfully on a $T_1$ space is Hausdorff, so the group need not b
 
 - [Faithful actions give Hausdorff groups](faithful-hausdorff.md)
 
-Near the identity the group has no subgroups. Take a compact neighbourhood of the identity that moves one chart ball less than Newman's constant. The closure of a subgroup inside it is compact. An element of prime order there would have small orbits, so Newman's theorem, from the appendix on [Newman's theorem](../inputs/newman/README.md), makes it trivial. Without torsion, a nontrivial closure would contain a copy of $\mathbb{Z}_p$, by the appendix on [compact groups](../inputs/compact-groups/README.md), and $p$-adic exclusion forbids that.
+Near the identity the group has no nontrivial subgroups. Take a compact neighbourhood of the identity that moves one chart ball less than Newman's constant. The closure of a subgroup inside it is compact. An element of prime order there would have small orbits, so Newman's theorem, from the appendix on [Newman's theorem](../inputs/newman/README.md), makes it trivial. Without torsion, a nontrivial closure would contain a copy of $\mathbb{Z}_p$, by the appendix on [compact groups](../inputs/compact-groups/README.md), and $p$-adic exclusion forbids that.
 
 - [A faithfully acting group has no small subgroups](no-small-subgroups.md)
 

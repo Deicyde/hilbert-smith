@@ -6,9 +6,9 @@ origin: bridged
 
 # Restriction on $L^p_4$
 
-For $H\le G$, $x\in L^p_4(\mathrm{Free}(\mathbb Q[G]))$ and $h\in H$, $\mathrm{Sign}_H((\mathrm{res}^G_H)_*x)(h)=\mathrm{Sign}_G(x)(h)$.
+For $H\le G$, $x\in L^p_4(\mathrm{Free}(\mathbb Q[G]))$ and $h\in H$, $\mathrm{Sign}_H((\mathrm{res}^G_H)_*x)(h)=\mathrm{Sign}_G(x)(h)$, where $\mathrm{res}^G_H$ is [restriction to the subgroup](../point-functors/restriction-functor.md).
 
-*Proof sketch.* Choose a representative. Restriction does not change the matrices, so $H^2(\mathrm{res}\,C;\mathbb R)=H^2(C;\mathbb R)$ and $b_{\mathrm{res}\,C}=b_C$, with the action restricted. Apply [the form rule](../forms/form-signature-restrict.md).
+*Proof sketch.* Choose a representative $x=[C,\varphi]$, so $(\mathrm{res}^G_H)_*x=[\mathrm{res}\,C,\mathrm{res}_\%\varphi]$ ([induced map](../../l-theory/base/groups/induced-map.md)). $\mathrm{res}^G_H$ reindexes every matrix along the $H$-equivariant bijection $(h',(j,k))\mapsto(h'g_j,k)$. Its permutation matrix is orthogonal and carries the real cochains, the coboundary and $\varphi_2$ of $\mathrm{res}\,C$ to those of $C$, so it is an $H$-equivariant isometric isomorphism from $b_{\mathrm{res}\,C}$ to $b_C$ with the action restricted to $H$. Apply [isometry invariance](../forms/form-signature-isometry.md) for $H$ and [the form rule](../forms/form-signature-restrict.md).
 
 ## Sources
 
@@ -16,10 +16,11 @@ For $H\le G$, $x\in L^p_4(\mathrm{Free}(\mathbb Q[G]))$ and $h\in H$, $\mathrm{S
 
 ## Depends on
 
-- [Restriction functor](../point-functors/restriction-functor.md)
-- [Signature hom](signature-hom.md)
+- [Restriction to a subgroup](../point-functors/restriction-functor.md)
+- [The equivariant signature on $L^p_4$](signature-hom.md)
 - [Induced homomorphism](../../l-theory/base/groups/induced-map.md)
 
 ## Proof depends on
 
+- [Isometry invariance](../forms/form-signature-isometry.md)
 - [Restriction of the form signature](../forms/form-signature-restrict.md)

@@ -13,6 +13,8 @@ Let $p$ be a prime and let $\mathbb Z_p$ act jointly continuously and faithfully
 2. $M$ is nonempty, being connected. At a point of $M$ some $\operatorname{Fix}_j(M)$ is a neighbourhood, so that $F_j$ is nonempty.
 3. Being clopen in the connected $M$, that $F_j$ equals $M$. Then $p^j\ne0$ acts trivially, which contradicts faithfulness.
 
+This result rests, through the lemma on interiors of fixed sets, on the open statement [Newman's theorem on fixing an open set](../../inputs/newman/newman-open-set.md).
+
 ## Sources
 
 - [OpenAI preprint, Section 5](../../../../sources/preprint.md#section-5-local-tests-sections05-local-teststex), 05-local-tests.tex lines 30-50

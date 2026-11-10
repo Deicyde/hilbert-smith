@@ -6,12 +6,14 @@ origin: bridged
 
 # Cuts commute with forgetting
 
-Let $\Delta_T:\mathbb L_N(\mathcal B_{\mathbf G,Z}(T\times S^n))\to\mathbb L_4(\mathcal A_{\mathbf G}(T))$ and $\Delta_{\mathbf 1}:\mathbb L_N(\mathcal B_{\mathbf 1,Z_0}(S^n))\to\mathbb L_4(\mathcal V_{\mathbf 1})$ be the iterated cuts, $U$ as in [Scalar image](scalar-image.md), and $U_T:\mathcal A_{\mathbf G}(T)\to\mathcal V_{\mathbf 1}$ forget the group and the labels. Then $U_{T*}\Delta_T=\Delta_{\mathbf 1}U_*$.
+Take the [standing data](../standing-data.md), the [iterated cuts](iterated-cut.md) $\Delta_T$ and $\Delta_{\mathbf 1}$, and $U:\mathcal B_{\mathbf G,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n)$ as in [Scalar image](scalar-image.md). Let $U_T=\bar U\circ\Phi:\mathcal A_{\mathbf G}(T)\to\mathcal V_{\mathbf G}\to\mathcal V_{\mathbf 1}$ be [forgetting labels](../../categories/functors/forget-labels.md) followed by [the forgetful functor on tails](../../signatures/point-functors/tail-forget-functor.md). Then
+$$U_{T*}\circ\Delta_T=\Delta_{\mathbf 1}\circ U_*:\mathbb L_N(\mathcal B_{\mathbf G,Z}(T\times S^n))\to\mathbb L_4(\mathcal V_{\mathbf 1}).$$
 
-*Proof sketch.* Induct on the cuts. Each cut is an excision boundary $\partial_{A,B}$ followed by relabeling and component projection.
-1. $U$ carries the excisive pair of each cut over $T\times S$ into the one over $S$ ([pushforward](../../categories/functors/push-support.md) and [forgetting the group](../../categories/functors/forget-group-support.md) preserve supports).
-2. [Naturality of the excision boundary](../../l-theory/ultimate/boundary/excision-boundary-naturality.md) commutes $U_*$ past $\partial_{A,B}$.
-3. Relabeling and projection commute with $U$ as functors, hence on $\mathbb L$ ([Functoriality](../../l-theory/ultimate/groups/induced-map.md)).
+*Proof sketch.* Let $U_{\rm c}$ be [forgetting the control space](../../categories/functors/forget-control.md) for $X=S^n$.
+1. $U_{\rm c}$ carries $\mathcal A_{T\times S}$ into $\mathcal A_S$ for $S=Y_{m-1},A_m,B_m,Z^0_m$ ([forgetting the control space preserves support](../../categories/functors/forget-control-support.md)), and $Z_m=T\times Z^0_m$. So [naturality of the cut boundary](../../categories/cuts/cut-boundary-naturality.md) with $F=U_{\rm c}$ and cut data $(T\times A_m,T\times B_m,Z_m)\to(A_m,B_m,Z^0_m)$ commutes the induced maps past each cut $d_m$.
+2. The functors induced by $U_{\rm c}$ commute strictly with $j$ and with each $q$: both composites are $M\mapsto U_{\rm c}M$, $[u]\mapsto[U_{\rm c}u]$. [Functoriality](../../l-theory/ultimate/groups/induced-map-comp.md) commutes the induced maps past $j_*$ and $q_*$.
+3. [The component projection commutes with forgetting](../../evaluation/component-projection-natural.md): $\pi_+\circ(U_{\rm c}|_{\mathcal A_{T\times Y_n}})_*=U_{T*}\circ\pi_+$.
+4. Compose steps 1 to 3 along the definition of the iterated cut.
 
 ## Sources
 
@@ -19,13 +21,16 @@ Let $\Delta_T:\mathbb L_N(\mathcal B_{\mathbf G,Z}(T\times S^n))\to\mathbb L_4(\
 
 ## Depends on
 
+- [Standing data](../standing-data.md)
 - [Iterated cut](iterated-cut.md)
-- [Forgetting the group](../../categories/functors/forget-group.md)
+- [Scalar image of the corner](scalar-image.md)
+- [Forgetting labels](../../categories/functors/forget-labels.md)
+- [The forgetful functor on tails](../../signatures/point-functors/tail-forget-functor.md)
 
 ## Proof depends on
 
-- [Naturality of the excision boundary](../../l-theory/ultimate/boundary/excision-boundary-naturality.md)
-- [Naturality of the ultimate boundary](../../l-theory/ultimate/boundary/ultimate-boundary-naturality.md)
-- [Functoriality](../../l-theory/ultimate/groups/induced-map.md)
-- [Pushforward preserves support](../../categories/functors/push-support.md)
-- [Forgetting the group preserves support](../../categories/functors/forget-group-support.md)
+- [Forgetting the control space](../../categories/functors/forget-control.md)
+- [Forgetting the control space preserves support](../../categories/functors/forget-control-support.md)
+- [Naturality of the cut boundary](../../categories/cuts/cut-boundary-naturality.md)
+- [Functoriality on ultimate L](../../l-theory/ultimate/groups/induced-map-comp.md)
+- [The component projection commutes with forgetting](../../evaluation/component-projection-natural.md)

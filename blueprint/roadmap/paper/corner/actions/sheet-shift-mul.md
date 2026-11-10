@@ -6,9 +6,9 @@ origin: bridged
 
 # Sheet shifts multiply
 
-$\operatorname{Ind}_g u\,\operatorname{Ind}_h v=\operatorname{Ind}_{gh}(uv)$.
+$\operatorname{Ind}_g u\,\operatorname{Ind}_h v=\operatorname{Ind}_{g+h}(uv)$.
 
-*Proof sketch.* $R_{g^{-1}}R_{h^{-1}}=R_{(gh)^{-1}}$ because $G_i$ is abelian.
+*Proof sketch.* $R_{-g}R_{-h}=R_{-(g+h)}$, since $(s-h)-g=s-(g+h)$.
 
 ## Depends on
 

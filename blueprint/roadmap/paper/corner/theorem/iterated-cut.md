@@ -3,9 +3,38 @@ article_id: af_09055d9581d58aeabac4bdfd
 declaration: def
 origin: bridged
 ---
+
 # Iterated cut
 
-$\Delta_T=\pi_+\circ\partial^{\rm in}_n\circ\cdots\circ\partial^{\rm in}_1:\mathbb L_N(\mathcal B_{\mathbf G,Z}(T\times S^n))\to\mathbb L_4(\mathcal A_{\mathbf G}(T))$, where $\partial^{\rm in}_m$ is the [inner cut](../../evaluation/inner-cut.md) for $(T\times A_m,T\times B_m)$ inside $S=T\times Y_{m-1}$, with exterior $Z=T\times Z_0$ for $m=1$ and $\varnothing$ for $m\ge2$. $\Delta_{\mathbf 1}:\mathbb L_N(\mathcal B_{\mathbf 1,Z_0}(S^n))\to\mathbb L_4(\mathcal V_{\mathbf 1})$ is the same composite with $\mathbf 1$ and without $T$.
+Take the [standing data](../standing-data.md) and put $X=T\times S^n$. For $1\le m\le n$ let $Z_1=Z=T\times Z_0$ and $Z_m=\varnothing$ for $m\ge2$, and let
+$$d_m:\mathbb L_{N-m+1}(\mathcal A_{T\times Y_{m-1}}/\mathcal A_{Z_m})\to\mathbb L_{N-m}(\mathcal A_{T\times Y_m})$$
+be the [cut boundary](../../categories/cuts/cut-boundary.md) in $\mathcal A_{\mathbf G}(X)$ for $(T\times A_m,T\times B_m,Z_m)$. The *iterated cut* is
+$$\Delta_T=\pi_+\circ d_n\circ q_*\circ d_{n-1}\circ q_*\circ\cdots\circ q_*\circ d_1\circ j_*:\mathbb L_N(\mathcal B_{\mathbf G,Z}(X))\to\mathbb L_4(\mathcal A_{\mathbf G}(T)),$$
+where:
+- $j:\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\mathcal A_Z$ is the identity-on-objects isomorphism of [exterior quotients](../../categories/supports/exterior-quotient.md);
+- each $q:\mathcal A_{T\times Y_m}\to\mathcal A_{T\times Y_m}/\mathcal A_\varnothing$, $1\le m\le n-1$, is the [quotient functor](../../l-theory/base/categories/filtration-quotient.md) for the [support filtration](../../categories/supports/support-filtration.md) of $\varnothing\subseteq T\times Y_m$;
+- $\pi_+:\mathbb L_4(\mathcal A_{T\times Y_n})\to\mathbb L_4(\mathcal A_{\mathbf G}(T))$ is the [component projection](../../evaluation/component-projection.md);
+- $j_*$ and $q_*$ are [induced maps](../../l-theory/ultimate/groups/induced-map.md).
+
+The hypotheses of each cut hold. $T\times A_m$, $T\times B_m$ and $Z_m$ are closed ([cut flag](../cut-flag.md), item 1; [exterior lies in the first cut](../exterior-first-cut.md)) and invariant, because $G_i$ moves only the $T$-coordinate. $Z\subseteq T\times A_1$ and $Z\cap(T\times B_1)=\varnothing$ by [exterior lies in the first cut](../exterior-first-cut.md), and these are trivial for $Z_m=\varnothing$. The union and intersection of the $m$-th cut are $T\times Y_{m-1}$ and $T\times Y_m$ (cut flag, items 2 and 3), and $T\times Y_n=T\times\{y_-,y_+\}$ (cut flag), as $\pi_+$ requires.
+
+The *iterated cut* $\Delta_{\mathbf 1}:\mathbb L_N(\mathcal B_{\mathbf 1,Z_0}(S^n))\to\mathbb L_4(\mathcal V_{\mathbf 1})$ is the same composite for the trivial group sequence $\mathbf 1$ and without $T$: $X=S^n$, the cut data $(A_m,B_m,Z^0_m)$ with $Z^0_1=Z_0$ and $Z^0_m=\varnothing$ for $m\ge2$, and the component projection without $T$, which ends in $\mathcal V_{\mathbf 1}$.
+
+**Remark (not formalized).** Theorem A uses $\Delta_T$ and $\Delta_{\mathbf 1}$, and Theorem B uses $\Delta_{\mathbf 1}$. The evaluation chapter computes the individual cuts $d_m$ on its labelled models.
+
+## Sources
+
+- HS paper, Section 12.
+- New: the cuts are taken along the cube-face flag of the standing data, each one a cut boundary for a closed cover with exterior.
 
 ## Depends on
-- [Inner cut](../../evaluation/inner-cut.md), [component projection](../../evaluation/component-projection.md), [cut sets](../../evaluation/cut-sets.md)
+
+- [Standing data](../standing-data.md)
+- [Cut flag](../cut-flag.md)
+- [Exterior lies in the first cut](../exterior-first-cut.md)
+- [Cut boundary](../../categories/cuts/cut-boundary.md)
+- [Exterior quotient](../../categories/supports/exterior-quotient.md)
+- [Support filtration](../../categories/supports/support-filtration.md)
+- [Quotient by a filtration](../../l-theory/base/categories/filtration-quotient.md)
+- [Component projection](../../evaluation/component-projection.md)
+- [Induced map on ultimate L](../../l-theory/ultimate/groups/induced-map.md)

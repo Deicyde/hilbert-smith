@@ -8,7 +8,7 @@ origin: bridged
 
 For a graph-type homotopy action, with $q_i=|G_i|$, the *average* is the triple of matrices on $\operatorname{Ind}C$
 - $E_i=q_i^{-1}\sum_{g\in G_i}\operatorname{Ind}_gA_g$;
-- $\mathcal H_i=q_i^{-2}\sum_{(g,h)\in G_i^2}\operatorname{Ind}_{gh}B_{g,h}$;
+- $\mathcal H_i=q_i^{-2}\sum_{(g,h)\in G_i^2}\operatorname{Ind}_{g+h}B_{g,h}$;
 - $\mathcal V_i=q_i^{-1}\sum_{g\in G_i}\operatorname{Ind}_gV_g$.
 
 ## Sources

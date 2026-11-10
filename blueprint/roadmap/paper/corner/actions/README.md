@@ -4,9 +4,10 @@ article_id: af_d54d05d7e0c27c6a79affe97
 
 # Graph-type actions and induction
 
-Graph-type matrices and exterior witnesses, graph-type homotopy actions, sheet shifts and translations, induction as a strict duality functor, and averages, which give duality-compatible homotopy idempotents.
+Graph-type matrices and their calculus, exterior witnesses, graph-type homotopy actions, sheet shifts and translations, induction as a strict duality functor, and averages, which give duality-compatible homotopy idempotents.
 
 - [Graph-type matrices](graph-type.md)
+- [Calculus of graph types](graph-type-calculus.md)
 - [Exterior witnesses](exterior-witness.md)
 - [Graph-type homotopy action](graph-type-action.md)
 - [Sheet shift](sheet-shift.md)

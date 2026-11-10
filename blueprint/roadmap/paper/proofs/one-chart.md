@@ -17,6 +17,8 @@ Let $p$ be a prime and let $\mathbb{Z}_p$ act jointly continuously and faithfull
 
 The open set $O$ is second countable as a subset of $\mathbb{R}^n$, so no second countability of $M$ is needed.
 
+This result rests, through the good point, on the open statement [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md).
+
 ## Sources
 
 - [OpenAI preprint, Section 5](../../../sources/preprint.md#section-5-local-tests-sections05-local-teststex), 05-local-tests.tex lines 51-66

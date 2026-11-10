@@ -6,12 +6,12 @@ origin: bridged
 
 # Representatives act approximately
 
-For a local datum, a compact $\mathbb Z_p$-invariant set $C\subseteq\Omega$ and $\varepsilon>0$, there is $L\ge1$ such that for all $\ell\ge L$, all $g,g'\in\mathbb Z/p^\ell\mathbb Z$ and all $x\in C$,
-$$|r_\ell(g)\cdot(r_\ell(g')\cdot x)-r_\ell(g+g')\cdot x|<\varepsilon.$$
+For a local datum, a compact $\mathbb Z_p$-invariant set $C\subseteq\Omega$ and $\varepsilon>0$, there is $L\ge1$ such that for all $i\ge L$, all $g,g'\in\mathbb Z/p^i\mathbb Z$ and all $x\in C$,
+$$|r_i(g)\cdot(r_i(g')\cdot x)-r_i(g+g')\cdot x|<\varepsilon.$$
 
 *Proof sketch.*
-1. Uniformly small displacement near the identity, for the inclusion of $\Omega$ in $\mathbb R^n$, the compact set $C$ and $\delta=\varepsilon$, gives a neighbourhood $V$ of $0$; the basis property gives $L\ge1$ with $H_L\subseteq V$, hence $H_\ell\subseteq V$ for all $\ell\ge L$.
-2. The left point equals $k\cdot y$ with $y=r_\ell(g+g')\cdot x\in C$, by invariance, and $k=r_\ell(g)+r_\ell(g')-r_\ell(g+g')\in H_\ell$ by the algebra of the representatives. So its distance from $y$ is less than $\varepsilon$.
+1. Uniformly small displacement near the identity, for the inclusion of $\Omega$ in $\mathbb R^n$, the compact set $C$ and $\delta=\varepsilon$, gives a neighbourhood $V$ of $0$; the basis property gives $L\ge1$ with $H_L\subseteq V$, hence $H_i\subseteq V$ for all $i\ge L$.
+2. The left point equals $k\cdot y$ with $y=r_i(g+g')\cdot x\in C$, by invariance, and $k=r_i(g)+r_i(g')-r_i(g+g')\in H_i$ by the algebra of the representatives. So its distance from $y$ is less than $\varepsilon$.
 
 ## Sources
 

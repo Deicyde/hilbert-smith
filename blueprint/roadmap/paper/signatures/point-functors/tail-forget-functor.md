@@ -6,9 +6,9 @@ origin: bridged
 
 # The forgetful functor on tails
 
-Write $\mathcal P_{\mathbf G},\mathcal V_{\mathbf G}$ for the groups $G_i$ and $\mathcal P_{\mathbf 1},\mathcal V_{\mathbf 1}$ for trivial groups. $U:\mathcal P_{\mathbf G}\to\mathcal P_{\mathbf 1}$ applies $U_{G_i}$ in coordinate $i$. $\bar U:\mathcal V_{\mathbf G}\to\mathcal V_{\mathbf 1}$ is $U$ on objects and $[u]\mapsto[Uu]$ on morphisms, so that $\bar U\circ q=q\circ U$ and $\pi_iU=U_{G_i}\pi_i$ hold strictly.
+Let $\mathbf G=(G_i,\chi_i)$ be a [group sequence](../../categories/asymptotic/group-sequence.md) and $\mathbf 1$ the trivial one. $\bar U:\mathcal V_{\mathbf G}\to\mathcal V_{\mathbf 1}$ is the strict duality functor between the [point categories](../../categories/asymptotic/point-quotient.md) that sends $(n_i)$ to $(|G_i|n_i)$ and $q(u_i)$ to $q(U_{G_i}u_i)$, with $U_{G_i}$ [forgetting the group](forget-functor.md) in coordinate $i$. Then $\bar U\circ q=q\circ U$, where $U=(U_{G_i})_i:\mathcal P_{\mathbf G}\to\mathcal P_{\mathbf 1}$ is the product functor on the [sequence categories](../../categories/asymptotic/point-sequence-category.md), and $\pi_i\circ U=U_{G_i}\circ\pi_i$ hold strictly.
 
-*Proof sketch.* (Well-definedness.) $U$ maps objects of $\mathcal S$ to objects of $\mathcal S$, so it maps maps that factor through $\mathcal S$ to maps that factor through $\mathcal S$. Both functors commute strictly with transposition.
+*Proof sketch.* (Well-definedness.) If $u_i=u'_i$ for all but finitely many $i$, then $U_{G_i}u_i=U_{G_i}u'_i$ for the same $i$; by the [point ideal](../../categories/asymptotic/point-ideal.md) the classes agree. Composition, identities and transposes are preserved because each $U_{G_i}$ preserves them.
 
 ## Sources
 
@@ -16,5 +16,10 @@ Write $\mathcal P_{\mathbf G},\mathcal V_{\mathbf G}$ for the groups $G_i$ and $
 
 ## Depends on
 
-- [Forget functor](forget-functor.md)
-- [Tail category](tail-category.md)
+- [Forgetting the group](forget-functor.md)
+- [Point category](../../categories/asymptotic/point-quotient.md)
+- [Sequence category](../../categories/asymptotic/point-sequence-category.md)
+
+## Proof depends on
+
+- [Point ideal](../../categories/asymptotic/point-ideal.md)

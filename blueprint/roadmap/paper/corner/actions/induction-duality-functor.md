@@ -6,12 +6,12 @@ origin: bridged
 
 # Induction is a strict duality functor
 
-$\operatorname{Ind}$ is a strict duality functor. It carries $\mathcal A_Z$ into $\mathcal A_Z$, so it descends to a strict duality functor $\mathcal B_{\mathbf 1,Z}(T\times S^n)\to\mathcal B_{\mathbf G,Z}(T\times S^n)$.
+$\operatorname{Ind}$ is a strict duality functor. It carries $\mathcal A_Z$ into $\mathcal A_Z$, so it induces a strict duality functor $\mathcal B_{\mathbf 1,Z}(T\times S^n)\to\mathcal B_{\mathbf G,Z}(T\times S^n)$ on the [exterior quotients](../../categories/supports/exterior-functor.md).
 
 *Proof sketch.*
 1. $u\otimes1$ is equivariant. It has the propagation of $u$, because each $\chi_i(s)$ is an isometry.
 2. Orthonormal sheets give $(u\otimes1)^*=u^*\otimes1$.
-3. A label $(\chi_i(s)t,z)$ is as far from $Z$ as $(t,z)$, because $Z$ is invariant.
+3. A label $(\chi_i(s)\cdot t,z)$ is as far from $Z$ as $(t,z)$, because $Z$ is invariant. Then apply the [induced functor on exterior quotients](../../categories/supports/exterior-functor.md).
 
 ## Sources
 
@@ -21,4 +21,4 @@ $\operatorname{Ind}$ is a strict duality functor. It carries $\mathcal A_Z$ into
 
 - [Induction](induction.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
-- [Exterior quotient](../../categories/supports/exterior-quotient.md)
+- [Induced functor on exterior quotients](../../categories/supports/exterior-functor.md)

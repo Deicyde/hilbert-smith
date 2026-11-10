@@ -4,7 +4,7 @@ article_id: af_392a4aa345beb552b4114655
 
 # The corner and Theorem A
 
-Splitting duality-compatible homotopy idempotents, trimming, corner duality and identification, the corner class and its scalar image, the iterated cut and its commutation with forgetting, and Theorem A.
+Splitting duality-compatible homotopy idempotents (resting on one open statement), trimming, corner duality and identification, the corner class and its scalar image, the iterated cut and its commutation with forgetting, and Theorem A.
 
 - [Duality-compatible homotopy idempotent](compatible-idempotent.md)
 - [Idempotents split in the bounded homotopy category](kb-idempotent-splitting.md)

@@ -6,7 +6,7 @@ origin: bridged
 
 # Average propagation
 
-Let $I$ be a finite set, $\kappa:I\to G_i$, $\lambda:I\to\mathbb Q$, and let each $u_k$ ($k\in I$) have graph type $\chi_i(\kappa k)$ with bound $\delta$. Then $\sum_{k\in I}\lambda_k\operatorname{Ind}_{\kappa k}u_k$ is equivariant with propagation at most $\delta$. The bound does not depend on $|I|$ or $q_i$.
+Let $I$ be a finite set, $\kappa:I\to G_i$, $\mu:I\to\mathbb Q$, and let each $u_k$ ($k\in I$) have graph type $\chi_i(\kappa k)$ with bound $\delta$. Then $\sum_{k\in I}\mu_k\operatorname{Ind}_{\kappa k}u_k$ is equivariant with propagation at most $\delta$. The bound does not depend on $|I|$ or $q_i$.
 
 *Proof sketch.*
 1. [Sheet translation](sheet-translation.md) bounds each term.
@@ -15,7 +15,7 @@ Let $I$ be a finite set, $\kappa:I\to G_i$, $\lambda:I\to\mathbb Q$, and let eac
 ## Sources
 
 - HS paper, Sections 2 and 11.
-- New: indexed by a finite set over $G_i$, so the single sums ($I=G_i$, $\kappa=\mathrm{id}$) and the pair sums ($I=G_i^2$, $\kappa(g,h)=gh$) are both instances.
+- New: indexed by a finite set over $G_i$, so the single sums ($I=G_i$, $\kappa=\mathrm{id}$) and the pair sums ($I=G_i^2$, $\kappa(g,h)=g+h$) are both instances.
 
 ## Depends on
 

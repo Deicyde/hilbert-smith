@@ -19,7 +19,7 @@ $$\varphi_2\big(f^*H^2(D;\mathbb R)\big)=\ker\big(f_*:H_2(C;\mathbb R)\to H_2(D;
 ## Depends on
 
 - [Strict Poincaré pair](../../l-theory/base/pairs/poincare-pair.md)
-- [Real chains and cochains](real-homology.md)
+- [Real homology](real-homology.md)
 
 ## Proof depends on
 

@@ -18,6 +18,8 @@ Let $G$ be a locally compact topological group acting jointly continuously and f
 
 Steps 2-5 use only one chart ball and no metric on $M$, so the argument holds for $M$ that is not second countable.
 
+This result rests on the open statements [Newman's theorem on small orbits](../inputs/newman/newman-small-orbits.md), [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md) and [$\mathbb Z_p$ inside a compact torsion-free group](../inputs/compact-groups/zp-in-torsion-free.md), and, through $p$-adic exclusion, on those that theorem rests on.
+
 ## Sources
 
 - New: the assembly; a small subgroup has a compact closure inside $W$, which either has an element of prime order (excluded by Newman's theorem) or is torsion-free (excluded through $\mathbb{Z}_p$ and $p$-adic exclusion)

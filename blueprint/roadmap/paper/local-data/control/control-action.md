@@ -19,4 +19,4 @@ For a local datum, let $C_p=\mathbb Z/p\mathbb Z$ and let $q_1:\mathbb Z_p\to C_
 
 ## Proof depends on
 
-- [The kernel of reduction modulo $p^\ell$](reduction-kernel.md)
+- [The kernel of reduction modulo $p^i$](reduction-kernel.md)

@@ -4,7 +4,7 @@ article_id: af_b412d3c72a783de863d3692f
 
 # Gleason–Yamabe
 
-The last step of Hilbert–Smith turns "no small subgroups" into a Lie group structure. That is the theorem of Gleason and Yamabe, cited here in the form the main text uses: a smooth atlas for the given topology, with no countability assumption.
+The last step of Hilbert–Smith turns "no small subgroups" into a Lie group structure. That is the theorem of Gleason and Yamabe, cited here, as an open statement, in the form the main text uses: a smooth atlas for the given topology, with no countability assumption.
 
 - [Gleason–Yamabe: no small subgroups implies Lie](gleason-yamabe.md)
 

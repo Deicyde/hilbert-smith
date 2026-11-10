@@ -8,7 +8,7 @@ origin: cited
 
 Let $G$ be a Hausdorff locally compact topological group with no small subgroups: some neighbourhood of $1$ contains no subgroup other than $\{1\}$. Then there are $d\in\mathbb N$ and an atlas on $G$ of charts that are homeomorphisms, for the given topology of $G$, from open subsets of $G$ onto open subsets of $\mathbb R^d$, whose transition maps are $C^\infty$ and for which multiplication and inversion are $C^\infty$. No countability is assumed.
 
-Remark (not formalized). An outline, after T. Tao, Hilbert's fifth problem and related topics, and I. Goldbring's notes (chapter numbers not checked):
+Remark (not formalized). This is an open statement: the Lean states it now and proves it later. The planned route is the classical one; an outline, after T. Tao, Hilbert's fifth problem and related topics, and I. Goldbring's notes (chapter numbers not checked):
 1. A neighbourhood with no small subgroups yields an escape norm. Convolution against Haar measure improves it to a Gleason norm, which satisfies the escape and commutator estimates.
 2. In a group with a Gleason norm, the one-parameter subgroups form a real vector space $L(G)$ under limits of $g_\varepsilon^{\lfloor t/\varepsilon\rfloor}$. This space is locally compact, hence finite-dimensional.
 3. The exponential map $L(G)\to G$ is a homeomorphism from a neighbourhood of $0$ onto a neighbourhood of $1$. Injectivity comes from escape; surjectivity onto a neighbourhood comes from the Gleason estimates.

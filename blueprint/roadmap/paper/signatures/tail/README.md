@@ -4,7 +4,7 @@ article_id: af_93de4f3de1fdf90a81cf9322
 
 # The tail signature
 
-Classes over the point category $\mathcal V$ lift to the sequence category, and the lifts agree eventually. The tail signature is the resulting sequence of integer signatures modulo finitely supported sequences.
+Classes over the [point category](../../categories/asymptotic/point-quotient.md) $\mathcal V_{\mathbf G}$ lift to the [sequence category](../../categories/asymptotic/point-sequence-category.md) $\mathcal P_{\mathbf G}$, and the lifts agree eventually. The tail signature is the resulting sequence of integer signatures modulo finitely supported sequences. All of this rests on the open statement [Lemma U](../../l-theory/comparison/lemma-u.md), through the point comparisons.
 
 - [Classes over $\mathcal V$ lift](tail-lift.md)
 - [Lifts agree eventually](tail-lift-eventual.md)

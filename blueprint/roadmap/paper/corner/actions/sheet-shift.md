@@ -6,7 +6,7 @@ origin: bridged
 
 # Sheet shift
 
-For a matrix $u:M\to M'$ at level $i$ and $g\in G_i$, $\operatorname{Ind}_g u=u\otimes R_{g^{-1}}$, where $R_{g^{-1}}(b\otimes s)=b\otimes sg^{-1}$. So $\operatorname{Ind}_1u=u\otimes1$.
+For a matrix $u:M\to M'$ at level $i$ and $g\in G_i$, $\operatorname{Ind}_g u=u\otimes R_{-g}$, where $R_{-g}(b\otimes s)=b\otimes(s-g)$. So $\operatorname{Ind}_0u=u\otimes1$.
 
 ## Sources
 

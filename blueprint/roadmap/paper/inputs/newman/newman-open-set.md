@@ -8,6 +8,8 @@ origin: cited
 
 Let $M$ be a connected $n$-manifold: a connected Hausdorff space with an atlas of charts onto open subsets of $\mathbb R^n$, with no countability assumption. Let $f\colon M\to M$ be a homeomorphism with $f^k=\mathrm{id}$ for some $k\ge1$. If $f$ fixes every point of some nonempty open set $U\subseteq M$, then $f=\mathrm{id}$.
 
+Remark (not formalized). This is an open statement: the Lean states it now and proves it later. Planned route. (1) Reduce to prime order: if $f\ne\mathrm{id}$ has order $m>1$, take a prime $q\mid m$; then $f^{m/q}$ has order $q$ and still fixes $U$. (2) For $g$ of prime order $q$, Smith theory with $\mathbb Z/q$ coefficients [U] makes the fixed set a $\mathbb Z/q$-cohomology manifold whose local dimension is locally constant; where it contains an open set that dimension is $n$, and a fixed set of dimension $n$ in a connected $n$-manifold is open and closed, hence everything. (3) The argument is local in sheaf cohomology, so it should need no countability; that has not been checked against a published proof.
+
 ## Sources
 
 - [OpenAI preprint, Section 5](../../../../sources/preprint.md#section-5-local-tests-sections05-local-teststex), 05-local-tests.tex lines 23-29

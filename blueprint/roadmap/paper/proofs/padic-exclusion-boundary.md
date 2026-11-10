@@ -13,6 +13,8 @@ Let $p$ be a prime, $n\ge1$, and let $M$ be a connected Hausdorff space with an 
 2. The action restricts to a jointly continuous action on $M^\circ_n$, which is faithful because $M^\circ_n$ is dense.
 3. This contradicts $p$-adic exclusion for $M^\circ_n$.
 
+This theorem rests, through $p$-adic exclusion, on the same open statements.
+
 ## Sources
 
 - [HS paper, Section 13](../../../sources/hs-paper.md#section-13-the-contradiction-seccontradiction-lines-1326-1391) (proof of Theorem 1.1, dimension 0 and boundary)

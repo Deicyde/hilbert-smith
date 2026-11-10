@@ -10,6 +10,8 @@ Let $p$ be a prime, let $\mathbb Z_p$ act jointly continuously and faithfully on
 
 *Proof sketch.* Take a local datum from the faithful action, then $\rho=\rho_+/2$ and $(r,R,t,u)=(1,2,3,4)$.
 
+This result rests, through the local datum, on the open statement [Newman's theorem on fixing an open set](../../inputs/newman/newman-open-set.md).
+
 ## Sources
 
 - [HS paper, Section 8](../../../../sources/hs-paper.md#section-8-geometric-data-and-quotient-representatives-geofixed-data-lines-755-846)

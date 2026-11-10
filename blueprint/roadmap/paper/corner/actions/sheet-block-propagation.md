@@ -6,10 +6,10 @@ origin: bridged
 
 # Sheet blocks after forgetting
 
-Let $U$ forget the group and $T$, so $U\operatorname{Ind}M=\bigoplus_{s\in G_i}M$ with sheet $s$ labeled by the sphere labels $z_b$. The sheet inclusions $j_s$ and projections $\pi_s$ have propagation $0$, and a matrix $w:U\operatorname{Ind}M\to U\operatorname{Ind}M'$ with blocks $w_{s's}=\pi_{s'}wj_s$ satisfies $w=\sum_{s',s}j_{s'}w_{s's}\pi_s$ and
+Let $U_{\rm c}$ be [forgetting the control space](../../categories/functors/forget-control.md) for $X=S^n$, so at level $i$, $U_{\rm c}\operatorname{Ind}M=\bigoplus_{s\in G_i}M$ with sheet $s$ labeled by the sphere labels $z_b$. Let $j_s$ and $\pi_s$ be the inclusion and projection of sheet $s$. A matrix $w:U_{\rm c}\operatorname{Ind}M\to U_{\rm c}\operatorname{Ind}M'$ with blocks $w_{s's}=\pi_{s'}wj_s$ satisfies
 $$\operatorname{prop}(w)\le\max_{s',s}\operatorname{prop}(w_{s's}).$$
 
-*Proof sketch.* Each sheet carries the labels $z_b$, so $j_s,\pi_s$ preserve labels. Then apply the bounds for [products](../../categories/asymptotic/prop-mul.md) and [sums](../../categories/asymptotic/prop-add.md).
+*Proof sketch.* Each sheet carries the labels $z_b$, so $j_s,\pi_s$ preserve labels and have propagation $0$. Write $w=\sum_{s',s}j_{s'}w_{s's}\pi_s$ and apply the bounds for [products](../../categories/asymptotic/prop-mul.md) and [sums](../../categories/asymptotic/prop-add.md).
 
 ## Sources
 
@@ -18,8 +18,7 @@ $$\operatorname{prop}(w)\le\max_{s',s}\operatorname{prop}(w_{s's}).$$
 ## Depends on
 
 - [Induction](induction.md)
-- [Forgetting the group](../../categories/functors/forget-group.md)
-- [Pushforward of labels](../../categories/functors/pushforward.md)
+- [Forgetting the control space](../../categories/functors/forget-control.md)
 
 ## Proof depends on
 

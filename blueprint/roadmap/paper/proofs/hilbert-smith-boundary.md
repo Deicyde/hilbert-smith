@@ -10,6 +10,8 @@ Let $n\ge1$, let $M$ be a connected Hausdorff space with an atlas of charts onto
 
 *Proof sketch.* The intrinsic interior $M^\circ_n$ is open, dense and connected, so it is a connected $n$-manifold. $G$ acts on it jointly continuously, and faithfully because it is dense. Apply Hilbert–Smith to $M^\circ_n$.
 
+This theorem rests, through Hilbert–Smith, on the same open statements.
+
 ## Sources
 
 - [HS paper, Section 13](../../../sources/hs-paper.md#section-13-the-contradiction-seccontradiction-lines-1326-1391) (proof of Corollary 1.2)

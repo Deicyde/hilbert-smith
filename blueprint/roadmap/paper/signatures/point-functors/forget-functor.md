@@ -6,14 +6,17 @@ origin: bridged
 
 # Forgetting the group
 
-$U_G:\mathrm{Free}(\mathbb Q[G])\to\mathrm{Free}(\mathbb Q)$ sends $B$ to its underlying set and $u$ to the same matrix. It commutes strictly with transposition, so it is a duality-preserving functor.
+Enumerate $G\times\{1..n\}$ by $\{1..|G|n\}$ in the fixed order used by [forgetting the group](../../categories/functors/forget-group.md). The strict duality functor $U_G:\mathrm{Free}(\mathbb Q[G])\to\mathrm{Free}(\mathbb Q)$ sends $n$ to $|G|n$ and a morphism $u:n\to n'$ to the same matrix with rows and columns reindexed along these enumerations.
+
+*Proof sketch.* This is [reindexing](../../categories/asymptotic/free-set-basis.md) for the trivial group, whose orbit representatives are all basis elements. It preserves identities, products and transposes.
 
 ## Sources
 
 - HS paper, Section 3
-- New: in the matrix model the coefficient-of-identity trace is built in, so forgetting is literally the identity on matrices.
+- New: in the matrix model the coefficient-of-identity trace is built in, so forgetting is a reindexing of the same matrix.
 
 ## Depends on
 
-- [The point category](point-category.md)
-- [Duality-preserving functor](../../l-theory/base/categories/duality-functor.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Bases of finite free G-sets](../../categories/asymptotic/free-set-basis.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)

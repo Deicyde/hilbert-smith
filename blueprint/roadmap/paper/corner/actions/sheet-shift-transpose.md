@@ -6,9 +6,9 @@ origin: bridged
 
 # Transpose of a sheet shift
 
-$(\operatorname{Ind}_g u)^*=\operatorname{Ind}_{g^{-1}}(u^*)$.
+$(\operatorname{Ind}_g u)^*=\operatorname{Ind}_{-g}(u^*)$.
 
-*Proof sketch.* $R_{g^{-1}}^{\,T}=R_g$.
+*Proof sketch.* The transpose of $R_{-g}$ is $R_g$.
 
 ## Depends on
 

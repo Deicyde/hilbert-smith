@@ -21,4 +21,4 @@ For a local datum, $d_T(c\cdot s,c\cdot t)=d_T(s,t)$ for all $c\in C_p$ and $s,t
 
 ## Proof depends on
 
-- [The orbit sup-distance is an invariant metric](orbit-sup-metric-properties.md)
+- [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)

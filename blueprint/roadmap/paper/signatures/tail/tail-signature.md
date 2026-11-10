@@ -6,9 +6,11 @@ origin: bridged
 
 # The tail signature
 
-$\sigma_{\mathrm{tail}}:\mathbb L_4(\mathcal V)\to\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)}$ sends $x$ to the class of $\big(\sigma_{G_i}(\mathrm{cls}^{-1}(\pi_i)_*y)\big)_i$, for a chosen lift $y$. It is an additive homomorphism.
+Let $\mathbf G$ be a [group sequence](../../categories/asymptotic/group-sequence.md). $\sigma_{\mathrm{tail}}:\mathbb L_4(\mathcal V_{\mathbf G})\to\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)}$ sends $x$ to the class of $\big(\sigma_{G_i}(\mathrm{cls}^{-1}(\pi_i)_*y)\big)_i$, for a chosen $y\in\mathbb L_4(\mathcal P_{\mathbf G})$ with $q_*y=x$. Here $\mathcal V_{\mathbf G}$ is the [point category](../../categories/asymptotic/point-quotient.md), $\pi_i$ are the coordinate functors of the [sequence category](../../categories/asymptotic/point-sequence-category.md), $\mathrm{cls}:L^p_4(\mathrm{Free}(\mathbb Q[G_i]))\to\mathbb L_4(\mathrm{Free}(\mathbb Q[G_i]))$ is the bijection of the [point comparison](../../l-theory/comparison/free-comparison.md), and $\sigma_{G_i}$ is the [integer signature](../l-four/integer-signature.md). It is an additive homomorphism.
 
-*Proof sketch.* $\mathrm{cls}^{-1}$ exists by the [point comparison](../../l-theory/comparison/free-comparison.md). Lifts exist by [tail-lift](tail-lift.md). The class is independent of the lift by [eventual agreement](tail-lift-eventual.md). Since $y+y'$ lifts $x+x'$, the map is additive.
+This rests on the open statement [Lemma U](../../l-theory/comparison/lemma-u.md), through the point comparison and the two lifting lemmas.
+
+*Proof sketch.* $\mathrm{cls}^{-1}$ exists by the [point comparison](../../l-theory/comparison/free-comparison.md). Lifts exist by [tail-lift](tail-lift.md). The class is independent of the lift by [eventual agreement](tail-lift-eventual.md). Since $y+y'$ lifts $x+x'$ and $(\pi_i)_*$, $\mathrm{cls}^{-1}$ and $\sigma_{G_i}$ are additive, the map is additive.
 
 ## Sources
 
@@ -16,9 +18,13 @@ $\sigma_{\mathrm{tail}}:\mathbb L_4(\mathcal V)\to\mathbb Z^{\mathbb N}/\mathbb 
 
 ## Depends on
 
+- [Group sequence](../../categories/asymptotic/group-sequence.md)
+- [Point category](../../categories/asymptotic/point-quotient.md)
+- [Sequence category](../../categories/asymptotic/point-sequence-category.md)
 - [Integer signature](../l-four/integer-signature.md)
-- [Point comparison for a group ring](../../l-theory/comparison/free-comparison.md)
+- [Point comparison for the free categories](../../l-theory/comparison/free-comparison.md)
 
 ## Proof depends on
 
-- [Lifts](tail-lift.md), [eventual agreement](tail-lift-eventual.md)
+- [Classes over $\mathcal V$ lift](tail-lift.md)
+- [Lifts agree eventually](tail-lift-eventual.md)

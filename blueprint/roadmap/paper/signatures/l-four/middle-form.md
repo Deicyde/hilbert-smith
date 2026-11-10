@@ -6,9 +6,9 @@ origin: bridged
 
 # The middle form
 
-Let $(C,\varphi)$ be a strict 4-dimensional symmetric Poincaré complex in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$. Its component $\varphi_2:C_2^*\to C_2$ maps real 2-cochains to real 2-chains. For classes of cocycles $x,y\in H^2(C;\mathbb R)$ set $b_C([x],[y])=\langle x,\varphi_2y\rangle$, and let $G$ act on $H^2(C;\mathbb R)$ by permutation.
+Let $(C,\varphi)$ be a strict 4-dimensional symmetric Poincaré complex in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$. Its component $\varphi_2:C_2^*\to C_2$ maps real 2-cochains to real 2-chains. The middle form is the bilinear form $b_C([x],[y])=\langle[x],[\varphi_2y]\rangle$ on $H^2(C;\mathbb R)$, for cocycles $x,y$, with the [evaluation pairing](real-evaluation.md); $G$ acts on $H^2(C;\mathbb R)$ by permuting the basis.
 
-*Proof sketch.* (Well-definedness.) The cycle condition $\partial\varphi=0$ in degree 2 reads $d\varphi_3+\varphi_2d^*=0$. So $\varphi_2$ sends a coboundary to a boundary, and a cocycle to a cycle. A boundary pairs to zero with a cocycle, because $\langle x,dw\rangle=\langle d^Tx,w\rangle$.
+*Proof sketch.* (Well-definedness.) The cycle condition $\partial\varphi=0$ in degree 1 reads $d\varphi_2-\varphi_1d^*=0$, so $\varphi_2$ sends a cocycle to a cycle. In degree 2 it reads $d\varphi_3+\varphi_2d^*=0$, so $\varphi_2$ sends a coboundary to a boundary, which is zero in homology. So $[y]\mapsto[\varphi_2y]$ is well defined, and the evaluation pairing is well defined on classes.
 
 ## Sources
 
@@ -18,4 +18,9 @@ Let $(C,\varphi)$ be a strict 4-dimensional symmetric Poincaré complex in $\mat
 ## Depends on
 
 - [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)
-- [Real chains and cochains](real-homology.md)
+- [Real homology](real-homology.md)
+- [The evaluation pairing](real-evaluation.md)
+
+## Proof depends on
+
+- [Structure complex](../../l-theory/base/complexes/structure-complex.md)

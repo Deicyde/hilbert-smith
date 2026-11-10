@@ -4,11 +4,11 @@ declaration: def
 origin: bridged
 ---
 
-# The subgroup $P_\ell$
+# The subgroup $P_i$
 
-For $\ell\ge1$, let $G_\ell=\mathbb Z/p^\ell\mathbb Z$ and let $\chi_\ell:G_\ell\to C_p=\mathbb Z/p\mathbb Z$ be reduction modulo $p$. Define $P_\ell=\ker\chi_\ell$.
+For $i\ge1$, let $G_i=\mathbb Z/p^i\mathbb Z$ and let $\chi_i:G_i\to C_p=\mathbb Z/p\mathbb Z$ be reduction modulo $p$. Define $P_i=\ker\chi_i$.
 
-Remark (not formalized). Under reduction modulo $p^\ell$, $P_\ell$ is the image of $H_1$, so it plays the role of $H_1/H_\ell$, and it has order $p^{\ell-1}$.
+Remark (not formalized). Under reduction modulo $p^i$, $P_i$ is the image of $H_1$, so it plays the role of $H_1/H_i$, and it has order $p^{i-1}$.
 
 ## Sources
 

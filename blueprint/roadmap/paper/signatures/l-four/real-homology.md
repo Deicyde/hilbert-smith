@@ -4,9 +4,11 @@ declaration: def
 origin: background
 ---
 
-# Real chains and cochains
+# Real homology
 
-Let $C$ be a chain complex in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$ with $C_r=(B_r,e_r)$. Its real chains are $C_r(\mathbb R)=\mathrm{im}(e_r)\subset\mathbb R^{B_r}$ with differential $d$. Its real cochains are $C^r(\mathbb R)=\mathrm{im}(e_r^T)$ with coboundary $d^T$. The homology and cohomology are $H_r(C;\mathbb R)$ and $H^r(C;\mathbb R)$. A chain map $f$ induces $f_*$ on homology and $f^T$ induces $f^*$ on cohomology. The evaluation pairing $\langle x,y\rangle=\sum_bx_by_b$ on cochains and chains descends to $H^r\times H_r\to\mathbb R$. $G$ acts on all of these by permuting each $B_r$.
+Let $C$ be a chain complex in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$ with $C_r=(n_r,e_r)$, over the [free category](../../categories/asymptotic/free-category.md). Its real homology $H_r(C;\mathbb R)$ is the homology in degree $r$ of the real complex $C_r(\mathbb R)=\mathrm{im}(e_r)\subset\mathbb R^{G\times\{1..n_r\}}$ with differential $d$. It is a functor of $C$: a chain map $f$ induces $f_*$. $G$ acts on $H_r(C;\mathbb R)$ by permuting the basis, $a(g,k)=(ag,k)$, which commutes with the equivariant $e_r$ and $d$.
+
+The real cohomology is $H^r(C;\mathbb R)=H_{-r}(C^{-*};\mathbb R)$, with $C^{-*}$ the [dual complex](../../l-theory/base/complexes/dual-complex.md). Since $(C^{-*})_{-r}=(n_r,e_r^T)$ and its differential is $\pm d^T$, $H^r(C;\mathbb R)$ is the cohomology of $\mathrm{im}(e_r^T)$ with coboundary $d^T$.
 
 ## Sources
 
@@ -14,5 +16,6 @@ Let $C$ be a chain complex in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$ with $
 
 ## Depends on
 
-- [The point category](../point-functors/point-category.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
 - [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
+- [Dual complex](../../l-theory/base/complexes/dual-complex.md)

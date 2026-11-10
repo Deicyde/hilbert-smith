@@ -17,6 +17,8 @@ Let $A\ne1$ be a compact Hausdorff commutative topological group with no element
 5. Each $\chi\circ\phi$ is locally constant, so $\phi$ is continuous because characters determine the topology.
 6. $\phi(1)\ne1$ because $\psi(\chi_0)\ne1$. A nonzero kernel would be some $p^j\mathbb Z_p$ by the classification of closed subgroups, which would make $\phi(1)$ an element of finite order different from $1$. So $\phi$ is injective.
 
+This proof rests on two open statements, [characters separate points](characters-separate.md) and, through realization, [characters of the dual of a discrete group](discrete-duality.md).
+
 ## Sources
 
 - New: Baer extension to $\mu_{p^\infty}$, then realization

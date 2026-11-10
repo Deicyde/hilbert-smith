@@ -39,13 +39,22 @@ The proof has four steps.
    subgroup $p\mathbb{Z}_p$. With the orbit metric this orbit space is
    a compact metric space $T$ carrying a free isometric action of the
    cyclic group $C_p$.
-3. *Construction and two computations.* From the local data a later
-   chapter builds a controlled Poincaré complex over $T\times S^n$
-   (Theorem C). Its tail of signatures is eventually $\pm 1$
-   (Theorem B, evaluation) and eventually divisible by $p$ (Theorem A,
-   divisibility), and no integer sequence does both. This proves
-   $p$-adic exclusion without boundary; the boundary case passes to the
-   intrinsic interior.
+3. *Construction and two computations.* The control space and the
+   groups $G_i=\mathbb Z/p^i$ form the standing data of the corner
+   chapter. Theorem C (compression) compresses the labelled chain
+   models of the torus form of the test map into a strict Poincaré
+   complex over $T\times S^n$ with a graph-type homotopy action of the
+   $G_i$, whose image after forgetting $T$ is the class of the torus
+   test map. Theorem A (corner) shows that for every such complex the
+   tail signature of the iterated cut is eventually divisible by $p$;
+   its arithmetic core is the divisibility theorem for classes over a
+   free $C_p$-space. Theorem B (evaluation) shows that the iterated cut
+   of the class of any labelling homotopic to the cubical pinch has
+   tail signature eventually equal to a constant $\pm1$, and the torus
+   test map is such a labelling. No integer sequence is eventually
+   both $\pm1$ and divisible by $p$. This proves $p$-adic exclusion
+   without boundary; the boundary case passes to the intrinsic
+   interior.
 4. *Groups.* Let a locally compact group act faithfully. Newman's
    theorem on small orbits rules out elements of prime order in the
    closure of any subgroup inside a small compact neighbourhood of the
@@ -58,7 +67,11 @@ Three results are cited rather than proved: Newman's theorem in two
 forms, the embedding of $\mathbb{Z}_p$ in a compact torsion-free group
 (whose proof through Pontryagin duality the appendices sketch), and the
 Gleason–Yamabe theorem. The appendices state them exactly as the main
-text uses them.
+text uses them, as open statements: theorems that the Lean states now
+and proves later. A few statements inside the chapters are open in the
+same sense, among them Lemma U of the L-theory chapter and the splitting
+of idempotents in the bounded homotopy category used by the corner
+chapter. Both main theorems rest on all of these until they are proved.
 
 ## Attribution
 
@@ -80,6 +93,16 @@ than either paper's text.
 
 ## Chapters
 
-- [Local data from a faithful action](local-data/README.md)
-- [The main theorems](proofs/README.md)
-- [Appendices: the cited inputs](inputs/README.md)
+In reading order:
+
+- [Algebraic L-theory](l-theory/README.md): L-groups of strict symmetric Poincaré complexes over any category with strict duality, their bounded and ultimate lower versions, and the localization boundary with its exactness.
+- [Asymptotic controlled categories](categories/README.md): categories of sequences of free $G_i$-modules labelled in a compact metric space, with propagation tending to zero, their support subcategories and exterior quotients, the functors between them, and the cut boundary.
+- [Integer signatures and tails](signatures/README.md): equivariant signatures of 4-dimensional Poincaré complexes over $\mathbb Q[G]$ and the tail signature $\sigma_{\mathrm{tail}}$, a class of integer sequences modulo finitely supported ones.
+- [Divisibility over a free $C_p$-space](divisibility/README.md): the [divisibility theorem](divisibility/divisibility.md), that the tail signature of every class over a free isometric $C_p$-space is eventually divisible by $p$.
+- [The graph corner](corner/README.md): the standing data and [Theorem A](corner/theorem/theorem-a.md), turning a Poincaré complex over $T\times S^n$ with a graph-type homotopy action into a class over $T$, so that its iterated cut has tail signature eventually divisible by $p$.
+- [Local data from a faithful action](local-data/README.md): from a faithful action of $\mathbb Z_p$, a good point, a local datum on an open subset of $\mathbb R^n$, the test map, and the compact control space $T$ with its free isometric $C_p$-action.
+- [Chain models](chain-models/README.md): the cubical chain models of $\mathbb T^n\times\mathbb{CP}^2$ with their Poincaré structure, and chain approximations of the action with estimates in sphere labels.
+- [Compression](compression/README.md): [Theorem C](compression/theorem-c.md), cutting the chain models down to the cells near the test region to get a Poincaré complex over $T\times S^n$ with a graph-type homotopy action, whose image after forgetting $T$ is the class of the torus test map.
+- [Evaluation of the iterated cut](evaluation/README.md): [Theorem B](evaluation/theorem-b.md), that the iterated cut of the class of a labelling homotopic to the cubical pinch has tail signature eventually $\pm1$, and its [form for the test map](evaluation/theorem-b-test-map.md).
+- [The main theorems](proofs/README.md): the reduction to one chart, local exclusion from Theorems A, B and C, the boundary case, and Hilbert–Smith through the absence of small subgroups.
+- [Appendices: the cited inputs](inputs/README.md): Newman's theorem, $\mathbb Z_p$ in compact torsion-free groups, and the Gleason–Yamabe theorem, stated as open statements.

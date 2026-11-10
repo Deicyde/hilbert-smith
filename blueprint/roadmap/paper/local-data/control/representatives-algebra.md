@@ -6,12 +6,12 @@ origin: bridged
 
 # Algebra of the representatives
 
-Let $\ell\ge1$, let $q_\ell:\mathbb Z_p\to G_\ell=\mathbb Z/p^\ell\mathbb Z$ be reduction modulo $p^\ell$ and $\chi_\ell:G_\ell\to C_p$ reduction modulo $p$. For all $g,g'\in G_\ell$:
-1. $q_\ell(r_\ell(g))=g$ and $r_\ell(0)=0$;
-2. $r_\ell(g)+r_\ell(g')-r_\ell(g+g')\in H_\ell$;
-3. $\chi_\ell(g)=q_1(r_\ell(g))$.
+Let $i\ge1$, let $q_i:\mathbb Z_p\to G_i=\mathbb Z/p^i\mathbb Z$ be reduction modulo $p^i$ and $\chi_i:G_i\to C_p$ reduction modulo $p$. For all $g,g'\in G_i$:
+1. $q_i(r_i(g))=g$ and $r_i(0)=0$;
+2. $r_i(g)+r_i(g')-r_i(g+g')\in H_i$;
+3. $\chi_i(g)=q_1(r_i(g))$.
 
-*Proof sketch.* (1) and (3) are read off from the definition. For (2), the element reduces to $g+g'-(g+g')=0$ modulo $p^\ell$, so it lies in the kernel of $q_\ell$, which is $H_\ell$.
+*Proof sketch.* (1) and (3) are read off from the definition. For (2), the element reduces to $g+g'-(g+g')=0$ modulo $p^i$, so it lies in the kernel of $q_i$, which is $H_i$.
 
 ## Sources
 
@@ -24,4 +24,4 @@ Let $\ell\ge1$, let $q_\ell:\mathbb Z_p\to G_\ell=\mathbb Z/p^\ell\mathbb Z$ be 
 
 ## Proof depends on
 
-- [The kernel of reduction modulo $p^\ell$](reduction-kernel.md)
+- [The kernel of reduction modulo $p^i$](reduction-kernel.md)

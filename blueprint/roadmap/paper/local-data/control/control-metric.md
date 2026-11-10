@@ -19,5 +19,5 @@ For a local datum, define $d_T(\pi z,\pi w)=\min_{b\in H_1}d_1(z,b\cdot w)$ for 
 
 ## Proof depends on
 
-- [The orbit sup-distance is an invariant metric](orbit-sup-metric-properties.md)
+- [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)
 - [The subgroups $H_j$ form a basis at $0$](../subgroups/padic-subgroups-basis.md)

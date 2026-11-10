@@ -21,4 +21,4 @@ For a local datum, if $c\in C_p$, $t\in T$ and $c\cdot t=t$, then $c=0$.
 ## Proof depends on
 
 - [Stabilizers on the test region](../chart/stabilizers-on-test-region.md)
-- [The kernel of reduction modulo $p^\ell$](reduction-kernel.md)
+- [The kernel of reduction modulo $p^i$](reduction-kernel.md)

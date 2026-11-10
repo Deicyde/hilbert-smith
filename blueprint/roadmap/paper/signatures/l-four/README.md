@@ -4,9 +4,10 @@ article_id: af_7f95fad30a48cfc5e6920850
 
 # The signature on $L^p_4$
 
-Real chains and cochains, the middle form of a $4$-dimensional Poincaré complex, the vanishing on boundaries, and the equivariant and integer signatures on $L^p_4$ with their restriction, permutation and forgetting rules.
+Real homology and the evaluation pairing, the middle form of a $4$-dimensional Poincaré complex, the vanishing on boundaries, and the equivariant and integer signatures on $L^p_4$ with their restriction, permutation and forgetting rules.
 
-- [Real chains and cochains](real-homology.md)
+- [Real homology](real-homology.md)
+- [The evaluation pairing](real-evaluation.md)
 - [Real homology is homotopy invariant](real-homology-invariance.md)
 - [Evaluation is a perfect pairing](real-evaluation-pairing.md)
 - [The middle form](middle-form.md)

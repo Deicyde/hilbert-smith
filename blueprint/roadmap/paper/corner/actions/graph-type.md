@@ -6,9 +6,9 @@ origin: bridged
 
 # Graph-type matrices
 
-Let $X$ be a metric space with an isometric $C_p$-action. Let $M,M'$ be finite based $\mathbb Q$-modules whose basis elements carry labels $x_b\in X$. Fix $c\in C_p$ and $\delta\ge0$. A matrix $u:M\to M'$ has *graph type $c$ with bound $\delta$* if every nonzero entry $u_{b'b}$ satisfies $d(x_{b'},c\,x_b)\le\delta$.
+Let $X$ be a metric space with an isometric action $(c,x)\mapsto c\cdot x$ of $C_p=\mathbb Z/p$, written additively. Let $M,M'$ be finite based $\mathbb Q$-modules whose basis elements carry labels $\lambda_b\in X$. Fix $c\in C_p$ and $\delta\ge0$. A matrix $u:M\to M'$ has *graph type $c$ with bound $\delta$* if every nonzero entry $u_{b'b}$ satisfies $d(\lambda_{b'},c\cdot\lambda_b)\le\delta$.
 
-For $X=T\times S^n$ with the maximum metric and $C_p$ acting on $T$, this says $d_T(t_{b'},c\,t_b)\le\delta$ and $d(z_{b'},z_b)\le\delta$. Type $1$ with bound $\delta$ is the same as propagation at most $\delta$.
+For $X=T\times S^n$ as in the [standing data](../standing-data.md), with labels $\lambda_b=(t_b,z_b)$, this says $d_T(t_{b'},c\cdot t_b)\le\delta$ and $d_S(z_{b'},z_b)\le\delta$. Type $0$ with bound $\delta$ is the same as [propagation](../../categories/asymptotic/propagation.md) at most $\delta$.
 
 ## Sources
 

@@ -10,6 +10,8 @@ Let $M$ be a connected $n$-manifold and let $G$ be a locally compact topological
 
 *Proof sketch.* $G$ is Hausdorff because faithful actions give Hausdorff groups, and it has no small subgroups. The Gleason–Yamabe theorem gives the conclusion.
 
+This theorem rests on the open statement [Gleason–Yamabe](../inputs/gleason-yamabe/gleason-yamabe.md) and, through the absence of small subgroups, on the open statements that result rests on.
+
 ## Sources
 
 - [HS paper, Section 13](../../../sources/hs-paper.md#section-13-the-contradiction-seccontradiction-lines-1326-1391) (proof of Corollary 1.2)

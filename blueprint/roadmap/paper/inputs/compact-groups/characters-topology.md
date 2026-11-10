@@ -11,6 +11,8 @@ Let $A$ be a compact Hausdorff commutative topological group and $X$ a topologic
 
 *Proof sketch.* The map $A\to\prod_{\chi}\mathbb T$ sending $a$ to $(\chi(a))_\chi$ is continuous, and it is injective because characters separate points. A continuous injection from a compact space to a Hausdorff space is a closed embedding, so continuity into $A$ is continuity of each coordinate.
 
+This proof rests on the open statement [characters separate points](characters-separate.md).
+
 ## Sources
 
 - New: the compact-to-Hausdorff embedding

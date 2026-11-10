@@ -6,7 +6,7 @@ origin: bridged
 
 # Representatives of the finite quotients
 
-For $\ell\ge1$, define $r_\ell:\mathbb Z/p^\ell\mathbb Z\to\mathbb Z_p$ by sending a residue class to its representative in $\{0,\dots,p^\ell-1\}$, viewed as a $p$-adic integer.
+For $i\ge1$, define $r_i:\mathbb Z/p^i\mathbb Z\to\mathbb Z_p$ by sending a residue class to its representative in $\{0,\dots,p^i-1\}$, viewed as a $p$-adic integer.
 
 ## Sources
 
