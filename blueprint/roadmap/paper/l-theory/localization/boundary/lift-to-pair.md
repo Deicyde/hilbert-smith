@@ -42,3 +42,11 @@ Here $p:q(D\cup_PR)\to qD$ is the isomorphism of [The closed union becomes the i
 - [Algebraic union](../../base/pairs/algebraic-union.md)
 - [Closed gluing](../../base/pairs/gluing-closed.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
+
+## Proof depends on
+
+- [Stabilization](../decorations/stabilization.md)
+- [The completed quotient is full](../../base/categories/karoubi-quotient-full.md)
+- [Kernel of the completed quotient](../../base/categories/karoubi-quotient-kernel.md)
+- [Transport of pairs along homotopy equivalences](../../base/pairs/pair-transport-equivalence.md)
+- [Completion of a subcategory](../../base/categories/kar-subcategory.md)

@@ -27,10 +27,11 @@ is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 ## Depends on
 
 - [Strict Poincaré pair](../../base/pairs/poincare-pair.md)
-- [Tensor product of complexes over the line](complex-product.md)
+- [Tensor product of complexes](complex-product.md)
 - [External product of structures](external-product.md)
 - [The line is Poincaré](symmetric-line-poincare.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Duals of box products](box-dual.md)
 
 ## Proof depends on
 

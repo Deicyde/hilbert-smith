@@ -18,3 +18,4 @@ Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be as in [
 
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Duality functor](../../base/categories/duality-functor.md)
+- [Decorated objects](decorated-object.md)

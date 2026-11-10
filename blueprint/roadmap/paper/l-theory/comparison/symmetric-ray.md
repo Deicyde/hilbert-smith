@@ -6,7 +6,7 @@ origin: background
 
 # The symmetric ray
 
-$\Lambda_+\subset\Lambda$ is the subcomplex of [the symmetric line](../localization/products/symmetric-line.md) spanned by the $v_n$ and $e_{n+1/2}$ with $n\ge0$, an object of $H_+$ over $\mathbb Q$. Its structure $\delta\phi_0\in M(\Lambda_+)_1$ is $\delta\phi_0(e_{n+1/2}^*)=\tfrac12(v_n+v_{n+1})$ for $n\ge0$, $\delta\phi_0(v_n^*)=\tfrac12(e_{n-1/2}+e_{n+1/2})$ for $n\ge1$, and $\delta\phi_0(v_0^*)=\tfrac12e_{1/2}$.
+$\Lambda_+\subset\Lambda$ is the subcomplex of [the symmetric line](../localization/products/symmetric-line.md) spanned by the $v_n$ and $e_{n+1/2}$ with $n\ge0$, a complex in $H_+$ for the duality category $\mathbb Q$ of [based vector spaces](../localization/products/based-vector-spaces.md). Its structure $\delta\phi_0\in M(\Lambda_+)_1$ is $\delta\phi_0(e_{n+1/2}^*)=\tfrac12(v_n+v_{n+1})$ for $n\ge0$, $\delta\phi_0(v_n^*)=\tfrac12(e_{n-1/2}+e_{n+1/2})$ for $n\ge1$, and $\delta\phi_0(v_0^*)=\tfrac12e_{1/2}$.
 
 ## Sources
 
@@ -16,3 +16,4 @@ $\Lambda_+\subset\Lambda$ is the subcomplex of [the symmetric line](../localizat
 
 - [The symmetric line](../localization/products/symmetric-line.md)
 - [Half-line subcategories](../bounded/half-lines/half-lines.md)
+- [Based vector spaces](../localization/products/based-vector-spaces.md)

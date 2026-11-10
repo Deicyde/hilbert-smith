@@ -19,10 +19,11 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 
 ## Depends on
 
-- [Tensor product of complexes over the line](../products/complex-product.md)
+- [Tensor product of complexes](../products/complex-product.md)
 - [The symmetric line](../products/symmetric-line.md)
 - [Decorated objects](../decorations/decorated-object.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
+- [Duals of box products](../products/box-dual.md)
 
 ## Proof depends on
 

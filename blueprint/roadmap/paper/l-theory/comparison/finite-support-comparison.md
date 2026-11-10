@@ -8,6 +8,8 @@ origin: bridged
 
 Let $\mathbf G$ be a group sequence. Then $\mathrm{cls}:L^p_k(\mathcal S_{\mathbf G})\to\mathbb L_k(\mathcal S_{\mathbf G})$ is bijective for all $k$, where $\mathcal S_{\mathbf G}$ is the [finite-support subcategory](../../categories/asymptotic/eventually-zero-subcategory.md).
 
+This rests on the open statement [Lemma U](lemma-u.md).
+
 *Proof sketch.* [Lemma U](lemma-u.md) is the hypothesis of the [stable criterion](../bounded/categories/lower-k-vanishing-criterion.md), so $K_{-j}(\mathcal S_{\mathbf G})=0$ for every $j\ge1$. Then apply [the decoration comparison](decoration-comparison.md).
 
 ## Sources

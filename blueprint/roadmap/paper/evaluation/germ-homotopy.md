@@ -3,18 +3,18 @@ article_id: af_2dc36290e148fc097e84abe4
 declaration: lemma
 origin: bridged
 ---
-# Homotopic labellings have equal germs
+# Homotopic labellings have equal classes
 
-If $c_0,c_1:T^n\to S^n$ are homotopic, then $\mathfrak m_{c_0}=\mathfrak m_{c_1}$. In particular this holds for homotopies relative to $\infty$; no condition on the exterior is needed.
+If $c_0,c_1:\mathbb T^n\to S^n$ are homotopic, then $\mathfrak m_{c_0}=\mathfrak m_{c_1}$, for the [labelled-model class](germ.md).
 
 *Proof sketch.*
-1. Let $c:[0,1]\times T^n\to S^n$ be a homotopy. Let $W_i$ be the block $C(k_i)\otimes I_{k_i}\otimes P$, where the arc realizes $[0,1]$ with mesh $1/k_i$. Label each cell by $c$ at its centre.
-2. [Block duality](../chain-models/blocks/block-duality.md) makes $(\partial W_i\to W_i)$ a strict Poincaré pair. Its propagation in $d_\infty$ on $T^n\times[0,1]$ is at most $h_i$, so its sphere propagation is at most $\omega_c(h_i)\to0$.
-3. $\partial W_i=D_i\otimes[0]\oplus D_i\otimes[k_i]$, with structure $-s\varphi_i\oplus s\varphi_i$ for one sign $s$. The end labels are $c_0$ and $c_1$. So $(D_i,s\varphi_i)_{c_1}$ is cobordant to $(D_i,s\varphi_i)_{c_0}$, and their classes in $\mathbb L_N(\mathcal A_{\mathbf 1}(S^n))$ are equal ([cobordism](../l-theory/base/groups/l-group.md)). Multiply by $s$ and apply the quotient functor.
+1. Let $c:\mathbb T^n\times[0,1]\to S^n$ be a homotopy. Let $W_i$ be the [block](../chain-models/blocks/block-pair.md) $C(k_i)\otimes I_{k_i}\otimes P$ ($n$ circle factors, one arc factor realizing $[0,1]$ with mesh $1/k_i$, then $P$), and label each cell by $c$ at its centre. Since $c$ is uniformly continuous, these labels satisfy the hypothesis of [block duality](../chain-models/blocks/block-duality.md) (6), so $(\partial W_i\to W_i,\varphi_{W_i},\varphi_{\partial W_i})_i$ is a strict $(N+1)$-dimensional pair in $\mathcal A_{\mathbf 1}(S^n)$.
+2. $\partial W_i=D_i\otimes[0]\oplus D_i\otimes[k_i]$, and since the arc is preceded by $n$ circles, $\varphi_{\partial W_i}=-s\varphi_i\oplus s\varphi_i$ with $s=(-1)^n$ ([block pair](../chain-models/blocks/block-pair.md), item 4, with $\varphi_C([0]^*)=-[0]$ and $\varphi_C([k_i]^*)=[k_i]$ from the [arc pair](../chain-models/blocks/arc-pair.md)). The end labels are $c_0$ and $c_1$ at the cell centres, which are the labels of the [labelled models](labelled-model.md) for $c_0$ and $c_1$.
+3. So $(D_i,s\varphi_i)_{c_1}\oplus(D_i,-s\varphi_i)_{c_0}$ bounds, and $[D_i,s\varphi_i]_{c_1}=[D_i,s\varphi_i]_{c_0}$ in $L^p_N(\mathcal A_{\mathbf 1}(S^n))$ ([L-groups](../l-theory/base/groups/l-group.md), [negation](../l-theory/base/groups/l-group-neg.md), after the completion functor). Multiply by $s$, apply $\mathrm{cls}$ ([ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)) and the map induced by the quotient functor.
 
 ## Sources
-- HS paper, Section 12 (scalar control homotopies). New: the cylinder is an exact block.
+- HS paper, Section 12 (homotopies of the scalar labelling). New: the cylinder is an exact block, and no condition relative to $\infty$ is needed.
 ## Depends on
-- [Germ](germ.md)
+- [Labelled-model class](germ.md)
 ## Proof depends on
-- [Block pair](../chain-models/blocks/block-pair.md), [block duality](../chain-models/blocks/block-duality.md), [L-groups](../l-theory/base/groups/l-group.md), [functoriality](../l-theory/ultimate/groups/induced-map-comp.md)
+- [Block pair](../chain-models/blocks/block-pair.md), [block duality](../chain-models/blocks/block-duality.md), [arc pair](../chain-models/blocks/arc-pair.md), [labelled model](labelled-model.md), [L-groups](../l-theory/base/groups/l-group.md), [negation in L](../l-theory/base/groups/l-group-neg.md), [ultimate L-group and cls](../l-theory/ultimate/groups/ultimate-l-group.md), [functoriality](../l-theory/ultimate/groups/induced-map-comp.md)

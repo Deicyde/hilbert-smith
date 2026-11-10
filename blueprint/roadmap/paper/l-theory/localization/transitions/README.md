@@ -11,6 +11,7 @@ Product with the line defines the transition maps between bounded levels and the
 - [Decorated transition](decorated-transition.md)
 - [Quotient maps at each level](quotient-level.md)
 - [Iterated quotient functors](quotient-functor-level.md)
+- [Iterated induced quotient functors](induced-functor-level.md)
 - [Forgetting after the decorated transition](transition-quotient.md)
 - [Level boundary](level-boundary.md)
 - [Naturality of the transition](transition-naturality.md)

@@ -5,18 +5,22 @@ origin: bridged
 ---
 # Endpoint lemma
 
-Let $i\ge i_0$, and let $u:M_1\to M_2$ and $v:M_0\to M_1$ lie in $\mathcal P_i$, with types $c_u,c_v$ and notation as in the [product rule](compression-product-rule.md). Let $W$ be the span in $M_1$ of the discarded cells (or their duals) lying in $\mathcal B_i(u)$, with inclusion $\iota_W$ and projection $p_W$. Then:
-1. $p_2uQ_1v\jmath_0=x\,y$, with $y=p_Wv\jmath_0$ and $x=p_2u\iota_W$;
-2. $y$ has graph type $c_v$ and $x$ graph type $c_u$, with bound $\delta_i$;
-3. every label of $W$ lies in $Z=T\times Z_0$.
+Let $i\ge i_0$, let $M_0,M_1,M_2$, $p_j$, $\jmath_j$ and $Q_1$ be as in the [product rule](compression-product-rule.md), and let $\alpha:M_1\to M_2$ and $\beta:M_0\to M_1$ lie in $\mathcal P_i$ ([chain-model estimates](../chain-models/grid/chain-model-estimates.md)), with types $c_\alpha,c_\beta\in C_p$. Let $W$ be the span in $M_1$ of the discarded cells (or their duals) that lie in $\mathcal B_i(u)$ ([buffered cells](../chain-models/grid/buffered-cells.md)), with the [control labels](../chain-models/grid/control-labels.md), and let $\iota_W,p_W$ be its inclusion and projection. Then:
+1. $p_2\,\alpha\,Q_1\,\beta\,\jmath_0=x\,y$, with $y=p_W\beta\jmath_0$ and $x=p_2\alpha\iota_W$;
+2. $y$ has [graph type](../corner/actions/graph-type.md) $c_\beta$ and $x$ has graph type $c_\alpha$, both with bound $\delta_i$;
+3. every label of $W$ lies in $Z=T\times Z_0$, the exterior of the [standing data](../corner/standing-data.md) for the control space $T$ and the buffer radius $R$.
 
-Hence $p_2uQ_1v\jmath_0$ is an [exterior witness](../corner/actions/graph-type.md) of type $c_u+c_v$ with bound $\delta_i$.
+Hence $p_2\alpha Q_1\beta\jmath_0$ is an [exterior witness](../corner/actions/exterior-witness.md) of type $c_\alpha+c_\beta$ with bound $\delta_i$, through $W$ relabelled by $\lambda'(w)=(-c_\beta)\cdot\lambda(w)$.
 
-*Proof sketch.* Take a nonzero term $u_{b'w}v_{wb}$ with $b,b'$ retained and $w$ discarded. Then $b\in\mathcal B_i(t')$, and the sphere propagation of $v$ is less than $\gamma$, so $s_w\in B(0,u)$ and $w\in W$. This gives (1). The entries of $x$ and $y$ join cells of $\mathcal B_i(u)$, which gives (2) by [buffers](buffer-eventually.md) (3). For (3): $w$ is discarded, so $x_w\notin K_t$ and $|s_w|>t>R$, or $s_w=\infty$; thus $s_w\in Z_0$. Also $\tilde x_w\in U^+\subseteq Z^+$, so $\pi(\tilde x_w)$ is defined. Relabel $W$ by $-c_v$, using that $Z$ is $C_p$-invariant and $C_p$ acts isometrically: $y$ becomes type $0$ and $x$ type $c_u+c_v$.
+*Proof sketch.*
+1. Retained cells lie in $\mathcal B_i(t')$ ([buffers](buffer-eventually.md) (1)), so $\beta\jmath_0=\iota_u\,p_u\beta\jmath_0$ by buffers (2): a nonzero entry of $\beta$ from a retained cell lands in $\mathcal B_i(u)$. On $\mathcal B_i(u)$, $Q_1$ is the projection onto $W$, so $Q_1\beta\jmath_0=\iota_Wp_W\beta\jmath_0$.
+2. Retained cells and $W$ lie in $\mathcal B_i(u)$, so $y$ and $x$ are submatrices of $\beta^{[u]}$ and $\alpha^{[u]}$; apply buffers (3) and $\delta_i=\epsilon'_i$ ([start index](start-index.md)).
+3. A cell $w$ of $W$ is discarded, so $f_T$ of its cube misses $\overline B(0,t)$; its sphere label $s_w$, the value of $f_T$ at the centre, has $|s_w|>t>R$ or $s_w=\infty$. So $s_w\in Z_0$, and $\lambda(w)$ has second coordinate $s_w$.
+For the witness: $Z$ is $C_p$-invariant and $C_p$ acts isometrically ([graph-type calculus](../corner/actions/graph-type-calculus.md)), so with the labels $\lambda'$ the labels of $W$ stay in $Z$, $y$ has type $0$ and $x$ has type $c_\alpha+c_\beta$, both with bound $\delta_i$.
 
 ## Sources
 - HS paper, Section 10 (exterior band). New: words of length two suffice, so there is no length parameter and no band.
 ## Depends on
-- [Buffers](buffer-eventually.md), [graph-type matrices](../corner/actions/graph-type.md), [product rule](compression-product-rule.md)
+- [Product rule](compression-product-rule.md), [chain-model estimates](../chain-models/grid/chain-model-estimates.md), [buffered cells](../chain-models/grid/buffered-cells.md), [control labels](../chain-models/grid/control-labels.md), [graph-type matrices](../corner/actions/graph-type.md), [exterior witnesses](../corner/actions/exterior-witness.md), [standing data](../corner/standing-data.md), [start index](start-index.md)
 ## Proof depends on
-- [Buffered restriction](../chain-models/approximations/buffered-restriction.md), [control action isometric](../local-data/control/control-action-isometric.md)
+- [Buffers hold eventually](buffer-eventually.md), [graph-type calculus](../corner/actions/graph-type-calculus.md), [sphere labels](../chain-models/grid/sphere-labels.md), [retained cells](retained-cells.md)

@@ -5,9 +5,9 @@ origin: bridged
 ---
 # Retained and discarded cells
 
-Let $K_t=f_T^{-1}(\overline B(0,t))\subseteq T^n$, a closed set. A cube $c$ of $C(k_i)$, and every cell $c\otimes e_r$ of $D_i$, is *discarded* if $|c|\cap K_t=\varnothing$ and *retained* otherwise. $F_i\subseteq D_i$ is the span of the discarded cells. $R_i$ is the set of retained cells.
+Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer radius $t$ and [torus test map](../chain-models/approximations/torus-test-map.md) $f_T$, and let $K_t=f_T^{-1}(\overline B(0,t))\subseteq\mathbb T^n$. A cell $c\otimes e_r$ of the [chain model](../chain-models/grid/chain-model.md) $D_i$, and its dual in $D_i^{N-*}$, is *retained* if the closed cube $|c|$ meets $K_t$, and *discarded* otherwise. Write $\mathrm{Ret}_i$ for the set of retained cells of $D_i$.
 
 ## Sources
-- HS paper, Section 10 (far simplices). New: the cubical cells.
+- HS paper, Section 10 (far simplices). New: the cells are cubical, and the test is on the closed cube, not on the label.
 ## Depends on
-- [Torus test map](../chain-models/approximations/torus-test-map.md), [chain model](../chain-models/grid/chain-model.md), [fixed local data](../local-data/control/fixed-local-data.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md), [torus test map](../chain-models/approximations/torus-test-map.md), [chain model](../chain-models/grid/chain-model.md)

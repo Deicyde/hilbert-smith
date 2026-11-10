@@ -11,6 +11,8 @@ $$x\longmapsto\iota_{j+1}\big(\partial^{(j)}x\big),\qquad x\in L^{\langle -j\ran
 where $\partial^{(j)}:L^{\langle -j\rangle}_k(\mathcal A/\mathcal U)\to L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ is the [level boundary](../../localization/transitions/level-boundary.md). These maps are compatible with $t$: by [Levels are compatible with the transition](../groups/level-compatible.md) and [Transition commutes with the boundary](../../localization/transitions/transition-boundary-commute.md),
 $$\iota_{j+1}\partial^{(j)}x=\iota_{j+2}\,t\,\partial^{(j)}x=\iota_{j+2}\,\partial^{(j+1)}tx.$$
 
+This definition rests on the open statement [Lifting](../../localization/boundary/lift-to-pair.md), through the level boundaries.
+
 ## Sources
 
 - [Carlsson-Pedersen 1995, Thm 4.2, spectrum-level boundary](../../../../../sources/paper/carlsson-pedersen-1995.md) [U]

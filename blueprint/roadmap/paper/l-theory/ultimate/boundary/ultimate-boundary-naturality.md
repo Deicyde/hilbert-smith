@@ -11,7 +11,7 @@ Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be involut
 *Proof sketch.* Every element of the colimit comes from a finite level ([Every element comes from a finite level](../groups/level-exhaustive.md)); take $x\in L^{\langle -j\rangle}_k(\mathcal A/\mathcal U)$, and let $F^{(j+1)}$ be the functor induced on $C_{\mathbb Z^{j+1}}\mathcal A/C_{\mathbb Z^{j+1}}\mathcal U$ by $C_{\mathbb Z^{j+1}}F$.
 1. By [The induced map at each level](../groups/induced-map-level.md) and [The ultimate boundary at each level](ultimate-boundary-level.md), $\partial'\bar F_*\iota_jx=\iota_{j+1}\,\partial'\big(t^{\mathrm{im}}(C_{\mathbb Z^j}\bar F)_*x\big)$.
 2. By [Naturality of the decorated transition](../../localization/transitions/decorated-transition-naturality.md), this is $\iota_{j+1}\,\partial'(F^{(j+1)})^{\mathrm{im}}_*t^{\mathrm{im}}x$, the decorated induced map being defined by [Induced quotient functors keep decorations](../../localization/decorations/induced-quotient-decorated.md).
-3. [Naturality of the boundary](../../localization/boundary/boundary-naturality.md) for $C_{\mathbb Z^{j+1}}F$ and the filtrations $C_{\mathbb Z^{j+1}}\mathcal U\subset C_{\mathbb Z^{j+1}}\mathcal A$, $C_{\mathbb Z^{j+1}}\mathcal U'\subset C_{\mathbb Z^{j+1}}\mathcal A'$ ([Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md), item 1), whose restriction is $C_{\mathbb Z^{j+1}}(F|_{\mathcal U})$, turns it into $\iota_{j+1}(C_{\mathbb Z^{j+1}}F|_{\mathcal U})_*\partial^{(j)}x$.
+3. [Naturality of the boundary](../../localization/boundary/boundary-naturality.md) for $C_{\mathbb Z^{j+1}}F$ and the filtrations $C_{\mathbb Z^{j+1}}\mathcal U\subset C_{\mathbb Z^{j+1}}\mathcal A$, $C_{\mathbb Z^{j+1}}\mathcal U'\subset C_{\mathbb Z^{j+1}}\mathcal A'$ ([Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)), whose restriction is $C_{\mathbb Z^{j+1}}(F|_{\mathcal U})$, turns it into $\iota_{j+1}(C_{\mathbb Z^{j+1}}F|_{\mathcal U})_*\partial^{(j)}x$.
 4. By the two level lemmas again, this is $(F|_{\mathcal U})_*\partial\iota_jx$.
 
 ## Sources
@@ -32,4 +32,4 @@ Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be involut
 - [Naturality of the decorated transition](../../localization/transitions/decorated-transition-naturality.md)
 - [Induced quotient functors keep decorations](../../localization/decorations/induced-quotient-decorated.md)
 - [Naturality of the boundary](../../localization/boundary/boundary-naturality.md)
-- [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
+- [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)

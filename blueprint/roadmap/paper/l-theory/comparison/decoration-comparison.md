@@ -22,3 +22,4 @@ If $K_{-j}(B)=0$ for all $j\ge1$, then $\mathrm{cls}:L^p_k(B)\to\mathbb L_k(B)$ 
 ## Proof depends on
 
 - [The half-line comparison](half-line-comparison.md)
+- [Iterated bounded categories](../bounded/categories/iterated-bounded-category.md)

@@ -5,13 +5,17 @@ origin: bridged
 ---
 # The compressed complex is Poincaré
 
-$(C,\hat d,\hat\varphi)$ is a strict $N$-dimensional symmetric Poincaré complex in $\mathcal B_{\mathbf 1,Z}(T\times S^n)$, concentrated in $[0,N]$. It has homotopy inverse $\hat b$ and homotopies $\hat H,\hat H'$.
+Let $Z=T\times Z_0$ be the exterior of the [standing data](../corner/standing-data.md) for the control space $T$ and the buffer radius $R$. Then $(C,\hat\varphi)$, with differential $\hat d$, is a [strict $N$-dimensional symmetric Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md) in the [exterior quotient](../categories/supports/exterior-quotient.md) $\mathcal B_{\mathbf 1,Z}(T\times S^n)$, concentrated in $[0,N]$, whose chain objects are objects of $\mathcal B_{\mathbf 1,Z}(T\times S^n)$. A homotopy inverse of $\hat\varphi_\natural$ is $\hat b$, with homotopies $\hat H$ and $\hat H'$.
 
-*Proof sketch.* The maps $\hat\varphi,\hat b,\hat H,\hat H'$ are submatrices of type-$0$ elements of $\mathcal P_i$ on cells of $\mathcal B_i(u)$, so their propagation is at most $\delta_i\to0$; they are morphisms. [Residuals](compressed-residuals.md) (4) are exact. In (5)-(7), every term on the right is a type-$0$ endpoint word. It factors through the object $(W_i)$, which is supported in $Z$, by morphisms, so it vanishes in the [exterior quotient](../categories/supports/exterior-quotient.md). A sum factors through the direct sum.
+*Proof sketch.*
+1. Morphisms. $\hat d$ has propagation at most $\delta_i$ ([compressed differential](compressed-differential.md)). For $i\ge i_0$, $\hat\varphi,\hat b,\hat H,\hat H'$ are submatrices of $w^{[u]}$ for type-$0$ elements $w\in\mathcal P_i$, because retained cells lie in $\mathcal B_i(u)$ ([buffers](buffer-eventually.md) (1)); so their propagation is at most $\delta_i$ by buffers (3). Since $\delta_i\to0$, all of them are morphisms of $\mathcal A_{\mathbf 1}(T\times S^n)$.
+2. [Residuals](compressed-residuals.md) (4) give $\partial\hat\varphi=0$ and invariance under the involution, exactly.
+3. In residuals (5)-(7), every word on the right is $p_2\alpha Q_1\beta\jmath_0$ with $\alpha,\beta$ of type $0$. By the [endpoint lemma](endpoint-lemma.md) it is $x\,y$ through $W_i$, with $x,y$ of propagation at most $\delta_i$ and every label of $W_i$ in $Z$. So the levelwise sums factor through an object of $\mathcal A_Z$ ([sums of witnesses](../corner/actions/witness-sum.md)), and they are zero in $\mathcal B_{\mathbf 1,Z}(T\times S^n)$. Below $i_0$ all maps are zero, and morphisms are taken modulo eventual equality.
+4. Hence $\hat b$ is a chain map, and $\hat\varphi_\natural\hat b\simeq1$, $\hat b\hat\varphi_\natural\simeq1$ through $\hat H,\hat H'$.
 
 ## Sources
 - HS paper, Section 10 (compressed realization). New: symmetric over $\mathbb Q$, with no quadratic halving.
 ## Depends on
-- [Compressed differential](compressed-differential.md), [compressed maps](compressed-maps.md), [strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
+- [Compressed differential](compressed-differential.md), [compressed maps](compressed-maps.md), [strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md), [exterior quotient](../categories/supports/exterior-quotient.md), [standing data](../corner/standing-data.md)
 ## Proof depends on
-- [Residuals](compressed-residuals.md), [endpoint lemma](endpoint-lemma.md), [support ideal](../categories/supports/support-ideal.md)
+- [Residuals](compressed-residuals.md), [endpoint lemma](endpoint-lemma.md), [buffers hold eventually](buffer-eventually.md), [sums of witnesses](../corner/actions/witness-sum.md), [support ideal](../categories/supports/support-ideal.md), [asymptotic category](../categories/asymptotic/asymptotic-category.md)

@@ -6,7 +6,7 @@ origin: background
 
 # Leibniz rule for products
 
-Let $C$ be a complex in $\operatorname{Kar}\mathcal B$ and $E$ a complex in $C_\mathbb Z(\mathbb Q)$, each with all but finitely many chain objects zero objects, let $\phi\in M(C)_m$ and $\theta\in M(E)_n$, and let $\phi\otimes\theta$ be their [external product](external-product.md), with block signs $s(p,q)=(-1)^{q(p+m)}$. Then
+Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality pairing](duality-pairing.md), $C$ a complex in $\mathcal B$ and $E$ a complex in $\mathcal E$, each with all but finitely many chain objects zero objects, let $\phi\in M(C)_m$ and $\theta\in M(E)_n$, and let $\phi\otimes\theta$ be their [external product](external-product.md), with block signs $s(p,q)=(-1)^{q(p+m)}$. Then
 $$\partial(\phi\otimes\theta)=\partial\phi\otimes\theta+(-1)^m\,\phi\otimes\partial\theta.$$
 
 *Proof sketch.* Index blocks by the target $C_a\boxtimes E_b$ and write $(\partial F)_r=dF_{r+1}+(-1)^rF_rd^*$ for $F=\phi\otimes\theta$.
@@ -20,10 +20,10 @@ $$\partial(\phi\otimes\theta)=\partial\phi\otimes\theta+(-1)^m\,\phi\otimes\part
 
 ## Depends on
 
+- [Duality pairings](duality-pairing.md)
 - [External product of structures](external-product.md)
 - [Structure complex](../../base/complexes/structure-complex.md)
 
 ## Proof depends on
 
 - [External product of structures](external-product.md)
-- [Duals of box products](box-dual.md)

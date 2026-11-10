@@ -10,7 +10,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 $$(e_{j+1})_*\circ\mathrm{fgt}\circ t^{\mathrm{im}}=t:\ L^p_m(C_{\mathbb Z^j}(\mathcal A/\mathcal U))\to L^p_{m+1}(C_{\mathbb Z^{j+1}}(\mathcal A/\mathcal U)),$$
 where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md), $\mathrm{fgt}$ [forgets the decoration](../decorations/forget-decoration.md) and $t$ is the [transition map](transition-map.md) of $\mathcal A/\mathcal U$.
 
-*Proof sketch.* $\mathrm{fgt}\,t^{\mathrm{im}}[C,\phi]$ is represented by $e_{j+1}^{-1}(C\otimes\Lambda)$ with structure $(e_{j+1}^{-1})_\%(\phi\otimes\lambda)$. Since $e_{j+1}e_{j+1}^{-1}=\mathrm{id}$ as strict duality functors, $(e_{j+1})_*$ of it is $[C\otimes\Lambda,\phi\otimes\lambda]=t[C,\phi]$, by [Functoriality of induced maps](../../base/groups/induced-map-comp.md) and [Identity induces the identity](../../base/groups/induced-map-id.md).
+*Proof sketch.* $\mathrm{fgt}\,t^{\mathrm{im}}[C,\phi]$ is represented by $e_{j+1}^{-1}(C\otimes\Lambda)$ with structure $(e_{j+1}^{-1})_\%(\phi\otimes\lambda)$. Since $e_{j+1}e_{j+1}^{-1}=\mathrm{id}$ as strict duality functors, $(e_{j+1})_*$ of it is $[C\otimes\Lambda,\phi\otimes\lambda]=t[C,\phi]$, by [Functoriality on L^p](../../base/groups/lp-functoriality.md), item 1.
 
 ## Sources
 
@@ -26,5 +26,4 @@ where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md), 
 
 ## Proof depends on
 
-- [Functoriality of induced maps](../../base/groups/induced-map-comp.md)
-- [Identity induces the identity](../../base/groups/induced-map-id.md)
+- [Functoriality on L^p](../../base/groups/lp-functoriality.md)

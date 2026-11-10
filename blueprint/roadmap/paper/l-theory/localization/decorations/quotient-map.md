@@ -21,3 +21,4 @@ is the [induced homomorphism](../../base/groups/induced-map.md) of the strict du
 - [Decorated quotient L-group](decorated-l-group.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
+- [Decorated objects](decorated-object.md)

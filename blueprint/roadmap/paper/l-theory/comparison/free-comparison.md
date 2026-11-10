@@ -8,6 +8,8 @@ origin: bridged
 
 Let $\mathbf G=(G_i,\chi_i)$ be a group sequence. Then $\mathrm{cls}:L^p_k(\mathrm{Free}(\mathbb Q[G_i]))\to\mathbb L_k(\mathrm{Free}(\mathbb Q[G_i]))$ is bijective for all $k$ and $i$, where $\mathrm{Free}(\mathbb Q[G_i])$ is the [free category](../../categories/asymptotic/free-category.md).
 
+This rests on the open statement [Lemma U](lemma-u.md), through [Lemma U passes to the blocks](lemma-u-blocks.md).
+
 *Proof sketch.* [Lemma U passes to the blocks](lemma-u-blocks.md) gives the hypothesis of the [stable criterion](../bounded/categories/lower-k-vanishing-criterion.md), so $K_{-j}(\mathrm{Free}(\mathbb Q[G_i]))=0$ for $j\ge1$. Then apply [the decoration comparison](decoration-comparison.md).
 
 ## Sources

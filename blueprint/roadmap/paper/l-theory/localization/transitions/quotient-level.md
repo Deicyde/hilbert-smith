@@ -10,7 +10,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 $$(e_j)_*\circ\mathrm{fgt}\circ q^{(j)}_*=(C_{\mathbb Z^j}q)_*:\ L^p_m(C_{\mathbb Z^j}\mathcal A)\to L^p_m(C_{\mathbb Z^j}(\mathcal A/\mathcal U)),$$
 where $q^{(j)}_*$ is the [quotient map into the decorated group](../decorations/quotient-map.md) and $\mathrm{fgt}$ [forgets the decoration](../decorations/forget-decoration.md).
 
-*Proof sketch.* (1) $e_j\circ q^{(j)}=C_{\mathbb Z^j}(q)$ as strict duality functors ([Iterated quotient functors](quotient-functor-level.md)). (2) [Forgetting after the quotient map](../decorations/forget-quotient.md) for the filtration $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$ gives $\mathrm{fgt}\circ q^{(j)}_*=(q^{(j)})_*$. (3) [Functoriality of induced maps](../../base/groups/induced-map-comp.md).
+*Proof sketch.* (1) $e_j\circ q^{(j)}=C_{\mathbb Z^j}(q)$ as strict duality functors ([Iterated quotient functors](quotient-functor-level.md)). (2) [Forgetting after the quotient map](../decorations/forget-quotient.md) for the filtration $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$ gives $\mathrm{fgt}\circ q^{(j)}_*=(q^{(j)})_*$. (3) [Functoriality on L^p](../../base/groups/lp-functoriality.md), item 1, gives $(e_j)_*(q^{(j)})_*=(e_jq^{(j)})_*$.
 
 ## Sources
 
@@ -27,4 +27,4 @@ where $q^{(j)}_*$ is the [quotient map into the decorated group](../decorations/
 
 - [Iterated quotient functors](quotient-functor-level.md)
 - [Forgetting after the quotient map](../decorations/forget-quotient.md)
-- [Functoriality of induced maps](../../base/groups/induced-map-comp.md)
+- [Functoriality on L^p](../../base/groups/lp-functoriality.md)

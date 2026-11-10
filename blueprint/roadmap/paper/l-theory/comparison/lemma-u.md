@@ -21,3 +21,7 @@ Let $\mathbf G$ be a [group sequence](../../categories/asymptotic/group-sequence
 - [Idempotent completion with duality](../base/categories/karoubi-duality.md)
 - [Group sequence](../../categories/asymptotic/group-sequence.md)
 - [Finite-support subcategory](../../categories/asymptotic/eventually-zero-subcategory.md)
+
+## Proof depends on
+
+- [Stable criterion for vanishing lower $K$](../bounded/categories/lower-k-vanishing-criterion.md)

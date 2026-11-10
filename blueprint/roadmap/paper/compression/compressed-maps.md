@@ -5,10 +5,14 @@ origin: bridged
 ---
 # Compressed maps
 
-For $i\ge i_0$ and $g,h\in G_i$:
-$\hat A_g=\mathrm{pr}\,a_g\,\mathrm{in}$, $\hat B_{g,h}=\mathrm{pr}\,B_{g,h}\,\mathrm{in}$, $\hat V_g=\mathrm{pr}\,V_g\,\mathrm{pr}^*$, $\hat\varphi=\mathrm{pr}\,\varphi_i\,\mathrm{pr}^*$, $\hat b=\mathrm{in}^*b_i\,\mathrm{in}$, $\hat H=\mathrm{pr}\,H_i\,\mathrm{in}$, $\hat H'=\mathrm{in}^*H'_i\,\mathrm{pr}^*$. All of them are $0$ for $i<i_0$. On $C^{N-*}$, $\hat\delta=\mathrm{in}^*\delta\,\mathrm{pr}^*$ is the shifted dual of $\hat d$.
+Let $M_1,M_2\in\{D_i,D_i^{N-*}\}$, and let $p_2$ be the retained projection of $M_2$ and $\jmath_1$ the retained inclusion of $M_1$: $\mathrm{pr}_i$ and $\mathrm{in}_i$ on chains, $\mathrm{in}_i^*$ and $\mathrm{pr}_i^*$ on cochains ([compressed complex](compressed-complex.md)). The *compression* of a matrix $w:M_1\to M_2$ is $\hat w=p_2\,w\,\jmath_1$ for $i\ge i_0$, and $\hat w=0$ for $i<i_0$.
+
+The compressed maps are the compressions, for $g,h\in G_i$, of the matrices of the [chain models](../chain-models/grid/chain-model-poincare.md) and the [approximations](../chain-models/approximations/group-approx.md):
+- $\hat d$, of the differential $d$ of $D_i$, and of the differential $d$ of $D_i^{N-*}$ (with $d_r=(-1)^rd^*$), so that $\hat d$ on $C^{N-*}$ is $(-1)^r$ times the transpose of $\hat d$ on $C$;
+- $\hat\varphi$, $\hat b$, $\hat H$, $\hat H'$, of $\varphi_i$, $b_i$, $H_i$, $H'_i$;
+- $\hat A_g$, $\hat B_{g,h}$, $\hat V_g$, of $a_g$, $B_{g,h}$, $V_g$.
 
 ## Sources
 - HS paper, Section 10.
 ## Depends on
-- [Compressed complex](compressed-complex.md), [estimates](../chain-models/grid/chain-model-estimates.md)
+- [Compressed complex](compressed-complex.md), [the chain model is Poincaré](../chain-models/grid/chain-model-poincare.md), [group approximations](../chain-models/approximations/group-approx.md), [product homotopies](../chain-models/approximations/product-homotopies.md), [adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md)

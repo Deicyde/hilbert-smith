@@ -6,7 +6,7 @@ origin: background
 
 # Products commute with T
 
-Let $C$ be a complex in $\operatorname{Kar}\mathcal B$ and $E$ a complex in $C_\mathbb Z(\mathbb Q)$, each with all but finitely many chain objects zero objects, let $\phi\in M(C)_m$ and $\theta\in M(E)_n$, and let $\phi\otimes\theta$ be their [external product](external-product.md), with block signs $s(p,q)=(-1)^{q(p+m)}$. Then $T(\phi\otimes\theta)=T\phi\otimes T\theta$.
+Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality pairing](duality-pairing.md), $C$ a complex in $\mathcal B$ and $E$ a complex in $\mathcal E$, each with all but finitely many chain objects zero objects, let $\phi\in M(C)_m$ and $\theta\in M(E)_n$, and let $\phi\otimes\theta$ be their [external product](external-product.md), with block signs $s(p,q)=(-1)^{q(p+m)}$. Then $T(\phi\otimes\theta)=T\phi\otimes T\theta$.
 
 *Proof sketch.* Put $N=m+n$, $r=a+b$, $\alpha=m-a$, $\beta=n-b$. The $(a,b)$ block of $T(\phi\otimes\theta)$ is $(-1)^{r(N-r)}s(\alpha,\beta)\,\phi_\alpha^*\boxtimes\theta_\beta^*$ (through $\kappa$), with exponent $\equiv a\alpha+a\beta+b\alpha+b\beta+\beta a\equiv a\alpha+b\alpha+b\beta$. The block of $T\phi\otimes T\theta$ is $(-1)^{b(a+m)+a\alpha+b\beta}\,\phi_\alpha^*\boxtimes\theta_\beta^*$. The exponents agree, since $b\alpha\equiv bm+ab$.
 
@@ -17,10 +17,10 @@ Let $C$ be a complex in $\operatorname{Kar}\mathcal B$ and $E$ a complex in $C_\
 
 ## Depends on
 
+- [Duality pairings](duality-pairing.md)
 - [External product of structures](external-product.md)
 - [The involution T](../../base/complexes/structure-involution.md)
 
 ## Proof depends on
 
 - [External product of structures](external-product.md)
-- [Duals of box products](box-dual.md)

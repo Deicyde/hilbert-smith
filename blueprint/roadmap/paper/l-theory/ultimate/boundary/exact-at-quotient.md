@@ -40,3 +40,4 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 - [Quotient maps at each level](../../localization/transitions/quotient-level.md)
 - [Levels are compatible with the transition](../groups/level-compatible.md)
 - [The induced map at each level](../groups/induced-map-level.md)
+- [Level boundary](../../localization/transitions/level-boundary.md)

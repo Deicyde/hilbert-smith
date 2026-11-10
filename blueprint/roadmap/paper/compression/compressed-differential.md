@@ -5,11 +5,13 @@ origin: bridged
 ---
 # Compressed differential
 
-$\hat d^2=0$ and $\mathrm{pr}_i\,d=\hat d\,\mathrm{pr}_i$. Also $\operatorname{prop}(\hat d)\le\delta_i$ in $T\times S^n$, so $(C,\hat d)$ is a chain complex in $\mathcal A_{\mathbf 1}(T\times S^n)$, concentrated in $[0,N]$.
+For $i\ge i_0$, $\hat d\hat d=0$ and $\mathrm{pr}_i\,d=\hat d\,\mathrm{pr}_i$. For every $i$, $\hat d$ has [propagation](../categories/asymptotic/propagation.md) at most $\delta_i$ for the labels of the [compressed complex](compressed-complex.md) in $T\times S^n$. So $(C,\hat d)$ is a chain complex in $\mathcal A_{\mathbf 1}(T\times S^n)$, and $C_r$ is a zero object for $r\notin[0,N]$.
 
-*Proof sketch.* $\mathrm{pr}\,d=\mathrm{pr}\,d(\mathrm{in}\,\mathrm{pr}+Q)=\hat d\,\mathrm{pr}$ by the [subcomplex](discarded-subcomplex.md) identity. Then $\hat d^2=\mathrm{pr}\,d^2\,\mathrm{in}=0$. $\hat d$ is a submatrix of $d$ on cells of $\mathcal B_i(u)$, and graph type $0$ with bound $\delta$ means propagation at most $\delta$.
+*Proof sketch.* $\mathrm{pr}\,d=\mathrm{pr}\,d(\mathrm{in}\,\mathrm{pr}+Q)=\hat d\,\mathrm{pr}$, because $\mathrm{pr}\,dQ=0$ ([discarded subcomplex](discarded-subcomplex.md)). Then $\hat d\hat d=(\hat d\,\mathrm{pr})\,d\,\mathrm{in}=\mathrm{pr}\,d^2\,\mathrm{in}=0$. For $i\ge i_0$, $\hat d$ is a submatrix of $d^{[u]}$, since retained cells lie in $\mathcal B_i(u)$ ([buffers](buffer-eventually.md) (1)); $d\in\mathcal P_i$ has type $0$, so buffers (3) bound its propagation by $\delta_i$ ([graph-type matrices](../corner/actions/graph-type.md)). For $i<i_0$, $\hat d=0$. $D_i$ is zero outside degrees $[0,N]$.
 
+## Sources
+- HS paper, Section 10.
 ## Depends on
-- [Compressed complex](compressed-complex.md)
+- [Compressed complex](compressed-complex.md), [compressed maps](compressed-maps.md), [start index](start-index.md)
 ## Proof depends on
-- [Discarded subcomplex](discarded-subcomplex.md), [buffers](buffer-eventually.md)
+- [Discarded subcomplex](discarded-subcomplex.md), [buffers hold eventually](buffer-eventually.md), [graph-type matrices](../corner/actions/graph-type.md)

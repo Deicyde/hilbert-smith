@@ -40,3 +40,4 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 - [Exactness in the middle](../../localization/boundary/exact-in-middle.md)
 - [Bounded Karoubi filtrations](../../bounded/categories/bounded-karoubi-filtration.md)
 - [Levels are compatible with the transition](../groups/level-compatible.md)
+- [Forgetting the decoration](../../localization/decorations/forget-decoration.md)

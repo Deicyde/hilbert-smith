@@ -6,7 +6,7 @@ origin: background
 
 # Decorated transition of an image pair
 
-Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration, $n\ge0$, $\mathcal U_n=C_{\mathbb Z^n}\mathcal U\subset C_{\mathbb Z^n}\mathcal A$ (an involution-invariant Karoubi filtration by [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md), item 1), $q_n$ its quotient functor and $e_n$ the isomorphism of that article. Let $V=(f:iP\to D,\delta\phi,i_\%\pi)$ be a strict $k$-dimensional [$\mathcal U_n$-pair](../../localization/boundary/u-pair.md) over $(P,\pi)$. Let $u:i(P\otimes\Lambda)\to iP\otimes\Lambda$ be the isomorphism of propagation $0$ of [Duality functors commute with products](../../localization/products/functor-product.md) for the inclusion $\mathcal U\to\mathcal A$. Then
+Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration, $n\ge0$, $\mathcal U_n=C_{\mathbb Z^n}\mathcal U\subset C_{\mathbb Z^n}\mathcal A$ (an involution-invariant Karoubi filtration by [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)), $q_n$ its quotient functor and $e_n$ the isomorphism of [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md). Let $V=(f:iP\to D,\delta\phi,i_\%\pi)$ be a strict $k$-dimensional [$\mathcal U_n$-pair](../../localization/boundary/u-pair.md) over $(P,\pi)$. Let $u:i(P\otimes\Lambda)\to iP\otimes\Lambda$ be the isomorphism of propagation $0$ of [Duality functors commute with products](../../localization/products/functor-product.md) for the inclusion $\mathcal U\to\mathcal A$. Then
 $$V\otimes\Lambda:=\big((f\otimes1)\circ u:i(P\otimes\Lambda)\to D\otimes\Lambda,\ \delta\phi\otimes\lambda,\ i_\%(\pi\otimes\lambda)\big)$$
 is a strict $(k+1)$-dimensional $\mathcal U_{n+1}$-pair over $(P\otimes\Lambda,\pi\otimes\lambda)$, and
 $$[q_{n+1}(V\otimes\Lambda)]=t^{\mathrm{im}}\big((e_n)_*\,\mathrm{fgt}\,[q_nV]\big)\quad\text{in }L^{\mathrm{im}}_{k+1}(C_{\mathbb Z^{n+1}}\mathcal A/C_{\mathbb Z^{n+1}}\mathcal U),$$
@@ -29,6 +29,7 @@ where $q_nV$ is the [image](../../localization/boundary/image-pair.md), $\mathrm
 - [Duality functors commute with products](../../localization/products/functor-product.md)
 - [Decorated transition](../../localization/transitions/decorated-transition.md)
 - [Forgetting the decoration](../../localization/decorations/forget-decoration.md)
+- [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
 
 ## Proof depends on

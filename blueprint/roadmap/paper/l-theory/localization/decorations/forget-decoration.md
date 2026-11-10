@@ -18,3 +18,4 @@ is the [induced homomorphism](../../base/groups/induced-map.md) of the inclusion
 
 - [Decorated quotient L-group](decorated-l-group.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
+- [Decorated objects](decorated-object.md)

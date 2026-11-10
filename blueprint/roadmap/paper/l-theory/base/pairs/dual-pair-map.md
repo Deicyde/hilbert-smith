@@ -18,6 +18,7 @@ Let $(f:C\to D,\delta\phi,\phi)$ be a strict $n$-dimensional Poincaré pair with
 
 - [Strict Poincaré pair](poincare-pair.md)
 - [Dual complex](../complexes/dual-complex.md)
+- [Pair map](pair-map.md)
 
 ## Proof depends on
 

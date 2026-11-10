@@ -24,11 +24,12 @@ is a well-defined homomorphism. For $m=k+j$ it is a homomorphism $L^{\langle -j\
 ## Depends on
 
 - [L-group](../../base/groups/l-group.md)
-- [Group structure on L^p](../../base/groups/l-group-add.md)
-- [Tensor product of complexes over the line](../products/complex-product.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Tensor product of complexes](../products/complex-product.md)
 - [External product of structures](../products/external-product.md)
 - [The symmetric line](../products/symmetric-line.md)
 - [Lower L-group](../../ultimate/groups/lower-l-group.md)
+- [Duals of box products](../products/box-dual.md)
 
 ## Proof depends on
 

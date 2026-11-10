@@ -6,7 +6,7 @@ origin: cited
 
 # Decorated quotient L-group
 
-Let $\mathcal U\subset\mathcal A$ be a full additive subcategory, closed under isomorphism, with $\mathcal U^*\subset\mathcal U$, and let $\mathrm{Dec}(\mathcal A/\mathcal U)$ be the duality category of [decorated objects](decorated-object.md). The *decorated quotient L-group* is
+Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal U^*\subset\mathcal U$, and let $\mathrm{Dec}(\mathcal A/\mathcal U)$ be the duality category of [decorated objects](decorated-object.md). The *decorated quotient L-group* is
 $$L^{\mathrm{im}}_k(\mathcal A/\mathcal U):=L_k(\mathrm{Dec}(\mathcal A/\mathcal U)),$$
 the [L-group](../../base/groups/l-group.md) of that duality category: cobordism classes of strict $k$-dimensional symmetric Poincaré complexes whose chain objects are decorated.
 

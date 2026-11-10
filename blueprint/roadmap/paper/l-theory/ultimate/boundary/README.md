@@ -4,7 +4,7 @@ article_id: af_762d5976101641b5b8b5b59a
 
 # Boundary, exactness and excision
 
-The ultimate boundary and its naturality for every duality functor; the decorated transition of an image pair; the composite with the inclusion vanishes; exactness at the quotient and in the middle; the pair formula; excisive pairs of filtrations and the excision boundary; the union formula; and Mayer–Vietoris middle exactness.
+The ultimate boundary and its naturality for every duality functor; the decorated transition of an image pair; the composite with the inclusion vanishes; exactness at the quotient and in the middle; the pair formula; excisive pairs of filtrations and the excision boundary, with the open statement that exchanging the two sides changes its sign; the union formula; and Mayer–Vietoris middle exactness.
 
 - [Ultimate boundary](ultimate-boundary.md)
 - [The ultimate boundary at each level](ultimate-boundary-level.md)
@@ -19,5 +19,6 @@ The ultimate boundary and its naturality for every duality functor; the decorate
 - [Excision boundary](excision-boundary.md)
 - [Excision boundary of a preimage](excision-preimage.md)
 - [Naturality of the excision boundary](excision-boundary-naturality.md)
+- [The two sides of an excision boundary (open statement)](excision-boundary-swap.md)
 - [Union formula](union-formula.md)
 - [Mayer-Vietoris middle exactness](mayer-vietoris-middle.md)

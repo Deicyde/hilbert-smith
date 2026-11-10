@@ -8,7 +8,7 @@ origin: background
 
 Let $\eta:F\cong G$ be a [unitary natural isomorphism](../../base/categories/unitary-isomorphism.md) of duality functors $(F,\xi),(G,\zeta):\mathcal A\to\mathcal B$. For $j\ge0$ put $C_{\mathbb Z^0}\eta=\eta$, and let $C_{\mathbb Z^{j+1}}\eta$ have at the object $M=(M_n)_n$ of $C_{\mathbb Z^{j+1}}\mathcal A$ the diagonal matrix with entries $(C_{\mathbb Z^j}\eta)_{M_n}$, of propagation $0$. Then $C_{\mathbb Z^j}\eta:C_{\mathbb Z^j}F\cong C_{\mathbb Z^j}G$ is a unitary natural isomorphism of the [bounded extensions](../../bounded/categories/bounded-functor.md).
 
-*Proof sketch.* (Proof obligations, by induction on $j$.) Naturality holds entrywise: for $f=(f_{mn})$, $(C_\mathbb ZG)(f)_{mn}\circ\eta_{M_n}=G(f_{mn})\eta_{M_n}=\eta_{N_m}F(f_{mn})$. The inverse is the diagonal of the inverses. Unitarity holds entrywise, because the dual of a diagonal matrix is the diagonal of the duals and the duality data of $C_\mathbb ZF$ and $C_\mathbb ZG$ are $\xi$ and $\zeta$ entrywise.
+*Proof sketch.* (Proof obligations, by induction on $j$.) Naturality holds entrywise: for a morphism $f=(f_{mn})$ of $C_{\mathbb Z^{j+1}}\mathcal A$, $(C_{\mathbb Z^{j+1}}G)(f)_{mn}\circ(C_{\mathbb Z^j}\eta)_{M_n}=(C_{\mathbb Z^j}G)(f_{mn})\,(C_{\mathbb Z^j}\eta)_{M_n}=(C_{\mathbb Z^j}\eta)_{N_m}\,(C_{\mathbb Z^j}F)(f_{mn})$ by naturality of $C_{\mathbb Z^j}\eta$. The inverse is the diagonal of the inverses. Unitarity holds entrywise, because the dual of a diagonal matrix is the diagonal of the duals and the duality data of $C_{\mathbb Z^{j+1}}F$ and $C_{\mathbb Z^{j+1}}G$ are those of $C_{\mathbb Z^j}F$ and $C_{\mathbb Z^j}G$ entrywise ([Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)).
 
 ## Sources
 

@@ -11,8 +11,8 @@ $$t^{\mathrm{im}}\circ(C_{\mathbb Z^j}\bar F)_*=(F^{(j+1)})^{\mathrm{im}}_*\circ
 where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md) and $(F^{(j+1)})^{\mathrm{im}}_*$ the [decorated induced map](../decorations/decorated-induced-map.md), defined by [Induced quotient functors keep decorations](../decorations/induced-quotient-decorated.md).
 
 *Proof sketch.* Let $x=[C,\phi]$.
-1. Hypotheses. $C_{\mathbb Z^{j+1}}F$ applies $F$ entrywise, so it carries $C_{\mathbb Z^{j+1}}\mathcal U$ into $C_{\mathbb Z^{j+1}}\mathcal U'$, and both are involution-invariant Karoubi filtrations ([Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md), item 1). So $F^{(j+1)}$ and its decorated induced map are defined.
-2. Functor equation. $e'_{j+1}\circ F^{(j+1)}=C_{\mathbb Z^{j+1}}(\bar F)\circ e_{j+1}$ as duality functors, by induction on $j$: both sides are the identity on objects, apply $F$ to each entry and reduce, and carry the duality data $[\xi]$ entrywise. Hence $F^{(j+1)}\circ e_{j+1}^{-1}=e'^{-1}_{j+1}\circ C_{\mathbb Z^{j+1}}(\bar F)$.
+1. Hypotheses. $C_{\mathbb Z^{j+1}}F$ applies $F$ entrywise, so it carries $C_{\mathbb Z^{j+1}}\mathcal U$ into $C_{\mathbb Z^{j+1}}\mathcal U'$, and both are involution-invariant Karoubi filtrations ([Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)). So $F^{(j+1)}$ and its decorated induced map are defined.
+2. Functor equation. $e'_{j+1}\circ F^{(j+1)}=C_{\mathbb Z^{j+1}}(\bar F)\circ e_{j+1}$ as duality functors by [Iterated induced quotient functors](induced-functor-level.md). Hence $F^{(j+1)}\circ e_{j+1}^{-1}=e'^{-1}_{j+1}\circ C_{\mathbb Z^{j+1}}(\bar F)$.
 3. Comparison. [Duality functors commute with products](../products/functor-product.md) for $\bar F$, with $E=\Lambda$ and $\theta=\lambda$, gives an isomorphism $\omega:C_{\mathbb Z^{j+1}}\bar F(C\otimes\Lambda)\to(C_{\mathbb Z^j}\bar F\,C)\otimes\Lambda$ carrying structures to structures. By step 2, $e'^{-1}_{j+1}(\omega)$ is an isomorphism from $F^{(j+1)}e^{-1}_{j+1}(C\otimes\Lambda)$, a representative of the right side, to $e'^{-1}_{j+1}((C_{\mathbb Z^j}\bar F\,C)\otimes\Lambda)$, a representative of the left side, carrying structures to structures.
 4. Decorations. Both ends have decorated chain objects ([Products with the line are decorated](line-product-decorated.md)). [Homotopy-isometric complexes are cobordant](../../base/pairs/cylinder-cobordism.md), with $\mathcal P$ the [decorated objects](../decorations/decorated-object.md) and $\chi=0$, gives a cobordism in $\mathrm{Dec}$, so the two classes agree in $L^{\mathrm{im}}$.
 
@@ -23,16 +23,18 @@ where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md) a
 ## Depends on
 
 - [Decorated transition](decorated-transition.md)
+- [Duality functor](../../base/categories/duality-functor.md)
 - [Functor induced on quotients](../decorations/induced-quotient-functor.md)
 - [Decorated induced map](../decorations/decorated-induced-map.md)
 - [Induced quotient functors keep decorations](../decorations/induced-quotient-decorated.md)
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
-- [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
 
 ## Proof depends on
 
-- [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
+- [Iterated induced quotient functors](induced-functor-level.md)
 - [Duality functors commute with products](../products/functor-product.md)
 - [Products with the line are decorated](line-product-decorated.md)
 - [Homotopy-isometric complexes are cobordant](../../base/pairs/cylinder-cobordism.md)
 - [Decorated objects](../decorations/decorated-object.md)
+- [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)
+- [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)

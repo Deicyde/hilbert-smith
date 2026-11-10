@@ -18,6 +18,7 @@ Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be as in [
 
 - [Decorated induced map](decorated-induced-map.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
+- [Decorated objects](decorated-object.md)
 
 ## Proof depends on
 

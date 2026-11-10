@@ -1,1 +1,2 @@
-Planned name: `HSP.Compression.scalar_image`. HS paper lines 1096-1100.
+Planned name: `HSP.Compression.scalar_image`. HS paper lines 1035-1037 (the scalar class $\mathfrak m_c$) and 1096-1100.
+The class on the right is the evaluation chapter's germ; compression's own labelled-model class and labelled-model Poincaré lemma were deleted as duplicates (decision 7). Homotopy-isometry invariance (on $L^p$, i.e. $L$ of the Karoubi envelope) is used with $\chi=0$ and then pushed to $\mathbb L$ by cls; unitary invariance on $\mathbb L$ is about natural isomorphisms of functors and does not apply.

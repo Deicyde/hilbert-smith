@@ -8,7 +8,7 @@ origin: background
 
 $(\mathrm{id}_{\mathcal A})_*=\mathrm{id}$ on $\mathbb L_k(\mathcal A)$.
 
-*Proof sketch.* By induction on $j$, $C_{\mathbb Z^j}(\mathrm{id}_{\mathcal A})$ is the identity functor of $C_{\mathbb Z^j}\mathcal A$, since bounded extension applies the functor entrywise. At level $j$, [Identity induces the identity](../../base/groups/induced-map-id.md) and [The induced map at each level](induced-map-level.md) give $(\mathrm{id})_*\iota_j=\iota_j$. Every element of the colimit comes from a finite level ([Every element comes from a finite level](level-exhaustive.md)).
+*Proof sketch.* $C_{\mathbb Z^j}(\mathrm{id}_{\mathcal A})$ is the identity functor of $C_{\mathbb Z^j}\mathcal A$ by [Bounded extension is functorial](../../bounded/categories/bounded-functor-comp.md). At level $j$, [Functoriality on L^p](../../base/groups/lp-functoriality.md), item 1, and [The induced map at each level](induced-map-level.md) give $(\mathrm{id})_*\iota_j=\iota_j$. Every element of the colimit comes from a finite level ([Every element comes from a finite level](level-exhaustive.md)).
 
 ## Sources
 
@@ -20,7 +20,7 @@ $(\mathrm{id}_{\mathcal A})_*=\mathrm{id}$ on $\mathbb L_k(\mathcal A)$.
 
 ## Proof depends on
 
-- [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
-- [Identity induces the identity](../../base/groups/induced-map-id.md)
+- [Bounded extension is functorial](../../bounded/categories/bounded-functor-comp.md)
+- [Functoriality on L^p](../../base/groups/lp-functoriality.md)
 - [The induced map at each level](induced-map-level.md)
 - [Every element comes from a finite level](level-exhaustive.md)

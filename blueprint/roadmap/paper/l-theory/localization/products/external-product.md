@@ -6,7 +6,7 @@ origin: background
 
 # External product of structures
 
-Let $C$ be a complex in $\operatorname{Kar}\mathcal B$ and $E$ a complex in $C_\mathbb Z(\mathbb Q)$, each with all but finitely many chain objects zero objects, and let $C\otimes E$ be their [tensor product](complex-product.md). For $\phi\in M(C)_m$ and $\theta\in M(E)_n$, the structure $\phi\otimes\theta\in M(C\otimes E)_{m+n}$ has, from the summand $C^*_{m-p}\boxtimes E^*_{n-q}$ of $(C\otimes E)^*_{m+n-p-q}$ (identified through the isomorphism $\kappa$ of [Duals of box products](box-dual.md)) to $C_p\boxtimes E_q$, the block
+Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality pairing](duality-pairing.md), $C$ a complex in $\mathcal B$ and $E$ a complex in $\mathcal E$, each with all but finitely many chain objects zero objects, and let $C\otimes E$ be their [tensor product](complex-product.md). For $\phi\in M(C)_m$ and $\theta\in M(E)_n$, the structure $\phi\otimes\theta\in M(C\otimes E)_{m+n}$ has, from the summand $C^*_{m-p}\boxtimes E^*_{n-q}$ of $(C\otimes E)^*_{m+n-p-q}$ (identified through $\kappa$) to $C_p\boxtimes E_q$, the block
 $$(-1)^{q(p+m)}\,\phi_p\boxtimes\theta_q,$$
 and zero blocks elsewhere.
 
@@ -17,6 +17,6 @@ and zero blocks elsewhere.
 
 ## Depends on
 
-- [Tensor product of complexes over the line](complex-product.md)
-- [Duals of box products](box-dual.md)
+- [Duality pairings](duality-pairing.md)
+- [Tensor product of complexes](complex-product.md)
 - [Structure complex](../../base/complexes/structure-complex.md)

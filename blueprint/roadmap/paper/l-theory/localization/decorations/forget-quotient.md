@@ -18,6 +18,7 @@ $\mathrm{fgt}\circ q^{\mathrm{im}}_*=q_*:L^p_k(\mathcal A)\to L^p_k(\mathcal A/\
 
 - [Quotient map into the decorated group](quotient-map.md)
 - [Forgetting the decoration](forget-decoration.md)
+- [Induced homomorphism](../../base/groups/induced-map.md)
 
 ## Proof depends on
 
