@@ -15,7 +15,21 @@ Let $Z_0$ be the [exterior](../corner/exterior.md) for $n$ and the buffer radius
 
 ## Sources
 - HS paper, Section 10 (compressed realization). New: symmetric over $\mathbb Q$, with no quadratic halving.
+
 ## Depends on
-- [Compressed differential](compressed-differential.md), [compressed maps](compressed-maps.md), [strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md), [exterior quotient](../categories/supports/exterior-quotient.md), [exterior](../corner/exterior.md), [the exterior is closed](../corner/exterior-closed.md)
+
+- [Compressed differential](compressed-differential.md)
+- [Compressed maps](compressed-maps.md)
+- [Strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
+- [Exterior quotient](../categories/supports/exterior-quotient.md)
+- [Exterior](../corner/exterior.md)
+- [The exterior is closed](../corner/exterior-closed.md)
+
 ## Proof depends on
-- [Residuals](compressed-residuals.md), [endpoint lemma](endpoint-lemma.md), [buffers hold eventually](buffer-eventually.md), [sums of witnesses](../corner/actions/witness-sum.md), [support ideal](../categories/supports/support-ideal.md), [asymptotic category](../categories/asymptotic/asymptotic-category.md)
+
+- [Residuals](compressed-residuals.md)
+- [Endpoint lemma](endpoint-lemma.md)
+- [Buffers hold eventually](buffer-eventually.md)
+- [Sums of witnesses](../corner/actions/witness-sum.md)
+- [Support ideal](../categories/supports/support-ideal.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)

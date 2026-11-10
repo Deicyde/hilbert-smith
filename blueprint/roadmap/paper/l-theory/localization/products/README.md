@@ -4,7 +4,7 @@ article_id: af_5c5f1a69c8ed7cc6e244e9f2
 
 # Products with the line
 
-The symmetric line is a Poincaré complex over $C_{\mathbb Z}(\mathbb Q)$. A duality pairing gives tensor products of complexes and of structures, with a Leibniz rule, compatibility with $T$ and pushforwards, and a duality map. The two pairings are the box product with bounded vector spaces, used for products with the line, and the tensor product of based vector spaces, used by the chain-model chapter. Products with the line carry complexes and pairs up one bounded level, with no sign on the boundary.
+The symmetric line is a Poincaré complex over $C_{\mathbb Z}(\mathbb Q)$. A duality pairing gives tensor products of complexes and of structures, with a Leibniz rule, compatibility with $T$ and pushforwards, and a duality map. The two pairings are the box product with bounded vector spaces, used for products with the line, and the tensor product of based vector spaces, used by the chain-model chapter. Products with the line carry complexes and pairs up one stage, with no sign on the boundary.
 
 - [Based vector spaces](based-vector-spaces.md)
 - [The symmetric line](symmetric-line.md)

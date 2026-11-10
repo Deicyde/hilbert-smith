@@ -13,5 +13,12 @@ Notation: $\mathrm{pr}_i:D_i\to C_i$ and $\mathrm{in}_i:C_i\to D_i$ are the base
 
 ## Sources
 - HS paper, Section 10 (the quotient by far simplices). New: the zero levels, and labels only on retained cells.
+
 ## Depends on
-- [Start index](start-index.md), [retained cells](retained-cells.md), [control labels](../chain-models/grid/control-labels.md), [asymptotic category](../categories/asymptotic/asymptotic-category.md), [buffers hold eventually](buffer-eventually.md), [buffered restriction](../chain-models/approximations/buffered-restriction.md)
+
+- [Start index](start-index.md)
+- [Retained cells](retained-cells.md)
+- [Control labels](../chain-models/grid/control-labels.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Buffers hold eventually](buffer-eventually.md)
+- [Buffered restriction](../chain-models/approximations/buffered-restriction.md)

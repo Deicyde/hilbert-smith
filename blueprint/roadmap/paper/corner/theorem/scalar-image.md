@@ -10,7 +10,8 @@ Take the [standing data](../standing-data.md), and let
 $$U:\mathcal B_{\mathbf G,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n),\qquad U':\mathcal B_{\mathbf 1,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n)$$
 be [forgetting to the scalar exterior quotient](scalar-forget.md) for $\mathbf G$ and for the trivial group sequence.
 For a [graph-type homotopy action](../actions/graph-type-action.md) on $(C,\phi)$, with [corner class](corner-class.md) $\mathfrak d$,
-$$U_*\mathfrak d=U'_*\operatorname{cls}(C,\phi).$$
+$$U_*\mathfrak d=U'_*\operatorname{cls}(C,\phi),$$
+where $(C,\phi)$, a complex in $\mathcal B_{\mathbf 1,Z}(T\times S^n)$, is read in the idempotent completion through the [Karoubi embedding](../../l-theory/base/categories/karoubi-embedding.md).
 
 This lemma rests on the open statement [Idempotents split in the bounded homotopy category](kb-idempotent-splitting.md), through the corner class.
 
@@ -33,6 +34,7 @@ This lemma rests on the open statement [Idempotents split in the bounded homotop
 - [The corner class](corner-class.md)
 - [Forgetting to the scalar exterior quotient](scalar-forget.md)
 - [Graph-type homotopy action](../actions/graph-type-action.md)
+- [Embedding into the idempotent completion](../../l-theory/base/categories/karoubi-embedding.md)
 
 ## Proof depends on
 

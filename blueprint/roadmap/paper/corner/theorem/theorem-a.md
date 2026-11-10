@@ -8,7 +8,7 @@ origin: bridged
 
 Take the [standing data](../standing-data.md). Let $(C,\phi)$ be a strict $N$-dimensional symmetric Poincaré complex in $\mathcal B_{\mathbf 1,Z}(T\times S^n)$, concentrated in $[0,N]$, with a [graph-type homotopy action](../actions/graph-type-action.md) of $\mathbf G$. Let $U'$ be [forgetting to the scalar exterior quotient](scalar-forget.md) and $\Delta_{\mathbf 1}$ the [scalar iterated cut](scalar-iterated-cut.md) for the $n$, $R$, $s$ of the standing data. Then every representative $(\sigma_i)$ of
 $$\sigma_{\mathrm{tail}}\big(\Delta_{\mathbf 1}U'_*\operatorname{cls}(C,\phi)\big)\in\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)}$$
-satisfies $p\mid\sigma_i$ for all sufficiently large $i$.
+satisfies $p\mid\sigma_i$ for all sufficiently large $i$. Here $\operatorname{cls}(C,\phi)$ is $\operatorname{cls}$ of the complex read in $\operatorname{Kar}\mathcal B_{\mathbf 1,Z}(T\times S^n)$ through the [Karoubi embedding](../../l-theory/base/categories/karoubi-embedding.md), $(C,\phi)\mapsto((C,1),\phi)$.
 
 This theorem rests on the open statements [Idempotents split in the bounded homotopy category](kb-idempotent-splitting.md) ([Balmer and Schlichting 2001, Theorem 2.8](../../../../sources/paper/balmer-schlichting-2001.md) [U]), through the corner class; [Lemma U](../../l-theory/comparison/lemma-u.md), through divisibility and the tail signature; and [Lifting](../../l-theory/localization/boundary/lift-to-pair.md), through the cut boundaries of the iterated cuts and through divisibility.
 
@@ -35,6 +35,7 @@ This theorem rests on the open statements [Idempotents split in the bounded homo
 - [Scalar iterated cut](scalar-iterated-cut.md)
 - [The tail signature](../../signatures/tail/tail-signature.md)
 - [Ultimate L-group and cls](../../l-theory/ultimate/groups/ultimate-l-group.md)
+- [Embedding into the idempotent completion](../../l-theory/base/categories/karoubi-embedding.md)
 
 ## Proof depends on
 

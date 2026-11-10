@@ -19,6 +19,13 @@ $$\partial_{A,B}\big((q_Z)_*x\big)=-\,\partial_{B,A}\,x .$$
 - HS paper, Section 6.
 - New: the cut boundary is computed from the side that does not contain the exterior, at the cost of a sign.
 ## Depends on
-- [Cut boundary](../categories/cuts/cut-boundary.md), [support excisive pair](../categories/supports/support-excisive-pair.md), [excision boundary](../l-theory/ultimate/boundary/excision-boundary.md), [induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
+- [Cut boundary](../categories/cuts/cut-boundary.md)
+- [Support excisive pair](../categories/supports/support-excisive-pair.md)
+- [Excision boundary](../l-theory/ultimate/boundary/excision-boundary.md)
+- [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
 ## Proof depends on
-- [Cut square](../categories/cuts/cut-square.md), [naturality of the excision boundary](../l-theory/ultimate/boundary/excision-boundary-naturality.md), [separated support in a quotient](../categories/supports/quotient-separation-iso.md), [functoriality on ultimate L](../l-theory/ultimate/groups/induced-map-comp.md), [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md)
+- [Cut square](../categories/cuts/cut-square.md)
+- [Naturality of the excision boundary](../l-theory/ultimate/boundary/excision-boundary-naturality.md)
+- [Separated support in a quotient](../categories/supports/quotient-separation-iso.md)
+- [Functoriality on ultimate L](../l-theory/ultimate/groups/induced-map-comp.md)
+- [The two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md)

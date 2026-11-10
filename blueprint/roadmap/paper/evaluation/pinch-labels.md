@@ -5,7 +5,7 @@ origin: bridged
 ---
 # Pinch labels
 
-Take the cut sets $A_m,B_m,Y_m$ and $y_\pm$ of the [standing data](../corner/standing-data.md) for $n$ and $s$, the [cubical pinch](cubical-pinch.md) $\kappa$ for the same $n$ and $s$, and the [pinch faces](pinch-faces.md) $Q^{(m)}_i$, with each cell $b$ labelled $\kappa(x_b)$. There is $\eta_i\to0$ such that, for $1\le m\le n$:
+Let $n\ge1$ and $s>0$. Take the [cut sets](../corner/cut-sets.md) $A_m,B_m,Y_m$ and $y_\pm$ for $n$ and $s$, in the [round sphere](../corner/round-sphere.md), the [cubical pinch](cubical-pinch.md) $\kappa$ for the same $n$ and $s$, and the [pinch faces](pinch-faces.md) $Q^{(m)}_i$, with each cell $b$ labelled $\kappa(x_b)$. There is $\eta_i\to0$ such that, for $1\le m\le n$:
 1. every cell of $D_i$ not in $Q^{(1)}_i$ has its label in $A_1$;
 2. cells of $Q^{(m)}_i$ have labels within $\eta_i$ of $B_m$, and cells of $\partial Q^{(m)}_i$ within $\eta_i$ of $Y_m$;
 3. for $m\ge2$, cells of $\partial Q^{(m-1)}_i$ not in $Q^{(m)}_i$ have labels within $\eta_i$ of $A_m$;
@@ -16,6 +16,11 @@ Take the cut sets $A_m,B_m,Y_m$ and $y_\pm$ of the [standing data](../corner/sta
 ## Sources
 - New.
 ## Depends on
-- [Pinch faces](pinch-faces.md), [cubical pinch](cubical-pinch.md), [standing data](../corner/standing-data.md)
+- [Pinch faces](pinch-faces.md)
+- [Cubical pinch](cubical-pinch.md)
+- [The cut sets](../corner/cut-sets.md)
+- [The round sphere](../corner/round-sphere.md)
 ## Proof depends on
-- [Box hull properties](../chain-models/grid/box-hull-properties.md), [the cubical pinch on the cube and outside it](cubical-pinch-faces.md), [cut flag](../corner/cut-flag.md)
+- [Box hull properties](../chain-models/grid/box-hull-properties.md)
+- [The cubical pinch on the cube and outside it](cubical-pinch-faces.md)
+- [Cut flag](../corner/cut-flag.md)

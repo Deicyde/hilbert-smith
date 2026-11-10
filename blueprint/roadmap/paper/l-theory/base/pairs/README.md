@@ -8,8 +8,8 @@ Strict symmetric Poincaré complexes and pairs, their images under duality funct
 
 - [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 - [Duality functors carry Poincaré complexes](functor-poincare.md)
-- [Strict Poincaré pair](poincare-pair.md)
 - [Pair map](pair-map.md)
+- [Strict Poincaré pair](poincare-pair.md)
 - [Pair maps of homologous data](pair-map-homotopy.md)
 - [Dual form of the pair map](dual-pair-map.md)
 - [Split pair criterion](split-pair-criterion.md)

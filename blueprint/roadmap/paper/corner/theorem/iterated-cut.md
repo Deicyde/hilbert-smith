@@ -11,8 +11,8 @@ $$d_m:\mathbb L_{N-m+1}(\mathcal A_{T\times Y_{m-1}}/\mathcal A_{Z_m})\to\mathbb
 be the [cut boundary](../../categories/cuts/cut-boundary.md) in $\mathcal A_{\mathbf G}(X)$ for $(T\times A_m,T\times B_m,Z_m)$. The *iterated cut* is
 $$\Delta_T=\pi_+\circ d_n\circ q_*\circ d_{n-1}\circ q_*\circ\cdots\circ q_*\circ d_1\circ j_*:\mathbb L_N(\mathcal B_{\mathbf G,Z}(X))\to\mathbb L_4(\mathcal A_{\mathbf G}(T)),$$
 where:
-- $j:\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\mathcal A_Z$ is the identity-on-objects isomorphism of [exterior quotients](../../categories/supports/exterior-quotient.md);
-- each $q:\mathcal A_{T\times Y_m}\to\mathcal A_{T\times Y_m}/\mathcal A_\varnothing$, $1\le m\le n-1$, is the [quotient functor](../../l-theory/base/categories/filtration-quotient.md) for the [support filtration](../../categories/supports/support-filtration.md) of $\varnothing\subseteq T\times Y_m$;
+- $j=j_Z:\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\mathcal A_Z$ is the [exterior quotient as a cut domain](../../categories/cuts/exterior-cut-identification.md), from the [exterior quotient](../../categories/supports/exterior-quotient.md) to the domain of $d_1$ (here $T\times Y_0=X$);
+- each $q:\mathcal A_{T\times Y_m}\to\mathcal A_{T\times Y_m}/\mathcal A_\varnothing$, $1\le m\le n-1$, is the [quotient functor](../../l-theory/base/categories/filtration-quotient.md) for the [support filtration](../../categories/supports/support-filtration.md) of $\varnothing\subseteq T\times Y_m$, from the target of $d_m$ to the domain of $d_{m+1}$;
 - $\pi_+:\mathbb L_4(\mathcal A_{T\times Y_n})\to\mathbb L_4(\mathcal A_{\mathbf G}(T))$ is the [component projection](../../evaluation/component-projection.md);
 - $j_*$ and $q_*$ are [induced maps](../../l-theory/ultimate/groups/induced-map.md).
 
@@ -20,7 +20,7 @@ The hypotheses of each cut hold. $T\times A_m$, $T\times B_m$ and $Z_m$ are clos
 
 This definition rests on the open statement [Lifting](../../l-theory/localization/boundary/lift-to-pair.md), through the cut boundary.
 
-**Remark (not formalized).** The same composite for the trivial group sequence and without $T$ is the [scalar iterated cut](scalar-iterated-cut.md) $\Delta_{\mathbf 1}$, which depends only on $n$, $R$ and $s$. Theorem A uses $\Delta_T$ and $\Delta_{\mathbf 1}$, and Theorem B uses $\Delta_{\mathbf 1}$. The evaluation chapter computes the individual cuts $d_m$ on its labelled models ([formula for the inner cuts](../../evaluation/inner-cut-formula.md)).
+**Remark (not formalized).** Support-preserving functors commute strictly with the connecting functors: with each $q$ by the [induced functor on support quotients](../../categories/cuts/cut-quotient-functor.md), and with $j$ by the [naturality of the exterior quotient as a cut domain](../../categories/cuts/exterior-cut-naturality.md); [cuts commute with forgetting](cuts-commute-forgetting.md) uses both. The same composite for the trivial group sequence and without $T$ is the [scalar iterated cut](scalar-iterated-cut.md) $\Delta_{\mathbf 1}$, which depends only on $n$, $R$ and $s$. Theorem A uses $\Delta_T$ and $\Delta_{\mathbf 1}$, and Theorem B uses $\Delta_{\mathbf 1}$. The evaluation chapter computes the individual cuts $d_m$ on its labelled models ([formula for the inner cuts](../../evaluation/inner-cut-formula.md)).
 
 ## Sources
 
@@ -35,7 +35,8 @@ This definition rests on the open statement [Lifting](../../l-theory/localizatio
 - [Exterior lies in the first cut](../exterior-first-cut.md)
 - [Cut boundary](../../categories/cuts/cut-boundary.md)
 - [Exterior quotient](../../categories/supports/exterior-quotient.md)
+- [The exterior quotient as a cut domain](../../categories/cuts/exterior-cut-identification.md)
 - [Support filtration](../../categories/supports/support-filtration.md)
-- [Quotient by a filtration](../../l-theory/base/categories/filtration-quotient.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Component projection](../../evaluation/component-projection.md)
 - [Induced map on ultimate L](../../l-theory/ultimate/groups/induced-map.md)

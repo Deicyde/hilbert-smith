@@ -12,6 +12,10 @@ Let $c:\mathbb T^n\to S^n$ be continuous. Give the basis cell $b$ of $D_i$ (and 
 ## Sources
 - HS paper, Section 12 (labellings by a continuous map).
 ## Depends on
-- [Chain model](../chain-models/grid/chain-model.md), [chain-model duality](../chain-models/grid/chain-model-duality.md), [strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md), [asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Chain model](../chain-models/grid/chain-model.md)
+- [Chain-model duality](../chain-models/grid/chain-model-duality.md)
+- [Strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 ## Proof depends on
-- [Poincaré](../chain-models/grid/chain-model-poincare.md), [propagation](../categories/asymptotic/propagation.md)
+- [Poincaré](../chain-models/grid/chain-model-poincare.md)
+- [Propagation](../categories/asymptotic/propagation.md)

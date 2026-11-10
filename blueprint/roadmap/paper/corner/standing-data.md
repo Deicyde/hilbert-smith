@@ -19,7 +19,7 @@ Put $N=n+4$. The standing data use the following definitions, which need only pa
 
 The properties of these sets that the iterated cut uses are [the exterior is closed](exterior-closed.md), the [cut flag](cut-flag.md) and [the exterior lies in the first cut](exterior-first-cut.md).
 
-**Remark (not formalized).** In the proof of the main theorem, $T$ is the [control space](../local-data/control/control-space.md) with the [orbit metric](../local-data/control/control-metric.md), which is a [compact metric space](../local-data/control/control-metric-properties.md), with the [cyclic action](../local-data/control/control-action.md), which is [free](../local-data/control/control-action-free.md) and [isometric](../local-data/control/control-action-isometric.md); $R$ is the buffer radius of the [fixed local data](../local-data/control/fixed-local-data.md); and $G_i=\mathbb Z/p^i$ with $\chi_i$ reduction modulo $p$.
+**Remark (not formalized).** In the proof of the main theorem, $T$ is the [control space](../local-data/control/control-space.md) with the [orbit metric](../local-data/control/control-metric.md), which is a [compact metric space](../local-data/control/control-metric-properties.md), with the [cyclic action](../local-data/control/control-action.md), which is [free](../local-data/control/control-action-free.md) and [isometric](../local-data/control/control-action-isometric.md); $R$ is the buffer radius of the [fixed local data](../local-data/control/fixed-local-data.md); and $G_i=\mathbb Z/p^{\max(i,1)}$ with $\chi_i$ reduction modulo $p$, so $a_i=\max(i,1)\ge1$ and every $\chi_i$ is onto, level $0$ included; for $i\ge1$ this is $\mathbb Z/p^i$.
 
 ## Sources
 

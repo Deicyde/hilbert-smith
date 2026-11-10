@@ -8,11 +8,11 @@ origin: background
 
 For a duality functor $F:\mathcal A\to\mathcal A'$, $F_*\circ\mathrm{cls}=\mathrm{cls}\circ F_*$, where on the right $F_*:L^p_k(\mathcal A)\to L^p_k(\mathcal A')$ is the induced homomorphism.
 
-*Proof sketch.* [The induced map at each level](induced-map-level.md) with $j=0$, since $C_{\mathbb Z^0}F=F$.
+*Proof sketch.* [The induced map at each stage](induced-map-level.md) with $j=0$, since $C_{\mathbb Z^0}F=F$.
 
 ## Sources
 
-- New: level $0$ of the induced map.
+- New: stage $0$ of the induced map.
 
 ## Depends on
 
@@ -21,4 +21,4 @@ For a duality functor $F:\mathcal A\to\mathcal A'$, $F_*\circ\mathrm{cls}=\mathr
 
 ## Proof depends on
 
-- [The induced map at each level](induced-map-level.md)
+- [The induced map at each stage](induced-map-level.md)

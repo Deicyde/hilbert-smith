@@ -6,7 +6,8 @@ origin: bridged
 # Scalar image of the compressed complex
 
 Let $Z_0$ be the [exterior](../corner/exterior.md) for $n$ and the buffer radius $R$, $Z=T\times Z_0$, and $U':\mathcal B_{\mathbf 1,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n)$ [forgetting to the scalar exterior quotient](../corner/theorem/scalar-forget.md) for the trivial group sequence. Let $\mathfrak m_{f_T}$ be the [germ](../evaluation/germ.md) of the [torus test map](../chain-models/approximations/torus-test-map.md) $f_T$. Then
-$$U'_*\operatorname{cls}(C,\hat\varphi)=\mathfrak m_{f_T}\quad\text{in }\mathbb L_N(\mathcal B_{\mathbf 1,Z_0}(S^n)).$$
+$$U'_*\operatorname{cls}(C,\hat\varphi)=\mathfrak m_{f_T}\quad\text{in }\mathbb L_N(\mathcal B_{\mathbf 1,Z_0}(S^n)),$$
+with $(C,\hat\varphi)$ read in the idempotent completion through the [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md).
 
 *Proof sketch.*
 1. $U'_*\operatorname{cls}(C,\hat\varphi)=\operatorname{cls}(U'C,\hat\varphi)$ and $\mathfrak m_{f_T}=\operatorname{cls}(qD,\varphi)$, with $q$ the quotient functor and $D$ labelled by the sphere labels $s_b=f_T(x_b)$ ([the induced map commutes with cls](../l-theory/ultimate/groups/induced-map-cls.md); $U'$ is strict). $U'C$ has the labels $s_b$ of the retained cells.
@@ -16,7 +17,25 @@ $$U'_*\operatorname{cls}(C,\hat\varphi)=\mathfrak m_{f_T}\quad\text{in }\mathbb 
 
 ## Sources
 - HS paper, Section 10 (the scalar class after forgetting $T$).
+
 ## Depends on
-- [Compressed Poincaré](compressed-poincare.md), [exterior](../corner/exterior.md), [forgetting to the scalar exterior quotient](../corner/theorem/scalar-forget.md), [germ](../evaluation/germ.md), [torus test map](../chain-models/approximations/torus-test-map.md)
+
+- [Compressed Poincaré](compressed-poincare.md)
+- [Exterior](../corner/exterior.md)
+- [Forgetting to the scalar exterior quotient](../corner/theorem/scalar-forget.md)
+- [Germ](../evaluation/germ.md)
+- [Torus test map](../chain-models/approximations/torus-test-map.md)
+- [Embedding into the idempotent completion](../l-theory/base/categories/karoubi-embedding.md)
+
 ## Proof depends on
-- [The induced map commutes with cls](../l-theory/ultimate/groups/induced-map-cls.md), [L-group](../l-theory/base/groups/l-group.md), [ultimate L-group and cls](../l-theory/ultimate/groups/ultimate-l-group.md), [homotopy-isometry invariance](../l-theory/base/groups/homotopy-isometry-invariance.md), [asymptotic category](../categories/asymptotic/asymptotic-category.md), [support ideal](../categories/supports/support-ideal.md), [compressed differential](compressed-differential.md), [discarded subcomplex](discarded-subcomplex.md), [endpoint lemma](endpoint-lemma.md), [labelled chain model is Poincaré](../evaluation/labelled-model.md)
+
+- [The induced map commutes with cls](../l-theory/ultimate/groups/induced-map-cls.md)
+- [L-group](../l-theory/base/groups/l-group.md)
+- [Ultimate L-group and cls](../l-theory/ultimate/groups/ultimate-l-group.md)
+- [Homotopy-isometry invariance](../l-theory/base/groups/homotopy-isometry-invariance.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Support ideal](../categories/supports/support-ideal.md)
+- [Compressed differential](compressed-differential.md)
+- [Discarded subcomplex](discarded-subcomplex.md)
+- [Endpoint lemma](endpoint-lemma.md)
+- [Labelled chain model is Poincaré](../evaluation/labelled-model.md)

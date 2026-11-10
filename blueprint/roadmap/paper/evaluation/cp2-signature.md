@@ -12,6 +12,7 @@ $\sigma_{\{1\}}[P,\varphi_P]=1$ in $\mathbb Z$.
 ## Sources
 - [published: signature of $\mathbb{CP}^2$] [U].
 ## Depends on
-- [Cells of CP^2](../chain-models/grid/cp2-cells.md), [integer signature](../signatures/l-four/integer-signature.md)
+- [Cells of CP^2](../chain-models/grid/cp2-cells.md)
+- [Integer signature](../signatures/l-four/integer-signature.md)
 ## Proof depends on
 - [Middle form](../signatures/l-four/middle-form.md)

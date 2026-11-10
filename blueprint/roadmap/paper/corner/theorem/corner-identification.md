@@ -6,7 +6,7 @@ origin: bridged
 
 # Corner identification
 
-In the setting of [Corner duality](corner-duality.md), let $(C_0,\phi_0)$ be a strict symmetric Poincaré complex. Suppose there are chain maps $u:\mathcal C\to C_0$ and $v:C_0\to\mathcal C$ with
+In the setting of [Corner duality](corner-duality.md), let $(C_0,\phi_0)$ be a strict symmetric Poincaré complex in $\operatorname{Kar}\mathcal A$ (a complex in $\mathcal A$ is read there through the [Karoubi embedding](../../l-theory/base/categories/karoubi-embedding.md)). Suppose there are chain maps $u:\mathcal C\to C_0$ and $v:C_0\to\mathcal C$ with
 
 $$uv\simeq1,\quad vu\simeq E,\quad uE\simeq u,\quad u\Phi u^*\simeq q\phi_0 .$$
 
@@ -24,6 +24,7 @@ Then $w=u\iota$ is a homotopy equivalence with $w\phi_Dw^*\simeq\phi_0$, and $\o
 ## Depends on
 
 - [Corner duality](corner-duality.md)
+- [Embedding into the idempotent completion](../../l-theory/base/categories/karoubi-embedding.md)
 
 ## Proof depends on
 

@@ -14,5 +14,11 @@ The compressed maps are the compressions, for $g,h\in G_i$, of the matrices of t
 
 ## Sources
 - HS paper, Section 10.
+
 ## Depends on
-- [Compressed complex](compressed-complex.md), [the chain model is Poincaré](../chain-models/grid/chain-model-poincare.md), [group approximations](../chain-models/approximations/group-approx.md), [product homotopies](../chain-models/approximations/product-homotopies.md), [adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md)
+
+- [Compressed complex](compressed-complex.md)
+- [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
+- [Group approximations](../chain-models/approximations/group-approx.md)
+- [Product homotopies](../chain-models/approximations/product-homotopies.md)
+- [Adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md)

@@ -4,7 +4,7 @@ declaration: lemma
 origin: background
 ---
 
-# Quotient maps at each level
+# Quotient maps at each stage
 
 Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration, $q:\mathcal A\to\mathcal A/\mathcal U$ and $q^{(j)}:C_{\mathbb Z^j}\mathcal A\to C_{\mathbb Z^j}\mathcal A/C_{\mathbb Z^j}\mathcal U$ the quotient functors, and $e_j$ the isomorphism of [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md). Then for all $j\ge0$ and $m$,
 $$(e_j)_*\circ\mathrm{fgt}\circ q^{(j)}_*=(C_{\mathbb Z^j}q)_*:\ L^p_m(C_{\mathbb Z^j}\mathcal A)\to L^p_m(C_{\mathbb Z^j}(\mathcal A/\mathcal U)),$$

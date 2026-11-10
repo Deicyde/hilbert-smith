@@ -8,9 +8,9 @@ The bounded category $C_{\mathbb Z}(\mathcal A)$ and its duality, iterated bound
 
 - [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
 - [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
+- [Iterated bounded categories](iterated-bounded-category.md)
 - [Bounded extension of a duality functor](bounded-functor.md)
 - [Bounded extension is functorial](bounded-functor-comp.md)
-- [Iterated bounded categories](iterated-bounded-category.md)
 - [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
 - [Bounded quotients](bounded-quotient.md)
 - [Iterated bounded filtrations](iterated-bounded-filtration.md)
@@ -21,4 +21,3 @@ The bounded category $C_{\mathbb Z}(\mathcal A)$ and its duality, iterated bound
 - [The bounded swindle](bounded-swindle.md)
 - [Stable criterion for vanishing lower $K$](lower-k-vanishing-criterion.md)
 - [Stable lifts through a Karoubi quotient](stable-lift.md)
-- [Constant objects have class zero](constant-object-class.md)

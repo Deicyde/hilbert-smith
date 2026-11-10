@@ -8,7 +8,7 @@ origin: bridged
 
 For $H\le G$, $\sigma_H((\mathrm{res}^G_H)_*x)=\sigma_G(x)$.
 
-*Proof sketch.* Take $h=1$ in [restriction on $L^p_4$](signature-restrict.md) and use $\sigma(x)=\mathrm{Sign}(x)(1)$ ([integer signature](integer-signature.md)). Then use injectivity of $\mathbb Z\to\mathbb R$.
+*Proof sketch.* Take $h=1$ in [restriction on $L^p_4$](signature-restrict.md) and use $\sigma(x)=\mathrm{Sign}(x)(1)$ ([the integer signature is the value at the identity](integer-signature-identity.md)). Then use injectivity of $\mathbb Z\to\mathbb R$.
 
 ## Sources
 
@@ -22,3 +22,4 @@ For $H\le G$, $\sigma_H((\mathrm{res}^G_H)_*x)=\sigma_G(x)$.
 ## Proof depends on
 
 - [Restriction on $L^p_4$](signature-restrict.md)
+- [The integer signature is the value at the identity](integer-signature-identity.md)

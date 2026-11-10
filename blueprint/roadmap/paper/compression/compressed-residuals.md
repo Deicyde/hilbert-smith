@@ -20,7 +20,18 @@ Here $Q=Q_i$, and $d$ is the differential of $D_i$ or of $D_i^{N-*}$ as the sour
 
 ## Sources
 - HS paper, Section 10. New: the signs are rechecked, and items 5-7 are written without the HS paper's auxiliary maps.
+
 ## Depends on
+
 - [Compressed maps](compressed-maps.md)
+
 ## Proof depends on
-- [Product rule](compression-product-rule.md), [discarded subcomplex](discarded-subcomplex.md), [the chain model is Poincaré](../chain-models/grid/chain-model-poincare.md), [product homotopies](../chain-models/approximations/product-homotopies.md), [adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md), [group approximations](../chain-models/approximations/group-approx.md), [carried group approximations](../chain-models/approximations/group-approx-carried.md), [chain-model estimates](../chain-models/grid/chain-model-estimates.md)
+
+- [Product rule](compression-product-rule.md)
+- [Discarded subcomplex](discarded-subcomplex.md)
+- [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
+- [Product homotopies](../chain-models/approximations/product-homotopies.md)
+- [Adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md)
+- [Group approximations](../chain-models/approximations/group-approx.md)
+- [Carried group approximations](../chain-models/approximations/group-approx-carried.md)
+- [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)

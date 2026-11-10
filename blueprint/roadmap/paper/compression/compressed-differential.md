@@ -11,7 +11,15 @@ For $i\ge i_0$, $\hat d\hat d=0$ and $\mathrm{pr}_i\,d=\hat d\,\mathrm{pr}_i$. F
 
 ## Sources
 - HS paper, Section 10.
+
 ## Depends on
-- [Compressed complex](compressed-complex.md), [compressed maps](compressed-maps.md), [start index](start-index.md)
+
+- [Compressed complex](compressed-complex.md)
+- [Compressed maps](compressed-maps.md)
+- [Start index](start-index.md)
+
 ## Proof depends on
-- [Discarded subcomplex](discarded-subcomplex.md), [buffers hold eventually](buffer-eventually.md), [graph-type matrices](../corner/actions/graph-type.md)
+
+- [Discarded subcomplex](discarded-subcomplex.md)
+- [Buffers hold eventually](buffer-eventually.md)
+- [Graph-type matrices](../corner/actions/graph-type.md)

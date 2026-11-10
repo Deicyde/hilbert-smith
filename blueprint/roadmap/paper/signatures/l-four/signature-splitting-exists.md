@@ -15,5 +15,3 @@ Let $W$ be a finite-dimensional real vector space, $b$ a nondegenerate symmetric
 - [published: Sylvester's law of inertia; averaging (Weyl's trick)] [U]
 
 ## Depends on
-
-(none)

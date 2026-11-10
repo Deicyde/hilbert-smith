@@ -4,7 +4,7 @@ declaration: lemma
 origin: background
 ---
 
-# The induced map at each level
+# The induced map at each stage
 
 For a duality functor $F:\mathcal A\to\mathcal A'$ and every $j\ge0$, $F_*\circ\iota_j=\iota_j\circ(C_{\mathbb Z^j}F)_*$.
 

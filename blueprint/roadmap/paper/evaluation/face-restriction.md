@@ -19,4 +19,5 @@ where $a_j$ is the number of circle and arc factors before $F_j$.
 ## Depends on
 - [Block pair](../chain-models/blocks/block-pair.md)
 ## Proof depends on
-- [Arc pair](../chain-models/blocks/arc-pair.md), [external product of structures](../l-theory/localization/products/external-product.md)
+- [Arc pair](../chain-models/blocks/arc-pair.md)
+- [External product of structures](../l-theory/localization/products/external-product.md)

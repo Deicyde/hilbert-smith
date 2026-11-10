@@ -4,7 +4,7 @@ declaration: lemma
 origin: background
 ---
 
-# Levels are compatible with the transition
+# Stages are compatible with the transition
 
 $\iota_{j+1}\circ t=\iota_j$ on $L^{\langle -j\rangle}_k(\mathcal A)$. Hence $\iota_{j+m}\circ t^m=\iota_j$ for every $m\ge0$.
 

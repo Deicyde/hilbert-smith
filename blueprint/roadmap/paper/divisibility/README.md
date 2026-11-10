@@ -4,7 +4,7 @@ article_id: af_13f06a274b7504926556df4b
 
 # Divisibility over a free $C_p$-space
 
-In this chapter $X$ is a compact metric space with a free isometric action of $C_p$. For each $i$, $\chi_i:G_i\to C_p$ is a surjection from a finite $p$-group, and $G_i$ acts on $X$ through $\chi_i$. The goal is the [divisibility theorem](divisibility.md): for every class of $\mathbb L_4(\mathcal A_{\mathbf G}(X))$, the signature tail is eventually divisible by $p$.
+In this chapter $X$ is a compact metric space with a free isometric action of $C_p$. For each $i$, $\chi_i:G_i\to C_p$ is a surjection from a finite $p$-group, and $G_i$ acts on $X$ through $\chi_i$. The $G_i$, which need not be abelian, are written multiplicatively throughout the chapter, and $C_p$ additively. The goal is the [divisibility theorem](divisibility.md): for every class of $\mathbb L_4(\mathcal A_{\mathbf G}(X))$, the signature tail is eventually divisible by $p$.
 
 The induction behind it does not depend on L-theory, so we isolate it first. A [Mayer-Vietoris functor](mayer-vietoris-functor.md) assigns groups to the members of a lattice. It has a boundary for each pair, and the sequence is exact in the middle. A [natural endomorphism](natural-endomorphism.md) commutes with the inclusions and the boundaries. The [abstract nilpotence lemma](abstract-nilpotence.md) says that if a natural endomorphism vanishes below each of $s$ pieces, then its $s$-th power vanishes on their join. The [support Mayer-Vietoris functor](support-mayer-vietoris.md) sends $S\mapsto\mathbb L_k(\mathcal A_S)$ on closed invariant subsets. Its boundary is the excision boundary of the [support excisive pair](../categories/supports/support-excisive-pair.md), read in $\mathbb L_{k-1}(\mathcal A_{A\cap B})$.
 

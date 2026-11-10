@@ -20,7 +20,21 @@ For the witness: $Z$ is $C_p$-invariant and $C_p$ acts isometrically ([graph-typ
 
 ## Sources
 - HS paper, Section 10 (exterior band). New: words of length two suffice, so there is no length parameter and no band.
+
 ## Depends on
-- [Product rule](compression-product-rule.md), [chain-model estimates](../chain-models/grid/chain-model-estimates.md), [buffered cells](../chain-models/grid/buffered-cells.md), [control labels](../chain-models/grid/control-labels.md), [graph-type matrices](../corner/actions/graph-type.md), [exterior witnesses](../corner/actions/exterior-witness.md), [exterior](../corner/exterior.md), [start index](start-index.md)
+
+- [Product rule](compression-product-rule.md)
+- [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)
+- [Buffered cells](../chain-models/grid/buffered-cells.md)
+- [Control labels](../chain-models/grid/control-labels.md)
+- [Graph-type matrices](../corner/actions/graph-type.md)
+- [Exterior witnesses](../corner/actions/exterior-witness.md)
+- [Exterior](../corner/exterior.md)
+- [Start index](start-index.md)
+
 ## Proof depends on
-- [Buffers hold eventually](buffer-eventually.md), [graph-type calculus](../corner/actions/graph-type-calculus.md), [sphere labels](../chain-models/grid/sphere-labels.md), [retained cells](retained-cells.md)
+
+- [Buffers hold eventually](buffer-eventually.md)
+- [Graph-type calculus](../corner/actions/graph-type-calculus.md)
+- [Sphere labels](../chain-models/grid/sphere-labels.md)
+- [Retained cells](retained-cells.md)

@@ -64,16 +64,22 @@ The proof has four steps.
    step 3 forbids. So the group has no small subgroups, and the
    Gleason–Yamabe theorem makes it a Lie group.
 
-Three results are cited rather than proved: Newman's theorem in two
-forms, the embedding of $\mathbb{Z}_p$ in a compact torsion-free group
-(whose proof through Pontryagin duality the appendices sketch), and the
-Gleason–Yamabe theorem. The appendices state them exactly as the main
-text uses them, as open statements: theorems that the Lean states now
-and proves later. A few statements inside the chapters are open in the
-same sense: lifting, the two sides of an excision boundary and Lemma U
-in the L-theory chapter, and the splitting of idempotents in the
-bounded homotopy category used by the corner chapter. Both main
-theorems rest on all of these until they are proved.
+Four classical results are cited rather than proved: Newman's theorem
+in two forms (fixing an open set, and small orbits), the embedding of
+$\mathbb{Z}_p$ in a compact torsion-free group, and the Gleason–Yamabe
+theorem. The appendices state them exactly as the main text uses them,
+as open statements: theorems that the Lean states now and proves later.
+Two more open statements of Pontryagin duality (characters separate
+points, and duality for discrete groups) sit only on the sketched route
+to the embedding of $\mathbb{Z}_p$, so neither main theorem rests on
+them. Four statements inside the chapters are open in the same sense:
+lifting, the two sides of an excision boundary and Lemma U in the
+L-theory chapter, and the splitting of idempotents in the bounded
+homotopy category used by the corner chapter. $p$-adic exclusion rests
+on Newman's theorem on fixing an open set and on these four internal
+statements. Hilbert–Smith rests on all eight: on those through
+$p$-adic exclusion, and also on Newman's theorem on small orbits, the
+embedding of $\mathbb{Z}_p$ and the Gleason–Yamabe theorem.
 
 ## Attribution
 

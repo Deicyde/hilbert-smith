@@ -9,5 +9,7 @@ Fix the null sequence $(\epsilon'_i)$ chosen in [buffers hold eventually](buffer
 
 ## Sources
 - New: the index from which the compression is defined, and one bound for every estimate.
+
 ## Depends on
+
 - [Buffers hold eventually](buffer-eventually.md)

@@ -12,4 +12,4 @@ This chapter turns a faithful action of $\mathbb Z_p$ on a connected $n$-manifol
 - [The local datum and the test map](chart/README.md)
 - [The control space and the fixed local data](control/README.md)
 
-Remark (not formalized). The test region is nonempty, because the test map is homotopic to the identity and the sphere is not contractible; nothing in this chapter uses that.
+**Remark (not formalized).** The test region is nonempty, because the test map is homotopic to the identity and the sphere is not contractible; nothing in this chapter uses that.

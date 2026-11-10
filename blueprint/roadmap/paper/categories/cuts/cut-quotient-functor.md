@@ -10,7 +10,7 @@ Let $F:\mathcal A_{\mathbf G}(X)\to\mathcal A_{\mathbf G'}(X')$ be a strict dual
 
 *Proof sketch.* If $u=ba$ through $W\in\mathcal A_Z$, then $F(u)=F(b)F(a)$ through $F(W)\in\mathcal A_{Z'}$, so $\bar F$ is well defined. It is $\mathbb Q$-linear and commutes with composition, identities and transposes because $F$ does. Both sides of $\bar F\circ q=q'\circ F|_{\mathcal A_S}$ send $M$ to $F(M)$ and $u$ to $[F(u)]$.
 
-**Remark (not formalized).** For $S=X$ this is the [induced functor on exterior quotients](../supports/exterior-functor.md) read through the [exterior quotient as a cut domain](exterior-cut-identification.md). With $Z=Z'=\varnothing$ it is the functor that the iteration of cuts along a flag composes with the quotient functors $\mathcal A_{Y_m}\to\mathcal A_{Y_m}/\mathcal A_\varnothing$.
+**Remark (not formalized).** For $S=X$ this is the [induced functor on exterior quotients](../supports/exterior-functor.md) read through the [exterior quotient as a cut domain](exterior-cut-identification.md): $\bar F\circ j_Z=j_{Z'}\circ\bar F_{\mathcal B}$ is the [naturality of the exterior quotient as a cut domain](exterior-cut-naturality.md). With $Z=Z'=\varnothing$ it is the functor that the iteration of cuts along a flag composes with the quotient functors $\mathcal A_{Y_m}\to\mathcal A_{Y_m}/\mathcal A_\varnothing$.
 
 ## Sources
 

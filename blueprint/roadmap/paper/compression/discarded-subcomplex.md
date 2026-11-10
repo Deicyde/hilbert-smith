@@ -11,7 +11,12 @@ Let $\mathrm{pr}_i$ be the based projection of $D_i$ onto the span of the [retai
 
 ## Sources
 - HS paper, Section 10.
+
 ## Depends on
-- [Retained cells](retained-cells.md), [chain model](../chain-models/grid/chain-model.md)
+
+- [Retained cells](retained-cells.md)
+- [Chain model](../chain-models/grid/chain-model.md)
+
 ## Proof depends on
+
 - [Cells of CP^2](../chain-models/grid/cp2-cells.md)

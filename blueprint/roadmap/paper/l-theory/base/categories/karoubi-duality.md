@@ -6,7 +6,7 @@ origin: background
 
 # Idempotent completion with duality
 
-For a duality category $\mathcal A$, $\mathrm{Kar}\,\mathcal A$ has objects $(M,e)$ with $e^2=e$, and morphisms $f:(M,e)\to(N,e')$ with $e'fe=f$. Its duality is $(M,e)^*=(M^*,e^*)$, $f\mapsto f^*$. It is a duality category, and $M\mapsto(M,1)$ is a fully faithful strict duality functor.
+For a duality category $\mathcal A$, $\mathrm{Kar}\,\mathcal A$ has objects $(M,e)$ with $e^2=e$, and morphisms $f:(M,e)\to(N,e')$ with $e'fe=f$. Its duality is $(M,e)^*=(M^*,e^*)$, $f\mapsto f^*$. It is a duality category.
 
 ## Sources
 

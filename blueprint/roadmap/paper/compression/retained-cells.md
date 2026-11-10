@@ -9,5 +9,9 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer r
 
 ## Sources
 - HS paper, Section 10 (far simplices). New: the cells are cubical, and the test is on the closed cube, not on the label.
+
 ## Depends on
-- [Fixed local data](../local-data/control/fixed-local-data.md), [torus test map](../chain-models/approximations/torus-test-map.md), [chain model](../chain-models/grid/chain-model.md)
+
+- [Fixed local data](../local-data/control/fixed-local-data.md)
+- [Torus test map](../chain-models/approximations/torus-test-map.md)
+- [Chain model](../chain-models/grid/chain-model.md)

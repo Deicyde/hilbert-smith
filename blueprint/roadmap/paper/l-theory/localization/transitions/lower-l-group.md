@@ -6,7 +6,7 @@ origin: cited
 
 # Lower L-group
 
-For $j\ge0$ and $k\in\mathbb Z$, $L^{\langle -j\rangle}_k(\mathcal A):=L^p_{k+j}(C_{\mathbb Z^j}\mathcal A)$, where $C_{\mathbb Z^j}\mathcal A$ is the $j$-fold iterated bounded category, so that $L^{\langle 0\rangle}_k(\mathcal A)=L^p_k(\mathcal A)$.
+For $j\ge0$ and $k\in\mathbb Z$, $L^{\langle -j\rangle}_k(\mathcal A):=L^p_{k+j}(C_{\mathbb Z^j}\mathcal A)$, where $C_{\mathbb Z^j}\mathcal A$ is the $j$-fold iterated bounded category, so that $L^{\langle 0\rangle}_k(\mathcal A)=L^p_k(\mathcal A)$. The index $j$ is the *stage* (the number of bounded directions; not the level $i$ of a group sequence).
 
 ## Sources
 

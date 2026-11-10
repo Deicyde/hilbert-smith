@@ -8,7 +8,7 @@ origin: cited
 
 If $K_{-j}(B)=0$ for all $j\ge1$, then $\mathrm{cls}:L^p_k(B)\to\mathbb L_k(B)$ is bijective for all $k$.
 
-*Proof sketch.* The transition from level $j$ to level $j+1$ is $t$ for $D=C_{\mathbb Z^j}(B)$. Its $K_{-1}(D)=K_{-j-1}(B)=0$ by definition ([Iterated bounded categories](../bounded/categories/iterated-bounded-category.md)), so $t$ is bijective by [the half-line comparison](half-line-comparison.md). The insertion of level $0$ into the colimit of a sequence of bijections is bijective.
+*Proof sketch.* The transition from stage $j$ to stage $j+1$ is $t$ for $D=C_{\mathbb Z^j}(B)$. Its $K_{-1}(D)=K_{-j-1}(B)=0$ by definition ([Iterated bounded categories](../bounded/categories/iterated-bounded-category.md)), so $t$ is bijective by [the half-line comparison](half-line-comparison.md). The insertion of stage $0$ into the colimit of a sequence of bijections is bijective.
 
 ## Sources
 

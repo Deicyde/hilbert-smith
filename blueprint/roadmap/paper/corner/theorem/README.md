@@ -8,9 +8,9 @@ Splitting duality-compatible homotopy idempotents (resting on the open statement
 
 - [Duality-compatible homotopy idempotent](compatible-idempotent.md)
 - [Idempotents split in the bounded homotopy category](kb-idempotent-splitting.md)
-- [Splitting a homotopy idempotent](homotopy-idempotent-splitting.md)
 - [Trimming the top](trim-top.md)
 - [Trimming the bottom](trim-bottom.md)
+- [Splitting a homotopy idempotent](homotopy-idempotent-splitting.md)
 - [Corner duality](corner-duality.md)
 - [Corner identification](corner-identification.md)
 - [The induced complex](induced-complex-poincare.md)

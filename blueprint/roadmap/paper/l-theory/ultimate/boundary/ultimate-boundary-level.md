@@ -4,11 +4,11 @@ declaration: lemma
 origin: background
 ---
 
-# The ultimate boundary at each level
+# The ultimate boundary at each stage
 
 For $x\in L^{\langle -j\rangle}_k(\mathcal A/\mathcal U)$, $\partial(\iota_jx)=\iota_{j+1}\big(\partial^{(j)}x\big)$.
 
-*Proof sketch.* This is the defining property of a homomorphism out of a colimit given by compatible maps at each level.
+*Proof sketch.* This is the defining property of a homomorphism out of a colimit given by compatible maps at each stage.
 
 ## Sources
 

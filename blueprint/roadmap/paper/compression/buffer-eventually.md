@@ -20,7 +20,17 @@ Take $i_1$ the largest of the three thresholds.
 
 ## Sources
 - HS paper, Section 10 (the radius bound for retained cells).
+
 ## Depends on
-- [Retained cells](retained-cells.md), [chain-model estimates](../chain-models/grid/chain-model-estimates.md), [buffered cells](../chain-models/grid/buffered-cells.md), [restriction](../chain-models/grid/restriction.md), [control labels](../chain-models/grid/control-labels.md), [graph-type matrices](../corner/actions/graph-type.md)
+
+- [Retained cells](retained-cells.md)
+- [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)
+- [Buffered cells](../chain-models/grid/buffered-cells.md)
+- [Restriction](../chain-models/grid/restriction.md)
+- [Control labels](../chain-models/grid/control-labels.md)
+- [Graph-type matrices](../corner/actions/graph-type.md)
+
 ## Proof depends on
-- [Sphere labels](../chain-models/grid/sphere-labels.md), [round sphere](../corner/round-sphere.md)
+
+- [Sphere labels](../chain-models/grid/sphere-labels.md)
+- [Round sphere](../corner/round-sphere.md)

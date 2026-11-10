@@ -10,4 +10,7 @@ Let $K=[-1/4,1/4]^n\subseteq\mathbb T^n$ and let $k_i$ be the [mesh sequence](..
 ## Sources
 - New.
 ## Depends on
-- [Box hull](../chain-models/grid/box-hull.md), [block pair](../chain-models/blocks/block-pair.md), [mesh sequence](../chain-models/grid/mesh-sequence.md), [chain model](../chain-models/grid/chain-model.md)
+- [Box hull](../chain-models/grid/box-hull.md)
+- [Block pair](../chain-models/blocks/block-pair.md)
+- [Mesh sequence](../chain-models/grid/mesh-sequence.md)
+- [Chain model](../chain-models/grid/chain-model.md)

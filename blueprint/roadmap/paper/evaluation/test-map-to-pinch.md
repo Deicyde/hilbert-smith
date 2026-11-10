@@ -14,6 +14,12 @@ For [fixed local data](../local-data/control/fixed-local-data.md) and every $s>0
 ## Sources
 - HS paper, Section 12. New: explicit homotopy; no degree classification.
 ## Depends on
-- [Fixed local data](../local-data/control/fixed-local-data.md), [cubical pinch](cubical-pinch.md), [torus test map](../chain-models/approximations/torus-test-map.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md)
+- [Cubical pinch](cubical-pinch.md)
+- [Torus test map](../chain-models/approximations/torus-test-map.md)
 ## Proof depends on
-- [Test map](../local-data/chart/test-map.md), [averaged map continuous](../local-data/chart/averaged-map-continuous.md), [averaged map displacement](../local-data/chart/averaged-map-displacement.md), [pinch continuous](../local-data/chart/pinch-continuous.md), [pinch homotopy](../local-data/chart/pinch-homotopy.md)
+- [Test map](../local-data/chart/test-map.md)
+- [Averaged map continuous](../local-data/chart/averaged-map-continuous.md)
+- [Averaged map displacement](../local-data/chart/averaged-map-displacement.md)
+- [Pinch continuous](../local-data/chart/pinch-continuous.md)
+- [Pinch homotopy](../local-data/chart/pinch-homotopy.md)

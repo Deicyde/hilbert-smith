@@ -12,5 +12,7 @@ $$\hat\alpha\,\hat\beta-\widehat{\alpha\beta}=-p_2\,\alpha\,Q_1\,\beta\,\jmath_0
 
 ## Sources
 - HS paper, Section 10.
+
 ## Depends on
+
 - [Compressed maps](compressed-maps.md)
