@@ -10,14 +10,13 @@ Let $p$ be a prime, $n\in\mathbb N$, and $O\subseteq\mathbb{R}^n$ a nonempty con
 
 *Proof sketch.*
 1. If $n=0$, $O$ is a point, and $0$ and $1$ act alike.
-2. Otherwise suppose the action is faithful. $O$ is a connected $n$-manifold, so it carries fixed local data with $D=1/64$, with buffer radii $r<R<t<u$ and control space $T$.
-3. $T$ is compact, $d_T$ is a metric inducing its topology, and $C_p$ acts on it freely and isometrically. So $p$, $G_i=\mathbb Z/p^i$ with $\chi_i$ reduction modulo $p$ ($i\ge1$), $T$, $n$ and the radius $R$ form standing data, with $Z_0$, $Z=T\times Z_0$ and $N=n+4$ as defined there.
-4. Theorem C gives the compressed complex $(C,\hat\varphi)$: a strict $N$-dimensional symmetric Poincaré complex in $\mathcal B_{\mathbf 1,Z}(T\times S^n)$, concentrated in $[0,N]$, with a graph-type homotopy action of $\mathbf G=(G_i,\chi_i)$, and $U'_*\operatorname{cls}(C,\hat\varphi)=\mathfrak m_{f_T}$, the class of the torus test map.
-5. Theorem A, applied to $(C,\hat\varphi)$, gives $\sigma_{\mathrm{tail}}(\Delta_{\mathbf 1}\mathfrak m_{f_T})\in p\,\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)}$.
-6. Theorem B for the test map gives $\sigma_{\mathrm{tail}}(\Delta_{\mathbf 1}\mathfrak m_{f_T})=[(\varepsilon,\varepsilon,\dots)]$ with $\varepsilon=\pm1$.
-7. By steps 5 and 6 there are integers $t_i$ with $\varepsilon=p\,t_i$ for all large $i$. The lemma on integer tails, for the constant sequence $s_i=\varepsilon$, gives a contradiction.
+2. Otherwise suppose the action is faithful. $O$ is a connected $n$-manifold, so it carries fixed local data with $D=1/64$, with buffer radius $R$, control space $T$ (possibly empty) and torus test map $f_T$. Fix $s=R/(2\sqrt n)$, so $0<s<R/\sqrt n$, and let $G_i=\mathbb Z/p^i$ with $\chi_i$ reduction modulo $p$ ($i\ge1$). Let $\Delta_{\mathbf 1}$ be the iterated cut for the cut sets of the standing data with this $n$, $R$ and $s$; both Theorem B (step 3) and Theorem A (step 6) are applied to this $\Delta_{\mathbf 1}$.
+3. Theorem B for the test map, with this $s$, gives $\sigma_{\mathrm{tail}}(\Delta_{\mathbf 1}\mathfrak m_{f_T})=[(\varepsilon,\varepsilon,\dots)]$ with $\varepsilon\in\{\pm1\}$.
+4. Theorem C gives the compressed complex $(C,\hat\varphi)$, a strict $N$-dimensional symmetric Poincaré complex in $\mathcal B_{\mathbf 1,Z}(T\times S^n)$ concentrated in $[0,N]$ (clause 1), with $U'_*\operatorname{cls}(C,\hat\varphi)=\mathfrak m_{f_T}$ (clause 3).
+5. Case $T=\varnothing$. Then $T\times S^n$ is empty, so every object of the asymptotic category over it, and hence every chain object of $C$, is a zero object. The chain map from $C$ to the zero complex is an isomorphism carrying $\hat\varphi$ to $0$, so $[C,\hat\varphi]=0$ by homotopy-isometry invariance, and $\operatorname{cls}(C,\hat\varphi)=0$. By step 4, $\mathfrak m_{f_T}=U'_*0=0$. As $\Delta_{\mathbf 1}$ and $\sigma_{\mathrm{tail}}$ are homomorphisms, step 3 gives $[(\varepsilon,\varepsilon,\dots)]=0$, so $\varepsilon=0$ for all large $i$, which is false.
+6. Case $T\ne\varnothing$. By Theorem C (clause 2), $p$, $(G_i,\chi_i)$, $T$, $n$, $R$ and $s$ form standing data, and $(C,\hat\varphi)$ carries a graph-type homotopy action of $\mathbf G=(G_i,\chi_i)$. Theorem A, applied to $(C,\hat\varphi)$, says that every representative of $\sigma_{\mathrm{tail}}(\Delta_{\mathbf 1}U'_*\operatorname{cls}(C,\hat\varphi))=\sigma_{\mathrm{tail}}(\Delta_{\mathbf 1}\mathfrak m_{f_T})$ is eventually divisible by $p$. By step 3, $(\varepsilon,\varepsilon,\dots)$ is such a representative. The lemma on integer tails, for the constant sequence $\varepsilon$, gives a contradiction.
 
-This proof rests on open statements: through the fixed local data, on [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md); through Theorems A and B, on the open statements those rest on, among them [Lemma U](../l-theory/comparison/lemma-u.md) and [idempotent splitting in the bounded homotopy category](../corner/theorem/kb-idempotent-splitting.md).
+This proof rests on the open statements [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md) (through the fixed local data), [lifting](../l-theory/localization/boundary/lift-to-pair.md) (through every cut boundary), [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md) (through the inner cuts of Theorem B), [Lemma U](../l-theory/comparison/lemma-u.md) (through the tail signature) and [idempotent splitting in the bounded homotopy category](../corner/theorem/kb-idempotent-splitting.md) (through Theorem A).
 
 ## Sources
 
@@ -30,13 +29,15 @@ This proof rests on open statements: through the fixed local data, on [Newman's 
 ## Proof depends on
 
 - [Fixed local data from a faithful action](../local-data/control/fixed-local-data-exists.md)
-- [The control space is compact](../local-data/control/control-space-compact.md)
-- [The orbit metric metrizes the control space](../local-data/control/control-metric-properties.md)
-- [The cyclic action is free](../local-data/control/control-action-free.md)
-- [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
 - [Standing data](../corner/standing-data.md)
-- [Theorem C](../compression/theorem-c.md)
-- [Theorem A](../corner/theorem/theorem-a.md)
+- [Iterated cut](../corner/theorem/iterated-cut.md)
 - [Theorem B for the test map](../evaluation/theorem-b-test-map.md)
+- [Theorem C](../compression/theorem-c.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Exterior quotient](../categories/supports/exterior-quotient.md)
+- [Homotopy-isometry invariance](../l-theory/base/groups/homotopy-isometry-invariance.md)
+- [Ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)
+- [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
 - [The tail signature](../signatures/tail/tail-signature.md)
+- [Theorem A](../corner/theorem/theorem-a.md)
 - [Integer tails](integer-tails.md)

@@ -18,6 +18,6 @@ satisfy $\varphi_ib_i-1=dH_i+H_id$ and $b_i\varphi_i-1=dH'_i+H'_id$. Tensors of 
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: replaces the cap-block comparison of HS paper, Section 7.
 ## Depends on
-- [Chain-model duality](chain-model-duality.md), [chain model](chain-model.md), [propagation](../../categories/asymptotic/propagation.md)
+- [Chain-model duality](chain-model-duality.md), [chain model](chain-model.md), [propagation](../../categories/asymptotic/propagation.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md)
 ## Proof depends on
 - [Circle duality](circle-duality.md), [cells of CP^2](cp2-cells.md), [Leibniz rule for products](../../l-theory/localization/products/product-leibniz.md), [products commute with T](../../l-theory/localization/products/product-involution.md), [duality map of a product](../../l-theory/localization/products/product-duality-map.md)

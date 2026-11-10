@@ -7,3 +7,5 @@ Degree bookkeeping: $d_m$ lowers $k$ by one, so the $n$ cuts take $\mathbb L_N$ 
 The functor $j$ is described only in a Remark of cut-boundary.md; if $\mathcal A_X$ for $S=X$ is definitionally $\mathcal A_{\mathbf G}(X)$ the map is `id`, otherwise the categories chapter should add a one-line def (requested in the report as optional).
 
 HS paper lines 1150-1165.
+
+c4 pass (decision 6, c3-evaluation NEEDS 2): $\Delta_{\mathbf 1}$ moved to corner/theorem/scalar-iterated-cut.md, defined from n, R, s alone; this article keeps only $\Delta_T$ and links it in a Remark. Both state that they rest on lifting through the cut boundary (c2-corner verdict, finding 2). Closedness of $Z$ now cites corner/exterior-closed.md.

@@ -10,7 +10,7 @@ Let $p$ be a prime, $n\in\mathbb N$, and let $X$ be a connected $n$-manifold: a 
 
 *Proof sketch.* Suppose the action is faithful. The reduction to one chart gives a faithful jointly continuous action of $\mathbb{Z}_p$ on a nonempty connected open subset of $\mathbb{R}^n$, and local exclusion says that no such action exists.
 
-This theorem rests on the open statements that the reduction to one chart and local exclusion rest on: Newman's theorem on fixing an open set, and those behind Theorems A and B.
+This theorem rests on the open statements [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md) (through the reduction to one chart and the fixed local data) and, through local exclusion, [lifting](../l-theory/localization/boundary/lift-to-pair.md) (through every cut boundary), [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md) (through the inner cuts of Theorem B), [Lemma U](../l-theory/comparison/lemma-u.md) (through the tail signature) and [idempotent splitting in the bounded homotopy category](../corner/theorem/kb-idempotent-splitting.md) (through Theorem A).
 
 ## Sources
 

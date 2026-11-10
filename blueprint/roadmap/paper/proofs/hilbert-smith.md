@@ -10,7 +10,7 @@ Let $M$ be a connected $n$-manifold and let $G$ be a locally compact topological
 
 *Proof sketch.* $G$ is Hausdorff because faithful actions give Hausdorff groups, and it has no small subgroups. The Gleason–Yamabe theorem gives the conclusion.
 
-This theorem rests on the open statement [Gleason–Yamabe](../inputs/gleason-yamabe/gleason-yamabe.md) and, through the absence of small subgroups, on the open statements that result rests on.
+This theorem rests on the open statements [Gleason–Yamabe](../inputs/gleason-yamabe/gleason-yamabe.md), [Newman's theorem on small orbits](../inputs/newman/newman-small-orbits.md), [$\mathbb Z_p$ inside a compact torsion-free group](../inputs/compact-groups/zp-in-torsion-free.md) and [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md) (through the absence of small subgroups) and, through $p$-adic exclusion, [lifting](../l-theory/localization/boundary/lift-to-pair.md) (through every cut boundary), [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md) (through the inner cuts of Theorem B), [Lemma U](../l-theory/comparison/lemma-u.md) (through the tail signature) and [idempotent splitting in the bounded homotopy category](../corner/theorem/kb-idempotent-splitting.md) (through Theorem A).
 
 ## Sources
 

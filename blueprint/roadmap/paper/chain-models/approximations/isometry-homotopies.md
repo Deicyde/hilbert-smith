@@ -14,6 +14,6 @@ with $d$ the differentials of $D_i$ and $D_i^{N-*}$, and $U_g$ has $d_\infty$-pr
 ## Sources
 - HS paper, Section 9.
 ## Depends on
-- [Poincaré](../grid/chain-model-poincare.md), [group approximations](group-approx.md), [modulus of the track family](modulus.md), [external product of structures](../../l-theory/localization/products/external-product.md)
+- [Poincaré](../grid/chain-model-poincare.md), [group approximations](group-approx.md), [modulus of the track family](modulus.md), [external product of structures](../../l-theory/localization/products/external-product.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md)
 ## Proof depends on
 - [Carried homotopies](../grid/carried-homotopy.md), [carried group approximations](group-approx-carried.md), [fundamental cycle](fundamental-cycle-fixed.md), [box hull properties](../grid/box-hull-properties.md), [pushforward of products](../../l-theory/localization/products/product-push.md), [Leibniz rule for products](../../l-theory/localization/products/product-leibniz.md)

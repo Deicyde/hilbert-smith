@@ -2,7 +2,6 @@
 article_id: af_f07c6a62dd770135b924db08
 declaration: theorem
 origin: background
-not_ready: true
 ---
 
 # Characters of the dual of a discrete group

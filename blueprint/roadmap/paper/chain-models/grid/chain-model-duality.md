@@ -17,4 +17,4 @@ where $p_j=1-\dim x_j$ is the degree of $\varphi^s(x_j^*)$. The factor $\varphi_
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: the cubical tensor form.
 ## Depends on
-- [Chain model](chain-model.md), [circle duality](circle-duality.md), [cells of CP^2](cp2-cells.md), [external product of structures](../../l-theory/localization/products/external-product.md), [dual of a tensor product](../../l-theory/localization/products/product-dual-iso.md)
+- [Chain model](chain-model.md), [circle duality](circle-duality.md), [cells of CP^2](cp2-cells.md), [external product of structures](../../l-theory/localization/products/external-product.md), [dual of a tensor product](../../l-theory/localization/products/product-dual-iso.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md)

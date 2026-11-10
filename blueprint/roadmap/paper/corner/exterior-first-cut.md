@@ -6,12 +6,11 @@ origin: bridged
 
 # The exterior lies in the first cut
 
-In the [standing data](standing-data.md), $Z_0$ is closed in $S^n$, $Z_0\subseteq A_1$ and $Z_0\cap B_1=\varnothing$.
+Let $n\ge1$, $R>0$ and $0<s<R/\sqrt n$. Then the [exterior](exterior.md) $Z_0$ and the [cut sets](cut-sets.md) satisfy $Z_0\subseteq A_1$ and $Z_0\cap B_1=\varnothing$.
 
 *Proof sketch.*
-1. The complement of $Z_0$ is the open ball $\{z\in\mathbb R^n:|z|<R\}$, which is open in $S^n$.
-2. Every $x\in B_1=[-s,s]^n$ has $|x|\le s\sqrt n<R$, so $Z_0\cap B_1=\varnothing$.
-3. Hence $Z_0\subseteq Y_0\setminus B_1\subseteq A_1$.
+1. Every $x\in B_1=[-s,s]^n$ has $|x|\le s\sqrt n<R$, and $\infty\notin B_1$, so $Z_0\cap B_1=\varnothing$.
+2. Hence $Z_0\subseteq Y_0\setminus B_1\subseteq A_1$.
 
 ## Sources
 
@@ -19,4 +18,5 @@ In the [standing data](standing-data.md), $Z_0$ is closed in $S^n$, $Z_0\subsete
 
 ## Depends on
 
-- [Standing data](standing-data.md)
+- [The exterior](exterior.md)
+- [The cut sets](cut-sets.md)

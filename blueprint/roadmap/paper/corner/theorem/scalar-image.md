@@ -6,8 +6,9 @@ origin: bridged
 
 # Scalar image of the corner
 
-Take the [standing data](../standing-data.md). Let $U_{\rm c}:\mathcal A_{\mathbf G}(T\times S^n)\to\mathcal A_{\mathbf 1}(S^n)$ be [forgetting the control space](../../categories/functors/forget-control.md) for $X=S^n$, and $U'_{\rm c}:\mathcal A_{\mathbf 1}(T\times S^n)\to\mathcal A_{\mathbf 1}(S^n)$ the same functor for the trivial group sequence. Both carry $\mathcal A_{T\times Z_0}$ into $\mathcal A_{Z_0}$ ([forgetting the control space preserves support](../../categories/functors/forget-control-support.md)), so they induce [functors on the exterior quotients](../../categories/supports/exterior-functor.md)
-$$U:\mathcal B_{\mathbf G,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n),\qquad U':\mathcal B_{\mathbf 1,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n).$$
+Take the [standing data](../standing-data.md), and let
+$$U:\mathcal B_{\mathbf G,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n),\qquad U':\mathcal B_{\mathbf 1,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n)$$
+be [forgetting to the scalar exterior quotient](scalar-forget.md) for $\mathbf G$ and for the trivial group sequence.
 For a [graph-type homotopy action](../actions/graph-type-action.md) on $(C,\phi)$, with [corner class](corner-class.md) $\mathfrak d$,
 $$U_*\mathfrak d=U'_*\operatorname{cls}(C,\phi).$$
 
@@ -30,13 +31,14 @@ This lemma rests on the open statement [Idempotents split in the bounded homotop
 
 - [Standing data](../standing-data.md)
 - [The corner class](corner-class.md)
-- [Forgetting the control space](../../categories/functors/forget-control.md)
-- [Forgetting the control space preserves support](../../categories/functors/forget-control-support.md)
-- [Induced functor on exterior quotients](../../categories/supports/exterior-functor.md)
+- [Forgetting to the scalar exterior quotient](scalar-forget.md)
+- [Graph-type homotopy action](../actions/graph-type-action.md)
 
 ## Proof depends on
 
 - [Corner identification](corner-identification.md)
+- [The average](../actions/average.md)
+- [Induction](../actions/induction.md)
 - [Average is a compatible idempotent](../actions/average-compatible-idempotent.md)
 - [Sheet blocks after forgetting](../actions/sheet-block-propagation.md)
 - [Sums of witnesses](../actions/witness-sum.md)

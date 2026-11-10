@@ -2,7 +2,6 @@
 article_id: af_c60030162b1bf2d44d2c91b3
 declaration: theorem
 origin: background
-not_ready: true
 ---
 
 # Characters separate points

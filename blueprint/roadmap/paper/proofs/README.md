@@ -4,7 +4,7 @@ article_id: af_a3a41b7e1d0a3b48c3e0cf48
 
 # The main theorems
 
-This chapter states the two results of the paper and assembles their proofs from the local data, the theorems of the construction chapters, and the cited inputs. Both theorems rest on open statements: the cited inputs, and those behind Theorems A and B. An $n$-manifold is a Hausdorff space with an atlas onto open subsets of $\mathbb{R}^n$, with no countability assumption, and connected spaces are nonempty.
+This chapter states the two results of the paper and assembles their proofs from the local data, the theorems of the construction chapters, and the cited inputs. Both theorems rest on open statements: the cited inputs, lifting, the two sides of an excision boundary, Lemma U and idempotent splitting; each final proof names the ones it uses. An $n$-manifold is a Hausdorff space with an atlas onto open subsets of $\mathbb{R}^n$, with no countability assumption, and connected spaces are nonempty.
 
 ## $p$-adic exclusion
 
@@ -16,7 +16,7 @@ The first half moves a faithful action into one chart. A point with no fixed nei
 
 - [Reduction to one chart](one-chart.md)
 
-The second half excludes such an action. Fixed local data for it make the control space $T$ a compact metric space with a free isometric $C_p$-action, so they form [standing data](../corner/standing-data.md). [Theorem C](../compression/theorem-c.md) compresses the labelled chain models of the torus test map into a strict Poincaré complex over $T\times S^n$ with a graph-type homotopy action, whose image after forgetting $T$ is the class of the torus test map. [Theorem A](../corner/theorem/theorem-a.md), whose arithmetic core is [divisibility of the signature tail](../divisibility/divisibility.md), makes the [tail signature](../signatures/tail/tail-signature.md) of its iterated cut eventually divisible by $p$; [Theorem B for the test map](../evaluation/theorem-b-test-map.md) makes the same tail eventually $\pm1$. No integer sequence does both.
+The second half excludes such an action. Fixed local data for it give a control space $T$, a compact metric space with a free isometric $C_p$-action, possibly empty, and one cube parameter $s$ fixes the iterated cut. [Theorem C](../compression/theorem-c.md) compresses the labelled chain models of the torus test map into a strict Poincaré complex over $T\times S^n$ whose image after forgetting $T$ is the class of the torus test map, and [Theorem B for the test map](../evaluation/theorem-b-test-map.md) makes the [tail signature](../signatures/tail/tail-signature.md) of that class's iterated cut eventually $\pm1$. If $T$ is empty, the complex is zero, so the tail is zero, which is absurd. Otherwise the data form [standing data](../corner/standing-data.md), Theorem C adds a graph-type homotopy action, and [Theorem A](../corner/theorem/theorem-a.md), whose arithmetic core is [divisibility of the signature tail](../divisibility/divisibility.md), makes the same tail eventually divisible by $p$. No integer sequence does both.
 
 - [Local exclusion](local-exclusion.md)
 - [Integer tails](integer-tails.md)

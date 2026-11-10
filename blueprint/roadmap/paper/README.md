@@ -39,9 +39,9 @@ The proof has four steps.
    subgroup $p\mathbb{Z}_p$. With the orbit metric this orbit space is
    a compact metric space $T$ carrying a free isometric action of the
    cyclic group $C_p$.
-3. *Construction and two computations.* The control space and the
-   groups $G_i=\mathbb Z/p^i$ form the standing data of the corner
-   chapter. Theorem C (compression) compresses the labelled chain
+3. *Construction and two computations.* When the control space is
+   nonempty, it and the groups $G_i=\mathbb Z/p^i$ form the standing
+   data of the corner chapter. Theorem C (compression) compresses the labelled chain
    models of the torus form of the test map into a strict Poincaré
    complex over $T\times S^n$ with a graph-type homotopy action of the
    $G_i$, whose image after forgetting $T$ is the class of the torus
@@ -52,7 +52,8 @@ The proof has four steps.
    of the class of any labelling homotopic to the cubical pinch has
    tail signature eventually equal to a constant $\pm1$, and the torus
    test map is such a labelling. No integer sequence is eventually
-   both $\pm1$ and divisible by $p$. This proves $p$-adic exclusion
+   both $\pm1$ and divisible by $p$; and if the control space is
+   empty, the compressed complex is zero, so the tail is zero. This proves $p$-adic exclusion
    without boundary; the boundary case passes to the intrinsic
    interior.
 4. *Groups.* Let a locally compact group act faithfully. Newman's
@@ -69,9 +70,10 @@ forms, the embedding of $\mathbb{Z}_p$ in a compact torsion-free group
 Gleason–Yamabe theorem. The appendices state them exactly as the main
 text uses them, as open statements: theorems that the Lean states now
 and proves later. A few statements inside the chapters are open in the
-same sense, among them Lemma U of the L-theory chapter and the splitting
-of idempotents in the bounded homotopy category used by the corner
-chapter. Both main theorems rest on all of these until they are proved.
+same sense: lifting, the two sides of an excision boundary and Lemma U
+in the L-theory chapter, and the splitting of idempotents in the
+bounded homotopy category used by the corner chapter. Both main
+theorems rest on all of these until they are proved.
 
 ## Attribution
 

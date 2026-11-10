@@ -8,7 +8,7 @@ origin: bridged
 
 For closed invariant $S\subset X$, the [permutation tensor](tensor-permutation.md) carries $\mathcal A_S$ into $\mathcal A_S$.
 
-*Proof sketch.* The labels $x'_i(c,k)=x_i(k)$ of $\tau\otimes M$ are labels of $M$.
+*Proof sketch.* The labels $x'_i(e_{n_i}(c,k))=x_i(k)$ of $\tau\otimes M$ are labels of $M$.
 
 ## Sources
 

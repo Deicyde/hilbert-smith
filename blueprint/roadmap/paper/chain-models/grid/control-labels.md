@@ -5,9 +5,13 @@ origin: bridged
 ---
 # Control labels
 
-Fix a point $t_0\in T$. The *control label* of a cell $b$ of $D_i$, or of its dual, is $\lambda(b)=(\pi(\tilde x_b),s_b)\in T\times S^n$ if the lift $\tilde x_b\in[-2,2)^n$ of its torus label lies in $Z^+$, and $\lambda(b)=(t_0,s_b)$ otherwise. Here $\pi:Z^+\to T$ is the quotient map onto the [control space](../../local-data/control/control-space.md), $s_b$ is the [sphere label](sphere-labels.md), and $T\times S^n$ carries the maximum of $d_T$ and $d_S$ and the action of $C_p$ on $T$, as for [graph-type matrices](../../corner/actions/graph-type.md).
+Let $v>0$. The *control label* of a [buffered cell](buffered-cells.md) $b\in\mathcal B_i(v)$, a cell of $D_i$ or its dual, is
+$$\lambda(b)=(\pi(\tilde x_b),s_b)\in T\times S^n,$$
+where $\tilde x_b\in[-2,2)^n$ is the lift of its torus label $x_b$, $s_b$ is its [sphere label](sphere-labels.md), and $\pi:Z^+\to T$ is the quotient map onto the [control space](../../local-data/control/control-space.md). Cells that are not buffered get no control label. $T\times S^n$ carries the maximum of $d_T$ and $d_S$ and the action of $C_p$ on $T$, as for [graph-type matrices](../../corner/actions/graph-type.md).
+
+This is well defined: $\tilde x_b$ lies in the [test region](../../local-data/chart/test-region.md) $Z^+$. Indeed $f(\tilde x_b)=f_T(x_b)=s_b$ by the definition of the [torus test map](../approximations/torus-test-map.md), and $s_b$ lies in the compact set $\overline B(0,v)\subseteq\mathbb R^n$, so $\tilde x_b\in U^+$ by [preimages under the test map](../../local-data/chart/test-map-proper.md); and the [open test region](../../local-data/chart/open-test-region.md) $U^+=\{|F_0|<\rho_+\}$ lies in $Z^+=\{|F_0|\le\rho_+\}$.
 
 ## Sources
 - HS paper, Sections 9-10 (labels on the buffered domain).
 ## Depends on
-- [Sphere labels](sphere-labels.md), [control space](../../local-data/control/control-space.md), [torus test map](../approximations/torus-test-map.md), [graph-type matrices](../../corner/actions/graph-type.md)
+- [Buffered cells](buffered-cells.md), [sphere labels](sphere-labels.md), [control space](../../local-data/control/control-space.md), [test region](../../local-data/chart/test-region.md), [open test region](../../local-data/chart/open-test-region.md), [torus test map](../approximations/torus-test-map.md), [preimages under the test map](../../local-data/chart/test-map-proper.md), [graph-type matrices](../../corner/actions/graph-type.md)

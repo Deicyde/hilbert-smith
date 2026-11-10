@@ -8,7 +8,7 @@ origin: bridged
 
 For $y\in\mathbb L_4(\mathcal P_{\mathbf G})$, $\sigma_{\mathrm{tail}}(q_*y)=[(\sigma_{G_i}(\mathrm{cls}^{-1}(\pi_i)_*y))_i]$.
 
-This rests on the open statement [Lemma U](../../l-theory/comparison/lemma-u.md), through the [tail signature](tail-signature.md).
+This rests on the open statements [Lemma U](../../l-theory/comparison/lemma-u.md) and [lifting](../../l-theory/localization/boundary/lift-to-pair.md), through the [tail signature](tail-signature.md).
 
 *Proof sketch.* Unfold the definition and apply [eventual agreement](tail-lift-eventual.md) to $y$ and the chosen lift of $q_*y$.
 

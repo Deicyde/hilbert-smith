@@ -13,7 +13,7 @@ Let $p$ be a prime, $n\ge1$, and let $M$ be a connected Hausdorff space with an 
 2. The action restricts to a jointly continuous action on $M^\circ_n$, which is faithful because $M^\circ_n$ is dense.
 3. This contradicts $p$-adic exclusion for $M^\circ_n$.
 
-This theorem rests, through $p$-adic exclusion, on the same open statements.
+This theorem rests, through $p$-adic exclusion, on the open statements [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md), [lifting](../l-theory/localization/boundary/lift-to-pair.md) (through every cut boundary), [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md) (through the inner cuts of Theorem B), [Lemma U](../l-theory/comparison/lemma-u.md) (through the tail signature) and [idempotent splitting in the bounded homotopy category](../corner/theorem/kb-idempotent-splitting.md) (through Theorem A).
 
 ## Sources
 

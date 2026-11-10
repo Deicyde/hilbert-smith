@@ -10,7 +10,7 @@ Let $n\ge1$, let $M$ be a connected Hausdorff space with an atlas of charts onto
 
 *Proof sketch.* The intrinsic interior $M^\circ_n$ is open, dense and connected, so it is a connected $n$-manifold. $G$ acts on it jointly continuously, and faithfully because it is dense. Apply Hilbert–Smith to $M^\circ_n$.
 
-This theorem rests, through Hilbert–Smith, on the same open statements.
+This theorem rests, through Hilbert–Smith, on the open statements [Gleason–Yamabe](../inputs/gleason-yamabe/gleason-yamabe.md), [Newman's theorem on small orbits](../inputs/newman/newman-small-orbits.md), [$\mathbb Z_p$ inside a compact torsion-free group](../inputs/compact-groups/zp-in-torsion-free.md), [Newman's theorem on fixing an open set](../inputs/newman/newman-open-set.md), [lifting](../l-theory/localization/boundary/lift-to-pair.md) (through every cut boundary), [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md) (through the inner cuts of Theorem B), [Lemma U](../l-theory/comparison/lemma-u.md) (through the tail signature) and [idempotent splitting in the bounded homotopy category](../corner/theorem/kb-idempotent-splitting.md) (through Theorem A).
 
 ## Sources
 

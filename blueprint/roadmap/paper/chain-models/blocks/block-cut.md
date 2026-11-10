@@ -14,6 +14,6 @@ Let $F_j=I_m$ be an arc factor of a [block](block-pair.md) $Q$ and $0<w<m$. Let 
 ## Sources
 - New. Replaces the union lemma of HS paper, Section 12.
 ## Depends on
-- [Block pair](block-pair.md), [pushforward of structures](../../l-theory/base/complexes/structure-push.md)
+- [Block pair](block-pair.md), [pushforward of structures](../../l-theory/base/complexes/structure-push.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md)
 ## Proof depends on
 - [Pushforward of products](../../l-theory/localization/products/product-push.md), [arc pair](arc-pair.md)

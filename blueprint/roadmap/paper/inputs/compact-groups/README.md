@@ -12,7 +12,7 @@ The closure of a cyclic subgroup reduces it to the commutative case, which follo
 
 - [$\mathbb Z_p$ inside a compact torsion-free abelian group](zp-in-compact-abelian.md)
 
-The articles of this route are not ready: they fix statements and glue only. Two of them, the separation of points and the duality for discrete groups, are themselves open statements. Duality enters in three places. Characters separate points; a character of the dual of a discrete group is an evaluation; and together these realise every homomorphism on the dual of a compact group as evaluation at a point. Finally, continuity into a compact commutative group can be tested on characters.
+Three articles of this route are not ready: the commutative case, realization and the topology criterion fix statements and glue only. The other two, the separation of points and the duality for discrete groups, are open statements with exact statements. Duality enters in three places. Characters separate points; a character of the dual of a discrete group is an evaluation; and together these realise every homomorphism on the dual of a compact group as evaluation at a point. Finally, continuity into a compact commutative group can be tested on characters.
 
 - [Characters separate points](characters-separate.md)
 - [Characters of the dual of a discrete group](discrete-duality.md)

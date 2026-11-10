@@ -19,6 +19,7 @@ Let $\mathbf G$ be a group sequence and $X$ a compact metric space with an isome
 ## Depends on
 
 - [The endomorphism $\nu$](permutation-nu.md)
+- [Support Mayer-Vietoris functor](support-mayer-vietoris.md)
 
 ## Proof depends on
 

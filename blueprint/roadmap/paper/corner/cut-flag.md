@@ -6,7 +6,7 @@ origin: bridged
 
 # The cut flag
 
-In the [standing data](standing-data.md), for every $1\le m\le n$:
+Let $n\ge1$ and $s>0$. For the [cut sets](cut-sets.md) and every $1\le m\le n$:
 1. $A_m$ and $B_m$ are closed in $S^n$;
 2. $A_m\cup B_m=Y_{m-1}$;
 3. $A_m\cap B_m=Y_m$.
@@ -25,4 +25,4 @@ Moreover $Y_n=\{y_-,y_+\}$ and $y_-\ne y_+$.
 
 ## Depends on
 
-- [Standing data](standing-data.md)
+- [The cut sets](cut-sets.md)
