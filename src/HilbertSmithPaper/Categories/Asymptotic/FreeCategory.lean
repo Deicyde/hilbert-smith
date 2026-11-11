@@ -116,32 +116,33 @@ instance : Linear ℚ (FreeCat G) where
 /-! ### Sums -/
 
 /-- The coordinate inclusion of a basis `G × Fin m` into `G × Fin m'` along `e : Fin m → Fin m'`,
-as a matrix with rows indexed by `G × Fin m'`. -/
-private def incl {m m' : ℕ} (e : Fin m → Fin m') : Matrix (G × Fin m') (G × Fin m) ℚ :=
+as a matrix with rows indexed by `G × Fin m'`: the entry at `(a, b)` is `1` if `a = (b.1, e b.2)`
+and `0` otherwise. -/
+def inclMat {m m' : ℕ} (e : Fin m → Fin m') : Matrix (G × Fin m') (G × Fin m) ℚ :=
   fun a b => if a = (b.1, e b.2) then 1 else 0
 
 omit [Fintype G] in
-private theorem incl_mem {m m' : ℕ} (e : Fin m → Fin m') :
-    incl (G := G) e ∈ equivariant G m' m := by
+theorem inclMat_mem {m m' : ℕ} (e : Fin m → Fin m') :
+    inclMat (G := G) e ∈ equivariant G m' m := by
   intro g h h' k' k
-  simp [incl]
+  simp [inclMat]
 
 omit [AddGroup G] [Fintype G] in
 private theorem incl_apply_of_inj {m m' : ℕ} {e : Fin m → Fin m'} (he : Function.Injective e)
     (g : G) (k : Fin m) (b : G × Fin m) :
-    incl e (g, e k) b = if b = (g, k) then 1 else 0 := by
+    inclMat e (g, e k) b = if b = (g, k) then 1 else 0 := by
   obtain ⟨g', k'⟩ := b
-  simp only [incl, Prod.mk.injEq, he.eq_iff]
+  simp only [inclMat, Prod.mk.injEq, he.eq_iff]
   by_cases h1 : g = g' <;> by_cases h2 : k = k' <;> simp [h1, h2, eq_comm]
 
 omit [AddGroup G] in
 private theorem incl_transpose_mul {m m' m'' : ℕ} (e : Fin m → Fin m'') (e' : Fin m' → Fin m'') :
-    (incl (G := G) e).transpose * incl (G := G) e' =
+    (inclMat (G := G) e).transpose * inclMat (G := G) e' =
       ((fun p q => if ((p.1, e p.2) : G × Fin m'') = (q.1, e' q.2) then 1 else 0 :
         Matrix (G × Fin m) (G × Fin m') ℚ)) := by
   ext p q
   rw [Matrix.mul_apply]
-  simp only [Matrix.transpose_apply, incl, ite_mul, one_mul, zero_mul]
+  simp only [Matrix.transpose_apply, inclMat, ite_mul, one_mul, zero_mul]
   rw [Finset.sum_ite_eq' Finset.univ]
   simp
 
@@ -155,28 +156,28 @@ private theorem castAdd_ne_natAdd {m n : ℕ} (k : Fin m) (k' : Fin n) :
 omit [AddGroup G] in
 private theorem incl_mul_transpose_of_inj {m m' : ℕ} {e : Fin m → Fin m'}
     (he : Function.Injective e) (g : G) (k : Fin m) (a' : G × Fin m') :
-    (incl (G := G) e * (incl (G := G) e).transpose) (g, e k) a' =
+    (inclMat (G := G) e * (inclMat (G := G) e).transpose) (g, e k) a' =
       if a' = (g, e k) then 1 else 0 := by
   rw [Matrix.mul_apply]
   simp only [Matrix.transpose_apply, incl_apply_of_inj he, ite_mul, one_mul, zero_mul]
   rw [Finset.sum_ite_eq' Finset.univ]
-  simp [incl]
+  simp [inclMat]
 
 omit [AddGroup G] in
 private theorem incl_mul_transpose_of_not {m m' : ℕ} {e : Fin m → Fin m'} (g : G) (j : Fin m')
     (hj : ∀ k, j ≠ e k) (a' : G × Fin m') :
-    (incl (G := G) e * (incl (G := G) e).transpose) (g, j) a' = 0 := by
+    (inclMat (G := G) e * (inclMat (G := G) e).transpose) (g, j) a' = 0 := by
   rw [Matrix.mul_apply]
   refine Finset.sum_eq_zero fun b _ => ?_
-  simp only [Matrix.transpose_apply, incl, Prod.mk.injEq]
+  simp only [Matrix.transpose_apply, inclMat, Prod.mk.injEq]
   split_ifs with h <;> first | exact absurd h.2 (hj _) | simp
 
 omit [AddGroup G] in
 private theorem incl_total (m n : ℕ) :
-    incl (G := G) (Fin.castAdd n : Fin m → Fin (m + n)) *
-        (incl (G := G) (Fin.castAdd n : Fin m → Fin (m + n))).transpose +
-      incl (G := G) (Fin.natAdd m : Fin n → Fin (m + n)) *
-        (incl (G := G) (Fin.natAdd m : Fin n → Fin (m + n))).transpose =
+    inclMat (G := G) (Fin.castAdd n : Fin m → Fin (m + n)) *
+        (inclMat (G := G) (Fin.castAdd n : Fin m → Fin (m + n))).transpose +
+      inclMat (G := G) (Fin.natAdd m : Fin n → Fin (m + n)) *
+        (inclMat (G := G) (Fin.natAdd m : Fin n → Fin (m + n))).transpose =
         (1 : Matrix (G × Fin (m + n)) (G × Fin (m + n)) ℚ) := by
   ext ⟨g, j⟩ a'
   rw [Matrix.add_apply, Matrix.one_apply]
@@ -191,12 +192,12 @@ private theorem incl_total (m n : ℕ) :
     simp only [eq_comm]
 
 /-- The binary biproduct `n ⊕ m = n + m`, with the coordinate inclusions and projections. -/
-private def binaryBicone (M N : FreeCat G) : BinaryBicone M N where
+def binaryBicone (M N : FreeCat G) : BinaryBicone M N where
   pt := ⟨M.n + N.n⟩
-  fst := ofMat (incl (Fin.castAdd N.n)).transpose (transpose_mem (incl_mem _))
-  snd := ofMat (incl (Fin.natAdd M.n)).transpose (transpose_mem (incl_mem _))
-  inl := ofMat (incl (Fin.castAdd N.n)) (incl_mem _)
-  inr := ofMat (incl (Fin.natAdd M.n)) (incl_mem _)
+  fst := ofMat (inclMat (Fin.castAdd N.n)).transpose (transpose_mem (inclMat_mem _))
+  snd := ofMat (inclMat (Fin.natAdd M.n)).transpose (transpose_mem (inclMat_mem _))
+  inl := ofMat (inclMat (Fin.castAdd N.n)) (inclMat_mem _)
+  inr := ofMat (inclMat (Fin.natAdd M.n)) (inclMat_mem _)
   inl_fst := hom_ext (by
     rw [mat_comp, mat_ofMat, mat_ofMat, incl_transpose_mul]
     ext p q; simp [Matrix.one_apply, Prod.ext_iff, (Fin.castAdd_injective _ _).eq_iff])
@@ -217,11 +218,25 @@ theorem isZero_zero : IsZero (⟨0⟩ : FreeCat G) := by
   refine ⟨fun Y => ⟨⟨⟨0⟩, fun f => hom_ext (Matrix.ext fun _ b => b.2.elim0)⟩⟩,
     fun Y => ⟨⟨⟨0⟩, fun f => hom_ext (Matrix.ext fun a _ => a.2.elim0)⟩⟩⟩
 
+@[simp] theorem mat_binaryBicone_inl (M N : FreeCat G) :
+    mat (binaryBicone M N).inl = inclMat (Fin.castAdd N.n) := rfl
+@[simp] theorem mat_binaryBicone_inr (M N : FreeCat G) :
+    mat (binaryBicone M N).inr = inclMat (Fin.natAdd M.n) := rfl
+@[simp] theorem mat_binaryBicone_fst (M N : FreeCat G) :
+    mat (binaryBicone M N).fst = (inclMat (Fin.castAdd N.n)).transpose := rfl
+@[simp] theorem mat_binaryBicone_snd (M N : FreeCat G) :
+    mat (binaryBicone M N).snd = (inclMat (Fin.natAdd M.n)).transpose := rfl
+
+/-- The coordinate inclusions and projections of `n + m` satisfy `fst ≫ inl + snd ≫ inr = 1`. -/
+theorem binaryBicone_total (M N : FreeCat G) :
+    (binaryBicone M N).fst ≫ (binaryBicone M N).inl +
+      (binaryBicone M N).snd ≫ (binaryBicone M N).inr = 𝟙 (binaryBicone M N).pt :=
+  hom_ext (incl_total M.n N.n)
+
 instance : HasZeroObject (FreeCat G) := isZero_zero.hasZeroObject
 
 instance : HasBinaryBiproducts (FreeCat G) :=
-  ⟨fun M N => hasBinaryBiproduct_of_total (binaryBicone M N)
-    (hom_ext (incl_total M.n N.n))⟩
+  ⟨fun M N => hasBinaryBiproduct_of_total (binaryBicone M N) (binaryBicone_total M N)⟩
 
 instance : HasFiniteBiproducts (FreeCat G) := by
   have := hasFiniteProducts_of_has_binary_and_terminal (C := FreeCat G)
