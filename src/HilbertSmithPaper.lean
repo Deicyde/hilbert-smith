@@ -187,6 +187,7 @@ import HilbertSmithPaper.Compression.CompressedRep
 import HilbertSmithPaper.Compression.CompressedResiduals
 import HilbertSmithPaper.Compression.CompressionProductRule
 import HilbertSmithPaper.Compression.DiscardedSubcomplex
+import HilbertSmithPaper.Compression.EndpointLemma
 import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.Compression.RetainedProjection
 import HilbertSmithPaper.Compression.StartIndex
