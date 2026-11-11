@@ -30,3 +30,4 @@ which sum to zero.
 
 - [The symmetric line](symmetric-line.md)
 - [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Entries of composites of constant families](bookkeeping/constant-family-comp.md)

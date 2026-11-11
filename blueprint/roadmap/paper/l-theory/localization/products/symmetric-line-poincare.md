@@ -4,6 +4,7 @@ declaration: lemma
 origin: cited
 statement: formalized
 lean: HSP.symLine_poincare
+proof: formalized
 ---
 
 # The line is Poincaré
@@ -34,3 +35,5 @@ $\lambda_\natural:\Lambda^{1-*}\to\Lambda$ is a chain homotopy equivalence in $C
 - [The symmetric line](symmetric-line.md)
 - [Homologous cycles give homotopic maps](../../base/complexes/cycle-chain-map-homotopy.md)
 - [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
+- [Entries of composites of constant families](bookkeeping/constant-family-comp.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
