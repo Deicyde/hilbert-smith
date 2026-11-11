@@ -1,7 +1,9 @@
 ---
 article_id: af_27e5e57a3ecf4de1bee54880
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.SymPoincare
 ---
 
 # Strict symmetric Poincaré complex
