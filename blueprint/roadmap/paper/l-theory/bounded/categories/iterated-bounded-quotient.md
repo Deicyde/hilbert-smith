@@ -39,3 +39,4 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 
 - [Bounded quotients](bounded-quotient.md)
 - [Bounded extension of a duality functor](bounded-functor.md)
+- [Bounded extensions of strict functors are strict](../bounded-functor-strict.md)

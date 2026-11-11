@@ -10,9 +10,9 @@ lean: HSP.Bounded.map
 
 Let $(F,\xi):A\to A'$ be a [duality functor](../../base/categories/duality-functor.md) between additive duality categories. Its *bounded extension* is the duality functor
 $$C_\mathbb Z(F,\xi)=(C_\mathbb Z F,\,C_\mathbb Z\xi):C_\mathbb Z(A)\to C_\mathbb Z(A'),$$
-where $C_\mathbb Z F$ is the [entrywise functor](entrywise-functor.md), $(M_n)\mapsto(FM_n)$ and $(f_{mn})\mapsto(Ff_{mn})$, and the duality isomorphism $(C_\mathbb Z\xi)_M:C_\mathbb ZF(M^*)\to(C_\mathbb ZF\,M)^*$ is the diagonal matrix $(\xi_{M_n})_n$, of propagation $0$. Here $C_\mathbb Z(A)$ and $C_\mathbb Z(A')$ carry [the induced duality](bounded-duality.md). If $F$ is strict, so is $C_\mathbb Z(F,\xi)$.
+where $C_\mathbb Z F$ is the [entrywise functor](entrywise-functor.md), $(M_n)\mapsto(FM_n)$ and $(f_{mn})\mapsto(Ff_{mn})$, and the duality isomorphism $(C_\mathbb Z\xi)_M:C_\mathbb ZF(M^*)\to(C_\mathbb ZF\,M)^*$ is the diagonal matrix $(\xi_{M_n})_n$, of propagation $0$. Here $C_\mathbb Z(A)$ and $C_\mathbb Z(A')$ carry [the induced duality](bounded-duality.md).
 
-*Proof sketch.* (1) $C_\mathbb ZF$ is a $\mathbb Q$-linear functor ([The entrywise functor](entrywise-functor.md)). (2) $C_\mathbb Z\xi$ is natural because each $\xi$ is, entry by entry. (3) $((C_\mathbb Z\xi)_M)^*$ is the diagonal matrix $(\xi_{M_n}^*)_n=(\xi_{M_n^*})_n=(C_\mathbb Z\xi)_{M^*}$. (4) If $\xi=\mathrm{id}$, the diagonal matrix is the identity.
+*Proof sketch.* (1) $C_\mathbb ZF$ is a $\mathbb Q$-linear functor ([The entrywise functor](entrywise-functor.md)). (2) $C_\mathbb Z\xi$ is natural because each $\xi$ is, entry by entry. (3) $((C_\mathbb Z\xi)_M)^*$ is the diagonal matrix $(\xi_{M_n}^*)_n=(\xi_{M_n^*})_n=(C_\mathbb Z\xi)_{M^*}$.
 
 ## Sources
 

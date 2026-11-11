@@ -9,7 +9,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 
 For a duality functor `(F, ξ) : A → A'`, `C_ℤ(F, ξ) : C_ℤ(A) → C_ℤ(A')` applies `F` entrywise:
 `(M_n) ↦ (F M_n)`, `(f_{mn}) ↦ (F f_{mn})`, with duality isomorphism the diagonal matrix
-`(ξ_{M_n})_n` (`Bounded.map`). If `F` is strict, so is `C_ℤ(F, ξ)` (`Bounded.map_isStrict`).
+`(ξ_{M_n})_n` (`Bounded.map`).
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -28,12 +28,6 @@ variable {A : Type u₁} [Category.{v₁} A] [Preadditive A] [Linear ℚ A] [Has
   [DualCat A]
   {A' : Type u₂} [Category.{v₂} A'] [Preadditive A'] [Linear ℚ A'] [HasFiniteBiproducts A']
   [DualCat A']
-
-omit [HasFiniteBiproducts A] [DualCat A] in
-private lemma eqToHom_eq_diag {M N : Bounded A} (h : M = N) :
-    eqToHom h = diag fun n => eqToHom (congrArg (fun K : Bounded A => K.X n) h) := by
-  subst h
-  rfl
 
 omit [HasFiniteBiproducts A'] [DualCat A'] in
 private lemma diag_coe' {M N : Bounded A'} (d : ∀ n, M.X n ⟶ N.X n) : (diag d).1 = diagF d := rfl
@@ -74,17 +68,6 @@ def map (F : DualFunctor A A') : DualFunctor (Bounded A) (Bounded A') where
 lemma map_ξ_hom (F : DualFunctor A A') (M : Bounded A) :
     ((map F).ξ M).hom = diag (M := ⟨fun n => F.toFunctor.obj (dual (M.X n))⟩)
       (N := ⟨fun n => dual (F.toFunctor.obj (M.X n))⟩) fun n => (F.ξ (M.X n)).hom := rfl
-
-/-- If `(F, ξ)` is strict, so is its bounded extension. -/
-lemma map_isStrict {F : DualFunctor A A'} (hF : F.IsStrict) : (map F).IsStrict := by
-  intro M
-  have hobj : (map F).toFunctor.obj (dual M) = dual ((map F).toFunctor.obj M) :=
-    Bounded.ext (funext fun n => (hF (M.X n)).choose)
-  refine ⟨hobj, ?_⟩
-  rw [map_ξ_hom, eqToHom_eq_diag]
-  congr 1
-  funext n
-  exact (hF (M.X n)).choose_spec
 
 end Bounded
 
