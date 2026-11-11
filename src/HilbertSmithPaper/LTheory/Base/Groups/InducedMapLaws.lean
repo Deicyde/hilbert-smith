@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPair
-import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
+import HilbertSmithPaper.LTheory.Base.Pairs.CylinderCobordism
+import HilbertSmithPaper.LTheory.Base.Pairs.PairTransport
 
 /-!
 # Duality functors on cobordism classes
@@ -12,12 +13,85 @@ open CategoryTheory CategoryTheory.Limits
 
 namespace HSP
 
+open DualCat
+
 universe v₁ v₂ u₁ u₂
 
 variable {B : Type u₁} [Category.{v₁} B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
   [DualCat B]
   {B' : Type u₂} [Category.{v₂} B'] [Preadditive B'] [Linear ℚ B'] [HasFiniteBiproducts B']
   [DualCat B']
+
+namespace StructureCx
+
+private lemma push_comp_apply {C D E : ChainComplex B ℤ} (g : C ⟶ D) (h : D ⟶ E) {k : ℤ}
+    (a : (StructureCx C).X k) :
+    (push (g ≫ h)).f k a = (push h).f k ((push g).f k a) := by
+  rw [push_comp]
+  rfl
+
+private lemma push_sum {X Y Z : ChainComplex B ℤ} (g : X ⊞ Y ⟶ Z) {k : ℤ}
+    (a : (StructureCx X).X k) (b : (StructureCx Y).X k) :
+    (push g).f k (StructureCx.sum a b) = (push (biprod.inl ≫ g)).f k a + (push (biprod.inr ≫ g)).f k b := by
+  rw [StructureCx.sum, map_add, push_comp_apply, push_comp_apply]
+
+private lemma push_inv_hom {C D : ChainComplex B ℤ} (u : C ≅ D) {k : ℤ}
+    (a : (StructureCx C).X k) : (push u.inv).f k ((push u.hom).f k a) = a := by
+  rw [← push_comp_apply, u.hom_inv_id, push_id]
+  rfl
+
+private lemma exists_iso_of_sigma_eq {k : ℤ} {C₀ C : ChainComplex B ℤ} {φ₀ : (StructureCx C₀).X k}
+    {φ : (StructureCx C).X k}
+    (h : (⟨C₀, φ₀⟩ : Σ C : ChainComplex B ℤ, (StructureCx C).X k) = ⟨C, φ⟩) :
+    ∃ u : C ≅ C₀, (push u.hom).f k φ = φ₀ := by
+  obtain ⟨rfl, h⟩ := Sigma.mk.inj_iff.mp h
+  obtain rfl := eq_of_heq h
+  exact ⟨Iso.refl _, by rw [Iso.refl_hom, push_id]; rfl⟩
+
+end StructureCx
+
+open StructureCx
+
+private lemma exists_sum_iso {k : ℤ} (x y : SymPoincare B k) :
+    ∃ u : x.C ⊞ y.C ≅ (x.sum y).C, (push u.hom).f k (StructureCx.sum x.φ y.φ) = (x.sum y).φ :=
+  exists_iso_of_sigma_eq (SymPoincare.sum_spec x y)
+
+private lemma cobordant_of_iso {k : ℤ} (x y : SymPoincare B k) (u : x.C ≅ y.C)
+    (hu : (push u.hom).f k x.φ = y.φ) : Cobordant x y := by
+  obtain ⟨W, hW, -⟩ := cylinder_cobordism ⊤ (fun _ _ _ _ _ _ => trivial) x y
+    (fun _ => trivial) (fun _ => trivial) (HomotopyEquiv.ofIso u) 0
+    (by rw [map_zero]; exact (sub_eq_zero.mpr hu).symm)
+  exact Cobordant.of_data_eq W hW
+
+private lemma cobordant_of_transport {k : ℤ} (x y : SymPoincare B k) (W : SymPair B k (k + 1))
+    (u : x.C ⊞ y.C ≅ W.C) (φ' : (StructureCx (x.C ⊞ y.C)).X k)
+    (hu : (push u.hom).f k φ' = W.φ) (s : ℤˣ) (hs : s • φ' = StructureCx.sum x.φ (-y.φ)) :
+    Cobordant x y := by
+  obtain ⟨W', hW'⟩ := W.transport u φ' hu s
+  exact Cobordant.of_data_eq (D := W.D) (f := u.hom ≫ W.f) (δφ := s • W.δφ) W'
+    (by rw [hW', hs])
+
+namespace DualFunctor
+
+private lemma inv_natural_aux (F : DualFunctor B B') {M N : B} (f : M ⟶ N) :
+    (F.ξ N).inv ≫ F.toFunctor.map (dualHom f) = dualHom (F.toFunctor.map f) ≫ (F.ξ M).inv := by
+  rw [Iso.inv_comp_eq, ← Category.assoc, ← F.ξ_natural, Category.assoc, Iso.hom_inv_id,
+    Category.comp_id]
+
+/-- `F_%` commutes with pushforward: `F_% (f_% φ) = (F f)_% (F_% φ)`. -/
+private lemma mapStructure_push (F : DualFunctor B B') {C D : ChainComplex B ℤ} (f : C ⟶ D)
+    (n : ℤ) (φ : (StructureCx C).X n) :
+    F.mapStructure D n ((StructureCx.push f).f n φ) =
+      (StructureCx.push ((F.toFunctor.mapHomologicalComplex _).map f)).f n
+        (F.mapStructure C n φ) := by
+  refine funext fun x => ?_
+  obtain ⟨⟨p, q⟩, hpq⟩ := x
+  rw [mapStructure_apply, StructureCx.push_apply, StructureCx.push_apply, mapStructure_apply]
+  simp only [Functor.map_comp, Functor.mapHomologicalComplex_map_f]
+  rw [← Category.assoc, inv_natural_aux, Category.assoc]
+  simp only [Category.assoc]
+
+end DualFunctor
 
 namespace InducedMapLaws
 
@@ -54,7 +128,7 @@ theorem SymPoincare.map_cobordant (F : DualFunctor B B') {k : ℤ} :
   refine ⟨?_, ?_⟩
   · rintro x y ⟨W, hW⟩
     obtain ⟨u, hu⟩ := exists_iso_of_sigma_eq hW
-    refine Cobordant.of_transport (x.map F) (y.map F) (W.map F)
+    refine cobordant_of_transport (x.map F) (y.map F) (W.map F)
       (mapBiprodIso F x.C y.C ≪≫ (F.toFunctor.mapHomologicalComplex _).mapIso u)
       (StructureCx.sum (x.map F).φ (-(y.map F).φ)) ?_ 1 (one_smul _ _)
     change (push ((mapBiprodIso F x.C y.C).hom ≫
@@ -63,12 +137,12 @@ theorem SymPoincare.map_cobordant (F : DualFunctor B B') {k : ℤ} :
           F.mapStructure W.C k W.φ
     rw [push_comp_apply, ← map_neg, push_mapBiprodIso, ← F.mapStructure_push, hu]
   · intro x y
-    obtain ⟨s, hs⟩ := SymPoincare.exists_sum_iso x y
+    obtain ⟨s, hs⟩ := exists_sum_iso x y
     obtain ⟨s', hs'⟩ : ∃ u : F.mapCx x.C ⊞ F.mapCx y.C ≅ ((x.map F).sum (y.map F)).C,
         (push u.hom).f k (StructureCx.sum (F.mapStructure x.C k x.φ) (F.mapStructure y.C k y.φ)) =
           ((x.map F).sum (y.map F)).φ :=
-      SymPoincare.exists_sum_iso (x.map F) (y.map F)
-    refine Cobordant.of_iso _ _ ((F.toFunctor.mapHomologicalComplex _).mapIso s.symm ≪≫
+      exists_sum_iso (x.map F) (y.map F)
+    refine cobordant_of_iso _ _ ((F.toFunctor.mapHomologicalComplex _).mapIso s.symm ≪≫
       (mapBiprodIso F x.C y.C).symm ≪≫ s') ?_
     change (push ((F.toFunctor.mapHomologicalComplex _).map s.inv ≫
       (mapBiprodIso F x.C y.C).inv ≫ s'.hom)).f k

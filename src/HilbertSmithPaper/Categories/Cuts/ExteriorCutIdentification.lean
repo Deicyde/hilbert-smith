@@ -8,7 +8,7 @@ import HilbertSmithPaper.Categories.Supports.SupportWhole
 For `Z ⊆ X`, the functor `j_Z : ℬ_{𝐆,Z}(X) → 𝒜_X/𝒜_Z` from the exterior quotient to the quotient
 of the support subcategory `𝒜_X` by `𝒜_Z ⊂ 𝒜_X` (`HSP.suppIn Set.univ Z`) is `⟨M⟩ ↦ ⟨M⟩`,
 `[u] ↦ [u]`: `Quotient.lift` of `ι⁻¹ ⋙ q'`, where `ι⁻¹ : 𝒜_𝐆(X) → 𝒜_X` is the corestriction of
-the identity (`HSP.supportWholeInvFunctor`). It is well defined since a factorization through
+the identity (the second functor of `HSP.supportWholeIso`). It is well defined since a factorization through
 `W ∈ 𝒜_Z` in `𝒜_𝐆(X)` is one in `𝒜_X`. It is a strict duality functor with `j_Z ∘ q = q' ∘ ι⁻¹`
 (`HSP.exteriorCutIdent`, a subtype bundling these two properties).
 -/
@@ -21,19 +21,23 @@ open DualCat
 
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
 
+/-- Every object of `𝒜_𝐆(X)` is `X`-supported. -/
+private theorem supp_univ' (P : AsymCat G X) : supp (Set.univ : Set X) P := fun _ hε =>
+  Filter.Eventually.of_forall fun _ _ => Metric.self_subset_thickening hε _ (Set.mem_univ _)
+
 private theorem lift_compat (Z : Set X) (x y : AsymCat G X) (f₁ f₂ : x ⟶ y)
     (h : FiltQuot.rel (supp Z) f₁ f₂) :
-    (supportWholeInvFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)).map f₁ =
-      (supportWholeInvFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)).map f₂ := by
+    ((supportWholeIso (G := G) (X := X)).1.2.toFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)).map f₁ =
+      ((supportWholeIso (G := G) (X := X)).1.2.toFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)).map f₂ := by
   obtain ⟨V, hV, a, b, hab⟩ := h
   simp only [Functor.comp_map]
   rw [FiltQuot.functor_map_eq_iff, ← Functor.map_sub, hab]
-  exact ⟨⟨V, supp_univ V⟩, hV, ObjectProperty.homMk a, ObjectProperty.homMk b, rfl⟩
+  exact ⟨⟨V, supp_univ' V⟩, hV, ObjectProperty.homMk a, ObjectProperty.homMk b, rfl⟩
 
 /-- The underlying functor of `j_Z`: `⟨M⟩ ↦ ⟨M⟩`, `[u] ↦ [u]`. -/
-abbrev exteriorCutIdentAux (Z : Set X) : Ext G X Z ⥤ FiltQuot (suppIn (G := G) Set.univ Z) :=
+private abbrev exteriorCutIdentAux (Z : Set X) : Ext G X Z ⥤ FiltQuot (suppIn (G := G) Set.univ Z) :=
   CategoryTheory.Quotient.lift (FiltQuot.rel (supp Z))
-    (supportWholeInvFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)) (lift_compat Z)
+    ((supportWholeIso (G := G) (X := X)).1.2.toFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)) (lift_compat Z)
 
 instance (Z : Set X) : (exteriorCutIdentAux (G := G) Z).Additive where
   map_add {_ _ f g} := by
@@ -54,7 +58,7 @@ instance (Z : Set X) : (exteriorCutIdentAux (G := G) Z).Linear ℚ where
 def exteriorCutIdent (Z : Set X) :
     {j : DualFunctor (Ext G X Z) (FiltQuot (suppIn (G := G) Set.univ Z)) // j.IsStrict ∧
       FiltQuot.functor (supp Z) ⋙ j.toFunctor =
-        supportWholeInvFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)} :=
+        (supportWholeIso (G := G) (X := X)).1.2.toFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)} :=
   ⟨{ toFunctor := exteriorCutIdentAux Z
      ξ M := Iso.refl _
      ξ_natural {M N} f := by

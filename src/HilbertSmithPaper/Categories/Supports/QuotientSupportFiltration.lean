@@ -1,14 +1,12 @@
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
+import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 
 /-!
 # Support filtrations in a quotient
 
-For `S, Z, Y ⊆ X`, `𝒰_Y` (`HSP.quotSupp S Z Y`) is the predicate "`Y`-supported" on the objects of
-`𝒜_S/𝒜_Z = FiltQuot (suppIn S Z)`. It is a full additive subcategory closed under duality
-(`HSP.isDualAdditive_quotSupp`: the images under the additive quotient functor `q` of a zero object
-and of the biproducts of `𝒜_Y ⊂ 𝒜_S`). If the action is isometric and `Y` is invariant, it is an
-involution-invariant Karoubi filtration (`HSP.quotSupp_karoubiFiltration`) whose chosen
+For `S, Z, Y ⊆ X`, if the action is isometric and `Y` is invariant, the predicate
+`𝒰_Y = HSP.quotSupp S Z Y` on `𝒜_S/𝒜_Z` is an involution-invariant Karoubi filtration (`HSP.quotSupp_karoubiFiltration`) whose chosen
 decompositions of `⟨M⟩` are the images `q(p)` of the chosen decompositions `p` of `M` in the support
 filtration for `Y` (`HSP.supp_karoubiFiltration`). No disjointness of `Y` and `Z`, and no
 inclusion `Y, Z ⊆ S`, is used. `𝒰_Y` is not closed under isomorphism.
@@ -21,25 +19,6 @@ namespace HSP
 open DualCat
 
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
-
-/-- `𝒰_Y ⊂ 𝒜_S/𝒜_Z`: the objects `⟨M⟩` with `M` `Y`-supported. -/
-abbrev quotSupp (S Z Y : Set X) : ObjectProperty (FiltQuot (suppIn (G := G) S Z)) :=
-  fun M => supp Y M.as.obj
-
-/-- `𝒰_Y` is a full additive subcategory of `𝒜_S/𝒜_Z` closed under duality. -/
-instance isDualAdditive_quotSupp (S Z Y : Set X) : IsDualAdditive (quotSupp (G := G) S Z Y) where
-  exists_zero := by
-    obtain ⟨W, hW, hWz⟩ := IsDualAdditive.exists_zero (U := suppIn (G := G) S Y)
-    exact ⟨(FiltQuot.functor _).obj W, hW, (FiltQuot.functor (suppIn S Z)).map_isZero hWz⟩
-  exists_biprod {V W} hV hW := by
-    obtain ⟨c, ⟨hc⟩, hpt⟩ := IsDualAdditive.exists_biprod (U := suppIn (G := G) S Y) hV hW
-    refine ⟨(FiltQuot.functor (suppIn S Z)).mapBinaryBicone c,
-      ⟨isBinaryBilimitOfTotal _ ?_⟩, hpt⟩
-    have h := congrArg (FiltQuot.functor (suppIn S Z)).map (IsBilimit.binary_total hc)
-    rw [CategoryTheory.Functor.map_add, Functor.map_comp, Functor.map_comp,
-      CategoryTheory.Functor.map_id] at h
-    exact h
-  dual_mem h := h
 
 /-- In `𝒜_S/𝒜_Z` the duality is an involution on the nose on morphisms. -/
 private theorem dualHom_dualHom_quot {S Z : Set X} {M N : FiltQuot (suppIn (G := G) S Z)}

@@ -20,7 +20,7 @@ open DualCat
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
 
 /-- An `∅`-supported object is eventually empty. -/
-theorem eventually_n_eq_zero_of_supp_empty {P : AsymCat G X} (h : supp (∅ : Set X) P) :
+private theorem eventually_n_eq_zero_of_supp_empty {P : AsymCat G X} (h : supp (∅ : Set X) P) :
     ∀ᶠ i in atTop, P.as.n i = 0 :=
   (h 1 one_pos).mono fun i hi => by
     by_contra hn
@@ -29,7 +29,7 @@ theorem eventually_n_eq_zero_of_supp_empty {P : AsymCat G X} (h : supp (∅ : Se
     exact this
 
 /-- An `∅`-supported object is a zero object. -/
-theorem isZero_of_supp_empty {P : AsymCat G X} (h : supp (∅ : Set X) P) : IsZero P := by
+private theorem isZero_of_supp_empty {P : AsymCat G X} (h : supp (∅ : Set X) P) : IsZero P := by
   refine (IsZero.iff_id_eq_zero _).2 ?_
   have h1 : AsymCat.mkHom (𝟙 P.as) = AsymCat.mkHom (0 : P.as ⟶ P.as) := by
     rw [AsymCat.mkHom_eq_iff]
@@ -40,7 +40,7 @@ theorem isZero_of_supp_empty {P : AsymCat G X} (h : supp (∅ : Set X) P) : IsZe
   exact h2.symm.trans (h1.trans h3)
 
 /-- The ideal of `𝒜_S` of maps factoring through `𝒜_∅` is zero. -/
-theorem eq_zero_of_ideal_suppIn_empty {S : Set X}
+private theorem eq_zero_of_ideal_suppIn_empty {S : Set X}
     {M N : (supp S : ObjectProperty (AsymCat G X)).FullSubcategory} {f : M ⟶ N}
     (hf : FiltQuot.ideal (suppIn S ∅) f) : f = 0 := by
   obtain ⟨V, hV, a, b, rfl⟩ := hf
@@ -55,7 +55,7 @@ private theorem lift_compat (S : Set X)
   sub_eq_zero.1 (eq_zero_of_ideal_suppIn_empty h)
 
 /-- The inverse `q⁻¹ : 𝒜_S/𝒜_∅ → 𝒜_S`, `⟨M⟩ ↦ M`, `[u] ↦ u`. -/
-abbrev quotientByEmptyInvFunctor (S : Set X) :
+private abbrev quotientByEmptyInvFunctor (S : Set X) :
     FiltQuot (suppIn (G := G) S ∅) ⥤ (supp S : ObjectProperty (AsymCat G X)).FullSubcategory :=
   CategoryTheory.Quotient.lift (FiltQuot.rel (suppIn S ∅)) (𝟭 _) (lift_compat (G := G) S)
 

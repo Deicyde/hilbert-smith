@@ -23,3 +23,7 @@ Group sequences, propagation and its bounds, the asymptotic category with its st
 - [Point ideal](point-ideal.md)
 - [Point filtration](point-filtration.md)
 - [Point category](point-quotient.md)
+
+## Sections
+
+- [Restriction to a sub-basis](restriction/README.md)

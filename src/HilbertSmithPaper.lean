@@ -14,6 +14,19 @@ import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.CoordinateInclusion
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.CoordinateProjection
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjection
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionColumns
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionComplement
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionProduct
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionRows
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionTranspose
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.InclusionProjection
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.ProjectionInclusion
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.RestrictionIndexEmbedding
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.RestrictionIndexMem
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.RestrictionSubBasis
 import HilbertSmithPaper.Categories.Cuts.ExteriorCutIdentification
 import HilbertSmithPaper.Categories.Functors.ForgetControl
 import HilbertSmithPaper.Categories.Functors.ForgetControlSupport
@@ -26,9 +39,16 @@ import HilbertSmithPaper.Categories.Functors.RelabellingEquivalence
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
 import HilbertSmithPaper.Categories.Supports.ExteriorFunctor
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
+import HilbertSmithPaper.Categories.Supports.IteratedQuotient
+import HilbertSmithPaper.Categories.Supports.NullThickening
 import HilbertSmithPaper.Categories.Supports.QuotientByEmpty
+import HilbertSmithPaper.Categories.Supports.QuotientSupport
+import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
 import HilbertSmithPaper.Categories.Supports.QuotientSupportFiltration
+import HilbertSmithPaper.Categories.Supports.RelativeSupport
+import HilbertSmithPaper.Categories.Supports.RelativeSupportAdditive
 import HilbertSmithPaper.Categories.Supports.Separation
+import HilbertSmithPaper.Categories.Supports.SupportConcatenation
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
 import HilbertSmithPaper.Categories.Supports.SupportIntersection
@@ -70,6 +90,9 @@ import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Realization
 import HilbertSmithPaper.ChainModels.Grid.Restriction
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
@@ -78,6 +101,7 @@ import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.Compression.StartIndex
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
+import HilbertSmithPaper.Corner.Actions.GraphTypeAction
 import HilbertSmithPaper.Corner.CutFlag
 import HilbertSmithPaper.Corner.CutSets
 import HilbertSmithPaper.Corner.Exterior
@@ -141,6 +165,10 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
+import HilbertSmithPaper.LTheory.Comparison.FreeComparison
+import HilbertSmithPaper.LTheory.Localization.Boundary.UPair
+import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
+import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
@@ -158,9 +186,16 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
 import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
+import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
+import HilbertSmithPaper.LTheory.Ultimate.Groups.EquivalenceInvariance
+import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
+import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapLevel
+import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
 import HilbertSmithPaper.LocalData.Chart.AveragedMapDisplacement
@@ -204,6 +239,7 @@ import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.LocalData.Control.Representatives
 import HilbertSmithPaper.LocalData.Control.RepresentativesAlgebra
 import HilbertSmithPaper.LocalData.Control.SheetSubgroup
+import HilbertSmithPaper.LocalData.Control.ZplusAction
 import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.FixedSets
 import HilbertSmithPaper.LocalData.Subgroups.FixedSetsClosed
@@ -246,14 +282,19 @@ import HilbertSmithPaper.Signatures.Real.RealCohomologyMap
 import HilbertSmithPaper.Signatures.LFour.RealHomology
 import HilbertSmithPaper.Signatures.Real.RealMatrix
 import HilbertSmithPaper.Signatures.LFour.RealEvaluation
+import HilbertSmithPaper.Signatures.Forms.SignatureSplitting
+import HilbertSmithPaper.Signatures.LFour.BoundarySignatureZero
+import HilbertSmithPaper.Signatures.LFour.ComplexSignature
+import HilbertSmithPaper.Signatures.LFour.IntegerSignature
 import HilbertSmithPaper.Signatures.LFour.MiddleForm
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNeg
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNonsingular
 import HilbertSmithPaper.Signatures.LFour.MiddleFormSum
-import HilbertSmithPaper.Signatures.LFour.ComplexSignature
-import HilbertSmithPaper.Signatures.LFour.BoundarySignatureZero
+import HilbertSmithPaper.Signatures.LFour.RealEvaluation
+import HilbertSmithPaper.Signatures.LFour.RealHomology
 import HilbertSmithPaper.Signatures.LFour.SignatureHom
-import HilbertSmithPaper.Signatures.LFour.IntegerSignature
+import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
+import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
 
 /-!
 # The paper

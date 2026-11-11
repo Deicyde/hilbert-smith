@@ -32,6 +32,7 @@ Take $i_1$ the largest of the three thresholds.
 - [Control labels](../chain-models/grid/control-labels.md)
 - [Graph-type matrices](../corner/actions/graph-type.md)
 - [Buffered restriction](../chain-models/approximations/buffered-restriction.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md)
 
 ## Proof depends on
 

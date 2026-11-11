@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.LocalData.Control.OrbitSupMetric
-import HilbertSmithPaper.LocalData.Chart.TestRegionInvariant
+import HilbertSmithPaper.LocalData.Control.ZplusAction
 
 /-!
 # The orbit sup-distance is invariant
