@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionLower
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
 

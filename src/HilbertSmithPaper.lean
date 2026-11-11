@@ -201,7 +201,9 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
 import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
 import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
+import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLineCycle
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
+import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLineStructure
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedLineProduct
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransition
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionCobordant
@@ -209,6 +211,8 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionSum
 import HilbertSmithPaper.LTheory.Localization.Transitions.LevelBoundary
 import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionLower
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
