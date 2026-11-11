@@ -2,6 +2,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.LocalData.Chart.LocalDatum
 import HilbertSmithPaper.LocalData.Chart.Pinch
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
+import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.FixedSets
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
