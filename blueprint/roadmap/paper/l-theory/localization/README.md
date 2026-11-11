@@ -9,4 +9,5 @@ For an involution-invariant Karoubi filtration $\mathcal U\subset\mathcal A$: th
 - [Decorated groups](decorations/README.md)
 - [The localization boundary](boundary/README.md)
 - [Products with the line](products/README.md)
+- [Supporting facts for products with the line](line/README.md)
 - [Transition maps](transitions/README.md)
