@@ -25,3 +25,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [Differential of a tensor product](tensor-differential.md)
 - [Additivity of the Kronecker product in the first factor](kron-add-left.md)
 - [Additivity of the Kronecker product in the second factor](kron-add-right.md)
+- [Signs in the first factor of a Kronecker product](kron-smul-left.md)
