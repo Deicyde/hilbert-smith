@@ -68,7 +68,7 @@ theorem strProd_toHom (P : DualityPairing B E B'') {C : ChainComplex B ℤ}
         subst a' b'
         rw [← Category.assoc, ← dualHom_comp, cxProd.ι_π_self P hC hD (by omega), dualHom_id,
           Category.id_comp, cxProd.ι_π_self P hC hD hab]
-        simp only [Functor.curry_obj_map_app, Functor.curry_obj_obj_map, Category.comp_id,
+        simp only [Functor.curry_obj_map_app, Functor.curry_obj_obj_map,
           StructureCx.toHom_f]
         rw [← P.tensor.map_comp_assoc, CategoryTheory.prod_comp]
         simp
