@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
+import HilbertSmithPaper.Categories.Supports.ThickeningInvariant
 import HilbertSmithPaper.Categories.Supports.RelativeIntersectionAdditive
 import HilbertSmithPaper.Categories.Supports.NullThickening
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.InclusionProjection
@@ -51,14 +52,6 @@ private theorem supp_restrict_near {A : Set X} {M : AsymPre G X} {r : ℕ → �
   exact cthickening_subset_thickening' hε hi A (AsymPre.restrictEmb_mem k)
 
 variable [IsIsometricVAdd (ZMod p) X]
-
-private theorem vadd_mem_thickening_iff {B : Set X} (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
-    (c : ZMod p) {ε : ℝ} {y : X} : c +ᵥ y ∈ thickening ε B ↔ y ∈ thickening ε B := by
-  have key : ∀ (c : ZMod p) {y : X}, y ∈ thickening ε B → c +ᵥ y ∈ thickening ε B := by
-    intro c y hy
-    obtain ⟨z, hz, hd⟩ := mem_thickening_iff.1 hy
-    exact mem_thickening_iff.2 ⟨c +ᵥ z, hB c z hz, by rwa [dist_vadd]⟩
-  exact ⟨fun h => by simpa using key (-c) h, key c⟩
 
 /-- **Key lemma.** A map between objects of `𝒰_A` that factors in `𝒜_S` through a `B`-supported
 object (`B` invariant) factors through an object of `𝒰_A ∩ 𝒰_B`. -/

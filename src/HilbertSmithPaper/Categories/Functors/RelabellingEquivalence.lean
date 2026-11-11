@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
-import HilbertSmithPaper.Categories.Supports.SupportSubcategory
+import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 

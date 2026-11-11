@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
+import HilbertSmithPaper.Categories.Supports.ThickeningInvariant
 
 /-!
 # Maps through a disjoint support vanish
@@ -17,13 +18,6 @@ namespace HSP
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
   [IsIsometricVAdd (ZMod p) X]
 
-/-- For an invariant `S` and an isometric action, `c +ᵥ y` is in the `ε`-thickening of `S` as soon
-as `y` is. -/
-private theorem vadd_mem_thickening {S : Set X} (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S)
-    (c : ZMod p) {ε : ℝ} {y : X} (hy : y ∈ thickening ε S) : c +ᵥ y ∈ thickening ε S := by
-  obtain ⟨z, hz, hd⟩ := mem_thickening_iff.1 hy
-  exact mem_thickening_iff.2 ⟨c +ᵥ z, hS c z hz, by rwa [dist_vadd]⟩
-
 /-- A map into an `S`-supported object factoring through `𝒜_Z`, with `S, Z` disjoint, closed and
 invariant in a compact `X`, is zero. -/
 theorem mkHom_eq_zero_of_disjoint [CompactSpace X] {S Z : Set X} (hS : IsClosed S)
@@ -38,6 +32,6 @@ theorem mkHom_eq_zero_of_disjoint [CompactSpace X] {S Z : Set X} (hS : IsClosed 
   filter_upwards [h, hN δ hδ] with i hi hNi
   refine FreeCat.hom_ext (Matrix.ext fun a b => ?_)
   by_contra hab
-  exact Set.disjoint_left.1 hdisj (vadd_mem_thickening hSi _ (hNi a.2)) (hi a b hab).1
+  exact Set.disjoint_left.1 hdisj ((vadd_mem_thickening_iff hSi _).2 (hNi a.2)) (hi a b hab).1
 
 end HSP

@@ -30,6 +30,7 @@ Such a $\rho$ exists because $S$ is a nonempty closed subset of the compact spac
 
 - [Pushforward](pushforward.md)
 - [Support subcategory](../supports/support-subcategory.md)
+- [The support subcategory is additive](../supports/support-dual-additive.md)
 - [Dual subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [Unitary natural isomorphism](../../l-theory/base/categories/unitary-isomorphism.md)
 

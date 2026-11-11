@@ -26,3 +26,4 @@ Let $X$ be compact with an isometric $C_p$-action, and let $S,Z\subset X$ be dis
 ## Proof depends on
 
 - [Support ideal](support-ideal.md)
+- [Translates and thickenings of an invariant set](thickening-invariant.md)

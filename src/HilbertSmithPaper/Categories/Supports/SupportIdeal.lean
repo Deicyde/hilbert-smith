@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportSubcategory
+import HilbertSmithPaper.Categories.Supports.ThickeningInvariant
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.CoordinateProjection
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.ProjectionInclusion
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionColumns
@@ -14,8 +15,7 @@ Let the `C_p`-action on `X` be isometric and `S ⊆ X` invariant. A morphism `[u
 `ε`-thickening of `S` (`HSP.factorsThrough_supp_iff`).
 
 The (⇐) direction restricts the source to the indices of its nonzero columns
-(`HSP.AsymPre.restrict`). The companions `HSP.vadd_mem_thickening(_iff)` record that for an
-invariant `S` and an isometric action, `c +ᵥ y` lies in the `ε`-thickening of `S` iff `y` does.
+(`HSP.AsymPre.restrict`).
 -/
 
 open CategoryTheory CategoryTheory.Limits Filter Topology Metric
@@ -37,17 +37,6 @@ private theorem nndist_le_prop {B B' : Type*} [Fintype B] [Fintype B'] (l : B �
 end AsymPre
 
 variable [IsIsometricVAdd (ZMod p) X] {S : Set X}
-
-/-- For an invariant `S` and an isometric action, `c +ᵥ y` is in the `ε`-thickening of `S` as soon
-as `y` is. -/
-private theorem vadd_mem_thickening (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S) (c : ZMod p) {ε : ℝ} {y : X}
-    (hy : y ∈ thickening ε S) : c +ᵥ y ∈ thickening ε S := by
-  obtain ⟨z, hz, hd⟩ := mem_thickening_iff.1 hy
-  exact mem_thickening_iff.2 ⟨c +ᵥ z, hS c z hz, by rwa [dist_vadd]⟩
-
-private theorem vadd_mem_thickening_iff (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S) (c : ZMod p) {ε : ℝ}
-    {y : X} : c +ᵥ y ∈ thickening ε S ↔ y ∈ thickening ε S :=
-  ⟨fun h => by simpa using vadd_mem_thickening hS (-c) h, vadd_mem_thickening hS c⟩
 
 /-- **Support ideal.** For an invariant `S` (and an isometric action), `[u] : M → N` factors
 through an object of `𝒜_S` if and only if for every `ε > 0`, eventually both endpoint labels of
@@ -73,7 +62,7 @@ theorem factorsThrough_supp_iff (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ 
       (AsymPre.nndist_le_prop (V.as.label i) (N.label i) _ (left_ne_zero_of_mul hw))
     have hfw := NNReal.coe_le_coe.2
       (AsymPre.nndist_le_prop (M.label i) (V.as.label i) _ (right_ne_zero_of_mul hw))
-    have hw' : V.as.label i w ∈ thickening (ε / 2) S := vadd_mem_thickening hS _ (hVi w.2)
+    have hw' : V.as.label i w ∈ thickening (ε / 2) S := (vadd_mem_thickening_iff hS _).2 (hVi w.2)
     obtain ⟨z, hz, hdz⟩ := mem_thickening_iff.1 hw'
     rw [coe_nndist] at hgw hfw
     refine ⟨mem_thickening_iff.2 ⟨z, hz, ?_⟩, mem_thickening_iff.2 ⟨z, hz, ?_⟩⟩
