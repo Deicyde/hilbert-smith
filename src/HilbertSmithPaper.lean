@@ -9,6 +9,9 @@ import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.Exterior
 import HilbertSmithPaper.Corner.CutSets
+import HilbertSmithPaper.Corner.CutFlag
+import HilbertSmithPaper.Corner.ExteriorClosed
+import HilbertSmithPaper.Corner.ExteriorFirstCut
 
 /-!
 # The paper
