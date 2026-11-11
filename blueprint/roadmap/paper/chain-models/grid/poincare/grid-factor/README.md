@@ -14,3 +14,4 @@ The degree-zero maps of the circle, the unsymmetrized grid structure, the grid h
 - [The dual grid homotopy](grid-h-dual.md)
 - [The grid complex vanishes in negative degrees](grid-dim-neg.md)
 - [The grid duality map inverts the unsymmetrized grid structure](grid-inverse.md)
+- [The unsymmetrized grid structure inverts the grid duality map](grid-inverse-right.md)

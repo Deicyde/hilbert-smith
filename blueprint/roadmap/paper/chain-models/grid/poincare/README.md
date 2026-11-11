@@ -16,6 +16,7 @@ The circle duality data, the unsymmetrized structure, the homotopies and the aug
 - [The CP^2 inverse inverts the structure](cp2-inverse.md)
 - [Tensor product of homotopies](tensor-homotopy.md)
 - [The chain model is Poincaré: the cycle](chain-model-poincare-cycle.md)
+- [The unsymmetrized structure of the chain model is a cycle](chain-model-structure-u-cycle.md)
 - [The chain-model inverse is a chain map](chain-model-inverse-chain-map.md)
 - [The chain-model inverse is exact](chain-model-inverse-exact.md)
 - [The chain-model homotopy](chain-model-homotopy.md)
