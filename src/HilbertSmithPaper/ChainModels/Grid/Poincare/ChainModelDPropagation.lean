@@ -1,5 +1,6 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 
 /-!
