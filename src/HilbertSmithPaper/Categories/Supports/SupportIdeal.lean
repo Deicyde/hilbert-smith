@@ -184,7 +184,7 @@ private theorem mul_diag_eq {H : Type} [DecidableEq H] [Fintype H] {m : ℕ} {B 
     simp [hb, this]
 
 private theorem diag_mul_eq {H : Type} [DecidableEq H] [Fintype H] {m : ℕ} {B : Type*}
-    [Fintype B] (Q : Fin m → Prop) [DecidablePred Q] (u : Matrix (H × Fin m) B ℚ)
+    (Q : Fin m → Prop) [DecidablePred Q] (u : Matrix (H × Fin m) B ℚ)
     (h : ∀ a b, u a b ≠ 0 → Q a.2) :
     ((Matrix.diagonal fun b : H × Fin m => if Q b.2 then (1 : ℚ) else 0) * u) = u := by
   ext a b
