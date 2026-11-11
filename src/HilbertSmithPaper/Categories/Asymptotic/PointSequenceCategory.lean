@@ -10,8 +10,8 @@ For a group sequence `𝐆 = (G_i, χ_i)`, the duality category `𝒫_𝐆 = ∏
 (`HSP.PCat G`): objects are sequences `(n_i)` of objects of `Free(ℚ[G_i])`, morphisms are sequences
 `(u_i)` of morphisms, and composition, identities, sums and the duality `(n_i)^* = (n_i)`,
 `(u_i)^* = (u_iᵀ)` are taken coordinatewise. The coordinate functors
-`π_i : 𝒫_𝐆 → Free(ℚ[G_i])` (`HSP.PCat.proj`) are strict duality functors. Only the groups `G_i`
-enter, not the `χ_i`.
+`π_i : 𝒫_𝐆 → Free(ℚ[G_i])` (`HSP.PCat.proj`, in its own module) are strict duality functors.
+Only the groups `G_i` enter, not the `χ_i`.
 
 Lean encoding. `PCat G` is a type synonym of `∀ i, FreeCat (G.G i)` carrying Mathlib's product
 category structure (`CategoryTheory.pi`); the preadditive, `ℚ`-linear, biproduct and duality
@@ -134,27 +134,6 @@ instance dualCat : DualCat (PCat G) where
 
 @[simp] theorem homCoord_dualHom {X Y : PCat G} (f : X ⟶ Y) (i : ℕ) :
     homCoord (DualCat.dualHom f) i = DualCat.dualHom (homCoord f i) := rfl
-
-/-- The coordinate functor `π_i : 𝒫_𝐆 → Free(ℚ[G_i])`. -/
-@[simps]
-def projFunctor (G : GroupSeq p) (i : ℕ) : PCat G ⥤ FreeCat (G.G i) where
-  obj X := X.coord i
-  map f := homCoord f i
-
-private instance (i : ℕ) : (projFunctor G i).Additive where
-private instance (i : ℕ) : (projFunctor G i).Linear ℚ where
-
-/-- The coordinate functor `π_i : 𝒫_𝐆 → Free(ℚ[G_i])` as a duality functor, with `ξ = id`. -/
-def proj (G : GroupSeq p) (i : ℕ) : DualFunctor (PCat G) (FreeCat (G.G i)) where
-  toFunctor := projFunctor G i
-  ξ _ := Iso.refl _
-  ξ_natural f := by simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]; rfl
-  ξ_dual M := by
-    simp only [Iso.refl_hom, eqToHom_refl, Category.comp_id]; exact DualCat.dualHom_id _
-
-/-- The coordinate functors are strict duality functors. -/
-private theorem proj_isStrict (G : GroupSeq p) (i : ℕ) : (proj G i).IsStrict :=
-  fun _ => ⟨rfl, rfl⟩
 
 end PCat
 

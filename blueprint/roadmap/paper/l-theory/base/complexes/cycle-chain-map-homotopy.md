@@ -2,6 +2,9 @@
 article_id: af_30fc288354af7e2d1e10a15d
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.StructureCx.toHom_homotopy
+proof: formalized
 ---
 
 # Homologous cycles give homotopic maps

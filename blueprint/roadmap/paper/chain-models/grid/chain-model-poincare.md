@@ -21,6 +21,7 @@ satisfy $\varphi_ib_i-1=dH_i+H_id$ and $b_i\varphi_i-1=dH'_i+H'_id$. Tensors of 
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: replaces the cap-block comparison of HS paper, Section 7.
 ## Depends on
+- [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
 - [The unsymmetrized structure of the chain model](poincare/chain-model-structure-u.md), [the homotopy of the chain model](poincare/chain-model-h.md), [the dual homotopy of the chain model](poincare/chain-model-h-dual.md), [the augmentation of the chain model](poincare/chain-model-aug.md)
 - [circle structure](poincare/circle-data/circle-phi.md), [symmetric circle structure](poincare/circle-data/circle-phi-sym.md), [circle inverse](poincare/circle-data/circle-b.md), [circle homotopy](poincare/circle-data/circle-k.md), [dual circle homotopy](poincare/circle-data/circle-k-dual.md)
 - [Product of structures in explicit bases](tensor/structure-products/based-str-prod.md), [product of duality maps in explicit bases](tensor/structure-products/based-dual-prod.md)

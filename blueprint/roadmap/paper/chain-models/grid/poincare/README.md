@@ -7,7 +7,6 @@ article_id: af_cddd7e116afc08b9644bbcad
 The circle duality data, the unsymmetrized structure, the homotopies and the augmentation of the chain model, and the four parts of the theorem that the chain model is Poincaré.
 
 - [Circle duality data](circle-data/README.md)
-- [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
 - [The unsymmetrized grid structure](grid-structure-u.md)
 - [The degree-zero map A of the circle](circle-a.md)
 - [The degree-zero map A' of the dual circle](circle-a-dual.md)

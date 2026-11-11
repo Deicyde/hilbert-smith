@@ -1,5 +1,6 @@
 import HilbertSmithPaper.Signatures.Tail.TailLift
 import HilbertSmithPaper.Signatures.Tail.TailLiftEventual
+import HilbertSmithPaper.Categories.Asymptotic.PointCoordinateProjection
 import HilbertSmithPaper.Signatures.LFour.IntegerSignature
 import HilbertSmithPaper.LTheory.Comparison.FreeComparison
 

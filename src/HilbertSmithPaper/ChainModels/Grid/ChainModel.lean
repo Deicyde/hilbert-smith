@@ -4,6 +4,7 @@ import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 
 /-!
 # Chain model
@@ -31,12 +32,6 @@ namespace HSP.ChainModels
 open FreeQ
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
-
-private lemma cp2Complex_dim_neg : ∀ q < 0, (cp2Complex.X q).dim = 0 := by
-  intro q hq
-  rcases q with q | q
-  · exact absurd hq (by simp)
-  · rfl
 
 /-- The *chain model* `D_i = C(k_i) ⊗ P`. -/
 noncomputable def chainModel (A : LocalDatum p n D ρplus) (i : ℕ) : ChainComplex FreeQ ℤ :=

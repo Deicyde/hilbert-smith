@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 
 /-!
 # Chosen isometry homotopies
@@ -22,16 +23,10 @@ open FreeQ DualCat
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
-private lemma cp2Complex_dim_neg_cih : ∀ q < 0, (cp2Complex.X q).dim = 0 := by
-  intro q hq
-  rcases q with q | q
-  · exact absurd hq (by simp)
-  · rfl
-
 /-- The chosen isometry homotopy `U_g = U^T_g ⊗ φ_P ∈ M(D_i)_{N+1}`. -/
 noncomputable def isometryHomotopy (A : LocalDatum p n D ρplus) (i : ℕ) (g : ZMod (p ^ i)) :
     (StructureCx (chainModel A i)).X (((n + 4 : ℕ) : ℤ) + 1) :=
-  basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg_cih
+  basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg
     ((n : ℤ) + 1) 4 (((n + 4 : ℕ) : ℤ) + 1) (by push_cast; ring)
     (isometry_homotopies A i g).choose cp2Structure
 

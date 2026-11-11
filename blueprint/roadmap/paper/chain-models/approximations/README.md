@@ -27,3 +27,4 @@ The completed maps, their tracks and modulus, the torus test map, the buffered r
 - [The adjoint homotopy](adjoint-homotopy.md)
 - [Adjoint homotopies](adjoint-homotopies.md)
 - [The family of chain-model matrices](chain-model-family.md)
+- [Tensoring with the identity of the cells of CP^2](tensor-one-p.md)

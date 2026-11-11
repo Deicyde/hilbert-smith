@@ -8,7 +8,9 @@ lean: HSP.VCat
 
 # Point category
 
-$\mathcal V_{\mathbf G}=\mathcal P_{\mathbf G}/\mathcal S_{\mathbf G}$ is the [quotient](../../l-theory/base/categories/filtration-quotient.md) of the sequence category by the finite-support subcategory, and $q:\mathcal P_{\mathbf G}\to\mathcal V_{\mathbf G}$ is the quotient functor, a strict duality functor. The subcategory carries the [point filtration](point-filtration.md). By the [point ideal](point-ideal.md), the morphisms of $\mathcal V_{\mathbf G}$ are the sequences $(u_i)$ modulo equality for all but finitely many $i$.
+$\mathcal V_{\mathbf G}=\mathcal P_{\mathbf G}/\mathcal S_{\mathbf G}$ is the [quotient](../../l-theory/base/categories/filtration-quotient.md) of the sequence category by the finite-support subcategory. The subcategory carries the [point filtration](point-filtration.md).
+
+**Remark (not formalized).** By the [point ideal](point-ideal.md), the morphisms of $\mathcal V_{\mathbf G}$ are the sequences $(u_i)$ modulo equality for all but finitely many $i$.
 
 ## Sources
 

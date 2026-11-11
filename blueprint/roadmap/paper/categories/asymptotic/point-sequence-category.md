@@ -8,7 +8,7 @@ lean: HSP.PCat.dualCat
 
 # Sequence category
 
-Let $\mathbf G=(G_i,\chi_i)$ be a [group sequence](group-sequence.md). The duality category $\mathcal P_{\mathbf G}=\prod_i\mathrm{Free}(\mathbb Q[G_i])$ has as objects the sequences $(n_i)$ of objects of [$\mathrm{Free}(\mathbb Q[G_i])$](free-category.md) and as morphisms the sequences $(u_i)$ of morphisms, with composition, identities, sums and the duality $(n_i)^*=(n_i)$, $(u_i)^*=(u_i^{T})$ taken coordinatewise. The coordinate functors $\pi_i:\mathcal P_{\mathbf G}\to\mathrm{Free}(\mathbb Q[G_i])$ are strict duality functors. Only the groups $G_i$ enter, not the $\chi_i$.
+Let $\mathbf G=(G_i,\chi_i)$ be a [group sequence](group-sequence.md). The duality category $\mathcal P_{\mathbf G}=\prod_i\mathrm{Free}(\mathbb Q[G_i])$ has as objects the sequences $(n_i)$ of objects of [$\mathrm{Free}(\mathbb Q[G_i])$](free-category.md) and as morphisms the sequences $(u_i)$ of morphisms, with composition, identities, sums and the duality $(n_i)^*=(n_i)$, $(u_i)^*=(u_i^{T})$ taken coordinatewise. Only the groups $G_i$ enter, not the $\chi_i$.
 
 ## Sources
 

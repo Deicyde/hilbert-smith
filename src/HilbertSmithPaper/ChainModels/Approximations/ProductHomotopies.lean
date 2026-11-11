@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
+import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 
 /-!

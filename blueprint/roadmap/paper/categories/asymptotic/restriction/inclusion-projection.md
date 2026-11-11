@@ -22,3 +22,7 @@ For a [restriction](restriction-sub-basis.md) $M_P$, the [coordinate projection]
 
 - [Coordinate inclusion of a restriction](coordinate-inclusion.md)
 - [Coordinate projection onto a restriction](coordinate-projection.md)
+
+## Proof depends on
+
+- [The inclusion matrix](../structure/inclusion-matrix.md)

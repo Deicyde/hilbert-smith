@@ -20,6 +20,7 @@ where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md) a
 ## Depends on
 
 - [Iterated bounded categories of a subcategory](../../ultimate/boundary/sub-pow-identification.md)
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
 - [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Decorated transition](decorated-transition.md)
 - [Localization boundary](../boundary/localization-boundary.md)

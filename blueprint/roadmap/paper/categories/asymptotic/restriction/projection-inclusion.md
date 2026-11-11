@@ -27,3 +27,4 @@ For a [restriction](restriction-sub-basis.md) $M_P$ and decidable $P$, the [coor
 ## Proof depends on
 
 - [Enumerated indices satisfy the predicate](restriction-index-mem.md)
+- [The inclusion matrix](../structure/inclusion-matrix.md)

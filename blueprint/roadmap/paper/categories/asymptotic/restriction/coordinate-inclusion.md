@@ -24,3 +24,4 @@ For a [restriction](restriction-sub-basis.md) $M_P$ of $M$, the coordinate inclu
 - [Enumeration of a sub-basis](restriction-index-embedding.md)
 - [Propagation](../propagation.md)
 - [Free category of a finite group](../free-category.md)
+- [The inclusion matrix](../structure/inclusion-matrix.md)

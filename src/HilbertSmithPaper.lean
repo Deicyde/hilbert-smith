@@ -4,9 +4,11 @@ import HilbertSmithPaper.Categories.Asymptotic.EventuallyZeroSubcategory
 import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
 import HilbertSmithPaper.Categories.Asymptotic.FreeZero
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
+import HilbertSmithPaper.Categories.Asymptotic.PointCoordinateProjection
 import HilbertSmithPaper.Categories.Asymptotic.PointFiltration
 import HilbertSmithPaper.Categories.Asymptotic.PointIdeal
 import HilbertSmithPaper.Categories.Asymptotic.PointQuotient
+import HilbertSmithPaper.Categories.Asymptotic.PointQuotientFunctor
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
 import HilbertSmithPaper.Categories.Asymptotic.PropAdd
 import HilbertSmithPaper.Categories.Asymptotic.PropMul
@@ -35,6 +37,7 @@ import HilbertSmithPaper.Categories.Asymptotic.Structure.Concatenation
 import HilbertSmithPaper.Categories.Asymptotic.Structure.ConcatenationBilimit
 import HilbertSmithPaper.Categories.Asymptotic.Structure.EmptyObject
 import HilbertSmithPaper.Categories.Asymptotic.Structure.EmptyObjectZero
+import HilbertSmithPaper.Categories.Asymptotic.Structure.InclusionMatrix
 import HilbertSmithPaper.Categories.Asymptotic.Structure.MorphismPropagation
 import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
 import HilbertSmithPaper.Categories.Asymptotic.TrivialGroupSequence
@@ -93,6 +96,7 @@ import HilbertSmithPaper.ChainModels.Approximations.GroupApproxCarried
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
 import HilbertSmithPaper.ChainModels.Approximations.ProductHomotopies
+import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
@@ -101,6 +105,7 @@ import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.BoxHullProperties
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BasedInclusion
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedCells
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedSphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Buffers.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Buffers.Restriction
 import HilbertSmithPaper.ChainModels.Grid.CarriedChainMap
@@ -111,6 +116,7 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModelEstimates
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
@@ -131,7 +137,6 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleK
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleKDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhi
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhiSym
-import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridHDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridStructureU
@@ -146,6 +151,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockComp
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExt
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExtraction
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockProjections
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronAddLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronAddRight
@@ -173,7 +179,6 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomId
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Torus.ContinuousLift
 import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
@@ -191,7 +196,9 @@ import HilbertSmithPaper.Compression.BoundSequenceNull
 import HilbertSmithPaper.Compression.BufferConditions
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
+import HilbertSmithPaper.Compression.CompressedDifferential
 import HilbertSmithPaper.Compression.CompressedMaps
+import HilbertSmithPaper.Compression.CompressedRep
 import HilbertSmithPaper.Compression.CompressedResiduals
 import HilbertSmithPaper.Compression.CompressionProductRule
 import HilbertSmithPaper.Compression.DiscardedSubcomplex
@@ -209,6 +216,8 @@ import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
+import HilbertSmithPaper.Evaluation.BasedToFree
+import HilbertSmithPaper.Evaluation.ConstantCp2Sequence
 import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.GermHomotopy
@@ -230,6 +239,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
+import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMapHomotopy
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.DualHomotopyEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.ShiftEquivalence
@@ -268,10 +278,13 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Comparison.FreeComparison
@@ -292,11 +305,13 @@ import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedCategory
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedKron
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BoxComponents
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BoxObject
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ConstantFamilyComp
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.DualComplexFinite
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjection
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjectionNe
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.PairingAdditiveLeft
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.PairingAdditiveRight
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductAdditiveLeft
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDifferential
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDualHomExt
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductHomExt
@@ -322,6 +337,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
 import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
 import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
+import HilbertSmithPaper.LTheory.Localization.Products.ProductSum
 import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLineCycle

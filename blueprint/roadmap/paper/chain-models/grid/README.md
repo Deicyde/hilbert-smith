@@ -13,6 +13,7 @@ The torus, the cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and 
 - [Cubical torus grid](cubical-torus-grid.md)
 - [Realized augmentation](realized-augmentation.md)
 - [Cells of CP^2](cp2-cells.md)
+- [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
 - [Grid boxes](grid-box.md)
 - [Boxes are acyclic](grid-box-acyclic.md)
 - [Box hull](box-hull.md)

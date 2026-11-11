@@ -8,6 +8,7 @@ import HilbertSmithPaper.LocalData.Chart.OpenTestRegion
 import HilbertSmithPaper.LocalData.Chart.TestMapProper
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.Corner.Actions.GraphType
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedSphereLabels
 
 /-!
 # Control labels
