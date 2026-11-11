@@ -2,6 +2,8 @@
 article_id: af_a5f120c3074359723a650675
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.Compression.residuals
 ---
 # Residual identities
 
@@ -24,6 +26,7 @@ Here $Q=Q_i$, and $d$ is the differential of $D_i$ or of $D_i^{N-*}$ as the sour
 ## Depends on
 
 - [Compressed maps](compressed-maps.md)
+- [Retained projection](retained-projection.md)
 
 ## Proof depends on
 
