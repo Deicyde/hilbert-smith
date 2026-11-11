@@ -123,6 +123,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BlockDual
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdLeibniz
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.ZeroDimComp
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDifferential
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft

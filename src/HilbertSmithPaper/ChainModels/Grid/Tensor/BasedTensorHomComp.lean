@@ -6,6 +6,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.ZeroDimComp
 
 /-!
 # Composition of tensors of graded maps
@@ -75,14 +76,6 @@ private lemma basedKron_comp_basedKron_assoc {X₀ X₁ X₂ Y₀ Y₁ Y₂ Z : 
     basedKron f g ≫ basedKron f' g' ≫ k = basedKron (f ≫ f') (g ≫ g') ≫ k := by
   rw [← Category.assoc, basedKron_comp_basedKron]
 
-private lemma comp_zero_of_dim {X Y Z : FreeQ} (f : X ⟶ Y) (g : Y ⟶ Z) (h : Y.dim = 0) :
-    f ≫ g = 0 :=
-  Matrix.ext fun i j => by
-    change (toMatrix g * toMatrix f) i j = 0
-    rw [Matrix.mul_apply]
-    exact Finset.sum_eq_zero fun c _ => (Fin.cast h c).elim0
-
-
 theorem basedTensorHom_comp (hE : ∀ q < 0, (E.X q).dim = 0) (hE' : ∀ q < 0, (E'.X q).dim = 0)
     (hE'' : ∀ q < 0, (E''.X q).dim = 0) (hC' : ∀ q < 0, (C'.X q).dim = 0) (d e d' e' : ℤ)
     (f : ∀ r, C.X r ⟶ C'.X (r + d)) (g : ∀ r, E.X r ⟶ E'.X (r + e))
@@ -125,9 +118,9 @@ theorem basedTensorHom_comp (hE : ∀ q < 0, (E.X q).dim = 0) (hE' : ∀ q < 0, 
     · rw [Finset.sum_eq_zero, dif_pos hq]
       · rw [not_and_or] at hin
         rcases hin with hin | hin
-        · rw [comp_zero_of_dim (f (p : ℕ)) _ (hC' _ (by omega)), basedKron_eq_zero (Or.inl rfl), zero_comp,
+        · rw [comp_eq_zero_of_dim (f (p : ℕ)) _ (hC' _ (by omega)), basedKron_eq_zero (Or.inl rfl), zero_comp,
             smul_zero, zero_comp, smul_zero]
-        · rw [comp_zero_of_dim (g (r - (p : ℕ))) _ (hE' _ (by omega)), basedKron_eq_zero (Or.inr rfl),
+        · rw [comp_eq_zero_of_dim (g (r - (p : ℕ))) _ (hE' _ (by omega)), basedKron_eq_zero (Or.inr rfl),
             zero_comp, smul_zero, zero_comp, smul_zero]
       · intro b _
         rw [dif_neg (fun h => hin ⟨by omega, by omega⟩), zero_comp]

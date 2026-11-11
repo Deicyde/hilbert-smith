@@ -11,3 +11,4 @@ The product of structures and the product of duality maps on the tensor product 
 - [Blocks of a product of structures](str-prod-blocks.md)
 - [Products of structures commute with T](str-prod-involution.md)
 - [Leibniz rule for products of structures](str-prod-leibniz.md)
+- [Composites through a zero space vanish](zero-dim-comp.md)
