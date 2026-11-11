@@ -2,6 +2,8 @@
 article_id: af_cd214288ab36ac3e7b071271
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.Compression.compress
 ---
 # Compressed maps
 
