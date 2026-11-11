@@ -26,6 +26,7 @@ Take $\epsilon_i$ the maximum of the finitely many null sequences above.
 ## Sources
 - HS paper, Section 9 (closing choice of the bounds); these are the inputs of Section 10.
 ## Depends on
+- [The metric on the control space](../../local-data/control/control-metric-space.md)
 - [Poincaré](chain-model-poincare.md), [buffered restriction](../approximations/buffered-restriction.md), [group approximations](../approximations/group-approx.md), [product homotopies](../approximations/product-homotopies.md), [isometry homotopies](../approximations/isometry-homotopies.md), [adjoint homotopies](../approximations/adjoint-homotopies.md), [sphere labels](sphere-labels.md), [control labels](control-labels.md), [restriction](restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [torus test map](../approximations/torus-test-map.md), [chain model](chain-model.md), [mesh sequence](mesh-sequence.md), [cubical torus grid](cubical-torus-grid.md)
 ## Proof depends on
 - [Fundamental cycle](../approximations/fundamental-cycle-fixed.md), [carried group approximations](../approximations/group-approx-carried.md), [graph type of approximations](../approximations/approximations-graph-type.md), [properties](../approximations/completed-maps-properties.md)

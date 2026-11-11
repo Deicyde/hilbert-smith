@@ -16,6 +16,7 @@ The control space is the orbit space of the test region under $H_1$, with the or
 - [The control space is compact](control-space-compact.md)
 - [The orbit metric on the control space](control-metric.md)
 - [The orbit metric metrizes the control space](control-metric-properties.md)
+- [The metric on the control space](control-metric-space.md)
 - [The kernel of reduction modulo $p^i$](reduction-kernel.md)
 - [The cyclic action on the control space](control-action.md)
 - [The cyclic action is free](control-action-free.md)

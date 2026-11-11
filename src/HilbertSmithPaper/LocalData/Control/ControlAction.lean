@@ -12,8 +12,8 @@ import HilbertSmithPaper.LocalData.Control.ControlSpace
 
 The action of `c : ZMod p` is defined with the representative `c.val ∈ {0, …, p - 1}`:
 `c +ᵥ π z = π (c.val +ᵥ z)`; this is well defined because `ℤ_[p]` is abelian, so `H₁`-orbits go to
-`H₁`-orbits. The formula for an arbitrary lift, `π (a +ᵥ z) = q₁(a) +ᵥ π z`, is the companion
-`HSP.LocalDatum.π_vadd`; it uses that `a - q₁(a).val ∈ H₁`, i.e. that the kernel of reduction
+`H₁`-orbits. The formula for an arbitrary lift, `π (a +ᵥ z) = q₁(a) +ᵥ π z`, is proved privately
+here; it uses that `a - q₁(a).val ∈ H₁`, i.e. that the kernel of reduction
 modulo `p` is `H₁` (Mathlib: `PadicInt.toZMod_spec`, `PadicInt.maximalIdeal_eq_span_p`).
 -/
 
@@ -65,7 +65,7 @@ noncomputable instance LocalDatum.instAddActionT (A : LocalDatum p n D ρplus) :
       exact π_eq_of_sub_mem A (val_add_sub_mem c d) z
 
 /-- The action is `q₁(a) +ᵥ π z = π (a +ᵥ z)` for every `a ∈ ℤ_[p]`. -/
-theorem LocalDatum.π_vadd (A : LocalDatum p n D ρplus) (a : ℤ_[p]) (z : A.Zplus) :
+private theorem LocalDatum.π_vadd (A : LocalDatum p n D ρplus) (a : ℤ_[p]) (z : A.Zplus) :
     A.π (a +ᵥ z) = PadicInt.toZMod a +ᵥ A.π z := by
   have : NeZero p := ⟨(Fact.out : p.Prime).ne_zero⟩
   change A.π (a +ᵥ z) = A.π (((PadicInt.toZMod a).val : ℤ_[p]) +ᵥ z)
