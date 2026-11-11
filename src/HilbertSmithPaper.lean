@@ -38,6 +38,8 @@ import HilbertSmithPaper.Categories.Asymptotic.Structure.EmptyObjectZero
 import HilbertSmithPaper.Categories.Asymptotic.Structure.MorphismPropagation
 import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
 import HilbertSmithPaper.Categories.Asymptotic.TrivialGroupSequence
+import HilbertSmithPaper.Categories.Cuts.CutBoundary
+import HilbertSmithPaper.Categories.Cuts.CutSquare
 import HilbertSmithPaper.Categories.Cuts.ExteriorCutIdentification
 import HilbertSmithPaper.Categories.Functors.ForgetControl
 import HilbertSmithPaper.Categories.Functors.ForgetControlSupport
@@ -206,6 +208,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualLift
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap

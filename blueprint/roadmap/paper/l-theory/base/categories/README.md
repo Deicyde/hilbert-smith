@@ -17,6 +17,7 @@ Duality categories, duality functors and unitary isomorphisms; the idempotent co
 - [Involution-invariant Karoubi filtration](karoubi-filtration.md)
 - [Filtrations are compatible with sums](karoubi-filtration-sums.md)
 - [Quotient by a subcategory](filtration-quotient.md)
+- [Lift of a duality functor to a quotient](quotient-dual-lift.md)
 - [Completion of a subcategory](kar-subcategory.md)
 - [Maps factoring through Kar U](karoubi-of-filtration.md)
 - [Kernel of the completed quotient](karoubi-quotient-kernel.md)

@@ -39,7 +39,7 @@ private abbrev exteriorCutIdentAux (Z : Set X) : Ext G X Z ⥤ FiltQuot (suppIn 
   CategoryTheory.Quotient.lift (FiltQuot.rel (supp Z))
     ((supportWholeIso (G := G) (X := X)).1.2.toFunctor ⋙ FiltQuot.functor (suppIn Set.univ Z)) (lift_compat Z)
 
-instance (Z : Set X) : (exteriorCutIdentAux (G := G) Z).Additive where
+private instance (Z : Set X) : (exteriorCutIdentAux (G := G) Z).Additive where
   map_add {_ _ f g} := by
     obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (supp Z) f
     obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (supp Z) g
@@ -47,7 +47,7 @@ instance (Z : Set X) : (exteriorCutIdentAux (G := G) Z).Additive where
       CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_add]
 
-instance (Z : Set X) : (exteriorCutIdentAux (G := G) Z).Linear ℚ where
+private instance (Z : Set X) : (exteriorCutIdentAux (G := G) Z).Linear ℚ where
   map_smul {_ _} f c := by
     obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (supp Z) f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,

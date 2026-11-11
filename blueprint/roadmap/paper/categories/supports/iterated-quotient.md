@@ -29,6 +29,7 @@ Let $S,Y,Z\subset X$. The identity on objects and on representatives gives mutua
 
 ## Proof depends on
 
+- [Lift of a duality functor to a quotient](../../l-theory/base/categories/quotient-dual-lift.md)
 - [Null thickening radii](null-thickening.md)
 - [Inclusion after projection](../asymptotic/restriction/projection-inclusion.md)
 - [Complementary diagonal projection](../asymptotic/restriction/diagonal-projection-complement.md)

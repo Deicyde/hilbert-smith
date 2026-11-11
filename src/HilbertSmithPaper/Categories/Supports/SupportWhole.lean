@@ -29,10 +29,10 @@ private abbrev supportWholeInvFunctor :
     AsymCat G X ⥤ (supp (Set.univ : Set X) : ObjectProperty (AsymCat G X)).FullSubcategory :=
   ObjectProperty.lift _ (𝟭 _) supp_univ
 
-instance : (supportWholeInvFunctor (G := G) (X := X)).Additive where
+private instance : (supportWholeInvFunctor (G := G) (X := X)).Additive where
   map_add := rfl
 
-instance : (supportWholeInvFunctor (G := G) (X := X)).Linear ℚ where
+private instance : (supportWholeInvFunctor (G := G) (X := X)).Linear ℚ where
   map_smul _ _ := rfl
 
 /-- **The support subcategory of the whole space.** The inclusion `ι : 𝒜_X → 𝒜_𝐆(X)` and the
