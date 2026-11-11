@@ -26,6 +26,7 @@ import HilbertSmithPaper.Categories.Supports.QuotientByEmpty
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
 import HilbertSmithPaper.Categories.Supports.SupportSubcategory
+import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 import HilbertSmithPaper.ChainModels.Approximations.ChainApprox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxExists
 import HilbertSmithPaper.Categories.Supports.SupportWhole
