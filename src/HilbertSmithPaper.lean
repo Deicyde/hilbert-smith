@@ -35,6 +35,7 @@ import HilbertSmithPaper.ChainModels.Grid.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Restriction
 import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.BoxHull
+import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Corner.CutFlag

@@ -2,6 +2,8 @@
 article_id: af_c2c4733f486398f482f90979
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.circle_duality
 ---
 
 # Circle duality
@@ -14,7 +16,7 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 2. $T\varphi=\varphi+\partial H$, so that $\varphi^s=\tfrac12(\varphi+T\varphi)$, $\partial\varphi^s=0$ and $T\varphi^s=\varphi^s$;
 3. $\varphi^sb-1=dK+Kd$ and $b\varphi^s-1=dK'+K'd$, where $K=\tfrac12Hb$ and $K'=\tfrac12bH$;
 4. $\varepsilon\varphi^s(e_w^*)=1=e_w^*(\sum_ve_v)$;
-5. with every cell and its dual labelled at the cell's center, $\varphi,\varphi^s,b,H,K,K'$ have propagation at most $h/2$.
+5. with every cell and its dual labelled at the cell's center in $\mathbb R/4\mathbb Z$ ($[w]$ at $4w/k$, $e_w$ at $(4w+2)/k$), every component of $\varphi,\varphi^s,b,H,K,K'$ has [propagation](../../categories/asymptotic/propagation.md) at most $h/2$.
 
 *Proof sketch.* Direct computation. (1) $d\varphi([w]^*)=[w]-[w-1]$, and $d[w]^*=-d^*[w]^*=e_w^*-e_{w-1}^*$, so $\varphi(d[w]^*)=[w]-[w-1]$. (2) $T\varphi$ sends $[w]^*\mapsto e_w$ and $e_w^*\mapsto[w+1]$. The difference $T\varphi-\varphi$ is $[w]^*\mapsto e_w-e_{w-1}=Hd[w]^*$ and $e_w^*\mapsto[w+1]-[w]=dHe_w^*$. Then $T\partial=\partial T$ and $T^2=1$ give the rest. (3) $\varphi^sb=1+\tfrac12(dH+Hd)b$, and $b$ is a chain map; likewise for $b\varphi^s$. (4) $\varphi^s(e_w^*)=\tfrac12([w]+[w+1])$. (5) Read off the formulas.
 
@@ -24,7 +26,7 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 
 ## Depends on
 
-- [Cubical torus grid](cubical-torus-grid.md), [dual complex](../../l-theory/base/complexes/dual-complex.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [the involution T](../../l-theory/base/complexes/structure-involution.md)
+- [Cubical torus grid](cubical-torus-grid.md), [dual complex](../../l-theory/base/complexes/dual-complex.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [the involution T](../../l-theory/base/complexes/structure-involution.md), [propagation](../../categories/asymptotic/propagation.md)
 
 ## Proof depends on
 
