@@ -36,7 +36,7 @@ end cone
 
 /-- The mapping cone `𝒞(g)` of a chain map `g : C ⟶ D`: `𝒞(g)_r = D_r ⊞ C_{r-1}`,
 `d (x, y) = (d x + (-1)^{r-1} g y, d y)`. -/
-noncomputable def cone (g : C ⟶ D) : ChainComplex V ℤ where
+noncomputable abbrev cone (g : C ⟶ D) : ChainComplex V ℤ where
   X r := D.X r ⊞ C.X (r - 1)
   d := cone.d g
   shape i j hij := by

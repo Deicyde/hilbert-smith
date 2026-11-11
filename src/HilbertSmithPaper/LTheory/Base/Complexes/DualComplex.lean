@@ -31,7 +31,7 @@ instance (priority := 100) DualCat.hasBinaryBiproducts : HasBinaryBiproducts B :
 /-- The dual complex `C^{n-*}`: `(C^{n-*})_r = (C_{n-r})^*`, with differential
 `(-1)^i (d^C_{n-j, n-i})^*` from degree `i` to degree `j`. -/
 @[simps]
-def dualCx (C : ChainComplex B ℤ) (n : ℤ) : ChainComplex B ℤ where
+abbrev dualCx (C : ChainComplex B ℤ) (n : ℤ) : ChainComplex B ℤ where
   X r := dual (C.X (n - r))
   d i j := i.negOnePow • dualHom (C.d (n - j) (n - i))
   shape i j hij := by

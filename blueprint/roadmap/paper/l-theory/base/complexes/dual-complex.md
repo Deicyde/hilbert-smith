@@ -1,6 +1,6 @@
 ---
 article_id: af_c76a5fff5adfde3188ff6bd1
-declaration: def
+declaration: abbrev
 origin: background
 statement: formalized
 lean: HSP.dualCx

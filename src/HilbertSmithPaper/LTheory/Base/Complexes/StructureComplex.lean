@@ -58,7 +58,7 @@ end StructureCx
 
 /-- The structure complex `M(C)`: `M(C)_n = ∏_{r+s=n} Hom((C_s)^*, C_r)` with
 `(∂f)_{r,s} = d f_{r+1,s} + (-1)^r f_{r,s+1} d^*`; a chain complex of ℚ-vector spaces. -/
-def StructureCx (C : ChainComplex B ℤ) : ChainComplex (ModuleCat.{v} ℚ) ℤ where
+abbrev StructureCx (C : ChainComplex B ℤ) : ChainComplex (ModuleCat.{v} ℚ) ℤ where
   X n := ModuleCat.of ℚ (∀ x : {x : ℤ × ℤ // x.1 + x.2 = n}, dual (C.X x.1.2) ⟶ C.X x.1.1)
   d n m := ModuleCat.ofHom (StructureCx.dHom C n m)
   shape n m h := by

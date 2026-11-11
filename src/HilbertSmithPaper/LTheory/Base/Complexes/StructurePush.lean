@@ -39,9 +39,7 @@ def push {C D : ChainComplex B ℤ} (g : C ⟶ D) : StructureCx C ⟶ StructureC
   comm' i j hij := by
     simp only [ComplexShape.down_Rel] at hij
     subst hij
-    ext f
-    refine funext fun x => ?_
-    obtain ⟨⟨p, q⟩, hpq⟩ := x
+    ext f ⟨⟨p, q⟩, hpq⟩
     subst hpq
     change dHom D (p + q + 1) (p + q) (pushHom g (p + q + 1) f) ⟨(p, q), rfl⟩ =
       pushHom g (p + q) (dHom C (p + q + 1) (p + q) f) ⟨(p, q), rfl⟩

@@ -1,6 +1,6 @@
 ---
 article_id: af_c823b5a9414edb452988571e
-declaration: def
+declaration: abbrev
 origin: background
 statement: formalized
 lean: HSP.StructureCx

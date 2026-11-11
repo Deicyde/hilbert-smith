@@ -47,9 +47,7 @@ def T (C : ChainComplex B ℤ) : StructureCx C ⟶ StructureCx C where
   comm' i j hij := by
     simp only [ComplexShape.down_Rel] at hij
     subst hij
-    ext f
-    refine funext fun x => ?_
-    obtain ⟨⟨p, q⟩, hpq⟩ := x
+    ext f ⟨⟨p, q⟩, hpq⟩
     subst hpq
     change dHom C (p + q + 1) (p + q) (THom C (p + q + 1) f) ⟨(p, q), rfl⟩ =
       THom C (p + q) (dHom C (p + q + 1) (p + q) f) ⟨(p, q), rfl⟩
