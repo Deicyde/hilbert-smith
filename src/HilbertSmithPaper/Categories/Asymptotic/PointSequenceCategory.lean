@@ -16,8 +16,8 @@ enter, not the `χ_i`.
 Lean encoding. `PCat G` is a type synonym of `∀ i, FreeCat (G.G i)` carrying Mathlib's product
 category structure (`CategoryTheory.pi`); the preadditive, `ℚ`-linear, biproduct and duality
 structures are defined here coordinatewise (Mathlib has no preadditive structure on product
-categories). The biproduct of `(n_i)` and `(m_i)` is the coordinatewise biproduct of
-`Free(ℚ[G_i])`, and the zero object is the zero sequence.
+categories). The biproduct of `(n_i)` and `(m_i)` is `(n_i + m_i)` with the coordinate
+inclusions and projections of `Free(ℚ[G_i])`, and the zero object is the zero sequence.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -78,27 +78,35 @@ instance : Linear ℚ (PCat G) where
   comp_smul _ _ _ f c g := hom_ext fun i => by
     simp only [homCoord_comp, homCoord_smul, Linear.comp_smul]
 
-/-- The coordinatewise binary biproduct. -/
-private noncomputable def binaryBicone (X Y : PCat G) : BinaryBicone X Y where
-  pt := fun i => X.coord i ⊞ Y.coord i
-  fst := fun _ => biprod.fst
-  snd := fun _ => biprod.snd
-  inl := fun _ => biprod.inl
-  inr := fun _ => biprod.inr
-  inl_fst := hom_ext fun i => biprod.inl_fst (X := X.coord i) (Y := Y.coord i)
-  inl_snd := hom_ext fun i => biprod.inl_snd (X := X.coord i) (Y := Y.coord i)
-  inr_fst := hom_ext fun i => biprod.inr_fst (X := X.coord i) (Y := Y.coord i)
-  inr_snd := hom_ext fun i => biprod.inr_snd (X := X.coord i) (Y := Y.coord i)
+/-- The coordinatewise binary biproduct `(n_i + m_i)`, with the coordinate inclusions and
+projections of `Free(ℚ[G_i])`. -/
+def binaryBicone (X Y : PCat G) : BinaryBicone X Y where
+  pt := fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).pt
+  fst := fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).fst
+  snd := fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).snd
+  inl := fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).inl
+  inr := fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).inr
+  inl_fst := hom_ext fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).inl_fst
+  inl_snd := hom_ext fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).inl_snd
+  inr_fst := hom_ext fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).inr_fst
+  inr_snd := hom_ext fun i => (FreeCat.binaryBicone (X.coord i) (Y.coord i)).inr_snd
 
-private theorem isZero_zero : IsZero (fun _ => ⟨0⟩ : PCat G) :=
-  ⟨fun _ => ⟨⟨⟨fun _ => 0⟩, fun _ => funext fun i => (FreeCat.isZero_zero (G := G.G i)).eq_of_src _ _⟩⟩,
-    fun _ => ⟨⟨⟨fun _ => 0⟩, fun _ => funext fun i => (FreeCat.isZero_zero (G := G.G i)).eq_of_tgt _ _⟩⟩⟩
+theorem binaryBicone_total (X Y : PCat G) :
+    (binaryBicone X Y).fst ≫ (binaryBicone X Y).inl +
+      (binaryBicone X Y).snd ≫ (binaryBicone X Y).inr = 𝟙 (binaryBicone X Y).pt :=
+  hom_ext fun i => FreeCat.binaryBicone_total (X.coord i) (Y.coord i)
+
+/-- The zero sequence is a zero object. -/
+theorem isZero_zero : IsZero (fun _ => ⟨0⟩ : PCat G) :=
+  ⟨fun _ => ⟨⟨⟨fun _ => 0⟩, fun _ => funext fun i =>
+      (FreeCat.isZero_zero (G := G.G i)).eq_of_src _ _⟩⟩,
+    fun _ => ⟨⟨⟨fun _ => 0⟩, fun _ => funext fun i =>
+      (FreeCat.isZero_zero (G := G.G i)).eq_of_tgt _ _⟩⟩⟩
 
 instance : HasZeroObject (PCat G) := isZero_zero.hasZeroObject
 
 instance : HasBinaryBiproducts (PCat G) :=
-  ⟨fun X Y => hasBinaryBiproduct_of_total (binaryBicone X Y)
-    (hom_ext fun i => biprod.total (X := X.coord i) (Y := Y.coord i))⟩
+  ⟨fun X Y => hasBinaryBiproduct_of_total (binaryBicone X Y) (binaryBicone_total X Y)⟩
 
 instance : HasFiniteBiproducts (PCat G) := by
   have := hasFiniteProducts_of_has_binary_and_terminal (C := PCat G)
