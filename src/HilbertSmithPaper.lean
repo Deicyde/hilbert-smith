@@ -112,6 +112,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDifferential
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
