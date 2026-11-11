@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
 import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
 
