@@ -144,6 +144,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Comparison.FreeComparison
+import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
@@ -161,6 +162,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
 import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
+import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
