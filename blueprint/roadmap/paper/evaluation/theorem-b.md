@@ -2,6 +2,8 @@
 article_id: af_ec9960b49e65ad6dc27b13e4
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.Evaluation.theoremB
 ---
 # Theorem B
 
