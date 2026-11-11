@@ -11,7 +11,9 @@ zero object for `r` outside `[0, n]`, `δφ ∈ M(D)_n`, `T δφ = δφ`, `∂δ
 
 Lean: `SymPair B m n` carries both dimensions, with the field `dim : m + 1 = n`, so that a pair
 whose boundary is `m`-dimensional needs no transport along `n - 1 = m`. The boundary conditions
-are fields; `SymPair.boundary` packages `(C, φ)` as a `SymPoincare B m`.
+are fields; `SymPair.boundary` packages `(C, φ)` as a `SymPoincare B m`, and `SymPair.data` is
+the data `(f : C ⟶ D, δφ, φ)` as an element of a Σ-type, so that statements of the form "this data
+is a pair" read `∃ W, W.data = ⟨C, D, f, δφ, φ⟩`.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -59,6 +61,14 @@ namespace SymPair
 
 variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
   [DualCat B]
+
+/-- The data `(f : C ⟶ D, δφ, φ)` of a pair, without the conditions. -/
+abbrev Data (B : Type u) [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
+    [DualCat B] (m n : ℤ) :=
+  Σ C : ChainComplex B ℤ, Σ D : ChainComplex B ℤ, (C ⟶ D) × (StructureCx D).X n × (StructureCx C).X m
+
+/-- The data `(f : C ⟶ D, δφ, φ)` of a pair `W`. -/
+abbrev data {m n : ℤ} (W : SymPair B m n) : Data B m n := ⟨W.C, W.D, W.f, W.δφ, W.φ⟩
 
 /-- The boundary `(C, φ)` of a pair, a strict `m`-dimensional symmetric Poincaré complex. -/
 @[simps]
