@@ -2,6 +2,9 @@
 article_id: af_a3fbc579161b62171e456ee3
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.prop_add_le
 ---
 
 # Propagation of a sum
