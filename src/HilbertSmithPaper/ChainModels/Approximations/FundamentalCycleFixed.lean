@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
 
 /-!
 # Approximations fix the fundamental cycle

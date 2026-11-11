@@ -18,7 +18,7 @@ Let $\mathrm{pr}_i$ be the based projection of $D_i$ onto the span of the [retai
 
 - [Retained cells](retained-cells.md)
 - [Retained projection](retained-projection.md)
-- [Chain model](../chain-models/grid/chain-model.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
 
 ## Proof depends on
 

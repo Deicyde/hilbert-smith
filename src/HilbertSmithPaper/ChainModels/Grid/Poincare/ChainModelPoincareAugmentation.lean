@@ -14,6 +14,7 @@ import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Aug
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Fundamental
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
 
 /-!
 # The chain model is Poincaré: part 4

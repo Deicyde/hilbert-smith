@@ -1,6 +1,8 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedSphereLabels
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # Buffered cells

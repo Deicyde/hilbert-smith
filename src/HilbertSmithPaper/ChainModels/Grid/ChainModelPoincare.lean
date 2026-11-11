@@ -3,6 +3,8 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareCycle
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareInverse
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincarePropagation
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareAugmentation
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # The chain model is Poincaré

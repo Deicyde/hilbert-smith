@@ -10,6 +10,8 @@ import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedSphereLabels
 import HilbertSmithPaper.LocalData.Control.ControlQuotientMap
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # Control labels

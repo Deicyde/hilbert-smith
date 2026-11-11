@@ -6,6 +6,8 @@ import HilbertSmithPaper.ChainModels.Grid.Buffers.Restriction
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.ChainModels.Approximations.ChainModelFamily
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # Buffer conditions
