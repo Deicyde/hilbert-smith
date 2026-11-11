@@ -224,7 +224,10 @@ import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapLevel
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelExhaustive
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelKernel
+import HilbertSmithPaper.LTheory.Ultimate.Groups.LowerLSequence
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateStageMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
 import HilbertSmithPaper.LocalData.Chart.AveragedMapDisplacement

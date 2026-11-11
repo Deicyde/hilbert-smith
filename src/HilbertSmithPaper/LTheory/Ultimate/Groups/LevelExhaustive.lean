@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateStageMap
 
 /-!
 # Every element comes from a finite stage
