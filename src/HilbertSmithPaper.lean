@@ -4,6 +4,7 @@ import HilbertSmithPaper.LocalData.Chart.LocalDatum
 import HilbertSmithPaper.LocalData.Chart.OpenTestRegion
 import HilbertSmithPaper.LocalData.Chart.Pinch
 import HilbertSmithPaper.LocalData.Chart.PinchContinuous
+import HilbertSmithPaper.LocalData.Chart.TestMap
 import HilbertSmithPaper.LocalData.Chart.TestRegion
 import HilbertSmithPaper.LocalData.Control.FixedLocalData
 import HilbertSmithPaper.LocalData.Control.ReductionKernel
