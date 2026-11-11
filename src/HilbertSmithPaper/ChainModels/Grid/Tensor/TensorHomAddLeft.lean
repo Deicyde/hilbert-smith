@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.KronAddLeft
 
 /-!
 # Additivity of tensors of graded maps in the first factor
@@ -15,12 +16,6 @@ namespace HSP.ChainModels
 open FreeQ DualCat
 
 variable {C C' E E' : ChainComplex FreeQ ℤ}
-
-private lemma basedKron_add_left {X₀ X₁ Y₀ Y₁ : FreeQ} (f f' : X₀ ⟶ X₁) (g : Y₀ ⟶ Y₁) :
-    basedKron (f + f') g = basedKron f g + basedKron f' g := by
-  change ((toMatrix f + toMatrix f') ⊗ₖ toMatrix g).submatrix _ _ =
-    (toMatrix f ⊗ₖ toMatrix g).submatrix _ _ + (toMatrix f' ⊗ₖ toMatrix g).submatrix _ _
-  rw [Matrix.add_kronecker]; rfl
 
 theorem basedTensorHom_add_left (hE : ∀ q < 0, (E.X q).dim = 0) (hE' : ∀ q < 0, (E'.X q).dim = 0)
     (d e : ℤ) (f f' : ∀ r, C.X r ⟶ C'.X (r + d)) (g : ∀ r, E.X r ⟶ E'.X (r + e)) (r : ℤ) :

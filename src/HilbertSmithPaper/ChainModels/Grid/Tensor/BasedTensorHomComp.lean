@@ -5,7 +5,6 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockComp
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorSummandTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
 
 /-!
@@ -27,6 +26,9 @@ open FreeQ DualCat
 
 variable {C C' C'' E E' E'' : ChainComplex FreeQ ℤ}
 
+/-- `block_comp` with the objects written as degrees of tensor complexes: the later rewrites
+(`blk_smul_eqToHom`, the blocks of `basedTensorHom`) match only this form, not the `⟨∑ i, d i⟩` form
+of `block_comp`'s statement. -/
 private lemma blk_comp (hE : ∀ q < 0, (E.X q).dim = 0) (hE' : ∀ q < 0, (E'.X q).dim = 0)
     (hE'' : ∀ q < 0, (E''.X q).dim = 0) {r s t : ℤ}
     (F : (basedComplexTensor C E hE).X r ⟶ (basedComplexTensor C' E' hE').X s)
@@ -34,8 +36,8 @@ private lemma blk_comp (hE : ∀ q < 0, (E.X q).dim = 0) (hE' : ∀ q < 0, (E'.X
     (p : Fin (r.toNat + 1)) (q : Fin (t.toNat + 1)) :
     blockInc (tensorSummandDim C E r) p ≫ (F ≫ G) ≫ blockProj (tensorSummandDim C'' E'' t) q =
       ∑ p', (blockInc (tensorSummandDim C E r) p ≫ F ≫ blockProj (tensorSummandDim C' E' s) p') ≫
-        (blockInc (tensorSummandDim C' E' s) p' ≫ G ≫ blockProj (tensorSummandDim C'' E'' t) q) := by
-  exact block_comp F G p q
+        (blockInc (tensorSummandDim C' E' s) p' ≫ G ≫ blockProj (tensorSummandDim C'' E'' t) q) :=
+  block_comp F G p q
 
 private lemma comp_units_smul_comp {W X Y Z : FreeQ} (f : W ⟶ X) (g : X ⟶ Y) (h : Y ⟶ Z) (u : ℤˣ) :
     f ≫ (u • g) ≫ h = u • (f ≫ g ≫ h) := by
@@ -52,12 +54,6 @@ private lemma blk_smul_eqToHom (hE : ∀ q < 0, (E.X q).dim = 0) (hE' : ∀ q < 
   subst h
   simp only [eqToHom_refl, Category.comp_id]
   exact comp_units_smul_comp _ _ _ _
-
-private lemma kron_transport {A A' B B' : ℤ → FreeQ} (f : ∀ t, A t ⟶ A' t) (g : ∀ t, B t ⟶ B' t)
-    {t t' s s' : ℤ} (h1 : t = t') (h2 : s = s')
-    (h : (⟨(A t).dim * (B s).dim⟩ : FreeQ) = ⟨(A t').dim * (B s').dim⟩) :
-    eqToHom h ≫ basedKron (f t') (g s') = basedKron (f t) (g s) ≫ eqToHom (by subst h1 h2; rfl) := by
-  subst h1 h2; simp
 
 private lemma kron_transport_assoc {A A' B B' : ℤ → FreeQ} (f : ∀ t, A t ⟶ A' t)
     (g : ∀ t, B t ⟶ B' t) {t t' s s' : ℤ} (h1 : t = t') (h2 : s = s')
