@@ -12,6 +12,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
 import HilbertSmithPaper.LTheory.Base.Complexes.SumOfComplexes
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePushInvolution
 import HilbertSmithPaper.LTheory.Base.Pairs.PairMap
+import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 
 /-!
 # The paper
