@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.ChainModels.Grid.BufferedCells
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.LocalData.Control.ControlSpace
