@@ -1,3 +1,0 @@
-Stated with a `sorry` proof (statement only so far) as `HSP.padicExclusion_boundary`; the plan below is the remaining goal.
-Plan: `HSP.padicExclusion_boundary [NeZero n] [TopologicalSpace M] [T2Space M] [ConnectedSpace M] [ChartedSpace (EuclideanHalfSpace n) M] (p) [Fact p.Prime] [AddAction ℤ_[p] M] [ContinuousVAdd ℤ_[p] M] : ¬ FaithfulVAdd ℤ_[p] M`. Mathlib: `EuclideanHalfSpace` (Geometry/Manifold/Instances/Real). Mathlib does not count an ℝⁿ-charted space as half-space-charted, so this stays a separate declaration from `HSP.padicExclusion`. Nonempty interior: `Dense.nonempty`. HS paper lines 1352-1359.
-f (evaluation front): 'open' dropped from step 1, since intrinsic-interior-charted gives the atlas (g-mainline 4); lifting also through the tail signature.
