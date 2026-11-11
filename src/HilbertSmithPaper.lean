@@ -188,6 +188,8 @@ import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
+import HilbertSmithPaper.Evaluation.BasedToFree
+import HilbertSmithPaper.Evaluation.ConstantCp2Sequence
 import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.GermHomotopy

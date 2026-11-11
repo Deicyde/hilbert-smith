@@ -5,7 +5,7 @@ origin: bridged
 ---
 # Constant tail
 
-Let $\mathbf P\in\mathcal P_{\mathbf 1}$ be the constant sequence $(P,\varphi_P)$ in the [sequence category](../categories/asymptotic/point-sequence-category.md) of the trivial group sequence, and $q$ the quotient functor to the [point category](../categories/asymptotic/point-quotient.md). Then $\sigma_{\rm tail}(q_*\mathrm{cls}[\mathbf P])=[(1,1,\dots)]$, where $\mathrm{cls}[\mathbf P]$ is $\mathrm{cls}$ of the image of $\mathbf P$ under the [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md) $M\mapsto(M,1)$.
+Let $\mathbf P\in\mathcal P_{\mathbf 1}$ be the [constant sequence](constant-cp2-sequence.md) $(P,\varphi_P)$ in the [sequence category](../categories/asymptotic/point-sequence-category.md) of the trivial group sequence, and $q$ the quotient functor to the [point category](../categories/asymptotic/point-quotient.md). Then $\sigma_{\rm tail}(q_*\mathrm{cls}[\mathbf P])=[(1,1,\dots)]$, where $\mathrm{cls}[\mathbf P]$ is $\mathrm{cls}$ of the image of $\mathbf P$ under the [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md) $M\mapsto(M,1)$.
 
 This rests on the open statements [Lemma U](../l-theory/comparison/lemma-u.md) and [lifting](../l-theory/localization/boundary/lift-to-pair.md), through the tail signature.
 
@@ -14,6 +14,7 @@ This rests on the open statements [Lemma U](../l-theory/comparison/lemma-u.md) a
 ## Sources
 - HS paper, Section 12 (the tail of the constant sequence).
 ## Depends on
+- [The constant sequence of CP^2](constant-cp2-sequence.md)
 - [Tail signature](../signatures/tail/tail-signature.md)
 - [Sequence category](../categories/asymptotic/point-sequence-category.md)
 - [Point category](../categories/asymptotic/point-quotient.md)
