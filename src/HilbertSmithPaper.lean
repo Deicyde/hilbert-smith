@@ -103,8 +103,8 @@ import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.ChainModels.Torus.LiftProj
 import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
 import HilbertSmithPaper.ChainModels.Torus.NormLift
-import HilbertSmithPaper.ChainModels.Torus.ProjLift
 import HilbertSmithPaper.ChainModels.Torus.Proj
+import HilbertSmithPaper.ChainModels.Torus.ProjLift
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.CompressedMaps
