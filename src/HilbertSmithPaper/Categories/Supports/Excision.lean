@@ -198,7 +198,7 @@ private theorem exMap_ideal (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
     (hu : FiltQuot.ideal (suppIn S B) u) :
     FiltQuot.ideal (ExcisivePair.inter (suppIn S A) (suppIn S B)) (exMap S A u) :=
   ideal_inter_of_ideal_supp hB _
-    (FiltQuot.ideal_comp_left _ (FiltQuot.ideal_comp_right hu _))
+    ((FiltQuot.ideal_closed _).2.2.2.2.1 _ ((FiltQuot.ideal_closed _).2.2.2.2.2.1 hu _))
 
 variable (S A B)
 
@@ -224,7 +224,7 @@ private noncomputable def exFunctor₀ (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p
         exInc S A M ≫ (u ≫ (𝟙 N - exPro S A N ≫ exInc S A N) ≫ v) ≫ exPro S A L
       simp only [Preadditive.sub_comp, Preadditive.comp_sub, Category.assoc, Category.id_comp]
     rw [he]
-    exact exMap_ideal hB (FiltQuot.ideal_comp_left _ (FiltQuot.ideal_comp_right
+    exact exMap_ideal hB ((FiltQuot.ideal_closed _).2.2.2.2.1 _ ((FiltQuot.ideal_closed _).2.2.2.2.2.1
       (ideal_one_sub S A B hS N) _))
 
 omit [IsIsometricVAdd (ZMod p) X] in
@@ -273,8 +273,8 @@ private theorem exRFunctor_map (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x 
 instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :
     (exRFunctor (G := G) S A B hS hB).Additive where
   map_add {_ _ f g} := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S B) f
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S B) g
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S B)).map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (suppIn S B)).map_surjective g
     rw [← Functor.map_add, exRFunctor_map S A B hS hB, exRFunctor_map S A B hS hB,
       exRFunctor_map S A B hS hB, exMap_add, Functor.map_add]
     rfl
@@ -282,7 +282,7 @@ instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
 instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :
     (exRFunctor (G := G) S A B hS hB).Linear ℚ where
   map_smul {_ _} f c := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S B) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S B)).map_surjective f
     rw [← Functor.map_smul, exRFunctor_map S A B hS hB, exRFunctor_map S A B hS hB, exMap_smul,
       Functor.map_smul]
     rfl
@@ -295,7 +295,7 @@ private noncomputable def exR (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x �
   toFunctor := exRFunctor S A B hS hB
   ξ M := Iso.refl _
   ξ_natural {M N} f := by
-    obtain ⟨u, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S B) f
+    obtain ⟨u, rfl⟩ := (FiltQuot.functor (suppIn S B)).map_surjective f
     simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]
     rw [FiltQuot.dualHom_map, exRFunctor_map S A B hS hB, exRFunctor_map S A B hS hB]
     refine Eq.trans ?_ (FiltQuot.dualHom_map _ (exMap S A u)).symm
@@ -326,7 +326,7 @@ private theorem unit_hom_inv (hS : S ⊆ A ∪ B) (M : FiltQuot (ExcisivePair.in
       -(exFarPro S A M.as.obj ≫ exFarInc S A M.as.obj)
     rw [← one_sub_exPro_exInc, neg_sub]
   rw [he]
-  exact FiltQuot.ideal_neg ⟨_, supp_exFar S A B hS M.as.obj, _, _, rfl⟩
+  exact (FiltQuot.ideal_closed _).2.2.1 ⟨_, supp_exFar S A B hS M.as.obj, _, _, rfl⟩
 
 omit [IsIsometricVAdd (ZMod p) X] in
 private theorem unit_inv_hom (M : FiltQuot (ExcisivePair.inter (suppIn (G := G) S A)
@@ -344,7 +344,7 @@ private theorem counit_inv_hom (hS : S ⊆ A ∪ B) (M : FiltQuot (suppIn (G := 
       (FiltQuot.functor (suppIn S B)).map (exInc S A M.as) = 𝟙 M := by
   have h1 : (FiltQuot.functor (suppIn S B)).map (𝟙 M.as) = 𝟙 M := CategoryTheory.Functor.map_id _ _
   rw [← Functor.map_comp, ← h1, FiltQuot.functor_map_eq_iff, ← neg_sub]
-  exact FiltQuot.ideal_neg (ideal_one_sub S A B hS M.as)
+  exact (FiltQuot.ideal_closed _).2.2.1 (ideal_one_sub S A B hS M.as)
 
 omit [IsIsometricVAdd (ZMod p) X] in
 private theorem counit_hom_inv (M : FiltQuot (suppIn (G := G) S B)) :
@@ -373,7 +373,7 @@ noncomputable def excision (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ 
             hom_inv_id := unit_hom_inv S A B hS M
             inv_hom_id := unit_inv_hom S A B M }) (by
           intro M N f
-          obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective _ f
+          obtain ⟨g, rfl⟩ := (FiltQuot.functor _).map_surjective f
           show (FiltQuot.functor (ExcisivePair.inter (suppIn (G := G) S A) (suppIn S B))).map g ≫ (FiltQuot.functor (ExcisivePair.inter (suppIn (G := G) S A) (suppIn S B))).map (ObjectProperty.homMk (exPro S A N.as.obj) :
               N.as ⟶ exObj S A N.as.obj) =
             (FiltQuot.functor (ExcisivePair.inter (suppIn (G := G) S A) (suppIn S B))).map (ObjectProperty.homMk (exPro S A M.as.obj) : M.as ⟶ exObj S A M.as.obj) ≫
@@ -416,7 +416,7 @@ noncomputable def excision (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ 
             hom_inv_id := counit_hom_inv S A B M
             inv_hom_id := counit_inv_hom S A B hS M }) (by
           intro M N f
-          obtain ⟨u, rfl⟩ := FiltQuot.functor_map_surjective _ f
+          obtain ⟨u, rfl⟩ := (FiltQuot.functor _).map_surjective f
           show (FiltQuot.functor (suppIn S B)).map (exInc S A M.as ≫ u ≫ exPro S A N.as) ≫
               (FiltQuot.functor (suppIn S B)).map (exInc S A N.as) =
             (FiltQuot.functor (suppIn S B)).map (exInc S A M.as) ≫
@@ -427,7 +427,7 @@ noncomputable def excision (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ 
                 (𝟙 N.as - exPro S A N.as ≫ exInc S A N.as)) := by
             simp only [Preadditive.comp_sub, Category.comp_id, Category.assoc, neg_sub]
           rw [he]
-          exact FiltQuot.ideal_neg (FiltQuot.ideal_comp_left _ (FiltQuot.ideal_comp_left _
+          exact (FiltQuot.ideal_closed _).2.2.1 ((FiltQuot.ideal_closed _).2.2.2.2.1 _ ((FiltQuot.ideal_closed _).2.2.2.2.1 _
             (ideal_one_sub S A B hS N.as))))
       unitary M := by
         have hξ : (ExcisivePair.e (suppIn (G := G) S A) (suppIn S B)).toFunctor.map ((exR S A B hS hB).ξ M).hom ≫

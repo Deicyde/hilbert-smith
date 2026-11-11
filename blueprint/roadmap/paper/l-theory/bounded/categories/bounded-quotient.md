@@ -31,3 +31,4 @@ For an involution-invariant Karoubi filtration $U\subset A$, the [entrywise quot
 ## Proof depends on
 
 - [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
+- [Maps factoring through a subcategory](../../base/categories/filtration-ideal.md)

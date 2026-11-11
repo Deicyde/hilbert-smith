@@ -28,6 +28,7 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [Complexes in a full subcategory](../decorations/complex-in-subcategory.md)
 - [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
+- [The quotient duality functor](../../base/categories/quotient-duality-functor.md)
 
 ## Proof depends on
 

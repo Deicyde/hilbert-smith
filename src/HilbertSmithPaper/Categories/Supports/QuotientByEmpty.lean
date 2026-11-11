@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 
 /-!
 # Quotient by the empty support
@@ -61,8 +62,8 @@ private abbrev quotientByEmptyInvFunctor (S : Set X) :
 
 instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Additive where
   map_add {_ _ f g} := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S ∅) f
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S ∅) g
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S ∅)).map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (suppIn S ∅)).map_surjective g
     rw [← Functor.map_add, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map]
@@ -70,7 +71,7 @@ instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Additive where
 
 instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Linear ℚ where
   map_smul {_ _} f c := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S ∅) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S ∅)).map_surjective f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map]
     rfl
@@ -88,7 +89,7 @@ def quotientByEmptyIso (S : Set X) :
       { toFunctor := quotientByEmptyInvFunctor S
         ξ M := Iso.refl _
         ξ_natural {M N} f := by
-          obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S ∅) f
+          obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S ∅)).map_surjective f
           simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]
           rw [FiltQuot.dualHom_map, CategoryTheory.Quotient.lift_map_functor_map,
             CategoryTheory.Quotient.lift_map_functor_map]

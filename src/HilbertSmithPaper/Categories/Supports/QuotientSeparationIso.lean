@@ -90,7 +90,7 @@ private def sepDual (hYS : Y ⊆ S) :
 
 private instance (hYS : Y ⊆ S) : (sepFunctor (G := G) S Z hYS).Full where
   map_surjective {M N} f := by
-    obtain ⟨g, hg⟩ := FiltQuot.functor_map_surjective (suppIn S Z) f.hom
+    obtain ⟨g, hg⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective f.hom
     exact ⟨ObjectProperty.homMk g.hom, ObjectProperty.hom_ext _ hg⟩
 
 variable (S Z) in

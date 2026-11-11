@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.PointFiltration
 import HilbertSmithPaper.Categories.Asymptotic.PointIdeal
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 
 /-!
 # Point category

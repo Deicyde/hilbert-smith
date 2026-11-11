@@ -31,3 +31,4 @@ Let $X$ be compact with an isometric $C_p$-action, let $S\subset X$, and let $Y,
 ## Proof depends on
 
 - [Maps through a disjoint support vanish](disjoint-support-vanishing.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

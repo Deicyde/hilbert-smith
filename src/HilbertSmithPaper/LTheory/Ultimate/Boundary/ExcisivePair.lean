@@ -53,15 +53,15 @@ abbrev eFunctor : FiltQuot (inter UA UB) ⥤ FiltQuot UB :=
 
 instance : (eFunctor UA UB).Additive where
   map_add {X Y f g} := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) f
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) g
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective g
     rw [← Functor.map_add, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_add]
 
 instance : (eFunctor UA UB).Linear ℚ where
   map_smul {X Y} f c := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map,
       Functor.map_smul]
@@ -72,7 +72,7 @@ def e : DualFunctor (FiltQuot (inter UA UB)) (FiltQuot UB) where
   toFunctor := eFunctor UA UB
   ξ M := Iso.refl _
   ξ_natural {M N} f := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
     simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]
     rw [FiltQuot.dualHom_map, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map]
@@ -123,8 +123,8 @@ private lemma filtQuot_hom_eq {B : Type*} [Category B] [Preadditive B] [Linear �
     (hU : ∀ X, U X) {M N : FiltQuot U} (f g : M ⟶ N) : f = g := by
   obtain ⟨M⟩ := M
   obtain ⟨N⟩ := N
-  obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (U := U) f
-  obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (U := U) g
+  obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
+  obtain ⟨g, rfl⟩ := (FiltQuot.functor U).map_surjective g
   rw [FiltQuot.functor_map_eq_iff]
   exact ⟨M, hU M, 𝟙 M, f - g, (Category.id_comp _).symm⟩
 

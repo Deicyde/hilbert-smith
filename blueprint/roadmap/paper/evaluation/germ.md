@@ -20,3 +20,7 @@ Let $n\ge1$ and $R>0$, put $N=n+4$, and let $Z_0\subseteq S^n$ be the [exterior]
 - [Ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)
 - [The class map](../l-theory/ultimate/groups/ultimate-cls.md)
 - [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
+
+## Depends on
+
+- [The quotient duality functor](../l-theory/base/categories/quotient-duality-functor.md)

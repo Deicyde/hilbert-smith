@@ -43,3 +43,5 @@ Let the action be isometric, let $A,B\subset X$ with $B$ invariant, and let $S\s
 - [Enumerated indices satisfy the predicate](../asymptotic/restriction/restriction-index-mem.md)
 - [Translates and thickenings of an invariant set](thickening-invariant.md)
 - [Transposing twice](../asymptotic/structure/transpose-transpose.md)
+- [Maps factoring through a dual-closed subcategory form an ideal](../../l-theory/base/categories/filtration-ideal-closure.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
