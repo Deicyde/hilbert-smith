@@ -2,6 +2,8 @@
 article_id: af_2a7c09cddd0248f386c202b8
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.approx_fundamentalCycle
 ---
 # Approximations fix the fundamental cycle
 
