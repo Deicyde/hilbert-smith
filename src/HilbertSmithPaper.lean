@@ -57,6 +57,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
