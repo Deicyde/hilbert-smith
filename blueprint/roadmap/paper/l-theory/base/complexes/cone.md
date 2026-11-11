@@ -2,6 +2,8 @@
 article_id: af_6953129be9ad8075cb1f97d1
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.cone
 ---
 
 # Mapping cone
