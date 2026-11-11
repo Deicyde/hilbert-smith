@@ -16,4 +16,3 @@ Let $G$ be a finite group and $e:\{1..m\}\to\{1..m'\}$ a map. The *inclusion mat
 
 ## Depends on
 
-- [Free category of a finite group](../free-category.md)
