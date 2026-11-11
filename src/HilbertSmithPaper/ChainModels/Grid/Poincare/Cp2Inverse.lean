@@ -2,7 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Cells
 
 /-!
-# The inverse of the structure of CP²
+# The CP² inverse inverts the structure
 
 `(b_P)_r (φ_P)_{r,4-r} = 1` on `P_r` and `(φ_P)_{r,4-r} (b_P)_r =
 1` on `P_{4-r}^*`: both are products
@@ -46,7 +46,7 @@ private lemma ones_mul_ones {a b : ℕ} (h : a = b) (hb : b ≤ 1) :
   subst this
   simp [Matrix.mul_apply]
 
-/-- *The inverse of the structure of CP²*: `b_P` and `φ_P` are inverse in every degree. -/
+/-- *The CP² inverse inverts the structure*: `b_P` and `φ_P` are inverse in every degree. -/
 lemma cp2Inverse_comp_cp2Structure (r : ℤ) :
     cp2Inverse.f r ≫ cp2Structure ⟨(r, 4 - r), by ring⟩ = 𝟙 _ ∧
       cp2Structure ⟨(r, 4 - r), by ring⟩ ≫ cp2Inverse.f r = 𝟙 _ := by
