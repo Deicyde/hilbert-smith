@@ -2,6 +2,9 @@
 article_id: af_1c549630b84dc292f6335433
 declaration: theorem
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.exists_localDatum
 ---
 
 # A local datum from a faithful action
