@@ -2,7 +2,7 @@ import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.Structure.Biproducts
 import HilbertSmithPaper.Categories.Asymptotic.Structure.ClassEq
 import HilbertSmithPaper.Categories.Asymptotic.Structure.MorphismPropagation
-import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
+import HilbertSmithPaper.Categories.Asymptotic.Structure.LevelwiseTranspose
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 
 /-!
@@ -11,7 +11,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 `𝒜_𝐆(X)` is a strict duality category under `M^* = M` and `[u_i]^* = [u_iᵀ]`.
 
 Lean encoding. On sequences, `HSP.AsymPre.transpose u` is the levelwise transpose (the duality
-of `Free(ℚ[G_i])`), which keeps propagation (`HSP.prop_transpose`); it respects eventual
+of `Free(ℚ[G_i])`, its own article), which keeps propagation; it respects eventual
 equality, so it descends to the quotient (`HSP.AsymCat.dualCat`). Transposition reverses
 composition, is `ℚ`-linear and is an involution on the nose.
 -/
@@ -23,15 +23,6 @@ namespace HSP
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
 
 namespace AsymPre
-
-/-- The levelwise transpose `(u_iᵀ)` of a sequence of matrices. -/
-def transpose {M N : AsymPre G X} (u : M ⟶ N) : N ⟶ M :=
-  homMk (fun i => DualCat.dualHom (coord u i)) (by
-    refine (tendsto_congr fun i => ?_).2 (tendsto_prop u)
-    exact prop_transpose (M.label i) (N.label i) (FreeCat.mat (coord u i)))
-
-@[simp] theorem coord_transpose {M N : AsymPre G X} (u : M ⟶ N) (i : ℕ) :
-    coord (transpose u) i = DualCat.dualHom (coord u i) := rfl
 
 private theorem transpose_id (M : AsymPre G X) : transpose (𝟙 M) = 𝟙 M :=
   hom_ext fun i => DualCat.dualHom_id (M.free i)

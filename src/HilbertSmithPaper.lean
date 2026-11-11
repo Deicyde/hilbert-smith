@@ -38,6 +38,7 @@ import HilbertSmithPaper.Categories.Asymptotic.Structure.ConcatenationBilimit
 import HilbertSmithPaper.Categories.Asymptotic.Structure.EmptyObject
 import HilbertSmithPaper.Categories.Asymptotic.Structure.EmptyObjectZero
 import HilbertSmithPaper.Categories.Asymptotic.Structure.InclusionMatrix
+import HilbertSmithPaper.Categories.Asymptotic.Structure.LevelwiseTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Structure.MorphismPropagation
 import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
 import HilbertSmithPaper.Categories.Asymptotic.TrivialGroupSequence
