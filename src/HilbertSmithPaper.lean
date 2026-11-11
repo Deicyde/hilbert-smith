@@ -36,6 +36,7 @@ import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
+import HilbertSmithPaper.Evaluation.CubicalPinch
 
 /-!
 # The paper

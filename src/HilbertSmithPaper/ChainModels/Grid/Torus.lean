@@ -56,6 +56,42 @@ lemma lift_mem (x : Torus n) (j : Fin n) : lift x j ∈ Set.Ico (-2 : ℝ) 2 := 
 lemma proj_lift (x : Torus n) : proj (lift x) = x := by
   funext j; simp [proj, lift]
 
+/-- The coordinates of the lift: `|x̃ⱼ| = d(xⱼ, 0)`. -/
+lemma abs_lift (x : Torus n) (j : Fin n) : |lift x j| = ‖x j‖ := by
+  have h := lift_mem x j
+  have hx : ((lift x j : ℝ) : AddCircle (4 : ℝ)) = x j := congrFun (proj_lift x) j
+  have hle : |lift x j| ≤ |(4 : ℝ)| / 2 := by
+    rw [abs_le]; norm_num; constructor <;> linarith [h.1, h.2]
+  calc |lift x j| = ‖((lift x j : ℝ) : AddCircle (4 : ℝ))‖ :=
+        ((AddCircle.norm_coe_eq_abs_iff (p := (4 : ℝ)) (by norm_num)).2 hle).symm
+    _ = ‖x j‖ := by rw [hx]
+
+/-- `|x̃|_∞ = d_∞(x, 0)`. -/
+lemma norm_ofLp_lift (x : Torus n) : ‖WithLp.ofLp (lift x)‖ = ‖x‖ := by
+  have h : ∀ j, ‖WithLp.ofLp (lift x) j‖ = ‖x j‖ := fun j => by
+    rw [Real.norm_eq_abs]; exact abs_lift x j
+  refine le_antisymm ((pi_norm_le_iff_of_nonneg (norm_nonneg _)).2 fun j => ?_)
+    ((pi_norm_le_iff_of_nonneg (norm_nonneg _)).2 fun j => ?_)
+  · rw [h]; exact norm_le_pi_norm x j
+  · rw [← h]; exact norm_le_pi_norm (WithLp.ofLp (lift x)) j
+
+/-- The lift is continuous at every `x` with `d_∞(x, 0) < 2`. -/
+lemma continuousAt_lift (x : Torus n) (hx : ‖x‖ < 2) :
+    ContinuousAt (lift (n := n)) x := by
+  have hj : ∀ j, x j ≠ ((-2 : ℝ) : AddCircle (4 : ℝ)) := by
+    intro j h
+    have h1 : ‖x j‖ = 2 := by
+      rw [h, (AddCircle.norm_coe_eq_abs_iff (p := (4 : ℝ)) (by norm_num)).2 (by norm_num)]
+      norm_num
+    linarith [norm_le_pi_norm x j]
+  have hc : ContinuousAt (fun y : Torus n => fun j =>
+      ((AddCircle.equivIco 4 (-2) (y j) : Set.Ico (-2 : ℝ) (-2 + 4)) : ℝ)) x := by
+    refine continuousAt_pi.2 fun j => ?_
+    exact continuous_subtype_val.continuousAt.comp
+      ((AddCircle.continuousAt_equivIco 4 (-2) (hj j)).comp
+        (f := fun y : Torus n => y j) ((continuous_apply j).continuousAt))
+  exact (PiLp.continuous_toLp 2 _).continuousAt.comp hc
+
 /-- `d_∞ ≤ d_2`. -/
 lemma dist_le_dist₂ (x y : Torus n) : dist x y ≤ dist₂ x y := by
   refine (dist_pi_le_iff (Real.sqrt_nonneg _)).2 fun j => ?_
