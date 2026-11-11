@@ -145,6 +145,7 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.GridH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridHDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridStructureU
 import HilbertSmithPaper.ChainModels.Grid.Poincare.IdDualDeg0
+import HilbertSmithPaper.ChainModels.Grid.Poincare.TensorHomotopy
 import HilbertSmithPaper.ChainModels.Grid.Realization
 import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
