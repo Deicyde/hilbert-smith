@@ -15,7 +15,7 @@ $$\iota_{j+1}\partial^{(j)}x=\iota_{j+2}\,t\,\partial^{(j)}x=\iota_{j+2}\,\parti
 
 This definition rests on the open statement [Lifting](../../localization/boundary/lift-to-pair.md), through the stage boundaries.
 
-Here $\partial^{(j)}x$ is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ through [Iterated bounded categories of a subcategory](sub-pow-identification.md), as in [Transition commutes with the boundary](../../localization/transitions/transition-boundary-commute.md), and the colimit maps are the [stage maps](../groups/ultimate-stage-map.md) of the [sequence of lower L-groups](../groups/lower-l-sequence.md).
+Here $\partial^{(j)}x$ is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ through [Iterated bounded categories of a subcategory](sub-pow-identification.md), followed by the [transport of L-groups](../../base/groups/l-group-cast.md) along $k+j=(k-1)+(j+1)$, as in [Transition commutes with the boundary](../../localization/transitions/transition-boundary-commute.md), and the colimit maps are the [stage maps](../groups/ultimate-stage-map.md) of the [sequence of lower L-groups](../groups/lower-l-sequence.md).
 
 ## Sources
 
@@ -32,3 +32,5 @@ Here $\partial^{(j)}x$ is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ th
 - [Stage maps into the ultimate L-group](../groups/ultimate-stage-map.md)
 - [Sequence of lower L-groups](../groups/lower-l-sequence.md)
 - [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
+- [Induced homomorphism](../../base/groups/induced-map.md)
+- [Lower transition map](../../localization/transitions/transition-lower.md)
