@@ -418,6 +418,9 @@ import HilbertSmithPaper.Signatures.Real.RealCohomology
 import HilbertSmithPaper.Signatures.Real.RealCohomologyAction
 import HilbertSmithPaper.Signatures.Real.RealCohomologyMap
 import HilbertSmithPaper.Signatures.Real.RealMatrix
+import HilbertSmithPaper.Signatures.Tail.TailLift
+import HilbertSmithPaper.Signatures.Tail.TailLiftEventual
+import HilbertSmithPaper.Signatures.Tail.TailSignature
 
 /-!
 # The paper

@@ -2,6 +2,8 @@
 article_id: af_3d0138ecba1b8c5c117da4ba
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.tailSign
 ---
 
 # The tail signature
