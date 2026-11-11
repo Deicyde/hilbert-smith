@@ -1,4 +1,10 @@
-import Mathlib
+import HilbertSmithPaper.Proofs.HilbertSmith
+import HilbertSmithPaper.Proofs.IntrinsicInterior
+import HilbertSmithPaper.Proofs.IntrinsicInteriorCharted
+import HilbertSmithPaper.Proofs.IntrinsicInteriorConnected
+import HilbertSmithPaper.Proofs.InteriorAction
+import HilbertSmithPaper.Proofs.InteriorActionContinuous
+import HilbertSmithPaper.Proofs.InteriorActionFaithful
 
 /-!
 # Hilbert–Smith with boundary
@@ -7,7 +13,8 @@ As `HSP.hilbertSmith`, for a connected Hausdorff space `M` charted on the half-s
 `{x ∈ ℝⁿ | x 0 ≥ 0}` (Mathlib's `EuclideanHalfSpace n`, defined for `n ≥ 1`). Neither `M` nor
 `G` is assumed second countable, and `G` is not assumed Hausdorff.
 
-The statement is in place; its proof is still `sorry`.
+Proof: the intrinsic interior `M°ₙ` is connected and charted on `ℝⁿ`, and `G` acts on it jointly
+continuously and faithfully; apply `HSP.hilbertSmith` to `M°ₙ`.
 -/
 
 open scoped ContDiff Manifold
@@ -25,6 +32,9 @@ theorem hilbertSmith_boundary (n : ℕ) [NeZero n] (M : Type u) [TopologicalSpac
     [TopologicalSpace G] [IsTopologicalGroup G] [LocallyCompactSpace G] [MulAction G M]
     [ContinuousSMul G M] [FaithfulSMul G M] :
     ∃ (d : ℕ) (_ : ChartedSpace (EuclideanSpace ℝ (Fin d)) G), LieGroup (𝓡 d) ∞ G := by
-  sorry
+  have : ConnectedSpace (intrinsicInterior n M) :=
+    isConnected_iff_connectedSpace.1 isConnected_intrinsicInterior
+  have := faithfulSMul_intrinsicInterior (n := n) (G := G) (M := M)
+  exact hilbertSmith n (intrinsicInterior n M) G
 
 end HSP

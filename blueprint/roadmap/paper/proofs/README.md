@@ -29,6 +29,8 @@ For a manifold with boundary we pass to its intrinsic interior: the points with 
 - [The intrinsic interior is open](intrinsic-interior-open.md)
 - [The intrinsic interior is charted](intrinsic-interior-charted.md)
 - [The intrinsic interior is invariant](intrinsic-interior-invariant.md)
+- [Points over the open half-space are interior](half-space-interior.md)
+- [The open half-space is dense in the half-space](open-half-space-dense.md)
 - [The intrinsic interior is dense](intrinsic-interior-dense.md)
 - [The intrinsic interior is connected](intrinsic-interior-connected.md)
 - [The action on the intrinsic interior](interior-action.md)

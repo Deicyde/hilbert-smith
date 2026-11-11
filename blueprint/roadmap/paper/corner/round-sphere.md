@@ -8,7 +8,7 @@ lean: HSP.Corner.roundMetric
 
 # The round sphere
 
-Let $n\ge1$. Write $S^n=\mathbb R^n\cup\{\infty\}$, with $|z|$ the Euclidean norm on $\mathbb R^n$. The *round metric* $d_S(z,w)$ is the angle between $\sigma^{-1}(z)$ and $\sigma^{-1}(w)$, where $\sigma$ is stereographic projection from $(0,\dots,0,1)$ of the unit sphere of $\mathbb R^{n+1}=\mathbb R^n\times\mathbb R$ onto $S^n$, so that $\sigma^{-1}(z)=(2z,|z|^2-1)/(|z|^2+1)$ and $\sigma^{-1}(\infty)=(0,\dots,0,1)$. It is a metric inducing the topology of the one-point compactification, so $(S^n,d_S)$ is a compact metric space; $C_p$ acts on it trivially.
+Let $n\ge1$. Write $S^n=\mathbb R^n\cup\{\infty\}$, with $|z|$ the Euclidean norm on $\mathbb R^n$. The *round metric* $d_S(z,w)$ is the angle between $\sigma^{-1}(z)$ and $\sigma^{-1}(w)$, where $\sigma$ is stereographic projection from $(0,\dots,0,1)$ of the unit sphere of $\mathbb R^{n+1}=\mathbb R^n\times\mathbb R$ onto $S^n$, so that $\sigma^{-1}(z)=(2z,|z|^2-1)/(|z|^2+1)$ and $\sigma^{-1}(\infty)=(0,\dots,0,1)$. It is a metric inducing the topology of the one-point compactification, so $(S^n,d_S)$ is a compact metric space; $C_p$ acts on it trivially. The construction does not need $n\ge1$.
 
 ## Sources
 

@@ -8,7 +8,7 @@ lean: HSP.LocalDatum.vadd_mem_Zplus_Uplus
 
 # The test regions are invariant
 
-For a local datum, $a\cdot x\in Z^+$ for all $a\in\mathbb Z_p$ and $x\in Z^+$, and likewise $a\cdot x\in U^+$ for all $x\in U^+$.
+For a local datum, $a\cdot x\in Z^+$ for all $a\in\mathbb Z_p$ and $x\in Z^+$, and likewise $a\cdot x\in U^+$ for all $x\in U^+$. Hence the action of $\mathbb Z_p$ on $\Omega$ restricts to an action on $Z^+$.
 
 *Proof sketch.* $F_0(a\cdot x)=F_0(x)$.
 
