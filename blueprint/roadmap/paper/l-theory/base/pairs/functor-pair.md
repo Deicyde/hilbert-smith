@@ -24,6 +24,7 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 ## Proof depends on
 
 - [Duality functors carry Poincaré complexes](functor-poincare.md)
+- [Duality functors commute with pushforward](../complexes/functor-push.md)
 - [Pair map](pair-map.md)
 - [Mapping cone](../complexes/cone.md)
 - [Pushforward of structures](../complexes/structure-push.md)
