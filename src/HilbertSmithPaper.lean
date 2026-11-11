@@ -224,9 +224,9 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdCompDualProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdLeibniz
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdTensorDualProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdZeroLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdZeroRight
-import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdTensorDualProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.TensorHomTransportBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.UnitStructureCycle
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.ZeroDimComp
