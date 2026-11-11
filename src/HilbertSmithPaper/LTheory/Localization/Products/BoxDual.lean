@@ -252,11 +252,4 @@ noncomputable def boxPairing :
       rw [← ι_eqToHom_biproduct_assoc (dual_dual N.X).symm, eqToHom_trans]
     · rw [Bounded.diagF_ne _ (Ne.symm h), Bounded.diagF_ne _ h, dualHom_zero, zero_comp]
 
-/-- For `B = C_{ℤ^j} A`, the box product pairing
-`Kar C_{ℤ^j} A × C_ℤ(ℚ) → Kar C_{ℤ^{j+1}} A`. -/
-noncomputable abbrev boxPairingPow (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ A]
-    [HasFiniteBiproducts A] [DualCat A] (j : ℕ) :
-    DualityPairing (Karoubi (BoundedPow A j)) (Bounded FreeQ) (Karoubi (BoundedPow A (j + 1))) :=
-  boxPairing
-
 end HSP

@@ -28,12 +28,14 @@ is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 
 ## Depends on
 
+- [Box product on iterated bounded categories](box-pairing-pow.md)
 - [Strict Poincaré pair](../../base/pairs/poincare-pair.md)
 - [Tensor product of complexes](complex-product.md)
 - [External product of structures](external-product.md)
 - [The line is Poincaré](symmetric-line-poincare.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [Duals of box products](box-dual.md)
+- [Structure of the symmetric line](symmetric-line-structure.md)
 
 ## Proof depends on
 
@@ -45,3 +47,4 @@ is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 - [The line is Poincaré](symmetric-line-poincare.md)
 - [Mapping cone](../../base/complexes/cone.md)
 - [Pair map](../../base/pairs/pair-map.md)
+- [The symmetric line is a symmetric complex](symmetric-line-cycle.md)
