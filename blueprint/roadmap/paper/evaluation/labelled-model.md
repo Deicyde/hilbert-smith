@@ -18,6 +18,8 @@ Let $c:\mathbb T^n\to S^n$ be continuous. Give the basis cell $b$ of $D_i$ (and 
 - [Chain-model duality](../chain-models/grid/chain-model-duality.md)
 - [Strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
 ## Proof depends on
 - [Poincaré](../chain-models/grid/chain-model-poincare.md)
 - [Propagation](../categories/asymptotic/propagation.md)
