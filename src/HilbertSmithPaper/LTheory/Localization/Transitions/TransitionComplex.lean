@@ -7,6 +7,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.DualComplexFinite
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductTotal
+import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
 
 /-!
 # Product of a complex with the line
@@ -40,15 +41,6 @@ variable {B : Type u₁} [Category.{v₁} B] [Preadditive B] [Linear ℚ B] [Has
   [DualCat E]
   {B'' : Type u₃} [Category.{v₃} B''] [Preadditive B''] [Linear ℚ B''] [HasFiniteBiproducts B'']
   [DualCat B'']
-
-omit [Linear ℚ B] [HasFiniteBiproducts B] [DualCat B] in
-/-- A complex whose chain objects vanish outside `[0, k]` has finitely many nonzero ones. -/
-private lemma finite_of_bounded {C : ChainComplex B ℤ} {k : ℤ}
-    (h : ∀ r : ℤ, r < 0 ∨ k < r → IsZero (C.X r)) : {r | ¬ IsZero (C.X r)}.Finite :=
-  (Set.finite_Icc 0 k).subset fun r hr => by
-    by_contra h'
-    rw [Set.mem_Icc, not_and_or, not_le, not_le] at h'
-    exact hr (h r (by omega))
 
 private lemma tensor_zero_left (P : DualityPairing B E B'') {N N' : B} {V V' : E}
     (g : V ⟶ V') : P.tensor.map ((0 : N ⟶ N') ×ₘ g) = 0 := by

@@ -6,6 +6,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
 import HilbertSmithPaper.LTheory.Localization.Products.ProductSum
+import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
 
 /-!
 # Transition map
@@ -38,15 +39,6 @@ variable {B : Type u₁} [Category.{v₁} B] [Preadditive B] [Linear ℚ B] [Has
   [DualCat E]
   {B'' : Type u₃} [Category.{v₃} B''] [Preadditive B''] [Linear ℚ B''] [HasFiniteBiproducts B'']
   [DualCat B'']
-
-omit [Linear ℚ B] [HasFiniteBiproducts B] [DualCat B] in
-/-- A complex whose chain objects vanish outside `[0, k]` has finitely many nonzero ones. -/
-private lemma finite_of_bounded {C : ChainComplex B ℤ} {k : ℤ}
-    (h : ∀ r : ℤ, r < 0 ∨ k < r → IsZero (C.X r)) : {r | ¬ IsZero (C.X r)}.Finite :=
-  (Set.finite_Icc 0 k).subset fun r hr => by
-    by_contra h'
-    rw [Set.mem_Icc, not_and_or, not_le, not_le] at h'
-    exact hr (h r (by omega))
 
 private lemma strProd_zero_left (P : DualityPairing B E B'') {C : ChainComplex B ℤ}
     {D : ChainComplex E ℤ} (hC : {r | ¬ IsZero (C.X r)}.Finite)
