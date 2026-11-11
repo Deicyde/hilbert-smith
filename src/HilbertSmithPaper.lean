@@ -218,6 +218,7 @@ import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
 import HilbertSmithPaper.Signatures.LFour.RealHomology
 import HilbertSmithPaper.Signatures.LFour.RealEvaluation
 import HilbertSmithPaper.Signatures.LFour.MiddleForm
+import HilbertSmithPaper.Signatures.LFour.MiddleFormNeg
 
 /-!
 # The paper
