@@ -14,6 +14,7 @@ Let $E(k)\subseteq C(k)$ be spanned by the [far cubes](far-cubes.md), those whos
 ## Sources
 - New: replaces simplicial approximation (HS paper, Section 9).
 ## Depends on
+- [Mesh start](../mesh/mesh-start.md)
 - [Grid cubes](../grid/cubical/grid-cube.md)
 - [The cube of a basis vector](../grid/cubical/grid-cell.md)
 - [Augmentation of the grid complex](../grid/cubical/grid-aug.md)

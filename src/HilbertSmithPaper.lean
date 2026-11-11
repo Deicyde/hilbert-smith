@@ -145,6 +145,7 @@ import HilbertSmithPaper.ChainModels.Grid.Cubical.GridFundamental
 import HilbertSmithPaper.ChainModels.Grid.Cubical.UnitComplex
 import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
+import HilbertSmithPaper.ChainModels.Mesh.MeshStart
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelCube

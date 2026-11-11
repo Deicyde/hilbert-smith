@@ -14,6 +14,7 @@ For every $g\in G_i$, $a_g=a^T_g\otimes1_P$ where $a^T_g$ is a chain map of $C(k
 ## Sources
 - New.
 ## Depends on
+- [Mesh start](../mesh/mesh-start.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
 - [The cube of a basis vector](../grid/cubical/grid-cell.md)
 - [Augmentation of the grid complex](../grid/cubical/grid-aug.md)

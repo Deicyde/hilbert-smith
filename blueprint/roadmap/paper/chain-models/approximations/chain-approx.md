@@ -10,6 +10,7 @@ lean: HSP.ChainModels.chainApprox
 For $L\in\mathcal F$, $a_i[L]$ is a chain map of $C(k_i)$ chosen by [chain approximations exist](chain-approx-exists.md) for $k=k_i\ge k_0$.
 
 ## Depends on
+- [Mesh start](../mesh/mesh-start.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
 - [The cube of a basis vector](../grid/cubical/grid-cell.md)
 - [Augmentation of the grid complex](../grid/cubical/grid-aug.md)
