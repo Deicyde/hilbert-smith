@@ -2,6 +2,9 @@
 article_id: af_f03eb2291a6c978f22c2aeb4
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.dense_intrinsicInterior
 ---
 
 # The intrinsic interior is dense

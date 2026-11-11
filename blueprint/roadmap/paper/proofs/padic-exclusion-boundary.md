@@ -2,6 +2,8 @@
 article_id: af_fce8de43cea1c0a3fb088039
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.padicExclusion_boundary
 ---
 
 # $p$-adic exclusion with boundary

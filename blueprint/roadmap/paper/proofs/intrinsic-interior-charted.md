@@ -1,7 +1,9 @@
 ---
 article_id: af_f199727477d9786a03b81661
-declaration: def
+declaration: instance
 origin: background
+statement: formalized
+lean: HSP.intrinsicInterior.chartedSpace
 ---
 
 # The intrinsic interior is charted
