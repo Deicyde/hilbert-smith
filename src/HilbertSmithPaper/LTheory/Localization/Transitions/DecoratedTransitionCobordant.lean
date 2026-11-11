@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedLineProduct
 
 /-!

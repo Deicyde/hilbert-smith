@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
 import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
-import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
 
 /-!
 # Decorated product with the line
