@@ -166,8 +166,6 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareCycle
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareInverse
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincarePropagation
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelStructureU
-import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.CircleA
-import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.CircleADual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleB
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleK
@@ -175,6 +173,8 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleKDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhi
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhiSym
 import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2Inverse
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.CircleA
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.CircleADual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridHDual
@@ -215,8 +215,8 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolu
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdLeibniz
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdZeroLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdZeroRight
-import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.UnitStructureCycle
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.TensorHomTransportBlocks
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.UnitStructureCycle
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.ZeroDimComp
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDifferential
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDimNeg
