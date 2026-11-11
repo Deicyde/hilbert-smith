@@ -39,6 +39,7 @@ import HilbertSmithPaper.LocalData.Chart.AveragedMapFixed
 import HilbertSmithPaper.LocalData.Chart.AveragedMapInvariant
 import HilbertSmithPaper.LocalData.Chart.LocalDatum
 import HilbertSmithPaper.LocalData.Chart.OpenTestRegion
+import HilbertSmithPaper.LocalData.Chart.OpenTestRegionOpen
 import HilbertSmithPaper.LocalData.Chart.Pinch
 import HilbertSmithPaper.LocalData.Chart.PinchContinuous
 import HilbertSmithPaper.LocalData.Chart.PinchHomeomorph
