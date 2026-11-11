@@ -17,3 +17,4 @@ Strict $k$-dimensional symmetric Poincaré complexes $(C,\phi)$ and $(C',\phi')$
 ## Depends on
 
 - [Strict Poincaré pair](poincare-pair.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)
