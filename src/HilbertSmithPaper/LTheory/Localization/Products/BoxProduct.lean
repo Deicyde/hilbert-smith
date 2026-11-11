@@ -27,6 +27,7 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
 
 namespace Box
 
+omit [Linear ℚ B] in
 private lemma biprod_ext {J K : Type} [Fintype J] [Fintype K] {f : J → B} {g : K → B}
     {φ ψ : ⨁ f ⟶ ⨁ g}
     (h : ∀ j k, biproduct.ι f j ≫ φ ≫ biproduct.π g k = biproduct.ι f j ≫ ψ ≫ biproduct.π g k) :
@@ -84,6 +85,7 @@ lemma F_eq_zero {N N' : Karoubi B} {V V' : Bounded FreeQ} (f : N ⟶ N') (g : V 
     (h : g.1 m n = 0) : F f g m n = 0 :=
   biprod_ext fun i i' => by rw [F_entry, h]; simp
 
+omit [Linear ℚ B] in
 private lemma entry_comp {J K L : Type} [Fintype J] [Fintype K] [Fintype L] {f : J → B}
     {g : K → B} {h : L → B} (φ : ⨁ f ⟶ ⨁ g) (ψ : ⨁ g ⟶ ⨁ h) (j : J) (l : L) :
     biproduct.ι f j ≫ φ ≫ ψ ≫ biproduct.π h l =

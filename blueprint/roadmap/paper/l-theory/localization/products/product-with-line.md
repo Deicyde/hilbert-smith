@@ -2,6 +2,8 @@
 article_id: af_a29f25bde525270187fc5377
 declaration: lemma
 origin: cited
+statement: formalized
+lean: HSP.SymPair.exists_prod_line
 ---
 
 # Product of a pair with the line
