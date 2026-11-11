@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
+import HilbertSmithPaper.Signatures.Forms.FormSignature
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 
 /-!
