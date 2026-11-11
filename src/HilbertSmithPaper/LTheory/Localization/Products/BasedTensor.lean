@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedKron
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
 
 /-!
@@ -20,11 +21,6 @@ open scoped CategoryTheory.Prod Kronecker
 namespace HSP
 
 open DualCat FreeQ
-
-/-- The Kronecker product of two morphisms of `ℚ`, reindexed along `finProdFinEquiv`. -/
-def basedKron {X X' Y Y' : FreeQ} (f : X ⟶ X') (g : Y ⟶ Y') :
-    (⟨X.dim * Y.dim⟩ : FreeQ) ⟶ ⟨X'.dim * Y'.dim⟩ :=
-  ofMatrix ((toMatrix f ⊗ₖ toMatrix g).submatrix finProdFinEquiv.symm finProdFinEquiv.symm)
 
 private lemma basedKron_comp {X X' X'' Y Y' Y'' : FreeQ} (f : X ⟶ X') (f' : X' ⟶ X'')
     (g : Y ⟶ Y') (g' : Y' ⟶ Y'') :

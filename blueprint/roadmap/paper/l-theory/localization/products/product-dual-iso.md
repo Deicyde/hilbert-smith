@@ -36,3 +36,4 @@ is $s(a,b)$ times $\kappa$ on the summand $(C_{m-a}\boxtimes E_{n-b})^*$, which 
 - [Summands outside the support vanish](bookkeeping/summand-zero.md)
 - [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)
+- [Differential of a tensor product on summands](bookkeeping/product-differential.md)
