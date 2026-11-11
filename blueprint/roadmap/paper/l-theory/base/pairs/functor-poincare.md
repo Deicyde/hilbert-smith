@@ -2,6 +2,8 @@
 article_id: af_2ad500238b676a2e659bde77
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.SymPoincare.map
 ---
 
 # Duality functors carry Poincaré complexes

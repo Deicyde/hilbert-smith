@@ -121,6 +121,19 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
+import HilbertSmithPaper.LTheory.Base.Complexes.Cone
+import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
+import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
+import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
+import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
+import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
+import HilbertSmithPaper.LTheory.Base.Complexes.SumOfComplexes
+import HilbertSmithPaper.LTheory.Base.Complexes.StructurePushInvolution
+import HilbertSmithPaper.LTheory.Base.Pairs.PairMap
+import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
+import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
+import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
+import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 
 /-!
 # The paper
