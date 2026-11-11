@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjection
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjectionNe
+import HilbertSmithPaper.LTheory.Localization.Line.SummandDifferential
 
 /-!
 # Differential of a tensor product on summands
@@ -29,28 +30,6 @@ namespace cxProd
 
 variable {C : ChainComplex B ℤ} {D : ChainComplex E ℤ}
   (hC : {r | ¬ IsZero (C.X r)}.Finite) (hD : {r | ¬ IsZero (D.X r)}.Finite)
-
-/-- The differential on a summand: `ι_{p,q} ≫ d = (d ⊠ 1) ≫ ι_{p-1,q} + (-1)^p (1 ⊠ d) ≫ ι_{p,q-1}`
-(with `p' = p - 1`, `q' = q - 1`). -/
-private lemma ι_d {p q r r' p' q' : ℤ} (h : p + q = r) (hp : p' + 1 = p)
-    (hq : q' + 1 = q) :
-    ι P hC hD p q r ≫ (cxProd P C D hC hD).d r r' =
-      P.tensor.map (C.d p p' ×ₘ 𝟙 (D.X q)) ≫ ι P hC hD p' q r' +
-        p.negOnePow • (P.tensor.map (𝟙 (C.X p) ×ₘ D.d q q') ≫ ι P hC hD p q' r') := by
-  have := P.hasMapBifunctor_of_finite hC hD
-  have hp' : (ComplexShape.down ℤ).Rel p p' := hp
-  have hq' : (ComplexShape.down ℤ).Rel q q' := hq
-  rw [ι, HomologicalComplex.ιMapBifunctorOrZero_eq _ _ _ _ _ _ _ h,
-    HomologicalComplex.mapBifunctor.d_eq, Preadditive.comp_add,
-    HomologicalComplex.mapBifunctor.ι_D₁, HomologicalComplex.mapBifunctor.ι_D₂,
-    HomologicalComplex.mapBifunctor.d₁_eq' _ _ _ _ hp',
-    HomologicalComplex.mapBifunctor.d₂_eq' _ _ _ _ _ hq']
-  have e1 : ComplexShape.ε₁ (ComplexShape.down ℤ) (ComplexShape.down ℤ) (ComplexShape.down ℤ)
-      (p, q) = 1 := rfl
-  have e2 : ComplexShape.ε₂ (ComplexShape.down ℤ) (ComplexShape.down ℤ) (ComplexShape.down ℤ)
-      (p, q) = p.negOnePow := rfl
-  rw [e1, e2, one_smul]
-  rfl
 
 /-- **Differential of a tensor product on summands.** The differential followed by a projection:
 `d ≫ π_{p,q} = π_{p+1,q} ≫ (d ⊠ 1) + (-1)^p π_{p,q+1} ≫ (1 ⊠ d)`

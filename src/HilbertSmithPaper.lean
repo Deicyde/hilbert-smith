@@ -426,6 +426,7 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategoryCobordism
 import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategorySum
 import HilbertSmithPaper.LTheory.Localization.Line.LineProductBounds
 import HilbertSmithPaper.LTheory.Localization.Line.ProductLinePairMap
+import HilbertSmithPaper.LTheory.Localization.Line.SummandDifferential
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedCategory
