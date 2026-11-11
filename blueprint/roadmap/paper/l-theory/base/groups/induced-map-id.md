@@ -24,3 +24,5 @@ For a duality category $\mathcal B$, $(\mathrm{id}_{\mathcal B})_*=\mathrm{id}$ 
 ## Proof depends on
 
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
+- [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
+- [Pushforward of structures](../complexes/structure-push.md)

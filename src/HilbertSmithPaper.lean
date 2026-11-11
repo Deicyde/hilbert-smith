@@ -297,8 +297,11 @@ import HilbertSmithPaper.Evaluation.ExcisiveIntersectionQuotient
 import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.GermHomotopy
 import HilbertSmithPaper.Evaluation.LabelledModel
+import HilbertSmithPaper.Evaluation.PinchEvaluation
 import HilbertSmithPaper.Evaluation.ScalarComponentProjection
 import HilbertSmithPaper.Evaluation.TestMapToPinch
+import HilbertSmithPaper.Evaluation.TheoremB
+import HilbertSmithPaper.Evaluation.TheoremBTestMap
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
@@ -362,6 +365,7 @@ import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
+import HilbertSmithPaper.LTheory.Base.Groups.LpMapBiprod
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapComp
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapId
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapUnitary
@@ -420,6 +424,8 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
 import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategoryCobordism
 import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategorySum
+import HilbertSmithPaper.LTheory.Localization.Line.LineProductBounds
+import HilbertSmithPaper.LTheory.Localization.Line.ProductLinePairMap
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedCategory
@@ -481,6 +487,7 @@ import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdentification
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.UltimateBoundary
+import HilbertSmithPaper.LTheory.Ultimate.Groups.BoundedSumExtension
 import HilbertSmithPaper.LTheory.Ultimate.Groups.BoundedUnitaryExtension
 import HilbertSmithPaper.LTheory.Ultimate.Groups.EquivalenceInvariance
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
@@ -492,6 +499,7 @@ import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelExhaustive
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelKernel
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LowerLSequence
+import HilbertSmithPaper.LTheory.Ultimate.Groups.SumAdditivity
 import HilbertSmithPaper.LTheory.Ultimate.Groups.TransitionIter
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup

@@ -122,8 +122,6 @@ private lemma lift_pair {m n : ℤ} (W : SymPair B m n) (z : SymPoincare P.FullS
   apply (P.ι.mapHomologicalComplex _).map_injective
   refine (Functor.map_preimage (P.ι.mapHomologicalComplex _) e'.hom).trans ?_
   have hpm := ι.pairMap_map f' dim δ' z.φ z.cycle hrel
-    ((ι.mapStructure_compat.1 _ _ _ _).trans (by rw [z.cycle, map_zero]))
-    (by rw [ι.mapStructure_compat.1, hrel, ι.mapStructure_pushforward])
   have hpe : pairMap ((ι.toFunctor.mapHomologicalComplex _).map f') dim (ι.mapStructure D' n δ')
       (ι.mapStructure z.C m z.φ) ((ι.mapStructure_compat.1 _ _ _ _).trans
         (by rw [z.cycle, map_zero]))

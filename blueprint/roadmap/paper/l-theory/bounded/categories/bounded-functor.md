@@ -23,5 +23,4 @@ where $C_\mathbb Z F$ is the [entrywise functor](entrywise-functor.md), $(M_n)\m
 - [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [The induced duality](bounded-duality.md)
-- [Iterated bounded categories](iterated-bounded-category.md)
 - [The entrywise functor](entrywise-functor.md)

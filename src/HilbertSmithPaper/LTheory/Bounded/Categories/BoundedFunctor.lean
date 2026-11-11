@@ -1,6 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
-import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.EntrywiseFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 

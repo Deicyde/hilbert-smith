@@ -1,3 +1,4 @@
+import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorCone
 import HilbertSmithPaper.LTheory.Base.Pairs.PairMap
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
@@ -35,17 +36,15 @@ private lemma inv_natural'' {M N : B} (f : M ⟶ N) :
   rw [Iso.inv_comp_eq, ← Category.assoc, ← F.ξ_natural, Category.assoc, Iso.hom_inv_id,
     Category.comp_id]
 
-/-- **Duality functors and pair maps.** The pair map of the image is `κ ∘ F(ψ) ∘ ξ⁻¹`. -/
+/-- **Duality functors and pair maps.** The images satisfy the conditions of pair data for `F f`,
+and the pair map of the image is `κ ∘ F(ψ) ∘ ξ⁻¹`. -/
 lemma pairMap_map {C D : ChainComplex B ℤ} (f : C ⟶ D) {m n : ℤ} (hmn : m + 1 = n)
     (δφ : (StructureCx D).X n) (φ : (StructureCx C).X m)
     (hφ : (StructureCx C).d m (m - 1) φ = 0)
-    (hδφ : (StructureCx D).d n m δφ = (StructureCx.push f).f m φ)
-    (hφ' : (StructureCx (F.mapCx C)).d m (m - 1) (F.mapStructure C m φ) = 0)
-    (hδφ' : (StructureCx (F.mapCx D)).d n m (F.mapStructure D n δφ) =
-      (StructureCx.push ((F.toFunctor.mapHomologicalComplex _).map f)).f m
-        (F.mapStructure C m φ)) :
+    (hδφ : (StructureCx D).d n m δφ = (StructureCx.push f).f m φ) :
     pairMap ((F.toFunctor.mapHomologicalComplex _).map f) hmn (F.mapStructure D n δφ)
-        (F.mapStructure C m φ) hφ' hδφ' =
+        (F.mapStructure C m φ) (by rw [F.mapStructure_compat.1, hφ, map_zero])
+        (by rw [F.mapStructure_compat.1, hδφ, F.mapStructure_pushforward]) =
       (F.dualCxIso D n).hom ≫
         (F.toFunctor.mapHomologicalComplex _).map (pairMap f hmn δφ φ hφ hδφ) ≫
           (F.mapConeIso f).hom := by

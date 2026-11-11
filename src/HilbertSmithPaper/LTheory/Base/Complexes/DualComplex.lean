@@ -1,5 +1,4 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
-import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
 
 /-!
 # Dual complex
