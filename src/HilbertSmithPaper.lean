@@ -19,6 +19,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.PairTransport
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPairs
 import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence
+import HilbertSmithPaper.LTheory.Base.Pairs.CylinderCobordism
 
 /-!
 # The paper
