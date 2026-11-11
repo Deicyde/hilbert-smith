@@ -21,9 +21,12 @@ If $(C,\phi)$ and $(C',\phi')$ are strict $k$-dimensional symmetric Poincaré co
 
 - [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Dual of a chain map](../complexes/functors/dual-map.md)
 
 ## Proof depends on
 
 - [Pushforward commutes with T](../complexes/structure-push-involution.md)
 - [Dual complex](../complexes/dual-complex.md)
 - [Pushforward of structures](../complexes/structure-push.md)
+- [Duals of chain maps reverse composition](../complexes/functors/dual-map-comp.md)
+- [Duals of identity chain maps](../complexes/functors/dual-map-id.md)

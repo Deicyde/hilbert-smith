@@ -30,3 +30,5 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 - [Duality functors carry pairs to pairs](../pairs/functor-pair.md)
 - [Transported pairs are cobordisms](../pairs/transport-cobordism.md)
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
+- [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../complexes/functors/push-id.md)

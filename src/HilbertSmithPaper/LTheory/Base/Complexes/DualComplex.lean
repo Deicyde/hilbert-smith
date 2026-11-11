@@ -5,8 +5,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 
 Complexes are `ℤ`-graded chain complexes `ChainComplex B ℤ` in a duality category `B`. For a
 complex `C` and `n : ℤ`, the dual complex `C^{n-*}` has `(C^{n-*})_r = (C_{n-r})^*` and
-differential `d_r = (-1)^r d^*`. A chain map `f : C ⟶ D` gives `f^{n-*} : D^{n-*} ⟶ C^{n-*}`,
-`(f^{n-*})_r = (f_{n-r})^*`.
+differential `d_r = (-1)^r d^*`.
 
 This module also records that a duality category has binary biproducts
 (`DualCat.hasBinaryBiproducts`), so that mapping cones and sums of complexes are available.
@@ -41,35 +40,5 @@ abbrev dualCx (C : ChainComplex B ℤ) (n : ℤ) : ChainComplex B ℤ where
   d_comp_d' i j k _ _ := by
     simp only [Linear.units_smul_comp, Linear.comp_units_smul, ← dualHom_comp,
       C.d_comp_d, dualHom_zero, smul_zero]
-
-/-- The dual `f^{n-*} : D^{n-*} ⟶ C^{n-*}` of a chain map `f : C ⟶ D`,
-`(f^{n-*})_r = (f_{n-r})^*`. -/
-@[simps]
-def dualCx.map {C D : ChainComplex B ℤ} (f : C ⟶ D) (n : ℤ) : dualCx D n ⟶ dualCx C n where
-  f r := dualHom (f.f (n - r))
-  comm' i j _ := by
-    change dualHom (f.f (n - i)) ≫ (i.negOnePow • dualHom (C.d (n - j) (n - i))) =
-      (i.negOnePow • dualHom (D.d (n - j) (n - i))) ≫ dualHom (f.f (n - j))
-    rw [Linear.comp_units_smul, Linear.units_smul_comp, ← dualHom_comp, ← dualHom_comp, f.comm]
-
-/-- `(f ≫ g)^{n-*} = g^{n-*} ≫ f^{n-*}`. -/
-lemma dualCx.map_comp {C D E : ChainComplex B ℤ} (f : C ⟶ D) (g : D ⟶ E) (n : ℤ) :
-    dualCx.map (f ≫ g) n = dualCx.map g n ≫ dualCx.map f n := by
-  ext r
-  simp
-
-/-- `(1_C)^{n-*} = 1`. -/
-lemma dualCx.map_id (C : ChainComplex B ℤ) (n : ℤ) : dualCx.map (𝟙 C) n = 𝟙 (dualCx C n) := by
-  ext r
-  simp
-
-/-- The dual `u^{n-*}` of an isomorphism of complexes `u : C ≅ D`, an isomorphism
-`D^{n-*} ≅ C^{n-*}`. -/
-@[simps]
-def dualCx.mapIso {C D : ChainComplex B ℤ} (u : C ≅ D) (n : ℤ) : dualCx D n ≅ dualCx C n where
-  hom := dualCx.map u.hom n
-  inv := dualCx.map u.inv n
-  hom_inv_id := by rw [← dualCx.map_comp, u.inv_hom_id, dualCx.map_id]
-  inv_hom_id := by rw [← dualCx.map_comp, u.hom_inv_id, dualCx.map_id]
 
 end HSP

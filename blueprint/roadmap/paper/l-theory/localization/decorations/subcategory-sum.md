@@ -34,3 +34,4 @@ In particular this applies to [complexes in $\mathcal P$](complex-in-subcategory
 
 - [Homotopy-isometry invariance](../../base/groups/homotopy-isometry-invariance.md)
 - [Duality functors commute with pushforward](../../base/complexes/functor-push.md)
+- [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)

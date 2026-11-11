@@ -1,5 +1,8 @@
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePushInvolution
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapIso
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
 
 /-!
 # Transport of pairs along isomorphisms

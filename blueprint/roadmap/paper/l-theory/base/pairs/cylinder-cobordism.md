@@ -22,6 +22,8 @@ Let $\mathcal P$ be a class of objects of a duality category $\mathcal B$ such t
 
 - [Cobordism](cobordism.md)
 - [Strict Poincaré pair](poincare-pair.md)
+- [Dual of a chain map](../complexes/functors/dual-map.md)
+- [The shift of a complex](../complexes/shift.md)
 
 ## Proof depends on
 
@@ -31,3 +33,5 @@ Let $\mathcal P$ be a class of objects of a duality category $\mathcal B$ such t
 - [Negative of a Poincaré complex](poincare-neg.md)
 - [Duals of homotopy equivalences](../complexes/dual-homotopy-equivalence.md)
 - [Shifts of homotopy equivalences](../complexes/shift-equivalence.md)
+- [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../complexes/functors/push-id.md)

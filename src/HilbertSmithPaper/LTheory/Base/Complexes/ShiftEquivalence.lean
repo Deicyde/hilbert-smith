@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
+import HilbertSmithPaper.LTheory.Base.Complexes.Shift
 
 /-!
 # Shifts of homotopy equivalences

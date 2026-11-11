@@ -19,3 +19,9 @@ Let $f:C\to D$ be a chain homotopy equivalence of complexes in a duality categor
 ## Depends on
 
 - [Dual complex](dual-complex.md)
+- [Dual of a chain map](functors/dual-map.md)
+
+## Proof depends on
+
+- [Duals of chain maps reverse composition](functors/dual-map-comp.md)
+- [Duals of identity chain maps](functors/dual-map-id.md)

@@ -8,7 +8,7 @@ lean: HSP.dualCx
 
 # Dual complex
 
-Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal B$. For a complex $C$ and $n\in\mathbb Z$, $C^{n-*}$ has $(C^{n-*})_r=C_{n-r}^*$ and $d_r=(-1)^r d^*$. A chain map $f:C\to D$ gives $f^{n-*}:D^{n-*}\to C^{n-*}$, $(f^{n-*})_r=f_{n-r}^*$. This is functorial, $(gf)^{n-*}=f^{n-*}g^{n-*}$ and $1^{n-*}=1$, so an isomorphism $u$ of complexes gives an isomorphism $u^{n-*}$. A duality category has binary direct sums, given by its finite direct sums; mapping cones and sums of complexes use them.
+Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal B$. For a complex $C$ and $n\in\mathbb Z$, $C^{n-*}$ has $(C^{n-*})_r=C_{n-r}^*$ and $d_r=(-1)^r d^*$. A duality category has binary direct sums, given by its finite direct sums; mapping cones and sums of complexes use them.
 
 ## Sources
 

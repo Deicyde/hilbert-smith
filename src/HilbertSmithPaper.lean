@@ -296,10 +296,17 @@ import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.DualHomotopyEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
 import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMap
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapComp
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapId
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapIso
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorDualIso
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
+import HilbertSmithPaper.LTheory.Base.Complexes.Shift
 import HilbertSmithPaper.LTheory.Base.Complexes.ShiftEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution

@@ -22,6 +22,7 @@ Let $(f:C\to D,\delta\phi,\phi)$ be a strict $n$-dimensional Poincaré pair in a
 
 - [Strict Poincaré pair](poincare-pair.md)
 - [Pushforward of structures](../complexes/structure-push.md)
+- [Dual of an isomorphism of complexes](../complexes/functors/dual-map-iso.md)
 
 ## Proof depends on
 
@@ -29,3 +30,5 @@ Let $(f:C\to D,\delta\phi,\phi)$ be a strict $n$-dimensional Poincaré pair in a
 - [Mapping cone](../complexes/cone.md)
 - [Pair map](pair-map.md)
 - [Dual complex](../complexes/dual-complex.md)
+- [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../complexes/functors/push-id.md)
