@@ -9,3 +9,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [Tensor of graded maps of based complexes](based-tensor-hom.md)
 - [Dual tensor of graded maps of based complexes](based-dual-tensor-hom.md)
 - [The identity as a map of degree zero](id-deg0.md)
+- [Tensoring with the identity of the cells of CP^2](tensor-one-p.md)

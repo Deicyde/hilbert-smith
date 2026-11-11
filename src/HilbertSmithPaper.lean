@@ -104,6 +104,7 @@ import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
 import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
