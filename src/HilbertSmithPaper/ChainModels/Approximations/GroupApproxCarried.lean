@@ -4,6 +4,7 @@ import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
 import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
+import HilbertSmithPaper.ChainModels.Approximations.Maps.CompletedRep
 
 /-!
 # Carried group approximations

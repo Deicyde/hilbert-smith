@@ -3,6 +3,7 @@ import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
 import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxExists
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackFamily
 
 /-!
 # Chain approximation

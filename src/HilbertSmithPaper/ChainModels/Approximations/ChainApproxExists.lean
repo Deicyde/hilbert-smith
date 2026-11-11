@@ -6,6 +6,7 @@ import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackFamily
 
 /-!
 # Chain approximations exist
