@@ -7,7 +7,9 @@ article_id: af_1a5da6708a47de9cf405c890
 The support subcategory of a closed invariant set and of the whole space, the support ideal, the support filtration, intersections, excisive pairs, excision and separation, the exterior quotient and the functors it inherits, the iterated quotient, and the quotient by the empty support.
 
 - [Support subcategory](support-subcategory.md)
+- [The support subcategory is additive](support-dual-additive.md)
 - [The support subcategory of the whole space](support-whole.md)
+- [Translates and thickenings of an invariant set](thickening-invariant.md)
 - [Support ideal](support-ideal.md)
 - [Support filtration](support-filtration.md)
 - [Support subcategory inside a support subcategory](relative-support.md)

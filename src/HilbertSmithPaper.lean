@@ -52,11 +52,13 @@ import HilbertSmithPaper.Categories.Supports.RelativeSupport
 import HilbertSmithPaper.Categories.Supports.RelativeSupportAdditive
 import HilbertSmithPaper.Categories.Supports.Separation
 import HilbertSmithPaper.Categories.Supports.SupportConcatenation
+import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
 import HilbertSmithPaper.Categories.Supports.SupportIntersection
 import HilbertSmithPaper.Categories.Supports.SupportSubcategory
 import HilbertSmithPaper.Categories.Supports.SupportWhole
+import HilbertSmithPaper.Categories.Supports.ThickeningInvariant
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ApproximationsGraphType
 import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction

@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
+import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
+import HilbertSmithPaper.Categories.Supports.ThickeningInvariant
 import HilbertSmithPaper.Categories.Supports.RelativeSupportAdditive
 import HilbertSmithPaper.Categories.Supports.NullThickening
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.InclusionProjection
@@ -64,17 +66,6 @@ private theorem supp_restrict_near {S' : Set X} {M : AsymPre G X} {r : ℕ → �
   exact cthickening_subset_thickening' hε hi S' (AsymPre.restrictEmb_mem k)
 
 variable [IsIsometricVAdd (ZMod p) X]
-
-/-- For an invariant `S` and an isometric action, `c +ᵥ y` is in the `ε`-thickening of `S` as soon
-as `y` is. -/
-private theorem vadd_mem_thickening {S : Set X} (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S)
-    (c : ZMod p) {ε : ℝ} {y : X} (hy : y ∈ thickening ε S) : c +ᵥ y ∈ thickening ε S := by
-  obtain ⟨z, hz, hd⟩ := mem_thickening_iff.1 hy
-  exact mem_thickening_iff.2 ⟨c +ᵥ z, hS c z hz, by rwa [dist_vadd]⟩
-
-private theorem vadd_mem_thickening_iff {S : Set X} (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S)
-    (c : ZMod p) {ε : ℝ} {y : X} : c +ᵥ y ∈ thickening ε S ↔ y ∈ thickening ε S :=
-  ⟨fun h => by simpa using vadd_mem_thickening hS (-c) h, vadd_mem_thickening hS c⟩
 
 /-- Factorization through a split, rows: for `u : V → M` with `V` `S'`-supported, eventually every
 row of `u_i` carrying a nonzero entry has its label in the closed `r_i`-thickening of `S'`, for

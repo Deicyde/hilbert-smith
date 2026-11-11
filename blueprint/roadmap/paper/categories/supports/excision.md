@@ -40,3 +40,4 @@ Let the action be isometric, let $A,B\subset X$ with $B$ invariant, and let $S\s
 - [Complementary diagonal projection](../asymptotic/restriction/diagonal-projection-complement.md)
 - [Factorization through a diagonal projection, columns](../asymptotic/restriction/diagonal-projection-columns.md)
 - [Enumerated indices satisfy the predicate](../asymptotic/restriction/restriction-index-mem.md)
+- [Translates and thickenings of an invariant set](thickening-invariant.md)

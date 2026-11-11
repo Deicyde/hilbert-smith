@@ -20,3 +20,4 @@ For $Z\subset X$, $\mathcal B_{\mathbf G,Z}(X)=\mathcal A_{\mathbf G}(X)/\mathca
 
 - [Support subcategory](support-subcategory.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+- [The support subcategory is additive](support-dual-additive.md)
