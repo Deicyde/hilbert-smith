@@ -117,6 +117,8 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.KronSmulLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronSmulRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedDualProd
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDifferential
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft
