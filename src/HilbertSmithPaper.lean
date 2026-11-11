@@ -65,6 +65,7 @@ import HilbertSmithPaper.LocalData.Control.OrbitSupMetric
 import HilbertSmithPaper.LocalData.Control.OrbitSupMetricInvariant
 import HilbertSmithPaper.LocalData.Control.ReductionKernel
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
+import HilbertSmithPaper.LocalData.Control.RepresentativesAlgebra
 import HilbertSmithPaper.LocalData.Control.SheetSubgroup
 import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.FixedSets
