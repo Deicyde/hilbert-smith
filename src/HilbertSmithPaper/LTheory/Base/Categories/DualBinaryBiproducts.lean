@@ -17,7 +17,7 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
   [DualCat B]
 
 /-- **A duality category has binary direct sums.** -/
-instance (priority := 100) DualCat.hasBinaryBiproducts : HasBinaryBiproducts B :=
+instance DualCat.hasBinaryBiproducts : HasBinaryBiproducts B :=
   hasBinaryBiproducts_of_finite_biproducts B
 
 end HSP
