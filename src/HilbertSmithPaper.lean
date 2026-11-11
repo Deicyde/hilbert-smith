@@ -105,6 +105,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExtraction
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
+import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
 import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
