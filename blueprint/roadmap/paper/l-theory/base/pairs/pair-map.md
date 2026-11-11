@@ -2,11 +2,13 @@
 article_id: af_d08fca90ca86740ad150a707
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.pairMap
 ---
 
 # Pair map
 
-Let $f:C\to D$ be a chain map, $\phi\in M(C)_{n-1}$ with $\partial\phi=0$, and $\delta\phi\in M(D)_n$ with $\partial\delta\phi=f_\%\phi$. Then $\psi_r=(\delta\phi_r,\ (-1)^r\phi_{r-1}f^*_{n-r}):D^*_{n-r}\to\mathcal C(f)_r$ is a chain map $\psi:D^{n-*}\to\mathcal C(f)$.
+Let $f:C\to D$ be a chain map, $m=n-1$, $\phi\in M(C)_m$ with $\partial\phi=0$, and $\delta\phi\in M(D)_n$ with $\partial\delta\phi=f_\%\phi$. Then $\psi_r=(\delta\phi_r,\ (-1)^r\phi_{r-1}f^*_{n-r}):D^*_{n-r}\to\mathcal C(f)_r$ is a chain map $\psi:D^{n-*}\to\mathcal C(f)$.
 
 ## Sources
 
