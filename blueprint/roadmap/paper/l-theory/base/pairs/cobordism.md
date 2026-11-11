@@ -2,6 +2,8 @@
 article_id: af_a270268fa2201a47bd0ae2e8
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.Cobordant
 ---
 
 # Cobordism

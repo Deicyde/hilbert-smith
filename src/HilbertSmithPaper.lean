@@ -15,6 +15,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.PairMap
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
+import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 
 /-!
 # The paper
