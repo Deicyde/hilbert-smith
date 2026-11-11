@@ -1,7 +1,10 @@
 ---
 article_id: af_84e10c0b4db6fd9cd6b651e1
-declaration: lemma
+declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.LGroup.map_eq_of_unitaryIso
+proof: formalized
 ---
 
 # Unitary invariance
@@ -22,3 +25,4 @@ If $\eta:F\cong G$ is a unitary natural isomorphism of duality functors $\mathca
 ## Proof depends on
 
 - [Homotopy-isometry invariance](homotopy-isometry-invariance.md)
+- [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)

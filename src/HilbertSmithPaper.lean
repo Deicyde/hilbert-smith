@@ -329,12 +329,15 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructurePushInvolution
 import HilbertSmithPaper.LTheory.Base.Complexes.SumOfComplexes
 import HilbertSmithPaper.LTheory.Base.Groups.HomotopyIsometryInvariance
 import HilbertSmithPaper.LTheory.Base.Groups.InducedMap
+import HilbertSmithPaper.LTheory.Base.Groups.InducedMapComp
+import HilbertSmithPaper.LTheory.Base.Groups.InducedMapId
 import HilbertSmithPaper.LTheory.Base.Groups.InducedMapLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
 import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
+import HilbertSmithPaper.LTheory.Base.Groups.UnitaryInvariance
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence
 import HilbertSmithPaper.LTheory.Base.Pairs.CylinderCobordism
