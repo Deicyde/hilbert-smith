@@ -24,4 +24,8 @@ it is `0` when `u = 0`. -/
 noncomputable def prop (l : B → X) (l' : B' → X) (u : Matrix B' B ℚ) : ℝ≥0 :=
   (Finset.univ.filter fun q : B' × B => u q.1 q.2 ≠ 0).sup fun q => nndist (l' q.1) (l q.2)
 
+/-- The propagation of the zero matrix is `0`. -/
+@[simp] theorem prop_zero (l : B → X) (l' : B' → X) : prop l l' (0 : Matrix B' B ℚ) = 0 := by
+  simp [prop]
+
 end HSP

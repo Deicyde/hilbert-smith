@@ -2,6 +2,8 @@
 article_id: af_da408ddd0efbeab500eba618
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.SCat
 ---
 
 # Finite-support subcategory
