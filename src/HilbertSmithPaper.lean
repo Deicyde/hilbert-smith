@@ -39,6 +39,7 @@ import HilbertSmithPaper.Categories.Functors.RelabellingEquivalence
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
 import HilbertSmithPaper.Categories.Supports.ExteriorFunctor
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
+import HilbertSmithPaper.Categories.Supports.IteratedQuotient
 import HilbertSmithPaper.Categories.Supports.NullThickening
 import HilbertSmithPaper.Categories.Supports.QuotientByEmpty
 import HilbertSmithPaper.Categories.Supports.QuotientSupport
