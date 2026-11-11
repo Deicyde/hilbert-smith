@@ -14,3 +14,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [Maps between concatenations are determined by their blocks](block-ext.md)
 - [Blocks of a composite](block-comp.md)
 - [Kronecker product of composites](kron-composite.md)
+- [Kronecker product of identities](kron-transport.md)
