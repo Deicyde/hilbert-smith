@@ -5,6 +5,7 @@ import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
 import HilbertSmithPaper.Categories.Asymptotic.PointFiltration
 import HilbertSmithPaper.Categories.Asymptotic.PointIdeal
+import HilbertSmithPaper.Categories.Asymptotic.PointQuotient
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
 import HilbertSmithPaper.Categories.Asymptotic.PropAdd
 import HilbertSmithPaper.Categories.Asymptotic.PropMul
