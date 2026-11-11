@@ -4,9 +4,9 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
-import HilbertSmithPaper.ChainModels.Grid.BasedTensorHom
-import HilbertSmithPaper.ChainModels.Grid.BasedDualTensorHom
-import HilbertSmithPaper.ChainModels.Grid.IdDeg0
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 
 /-!
 # The chain model is Poincaré
