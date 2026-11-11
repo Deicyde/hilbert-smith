@@ -168,6 +168,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
+import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapLevel
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
