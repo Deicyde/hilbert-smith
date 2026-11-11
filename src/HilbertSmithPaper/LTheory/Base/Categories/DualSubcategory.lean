@@ -8,8 +8,7 @@ For a full additive subcategory `𝒰 ⊂ 𝒜` closed under duality (`HSP.IsDua
 subcategory `U.FullSubcategory` (objects of `𝒜` satisfying `U`, all morphisms of `𝒜`) is a
 duality category: it is preadditive and ℚ-linear (Mathlib), it has finite biproducts (a zero
 object of `𝒰`, and for `V, W` in `𝒰` a biproduct bicone with cone point in `𝒰`, which stays a
-biproduct in the full subcategory), and the duality of `𝒜` restricts to it. The inclusion
-`𝒰 → 𝒜` is a strict duality functor (`DualSubcategory.incl`).
+biproduct in the full subcategory), and the duality of `𝒜` restricts to it.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -75,24 +74,5 @@ instance instDualCatFullSubcategory : DualCat U.FullSubcategory where
   dualHom_neg f := ObjectProperty.hom_ext _ (dualHom_neg f.hom)
   dualHom_sub f g := ObjectProperty.hom_ext _ (dualHom_sub f.hom g.hom)
   dualHom_eqToHom h := by subst h; exact ObjectProperty.hom_ext _ (by simp)
-
-namespace DualSubcategory
-
-instance : U.ι.Linear ℚ where
-  map_smul _ _ := rfl
-
-private lemma ι_dual (V : U.FullSubcategory) : U.ι.obj (dual V) = dual (U.ι.obj V) := rfl
-
-/-- The inclusion `𝒰 → 𝒜` as a strict duality functor (`ξ` the identity). -/
-def incl : DualFunctor U.FullSubcategory A where
-  toFunctor := U.ι
-  ξ V := Iso.refl _
-  ξ_natural f := by simp; rfl
-  ξ_dual V := by simp; rfl
-
-/-- The inclusion is a strict duality functor. -/
-theorem incl_isStrict : (incl U).IsStrict := fun _ => ⟨rfl, rfl⟩
-
-end DualSubcategory
 
 end HSP

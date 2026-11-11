@@ -7,6 +7,7 @@ article_id: af_a48a983fecace8bcf675951c
 $L_k(\mathcal B)$ is the group of cobordism classes of strict $k$-dimensional symmetric Poincaré complexes in a duality category $\mathcal B$, and $L^p_k(\mathcal A)=L_k(\mathrm{Kar}\,\mathcal A)$. Duality functors induce homomorphisms; unitarily isomorphic functors induce equal maps, a sum of functors induces the sum of the maps, and an equivalence induces an isomorphism. On $L^p$ a functor acts through its completion. Products and finite-support sums split.
 
 - [L-group](l-group.md)
+- [The projective L-group](projective-l-group.md)
 - [Sum of Poincaré complexes up to cobordism](l-group-add-laws.md)
 - [Group structure on L](l-group-add.md)
 - [Negation in L](l-group-neg.md)

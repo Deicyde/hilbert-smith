@@ -27,3 +27,5 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 - [Pair map](pair-map.md)
 - [Mapping cone](../complexes/cone.md)
 - [Pushforward of structures](../complexes/structure-push.md)
+- [Images of structures commute with the boundary, T and the duality map](../complexes/functors/functor-structure-laws.md)
+- [Duality functors and dual complexes](../complexes/functors/functor-dual-iso.md)

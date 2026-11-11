@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
-import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 
 /-!

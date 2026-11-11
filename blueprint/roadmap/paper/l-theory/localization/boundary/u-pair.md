@@ -26,3 +26,4 @@ Let $\mathcal U\subset\mathcal A$ be as in [Decorated objects](../decorations/de
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Strict Poincaré pair](../../base/pairs/poincare-pair.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)

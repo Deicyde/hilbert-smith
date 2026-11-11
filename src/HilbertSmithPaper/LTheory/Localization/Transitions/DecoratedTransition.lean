@@ -4,6 +4,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionCob
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionSum
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
+import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 
 /-!
 # Decorated transition

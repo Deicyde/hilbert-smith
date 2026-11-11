@@ -8,7 +8,7 @@ lean: HSP.ChainModels.circleB
 
 # The circle inverse
 
-For the [circle complex](../../cubical-torus-grid.md) $S=S_k$, the map $b:S\to S^{1-*}$ into the [dual complex](../../../../l-theory/base/complexes/dual-complex.md), given in degree $r$ by $b(e_w)=[w+1]^*$ for $r=1$, $b([w])=e_w^*$ for $r=0$, and $0$ in the other degrees.
+For the [circle complex](../../cubical/cubical-torus-grid.md) $S=S_k$, the map $b:S\to S^{1-*}$ into the [dual complex](../../../../l-theory/base/complexes/dual-complex.md), given in degree $r$ by $b(e_w)=[w+1]^*$ for $r=1$, $b([w])=e_w^*$ for $r=0$, and $0$ in the other degrees.
 
 ## Sources
 
@@ -16,5 +16,6 @@ For the [circle complex](../../cubical-torus-grid.md) $S=S_k$, the map $b:S\to S
 
 ## Depends on
 
-- [Cubical torus grid](../../cubical-torus-grid.md)
+- [The circle complex](../../cubical/circle-complex.md)
+- [Cubical torus grid](../../cubical/cubical-torus-grid.md)
 - [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)

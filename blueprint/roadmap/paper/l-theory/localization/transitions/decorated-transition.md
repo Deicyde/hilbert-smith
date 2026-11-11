@@ -27,6 +27,7 @@ is a well-defined homomorphism. Here $e_{j+1}$ is the isomorphism of [Iterated b
 - [Decorated objects](../decorations/decorated-object.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
 - [Decorated product with the line](decorated-line-product.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

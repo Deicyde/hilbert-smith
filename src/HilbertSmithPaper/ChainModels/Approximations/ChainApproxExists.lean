@@ -7,6 +7,10 @@ import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
 import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackFamily
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCell
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 
 /-!
 # Chain approximations exist

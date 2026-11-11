@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
+import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
 
 /-!
 # Complexes in a full subcategory
@@ -102,15 +103,15 @@ noncomputable def SymPoincare.toSub {k : ℤ} (x : SymPoincare B k) (hx : ∀ r,
   φ := strToSub P hx x.φ
   bounded r hr := isZero_sub P (hx r) (x.bounded r hr)
   cycle := mapStructure_injective P _ _ (by
-    rw [← DualFunctor.mapStructure_d, mapStructure_strToSub, map_zero]
+    rw [← (DualSubcategory.incl P).mapStructure_compat.1, mapStructure_strToSub, map_zero]
     exact x.cycle)
   symmetric := mapStructure_injective P _ _ (by
-    rw [← DualFunctor.mapStructure_T, mapStructure_strToSub]
+    rw [← (DualSubcategory.incl P).mapStructure_compat.2.1, mapStructure_strToSub]
     exact x.symmetric)
   poincare := by
     have hcyc : (StructureCx (cxToSub P x.C hx)).d k (k - 1) (strToSub P hx x.φ) = 0 :=
       mapStructure_injective P _ _ (by
-        rw [← DualFunctor.mapStructure_d, mapStructure_strToSub, map_zero]
+        rw [← (DualSubcategory.incl P).mapStructure_compat.1, mapStructure_strToSub, map_zero]
         exact x.cycle)
     obtain ⟨e, he⟩ := x.poincare
     let e' : HomotopyEquiv ((DualSubcategory.incl P).mapCx (dualCx (cxToSub P x.C hx) k))
@@ -119,7 +120,7 @@ noncomputable def SymPoincare.toSub {k : ℤ} (x : SymPoincare B k) (hx : ∀ r,
     refine ⟨liftHomotopyEquiv P.ι e', ?_⟩
     refine (P.ι.mapHomologicalComplex _).map_injective ?_
     refine (Functor.map_preimage (P.ι.mapHomologicalComplex _) e'.hom).trans ?_
-    have h1 := (DualSubcategory.incl P).toHom_mapStructure (cxToSub P x.C hx) k
+    have h1 := (DualSubcategory.incl P).mapStructure_compat.2.2 (cxToSub P x.C hx) k
       (strToSub P hx x.φ) hcyc (by rw [mapStructure_strToSub]; exact x.cycle)
     rw [toHom_congr (mapStructure_strToSub P hx x.φ) _ x.cycle] at h1
     change ((DualSubcategory.incl P).dualCxIso (cxToSub P x.C hx) k).inv ≫ e.hom = _

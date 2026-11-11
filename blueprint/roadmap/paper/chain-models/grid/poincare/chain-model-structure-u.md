@@ -16,6 +16,7 @@ For the [chain model](../chain-model.md) $D_i=C(k_i)\otimes P$ and $N=n+4$, $\va
 
 ## Depends on
 
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [The cells of CP^2 vanish in negative degrees](../cp2-dim-neg.md)
 - [Chain model](../chain-model.md)
 - [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)

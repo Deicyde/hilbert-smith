@@ -22,3 +22,4 @@ Let $(F,\xi):\mathcal A\to\mathcal A'$ be a duality functor, not necessarily str
 - [Induced homomorphism](../../base/groups/induced-map.md)
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
 - [Naturality of the transition](../../localization/transitions/transition-naturality.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

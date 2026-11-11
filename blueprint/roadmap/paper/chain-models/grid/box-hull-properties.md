@@ -23,4 +23,5 @@ Let $k\ge8$ and $h=4/k$. Call $X\subseteq\mathbb T^n$ *admissible* if $X$ is non
 ## Sources
 - New.
 ## Depends on
-- [Box hull](box-hull.md), [cubical torus grid](cubical-torus-grid.md), [grid boxes](grid-box.md)
+- [Grid cubes](cubical/grid-cube.md)
+- [Box hull](box-hull.md), [cubical torus grid](cubical/cubical-torus-grid.md), [grid boxes](grid-box.md)

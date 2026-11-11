@@ -14,6 +14,7 @@ Duality categories, duality functors and unitary isomorphisms; the idempotent co
 - [Completion of a duality functor](karoubi-functor.md)
 - [Additive subcategory closed under duality](dual-additive-subcategory.md)
 - [Duality category of a dual-closed subcategory](dual-subcategory.md)
+- [Inclusion of a dual-closed subcategory](subcategory-inclusion.md)
 - [Involution-invariant Karoubi filtration](karoubi-filtration.md)
 - [Filtrations are compatible with sums](karoubi-filtration-sums.md)
 - [The whole filtration](whole-filtration.md)
