@@ -59,6 +59,7 @@ import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
+import HilbertSmithPaper.Corner.Actions.GraphTypeAction
 import HilbertSmithPaper.Corner.CutFlag
 import HilbertSmithPaper.Corner.CutSets
 import HilbertSmithPaper.Corner.Exterior
