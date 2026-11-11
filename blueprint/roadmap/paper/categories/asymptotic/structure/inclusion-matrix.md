@@ -13,3 +13,5 @@ Let $G$ be a finite group and $e:\{1..m\}\to\{1..m'\}$ a map. The *inclusion mat
 ## Sources
 
 - HS paper, Section 3
+
+## Depends on
