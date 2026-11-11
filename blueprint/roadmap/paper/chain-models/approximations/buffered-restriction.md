@@ -7,7 +7,7 @@ lean: HSP.ChainModels.bufferedRestriction
 ---
 # Buffered restriction
 
-1. If $b\in\mathcal B_i(v)$, then $\tilde x_b\in U^+\subseteq Z^+$, so $\lambda(b)=(\pi(\tilde x_b),s_b)$.
+1. If $b\in\mathcal B_i(v)$, then $\tilde x_b\in U^+$.
 2. For $0<v<v'$ there is $\eta>0$ such that every matrix $u$ with sphere propagation less than $\eta$ satisfies $u\iota_v=\iota_{v'}u^{[v,v']}$.
 3. Let $0<v<v'$, and let $u,u'$ be composable matrices with $u\iota_v=\iota_{v'}u^{[v,v']}$, such that $u^{[v']}$ has graph type $c$ with bound $\epsilon$ and $u'^{[v']}$ has graph type $c'$ with bound $\epsilon'$. Then $(u'u)^{[v]}$ has graph type $c+c'$ with bound $\epsilon+\epsilon'$.
 4. If $u^{[v]}$ has graph type $c$ with bound $\epsilon$, then $(u^*)^{[v]}$ has graph type $-c$ with bound $\epsilon$. If $u^{[v]}$ and $u'^{[v]}$ have graph type $c$ with bound $\epsilon$, so does $(u+u')^{[v]}$.
@@ -20,6 +20,7 @@ Graph types are those of [graph-type matrices](../../corner/actions/graph-type.m
 ## Sources
 - HS paper, Section 9 (the eventual definition of target labels).
 ## Depends on
-- [Buffered restriction of a matrix](../grid/restriction.md), [sphere labels](../grid/sphere-labels.md), [graph-type matrices](../../corner/actions/graph-type.md)
+- [The lift](../torus/lift.md)
+- [Buffered restriction of a matrix](../grid/restriction.md), [sphere labels](../grid/sphere-labels.md), [graph-type matrices](../../corner/actions/graph-type.md), [control labels](../grid/control-labels.md), [buffered cells](../grid/buffered-cells.md), [open test region](../../local-data/chart/open-test-region.md), [test region](../../local-data/chart/test-region.md), [torus test map](torus-test-map.md)
 ## Proof depends on
 - [Preimages](../../local-data/chart/test-map-proper.md), [test region](../../local-data/chart/test-region.md), [open test region](../../local-data/chart/open-test-region.md), [test region bounded](../../local-data/chart/test-region-bounded.md), [properties](completed-maps-properties.md), [projection uniform](../../local-data/control/projection-uniform.md)

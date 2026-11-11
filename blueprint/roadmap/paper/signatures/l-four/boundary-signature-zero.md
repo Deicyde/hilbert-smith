@@ -2,6 +2,8 @@
 article_id: af_8c976a2c7ac1ef9ed35da931
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.complexSign_boundary
 ---
 
 # Boundaries have zero signature

@@ -2,6 +2,8 @@
 article_id: af_8f0e26277348e8d407b0374c
 declaration: def
 origin: cited
+statement: formalized
+lean: HSP.ultL
 ---
 
 # Ultimate L-group

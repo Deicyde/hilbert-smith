@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.LocalData.Chart.TestRegionInvariant
+import HilbertSmithPaper.LocalData.Control.ZplusAction
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
 
 /-!

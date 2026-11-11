@@ -16,4 +16,5 @@ This is well defined: $\tilde x_b$ lies in the [test region](../../local-data/ch
 ## Sources
 - HS paper, Sections 9-10 (labels on the buffered domain).
 ## Depends on
+- [The lift](../torus/lift.md)
 - [Buffered cells](buffered-cells.md), [sphere labels](sphere-labels.md), [control space](../../local-data/control/control-space.md), [test region](../../local-data/chart/test-region.md), [open test region](../../local-data/chart/open-test-region.md), [torus test map](../approximations/torus-test-map.md), [preimages under the test map](../../local-data/chart/test-map-proper.md), [graph-type matrices](../../corner/actions/graph-type.md)

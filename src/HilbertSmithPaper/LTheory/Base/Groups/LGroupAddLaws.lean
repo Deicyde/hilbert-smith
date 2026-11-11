@@ -20,40 +20,45 @@ universe v u
 variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
   [DualCat B]
 
+private lemma sigma_of_data {m n : ℤ} (W : SymPair B m n) {C D : ChainComplex B ℤ}
+    {f : C ⟶ D} {δφ : (StructureCx D).X n} {φ : (StructureCx C).X m}
+    (h : W.data = ⟨C, D, f, δφ, φ⟩) :
+    (⟨W.C, W.φ⟩ : Σ C : ChainComplex B ℤ, (StructureCx C).X m) = ⟨C, φ⟩ := by
+  obtain ⟨C₀, D₀, f₀, δφ₀, φ₀⟩ := W
+  obtain ⟨rfl, h⟩ := Sigma.mk.inj_iff.mp h
+  obtain ⟨rfl, h⟩ := Sigma.mk.inj_iff.mp (eq_of_heq h)
+  have h' := eq_of_heq h
+  simp only [Prod.mk.injEq] at h'
+  exact congrArg (Sigma.mk C₀) h'.2.2
+
 namespace StructureCx
 
-/-- `(g ≫ h)_% a = h_% (g_% a)`. -/
-lemma push_comp_apply {C D E : ChainComplex B ℤ} (g : C ⟶ D) (h : D ⟶ E) {k : ℤ}
+private lemma push_comp_apply {C D E : ChainComplex B ℤ} (g : C ⟶ D) (h : D ⟶ E) {k : ℤ}
     (a : (StructureCx C).X k) :
     (push (g ≫ h)).f k a = (push h).f k ((push g).f k a) := by
   rw [push_comp]
   rfl
 
-/-- `g_% (a ⊕ b) = (i ≫ g)_% a + (i' ≫ g)_% b`. -/
-lemma push_sum {X Y Z : ChainComplex B ℤ} (g : X ⊞ Y ⟶ Z) {k : ℤ}
+private lemma push_sum {X Y Z : ChainComplex B ℤ} (g : X ⊞ Y ⟶ Z) {k : ℤ}
     (a : (StructureCx X).X k) (b : (StructureCx Y).X k) :
     (push g).f k (StructureCx.sum a b) = (push (biprod.inl ≫ g)).f k a + (push (biprod.inr ≫ g)).f k b := by
   rw [StructureCx.sum, map_add, push_comp_apply, push_comp_apply]
 
-/-- `(g ⊕ g')_% (a ⊕ b) = g_% a ⊕ g'_% b`. -/
-lemma push_map_sum {X Y X' Y' : ChainComplex B ℤ} (g : X ⟶ X') (g' : Y ⟶ Y') {k : ℤ}
+private lemma push_map_sum {X Y X' Y' : ChainComplex B ℤ} (g : X ⟶ X') (g' : Y ⟶ Y') {k : ℤ}
     (a : (StructureCx X).X k) (b : (StructureCx Y).X k) :
     (push (biprod.map g g')).f k (StructureCx.sum a b) = StructureCx.sum ((push g).f k a) ((push g').f k b) := by
   rw [push_sum, biprod.inl_map, biprod.inr_map, push_comp_apply, push_comp_apply, StructureCx.sum]
 
-/-- `(-a) ⊕ (-b) = -(a ⊕ b)`. -/
-lemma sum_neg {X Y : ChainComplex B ℤ} {k : ℤ} (a : (StructureCx X).X k)
+private lemma sum_neg {X Y : ChainComplex B ℤ} {k : ℤ} (a : (StructureCx X).X k)
     (b : (StructureCx Y).X k) : StructureCx.sum (-a) (-b) = -StructureCx.sum a b := by
   rw [StructureCx.sum, StructureCx.sum, map_neg, map_neg, neg_add]
 
-/-- `u⁻¹_% (u_% a) = a`. -/
-lemma push_inv_hom {C D : ChainComplex B ℤ} (u : C ≅ D) {k : ℤ}
+private lemma push_inv_hom {C D : ChainComplex B ℤ} (u : C ≅ D) {k : ℤ}
     (a : (StructureCx C).X k) : (push u.inv).f k ((push u.hom).f k a) = a := by
   rw [← push_comp_apply, u.hom_inv_id, push_id]
   rfl
 
-/-- Equal structured complexes are isomorphic through an isomorphism carrying the structures. -/
-lemma exists_iso_of_sigma_eq {k : ℤ} {C₀ C : ChainComplex B ℤ} {φ₀ : (StructureCx C₀).X k}
+private lemma exists_iso_of_sigma_eq {k : ℤ} {C₀ C : ChainComplex B ℤ} {φ₀ : (StructureCx C₀).X k}
     {φ : (StructureCx C).X k}
     (h : (⟨C₀, φ₀⟩ : Σ C : ChainComplex B ℤ, (StructureCx C).X k) = ⟨C, φ⟩) :
     ∃ u : C ≅ C₀, (push u.hom).f k φ = φ₀ := by
@@ -65,21 +70,18 @@ end StructureCx
 
 open StructureCx
 
-/-- The sum `(C, φ) ⊕ (C', φ')` is isomorphic to `C ⊞ C'` carrying `φ ⊕ φ'` to its structure. -/
-lemma SymPoincare.exists_sum_iso {k : ℤ} (x y : SymPoincare B k) :
+private lemma exists_sum_iso {k : ℤ} (x y : SymPoincare B k) :
     ∃ u : x.C ⊞ y.C ≅ (x.sum y).C, (push u.hom).f k (StructureCx.sum x.φ y.φ) = (x.sum y).φ :=
   exists_iso_of_sigma_eq (SymPoincare.sum_spec x y)
 
-/-- Isomorphic complexes with corresponding structures are cobordant (the cylinder). -/
-lemma Cobordant.of_iso {k : ℤ} (x y : SymPoincare B k) (u : x.C ≅ y.C)
+private lemma cobordant_of_iso {k : ℤ} (x y : SymPoincare B k) (u : x.C ≅ y.C)
     (hu : (push u.hom).f k x.φ = y.φ) : Cobordant x y := by
   obtain ⟨W, hW, -⟩ := cylinder_cobordism ⊤ (fun _ _ _ _ _ _ => trivial) x y
     (fun _ => trivial) (fun _ => trivial) (HomotopyEquiv.ofIso u) 0
     (by rw [map_zero]; exact (sub_eq_zero.mpr hu).symm)
   exact Cobordant.of_data_eq W hW
 
-/-- A pair transported along an isomorphism onto `x.C ⊞ y.C` is a cobordism. -/
-lemma Cobordant.of_transport {k : ℤ} (x y : SymPoincare B k) (W : SymPair B k (k + 1))
+private lemma cobordant_of_transport {k : ℤ} (x y : SymPoincare B k) (W : SymPair B k (k + 1))
     (u : x.C ⊞ y.C ≅ W.C) (φ' : (StructureCx (x.C ⊞ y.C)).X k)
     (hu : (push u.hom).f k φ' = W.φ) (s : ℤˣ) (hs : s • φ' = StructureCx.sum x.φ (-y.φ)) :
     Cobordant x y := by
@@ -170,25 +172,25 @@ theorem cobordant_sum_laws {k : ℤ} :
     obtain ⟨u₁, hu₁⟩ := exists_iso_of_sigma_eq h₁
     obtain ⟨u₂, hu₂⟩ := exists_iso_of_sigma_eq h₂
     obtain ⟨W, hW⟩ := SymPair.sum W₁ W₂
-    obtain ⟨u, hu⟩ := exists_iso_of_sigma_eq (SymPair.sigma_of_data W hW)
-    obtain ⟨s, hs⟩ := SymPoincare.exists_sum_iso x y
-    obtain ⟨s', hs'⟩ := SymPoincare.exists_sum_iso x' y'
-    refine Cobordant.of_transport _ _ W (biprod.mapIso s.symm s'.symm ≪≫ shuffle _ _ _ _ ≪≫
+    obtain ⟨u, hu⟩ := exists_iso_of_sigma_eq (sigma_of_data W hW)
+    obtain ⟨s, hs⟩ := exists_sum_iso x y
+    obtain ⟨s', hs'⟩ := exists_sum_iso x' y'
+    refine cobordant_of_transport _ _ W (biprod.mapIso s.symm s'.symm ≪≫ shuffle _ _ _ _ ≪≫
       biprod.mapIso u₁ u₂ ≪≫ u) _ ?_ 1 (one_smul _ _)
     simp only [Iso.trans_hom, biprod.mapIso_hom, Iso.symm_hom]
     rw [push_comp_apply, push_comp_apply, push_comp_apply, push_map_sum, ← hs, ← hs', map_neg, push_inv_hom, push_inv_hom, ← sum_neg,
       push_shuffle, push_map_sum, hu₁, hu₂, hu]
   · rintro x y ⟨W, h⟩
     obtain ⟨u, hu⟩ := exists_iso_of_sigma_eq h
-    refine Cobordant.of_transport x.neg y.neg W u _ hu (-1) ?_
+    refine cobordant_of_transport x.neg y.neg W u _ hu (-1) ?_
     change (-1 : ℤˣ) • StructureCx.sum x.φ (-y.φ) = StructureCx.sum (-x.φ) (-(-y.φ))
     rw [sum_neg, Units.neg_smul, one_smul]
   · intro x y z
-    obtain ⟨s₁, hs₁⟩ := SymPoincare.exists_sum_iso x y
-    obtain ⟨s₂, hs₂⟩ := SymPoincare.exists_sum_iso (x.sum y) z
-    obtain ⟨s₃, hs₃⟩ := SymPoincare.exists_sum_iso y z
-    obtain ⟨s₄, hs₄⟩ := SymPoincare.exists_sum_iso x (y.sum z)
-    refine Cobordant.of_iso _ _ (s₂.symm ≪≫ biprod.mapIso s₁.symm (Iso.refl _) ≪≫
+    obtain ⟨s₁, hs₁⟩ := exists_sum_iso x y
+    obtain ⟨s₂, hs₂⟩ := exists_sum_iso (x.sum y) z
+    obtain ⟨s₃, hs₃⟩ := exists_sum_iso y z
+    obtain ⟨s₄, hs₄⟩ := exists_sum_iso x (y.sum z)
+    refine cobordant_of_iso _ _ (s₂.symm ≪≫ biprod.mapIso s₁.symm (Iso.refl _) ≪≫
       assoc _ _ _ ≪≫ biprod.mapIso (Iso.refl _) s₃ ≪≫ s₄) ?_
     simp only [Iso.trans_hom, biprod.mapIso_hom, Iso.symm_hom, Iso.refl_hom]
     rw [push_comp_apply, push_comp_apply, push_comp_apply, push_comp_apply, ← hs₂,
@@ -199,9 +201,9 @@ theorem cobordant_sum_laws {k : ℤ} :
     change (push s₄.hom).f k (StructureCx.sum x.φ (y.sum z).φ) = _
     rw [hs₄]
   · intro x y
-    obtain ⟨s₁, hs₁⟩ := SymPoincare.exists_sum_iso x y
-    obtain ⟨s₂, hs₂⟩ := SymPoincare.exists_sum_iso y x
-    refine Cobordant.of_iso _ _ (s₁.symm ≪≫ braid _ _ ≪≫ s₂) ?_
+    obtain ⟨s₁, hs₁⟩ := exists_sum_iso x y
+    obtain ⟨s₂, hs₂⟩ := exists_sum_iso y x
+    refine cobordant_of_iso _ _ (s₁.symm ≪≫ braid _ _ ≪≫ s₂) ?_
     simp only [Iso.trans_hom, Iso.symm_hom]
     have e1 : biprod.inl ≫ (braid x.C y.C).hom = biprod.inr := by
       apply biprod.hom_ext <;> simp [braid]
@@ -210,8 +212,8 @@ theorem cobordant_sum_laws {k : ℤ} :
     rw [push_comp_apply, push_comp_apply, ← hs₁, push_inv_hom, ← hs₂, push_sum, e1, e2]
     exact congrArg _ (add_comm _ _)
   · intro x
-    obtain ⟨s, hs⟩ := SymPoincare.exists_sum_iso (SymPoincare.zero k) x
-    refine Cobordant.of_iso _ _ (s.symm ≪≫ (isoZeroBiprod hZ).symm) ?_
+    obtain ⟨s, hs⟩ := exists_sum_iso (SymPoincare.zero k) x
+    refine cobordant_of_iso _ _ (s.symm ≪≫ (isoZeroBiprod hZ).symm) ?_
     simp only [Iso.trans_hom, Iso.symm_hom]
     have e : biprod.inr ≫ (isoZeroBiprod (Y := x.C) hZ).inv = 𝟙 _ := biprod.inr_snd
     rw [push_comp_apply, ← hs, push_inv_hom, push_sum, hz0, map_zero, zero_add, e, push_id]
@@ -226,9 +228,9 @@ theorem cobordant_sum_laws {k : ℤ} :
         exact (sub_self _).symm)
     obtain ⟨u, hu⟩ : ∃ u : x.neg.C ⊞ x.C ≅ W.C,
         (push u.hom).f k (StructureCx.sum x.φ (-x.φ)) = W.φ :=
-      exists_iso_of_sigma_eq (SymPair.sigma_of_data W hW)
-    obtain ⟨s, hs⟩ := SymPoincare.exists_sum_iso x.neg x
-    refine Cobordant.of_transport _ _ W ((isoBiprodZero hZ).symm ≪≫ s.symm ≪≫ u)
+      exists_iso_of_sigma_eq (sigma_of_data W hW)
+    obtain ⟨s, hs⟩ := exists_sum_iso x.neg x
+    refine cobordant_of_transport _ _ W ((isoBiprodZero hZ).symm ≪≫ s.symm ≪≫ u)
       (-StructureCx.sum (x.neg.sum x).φ (-(SymPoincare.zero k).φ)) ?_ (-1)
       (by rw [Units.neg_smul, one_smul, neg_neg])
     simp only [Iso.trans_hom, Iso.symm_hom]

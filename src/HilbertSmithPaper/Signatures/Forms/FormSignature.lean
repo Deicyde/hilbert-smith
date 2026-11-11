@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
+import HilbertSmithPaper.Signatures.Forms.SignatureSplitting
 
 /-!
 # The equivariant signature of an invariant form

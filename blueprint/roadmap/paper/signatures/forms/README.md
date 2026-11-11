@@ -6,6 +6,7 @@ article_id: af_3e1a5495b71bcbd92046f1f2
 
 The equivariant signature of a nonsingular invariant symmetric form over $\mathbb R$: its value at the identity, additivity, negation, isometry invariance, restriction and the permutation tensor rule, its vanishing on forms with an invariant Lagrangian, and the cyclotomic arithmetic.
 
+- [Signature splittings](signature-splitting.md)
 - [The equivariant signature of an invariant form](form-signature.md)
 - [Value at the identity](form-signature-identity.md)
 - [Additivity](form-signature-sum.md)

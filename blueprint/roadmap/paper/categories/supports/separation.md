@@ -19,7 +19,8 @@ Let $X$ be compact with an isometric $C_p$-action. If $S,Z\subset X$ are disjoin
 
 ## Depends on
 
-- [Support filtration](support-filtration.md)
+- [Support subcategory](support-subcategory.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 
 ## Proof depends on
 

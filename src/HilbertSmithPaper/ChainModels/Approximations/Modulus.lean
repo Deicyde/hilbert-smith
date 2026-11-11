@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.DistLeTwo
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.Torus
 

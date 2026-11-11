@@ -2,6 +2,8 @@
 article_id: af_2d9b476545814d3fb36aa28c
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.cxProd_line_decorated
 ---
 
 # Products with the line are decorated

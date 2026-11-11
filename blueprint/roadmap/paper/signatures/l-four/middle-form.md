@@ -2,6 +2,8 @@
 article_id: af_83020c119e44c59c798dd314
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.middleForm
 ---
 
 # The middle form

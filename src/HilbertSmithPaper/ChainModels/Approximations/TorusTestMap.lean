@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.LocalData.Chart.TestMap
 import HilbertSmithPaper.ChainModels.Grid.Torus
 

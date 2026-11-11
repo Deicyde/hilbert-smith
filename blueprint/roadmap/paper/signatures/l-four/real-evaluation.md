@@ -2,6 +2,8 @@
 article_id: af_5e222be924951f6ccfd35574
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.realEval
 ---
 
 # The evaluation pairing
