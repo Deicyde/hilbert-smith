@@ -19,7 +19,7 @@ The circle duality data, the unsymmetrized structure, the homotopies and the aug
 - [The augmentation of the chain model](chain-model-aug.md)
 - [Propagation of the differential of the chain model](chain-model-d-propagation.md)
 - [The grid complex vanishes in negative degrees](grid-dim-neg.md)
-- [The inverse of the structure of CP^2](cp2-inverse.md)
+- [The CP^2 inverse inverts the structure](cp2-inverse.md)
 - [The grid duality map inverts the unsymmetrized grid structure](grid-inverse.md)
 - [Tensor product of homotopies](tensor-homotopy.md)
 - [The chain model is Poincaré: the cycle](chain-model-poincare-cycle.md)
