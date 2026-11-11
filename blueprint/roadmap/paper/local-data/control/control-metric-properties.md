@@ -2,6 +2,8 @@
 article_id: af_04d37a385ae04e8c7208ce4d
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.dT_metric
 ---
 
 # The orbit metric metrizes the control space

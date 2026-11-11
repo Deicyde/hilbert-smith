@@ -11,6 +11,7 @@ import HilbertSmithPaper.LocalData.Chart.TestRegionInvariant
 import HilbertSmithPaper.LocalData.Control.ControlAction
 import HilbertSmithPaper.LocalData.Control.ControlActionIsometric
 import HilbertSmithPaper.LocalData.Control.ControlMetric
+import HilbertSmithPaper.LocalData.Control.ControlMetricProperties
 import HilbertSmithPaper.LocalData.Control.ControlSpace
 import HilbertSmithPaper.LocalData.Control.ControlSpaceCompact
 import HilbertSmithPaper.LocalData.Control.FixedLocalData
