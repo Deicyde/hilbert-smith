@@ -44,6 +44,7 @@ import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
 import HilbertSmithPaper.Categories.Supports.IteratedQuotient
 import HilbertSmithPaper.Categories.Supports.NullThickening
 import HilbertSmithPaper.Categories.Supports.QuotientByEmpty
+import HilbertSmithPaper.Categories.Supports.QuotientSeparationIso
 import HilbertSmithPaper.Categories.Supports.QuotientSupport
 import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
 import HilbertSmithPaper.Categories.Supports.QuotientSupportFiltration
