@@ -6,6 +6,7 @@ article_id: af_a3358b795a559788cb63e732
 
 The buffered cells of a labelled cell set, their control labels, the based inclusion of a set of cells, and the buffered restriction of a matrix.
 
+- [Buffered sphere labels](buffered-sphere-labels.md)
 - [Buffered cells](buffered-cells.md)
 - [Control labels](control-labels.md)
 - [Based inclusion](based-inclusion.md)

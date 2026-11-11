@@ -104,6 +104,7 @@ import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.BoxHullProperties
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BasedInclusion
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedCells
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedSphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Buffers.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Buffers.Restriction
 import HilbertSmithPaper.ChainModels.Grid.CarriedChainMap
