@@ -2,12 +2,14 @@
 article_id: af_f46364afa7ebaff76fe4e9a8
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.Compression.scalar_image
 ---
 # Scalar image of the compressed complex
 
 Let $Z_0$ be the [exterior](../corner/exterior.md) for $n$ and the buffer radius $R$, $Z=T\times Z_0$, and $U':\mathcal B_{\mathbf 1,Z}(T\times S^n)\to\mathcal B_{\mathbf 1,Z_0}(S^n)$ [forgetting to the scalar exterior quotient](../corner/theorem/scalar-forget.md) for the trivial group sequence. Let $\mathfrak m_{f_T}$ be the [germ](../evaluation/germ.md) of the [torus test map](../chain-models/approximations/torus-test-map.md) $f_T$. Then
 $$U'_*\operatorname{cls}(C,\hat\varphi)=\mathfrak m_{f_T}\quad\text{in }\mathbb L_N(\mathcal B_{\mathbf 1,Z_0}(S^n)),$$
-with $(C,\hat\varphi)$ read in the idempotent completion through the [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md).
+with $(C,\hat\varphi)$, the [compressed Poincaré complex](compressed-poincare.md) with maps [represented](compressed-rep.md) by $\hat d$ and $\hat\varphi$, read in the idempotent completion through the [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md); here $\operatorname{cls}$ is the [class map](../l-theory/ultimate/groups/ultimate-cls.md) into the [ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md) and $U'_*$ the [induced map](../l-theory/ultimate/groups/induced-map.md).
 
 *Proof sketch.*
 1. $U'_*\operatorname{cls}(C,\hat\varphi)=\operatorname{cls}(U'C,\hat\varphi)$ and $\mathfrak m_{f_T}=\operatorname{cls}(qD,\varphi)$, with $q$ the quotient functor and $D$ labelled by the sphere labels $s_b=f_T(x_b)$ ([the induced map commutes with cls](../l-theory/ultimate/groups/induced-map-cls.md); $U'$ is strict). $U'C$ has the labels $s_b$ of the retained cells.
@@ -26,12 +28,15 @@ with $(C,\hat\varphi)$ read in the idempotent completion through the [Karoubi em
 - [Germ](../evaluation/germ.md)
 - [Torus test map](../chain-models/approximations/torus-test-map.md)
 - [Embedding into the idempotent completion](../l-theory/base/categories/karoubi-embedding.md)
+- [Morphisms represented by compressed matrices](compressed-rep.md)
+- [L-group](../l-theory/base/groups/l-group.md)
+- [Ultimate L-group and cls](../l-theory/ultimate/groups/ultimate-l-group.md)
+- [The class map](../l-theory/ultimate/groups/ultimate-cls.md)
+- [Induced map](../l-theory/ultimate/groups/induced-map.md)
 
 ## Proof depends on
 
 - [The induced map commutes with cls](../l-theory/ultimate/groups/induced-map-cls.md)
-- [L-group](../l-theory/base/groups/l-group.md)
-- [Ultimate L-group and cls](../l-theory/ultimate/groups/ultimate-l-group.md)
 - [Homotopy-isometry invariance](../l-theory/base/groups/homotopy-isometry-invariance.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 - [Support ideal](../categories/supports/support-ideal.md)

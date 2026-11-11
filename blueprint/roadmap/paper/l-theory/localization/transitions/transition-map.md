@@ -43,3 +43,4 @@ is a well-defined homomorphism.
 - [Homotopy-isometry invariance](../../base/groups/homotopy-isometry-invariance.md)
 - [Products distribute over sums](../products/product-sum.md)
 - [External products are additive in the first structure](../products/bookkeeping/product-additive-left.md)
+- [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)

@@ -1,2 +1,12 @@
-Planned name: `HSP.Compression.scalar_image`. HS paper lines 1035-1037 (the scalar class $\mathfrak m_c$) and 1096-1100.
-The class on the right is the evaluation chapter's germ; compression's own labelled-model class and labelled-model Poincaré lemma were deleted as duplicates (decision 7). Homotopy-isometry invariance (on $L^p$, i.e. $L$ of the Karoubi envelope) is used with $\chi=0$ and then pushed to $\mathbb L$ by cls; unitary invariance on $\mathbb L$ is about natural isomorphisms of functors and does not apply.
+Lean: `HSP.Compression.scalar_image` (stated, proof open).
+
+Proof plan, following the sketch. (1) `ultL.map_cls` and strictness of `scalarForget` turn the left
+side into `cls` of `U'P`; unfold `germ` to `ultL.map q (cls (D, φ))` for the labelled model with
+labels `c = f_T` (`labelledModel_poincare`), and push `q` through `cls` the same way. (2) Replace
+`D` by `D'` (zero below `i₀`): the identity for `i ≥ i₀` is a unitary isomorphism in `𝒜_𝟏(Sⁿ)`
+since morphisms are taken modulo eventual equality. (3) In sphere labels `pr : D' → U'C` and `in`
+have propagation `0`; `pr in = 1` and `in pr = 1 - Q`, where `Q` factors with propagation `0`
+through discarded cells, whose sphere labels lie in `Z_0` (as in `endpoint` (3)); so `Q = 0` in
+`ℬ_{𝟏,Z_0}(Sⁿ)` and `pr` is a unitary isomorphism there, a chain map by `compressed_d`, with
+`pr φ pr^* = φ̂`. (4) Homotopy-isometry invariance in `Kar ℬ_{𝟏,Z_0}(Sⁿ)` with `χ = 0` gives
+equality in `L^p_N`, then apply `cls`.
