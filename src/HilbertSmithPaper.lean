@@ -73,6 +73,7 @@ import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
+import HilbertSmithPaper.ChainModels.Approximations.CompletedMapsProperties
 import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.Exterior
