@@ -215,6 +215,7 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
+import HilbertSmithPaper.Signatures.LFour.RealHomology
 
 /-!
 # The paper
