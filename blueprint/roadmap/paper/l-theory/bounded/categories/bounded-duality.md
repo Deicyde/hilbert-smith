@@ -3,7 +3,7 @@ article_id: af_5e51fbea88426364c0bce71f
 declaration: instance
 origin: cited
 statement: formalized
-lean: HSP.Bounded.instDualCat
+lean: HSP.Bounded.dualCat
 ---
 
 # The induced duality on $C_\mathbb Z(A)$

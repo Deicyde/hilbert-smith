@@ -64,7 +64,7 @@ private lemma dualHomB_id (M : Bounded A) :
   · rw [diagF_ne _ (Ne.symm h), diagF_ne _ h, dualHom_zero]
 
 /-- The induced duality on `C_ℤ(A)`: `(M^*)_n = (M_n)^*`, `(f^*)_{nm} = (f_{mn})^*`. -/
-instance : DualCat (Bounded A) where
+instance dualCat : DualCat (Bounded A) where
   dual M := ⟨fun n => dual (M.X n)⟩
   dualHom f := dualHomB f
   dualHom_id M := dualHomB_id M
