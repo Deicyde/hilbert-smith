@@ -15,6 +15,7 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleK
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleKDual
 import HilbertSmithPaper.LTheory.Base.Complexes.Shift
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleCell
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleLabel
 
 /-!
 # Circle duality
@@ -46,11 +47,6 @@ namespace HSP.ChainModels
 open FreeQ DualCat
 
 variable (k : ℕ)
-
-/-- The label of a cell of `S_{k,r}` (and of its dual): its center, `4w/k` or `(4w+2)/k`. -/
-noncomputable def circleLabel (r : ℤ) (a : Fin ((circleComplex k).X r).dim) :
-    AddCircle (4 : ℝ) :=
-  ((4 * ((circleCell k r a).1 : ℕ) + if (circleCell k r a).2 then 2 else 0) / k : ℝ)
 
 private lemma circleDim_eq_zero {r : ℤ} (h0 : r ≠ 0) (h1 : r ≠ 1) :
     ((circleComplex k).X r).dim = 0 := by

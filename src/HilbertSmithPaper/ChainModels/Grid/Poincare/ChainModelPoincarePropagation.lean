@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.PropAdd
 import HilbertSmithPaper.Categories.Asymptotic.PropMul
+import HilbertSmithPaper.Categories.Asymptotic.PropOne
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedDualProd
@@ -62,13 +63,9 @@ private lemma prop_eqToHom {Y Y' : FreeQ} (h : Y = Y') (l : Fin Y.dim → X) (l'
     (hl : ∀ i, l' (Fin.cast (congrArg FreeQ.dim h) i) = l i) :
     prop l l' (toMatrix (eqToHom h)) = 0 := by
   subst h
-  rw [eqToHom_refl, id_toMatrix]
-  refine le_antisymm (prop_le_of_entries _ _ _ _ fun i' i hi => ?_) zero_le
-  have hii : i' = i := by
-    by_contra hne
-    exact hi (Matrix.one_apply_ne hne)
-  subst hii
-  rw [← hl i', Fin.cast_eq_self, nndist_self]
+  have hl' : l' = l := funext fun i => by simpa using hl i
+  subst hl'
+  rw [eqToHom_refl, id_toMatrix, prop_one]
 
 private lemma prop_comp_le {P Q R : FreeQ} (l : Fin P.dim → X) (l' : Fin Q.dim → X) (l'' : Fin
 R.dim → X)
