@@ -11,7 +11,7 @@ proof: formalized
 
 Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/duality-functor.md), $f:C\to D$ a chain map and $\phi\in M(C)_n$. Then
 $$F_\%(f_\%\phi)=(Ff)_\%(F_\%\phi)$$
-in $M(FD)_n$, for the [pushforward](structure-push.md) and the image of structures under $F$ ([Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)).
+in $M(FD)_n$, for the [pushforward](structure-push.md) and the [image of structures under $F$](functors/functor-structure.md).
 
 *Proof sketch.* On the component $(p,q)$ both sides are $F(f_p)F(\phi_{p,q})F(f_q^*)\xi^{-1}_{D_q}=F(f_p)F(\phi_{p,q})\xi^{-1}_{C_q}(Ff_q)^*$, by naturality of $\xi$.
 
@@ -23,5 +23,4 @@ in $M(FD)_n$, for the [pushforward](structure-push.md) and the image of structur
 
 - [Duality functor](../categories/duality-functor.md)
 - [Pushforward of structures](structure-push.md)
-- [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
 - [Image of structures under a duality functor](functors/functor-structure.md)

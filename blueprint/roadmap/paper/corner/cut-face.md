@@ -8,7 +8,7 @@ lean: HSP.Corner.cutB
 
 # The cube face
 
-Let $n\in\mathbb N$, $s\in\mathbb R$ and $m\in\mathbb N$. In the [round sphere](round-sphere.md) $S^n=\mathbb R^n\cup\{\infty\}$, the *cube face* is $B_m=[-s,s]^{n-m+1}\times\{s\}^{m-1}\subseteq\mathbb R^n$: the points whose first $n-m+1$ coordinates lie in $[-s,s]$ and whose remaining $m-1$ coordinates equal $s$. It is used for $n\ge1$, $s>0$ and $1\le m\le n$, which the definition does not need.
+Let $n\in\mathbb N$, $s\in\mathbb R$ and $m\in\mathbb N$. In the [round sphere](round-sphere.md) $S^n=\mathbb R^n\cup\{\infty\}$, the *cube face* is $B_m=[-s,s]^{n-m+1}\times\{s\}^{m-1}\subseteq\mathbb R^n$: the points whose first $n-m+1$ coordinates lie in $[-s,s]$ and whose remaining $m-1$ coordinates equal $s$. For $m=0$ it is $[-s,s]^n$ and for $m\ge n+1$ the point $(s,\dots,s)$; it is used only for $n\ge1$, $s>0$ and $1\le m\le n$.
 
 ## Sources
 

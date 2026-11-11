@@ -3,6 +3,7 @@ article_id: af_ae60322db6daee68fe6d3a3a
 declaration: instance
 origin: background
 statement: formalized
+proof: formalized
 lean: HSP.Bounded.isDualAdditive_subPow
 ---
 

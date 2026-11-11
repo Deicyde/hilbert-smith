@@ -22,3 +22,4 @@ The [bound sequence](bound-sequence.md) $(\delta_i)$ is a null sequence: $\delta
 ## Proof depends on
 
 - [Buffers hold eventually](buffer-eventually.md)
+- [Start index](start-index.md)

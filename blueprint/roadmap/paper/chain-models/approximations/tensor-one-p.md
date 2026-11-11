@@ -21,3 +21,4 @@ Fix a local datum and an index $i$, and let $f$ be a map of degree $m$ of the [c
 - [Chain model](../grid/model/chain-model.md)
 - [Tensor of graded maps of based complexes](../grid/tensor/based-tensor-hom.md)
 - [The identity as a map of degree zero](../grid/tensor/id-deg0.md)
+- [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)

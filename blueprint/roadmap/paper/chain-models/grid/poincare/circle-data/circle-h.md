@@ -8,7 +8,7 @@ lean: HSP.ChainModels.circleH
 
 # The circle homotopy element
 
-For the [circle complex](../../cubical/cubical-torus-grid.md) $S=S_k$, the element $H\in M(S)_2$ of the [structure complex](../../../../l-theory/base/complexes/structure-complex.md) given by $H(e_w^*)=e_w$ and $H([w]^*)=0$: its component $(S_1)^*\to S_1$ is the identity matrix and its other components are zero.
+For the [circle complex](../../cubical/circle-complex.md) $S=S_k$, the element $H\in M(S)_2$ of the [structure complex](../../../../l-theory/base/complexes/structure-complex.md) given by $H(e_w^*)=e_w$ and $H([w]^*)=0$: its component $(S_1)^*\to S_1$ is the identity matrix and its other components are zero.
 
 ## Sources
 

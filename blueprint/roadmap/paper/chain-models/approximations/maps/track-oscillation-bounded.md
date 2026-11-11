@@ -9,9 +9,9 @@ lean: HSP.ChainModels.trackOscillation_bddAbove
 
 # The track oscillation is bounded
 
-The [track oscillation](track-oscillation.md) is bounded above by $2$.
+For every real $t$, the [track oscillation](track-oscillation.md) is bounded above.
 
-*Proof.* $d_\infty\le2$ on $\mathbb T^n$ ([diameter](../../torus/dist-le-two.md)).
+*Proof.* Every element is at most $2$, since $d_\infty\le2$ on $\mathbb T^n$ ([diameter](../../torus/dist-le-two.md)).
 
 ## Sources
 

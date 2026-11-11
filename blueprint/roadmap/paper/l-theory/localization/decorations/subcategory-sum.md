@@ -29,6 +29,7 @@ In particular this applies to [complexes in $\mathcal P$](complex-in-subcategory
 - [Group structure on L](../../base/groups/l-group-add.md)
 - [Image of structures under a duality functor](../../base/complexes/functors/functor-structure.md)
 - [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
+- [Pushforward of structures](../../base/complexes/structure-push.md)
 
 ## Proof depends on
 

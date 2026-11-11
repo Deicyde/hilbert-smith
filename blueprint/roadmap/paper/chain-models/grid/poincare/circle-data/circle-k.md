@@ -8,7 +8,7 @@ lean: HSP.ChainModels.circleK
 
 # The circle homotopy
 
-For the [circle complex](../../cubical/cubical-torus-grid.md) $S=S_k$, the map $K=\tfrac12Hb$ of degree $+1$ on $S$: in degree $r$ it is $\tfrac12$ times the [circle inverse](circle-b.md) $b_r:S_r\to(S_{1-r})^*$ followed by the component $(S_{1-r})^*\to S_{r+1}$ of the [circle homotopy element](circle-h.md) $H$.
+For the [circle complex](../../cubical/circle-complex.md) $S=S_k$, the map $K=\tfrac12Hb$ of degree $+1$ on $S$: in degree $r$ it is $\tfrac12$ times the [circle inverse](circle-b.md) $b_r:S_r\to(S_{1-r})^*$ followed by the component $(S_{1-r})^*\to S_{r+1}$ of the [circle homotopy element](circle-h.md) $H$.
 
 ## Sources
 
