@@ -16,6 +16,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
+import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPair
 import HilbertSmithPaper.LTheory.Base.Pairs.PairTransport
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPairs
 import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence

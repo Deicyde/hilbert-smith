@@ -2,6 +2,8 @@
 article_id: af_ca496cdd8d39cea161e9a537
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.SymPair.map
 ---
 
 # Duality functors carry pairs to pairs
