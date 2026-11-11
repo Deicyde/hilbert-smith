@@ -131,6 +131,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
 import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
 import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
+import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
