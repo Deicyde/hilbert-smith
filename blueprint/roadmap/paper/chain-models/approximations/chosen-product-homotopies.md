@@ -8,7 +8,7 @@ lean: HSP.ChainModels.productHomotopy
 
 # Chosen product homotopies
 
-Fix $0<\rho<\rho_+$ and a family of maps $B^T_{g,h}$ of degree $+1$ of $C(k_i)$, for $i\in\mathbb N$ and $g,h\in G_i$, as in [product homotopies](product-homotopies.md) for the radius $\rho$, and put $B_{g,h}=B^T_{g,h}\otimes1_P$ ([tensoring with the identity of the cells of CP^2](../grid/tensor/tensor-one-p.md)).
+Fix $0<\rho<\rho_+$ and a family of maps $B^T_{g,h}$ of degree $+1$ of $C(k_i)$, for $i\in\mathbb N$ and $g,h\in G_i$, as in [product homotopies](product-homotopies.md) for the radius $\rho$, and put $B_{g,h}=B^T_{g,h}\otimes1_P$ ([tensoring with the identity of the cells of CP^2](tensor-one-p.md)).
 
 ## Sources
 
@@ -17,4 +17,4 @@ Fix $0<\rho<\rho_+$ and a family of maps $B^T_{g,h}$ of degree $+1$ of $C(k_i)$,
 ## Depends on
 
 - [Product homotopies](product-homotopies.md)
-- [Tensoring with the identity of the cells of CP^2](../grid/tensor/tensor-one-p.md)
+- [Tensoring with the identity of the cells of CP^2](tensor-one-p.md)

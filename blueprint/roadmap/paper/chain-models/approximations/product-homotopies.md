@@ -15,6 +15,6 @@ For $g,h\in G_i$ there are $B_{g,h}=B^T_{g,h}\otimes1_P$ of degree $+1$ with $a_
 - HS paper, Section 9. New: box carriers, with no width induction and no track steps.
 ## Depends on
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
-- [Group approximations](group-approx.md), [tensoring with the identity of the cells of CP^2](../grid/tensor/tensor-one-p.md), [sphere labels](../grid/sphere-labels.md), [control labels](../grid/buffers/control-labels.md), [restriction](../grid/buffers/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
+- [Group approximations](group-approx.md), [tensoring with the identity of the cells of CP^2](tensor-one-p.md), [sphere labels](../grid/sphere-labels.md), [control labels](../grid/buffers/control-labels.md), [restriction](../grid/buffers/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
 ## Proof depends on
 - [Carried homotopies](../grid/carried-homotopy.md), [carried group approximations](group-approx-carried.md), [box hull properties](../grid/box-hull-properties.md), [properties](completed-maps-properties.md), [test region invariant](../../local-data/chart/test-region-invariant.md), [graph type of approximations](approximations-graph-type.md)
