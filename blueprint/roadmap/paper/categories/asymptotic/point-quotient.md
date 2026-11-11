@@ -20,3 +20,4 @@ $\mathcal V_{\mathbf G}=\mathcal P_{\mathbf G}/\mathcal S_{\mathbf G}$ is the [q
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Point filtration](point-filtration.md)
 - [Point ideal](point-ideal.md)
+- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)

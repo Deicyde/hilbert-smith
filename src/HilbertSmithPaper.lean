@@ -209,11 +209,14 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualAdditiveSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.FiltrationIdeal
+import HilbertSmithPaper.LTheory.Base.Categories.FiltrationIdealClosure
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration

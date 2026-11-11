@@ -26,6 +26,7 @@ Let $S,Y,Z\subset X$. The identity on objects and on representatives gives mutua
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)
 
 ## Proof depends on
 
@@ -33,3 +34,5 @@ Let $S,Y,Z\subset X$. The identity on objects and on representatives gives mutua
 - [Inclusion after projection](../asymptotic/restriction/projection-inclusion.md)
 - [Complementary diagonal projection](../asymptotic/restriction/diagonal-projection-complement.md)
 - [Enumerated indices satisfy the predicate](../asymptotic/restriction/restriction-index-mem.md)
+- [Maps factoring through a dual-closed subcategory form an ideal](../../l-theory/base/categories/filtration-ideal-closure.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

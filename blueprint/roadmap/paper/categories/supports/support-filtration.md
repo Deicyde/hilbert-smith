@@ -53,3 +53,4 @@ Let $S,S'\subset X$, and let $\mathcal A_{S'}\subset\mathcal A_S$ be the [suppor
 - [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Transposing twice](../asymptotic/structure/transpose-transpose.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

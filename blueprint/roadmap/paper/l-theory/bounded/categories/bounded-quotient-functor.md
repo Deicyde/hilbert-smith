@@ -24,3 +24,8 @@ which is the identity on objects and sends the class of a bounded matrix $(f_{l,
 - [Bounded extension of a duality functor](bounded-functor.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Duality functor](../../base/categories/duality-functor.md)
+
+## Proof depends on
+
+- [Maps factoring through a dual-closed subcategory form an ideal](../../base/categories/filtration-ideal-closure.md)
+- [Maps factoring through a subcategory](../../base/categories/filtration-ideal.md)

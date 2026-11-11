@@ -80,7 +80,7 @@ private lemma functor_map_eq_of_map_eq (F : KaroubiFiltration U) {M N : Bounded 
 private def liftE {X Y : Bounded (FiltQuot U)} (g : X ⟶ Y) :
     (⟨fun n => (X.X n).as⟩ : Bounded A) ⟶ ⟨fun n => (Y.X n).as⟩ := by
   refine ⟨fun m n => haveI := Classical.propDecidable (g.1 m n = 0); if g.1 m n = 0 then 0 else
-    (FiltQuot.functor_map_surjective U (g.1 m n)).choose, ?_⟩
+    ((FiltQuot.functor U).map_surjective (g.1 m n)).choose, ?_⟩
   obtain ⟨r, hr⟩ := g.2
   exact ⟨r, fun m n h => by simp [hr m n h]⟩
 
@@ -90,7 +90,7 @@ private lemma map_liftE {X Y : Bounded (FiltQuot U)} (g : X ⟶ Y) :
     (@ite _ (g.1 m n = 0) (Classical.propDecidable _) 0 _) = g.1 m n
   split_ifs with h
   · rw [h]; exact (FiltQuot.functor U).map_zero _ _
-  · exact (FiltQuot.functor_map_surjective U (g.1 m n)).choose_spec
+  · exact ((FiltQuot.functor U).map_surjective (g.1 m n)).choose_spec
 
 /-- The inverse functor `C_ℤ(A/U) → C_ℤ(A)/C_ℤ(U)`: lift entrywise. -/
 private def invF (F : KaroubiFiltration U) : Bounded (FiltQuot U) ⥤ FiltQuot (sub U) where
@@ -150,7 +150,7 @@ theorem quotientEquiv (U : ObjectProperty A) [IsDualAdditive U] (F : KaroubiFilt
       G.toFunctor ⋙ (quotientFunctor U).toFunctor = 𝟭 _ := by
   refine ⟨invDual F, fun _ => ⟨rfl, rfl⟩, ?_, ?_⟩
   · refine CategoryTheory.Functor.hext (fun _ => rfl) fun M N f => heq_of_eq ?_
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (sub U) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective f
     exact functor_map_eq_of_map_eq F (map_liftE _)
   · refine CategoryTheory.Functor.hext (fun _ => rfl) fun X Y g => heq_of_eq ?_
     exact map_liftE g

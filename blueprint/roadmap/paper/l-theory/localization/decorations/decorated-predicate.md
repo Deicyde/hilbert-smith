@@ -22,3 +22,4 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)
+- [The quotient duality functor](../../base/categories/quotient-duality-functor.md)

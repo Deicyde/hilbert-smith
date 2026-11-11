@@ -32,10 +32,10 @@ private lemma ideal_sum {X Y : A} {ι : Type*} (s : Finset ι) (f : ι → (X �
     (hf : ∀ i ∈ s, FiltQuot.ideal U (f i)) : FiltQuot.ideal U (∑ i ∈ s, f i) := by
   classical
   induction s using Finset.induction_on with
-  | empty => simpa using FiltQuot.ideal_zero
+  | empty => simpa using (FiltQuot.ideal_closed _).1
   | insert a s ha ih =>
     rw [Finset.sum_insert ha]
-    exact FiltQuot.ideal_add (hf a (Finset.mem_insert_self a s))
+    exact (FiltQuot.ideal_closed _).2.1 (hf a (Finset.mem_insert_self a s))
       (ih fun i hi => hf i (Finset.mem_insert_of_mem hi))
 
 /-- Every entry of a map factoring through `C_ℤ(U)` lies in `I_𝒰`. -/
@@ -67,13 +67,13 @@ private lemma quotientFunctorF_map {M N : Bounded A} (f : M ⟶ N) :
 
 instance : (quotientFunctorF U).Additive where
   map_add {M N f g} := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (sub U) f
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (sub U) g
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective g
     exact hom_ext fun l n => (FiltQuot.functor U).map_add
 
 instance : (quotientFunctorF U).Linear ℚ where
   map_smul {M N} f c := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (sub U) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective f
     exact hom_ext fun l n => (FiltQuot.functor U).map_smul _ _
 
 /-- The entrywise quotient functor `C_ℤ(A)/C_ℤ(U) → C_ℤ(A/U)` as a duality functor; it is the
@@ -82,7 +82,7 @@ def quotientFunctor : DualFunctor (FiltQuot (sub U)) (Bounded (FiltQuot U)) wher
   toFunctor := quotientFunctorF U
   ξ M := Iso.refl _
   ξ_natural {M N} f := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (sub U) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective f
     exact (Category.comp_id _).trans ((hom_ext fun a b => rfl).trans (Category.id_comp _).symm)
   ξ_dual M := by
     erw [dualHom_id, Category.comp_id]

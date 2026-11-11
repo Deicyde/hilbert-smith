@@ -8,7 +8,7 @@ lean: HSP.FiltQuot
 
 # Quotient by a subcategory
 
-Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal U^*\subset\mathcal U$](dual-additive-subcategory.md). Let $I_{\mathcal U}(M,N)$ be the set of maps $M\to N$ that factor through an object of $\mathcal U$. Then $I_{\mathcal U}$ is a $\mathbb Q$-linear ideal closed under $*$: if $f$ factors through $V$ and $g$ through $W$, then $f+g$ factors through a sum of $V$ and $W$ in $\mathcal U$, and $f=ba$ gives $f^*=a^*b^*$ through $V^*$. So $\mathcal A/\mathcal U$, with the objects of $\mathcal A$ and $\mathrm{Hom}(M,N)/I_{\mathcal U}(M,N)$, is a duality category: its sums are the images of those of $\mathcal A$, and its duality is $M^*$ on objects and $[f]^*=[f^*]$ on morphisms. The quotient functor $q:\mathcal A\to\mathcal A/\mathcal U$, $M\mapsto M$, $f\mapsto[f]$, is a strict duality functor.
+Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal U^*\subset\mathcal U$](dual-additive-subcategory.md). The [maps factoring through an object of $\mathcal U$](filtration-ideal.md) form a $\mathbb Q$-linear ideal $I_{\mathcal U}$ closed under $*$ ([Maps factoring through a dual-closed subcategory form an ideal](filtration-ideal-closure.md)). So $\mathcal A/\mathcal U$, with the objects of $\mathcal A$ and $\mathrm{Hom}(M,N)/I_{\mathcal U}(M,N)$, is a duality category: its sums are the images of those of $\mathcal A$, and its duality is $M^*$ on objects and $[f]^*=[f^*]$ on morphisms. The quotient functor $\mathcal A\to\mathcal A/\mathcal U$ is $M\mapsto M$, $f\mapsto[f]$; two maps have the same class if and only if their difference lies in $I_{\mathcal U}$.
 
 ## Sources
 
@@ -19,4 +19,5 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal
 
 - [Additive subcategory closed under duality](dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](duality-category.md)
-- [Duality functor](duality-functor.md)
+- [Maps factoring through a subcategory](filtration-ideal.md)
+- [Maps factoring through a dual-closed subcategory form an ideal](filtration-ideal-closure.md)
