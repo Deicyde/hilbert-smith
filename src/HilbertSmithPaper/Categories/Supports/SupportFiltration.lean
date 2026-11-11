@@ -31,10 +31,12 @@ variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod
 abbrev suppIn (S S' : Set X) : ObjectProperty (supp S : ObjectProperty (AsymCat G X)).FullSubcategory :=
   fun V => supp S' V.obj
 
-private theorem supp_zero (S : Set X) : supp S (⟨AsymPre.zero⟩ : AsymCat G X) :=
+/-- The empty sequence is `S`-supported. -/
+theorem supp_zero (S : Set X) : supp S (⟨AsymPre.zero⟩ : AsymCat G X) :=
   fun _ _ => Eventually.of_forall fun _ k => k.elim0
 
-private theorem supp_sum {S : Set X} {P Q : AsymCat G X} (hP : supp S P) (hQ : supp S Q) :
+/-- The concatenation of two `S`-supported objects is `S`-supported. -/
+theorem supp_sum {S : Set X} {P Q : AsymCat G X} (hP : supp S P) (hQ : supp S Q) :
     supp S (AsymCat.binaryBicone P Q).pt := by
   intro ε hε
   filter_upwards [hP ε hε, hQ ε hε] with i h1 h2 k
@@ -80,11 +82,14 @@ noncomputable def suppSplit {S : Set X} (S' : Set X)
     (M : (supp S : ObjectProperty (AsymCat G X)).FullSubcategory) (r : ℕ → ℝ≥0) : M ⟶ M :=
   ObjectProperty.homMk (AsymCat.mkHom (M.obj.as.trunc (nearIdx S' M.obj.as r)))
 
-private theorem supp_restrict {S : Set X} {M : AsymPre G X} (hM : supp S (⟨M⟩ : AsymCat G X))
+/-- A restriction of an `S`-supported object is `S`-supported. -/
+theorem supp_restrict {S : Set X} {M : AsymPre G X} (hM : supp S (⟨M⟩ : AsymCat G X))
     (P : ∀ i, Fin (M.n i) → Prop) : supp S (⟨M.restrict P⟩ : AsymCat G X) := fun ε hε =>
   (hM ε hε).mono fun _ h _ => h _
 
-private theorem supp_restrict_near {S' : Set X} {M : AsymPre G X} {r : ℕ → ℝ≥0}
+/-- The restriction `M_{≤r}` to the closed `r_i`-thickenings of `S'` is `S'`-supported if `r` is
+null. -/
+theorem supp_restrict_near {S' : Set X} {M : AsymPre G X} {r : ℕ → ℝ≥0}
     (hr : Tendsto r atTop (𝓝 0)) : supp S' (⟨M.restrict (nearIdx S' M r)⟩ : AsymCat G X) := by
   intro ε hε
   have h := (NNReal.tendsto_coe.2 hr).eventually (gt_mem_nhds hε)
@@ -94,7 +99,7 @@ private theorem supp_restrict_near {S' : Set X} {M : AsymPre G X} {r : ℕ → �
 omit [AddAction (ZMod p) X] in
 /-- A null sequence bounding, eventually, the closed thickenings of `S'` containing the `x_i(k)`
 with `Q i k`, provided that for every `ε > 0` these points are eventually `ε`-close to `S'`. -/
-private theorem exists_null {M : AsymPre G X} (S' : Set X) (Q : ∀ i, Fin (M.n i) → Prop)
+theorem exists_null_cthickening {M : AsymPre G X} (S' : Set X) (Q : ∀ i, Fin (M.n i) → Prop)
     (h : ∀ ε > 0, ∀ᶠ i in atTop, ∀ k, Q i k → M.x i k ∈ thickening ε S') :
     ∃ r : ℕ → ℝ≥0, Tendsto r atTop (𝓝 0) ∧
       ∀ᶠ i in atTop, ∀ k, Q i k → M.x i k ∈ cthickening (r i) S' := by
@@ -134,7 +139,7 @@ private theorem exists_null_rows {S' : Set X} (hS' : ∀ c : ZMod p, ∀ x ∈ S
   have hI : FiltQuot.ideal (supp S') (AsymCat.mkHom u) :=
     ⟨⟨V⟩, hV, 𝟙 _, AsymCat.mkHom u, (Category.id_comp _).symm⟩
   have h := (factorsThrough_supp_iff hS' u).1 hI
-  obtain ⟨r, hr, hev⟩ := exists_null S'
+  obtain ⟨r, hr, hev⟩ := exists_null_cthickening S'
     (fun i k => ∃ (g : G.G i) (b : G.G i × Fin (V.n i)),
       FreeCat.mat (AsymPre.coord u i) (g, k) b ≠ 0) (fun ε hε => by
       filter_upwards [h ε hε] with i hi k hk
@@ -256,9 +261,19 @@ noncomputable def supp_karoubiFiltration (S : Set X) {S' : Set X}
       rw [← h]
       exact congrArg AsymCat.mkHom (AsymPre.transpose_trunc _ _).symm
 
-/-- Non-vacuity: the support filtration of `𝒜_∅ ⊂ 𝒜_S`. -/
-private noncomputable def supp_karoubiFiltration_empty (S : Set X) :
-    KaroubiFiltration (suppIn (G := G) S (∅ : Set X)) :=
-  supp_karoubiFiltration S fun _ _ h => h.elim
+/-- The trivial action of `C_2` on a point (for the non-vacuity witness). -/
+private abbrev unitAction : AddAction (ZMod 2) Unit where
+  vadd _ x := x
+  zero_vadd _ := rfl
+  add_vadd _ _ _ := rfl
+
+attribute [local instance] unitAction
+
+/-- Non-vacuity: the support filtration of `𝒜_X ⊂ 𝒜_X` for `X` a point (trivial, isometric
+action of `C_2`). -/
+private noncomputable def supp_karoubiFiltration_unit :
+    KaroubiFiltration (suppIn (G := GroupSeq.trivial 2) (Set.univ : Set Unit) Set.univ) :=
+  letI : IsIsometricVAdd (ZMod 2) Unit := ⟨fun _ => isometry_subsingleton⟩
+  supp_karoubiFiltration _ fun _ _ _ => Set.mem_univ _
 
 end HSP

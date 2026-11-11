@@ -8,7 +8,7 @@ lean: HSP.LocalDatum.dT
 
 # The orbit metric on the control space
 
-For a local datum, define $d_T(\pi z,\pi w)=\inf_{b\in H_1}d_1(z,b\cdot w)$ for $z,w\in Z^+$. The infimum is a minimum because $H_1$ is compact, and the value does not depend on the representatives $z,w$, because $d_1$ is $\mathbb Z_p$-invariant and $\mathbb Z_p$ is abelian.
+For a local datum, define $d_T(\pi z,\pi w)=\inf_{b\in H_1}d_1(z,b\cdot w)$ for $z,w\in Z^+$. The value does not depend on the representatives $z,w$, because $d_1$ is $\mathbb Z_p$-invariant and $\mathbb Z_p$ is abelian.
 
 ## Sources
 

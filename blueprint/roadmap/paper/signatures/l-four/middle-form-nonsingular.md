@@ -2,6 +2,8 @@
 article_id: af_e40f7bb75496ea911cd28837
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.middleForm_nonsingular
 ---
 
 # The middle form is nonsingular, symmetric and invariant
