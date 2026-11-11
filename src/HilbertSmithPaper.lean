@@ -297,8 +297,10 @@ import HilbertSmithPaper.Evaluation.ExcisiveIntersectionQuotient
 import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.GermHomotopy
 import HilbertSmithPaper.Evaluation.LabelledModel
+import HilbertSmithPaper.Evaluation.PinchEvaluation
 import HilbertSmithPaper.Evaluation.ScalarComponentProjection
 import HilbertSmithPaper.Evaluation.TestMapToPinch
+import HilbertSmithPaper.Evaluation.TheoremB
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
@@ -362,6 +364,7 @@ import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
+import HilbertSmithPaper.LTheory.Base.Groups.LpMapBiprod
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapComp
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapId
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapUnitary

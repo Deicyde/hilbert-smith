@@ -1,13 +1,15 @@
 ---
 article_id: af_da20b57f3aab6a4e526b9c7d
-declaration: lemma
+declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.Evaluation.iterCut_pinch
 ---
 # Evaluation at the cubical pinch
 
 Let $n\ge1$, $R>0$ and $0<s<R/\sqrt n$, let $\kappa$ be the [cubical pinch](cubical-pinch.md) for $n$ and $s$, and let $\Delta_{\mathbf 1}$ be the [scalar iterated cut](../corner/theorem/scalar-iterated-cut.md) for $n$, $R$ and $s$, with the [cut sets](../corner/cut-sets.md) $A_m,B_m,Y_m$, $y_\pm$ for $n$ and $s$ and the [exterior](../corner/exterior.md) $Z_0$ for $n$ and $R$. Then
 $$\Delta_{\mathbf 1}\mathfrak m_\kappa=\varepsilon\,q_*\mathrm{cls}[\mathbf P],\qquad\varepsilon=(-1)^{n(n+1)/2},$$
-where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) and $\mathbf P\in\mathcal P_{\mathbf 1}$ is the [constant sequence](constant-cp2-sequence.md) $(P,\varphi_P)$ in the [sequence category](../categories/asymptotic/point-sequence-category.md), with $q$ the quotient functor to the [point category](../categories/asymptotic/point-quotient.md).
+where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) and $\mathbf P\in\mathcal P_{\mathbf 1}$ is the [constant sequence](constant-cp2-sequence.md) $(P,\varphi_P)$ in the [sequence category](../categories/asymptotic/point-sequence-category.md), with $q$ the quotient functor to the [point category](../categories/asymptotic/point-quotient.md). The class $\mathfrak m_\kappa$ is formed from a local datum $A$ at the prime $p$, and the identity holds for every such $A$.
 
 *Proof sketch.* Label every cell $b$ by $\kappa(x_b)$, and let $Q^{(m)}_i$ be the [pinch faces](pinch-faces.md).
 1. Put $E_0=(D_i,\varphi_i)_i$, the [labelled model](labelled-model.md), and $E_m=(\partial Q^{(m)}_i,\varphi_{\partial Q^{(m)}_i})_i$ for $1\le m\le n$. By [block pairs in the asymptotic category](../chain-models/blocks/block-pair-asymptotic.md) for $X=S^n$ and [pinch labels](pinch-labels.md) (2), the block pairs $(\partial Q^{(m)}_i\to Q^{(m)}_i)_i$ form a strict $(N-m+1)$-dimensional pair in $\mathcal A_{B_m}$ with boundary $E_m$ in $\mathcal A_{Y_m}$. So $E_m$ is a strict $(N-m)$-dimensional Poincaré complex in $\mathcal A_{Y_m}$. Classes of these strict complexes are taken through the [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md) $M\mapsto(M,1)$, as in the definition of $\mathfrak m$.
@@ -28,6 +30,10 @@ where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) and $\mathbf P
 - [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)
 - [Sequence category](../categories/asymptotic/point-sequence-category.md)
 - [Point category](../categories/asymptotic/point-quotient.md)
+- [The quotient functor of the point category](../categories/asymptotic/point-quotient-functor.md)
+- [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
+- [The class map](../l-theory/ultimate/groups/ultimate-cls.md)
+- [Embedding into the idempotent completion](../l-theory/base/categories/karoubi-embedding.md)
 ## Proof depends on
 - [Labelled model](labelled-model.md)
 - [Pinch faces](pinch-faces.md)
@@ -47,4 +53,3 @@ where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) and $\mathbf P
 - [Support of the whole space](../categories/supports/support-whole.md)
 - [Exterior quotient](../categories/supports/exterior-quotient.md)
 - [Functoriality on ultimate L](../l-theory/ultimate/groups/induced-map-comp.md)
-- [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md)
