@@ -128,7 +128,8 @@ private def relabelHom {P Q : AsymCat G X} (hP : supp (S : Set X) P) (hQ : supp 
     refine (prop_val _ _ _).trans_le ((prop_relabel_le (P.as.label i)
       (Subtype.val ∘ (AsymPre.relabelObj ρ P.as).label i) (Q.as.label i)
       (Subtype.val ∘ (AsymPre.relabelObj ρ Q.as).label i) _).trans ?_)
-    refine add_le_add (add_le_add le_rfl (Finset.sup_le fun b _ => ?_)) (Finset.sup_le fun b _ => ?_)
+    refine add_le_add (add_le_add le_rfl (Finset.sup_le fun b _ => ?_))
+      (Finset.sup_le fun b _ => ?_)
     · simp only [Function.comp, AsymPre.label, AsymPre.relabelObj, SubAddAction.val_vadd,
         nndist_vadd]
       exact Finset.le_sup (f := fun k => nndist (P.as.x i k) (ρ (P.as.x i k) : X))
