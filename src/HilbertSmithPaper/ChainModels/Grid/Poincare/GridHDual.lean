@@ -2,6 +2,8 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Poincare.IdDualDeg0
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleADual
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
 
 /-!
 # The dual grid homotopy

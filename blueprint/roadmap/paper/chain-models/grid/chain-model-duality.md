@@ -19,6 +19,10 @@ where $p_j=1-\dim x_j$ is the degree of $\varphi^s(x_j^*)$. The factor $\varphi_
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: the cubical tensor form.
 ## Depends on
+- [The circle complex](cubical/circle-complex.md)
+- [The circle complex vanishes in negative degrees](cubical/circle-dim-neg.md)
+- [The unit complex](cubical/unit-complex.md)
+- [Cubical torus grid](cubical/cubical-torus-grid.md)
 - [Product of structures in explicit bases](tensor/structure-products/based-str-prod.md), [product of duality maps in explicit bases](tensor/structure-products/based-dual-prod.md)
 - [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
 - [symmetric circle structure](poincare/circle-data/circle-phi-sym.md), [circle inverse](poincare/circle-data/circle-b.md)

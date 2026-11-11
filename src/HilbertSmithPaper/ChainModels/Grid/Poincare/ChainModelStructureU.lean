@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridStructureU
 import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 
 /-!
 # The unsymmetrized structure of the chain model

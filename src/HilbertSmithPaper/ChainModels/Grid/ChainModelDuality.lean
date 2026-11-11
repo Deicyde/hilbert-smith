@@ -7,6 +7,10 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedDualProd
 import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.UnitComplex
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
 
 /-!
 # Chain-model duality

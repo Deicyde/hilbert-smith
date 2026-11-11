@@ -14,6 +14,7 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer r
 
 ## Depends on
 
+- [Grid cubes](../chain-models/grid/cubical/grid-cube.md)
 - [Fixed local data](../local-data/control/fixed-local-data.md)
 - [Torus test map](../chain-models/approximations/torus-test-map.md)
 - [Chain model](../chain-models/grid/chain-model.md)

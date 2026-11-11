@@ -19,6 +19,10 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 
 ## Depends on
 
+- [The circle complex](../cubical/circle-complex.md)
+- [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
+- [The unit complex](../cubical/unit-complex.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [Chain-model duality](../chain-model-duality.md)
 
 ## Proof depends on

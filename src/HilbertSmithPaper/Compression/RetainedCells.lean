@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.LocalData.Control.FixedLocalData
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 
 /-!
 # Retained and discarded cells

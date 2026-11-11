@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 
 /-!
 # Grid boxes

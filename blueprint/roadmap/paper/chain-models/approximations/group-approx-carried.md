@@ -14,6 +14,9 @@ For every $g\in G_i$, $a_g=a^T_g\otimes1_P$ where $a^T_g$ is a chain map of $C(k
 ## Sources
 - New.
 ## Depends on
+- [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [The cube of a basis vector](../grid/cubical/grid-cell.md)
+- [Augmentation of the grid complex](../grid/cubical/grid-aug.md)
 - [Completed representative](maps/completed-rep.md)
 - [Group approximations](group-approx.md), [chain approximations exist](chain-approx-exists.md), [tensoring with the identity of the cells of CP^2](tensor-one-p.md)
 ## Proof depends on
