@@ -9,7 +9,7 @@ lean: HSP.intrinsicInterior.continuousSMul
 
 # The restricted action is continuous
 
-Let a group $G$, with a topology, act jointly continuously on a topological space $M$ and let $n\in\mathbb{N}$. Then the restricted action of $G$ on $M^\circ_n$ is jointly continuous.
+Let a group $G$, with a topology, act jointly continuously on a topological space $M$ and let $n\in\mathbb{N}$. Then the restricted action of $G$ on $M^\circ_n$ is jointly continuous. The same holds for an action of an additive group.
 
 *Proof sketch.* Joint continuity passes to the invariant subspace $M^\circ_n$.
 

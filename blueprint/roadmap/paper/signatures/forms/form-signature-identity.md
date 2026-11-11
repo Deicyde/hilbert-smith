@@ -19,5 +19,9 @@ Let $(W,b,\rho)$ be as in [the existence lemma](../l-four/signature-splitting-ex
 
 ## Depends on
 
+- [The equivariant signature](form-signature.md)
 - [Invariant signature splittings exist](../l-four/signature-splitting-exists.md)
+
+## Proof depends on
+
 - [Independence](../l-four/signature-splitting-independence.md)

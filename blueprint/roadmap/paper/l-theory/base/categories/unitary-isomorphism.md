@@ -1,7 +1,9 @@
 ---
 article_id: af_78d3a49ee3d1dcfbdbac21df
-declaration: def
+declaration: structure
 origin: background
+statement: formalized
+lean: HSP.DualFunctor.UnitaryIso
 ---
 
 # Unitary natural isomorphism
