@@ -5,12 +5,15 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronDual
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
-import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridFundamental
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleFundamental
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleAug
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Aug
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Fundamental
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
 
 /-!
 # The chain model is Poincaré: part 4

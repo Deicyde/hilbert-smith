@@ -124,8 +124,13 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.ChainModelEstimates
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
-import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
-import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Aug
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Cells
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Fundamental
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Inverse
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleAug
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg

@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug
-import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Aug
 
 /-!
 # The augmentation of the chain model

@@ -3,11 +3,12 @@ import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCell
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridFundamental
-import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
-import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Fundamental
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
 
 /-!
 # Chain model

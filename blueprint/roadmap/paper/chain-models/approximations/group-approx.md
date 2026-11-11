@@ -12,4 +12,4 @@ For $g\in G_i$, put $a_g=a_{g,i}=1$ if $g=0$, and $a_{g,i}=a_i[\widehat{r_i(g)}]
 ## Depends on
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
 - [The track family contains the completed maps and the identity](maps/track-family-members.md)
-- [Chain approximation](chain-approx.md), [completed map](completed-map.md), [chain model](../grid/chain-model.md), [cells of CP^2](../grid/cp2-cells.md), [tensoring with the identity of the cells of CP^2](tensor-one-p.md)
+- [Chain approximation](chain-approx.md), [completed map](completed-map.md), [chain model](../grid/chain-model.md), [cells of CP^2](../grid/cp2/cp2-cells.md), [tensoring with the identity of the cells of CP^2](tensor-one-p.md)

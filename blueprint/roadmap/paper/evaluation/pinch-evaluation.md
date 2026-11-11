@@ -25,7 +25,7 @@ where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) and $\mathbf P
 - [The exterior](../corner/exterior.md)
 - [Labelled-model class](germ.md)
 - [Cubical pinch](cubical-pinch.md)
-- [Cells of CP^2](../chain-models/grid/cp2-cells.md)
+- [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)
 - [Sequence category](../categories/asymptotic/point-sequence-category.md)
 - [Point category](../categories/asymptotic/point-quotient.md)
 ## Proof depends on
