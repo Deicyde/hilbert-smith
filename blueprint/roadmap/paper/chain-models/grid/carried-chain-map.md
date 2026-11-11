@@ -2,6 +2,8 @@
 article_id: af_92510dc27f9e1146b9f59501
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.exists_carried_chainMap
 ---
 # Carried chain maps
 

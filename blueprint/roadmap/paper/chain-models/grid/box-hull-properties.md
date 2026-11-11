@@ -2,6 +2,8 @@
 article_id: af_935a8f84cf2a6a851f88d17f
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ChainModels.boxHull_properties
 ---
 # Box hull properties
 
