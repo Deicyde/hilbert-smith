@@ -1,5 +1,7 @@
 import Mathlib
-import HilbertSmithPaper.Categories.Asymptotic.AsymptoticCategory
+import HilbertSmithPaper.Categories.Asymptotic.Structure.Biproducts
+import HilbertSmithPaper.Categories.Asymptotic.Structure.ClassEq
+import HilbertSmithPaper.Categories.Asymptotic.Structure.MorphismPropagation
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 
@@ -31,22 +33,23 @@ def transpose {M N : AsymPre G X} (u : M ⟶ N) : N ⟶ M :=
 @[simp] theorem coord_transpose {M N : AsymPre G X} (u : M ⟶ N) (i : ℕ) :
     coord (transpose u) i = DualCat.dualHom (coord u i) := rfl
 
-theorem transpose_id (M : AsymPre G X) : transpose (𝟙 M) = 𝟙 M :=
+private theorem transpose_id (M : AsymPre G X) : transpose (𝟙 M) = 𝟙 M :=
   hom_ext fun i => DualCat.dualHom_id (M.free i)
 
-theorem transpose_comp {M N P : AsymPre G X} (u : M ⟶ N) (v : N ⟶ P) :
+private theorem transpose_comp {M N P : AsymPre G X} (u : M ⟶ N) (v : N ⟶ P) :
     transpose (u ≫ v) = transpose v ≫ transpose u :=
   hom_ext fun i => DualCat.dualHom_comp (coord u i) (coord v i)
 
-theorem transpose_add {M N : AsymPre G X} (u v : M ⟶ N) :
+private theorem transpose_add {M N : AsymPre G X} (u v : M ⟶ N) :
     transpose (u + v) = transpose u + transpose v :=
   hom_ext fun i => DualCat.dualHom_add (coord u i) (coord v i)
 
-theorem transpose_smul {M N : AsymPre G X} (c : ℚ) (u : M ⟶ N) :
+private theorem transpose_smul {M N : AsymPre G X} (c : ℚ) (u : M ⟶ N) :
     transpose (c • u) = c • transpose u :=
   hom_ext fun i => DualCat.dualHom_smul c (coord u i)
 
-theorem transpose_transpose {M N : AsymPre G X} (u : M ⟶ N) : transpose (transpose u) = u :=
+private theorem transpose_transpose' {M N : AsymPre G X} (u : M ⟶ N) :
+    transpose (transpose u) = u :=
   hom_ext fun i => FreeCat.hom_ext (Matrix.transpose_transpose (FreeCat.mat (coord u i)))
 
 end AsymPre
@@ -54,12 +57,12 @@ end AsymPre
 namespace AsymCat
 
 /-- The dual `[u]^* = [uᵀ]` of a morphism. -/
-def dualHom' {P Q : AsymCat G X} (f : P ⟶ Q) : Q ⟶ P :=
+private def dualHom' {P Q : AsymCat G X} (f : P ⟶ Q) : Q ⟶ P :=
   Quot.lift (fun u : P.as ⟶ Q.as => mkHom (AsymPre.transpose u)) (fun a b h => by
     rw [HomRel.compClosure_iff_self] at h
     exact (mkHom_eq_iff _ _).2 (h.mono fun i hi => by simp [hi])) f
 
-theorem dualHom'_mkHom {M N : AsymPre G X} (u : M ⟶ N) :
+private theorem dualHom'_mkHom {M N : AsymPre G X} (u : M ⟶ N) :
     dualHom' (mkHom u) = mkHom (AsymPre.transpose u) := rfl
 
 private theorem mkHom_add {M N : AsymPre G X} (u v : M ⟶ N) :
@@ -96,7 +99,7 @@ instance dualCat : DualCat (AsymCat G X) where
   dual_dual _ := rfl
   dualHom_dualHom f := by
     obtain ⟨u, rfl⟩ := mkHom_surjective f
-    rw [dualHom'_mkHom, dualHom'_mkHom, AsymPre.transpose_transpose, eqToHom_refl,
+    rw [dualHom'_mkHom, dualHom'_mkHom, AsymPre.transpose_transpose', eqToHom_refl,
       eqToHom_refl, Category.id_comp, Category.comp_id]
   dualHom_zero := by
     intro P Q

@@ -19,3 +19,4 @@ Let $\mathbf G=(G_i,\chi_i)$ be a [group sequence](group-sequence.md). The duali
 - [Free category of a finite group](free-category.md)
 - [Group sequence](group-sequence.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Objects of rank zero are zero](free-zero.md)

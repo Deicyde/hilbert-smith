@@ -23,3 +23,7 @@ The statement needs neither that $S$ is closed nor that $X$ is compact.
 
 - [Forgetting the group](forget-group.md)
 - [Support subcategory](../supports/support-subcategory.md)
+
+## Proof depends on
+
+- [The group enumeration](group-enumeration.md)

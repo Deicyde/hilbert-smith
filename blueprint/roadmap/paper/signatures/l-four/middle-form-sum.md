@@ -21,4 +21,4 @@ For strict 4-dimensional symmetric Poincaré complexes $(C,\varphi)$ and $(C',\v
 - [The middle form](middle-form.md)
 - [The map on real cohomology induced by a chain map](../real/real-cohomology-map.md)
 - [The action of the group on real cohomology](../real/real-cohomology-action.md)
-- [Sums of Poincaré complexes](../../l-theory/base/pairs/sum-of-poincare.md)
+- [The sum of Poincaré complexes](../../l-theory/base/pairs/poincare-sum.md)

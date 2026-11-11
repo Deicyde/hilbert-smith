@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.AsymptoticDuality
+import HilbertSmithPaper.Categories.Asymptotic.Structure.ClassSurjective
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 
 /-!
@@ -12,7 +13,7 @@ For an equivariant continuous map `f : X → X'` of compact metric `C_p`-spaces,
 Lean encoding. Equivariance gives `λ'_i = f ∘ λ_i` for the labels, and uniform continuity of `f`
 (from compactness of `X`) gives `prop(f_* u_i) → 0` when `prop(u_i) → 0`. On sequences
 `HSP.AsymPre.push` keeps the matrices; it respects eventual equality, so it descends to the
-quotient. `HSP.push f` is the duality functor, with `ξ = id`, strict (`HSP.push_isStrict`).
+quotient. `HSP.push f` is the duality functor, with `ξ = id`, strict.
 Neither isometry of the actions nor compactness of `X'` is needed.
 -/
 
@@ -47,18 +48,17 @@ namespace AsymPre
 variable (f : X → X')
 
 /-- The pushed-forward object `(n_i, f ∘ x_i)`. -/
-def pushObj (M : AsymPre G X) : AsymPre G X' := ⟨M.n, fun i => f ∘ M.x i⟩
+private def pushObj (M : AsymPre G X) : AsymPre G X' := ⟨M.n, fun i => f ∘ M.x i⟩
 
 omit [MetricSpace X] [MetricSpace X'] in
-theorem label_pushObj (hfe : ∀ (c : ZMod p) (x : X), f (c +ᵥ x) = c +ᵥ f x)
+private theorem label_pushObj (hfe : ∀ (c : ZMod p) (x : X), f (c +ᵥ x) = c +ᵥ f x)
     (M : AsymPre G X) (i : ℕ) : (pushObj f M).label i = f ∘ M.label i :=
   funext fun _ => (hfe _ _).symm
 
 variable {f}
 
 /-- Pushforward on sequences: the matrices are unchanged. -/
-@[simps]
-def push (hf : Continuous f) (hfe : ∀ (c : ZMod p) (x : X), f (c +ᵥ x) = c +ᵥ f x)
+private def push (hf : Continuous f) (hfe : ∀ (c : ZMod p) (x : X), f (c +ᵥ x) = c +ᵥ f x)
     [CompactSpace X] : AsymPre G X ⥤ AsymPre G X' where
   obj M := pushObj f M
   map {M N} u := homMk (fun i => coord u i) (by
@@ -78,19 +78,19 @@ variable {f : X → X'} (hf : Continuous f) (hfe : ∀ (c : ZMod p) (x : X), f (
   [CompactSpace X]
 
 /-- The underlying functor of the pushforward `f_* : 𝒜_𝐆(X) ⥤ 𝒜_𝐆(X')`. -/
-def pushFunctor : AsymCat G X ⥤ AsymCat G X' :=
+private def pushFunctor : AsymCat G X ⥤ AsymCat G X' :=
   CategoryTheory.Quotient.lift (asymRel G X)
     (AsymPre.push hf hfe ⋙ Quotient.functor (asymRel G X')) fun _ _ _ _ h =>
       CategoryTheory.Quotient.sound _ (h.mono fun _ h => h)
 
-instance : (pushFunctor (G := G) hf hfe).Additive where
+private instance : (pushFunctor (G := G) hf hfe).Additive where
   map_add {P Q f g} := by
     obtain ⟨u, rfl⟩ := AsymCat.mkHom_surjective f
     obtain ⟨v, rfl⟩ := AsymCat.mkHom_surjective g
     rw [← (Quotient.functor (asymRel G X)).map_add]
     rfl
 
-instance : (pushFunctor (G := G) hf hfe).Linear ℚ where
+private instance : (pushFunctor (G := G) hf hfe).Linear ℚ where
   map_smul {P Q} f c := by
     obtain ⟨u, rfl⟩ := AsymCat.mkHom_surjective f
     rw [← (Quotient.functor (asymRel G X)).map_smul]
@@ -110,6 +110,6 @@ def push : DualFunctor (AsymCat G X) (AsymCat G X') where
     exact DualCat.dualHom_id _
 
 /-- The pushforward is a strict duality functor. -/
-theorem push_isStrict : (push (G := G) hf hfe).IsStrict := fun _ => ⟨rfl, rfl⟩
+private theorem push_isStrict : (push (G := G) hf hfe).IsStrict := fun _ => ⟨rfl, rfl⟩
 
 end HSP

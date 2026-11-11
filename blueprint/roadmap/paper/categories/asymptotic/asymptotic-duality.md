@@ -20,7 +20,11 @@ $\mathcal A_{\mathbf G}(X)$ is a [strict duality category](../../l-theory/base/c
 
 - [Asymptotic category](asymptotic-category.md)
 - [Strict duality category](../../l-theory/base/categories/duality-category.md)
+- [The asymptotic category has finite biproducts](structure/biproducts.md)
 
 ## Proof depends on
 
 - [Propagation of a transpose](prop-transpose.md)
+- [Equality of classes](structure/class-eq.md)
+- [Every morphism is a class](structure/class-surjective.md)
+- [Morphisms have propagation tending to zero](structure/morphism-propagation.md)

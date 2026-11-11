@@ -10,8 +10,7 @@ import HilbertSmithPaper.LocalData.Control.ControlSpaceCompact
 For fixed local data with control space `T` and start index `i₀`, the compressed complex `C` has,
 in each degree, the object of `𝒜_𝟏(T × Sⁿ)` whose based module `C_i` is spanned by the retained
 cells `Ret_i` of `D_i`, with the control labels `λ(b) = (π(x̃_b), s_b)`, for `i ≥ i₀`, and is zero
-for `i < i₀`. `pr_i : D_i → C_i` and `in_i : C_i → D_i` are the based projection and inclusion,
-and `Q_i = 1 - in_i pr_i`.
+for `i < i₀`.
 
 ## Encoding
 
@@ -19,12 +18,11 @@ and `Q_i = 1 - in_i pr_i`.
   `(D_i)_r` for `i ≥ i₀`, else `0`. For `i ≥ i₀`, `compressedCell F hi r b` is the `b`-th retained
   cell, in increasing order (`Finset.orderEmbOfFin`); it lies in `𝓑_i(t')` by buffers (1)
   (`startIndex_spec`), so its control label `controlLabel` is defined.
-* `compressedPre F r` is the object before the quotient (`AsymPre`) and `compressed F r` (the
-  declaration of the article) its class in `AsymCat (GroupSeq.trivial p) (T × Sⁿ)`, `T × Sⁿ` with
+* The object before the quotient (`AsymPre`) is private; `compressed F r` (the declaration of
+  the article) is its class in `AsymCat (GroupSeq.trivial p) (T × Sⁿ)`, `T × Sⁿ` with
   the product metric and action.
-* `retainedProj F i r` (`pr_i`) and `retainedInc F i r` (`in_i`) are the based projection and
-  inclusion matrices, and `discardProj F i r` is `Q_i = 1 - in_i pr_i`; on cochains `in_i^*`,
-  `pr_i^*`, `Q_i^*` are their transposes.
+* The rank of `C_i` is `(compressed F r).as.n i`, which is `compressedDim F i r` by definition.
+* `pr_i`, `in_i` and `Q_i` are the retained projection (`retainedProj`).
 -/
 
 open CategoryTheory
@@ -40,7 +38,7 @@ open Classical in
 noncomputable def compressedDim (F : FixedLocalData p n D ρplus) (i : ℕ) (r : ℤ) : ℕ :=
   if startIndex F ≤ i then (retainedCells F i r).card else 0
 
-lemma compressedDim_of_le (F : FixedLocalData p n D ρplus) {i : ℕ} (hi : startIndex F ≤ i)
+private lemma compressedDim_of_le (F : FixedLocalData p n D ρplus) {i : ℕ} (hi : startIndex F ≤ i)
     (r : ℤ) : compressedDim F i r = (retainedCells F i r).card := by
   simp [compressedDim, hi]
 
@@ -50,7 +48,7 @@ noncomputable def compressedCell (F : FixedLocalData p n D ρplus) {i : ℕ}
     Fin ((chainModel F.toLocalDatum i).X r).dim :=
   (retainedCells F i r).orderEmbOfFin (compressedDim_of_le F hi r).symm b
 
-lemma compressedCell_buffered (F : FixedLocalData p n D ρplus) {i : ℕ}
+private lemma compressedCell_buffered (F : FixedLocalData p n D ρplus) {i : ℕ}
     (hi : startIndex F ≤ i) (r : ℤ) (b : Fin (compressedDim F i r)) :
     compressedCell F hi r b ∈
       bufferedCells F.toLocalDatum F.ρ (chainModelLabel F.toLocalDatum i r) ((F.t + F.u) / 2) :=
@@ -58,7 +56,7 @@ lemma compressedCell_buffered (F : FixedLocalData p n D ρplus) {i : ℕ}
     ((mem_retainedCells F i r _).1 (Finset.orderEmbOfFin_mem _ _ b))
 
 /-- The control label `λ(b) = (π(x̃_b), s_b)` of the `b`-th retained cell, for `i ≥ i₀`. -/
-noncomputable def compressedLabel (F : FixedLocalData p n D ρplus) {i : ℕ}
+private noncomputable def compressedLabel (F : FixedLocalData p n D ρplus) {i : ℕ}
     (hi : startIndex F ≤ i) (r : ℤ) (b : Fin (compressedDim F i r)) :
     F.T × Corner.RoundSphere n :=
   controlLabel F.toLocalDatum F.ρ_pos F.ρ_lt (chainModelLabel F.toLocalDatum i r) ((F.t + F.u) / 2)
@@ -66,7 +64,7 @@ noncomputable def compressedLabel (F : FixedLocalData p n D ρplus) {i : ℕ}
 
 open Classical in
 /-- The degree-`r` part of the compressed complex, before the quotient. -/
-noncomputable def compressedPre (F : FixedLocalData p n D ρplus) (r : ℤ) :
+private noncomputable def compressedPre (F : FixedLocalData p n D ρplus) (r : ℤ) :
     AsymPre (GroupSeq.trivial p) (F.T × Corner.RoundSphere n) where
   n i := compressedDim F i r
   x i b := if hi : startIndex F ≤ i then compressedLabel F hi r b else
@@ -77,23 +75,5 @@ the retained cells of `(D_i)_r` with their control labels for `i ≥ i₀`, and 
 noncomputable def compressed (F : FixedLocalData p n D ρplus) (r : ℤ) :
     AsymCat (GroupSeq.trivial p) (F.T × Corner.RoundSphere n) :=
   ⟨compressedPre F r⟩
-
-open Classical in
-/-- The based projection `pr_i : (D_i)_r → (C_i)_r`. -/
-noncomputable def retainedProj (F : FixedLocalData p n D ρplus) (i : ℕ) (r : ℤ) :
-    Matrix (Fin (compressedDim F i r)) (Fin ((chainModel F.toLocalDatum i).X r).dim) ℚ :=
-  Matrix.of fun b a => if hi : startIndex F ≤ i then (if a = compressedCell F hi r b then 1 else 0)
-    else 0
-
-/-- The based inclusion `in_i : (C_i)_r → (D_i)_r`. -/
-noncomputable def retainedInc (F : FixedLocalData p n D ρplus) (i : ℕ) (r : ℤ) :
-    Matrix (Fin ((chainModel F.toLocalDatum i).X r).dim) (Fin (compressedDim F i r)) ℚ :=
-  (retainedProj F i r).transpose
-
-/-- `Q_i = 1 - in_i pr_i` on `(D_i)_r`. -/
-noncomputable def discardProj (F : FixedLocalData p n D ρplus) (i : ℕ) (r : ℤ) :
-    Matrix (Fin ((chainModel F.toLocalDatum i).X r).dim)
-      (Fin ((chainModel F.toLocalDatum i).X r).dim) ℚ :=
-  1 - retainedInc F i r * retainedProj F i r
 
 end HSP.Compression

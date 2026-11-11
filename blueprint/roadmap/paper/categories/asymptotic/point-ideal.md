@@ -20,3 +20,7 @@ A morphism $(u_i):M\to M'$ of the [sequence category](point-sequence-category.md
 ## Depends on
 
 - [Finite-support subcategory](eventually-zero-subcategory.md)
+
+## Proof depends on
+
+- [Objects of rank zero are zero](free-zero.md)

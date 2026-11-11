@@ -37,7 +37,8 @@ private theorem forgetControl_exterior (P : AsymCat G (T × RoundSphere n))
 
 /-- The induced functor with its two properties (strictness and `U^𝐆 ∘ q = q' ∘ U^𝐆_c`). -/
 private noncomputable def scalarForgetAux :=
-  extFunctor (forgetControl (G := G) T (RoundSphere n)) (forgetControl_isStrict T _)
+  extFunctor (forgetControl (G := G) T (RoundSphere n))
+    (fun _ => ⟨rfl, by simp [forgetControl, DualFunctor.comp, push, forgetGroup]; rfl⟩)
     (forgetControl_exterior n R T G)
 
 /-- **Forgetting to the scalar exterior quotient**,
@@ -48,11 +49,11 @@ noncomputable def scalarForget :
   (scalarForgetAux n R T G).1
 
 /-- `U^𝐆` is a strict duality functor. -/
-theorem scalarForget_isStrict : (scalarForget n R T G).IsStrict :=
+private theorem scalarForget_isStrict : (scalarForget n R T G).IsStrict :=
   (scalarForgetAux n R T G).2.1
 
 /-- `U^𝐆 ∘ q = q' ∘ U^𝐆_c`. -/
-theorem scalarForget_comp_q :
+private theorem scalarForget_comp_q :
     FiltQuot.functor (supp ((Set.univ : Set T) ×ˢ exterior n R)) ⋙
         (scalarForget n R T G).toFunctor =
       (forgetControl (G := G) T (RoundSphere n)).toFunctor ⋙

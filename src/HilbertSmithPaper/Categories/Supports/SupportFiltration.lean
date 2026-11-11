@@ -11,6 +11,7 @@ import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionTra
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionRows
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
+import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
 
 /-!
 # Support filtration

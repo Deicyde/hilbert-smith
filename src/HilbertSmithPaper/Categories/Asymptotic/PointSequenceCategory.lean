@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
-import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
+import HilbertSmithPaper.Categories.Asymptotic.FreeZero
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 
 /-!
@@ -99,9 +99,9 @@ theorem binaryBicone_total (X Y : PCat G) :
 /-- The zero sequence is a zero object. -/
 theorem isZero_zero : IsZero (fun _ => ⟨0⟩ : PCat G) :=
   ⟨fun _ => ⟨⟨⟨fun _ => 0⟩, fun _ => funext fun i =>
-      (FreeCat.isZero_zero (G := G.G i)).eq_of_src _ _⟩⟩,
+      (FreeCat.isZero_of_n_eq_zero (G := G.G i) ⟨0⟩ rfl).eq_of_src _ _⟩⟩,
     fun _ => ⟨⟨⟨fun _ => 0⟩, fun _ => funext fun i =>
-      (FreeCat.isZero_zero (G := G.G i)).eq_of_tgt _ _⟩⟩⟩
+      (FreeCat.isZero_of_n_eq_zero (G := G.G i) ⟨0⟩ rfl).eq_of_tgt _ _⟩⟩⟩
 
 instance : HasZeroObject (PCat G) := isZero_zero.hasZeroObject
 
@@ -137,22 +137,23 @@ instance dualCat : DualCat (PCat G) where
 
 /-- The coordinate functor `π_i : 𝒫_𝐆 → Free(ℚ[G_i])`. -/
 @[simps]
-def projFunctor (G : GroupSeq p) (i : ℕ) : PCat G ⥤ FreeCat (G.G i) where
+private def projFunctor (G : GroupSeq p) (i : ℕ) : PCat G ⥤ FreeCat (G.G i) where
   obj X := X.coord i
   map f := homCoord f i
 
-instance (i : ℕ) : (projFunctor G i).Additive where
-instance (i : ℕ) : (projFunctor G i).Linear ℚ where
+private instance (i : ℕ) : (projFunctor G i).Additive where
+private instance (i : ℕ) : (projFunctor G i).Linear ℚ where
 
 /-- The coordinate functor `π_i : 𝒫_𝐆 → Free(ℚ[G_i])` as a duality functor, with `ξ = id`. -/
-def proj (G : GroupSeq p) (i : ℕ) : DualFunctor (PCat G) (FreeCat (G.G i)) where
+private def proj (G : GroupSeq p) (i : ℕ) : DualFunctor (PCat G) (FreeCat (G.G i)) where
   toFunctor := projFunctor G i
   ξ _ := Iso.refl _
   ξ_natural f := by simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]; rfl
-  ξ_dual M := by simp only [Iso.refl_hom, eqToHom_refl, Category.comp_id]; exact DualCat.dualHom_id _
+  ξ_dual M := by
+    simp only [Iso.refl_hom, eqToHom_refl, Category.comp_id]; exact DualCat.dualHom_id _
 
 /-- The coordinate functors are strict duality functors. -/
-theorem proj_isStrict (G : GroupSeq p) (i : ℕ) : (proj G i).IsStrict :=
+private theorem proj_isStrict (G : GroupSeq p) (i : ℕ) : (proj G i).IsStrict :=
   fun _ => ⟨rfl, rfl⟩
 
 end PCat

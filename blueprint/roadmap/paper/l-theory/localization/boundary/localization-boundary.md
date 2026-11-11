@@ -22,6 +22,7 @@ This definition rests on the open statement [Lifting](lift-to-pair.md), through 
 
 ## Depends on
 
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [U-pairs](u-pair.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Image of a pair with boundary in Kar U](image-pair.md)
