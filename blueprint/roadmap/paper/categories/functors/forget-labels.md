@@ -18,6 +18,6 @@ $\Phi:\mathcal A_{\mathbf G}(X)\to\mathcal V_{\mathbf G}$ is the strict duality 
 
 ## Depends on
 
-- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Asymptotic duality](../asymptotic/asymptotic-duality.md)
 - [Point category](../asymptotic/point-quotient.md)
 
