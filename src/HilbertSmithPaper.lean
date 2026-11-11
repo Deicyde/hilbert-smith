@@ -184,11 +184,14 @@ import HilbertSmithPaper.LTheory.Comparison.FreeComparison
 import HilbertSmithPaper.LTheory.Localization.Boundary.UPair
 import HilbertSmithPaper.LTheory.Localization.Boundary.UPairSum
 import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
+import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedClosure
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
+import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.BoxDual
+import HilbertSmithPaper.LTheory.Localization.Products.BoxPairingPow
 import HilbertSmithPaper.LTheory.Localization.Products.BoxProduct
 import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing

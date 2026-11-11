@@ -20,6 +20,7 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 
 ## Depends on
 
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 - [U-pairs](u-pair.md)
 - [Decorated objects](../decorations/decorated-object.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)

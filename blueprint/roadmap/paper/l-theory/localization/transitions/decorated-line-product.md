@@ -20,6 +20,7 @@ is a strict $(m+1)$-dimensional symmetric Poincaré complex in the duality categ
 
 ## Depends on
 
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 - [Product of a complex with the line](transition-complex.md)
 - [Products with the line are decorated](line-product-decorated.md)
 - [Decorated objects](../decorations/decorated-object.md)

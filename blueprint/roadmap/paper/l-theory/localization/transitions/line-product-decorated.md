@@ -21,6 +21,8 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 
 ## Depends on
 
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
+- [Box product on iterated bounded categories](../products/box-pairing-pow.md)
 - [Tensor product of complexes](../products/complex-product.md)
 - [The symmetric line](../products/symmetric-line.md)
 - [Decorated objects](../decorations/decorated-object.md)

@@ -6,6 +6,8 @@ article_id: af_ad12c56f44dfbed145f0c79e
 
 For an involution-invariant Karoubi filtration $\mathcal U\subset\mathcal A$: decorated objects of $\mathrm{Kar}(\mathcal A/\mathcal U)$ and the decorated L-groups $L^{\mathrm{im}}_k(\mathcal A/\mathcal U)=L_k(\mathrm{Dec}(\mathcal A/\mathcal U))$; the functors induced on quotients and their decorated maps; the quotient map into the decorated group and the map that forgets the decoration; and stabilization.
 
+- [Decorated objects of the completed quotient](decorated-predicate.md)
+- [Decorated objects are closed under sums and duals](decorated-closure.md)
 - [Decorated objects](decorated-object.md)
 - [Decorated quotient L-group](decorated-l-group.md)
 - [Complexes in a full subcategory](complex-in-subcategory.md)
