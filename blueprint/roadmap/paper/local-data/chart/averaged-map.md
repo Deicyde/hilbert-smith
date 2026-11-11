@@ -2,6 +2,8 @@
 article_id: af_8551d48a9bab0ff805fadf25
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.F₀
 ---
 
 # The averaged chart map

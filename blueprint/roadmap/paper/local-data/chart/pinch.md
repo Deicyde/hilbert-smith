@@ -2,11 +2,13 @@
 article_id: af_c811017e9bc5343476b40654
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.pinch
 ---
 
 # The pinch map
 
-Let $S^n=\mathbb R^n\cup\{\infty\}$ be the one-point compactification. For $\rho>0$, define $\sigma_\rho:S^n\to S^n$ by $\sigma_\rho(x)=x/(\rho-|x|)$ if $x\in\mathbb R^n$ and $|x|<\rho$, and $\sigma_\rho(x)=\infty$ otherwise (including $x=\infty$).
+Let $S^n=\mathbb R^n\cup\{\infty\}$ be the one-point compactification. For $\rho\in\mathbb R$ (it is used for $\rho>0$), define $\sigma_\rho:S^n\to S^n$ by $\sigma_\rho(x)=x/(\rho-|x|)$ if $x\in\mathbb R^n$ and $|x|<\rho$, and $\sigma_\rho(x)=\infty$ otherwise (including $x=\infty$).
 
 ## Sources
 

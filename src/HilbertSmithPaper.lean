@@ -3,6 +3,18 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
+import HilbertSmithPaper.LocalData.Chart.AveragedMap
+import HilbertSmithPaper.LocalData.Chart.LocalDatum
+import HilbertSmithPaper.LocalData.Chart.Pinch
+import HilbertSmithPaper.LocalData.Chart.PinchContinuous
+import HilbertSmithPaper.LocalData.Control.FixedLocalData
+import HilbertSmithPaper.LocalData.Control.ReductionKernel
+import HilbertSmithPaper.LocalData.Control.RepresentativeMap
+import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
+import HilbertSmithPaper.LocalData.Subgroups.FixedSets
+import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
+import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
+import HilbertSmithPaper.LocalData.Subgroups.SmallDisplacement
 
 /-!
 # The paper
