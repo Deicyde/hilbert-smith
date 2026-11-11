@@ -2,6 +2,9 @@
 article_id: af_1deb68c8670d900d04671d5e
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.K0.cls_eq_iff
 ---
 
 # Equality in $K_0$
