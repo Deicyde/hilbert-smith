@@ -1,7 +1,9 @@
 ---
 article_id: af_d0044cb1882e69bc18508fb4
-declaration: lemma
+declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.tail_lift_eventually
 ---
 
 # Lifts agree eventually
