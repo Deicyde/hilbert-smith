@@ -210,6 +210,7 @@ import HilbertSmithPaper.Compression.EndpointLemma
 import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.Compression.RetainedProjection
 import HilbertSmithPaper.Compression.StartIndex
+import HilbertSmithPaper.Compression.TheoremC
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Corner.Actions.GraphTypeAction
