@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.Compression.CompressedComplex
+import HilbertSmithPaper.Compression.RetainedProjection
 
 /-!
 # The discarded cells form a subcomplex
