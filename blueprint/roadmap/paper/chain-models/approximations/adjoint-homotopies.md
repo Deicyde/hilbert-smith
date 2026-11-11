@@ -17,6 +17,6 @@ Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$ ([chosen product homotopie
 - HS paper, Section 9; signs rechecked.
 ## Depends on
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
-- [Adjoint homotopy](adjoint-homotopy.md), [product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
+- [Adjoint homotopy](adjoint-homotopy.md), [product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/buffers/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
 ## Proof depends on
 - [graph type of approximations](approximations-graph-type.md), [Poincaré](../grid/chain-model-poincare.md)

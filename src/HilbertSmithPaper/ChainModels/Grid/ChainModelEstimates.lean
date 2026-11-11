@@ -1,4 +1,7 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Grid.BasedInclusion
+import HilbertSmithPaper.ChainModels.Grid.BufferedCells
+import HilbertSmithPaper.ChainModels.Grid.ControlLabels
 import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopy
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopy
@@ -24,8 +27,8 @@ types of the restrictions `w^{[v]}` for large `i`, and buffer commutation for la
 * `chainModelFamily A hρ hρ' i` is `𝒫_i`, with every map listed in each degree (each component
   for the elements `φ_i`, `U_g`, `V_g` of the structure complex), and the chosen
   `productHomotopy`, `isometryHomotopy`, `adjointHomotopy`.
-* Sphere propagation (`sphereProp`), restrictions (`restrict`, `bufferedSet`, `bufferedInc`),
-  control labels (`bufferedLabel`) and graph types (`Corner.IsGraphType`) are those of the
+* Sphere propagation (`sphereProp`), restrictions (`restrict`, `bufferedCells`, `basedInc`),
+  control labels (`controlLabel`) and graph types (`Corner.IsGraphType`) are those of the
   buffered restriction, for `f_T` of radius `0 < ρ < ρ₊`; `χ_i = ZMod.cast`.
 * `κ_i ≤ ε_i` is stated for every cube `c` of `C(k_i)`: `diam_S f_T(|c|) ≤ ε_i`.
 -/
@@ -126,13 +129,13 @@ theorem chainModel_estimates (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 <
       -- (4)
       (∀ v > 0, ∃ (i₀ : ℕ) (εv : ℕ → ℝ), Tendsto εv atTop (𝓝 0) ∧
         ∀ i ≥ i₀, ∀ w ∈ chainModelFamily A hρ hρ' i,
-          IsGraphType (bufferedLabel A hρ hρ' w.x v) (bufferedLabel A hρ hρ' w.x' v) w.c (εv i)
-            (restrict (bufferedSet A ρ w.x' v) (bufferedSet A ρ w.x v) w.u)) ∧
+          IsGraphType (controlLabel A hρ hρ' w.x v) (controlLabel A hρ hρ' w.x' v) w.c (εv i)
+            (restrict (bufferedCells A ρ w.x' v) (bufferedCells A ρ w.x v) w.u)) ∧
       -- (5)
       (∀ v v' : ℝ, 0 < v → v < v' → ∃ i₁ : ℕ, ∀ i ≥ i₁, ∀ w ∈ chainModelFamily A hρ hρ' i,
-        w.u * bufferedInc A ρ w.x v =
-          bufferedInc A ρ w.x' v' *
-            restrict (bufferedSet A ρ w.x' v') (bufferedSet A ρ w.x v) w.u) := by
+        w.u * basedInc (bufferedCells A ρ w.x v) =
+          basedInc (bufferedCells A ρ w.x' v') *
+            restrict (bufferedCells A ρ w.x' v') (bufferedCells A ρ w.x v) w.u) := by
   sorry
 
 end HSP.ChainModels

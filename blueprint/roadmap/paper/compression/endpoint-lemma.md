@@ -5,7 +5,7 @@ origin: bridged
 ---
 # Endpoint lemma
 
-Let $i\ge i_0$, let $M_0,M_1,M_2$, $p_j$, $\jmath_j$ and $Q_1$ be as in the [product rule](compression-product-rule.md), and let $\alpha:M_1\to M_2$ and $\beta:M_0\to M_1$ lie in $\mathcal P_i$ ([chain-model estimates](../chain-models/grid/chain-model-estimates.md)), with types $c_\alpha,c_\beta\in C_p$. Let $W$ be the span in $M_1$ of the discarded cells (or their duals) that lie in $\mathcal B_i(u)$ ([buffered cells](../chain-models/grid/buffered-cells.md)), with the [control labels](../chain-models/grid/control-labels.md), and let $\iota_W,p_W$ be its inclusion and projection. Then:
+Let $i\ge i_0$, let $M_0,M_1,M_2$, $p_j$, $\jmath_j$ and $Q_1$ be as in the [product rule](compression-product-rule.md), and let $\alpha:M_1\to M_2$ and $\beta:M_0\to M_1$ lie in $\mathcal P_i$ ([chain-model estimates](../chain-models/grid/chain-model-estimates.md)), with types $c_\alpha,c_\beta\in C_p$. Let $W$ be the span in $M_1$ of the discarded cells (or their duals) that lie in $\mathcal B_i(u)$ ([buffered cells](../chain-models/grid/buffers/buffered-cells.md)), with the [control labels](../chain-models/grid/buffers/control-labels.md), and let $\iota_W,p_W$ be its inclusion and projection. Then:
 1. $p_2\,\alpha\,Q_1\,\beta\,\jmath_0=x\,y$, with $y=p_W\beta\jmath_0$ and $x=p_2\alpha\iota_W$;
 2. $y$ has [graph type](../corner/actions/graph-type.md) $c_\beta$ and $x$ has graph type $c_\alpha$, both with bound $\delta_i$;
 3. every label of $W$ lies in $Z=T\times Z_0$, for the [exterior](../corner/exterior.md) $Z_0$ of $n$ and the buffer radius $R$.
@@ -25,8 +25,8 @@ For the witness: $Z$ is $C_p$-invariant and $C_p$ acts isometrically ([graph-typ
 
 - [Product rule](compression-product-rule.md)
 - [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)
-- [Buffered cells](../chain-models/grid/buffered-cells.md)
-- [Control labels](../chain-models/grid/control-labels.md)
+- [Buffered cells](../chain-models/grid/buffers/buffered-cells.md)
+- [Control labels](../chain-models/grid/buffers/control-labels.md)
 - [Graph-type matrices](../corner/actions/graph-type.md)
 - [Exterior witnesses](../corner/actions/exterior-witness.md)
 - [Exterior](../corner/exterior.md)

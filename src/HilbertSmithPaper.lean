@@ -81,6 +81,7 @@ import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
+import HilbertSmithPaper.ChainModels.Grid.BasedInclusion
 import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.BoxHullProperties
 import HilbertSmithPaper.ChainModels.Grid.BufferedCells
@@ -117,7 +118,12 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDifferential
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDimNeg
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomId
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorSummandTransport
 import HilbertSmithPaper.ChainModels.Grid.Torus

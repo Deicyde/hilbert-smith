@@ -18,12 +18,13 @@ The control label of a buffered cell `b` (sphere label `s_b ∈ B(0, v)`) is
 
 ## Encoding
 
-* `lift_mem_Zplus` proves that `x̃_b` is (the image of) a point of the test region `Z⁺`: by
-  definition `f(x̃_b) = f_T(x_b) = s_b ∈ B̄(0, v)`, so `x̃_b ∈ U⁺ ⊆ Z⁺` by preimages under the test
-  map (which needs `0 < ρ < ρ₊`). `zplusPoint` is that point of `Z⁺`.
-* `controlLabelOf` is the label of a torus point with buffered sphere label; `controlLabel`
-  (the declaration of the article) labels buffered cells of `D_i`, `dualControlLabel` buffered
-  dual cells. Both take the membership proof as an argument, so no base point of `T` is needed.
+* A private lemma proves that `x̃_b` is (the image of) a point of the test region `Z⁺`: by
+  definition `f(x̃_b) = f_T(x_b) ∈ B̄(0, v)`, so `x̃_b ∈ U⁺ ⊆ Z⁺` by preimages under the test map
+  (which needs `0 < ρ < ρ₊`).
+* `controlLabel A hρ hρ' x v b` (the declaration of the article) labels the buffered cells of any
+  set of cells with torus labels `x` (`bufferedCells`); for `D_i` in degree `r`, `x` is
+  `chainModelLabel A i r`, for the dual cells `chainModelDualLabel A i r`. It takes the membership
+  proof as an argument, so no base point of `T` is needed.
 * `T × Sⁿ` is Mathlib's product, whose metric is the maximum of `d_T` and `d_S`.
 -/
 
@@ -32,7 +33,7 @@ namespace HSP.ChainModels
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
 /-- If `f_T(x) ∈ B(0, v)`, the lift `x̃` is a point of the test region `Z⁺`. -/
-lemma lift_mem_Zplus (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ) (hρ' : ρ < ρplus)
+private lemma lift_mem_Zplus (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ) (hρ' : ρ < ρplus)
     {v : ℝ} {x : Torus n} (hx : IsBufferedLabel v (torusTestMap A ρ x : Corner.RoundSphere n)) :
     ∃ z : A.Zplus, ((z : A.Ω) : EuclideanSpace ℝ (Fin n)) = Torus.lift x := by
   have hC : IsCompact (Metric.closedBall (0 : EuclideanSpace ℝ (Fin n)) v) :=
@@ -45,28 +46,17 @@ lemma lift_mem_Zplus (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ) (h�
   exact ⟨⟨u, show ‖A.F₀ u‖ ≤ ρplus from le_of_lt hu⟩, OnePoint.coe_injective hw⟩
 
 /-- The point `x̃ ∈ Z⁺` of a torus point with buffered sphere label. -/
-noncomputable def zplusPoint (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ) (hρ' : ρ < ρplus)
+private noncomputable def zplusPoint (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
+    (hρ' : ρ < ρplus)
     {v : ℝ} {x : Torus n} (hx : IsBufferedLabel v (torusTestMap A ρ x : Corner.RoundSphere n)) :
     A.Zplus :=
   (lift_mem_Zplus A hρ hρ' hx).choose
 
-/-- The control label `(π(x̃), f_T(x)) ∈ T × Sⁿ` of a torus point with buffered sphere label. -/
-noncomputable def controlLabelOf (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
-    (hρ' : ρ < ρplus) {v : ℝ} (x : Torus n)
-    (hx : IsBufferedLabel v (torusTestMap A ρ x : Corner.RoundSphere n)) :
-    A.T × Corner.RoundSphere n :=
-  (A.π (zplusPoint A hρ hρ' hx), torusTestMap A ρ x)
-
-/-- The *control label* `λ(b) = (π(x̃_b), s_b)` of a buffered basis cell `b = a` of `(D_i)_r`. -/
+/-- The *control label* `λ(b) = (π(x̃_b), f_T(x_b)) ∈ T × Sⁿ` of a buffered cell `b ∈ 𝓑(v)` of a
+set of cells with torus labels `x`; for the cells of `D_i` and their duals, `f_T(x_b) = s_b`. -/
 noncomputable def controlLabel (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
-    (hρ' : ρ < ρplus) (i : ℕ) (r : ℤ) (v : ℝ) (a : bufferedCells A ρ i r v) :
+    (hρ' : ρ < ρplus) {B : Type*} (x : B → Torus n) (v : ℝ) (b : bufferedCells A ρ x v) :
     A.T × Corner.RoundSphere n :=
-  controlLabelOf A hρ hρ' (chainModelLabel A i r a) a.2
-
-/-- The control label of a buffered dual cell `a^*` of `(D_i^{N-*})_r`. -/
-noncomputable def dualControlLabel (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
-    (hρ' : ρ < ρplus) (i : ℕ) (r : ℤ) (v : ℝ) (a : bufferedDualCells A ρ i r v) :
-    A.T × Corner.RoundSphere n :=
-  controlLabelOf A hρ hρ' (chainModelDualLabel A i r a) a.2
+  (A.π (zplusPoint A hρ hρ' b.2), torusTestMap A ρ (x b))
 
 end HSP.ChainModels
