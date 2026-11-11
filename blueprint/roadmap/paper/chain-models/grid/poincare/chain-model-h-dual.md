@@ -16,6 +16,7 @@ On the dual $D_i^{N-*}$ of the [chain model](../chain-model.md), $N=n+4$, $H'_i=
 
 ## Depends on
 
+- [The cells of CP^2 vanish in negative degrees](../cp2-dim-neg.md)
 - [Chain model](../chain-model.md)
 - [Dual tensor of graded maps of based complexes](../tensor/based-dual-tensor-hom.md)
 - [The dual grid homotopy](grid-h-dual.md)

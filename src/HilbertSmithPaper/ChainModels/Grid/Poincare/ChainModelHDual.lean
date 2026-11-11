@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridHDual
-import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 
@@ -22,7 +22,7 @@ variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 noncomputable def chainModelH' (A : LocalDatum p n D ρplus) (i : ℕ) (r : ℤ) :
     (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).X r ⟶
       (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).X (r + 1) :=
-  basedDualTensorHom cp2Complex_X_dim_neg n 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring) 1 0
+  basedDualTensorHom cp2Complex_dim_neg n 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring) 1 0
       (gridH' (meshSequence A i) n) (idDualDeg0 cp2Complex 4) r ≫
     eqToHom (congrArg (fun t => dual ((chainModel A i).X (((n + 4 : ℕ) : ℤ) - t)))
       (show r + (1 + 0) = r + 1 by ring))

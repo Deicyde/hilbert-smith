@@ -136,7 +136,6 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleK
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleKDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhi
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhiSym
-import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridHDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridStructureU
