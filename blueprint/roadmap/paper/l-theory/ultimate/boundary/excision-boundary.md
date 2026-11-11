@@ -2,6 +2,8 @@
 article_id: af_dbec42760e820cb51533320e
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.ExcisivePair.boundary
 ---
 
 # Excision boundary
@@ -19,3 +21,4 @@ where $\partial$ is the [ultimate boundary](ultimate-boundary.md) of $\mathcal U
 - [Excisive pair of filtrations](excisive-pair.md)
 - [Ultimate boundary](ultimate-boundary.md)
 - [Induced map on ultimate L](../groups/induced-map.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)

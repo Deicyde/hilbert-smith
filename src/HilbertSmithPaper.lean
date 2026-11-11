@@ -251,6 +251,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionLower
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisionBoundary
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdent
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.UltimateBoundary
