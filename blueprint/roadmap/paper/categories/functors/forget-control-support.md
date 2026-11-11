@@ -13,7 +13,7 @@ In the setting of [forgetting the control space](forget-control.md), let $S\subs
 
 The statement needs neither that $S$ is closed nor that the action on $T$ is isometric.
 
-*Proof sketch.* $T\times S$ is closed and invariant, and $\mathrm{pr}(T\times S)\subset S$, so [pushforward preserves support](push-support.md) gives $\mathrm{pr}_*(\mathcal A_{T\times S})\subset\mathcal A_S$. $S$ is invariant for the trivial action, so [forgetting the group preserves support](forget-group-support.md) gives the rest.
+*Proof sketch.* $\mathrm{pr}(T\times S)\subset S$, so [pushforward preserves support](push-support.md) gives $\mathrm{pr}_*(\mathcal A_{T\times S})\subset\mathcal A_S$. The trivial action is isometric and every subset is invariant for it, so [forgetting the group preserves support](forget-group-support.md) gives the rest.
 
 ## Sources
 

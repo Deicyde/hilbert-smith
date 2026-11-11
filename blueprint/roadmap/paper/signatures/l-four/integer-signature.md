@@ -23,6 +23,8 @@ $\sigma_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to\mathbb Z$ is the map $[C,\varphi
 - [The middle form](middle-form.md)
 - [Invariant signature splittings exist](signature-splitting-exists.md)
 - [Middle form nonsingular](middle-form-nonsingular.md)
+- [L-group](../../l-theory/base/groups/l-group.md)
+- [Group structure on L](../../l-theory/base/groups/l-group-add.md)
 
 ## Proof depends on
 
