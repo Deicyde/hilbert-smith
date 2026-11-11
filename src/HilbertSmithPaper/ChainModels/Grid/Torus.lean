@@ -92,6 +92,14 @@ lemma continuousAt_lift (x : Torus n) (hx : ‖x‖ < 2) :
         (f := fun y : Torus n => y j) ((continuous_apply j).continuousAt))
   exact (PiLp.continuous_toLp 2 _).continuousAt.comp hc
 
+/-- `d_∞ ≤ 2` on the torus. -/
+lemma dist_le_two (x y : Torus n) : dist x y ≤ 2 := by
+  refine (dist_pi_le_iff zero_le_two).2 fun j => ?_
+  rw [dist_eq_norm]
+  have := AddCircle.norm_le_half_period (x := x j - y j) (p := (4 : ℝ)) (by norm_num)
+  norm_num at this ⊢
+  exact this
+
 /-- `d_∞ ≤ d_2`. -/
 lemma dist_le_dist₂ (x y : Torus n) : dist x y ≤ dist₂ x y := by
   refine (dist_pi_le_iff (Real.sqrt_nonneg _)).2 fun j => ?_
