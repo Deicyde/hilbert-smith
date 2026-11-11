@@ -3,6 +3,7 @@ import HilbertSmithPaper.Signatures.Forms.FormSignature
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIdentity
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
 import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
+import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
 
