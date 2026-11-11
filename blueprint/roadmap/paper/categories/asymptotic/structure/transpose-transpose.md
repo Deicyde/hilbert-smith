@@ -20,3 +20,8 @@ For a sequence $u$ of matrices of the [asymptotic category](../asymptotic-catego
 ## Depends on
 
 - [Duality on the asymptotic category](../asymptotic-duality.md)
+
+## Proof depends on
+
+- [Asymptotic category](../asymptotic-category.md)
+- [Free category of a finite group](../free-category.md)

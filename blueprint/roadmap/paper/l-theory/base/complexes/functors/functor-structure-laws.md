@@ -12,7 +12,7 @@ proof: formalized
 Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../../categories/duality-functor.md) and $C$ a complex in $\mathcal B$. The [image of structures](functor-structure.md) $F_\%$ satisfies:
 1. $\partial(F_\%\phi)=F_\%(\partial\phi)$ for every $\phi\in M(C)_n$, for the [boundary of the structure complex](../structure-complex.md);
 2. $T(F_\%\phi)=F_\%(T\phi)$ for every $\phi\in M(C)_n$, for [the involution $T$](../structure-involution.md);
-3. if $\phi\in M(C)_k$ is a cycle, then so is $F_\%\phi$, and its [duality map](../cycle-chain-map.md) is
+3. if $\phi\in M(C)_k$ and $F_\%\phi$ are cycles (the latter follows from the former by (1)), then the [duality map](../cycle-chain-map.md) of $F_\%\phi$ is
 $$(F_\%\phi)_\natural=F(\phi_\natural)\circ\xi^{-1}:(FC)^{k-*}\to F(C^{k-*})\to FC,$$
 with $\xi^{-1}$ the isomorphism of [Duality functors and dual complexes](functor-dual-iso.md).
 

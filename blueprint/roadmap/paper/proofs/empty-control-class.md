@@ -31,3 +31,5 @@ Let $X$ be an empty metric space with a $C_p$-action, $\mathbf G$ a group sequen
 - [Free category of a finite group](../categories/asymptotic/free-category.md)
 - [Zero Poincaré complex](../l-theory/base/pairs/poincare-zero.md)
 - [Homotopy-isometry invariance](../l-theory/base/groups/homotopy-isometry-invariance.md)
+- [Group structure on L](../l-theory/base/groups/l-group-add.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)

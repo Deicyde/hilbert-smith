@@ -24,3 +24,5 @@ The [empty sequence](empty-object.md) is a zero object of $\mathcal A_{\mathbf G
 ## Proof depends on
 
 - [Every morphism is a class](class-surjective.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Free category of a finite group](../free-category.md)

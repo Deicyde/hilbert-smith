@@ -4,7 +4,6 @@ declaration: def
 origin: background
 statement: formalized
 lean: HSP.KaroubiFiltration.top
-proof: formalized
 ---
 
 # The whole filtration

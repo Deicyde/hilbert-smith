@@ -12,7 +12,7 @@ Let $i\ge i_0$, let $M_0,M_1,M_2$, $p_j$, $\jmath_j$ and $Q_1$ be as in the [pro
 2. $y$ has [graph type](../corner/actions/graph-type.md) $c_\beta$ and $x$ has graph type $c_\alpha$, both with bound $\delta_i$, the [bound sequence](bound-sequence.md);
 3. every label of $W$ lies in $Z=T\times Z_0$, for the [exterior](../corner/exterior.md) $Z_0$ of $n$ and the buffer radius $R$.
 
-Hence $p_2\alpha Q_1\beta\jmath_0$ is an [exterior witness](../corner/actions/exterior-witness.md) of type $c_\alpha+c_\beta$ with bound $\delta_i$, through $W$ relabelled by $\lambda'(w)=(-c_\beta)\cdot\lambda(w)$.
+Hence $p_2\alpha Q_1\beta\jmath_0$ is an [exterior witness](../corner/actions/exterior-witness.md) of type $c_\alpha+c_\beta$ with bound $\delta_i$.
 
 *Proof sketch.*
 1. Retained cells lie in $\mathcal B_i(t')$ ([buffers](buffer-eventually.md) (1)), so $\beta\jmath_0=\iota_u\,p_u\beta\jmath_0$ by buffers (2): a nonzero entry of $\beta$ from a retained cell lands in $\mathcal B_i(u)$. On $\mathcal B_i(u)$, $Q_1$ is the projection onto $W$, so $Q_1\beta\jmath_0=\iota_Wp_W\beta\jmath_0$.
