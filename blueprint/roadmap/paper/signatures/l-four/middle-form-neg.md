@@ -20,7 +20,7 @@ For a strict 4-dimensional symmetric Poincaré complex $(C,\varphi)$ in $\mathrm
 ## Depends on
 
 - [The middle form](middle-form.md)
-- [Sums of Poincaré complexes](../../l-theory/base/pairs/sum-of-poincare.md)
+- [The negative of a Poincaré complex](../../l-theory/base/pairs/poincare-neg.md)
 
 ## Proof depends on
 

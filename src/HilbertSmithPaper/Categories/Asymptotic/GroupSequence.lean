@@ -16,10 +16,8 @@ Encoding choices.
   asymptotic categories need it); equality is decidable, `[∀ i, DecidableEq (G i)]`, so that
   matrices indexed by these bases have identity matrices.
 * `χ i : G i →+ ZMod p`.
-* A `C_p`-space `X` (an `AddAction (ZMod p) X`) is a `G_i`-space through `χ_i`:
-  `GroupSeq.addAction` is `g +ᵥ x = χ_i(g) +ᵥ x`. It is a definition, not an instance, to avoid
-  diamonds when `G_i` is itself `ZMod p`.
-* The trivial sequence `𝟏` is `GroupSeq.trivial p`, with every `G_i` the one-point group.
+* A `C_p`-space `X` (an `AddAction (ZMod p) X`) is a `G_i`-space through `χ_i`,
+  `g +ᵥ x = χ_i(g) +ᵥ x`; the asymptotic categories use this through their labels.
 -/
 
 namespace HSP
@@ -39,23 +37,5 @@ structure GroupSeq (p : ℕ) where
   χ : ∀ i, G i →+ ZMod p
 
 attribute [instance] GroupSeq.addGroup GroupSeq.fintype GroupSeq.decEq
-
-namespace GroupSeq
-
-variable {p : ℕ}
-
-/-- A `C_p`-space is regarded as a `G_i`-space through `χ_i`: `g +ᵥ x = χ_i(g) +ᵥ x`. -/
-abbrev addAction (G : GroupSeq p) (i : ℕ) (X : Type*) [AddAction (ZMod p) X] :
-    AddAction (G.G i) X :=
-  AddAction.compHom X (G.χ i)
-
-/-- The *trivial group sequence* `𝟏`: every `G_i` is the trivial group. -/
-def trivial (p : ℕ) : GroupSeq p where
-  G _ := Unit
-  χ _ := 0
-
-instance (p i : ℕ) : Unique ((trivial p).G i) := inferInstanceAs (Unique Unit)
-
-end GroupSeq
 
 end HSP

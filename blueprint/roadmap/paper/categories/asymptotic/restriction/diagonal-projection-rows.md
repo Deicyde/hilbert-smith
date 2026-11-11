@@ -22,3 +22,7 @@ Let $u:N\to M$ be a sequence of matrices such that, eventually, every nonzero en
 
 - [Diagonal coordinate projection](diagonal-projection.md)
 - [Asymptotic category](../asymptotic-category.md)
+
+## Proof depends on
+
+- [Equality of classes](../structure/class-eq.md)

@@ -71,7 +71,8 @@ private instance : (relabelPFunctor (G := G) hS).Linear ℚ where
   map_smul _ _ := ObjectProperty.hom_ext _ ((inclPush hS).toFunctor.map_smul _ _)
 
 /-- `P : 𝒜_𝐆(S) → 𝒜_S`, `(n_i, x_i) ↦ (n_i, x_i)`, `[u] ↦ [u]`, a duality functor with `ξ = id`. -/
-private noncomputable def relabelP : DualFunctor (AsymCat G S) (supp (G := G) (S : Set X)).FullSubcategory
+private noncomputable def relabelP :
+    DualFunctor (AsymCat G S) (supp (G := G) (S : Set X)).FullSubcategory
     where
   toFunctor := relabelPFunctor hS
   ξ _ := Iso.refl _
@@ -94,7 +95,8 @@ section R
 variable {S} {ρ : X → S} (hρ : ∀ x, dist x (ρ x : X) = Metric.infDist x S)
 
 /-- The relabelled object `(n_i, ρ ∘ x_i)` of `𝒜_𝐆(S)`. -/
-private def AsymPre.relabelObj (ρ : X → S) (M : AsymPre G X) : AsymPre G S := ⟨M.n, fun i => ρ ∘ M.x i⟩
+private def AsymPre.relabelObj (ρ : X → S) (M : AsymPre G X) : AsymPre G S :=
+  ⟨M.n, fun i => ρ ∘ M.x i⟩
 
 omit [IsIsometricVAdd (ZMod p) X] in
 include hρ in
@@ -224,9 +226,9 @@ private theorem mkHom_eq_eqToHom {M M' N N' : AsymPre G S} (hM : M' = M) (hN : N
 omit [IsIsometricVAdd (ZMod p) X] [CompactSpace X] in
 include hρ in
 private theorem relabelObj_pushObj (M : AsymPre G S) :
-    AsymPre.relabelObj ρ (AsymPre.pushObj Subtype.val M) = M := by
+    AsymPre.relabelObj ρ ⟨M.n, fun i => Subtype.val ∘ M.x i⟩ = M := by
   obtain ⟨n, x⟩ := M
-  simp only [AsymPre.relabelObj, AsymPre.pushObj, AsymPre.mk.injEq, heq_eq_eq, true_and]
+  simp only [AsymPre.relabelObj, AsymPre.mk.injEq, heq_eq_eq, true_and]
   exact funext fun i => funext fun k => rho_val hρ (x i k)
 
 /-- `RP = id` on the nose. -/
@@ -307,7 +309,8 @@ structure RelabelEquiv (G : GroupSeq p) (S : SubAddAction (ZMod p) X) (ρ : X �
   /-- The counit `PR ≅ id`, unitary. -/
   counit : DualFunctor.UnitaryIso (R.comp P) (DualFunctor.id _)
 
-/-- **The relabelling equivalence** for a closed invariant `S` and `ρ` with `d(x, ρ x) = d(x, S)`. -/
+/-- **The relabelling equivalence** for a closed invariant `S` and `ρ` with
+`d(x, ρ x) = d(x, S)`. -/
 noncomputable def relabelEquiv : RelabelEquiv G S ρ where
   P := relabelP hS
   R := relabelR hρ

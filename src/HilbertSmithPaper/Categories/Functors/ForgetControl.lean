@@ -32,20 +32,22 @@ noncomputable def forgetControl :
   (push (G := G) (f := (Prod.snd : T × X → X)) continuous_snd fun _ _ => rfl).comp forgetGroup
 
 /-- Forgetting the control space is a strict duality functor. -/
-theorem forgetControl_isStrict : (forgetControl (G := G) T X).IsStrict :=
+private theorem forgetControl_isStrict : (forgetControl (G := G) T X).IsStrict :=
   fun _ => ⟨rfl, by simp [forgetControl, DualFunctor.comp, push, forgetGroup]; rfl⟩
 
 variable {T X}
 
 /-- With the trivial action on `X`, `U_c (n_i, x_i) = (|G_i| n_i, pr ∘ x_i ∘ pr_2 ∘ e⁻¹)`. -/
-theorem forgetControl_obj (htriv : ∀ (c : ZMod p) (x : X), c +ᵥ x = x)
+private theorem forgetControl_obj (htriv : ∀ (c : ZMod p) (x : X), c +ᵥ x = x)
     (M : AsymPre G (T × X)) :
     (forgetControl (G := G) T X).toFunctor.obj ⟨M⟩ =
       ⟨⟨fun i => Fintype.card (G.G i) * M.n i,
         fun i j => (M.x i ((groupEnum (G.G i) (M.n i)).symm j).2).2⟩⟩ := by
-  show (⟨AsymPre.forgetObj (AsymPre.pushObj Prod.snd M)⟩ : AsymCat _ X) = _
+  show (⟨⟨fun i => Fintype.card (G.G i) * M.n i, fun i j =>
+      G.χ i ((groupEnum (G.G i) (M.n i)).symm j).1 +ᵥ
+        (M.x i ((groupEnum (G.G i) (M.n i)).symm j).2).2⟩⟩ : AsymCat _ X) = _
   congr 1
-  simp only [AsymPre.forgetObj, AsymPre.mk.injEq]
-  exact ⟨rfl, heq_of_eq (funext fun _ => funext fun _ => htriv _ _)⟩
+  simp only [AsymPre.mk.injEq, true_and]
+  exact heq_of_eq (funext fun _ => funext fun _ => htriv _ _)
 
 end HSP

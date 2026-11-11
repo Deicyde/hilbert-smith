@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjection
+import HilbertSmithPaper.Categories.Asymptotic.Structure.ClassEq
 
 /-!
 # Factorization through a diagonal projection, rows

@@ -43,11 +43,12 @@ def equivariant (m n : ℕ) : Submodule ℚ (Matrix (G × Fin m) (G × Fin n) �
 
 variable {G}
 
-theorem one_mem [DecidableEq G] (n : ℕ) : (1 : Matrix (G × Fin n) (G × Fin n) ℚ) ∈ equivariant G n n := by
+private theorem one_mem [DecidableEq G] (n : ℕ) :
+    (1 : Matrix (G × Fin n) (G × Fin n) ℚ) ∈ equivariant G n n := by
   intro g h h' k' k
   simp only [Matrix.one_apply, Prod.mk.injEq, add_right_inj]
 
-theorem mul_mem [Fintype G] {l m n : ℕ} {v : Matrix (G × Fin l) (G × Fin m) ℚ}
+private theorem mul_mem [Fintype G] {l m n : ℕ} {v : Matrix (G × Fin l) (G × Fin m) ℚ}
     {u : Matrix (G × Fin m) (G × Fin n) ℚ} (hv : v ∈ equivariant G l m)
     (hu : u ∈ equivariant G m n) : v * u ∈ equivariant G l n := by
   intro g h h' k' k
@@ -57,7 +58,7 @@ theorem mul_mem [Fintype G] {l m n : ℕ} {v : Matrix (G × Fin l) (G × Fin m) 
   simp only [Equiv.prodCongr_apply, Equiv.coe_addLeft, Equiv.coe_refl, Prod.map_apply, id_eq]
   rw [hv g h a k' j, hu g a h' j k]
 
-theorem transpose_mem {m n : ℕ} {u : Matrix (G × Fin m) (G × Fin n) ℚ}
+private theorem transpose_mem {m n : ℕ} {u : Matrix (G × Fin m) (G × Fin n) ℚ}
     (hu : u ∈ equivariant G m n) : u.transpose ∈ equivariant G n m :=
   fun g h h' k' k => hu g h' h k k'
 
@@ -214,17 +215,17 @@ def binaryBicone (M N : FreeCat G) : BinaryBicone M N where
     ext p q; simp [Matrix.one_apply, Prod.ext_iff, (Fin.natAdd_injective _ _).eq_iff])
 
 /-- The zero object of `Free(ℚ[G])` is `0`. -/
-theorem isZero_zero : IsZero (⟨0⟩ : FreeCat G) := by
+private theorem isZero_zero : IsZero (⟨0⟩ : FreeCat G) := by
   refine ⟨fun Y => ⟨⟨⟨0⟩, fun f => hom_ext (Matrix.ext fun _ b => b.2.elim0)⟩⟩,
     fun Y => ⟨⟨⟨0⟩, fun f => hom_ext (Matrix.ext fun a _ => a.2.elim0)⟩⟩⟩
 
-@[simp] theorem mat_binaryBicone_inl (M N : FreeCat G) :
+@[simp] private theorem mat_binaryBicone_inl (M N : FreeCat G) :
     mat (binaryBicone M N).inl = inclMat (Fin.castAdd N.n) := rfl
-@[simp] theorem mat_binaryBicone_inr (M N : FreeCat G) :
+@[simp] private theorem mat_binaryBicone_inr (M N : FreeCat G) :
     mat (binaryBicone M N).inr = inclMat (Fin.natAdd M.n) := rfl
-@[simp] theorem mat_binaryBicone_fst (M N : FreeCat G) :
+@[simp] private theorem mat_binaryBicone_fst (M N : FreeCat G) :
     mat (binaryBicone M N).fst = (inclMat (Fin.castAdd N.n)).transpose := rfl
-@[simp] theorem mat_binaryBicone_snd (M N : FreeCat G) :
+@[simp] private theorem mat_binaryBicone_snd (M N : FreeCat G) :
     mat (binaryBicone M N).snd = (inclMat (Fin.natAdd M.n)).transpose := rfl
 
 /-- The coordinate inclusions and projections of `n + m` satisfy `fst ≫ inl + snd ≫ inr = 1`. -/
@@ -232,12 +233,6 @@ theorem binaryBicone_total (M N : FreeCat G) :
     (binaryBicone M N).fst ≫ (binaryBicone M N).inl +
       (binaryBicone M N).snd ≫ (binaryBicone M N).inr = 𝟙 (binaryBicone M N).pt :=
   hom_ext (incl_total M.n N.n)
-
-/-- An object `n` with `n = 0` is a zero object. -/
-theorem isZero_of_n_eq_zero (Y : FreeCat G) (h : Y.n = 0) : IsZero Y := by
-  obtain ⟨n⟩ := Y
-  cases h
-  exact isZero_zero
 
 instance : HasZeroObject (FreeCat G) := isZero_zero.hasZeroObject
 
