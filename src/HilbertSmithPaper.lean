@@ -225,6 +225,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionSum
 import HilbertSmithPaper.LTheory.Localization.Transitions.LevelBoundary
 import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionBoundaryCommute
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
