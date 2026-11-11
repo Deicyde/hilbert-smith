@@ -4,6 +4,7 @@ declaration: lemma
 origin: background
 statement: formalized
 lean: HSP.strProd_boundary
+proof: formalized
 ---
 
 # Leibniz rule for products
@@ -29,3 +30,6 @@ $$\partial(\phi\otimes\theta)=\partial\phi\otimes\theta+(-1)^m\,\phi\otimes\part
 ## Proof depends on
 
 - [External product of structures](external-product.md)
+- [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
+- [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)
+- [Differential of a tensor product on summands](bookkeeping/product-differential.md)
