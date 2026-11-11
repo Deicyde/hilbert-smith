@@ -153,7 +153,6 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomId
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorSummandTransport
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Torus.ContinuousLift
 import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
