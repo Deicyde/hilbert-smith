@@ -40,7 +40,7 @@ private lemma inv_natural'' {M N : B} (f : M ⟶ N) :
     Category.comp_id]
 
 /-- `F_%` commutes with pushforward: `F_% (f_% φ) = (F f)_% (F_% φ)`. -/
-lemma mapStructure_push {C D : ChainComplex B ℤ} (f : C ⟶ D) (n : ℤ) (φ : (StructureCx C).X n) :
+private lemma mapStructure_push {C D : ChainComplex B ℤ} (f : C ⟶ D) (n : ℤ) (φ : (StructureCx C).X n) :
     F.mapStructure D n ((StructureCx.push f).f n φ) =
       (StructureCx.push ((F.toFunctor.mapHomologicalComplex _).map f)).f n
         (F.mapStructure C n φ) := by

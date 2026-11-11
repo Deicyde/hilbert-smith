@@ -29,8 +29,7 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
 namespace SymPoincare
 
 omit [Linear ℚ B] [DualCat B] in
-/-- A sum of two zero objects is a zero object. -/
-lemma isZero_biprod {X Y : B} (hX : IsZero X) (hY : IsZero Y) : IsZero (X ⊞ Y) := by
+private lemma isZero_biprod {X Y : B} (hX : IsZero X) (hY : IsZero Y) : IsZero (X ⊞ Y) := by
   rw [IsZero.iff_id_eq_zero, ← biprod.total, hX.eq_of_tgt biprod.fst 0,
     hY.eq_of_tgt biprod.snd 0, zero_comp, zero_comp, add_zero]
 
@@ -45,7 +44,7 @@ private lemma dualCx_map_zero (C D : ChainComplex B ℤ) (n : ℤ) :
   simp
 
 /-- The canonical isomorphism `(C ⊞ C')^{n-*} ≅ C^{n-*} ⊞ C'^{n-*}`. -/
-noncomputable def dualBiprodIso (C C' : ChainComplex B ℤ) (n : ℤ) :
+private noncomputable def dualBiprodIso (C C' : ChainComplex B ℤ) (n : ℤ) :
     dualCx (C ⊞ C') n ≅ dualCx C n ⊞ dualCx C' n where
   hom := biprod.lift (dualCx.map biprod.inl n) (dualCx.map biprod.inr n)
   inv := biprod.desc (dualCx.map biprod.fst n) (dualCx.map biprod.snd n)
@@ -57,7 +56,7 @@ noncomputable def dualBiprodIso (C C' : ChainComplex B ℤ) (n : ℤ) :
       simp [← dualCx.map_comp, dualCx.map_id, dualCx_map_zero]
 
 /-- Sums of chain homotopy equivalences are chain homotopy equivalences. -/
-noncomputable def biprodHomotopyEquiv {X X' Y Y' : ChainComplex B ℤ}
+private noncomputable def biprodHomotopyEquiv {X X' Y Y' : ChainComplex B ℤ}
     (e : HomotopyEquiv X Y) (e' : HomotopyEquiv X' Y') : HomotopyEquiv (X ⊞ X') (Y ⊞ Y') where
   hom := biprod.map e.hom e'.hom
   inv := biprod.map e.inv e'.inv

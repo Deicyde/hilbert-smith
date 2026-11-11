@@ -22,7 +22,7 @@ namespace HSP
 universe v u
 
 /-- Transport of `L`-groups along an equality of degrees. -/
-noncomputable def LGroup.castIndex {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B]
+private noncomputable def LGroup.castIndex {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B]
     [HasFiniteBiproducts B] [DualCat B] {m m' : ℤ} (h : m = m') : LGroup B m ≃+ LGroup B m' := by
   subst h
   exact AddEquiv.refl _
