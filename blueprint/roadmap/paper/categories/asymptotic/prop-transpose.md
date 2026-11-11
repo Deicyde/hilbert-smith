@@ -2,6 +2,9 @@
 article_id: af_8f4d0f87e99a28e7aeeac128
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.prop_transpose
 ---
 
 # Propagation of a transpose

@@ -2,6 +2,9 @@
 article_id: af_040cc0cffa07acb48e022eb5
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.Corner.exterior_closed
 ---
 
 # The exterior is closed
@@ -12,6 +15,8 @@ Let $n\ge1$, $R>0$, and let $T$ be a compact metric space with an isometric $C_p
 1. The complement of $Z_0$ is the open ball $\{z\in\mathbb R^n:|z|<R\}$, which is open in $\mathbb R^n$ and hence in $S^n$.
 2. $Z=T\times Z_0$ is a product of closed sets, so it is closed in the product topology, which the maximum metric induces.
 3. $C_p$ moves only the first coordinate, so $c\cdot(t,z)=(c\cdot t,z)\in Z$ for $(t,z)\in Z$.
+
+The hypotheses $n\ge1$, $R>0$, compactness of $T$ and isometry of the action are the standing setting of the corner chapter; the proof does not use them.
 
 ## Sources
 

@@ -1,7 +1,9 @@
 ---
 article_id: af_89e625e4931584b5a1cedd3b
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.GroupSeq
 ---
 
 # Group sequence

@@ -2,6 +2,8 @@
 article_id: af_049a4cf3c67432c01e4c0e17
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.Corner.cut_flag
 ---
 
 # The cut flag

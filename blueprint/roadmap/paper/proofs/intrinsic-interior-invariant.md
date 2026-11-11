@@ -2,6 +2,9 @@
 article_id: af_6026f8b12369656ff3114fff
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.image_intrinsicInterior
 ---
 
 # The intrinsic interior is invariant

@@ -1,7 +1,9 @@
 ---
 article_id: af_48c794d7fca845cbde32fdcf
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.FixedLocalData
 ---
 
 # Fixed local data

@@ -4,8 +4,9 @@ article_id: af_c8cb54fe25a04299ab4b78be
 
 # The cubical grid and the chain model
 
-The cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and box hulls, acyclic carriers, circle duality, the mesh sequence, the chain model with its duality and its Poincaré property, the sphere and control labels on buffered cells, and the estimates.
+The torus, the cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and box hulls, acyclic carriers, circle duality, the mesh sequence, the chain model with its duality and its Poincaré property, the sphere and control labels on buffered cells, and the estimates.
 
+- [The torus](torus.md)
 - [Cubical torus grid](cubical-torus-grid.md)
 - [Cells of CP^2](cp2-cells.md)
 - [Grid boxes](grid-box.md)

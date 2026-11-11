@@ -2,6 +2,9 @@
 article_id: af_9b38dee42bf0a9378ae1966a
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.t2Space_of_faithfulSMul
 ---
 
 # Faithful actions give Hausdorff groups
