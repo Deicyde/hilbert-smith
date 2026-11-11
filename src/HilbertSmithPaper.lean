@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.LocalData.Chart.LocalDatum
+import HilbertSmithPaper.LocalData.Chart.Pinch
 
 /-!
 # The paper
