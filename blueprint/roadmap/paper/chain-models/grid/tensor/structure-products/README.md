@@ -9,3 +9,4 @@ The product of structures and the product of duality maps on the tensor product 
 - [Product of structures in explicit bases](based-str-prod.md)
 - [Product of duality maps in explicit bases](based-dual-prod.md)
 - [Blocks of a product of structures](str-prod-blocks.md)
+- [Products of structures commute with T](str-prod-involution.md)
