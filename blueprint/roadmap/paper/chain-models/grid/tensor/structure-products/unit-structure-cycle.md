@@ -9,7 +9,7 @@ lean: HSP.ChainModels.unitStructure_cycle
 
 # The unit structure is a cycle
 
-The structure $\mathbb 1\in M(\mathbb 1)_0$ of the [unit complex](../../cubical/unit-complex.md), the identity of $\mathbb Q$ in degree $0$ (as in [chain-model duality](../../chain-model-duality.md)), is a cycle: $\partial\mathbb 1=0$.
+The structure $\mathbb 1\in M(\mathbb 1)_0$ of the [unit complex](../../cubical/unit-complex.md), the identity of $\mathbb Q$ in degree $0$ (the [structure of the unit complex](../../model/unit-structure.md)), is a cycle: $\partial\mathbb 1=0$.
 
 *Proof sketch.* The differential of the unit complex vanishes, so every term of $\partial\mathbb 1$ contains a zero factor.
 
@@ -20,4 +20,5 @@ The structure $\mathbb 1\in M(\mathbb 1)_0$ of the [unit complex](../../cubical/
 ## Depends on
 
 - [The unit complex](../../cubical/unit-complex.md)
-- [Chain-model duality](../../chain-model-duality.md)
+- [The structure of the unit complex](../../model/unit-structure.md)
+- [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)

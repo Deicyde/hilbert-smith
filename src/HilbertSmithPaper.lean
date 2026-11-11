@@ -160,6 +160,8 @@ import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 import HilbertSmithPaper.ChainModels.Grid.Model.GridStructure
+import HilbertSmithPaper.ChainModels.Grid.Model.TensorLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.TensorLabelGrid
 import HilbertSmithPaper.ChainModels.Grid.Model.UnitStructure
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelAug
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelDPropagation
@@ -192,6 +194,7 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridInverse
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridInverseRight
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridStructureU
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.IdDualDeg0
+import HilbertSmithPaper.ChainModels.Grid.Poincare.PropProductMaps
 import HilbertSmithPaper.ChainModels.Grid.Poincare.TensorHomotopy
 import HilbertSmithPaper.ChainModels.Grid.Realization
 import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
@@ -284,6 +287,8 @@ import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
+import HilbertSmithPaper.Corner.Theorem.ScalarIteratedCut
+import HilbertSmithPaper.Corner.Theorem.TheoremA
 import HilbertSmithPaper.Evaluation.BasedToFree
 import HilbertSmithPaper.Evaluation.ConstantCp2Sequence
 import HilbertSmithPaper.Evaluation.ConstantTail
@@ -336,6 +341,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorPairMap
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureSum
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.LiftHomotopyEquiv
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushBoundary
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
@@ -413,6 +419,7 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedClosure
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
+import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategoryCobordism
 import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategorySum
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces

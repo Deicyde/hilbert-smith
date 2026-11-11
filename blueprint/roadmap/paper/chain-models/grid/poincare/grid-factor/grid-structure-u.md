@@ -8,7 +8,7 @@ lean: HSP.ChainModels.gridStructureU
 
 # The unsymmetrized grid structure
 
-For every $k$, the unsymmetrized structure $\varphi^u_n\in M(C(k))_n$ of the [grid complex](../../cubical/cubical-torus-grid.md) is defined by $\varphi^u_0=\mathbb 1$, the identity of $\mathbb Q$ in degree $0$ on the unit complex, and $\varphi^u_{n+1}=\varphi^u_n\otimes\varphi$, the [product of structures](../../tensor/structure-products/based-str-prod.md) with the [circle structure](../circle-data/circle-phi.md) $\varphi\in M(S_k)_1$. So $\varphi^u_n=(\cdots(\varphi\otimes\varphi)\otimes\cdots)\otimes\varphi$.
+For every $k$, the unsymmetrized structure $\varphi^u_n\in M(C(k))_n$ of the [grid complex](../../cubical/cubical-torus-grid.md) is defined by $\varphi^u_0=\mathbb 1$, the identity of $\mathbb Q$ in degree $0$ on the unit complex, and $\varphi^u_{n+1}=\varphi^u_n\otimes\varphi$, the [product of structures](../../tensor/structure-products/based-str-prod.md) with the [circle structure](../circle-data/circle-phi.md) $\varphi\in M(S_k)_1$. So $\varphi^u_n=(\cdots(\mathbb 1\otimes\varphi)\otimes\cdots)\otimes\varphi$.
 
 ## Sources
 
