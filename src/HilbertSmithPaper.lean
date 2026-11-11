@@ -83,6 +83,7 @@ import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Evaluation.LabelledModel
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.RetainedCells
+import HilbertSmithPaper.Compression.StartIndex
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
