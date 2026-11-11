@@ -27,6 +27,7 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 
 ## Depends on
 
+- [circle duality data](circle-data/circle-phi.md), [circle homotopy element](circle-data/circle-h.md), [symmetric circle structure](circle-data/circle-phi-sym.md), [circle inverse](circle-data/circle-b.md), [circle homotopy](circle-data/circle-k.md), [dual circle homotopy](circle-data/circle-k-dual.md)
 - [Cubical torus grid](cubical-torus-grid.md), [dual complex](../../l-theory/base/complexes/dual-complex.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [the involution T](../../l-theory/base/complexes/structure-involution.md), [propagation](../../categories/asymptotic/propagation.md)
 
 ## Proof depends on

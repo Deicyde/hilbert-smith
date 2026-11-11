@@ -83,6 +83,12 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.ChainModelEstimates
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleB
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleH
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleK
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleKDual
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhi
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhiSym
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.ChainModels.Grid.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
