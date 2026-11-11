@@ -21,6 +21,7 @@ import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.ChainModels.Grid.BufferedCells
 import HilbertSmithPaper.ChainModels.Grid.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Restriction
+import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Corner.CutFlag
