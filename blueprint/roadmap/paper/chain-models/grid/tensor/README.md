@@ -20,3 +20,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [Blocks of a tensor of graded maps](tensor-hom-blocks.md)
 - [Composition of tensors of graded maps](based-tensor-hom-comp.md)
 - [The tensor product vanishes in negative degrees](tensor-dim-neg.md)
+- [Additivity of tensors of graded maps in the first factor](tensor-hom-add-left.md)
