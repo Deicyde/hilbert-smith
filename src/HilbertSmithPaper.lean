@@ -17,6 +17,7 @@ import HilbertSmithPaper.Proofs.IntrinsicInteriorOpen
 import HilbertSmithPaper.Proofs.LocalExclusion
 import HilbertSmithPaper.Proofs.OneChart
 import HilbertSmithPaper.Proofs.PadicExclusion
+import HilbertSmithPaper.Proofs.PadicExclusionBoundary
 
 /-!
 # The paper
