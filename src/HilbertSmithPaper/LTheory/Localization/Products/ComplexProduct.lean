@@ -308,20 +308,6 @@ lemma d_π {p q r r' p₁ q₁ : ℤ} (hr : r' + 1 = r) (h : p + q = r') (hp : p
         ι_π_of_ne_assoc P hC hD (p := a) (q := b) (p' := p) (q' := q₁) (r := r) h2]
       simp
 
-/-- Morphisms into `((C ⊗ D)_r)^*` agree when they agree after the dual of every inclusion. -/
-lemma dual_hom_ext_to {r : ℤ} {Z : B''} {f g : Z ⟶ DualCat.dual ((cxProd P C D hC hD).X r)}
-    (h : ∀ p q, p + q = r →
-      f ≫ DualCat.dualHom (ι P hC hD p q r) = g ≫ DualCat.dualHom (ι P hC hD p q r)) :
-    f = g := by
-  have h1 : 𝟙 (DualCat.dual ((cxProd P C D hC hD).X r)) =
-      ∑ x ∈ supp hC hD r, DualCat.dualHom (ι P hC hD x.1 x.2 r) ≫
-        DualCat.dualHom (π P hC hD x.1 x.2 r) := by
-    rw [← DualCat.dualHom_id, ← total P hC hD r, dualHom_sum]
-    simp only [DualCat.dualHom_comp]
-  rw [← Category.comp_id f, ← Category.comp_id g, h1, Preadditive.comp_sum, Preadditive.comp_sum]
-  refine Finset.sum_congr rfl fun x hx => ?_
-  rw [← Category.assoc, ← Category.assoc, h x.1 x.2 ((mem_supp hC hD).1 hx).2]
-
 end cxProd
 
 end HSP

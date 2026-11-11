@@ -24,3 +24,4 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 
 ## Proof depends on
 
+- [Tensor product of complexes](complex-product.md)

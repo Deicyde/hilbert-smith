@@ -3,6 +3,7 @@ article_id: af_71c7adf652a3fbee5acacca3
 declaration: lemma
 origin: background
 statement: formalized
+proof: formalized
 lean: HSP.strProd_toHom
 ---
 

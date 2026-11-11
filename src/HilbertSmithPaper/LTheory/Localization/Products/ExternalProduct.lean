@@ -47,4 +47,51 @@ noncomputable def strProd (P : DualityPairing B E B'') {C : ChainComplex B ℤ}
       P.tensor.map (φ ⟨(y.1, m - y.1), by ring⟩ ×ₘ θ ⟨(y.2, n - y.2), by ring⟩) ≫
       cxProd.ι P hC hD y.1 y.2 x.1.1)
 
+/-- The block of `φ ⊗ θ` from the dual of the summand `C_c ⊠ D_d` (`c = m - a`, `d = n - b`) to
+the summand `C_a ⊠ D_b`: `(-1)^{b(a+m)} κ ≫ (φ_{a,c} ⊠ θ_{b,d})`. -/
+lemma strProd_block (P : DualityPairing B E B'') {C : ChainComplex B ℤ}
+    {D : ChainComplex E ℤ} (hC : {r | ¬ IsZero (C.X r)}.Finite)
+    (hD : {r | ¬ IsZero (D.X r)}.Finite) {m n : ℤ} (φ : (StructureCx C).X m)
+    (θ : (StructureCx D).X n) (k : ℤ) (hk : m + n = k) {r s a b c d : ℤ} (hrs : r + s = k)
+    (hab : a + b = r) (ha : a + c = m) (hb : b + d = n) :
+    dualHom (cxProd.π P hC hD c d s) ≫ strProd P hC hD φ θ k hk ⟨(r, s), hrs⟩ ≫
+        cxProd.π P hC hD a b r =
+      (b * (a + m)).negOnePow • ((P.κ (C.X c) (D.X d)).hom ≫
+        P.tensor.map (φ ⟨(a, c), ha⟩ ×ₘ θ ⟨(b, d), hb⟩)) := by
+  obtain rfl : c = m - a := by omega
+  obtain rfl : d = n - b := by omega
+  change dualHom (cxProd.π P hC hD (m - a) (n - b) s) ≫ (∑ y ∈ cxProd.supp hC hD r, _) ≫ _ = _
+  rw [Preadditive.sum_comp, Preadditive.comp_sum]
+  by_cases hm : (a, b) ∈ cxProd.supp hC hD r
+  · rw [Finset.sum_eq_single (a, b)]
+    · simp only [Linear.units_smul_comp, Linear.comp_units_smul, Category.assoc,
+        cxProd.ι_π_self P hC hD hab, Category.comp_id]
+      rw [← Category.assoc, ← dualHom_comp, cxProd.ι_π_self P hC hD (by omega), dualHom_id,
+        Category.id_comp]
+    · rintro y _ hy
+      rw [Linear.units_smul_comp, Linear.comp_units_smul, Category.assoc, Category.assoc,
+        Category.assoc, cxProd.ι_π_of_ne P hC hD (fun h' => hy (Prod.ext h'.1 h'.2)),
+        comp_zero, comp_zero, comp_zero, comp_zero, smul_zero]
+    · exact fun h' => absurd hm h'
+  · exact (cxProd.isZero_of_not_mem_supp P hC hD hab hm).eq_of_tgt _ _
+
+/-- The other blocks of `φ ⊗ θ` vanish. -/
+lemma strProd_block_of_ne (P : DualityPairing B E B'') {C : ChainComplex B ℤ}
+    {D : ChainComplex E ℤ} (hC : {r | ¬ IsZero (C.X r)}.Finite)
+    (hD : {r | ¬ IsZero (D.X r)}.Finite) {m n : ℤ} (φ : (StructureCx C).X m)
+    (θ : (StructureCx D).X n) (k : ℤ) (hk : m + n = k) {r s a b c d : ℤ} (hrs : r + s = k)
+    (hne : ¬ (a + c = m ∧ b + d = n)) :
+    dualHom (cxProd.π P hC hD c d s) ≫ strProd P hC hD φ θ k hk ⟨(r, s), hrs⟩ ≫
+        cxProd.π P hC hD a b r = 0 := by
+  change dualHom (cxProd.π P hC hD c d s) ≫ (∑ y ∈ cxProd.supp hC hD r, _) ≫ _ = _
+  rw [Preadditive.sum_comp, Preadditive.comp_sum]
+  refine Finset.sum_eq_zero fun y _ => ?_
+  simp only [Linear.units_smul_comp, Linear.comp_units_smul, Category.assoc]
+  by_cases hy : y.1 = a ∧ y.2 = b
+  · rw [← Category.assoc (dualHom _) (dualHom _), ← dualHom_comp,
+      cxProd.ι_π_of_ne P hC hD (fun h' => hne ⟨by omega, by omega⟩), dualHom_zero, zero_comp,
+      smul_zero]
+  · rw [cxProd.ι_π_of_ne P hC hD hy]
+    simp
+
 end HSP

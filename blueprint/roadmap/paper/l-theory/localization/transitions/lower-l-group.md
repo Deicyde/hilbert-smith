@@ -1,7 +1,9 @@
 ---
 article_id: af_3e2e29d634ac2ae8e7fb351a
-declaration: def
+declaration: abbrev
 origin: cited
+statement: formalized
+lean: HSP.lowerL
 ---
 
 # Lower L-group
