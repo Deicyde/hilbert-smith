@@ -10,7 +10,7 @@ $$\sigma_{\rm tail}(\Delta_{\mathbf 1}\mathfrak m_c)=[(\varepsilon,\varepsilon,\
 
 This rests on the open statements [lifting](../l-theory/localization/boundary/lift-to-pair.md), through every cut boundary and the tail signature; [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md), through the inner cuts (evaluation at the cubical pinch); and [Lemma U](../l-theory/comparison/lemma-u.md), through the tail signature.
 
-*Proof sketch.* $\mathfrak m_c=\mathfrak m_\kappa$ ([homotopic labellings have equal classes](germ-homotopy.md)). By [evaluation at the cubical pinch](pinch-evaluation.md), $\Delta_{\mathbf 1}\mathfrak m_\kappa=\varepsilon\,q_*\mathrm{cls}[\mathbf P]$ with $\varepsilon=(-1)^{n(n+1)/2}$. The [tail signature](../signatures/tail/tail-signature.md) is additive, and the [constant tail](constant-tail.md) is $[(1,1,\dots)]$.
+*Proof sketch.* $\mathfrak m_c=\mathfrak m_\kappa$ ([homotopic labellings have equal classes](germ-homotopy.md)). By [evaluation at the cubical pinch](pinch-evaluation.md), $\Delta_{\mathbf 1}\mathfrak m_\kappa=\varepsilon\,q_*\mathrm{cls}[\mathbf P]$, for the [constant sequence](constant-cp2-sequence.md) $\mathbf P$, with $\varepsilon=(-1)^{n(n+1)/2}$. The [tail signature](../signatures/tail/tail-signature.md) is additive, and the [constant tail](constant-tail.md) is $[(1,1,\dots)]$.
 
 ## Sources
 - HS paper, Section 12 (Proposition 12.4).
@@ -21,6 +21,7 @@ This rests on the open statements [lifting](../l-theory/localization/boundary/li
 - [Cubical pinch](cubical-pinch.md)
 - [Tail signature](../signatures/tail/tail-signature.md)
 ## Proof depends on
+- [The constant sequence of CP^2](constant-cp2-sequence.md)
 - [Homotopic labellings have equal classes](germ-homotopy.md)
 - [Evaluation at the cubical pinch](pinch-evaluation.md)
 - [Constant tail](constant-tail.md)

@@ -21,6 +21,8 @@ Articles, in reading order:
 - [Box restriction](box-restriction.md)
 - [Face restriction](face-restriction.md)
 - [Evaluation at the cubical pinch](pinch-evaluation.md)
+- [Based vector spaces over the trivial group](based-to-free.md)
+- [The constant sequence of CP^2](constant-cp2-sequence.md)
 - [Signature of CP^2](cp2-signature.md)
 - [Constant tail](constant-tail.md)
 - [Theorem B](theorem-b.md)
