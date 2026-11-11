@@ -31,7 +31,7 @@ lemma eqToHom_comp_apply {M M' N : Bounded A} (h : M' = M) (f : M ⟶ N) (m n : 
   subst h
   simp
 
-lemma comp_eqToHom_apply {M N N' : Bounded A} (f : M ⟶ N) (h : N = N') (m n : ℤ) :
+private lemma comp_eqToHom_apply {M N N' : Bounded A} (f : M ⟶ N) (h : N = N') (m n : ℤ) :
     (f ≫ eqToHom h).1 m n = f.1 m n ≫ eqToHom (congrArg (fun K : Bounded A => K.X m) h) := by
   subst h
   simp

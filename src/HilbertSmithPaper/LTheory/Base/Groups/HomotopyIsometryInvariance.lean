@@ -23,7 +23,7 @@ theorem LGroup.mk_eq_of_homotopyIsometry {k : ℤ} (x y : SymPoincare B k)
     (h : HomotopyEquiv x.C y.C) (χ : (StructureCx y.C).X (k + 1))
     (hχ : (StructureCx y.C).d (k + 1) k χ = (StructureCx.push h.hom).f k x.φ - y.φ) :
     LGroup.mk x = LGroup.mk y := by
-  obtain ⟨W, hW, -⟩ := cylinder_cobordism ⊤ (fun _ _ _ _ => trivial) (fun _ _ => trivial) x y
+  obtain ⟨W, hW, -⟩ := cylinder_cobordism ⊤ (fun _ _ _ _ _ _ => trivial) x y
     (fun _ => trivial) (fun _ => trivial) h χ hχ
   exact Quotient.sound (Cobordant.of_data_eq W hW)
 

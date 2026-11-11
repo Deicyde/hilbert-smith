@@ -3,7 +3,8 @@ import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 /-!
 # Homotopy-isometric complexes are cobordant
 
-Let `P` be a class of objects closed under sums of two objects and under duals, `(C, φ)`,
+Let `P` be a class of objects closed under sums of two objects (the cone point of any biproduct
+bicone of two objects of `P` is in `P`), `(C, φ)`,
 `(C', φ')` strict `k`-dimensional symmetric Poincaré complexes with chain objects in `P`,
 `h : C ⟶ C'` a chain homotopy equivalence and `χ ∈ M(C')_{k+1}` with `∂χ = h_% φ - φ'`. With
 `χ' = (χ + Tχ)/2`, `((h, 1) : C ⊞ C' ⟶ C', χ', φ ⊕ (-φ'))` is a strict `(k+1)`-dimensional
@@ -23,8 +24,9 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
 
 /-- The cylinder pair `((h, 1) : C ⊞ C' ⟶ C', (χ + Tχ)/2, φ ⊕ (-φ'))` of a homotopy isometry
 is a strict `(k+1)`-dimensional Poincaré pair with chain objects in `P`. -/
-theorem cylinder_cobordism (P : ObjectProperty B) (hsum : ∀ X Y : B, P X → P Y → P (X ⊞ Y))
-    (hdual : ∀ X : B, P X → P (dual X)) {k : ℤ} (x y : SymPoincare B k)
+theorem cylinder_cobordism (P : ObjectProperty B)
+    (hsum : ∀ (X Y : B) (c : BinaryBicone X Y), c.IsBilimit → P X → P Y → P c.pt)
+    {k : ℤ} (x y : SymPoincare B k)
     (hx : ∀ r, P (x.C.X r)) (hy : ∀ r, P (y.C.X r)) (h : HomotopyEquiv x.C y.C)
     (χ : (StructureCx y.C).X (k + 1))
     (hχ : (StructureCx y.C).d (k + 1) k χ = (StructureCx.push h.hom).f k x.φ - y.φ) :

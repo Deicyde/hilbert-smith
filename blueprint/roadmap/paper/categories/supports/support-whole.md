@@ -2,6 +2,8 @@
 article_id: af_e865625882293d1a9cf50630
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.supportWholeIso
 ---
 
 # The support subcategory of the whole space
