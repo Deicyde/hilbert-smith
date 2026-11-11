@@ -223,6 +223,10 @@ import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.DualHomotopyEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
 import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorComplex
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorDualIso
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
 import HilbertSmithPaper.LTheory.Base.Complexes.ShiftEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution

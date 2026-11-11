@@ -26,3 +26,4 @@ The dual complex, the structure complex with its involution $T$ and pushforward,
 - [Sums of equivalences](sum-equivalence.md)
 - [Duals of homotopy equivalences](dual-homotopy-equivalence.md)
 - [Shifts of homotopy equivalences](shift-equivalence.md)
+- [Functors on complexes and structures](functors/README.md)
