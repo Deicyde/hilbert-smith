@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
+import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 
@@ -52,15 +53,15 @@ abbrev eFunctor : FiltQuot (inter UA UB) ⥤ FiltQuot UB :=
 
 instance : (eFunctor UA UB).Additive where
   map_add {X Y f g} := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) f
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) g
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective g
     rw [← Functor.map_add, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_add]
 
 instance : (eFunctor UA UB).Linear ℚ where
   map_smul {X Y} f c := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map,
       Functor.map_smul]
@@ -71,7 +72,7 @@ def e : DualFunctor (FiltQuot (inter UA UB)) (FiltQuot UB) where
   toFunctor := eFunctor UA UB
   ξ M := Iso.refl _
   ξ_natural {M N} f := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (inter UA UB) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
     simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]
     rw [FiltQuot.dualHom_map, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map]
@@ -109,5 +110,73 @@ structure ExcisivePair (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ
 
 attribute [instance] ExcisivePair.isDualAdditive_A ExcisivePair.isDualAdditive_B
   ExcisivePair.isDualAdditive_Y
+
+
+/-! Non-vacuity: based vector spaces with `𝒰_A = 𝒰_B` the whole filtration. Both quotients have
+only zero maps; `r` is the identity on objects. -/
+
+section NonVacuity
+
+/-- In a quotient by a subcategory containing every object, any two parallel maps agree. -/
+private lemma filtQuot_hom_eq {B : Type*} [Category B] [Preadditive B] [Linear ℚ B]
+    [HasFiniteBiproducts B] [DualCat B] {U : ObjectProperty B} [IsDualAdditive U]
+    (hU : ∀ X, U X) {M N : FiltQuot U} (f g : M ⟶ N) : f = g := by
+  obtain ⟨M⟩ := M
+  obtain ⟨N⟩ := N
+  obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
+  obtain ⟨g, rfl⟩ := (FiltQuot.functor U).map_surjective g
+  rw [FiltQuot.functor_map_eq_iff]
+  exact ⟨M, hU M, 𝟙 M, f - g, (Category.id_comp _).symm⟩
+
+private abbrev UY : ObjectProperty (⊤ : ObjectProperty FreeQ).FullSubcategory :=
+  ExcisivePair.inter ⊤ ⊤
+
+private instance : IsDualAdditive UY :=
+  isDualAdditive_top (⊤ : ObjectProperty FreeQ).FullSubcategory
+
+private lemma hom_eq_A {M N : FiltQuot (⊤ : ObjectProperty FreeQ)} (f g : M ⟶ N) : f = g :=
+  filtQuot_hom_eq (U := ⊤) (fun _ => trivial) f g
+
+private lemma hom_eq_Y {M N : FiltQuot UY} (f g : M ⟶ N) : f = g :=
+  filtQuot_hom_eq (U := UY) (fun _ => trivial) f g
+
+/-- The functor `𝒜/𝒰_B ⥤ 𝒰_A/𝒰_Y`, the identity on objects. -/
+private noncomputable def rFunctor : FiltQuot (⊤ : ObjectProperty FreeQ) ⥤ FiltQuot UY where
+  obj M := (FiltQuot.functor UY).obj ⟨M.as, trivial⟩
+  map _ := 0
+  map_id _ := hom_eq_Y _ _
+  map_comp _ _ := hom_eq_Y _ _
+
+private instance : rFunctor.Additive where
+  map_add := hom_eq_Y _ _
+
+private instance : rFunctor.Linear ℚ where
+  map_smul _ _ := hom_eq_Y _ _
+
+/-- The duality functor `r`, with `ξ` the zero isomorphism. -/
+private noncomputable def rTop : DualFunctor (FiltQuot (⊤ : ObjectProperty FreeQ)) (FiltQuot UY) where
+  toFunctor := rFunctor
+  ξ _ := ⟨0, 0, hom_eq_Y _ _, hom_eq_Y _ _⟩
+  ξ_natural _ := hom_eq_Y _ _
+  ξ_dual _ := hom_eq_Y _ _
+
+/-- The excisive pair of based vector spaces with `𝒰_A = 𝒰_B` the whole filtration. -/
+private noncomputable def excisivePairTop : ExcisivePair FreeQ where
+  UA := ⊤
+  UB := ⊤
+  filtA := KaroubiFiltration.top FreeQ
+  filtB := KaroubiFiltration.top FreeQ
+  filtY := KaroubiFiltration.top (⊤ : ObjectProperty FreeQ).FullSubcategory
+  r := rTop
+  unit :=
+    { iso := NatIso.ofComponents (fun _ => ⟨0, 0, hom_eq_Y _ _, hom_eq_Y _ _⟩)
+        fun _ => hom_eq_Y _ _
+      unitary _ := hom_eq_Y _ _ }
+  counit :=
+    { iso := NatIso.ofComponents (fun _ => ⟨0, 0, hom_eq_A _ _, hom_eq_A _ _⟩)
+        fun _ => hom_eq_A _ _
+      unitary _ := hom_eq_A _ _ }
+
+end NonVacuity
 
 end HSP

@@ -20,6 +20,7 @@ A morphism $(u_i):M\to M'$ of the [sequence category](point-sequence-category.md
 ## Depends on
 
 - [Finite-support subcategory](eventually-zero-subcategory.md)
+- [Sequence category](point-sequence-category.md)
 
 ## Proof depends on
 

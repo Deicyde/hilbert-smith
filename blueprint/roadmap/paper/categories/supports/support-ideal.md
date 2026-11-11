@@ -33,3 +33,4 @@ Let the $C_p$-action on $X$ be isometric and let $S\subset X$ be invariant. A mo
 - [Free category of a finite group](../asymptotic/free-category.md)
 - [Propagation](../asymptotic/propagation.md)
 - [Translates and thickenings of an invariant set](thickening-invariant.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

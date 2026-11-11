@@ -38,8 +38,8 @@ private abbrev extFunctorAux (F : DualFunctor (AsymCat G X) (AsymCat G' X')) {Z 
 instance (F : DualFunctor (AsymCat G X) (AsymCat G' X')) {Z : Set X} {Z' : Set X'}
     (hZ : ∀ P, supp Z P → supp Z' (F.toFunctor.obj P)) : (extFunctorAux F hZ).Additive where
   map_add {_ _ f g} := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (supp Z) f
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (supp Z) g
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (supp Z)).map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (supp Z)).map_surjective g
     rw [← Functor.map_add, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_add]
@@ -47,7 +47,7 @@ instance (F : DualFunctor (AsymCat G X) (AsymCat G' X')) {Z : Set X} {Z' : Set X
 instance (F : DualFunctor (AsymCat G X) (AsymCat G' X')) {Z : Set X} {Z' : Set X'}
     (hZ : ∀ P, supp Z P → supp Z' (F.toFunctor.obj P)) : (extFunctorAux F hZ).Linear ℚ where
   map_smul {_ _} f c := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (supp Z) f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor (supp Z)).map_surjective f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_smul]
 
@@ -62,7 +62,7 @@ def extFunctor (F : DualFunctor (AsymCat G X) (AsymCat G' X')) (hF : F.IsStrict)
   ⟨{ toFunctor := extFunctorAux F hZ
      ξ M := (FiltQuot.functor (supp Z')).mapIso (F.ξ M.as)
      ξ_natural {M N} f := by
-       obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective (supp Z) f
+       obtain ⟨f, rfl⟩ := (FiltQuot.functor (supp Z)).map_surjective f
        simp only [Functor.mapIso_hom]
        rw [FiltQuot.dualHom_map, CategoryTheory.Quotient.lift_map_functor_map,
          CategoryTheory.Quotient.lift_map_functor_map, Functor.comp_map, Functor.comp_map,

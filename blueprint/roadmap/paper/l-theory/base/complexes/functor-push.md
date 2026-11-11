@@ -24,3 +24,4 @@ in $M(FD)_n$, for the [pushforward](structure-push.md) and the image of structur
 - [Duality functor](../categories/duality-functor.md)
 - [Pushforward of structures](structure-push.md)
 - [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
+- [Image of structures under a duality functor](functors/functor-structure.md)

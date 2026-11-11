@@ -23,3 +23,4 @@ where $\partial$ is the [ultimate boundary](ultimate-boundary.md) of $\mathcal U
 - [Ultimate boundary](ultimate-boundary.md)
 - [Induced map on ultimate L](../groups/induced-map.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [The quotient duality functor](../../base/categories/quotient-duality-functor.md)

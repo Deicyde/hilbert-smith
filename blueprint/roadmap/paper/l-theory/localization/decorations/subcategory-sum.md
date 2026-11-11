@@ -27,6 +27,8 @@ In particular this applies to [complexes in $\mathcal P$](complex-in-subcategory
 - [The sum of two Poincaré complexes](../../base/pairs/poincare-sum.md)
 - [Sum of structured complexes](../../base/complexes/sum-of-complexes.md)
 - [Group structure on L](../../base/groups/l-group-add.md)
+- [Image of structures under a duality functor](../../base/complexes/functors/functor-structure.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
 
 ## Proof depends on
 

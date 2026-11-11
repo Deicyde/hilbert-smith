@@ -22,6 +22,7 @@ $\mathrm{Sign}_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to(G\to\mathbb R)$, $[C,\var
 - [Projective L-group](../../l-theory/base/groups/l-group.md)
 - [Group structure on L](../../l-theory/base/groups/l-group-add.md)
 - [Complex signature](complex-signature.md)
+- [The projective L-group](../../l-theory/base/groups/projective-l-group.md)
 
 ## Proof depends on
 

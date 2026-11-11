@@ -31,3 +31,6 @@ For [fixed local data](../local-data/control/fixed-local-data.md) and every $s>0
 - [Averaged map continuous](../local-data/chart/averaged-map-continuous.md)
 - [Averaged map displacement](../local-data/chart/averaged-map-displacement.md)
 - [Pinch continuous](../local-data/chart/pinch-continuous.md)
+- [The pinch map](../local-data/chart/pinch.md)
+- [The averaged chart map](../local-data/chart/averaged-map.md)
+- [Local datum](../local-data/chart/local-datum.md)

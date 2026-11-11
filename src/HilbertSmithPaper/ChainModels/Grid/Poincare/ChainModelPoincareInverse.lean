@@ -4,6 +4,10 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelStructureU
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelHDual
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelInverseChainMap
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelInverseExact
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelHomotopy
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelDualHomotopy
 
 /-!
 # The chain model is Poincaré: part 2
@@ -36,7 +40,8 @@ theorem chainModel_poincare_inverse (A : LocalDatum p n D ρplus) (i : ℕ) :
           (chainModelDuality A i).b r - 𝟙 _ =
         chainModelH' A i r ≫ (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).d (r + 1) r +
           (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).d r (r - 1) ≫ chainModelH' A i (r - 1) ≫
-            eqToHom (congrArg (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).X (by ring)))) := by
-  sorry
+            eqToHom (congrArg (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).X (by ring)))) :=
+  ⟨chainModel_inverse_chainMap A i, chainModel_inverse_exact A i, chainModel_homotopy A i,
+    chainModel_dual_homotopy A i⟩
 
 end HSP.ChainModels

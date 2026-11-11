@@ -29,3 +29,7 @@ Moreover $Y_n=\{y_-,y_+\}$ and $y_-\ne y_+$.
 ## Depends on
 
 - [The cut sets](cut-sets.md)
+- [The cube face](cut-face.md)
+- [The boundary of the cube face](cut-face-boundary.md)
+- [The point y₊](cut-point-plus.md)
+- [The point y₋](cut-point-minus.md)

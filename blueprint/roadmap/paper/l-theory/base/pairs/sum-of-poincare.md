@@ -26,3 +26,4 @@ If $(C,\phi)$ and $(C',\phi')$ are strict $k$-dimensional symmetric Poincaré co
 
 - [Pushforward commutes with T](../complexes/structure-push-involution.md)
 - [Dual complex](../complexes/dual-complex.md)
+- [Pushforward of structures](../complexes/structure-push.md)

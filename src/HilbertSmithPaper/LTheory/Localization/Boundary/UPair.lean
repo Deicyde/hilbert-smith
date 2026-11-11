@@ -3,6 +3,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
+import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
 
 /-!
 # U-pairs

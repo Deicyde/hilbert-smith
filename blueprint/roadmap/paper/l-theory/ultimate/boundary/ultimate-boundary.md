@@ -34,3 +34,4 @@ Here $\partial^{(j)}x$ is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ th
 - [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
 - [Lower transition map](../../localization/transitions/transition-lower.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

@@ -1,5 +1,6 @@
 import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 
 /-!
 # Exterior quotient

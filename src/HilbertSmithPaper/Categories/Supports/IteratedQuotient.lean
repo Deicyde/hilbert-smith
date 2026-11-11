@@ -2,6 +2,7 @@ import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
 import HilbertSmithPaper.Categories.Supports.NullThickening
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.ProjectionInclusion
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionComplement
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 
 /-!
 # Iterated quotient
@@ -103,8 +104,8 @@ private instance (F : A ⥤ B) [F.Additive]
     (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ → F.map f₁ = F.map f₂) :
     (liftFun U F H).Additive where
   map_add {_ _ f g} := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective U f
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective U g
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor U).map_surjective g
     rw [← Functor.map_add, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_add]
@@ -113,7 +114,7 @@ private instance (F : A ⥤ B) [F.Linear ℚ]
     (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ → F.map f₁ = F.map f₂) :
     (liftFun U F H).Linear ℚ where
   map_smul {_ _} f c := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective U f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_smul]
 
@@ -125,7 +126,7 @@ private def liftDual (F : DualFunctor A B)
   toFunctor := liftFun U F.toFunctor H
   ξ M := F.ξ M.as
   ξ_natural {M N} f := by
-    obtain ⟨f, rfl⟩ := FiltQuot.functor_map_surjective U f
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
     rw [FiltQuot.dualHom_map, CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map]
     exact F.ξ_natural f
@@ -175,11 +176,11 @@ private def iterQuot₀ :
 private theorem compat (x y : FiltQuot (suppIn (G := G) S Z)) (f₁ f₂ : x ⟶ y)
     (h : FiltQuot.rel (quotSupp S Z Y) f₁ f₂) :
     (iterQuot₀ S Y Z).toFunctor.map f₁ = (iterQuot₀ S Y Z).toFunctor.map f₂ := by
-  obtain ⟨g₁, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S Z) f₁
-  obtain ⟨g₂, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S Z) f₂
+  obtain ⟨g₁, rfl⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective f₁
+  obtain ⟨g₂, rfl⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective f₂
   obtain ⟨V, hV, A, B, hAB⟩ := h
-  obtain ⟨a, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S Z) A
-  obtain ⟨b, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S Z) B
+  obtain ⟨a, rfl⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective A
+  obtain ⟨b, rfl⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective B
   rw [← Functor.map_sub, ← Functor.map_comp, FiltQuot.functor_map_eq_iff] at hAB
   change (FiltQuot.functor (suppIn S Z) ⋙ (iterQuot₀ S Y Z).toFunctor).map g₁ =
     (FiltQuot.functor (suppIn S Z) ⋙ (iterQuot₀ S Y Z).toFunctor).map g₂
@@ -188,7 +189,7 @@ private theorem compat (x y : FiltQuot (suppIn (G := G) S Z)) (f₁ f₂ : x ⟶
   rw [FiltQuot.functor_map_eq_iff]
   have he : g₁ - g₂ = (g₁ - g₂ - a ≫ b) + a ≫ b := by abel
   rw [he]
-  exact FiltQuot.ideal_add (ideal_suppIn_mono Set.subset_union_right hAB)
+  exact (FiltQuot.ideal_closed _).2.1 (ideal_suppIn_mono Set.subset_union_right hAB)
     (ideal_suppIn_mono Set.subset_union_left ⟨V.as, hV, a, b, rfl⟩)
 
 /-- The strict duality functor `(𝒜_S/𝒜_Z)/𝒰_Y → 𝒜_S/𝒜_{Y ∪ Z}`, `[[u]] ↦ [u]`. -/

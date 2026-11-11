@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
+import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 
 /-!
 # Lower L-group

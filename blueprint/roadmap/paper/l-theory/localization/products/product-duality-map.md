@@ -9,9 +9,9 @@ lean: HSP.strProd_toHom
 
 # Duality map of a product
 
-Let $C$, $E$, $\phi\in M(C)_m$ and $\theta\in M(E)_n$ be as in [External product of structures](external-product.md), with $\partial\phi=0$ and $\partial\theta=0$. Then
+Let $C$, $E$, $\phi\in M(C)_m$ and $\theta\in M(E)_n$ be as in [External product of structures](external-product.md), with $\partial\phi=0$ and $\partial\theta=0$, and suppose $\phi\otimes\theta$ is a cycle (it is, by the Leibniz rule). Then
 $$(\phi\otimes\theta)_\natural=(\phi_\natural\otimes\theta_\natural)\circ\Xi,$$
-where $\Xi$ is the isomorphism of [Dual of a tensor product](product-dual-iso.md) and $\phi_\natural\otimes\theta_\natural$ is the tensor of chain maps of [Tensor product of complexes](complex-product.md). Here $\phi\otimes\theta$ is a cycle by the Leibniz rule, so that $(\phi\otimes\theta)_\natural$ is defined; the statement holds for any proof of that.
+where $\Xi$ is the isomorphism of [Dual of a tensor product](product-dual-iso.md) and $\phi_\natural\otimes\theta_\natural$ is the tensor of chain maps of [Tensor product of complexes](complex-product.md).
 
 *Proof sketch.* Read the definition of $\phi\otimes\theta$ block by block: on the summand $(C_{m-a}\boxtimes E_{n-b})^*$ both sides are $s(a,b)\,(\phi_a\boxtimes\theta_b)\circ\kappa$.
 

@@ -24,7 +24,7 @@ variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod
 /-- In `𝒜_S/𝒜_Z` the duality is an involution on the nose on morphisms. -/
 private theorem dualHom_dualHom_quot {S Z : Set X} {M N : FiltQuot (suppIn (G := G) S Z)}
     (q : M ⟶ N) : dualHom (dualHom q) = q := by
-  obtain ⟨w, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S Z) q
+  obtain ⟨w, rfl⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective q
   rw [FiltQuot.dualHom_map, FiltQuot.dualHom_map]
   congr 1
   refine ObjectProperty.hom_ext _ ?_
@@ -65,12 +65,12 @@ noncomputable def quotSupp_karoubiFiltration (S Z : Set X) {Y : Set X}
     exacts [congrArg _ h1, congrArg _ h2, congrArg _ h3, congrArg _ h4]
   factor_left := by
     intro V M g hV
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S Z) g
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective g
     obtain ⟨p, hp, h⟩ := (supp_karoubiFiltration S hY).factor_left g hV
     exact ⟨_, ⟨p, hp, rfl⟩, by rw [← Functor.map_comp, h]⟩
   factor_right := by
     intro M V g hV
-    obtain ⟨g, rfl⟩ := FiltQuot.functor_map_surjective (suppIn S Z) g
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor (suppIn S Z)).map_surjective g
     obtain ⟨p, hp, h⟩ := (supp_karoubiFiltration S hY).factor_right g hV
     exact ⟨_, ⟨p, hp, rfl⟩, by rw [← Functor.map_comp, h]⟩
   dual_mem_iff := by
