@@ -28,6 +28,7 @@ import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
 import HilbertSmithPaper.LocalData.Subgroups.SmallDisplacement
 import HilbertSmithPaper.Proofs.FaithfulHausdorff
+import HilbertSmithPaper.Proofs.HalfSpaceInterior
 import HilbertSmithPaper.Proofs.HilbertSmith
 import HilbertSmithPaper.Proofs.HilbertSmithBoundary
 import HilbertSmithPaper.Proofs.IntegerTails
