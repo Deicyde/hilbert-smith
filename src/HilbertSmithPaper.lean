@@ -61,6 +61,7 @@ import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
+import HilbertSmithPaper.Categories.Asymptotic.EventuallyZeroSubcategory
 import HilbertSmithPaper.Signatures.Forms.FormSignature
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIdentity
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
