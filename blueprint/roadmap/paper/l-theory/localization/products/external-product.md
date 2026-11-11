@@ -22,3 +22,12 @@ and zero blocks elsewhere. The degree $k=m+n$ of $\phi\otimes\theta$ is recorded
 - [Duality pairings](duality-pairing.md)
 - [Tensor product of complexes](complex-product.md)
 - [Structure complex](../../base/complexes/structure-complex.md)
+- [Support of a tensor product of complexes](bookkeeping/product-support.md)
+- [Summand inclusions of a tensor product](bookkeeping/summand-inclusion.md)
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+
+## Proof depends on
+
+- [Projection after inclusion of the same summand](bookkeeping/inclusion-projection.md)
+- [Projection after inclusion of another summand](bookkeeping/inclusion-projection-ne.md)
+- [Summands outside the support vanish](bookkeeping/summand-zero.md)

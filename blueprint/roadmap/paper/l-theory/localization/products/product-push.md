@@ -23,4 +23,10 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 - [External product of structures](external-product.md)
 - [Pushforward of structures](../../base/complexes/structure-push.md)
 - [Tensor product of complexes](complex-product.md)
+- [Tensor product of chain maps](bookkeeping/product-map.md)
 
+## Proof depends on
+
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+- [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
+- [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)

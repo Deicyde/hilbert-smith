@@ -36,6 +36,7 @@ is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [Duals of box products](box-dual.md)
 - [Structure of the symmetric line](symmetric-line-structure.md)
+- [Tensor product of chain maps](bookkeeping/product-map.md)
 
 ## Proof depends on
 

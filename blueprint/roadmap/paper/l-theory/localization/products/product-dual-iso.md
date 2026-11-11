@@ -24,3 +24,15 @@ is $s(a,b)$ times $\kappa$ on the summand $(C_{m-a}\boxtimes E_{n-b})^*$, which 
 - [Duality pairings](duality-pairing.md)
 - [Tensor product of complexes](complex-product.md)
 - [Dual complex](../../base/complexes/dual-complex.md)
+- [Dual complexes have finitely many nonzero chain objects](bookkeeping/dual-complex-finite.md)
+- [Summand inclusions of a tensor product](bookkeeping/summand-inclusion.md)
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+
+## Proof depends on
+
+- [Support of a tensor product of complexes](bookkeeping/product-support.md)
+- [Projection after inclusion of the same summand](bookkeeping/inclusion-projection.md)
+- [Projection after inclusion of another summand](bookkeeping/inclusion-projection-ne.md)
+- [Summands outside the support vanish](bookkeeping/summand-zero.md)
+- [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
+- [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)

@@ -1,5 +1,6 @@
 import Mathlib
-import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMapComp
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMapId
 
 /-!
 # Tensor products of equivalences
@@ -25,30 +26,6 @@ variable {B : Type u₁} [Category.{v₁} B] [Preadditive B] [Linear ℚ B] [Has
   {B'' : Type u₃} [Category.{v₃} B''] [Preadditive B''] [Linear ℚ B''] [HasFiniteBiproducts B'']
   [DualCat B'']
   (P : DualityPairing B E B'')
-
-/-- Functoriality of `⊗` on chain maps. -/
-private lemma cxProdMap_comp {C C' C'' : ChainComplex B ℤ} {D D' D'' : ChainComplex E ℤ}
-    (f : C ⟶ C') (f' : C' ⟶ C'') (g : D ⟶ D') (g' : D' ⟶ D'')
-    (hC : {r | ¬ IsZero (C.X r)}.Finite) (hD : {r | ¬ IsZero (D.X r)}.Finite)
-    (hC' : {r | ¬ IsZero (C'.X r)}.Finite) (hD' : {r | ¬ IsZero (D'.X r)}.Finite)
-    (hC'' : {r | ¬ IsZero (C''.X r)}.Finite) (hD'' : {r | ¬ IsZero (D''.X r)}.Finite) :
-    cxProdMap P (f ≫ f') (g ≫ g') hC hD hC'' hD'' =
-      cxProdMap P f g hC hD hC' hD' ≫ cxProdMap P f' g' hC' hD' hC'' hD'' := by
-  have := P.hasMapBifunctor_of_finite hC hD
-  have := P.hasMapBifunctor_of_finite hC' hD'
-  have := P.hasMapBifunctor_of_finite hC'' hD''
-  ext j p q h
-  simp only [HomologicalComplex.comp_f, HomologicalComplex.ι_mapBifunctorMap,
-    HomologicalComplex.ι_mapBifunctorMap_assoc, Functor.curry_obj_map_app,
-    Functor.curry_obj_obj_map, ← Functor.map_comp_assoc, CategoryTheory.prod_comp,
-    Category.id_comp, Category.comp_id]
-
-private lemma cxProdMap_id {C : ChainComplex B ℤ} {D : ChainComplex E ℤ}
-    (hC : {r | ¬ IsZero (C.X r)}.Finite) (hD : {r | ¬ IsZero (D.X r)}.Finite) :
-    cxProdMap P (𝟙 C) (𝟙 D) hC hD hC hD = 𝟙 _ := by
-  have := P.hasMapBifunctor_of_finite hC hD
-  ext j p q h
-  simp
 
 /-- **Tensor products of equivalences.** If `f` and `g` are chain homotopy equivalences, so is
 `f ⊗ g`. -/

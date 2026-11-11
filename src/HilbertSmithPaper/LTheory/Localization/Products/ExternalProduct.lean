@@ -1,5 +1,7 @@
 import Mathlib
-import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjection
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjectionNe
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.SummandZero
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 
 /-!
