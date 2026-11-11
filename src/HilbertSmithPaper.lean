@@ -32,6 +32,7 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
 import HilbertSmithPaper.Proofs.PadicExclusion
+import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 
 /-!
 # The paper
