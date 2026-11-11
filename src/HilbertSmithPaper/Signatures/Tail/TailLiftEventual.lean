@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
-import HilbertSmithPaper.Categories.Asymptotic.PointQuotient
+import HilbertSmithPaper.Categories.Asymptotic.PointQuotientFunctor
+import HilbertSmithPaper.Categories.Asymptotic.PointCoordinateProjection
 
 /-!
 # Lifts agree eventually

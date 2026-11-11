@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
+import HilbertSmithPaper.Categories.Asymptotic.Structure.InclusionMatrix
 
 /-!
 # Free category of a finite group
@@ -116,14 +117,8 @@ instance : Linear ℚ (FreeCat G) where
 
 /-! ### Sums -/
 
-/-- The coordinate inclusion of a basis `G × Fin m` into `G × Fin m'` along `e : Fin m → Fin m'`,
-as a matrix with rows indexed by `G × Fin m'`: the entry at `(a, b)` is `1` if `a = (b.1, e b.2)`
-and `0` otherwise. -/
-def inclMat {m m' : ℕ} (e : Fin m → Fin m') : Matrix (G × Fin m') (G × Fin m) ℚ :=
-  fun a b => if a = (b.1, e b.2) then 1 else 0
-
 omit [Fintype G] in
-theorem inclMat_mem {m m' : ℕ} (e : Fin m → Fin m') :
+private theorem inclMat_mem {m m' : ℕ} (e : Fin m → Fin m') :
     inclMat (G := G) e ∈ equivariant G m' m := by
   intro g h h' k' k
   simp [inclMat]

@@ -11,7 +11,7 @@ point category.
 Lean encoding. On sequences, `HSP.AsymPre.forgetLabels : AsymPre G X ⥤ PCat G` keeps the
 matrices (the bases of `(n_i, x_i)` and `(n_i)` are the same free `G_i`-sets). Composed with the
 quotient functor `q`, eventually equal sequences have the same image (they differ in finitely many
-coordinates, `HSP.VCat.map_eq_iff`, which rests on the point ideal), so it descends to
+coordinates, so their difference lies in the point ideal), so it descends to
 `𝒜_𝐆(X)` (`CategoryTheory.Quotient.lift`). `HSP.forgetLabels` is the resulting duality functor,
 with `ξ = id`; it is strict (`HSP.forgetLabels_isStrict`).
 -/
@@ -29,10 +29,18 @@ private def AsymPre.forgetLabels : AsymPre G X ⥤ PCat G where
   map_id _ := rfl
   map_comp _ _ := rfl
 
+/-- Sequences differing in finitely many coordinates have the same image in `𝒱_𝐆`. -/
+private theorem map_eq_of_finite {M N : PCat G} (u v : M ⟶ N)
+    (h : {i | PCat.homCoord u i ≠ PCat.homCoord v i}.Finite) :
+    (FiltQuot.functor (SCat G)).map u = (FiltQuot.functor (SCat G)).map v := by
+  rw [FiltQuot.functor_map_eq_iff]
+  refine (SCat.ideal_iff (u - v)).2 ?_
+  simpa only [PCat.homCoord_sub, ne_eq, sub_eq_zero] using h
+
 private theorem forgetLabels_resp ⦃M N : AsymPre G X⦄ (u v : M ⟶ N) (h : asymRel G X u v) :
     (AsymPre.forgetLabels ⋙ FiltQuot.functor (SCat G)).map u =
       (AsymPre.forgetLabels ⋙ FiltQuot.functor (SCat G)).map v := by
-  refine (VCat.map_eq_iff _ _).2 ?_
+  refine map_eq_of_finite _ _ ?_
   obtain ⟨N₀, hN₀⟩ := eventually_atTop.1 h
   refine (Set.finite_lt_nat N₀).subset fun i hi => ?_
   by_contra hlt

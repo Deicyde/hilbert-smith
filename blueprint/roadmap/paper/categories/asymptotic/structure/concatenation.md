@@ -20,3 +20,7 @@ The concatenation of objects $M=(n_i,x_i)$ and $N=(m_i,y_i)$ of the [asymptotic 
 
 - [Asymptotic category](../asymptotic-category.md)
 - [Free category of a finite group](../free-category.md)
+
+## Proof depends on
+
+- [The inclusion matrix](inclusion-matrix.md)

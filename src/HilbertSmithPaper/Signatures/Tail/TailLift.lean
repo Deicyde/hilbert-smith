@@ -1,5 +1,5 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
-import HilbertSmithPaper.Categories.Asymptotic.PointQuotient
+import HilbertSmithPaper.Categories.Asymptotic.PointQuotientFunctor
 
 /-!
 # Classes over `𝒱` lift

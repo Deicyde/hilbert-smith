@@ -4,9 +4,11 @@ import HilbertSmithPaper.Categories.Asymptotic.EventuallyZeroSubcategory
 import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
 import HilbertSmithPaper.Categories.Asymptotic.FreeZero
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
+import HilbertSmithPaper.Categories.Asymptotic.PointCoordinateProjection
 import HilbertSmithPaper.Categories.Asymptotic.PointFiltration
 import HilbertSmithPaper.Categories.Asymptotic.PointIdeal
 import HilbertSmithPaper.Categories.Asymptotic.PointQuotient
+import HilbertSmithPaper.Categories.Asymptotic.PointQuotientFunctor
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
 import HilbertSmithPaper.Categories.Asymptotic.PropAdd
 import HilbertSmithPaper.Categories.Asymptotic.PropMul
@@ -35,6 +37,7 @@ import HilbertSmithPaper.Categories.Asymptotic.Structure.Concatenation
 import HilbertSmithPaper.Categories.Asymptotic.Structure.ConcatenationBilimit
 import HilbertSmithPaper.Categories.Asymptotic.Structure.EmptyObject
 import HilbertSmithPaper.Categories.Asymptotic.Structure.EmptyObjectZero
+import HilbertSmithPaper.Categories.Asymptotic.Structure.InclusionMatrix
 import HilbertSmithPaper.Categories.Asymptotic.Structure.MorphismPropagation
 import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
 import HilbertSmithPaper.Categories.Asymptotic.TrivialGroupSequence

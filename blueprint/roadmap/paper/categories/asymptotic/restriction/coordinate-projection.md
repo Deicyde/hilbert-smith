@@ -19,3 +19,4 @@ For a [restriction](restriction-sub-basis.md) $M_P$ of $M$, the coordinate proje
 
 - [Coordinate inclusion of a restriction](coordinate-inclusion.md)
 - [Duality on the asymptotic category](../asymptotic-duality.md)
+- [The inclusion matrix](../structure/inclusion-matrix.md)

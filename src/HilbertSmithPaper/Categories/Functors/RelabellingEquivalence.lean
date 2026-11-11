@@ -33,13 +33,6 @@ namespace HSP
 
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
 
-/-- A nonempty closed subset of a compact metric space has a nearest-point map
-`ρ : X → S`, `d(x, ρ x) = d(x, S)`. -/
-private theorem exists_nearest [CompactSpace X] {S : Set X} (hS : IsClosed S) (hne : S.Nonempty) :
-    ∃ ρ : X → S, ∀ x, dist x (ρ x : X) = Metric.infDist x S := by
-  choose ρ hρS hρ using fun x => hS.isCompact.exists_infDist_eq_dist hne x
-  exact ⟨fun x => ⟨ρ x, hρS x⟩, fun x => (hρ x).symm⟩
-
 variable [IsIsometricVAdd (ZMod p) X] (S : SubAddAction (ZMod p) X)
 
 section P
