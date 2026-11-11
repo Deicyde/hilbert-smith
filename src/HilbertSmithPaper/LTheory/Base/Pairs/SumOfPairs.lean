@@ -25,6 +25,49 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
 
 namespace SymPair
 
+omit [Linear ℚ B] [DualCat B] in
+private lemma isZero_biprod {X Y : B} (hX : IsZero X) (hY : IsZero Y) : IsZero (X ⊞ Y) := by
+  rw [IsZero.iff_id_eq_zero, ← biprod.total, hX.eq_of_tgt biprod.fst 0,
+    hY.eq_of_tgt biprod.snd 0, zero_comp, zero_comp, add_zero]
+
+private lemma dualCx_map_add {C D : ChainComplex B ℤ} (f g : C ⟶ D) (n : ℤ) :
+    dualCx.map (f + g) n = dualCx.map f n + dualCx.map g n := by
+  ext r
+  simp
+
+private lemma dualCx_map_zero (C D : ChainComplex B ℤ) (n : ℤ) :
+    dualCx.map (0 : C ⟶ D) n = 0 := by
+  ext r
+  simp
+
+/-- The canonical isomorphism `(C ⊞ C')^{n-*} ≅ C^{n-*} ⊞ C'^{n-*}`. -/
+private noncomputable def dualBiprodIso (C C' : ChainComplex B ℤ) (n : ℤ) :
+    dualCx (C ⊞ C') n ≅ dualCx C n ⊞ dualCx C' n where
+  hom := biprod.lift (dualCx.map biprod.inl n) (dualCx.map biprod.inr n)
+  inv := biprod.desc (dualCx.map biprod.fst n) (dualCx.map biprod.snd n)
+  hom_inv_id := by
+    rw [biprod.lift_desc, ← dualCx.map_comp, ← dualCx.map_comp, ← dualCx_map_add,
+      biprod.total, dualCx.map_id]
+  inv_hom_id := by
+    apply biprod.hom_ext <;> apply biprod.hom_ext' <;>
+      simp [← dualCx.map_comp, dualCx.map_id, dualCx_map_zero]
+
+/-- Sums of chain homotopy equivalences are chain homotopy equivalences. -/
+private noncomputable def biprodHomotopyEquiv {X X' Y Y' : ChainComplex B ℤ}
+    (e : HomotopyEquiv X Y) (e' : HomotopyEquiv X' Y') : HomotopyEquiv (X ⊞ X') (Y ⊞ Y') where
+  hom := biprod.map e.hom e'.hom
+  inv := biprod.map e.inv e'.inv
+  homotopyHomInvId := (Homotopy.ofEq (by
+    apply biprod.hom_ext' <;> apply biprod.hom_ext <;> simp)).trans
+    ((((e.homotopyHomInvId.compRight biprod.inl).compLeft biprod.fst).add
+      ((e'.homotopyHomInvId.compRight biprod.inr).compLeft biprod.snd)).trans
+      (Homotopy.ofEq (by simp [biprod.total])))
+  homotopyInvHomId := (Homotopy.ofEq (by
+    apply biprod.hom_ext' <;> apply biprod.hom_ext <;> simp)).trans
+    ((((e.homotopyInvHomId.compRight biprod.inl).compLeft biprod.fst).add
+      ((e'.homotopyInvHomId.compRight biprod.inr).compLeft biprod.snd)).trans
+      (Homotopy.ofEq (by simp [biprod.total])))
+
 /-- The map of cones `𝒞(f) ⟶ 𝒞(f₁)`, `(y, x) ↦ (b y, a x)`, of a commutative square
 `f ≫ b = a ≫ f₁`. -/
 private noncomputable def coneMap {C D C₁ D₁ : ChainComplex B ℤ} {f : C ⟶ D} {f₁ : C₁ ⟶ D₁}
@@ -83,7 +126,7 @@ theorem sum {m n : ℤ} (W W' : SymPair B m n) :
       boundary_symmetric := zsymmetric
       boundary_poincare := zpoincare
       bounded := fun r hr => IsZero.of_iso
-        (SymPoincare.isZero_biprod (W.bounded r hr) (W'.bounded r hr))
+        (isZero_biprod (W.bounded r hr) (W'.bounded r hr))
         (HomologicalComplex.biprodXIso W.D W'.D r)
       symmetric := by
         rw [StructureCx.sum, map_add, StructureCx.T_push_apply, StructureCx.T_push_apply,
@@ -92,8 +135,8 @@ theorem sum {m n : ℤ} (W W' : SymPair B m n) :
       poincare := ?_ }, rfl⟩
   obtain ⟨e, he⟩ := W.poincare
   obtain ⟨e', he'⟩ := W'.poincare
-  refine ⟨(HomotopyEquiv.ofIso (SymPoincare.dualBiprodIso W.D W'.D n)).trans
-    ((SymPoincare.biprodHomotopyEquiv e e').trans
+  refine ⟨(HomotopyEquiv.ofIso (dualBiprodIso W.D W'.D n)).trans
+    ((biprodHomotopyEquiv e e').trans
       (HomotopyEquiv.ofIso (coneBiprodIso W.f W'.f).symm)), ?_⟩
   have hm : ∀ {Z X Y X' Y' : ChainComplex B ℤ} (A : Z ⟶ X) (A' : Z ⟶ X') (ψ : X ⟶ Y)
       (ψ' : X' ⟶ Y'), biprod.lift A A' ≫ biprod.map ψ ψ' = biprod.lift (A ≫ ψ) (A' ≫ ψ') :=
