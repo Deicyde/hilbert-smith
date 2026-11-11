@@ -82,6 +82,7 @@ import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Evaluation.LabelledModel
 import HilbertSmithPaper.Compression.BufferEventually
+import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.Compression.StartIndex
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
