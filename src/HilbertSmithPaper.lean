@@ -20,6 +20,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.PairTransport
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPairs
 import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence
 import HilbertSmithPaper.LTheory.Base.Pairs.CylinderCobordism
+import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
 import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.HomotopyIsometryInvariance
 
