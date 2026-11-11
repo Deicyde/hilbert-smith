@@ -10,7 +10,7 @@ lean: HSP.cxProd
 
 Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality pairing](duality-pairing.md), $C$ a complex in $\mathcal B$ and $E$ a complex in $\mathcal E$, each with all but finitely many chain objects zero objects. Their tensor product $C\otimes E$ is the complex in $\mathcal B''$ with
 $$(C\otimes E)_r=\bigoplus_{p+q=r}C_p\boxtimes E_q,$$
-and differential $d\boxtimes1+(-1)^p\,1\boxtimes d$ on $C_p\boxtimes E_q$. The direct sum has the summand inclusions $\iota_{p,q}$ and projections $\pi_{p,q}$; only finitely many summands are nonzero, and $\sum_{p+q=r}\iota_{p,q}\pi_{p,q}=1$. For chain maps $f:C\to C'$ and $g:E\to E'$, the chain map $f\otimes g$ is $f_p\boxtimes g_q$ on $C_p\boxtimes E_q$.
+and differential $d\boxtimes1+(-1)^p\,1\boxtimes d$ on $C_p\boxtimes E_q$. The direct sum has the summand inclusions $\iota_{p,q}$ and projections $\pi_{p,q}$; only finitely many summands are nonzero, and $\sum_{p+q=r}\iota_{p,q}\pi_{p,q}=1$. Hence a map into $(C\otimes E)_r$, or out of its dual, is determined by its components, and on summands the differential is $d\,\iota_{p,q}=\iota_{p-1,q}(d\boxtimes1)+(-1)^p\iota_{p,q-1}(1\boxtimes d)$, equivalently $\pi_{p,q}\,d=(d\boxtimes1)\pi_{p+1,q}+(-1)^p(1\boxtimes d)\pi_{p,q+1}$. For chain maps $f:C\to C'$ and $g:E\to E'$, the chain map $f\otimes g$ is $f_p\boxtimes g_q$ on $C_p\boxtimes E_q$.
 
 **Remark (not formalized).** For $C$ in $\operatorname{Kar}\mathcal B$ and $E$ in $C_\mathbb Z(\mathbb Q)$, the pairing is the [box product](box-dual.md) and $C\otimes E$ lies in $\operatorname{Kar}C_\mathbb Z(\mathcal B)$; for $C$ and $E$ in $\mathbb Q$ it is the [tensor product of based vector spaces](based-tensor.md).
 
