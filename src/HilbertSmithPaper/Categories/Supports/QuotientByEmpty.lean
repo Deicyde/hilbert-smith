@@ -60,7 +60,7 @@ private abbrev quotientByEmptyInvFunctor (S : Set X) :
     FiltQuot (suppIn (G := G) S ∅) ⥤ (supp S : ObjectProperty (AsymCat G X)).FullSubcategory :=
   CategoryTheory.Quotient.lift (FiltQuot.rel (suppIn S ∅)) (𝟭 _) (lift_compat (G := G) S)
 
-instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Additive where
+private instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Additive where
   map_add {_ _ f g} := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S ∅)).map_surjective f
     obtain ⟨g, rfl⟩ := (FiltQuot.functor (suppIn S ∅)).map_surjective g
@@ -69,7 +69,7 @@ instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Additive where
       CategoryTheory.Quotient.lift_map_functor_map]
     rfl
 
-instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Linear ℚ where
+private instance (S : Set X) : (quotientByEmptyInvFunctor (G := G) S).Linear ℚ where
   map_smul {_ _} f c := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S ∅)).map_surjective f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,

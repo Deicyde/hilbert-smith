@@ -22,6 +22,7 @@ Duality categories, duality functors and unitary isomorphisms; the idempotent co
 - [Maps factoring through a dual-closed subcategory form an ideal](filtration-ideal-closure.md)
 - [Quotient by a subcategory](filtration-quotient.md)
 - [The quotient duality functor](quotient-duality-functor.md)
+- [Lift of a duality functor to a quotient](quotient-dual-lift.md)
 - [Completion of a subcategory](kar-subcategory.md)
 - [Maps factoring through Kar U](karoubi-of-filtration.md)
 - [Kernel of the completed quotient](karoubi-quotient-kernel.md)
