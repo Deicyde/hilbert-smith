@@ -30,18 +30,6 @@ private lemma units_smul_apply {M N : ModuleCat.{v} ℚ} (g : M ⟶ N) (s : ℤ�
     g (s • x) = s • g x := by
   rw [Units.smul_def, Units.smul_def, map_zsmul]
 
-private lemma d_push {C D : ChainComplex B ℤ} (g : C ⟶ D) (n m : ℤ) (x : (StructureCx C).X n) :
-    (StructureCx D).d n m ((StructureCx.push g).f n x) =
-      (StructureCx.push g).f m ((StructureCx C).d n m x) := by
-  have := ConcreteCategory.congr_hom ((StructureCx.push g).comm n m) x
-  simpa using this
-
-private lemma T_push {C D : ChainComplex B ℤ} (g : C ⟶ D) (n : ℤ) (x : (StructureCx C).X n) :
-    (StructureCx.T D).f n ((StructureCx.push g).f n x) =
-      (StructureCx.push g).f n ((StructureCx.T C).f n x) := by
-  have := ConcreteCategory.congr_hom (congrArg (fun h => h.f n) (StructureCx.push_T g)) x
-  simpa using this.symm
-
 private lemma push_inv_hom {C C' : ChainComplex B ℤ} (u : C' ≅ C) (n : ℤ)
     (x : (StructureCx C').X n) :
     (StructureCx.push u.inv).f n ((StructureCx.push u.hom).f n x) = x := by
@@ -91,7 +79,7 @@ theorem SymPair.transport {m n : ℤ} (W : SymPair B m n) {C' : ChainComplex B �
   have hφ'eq : φ' = (StructureCx.push u.inv).f m W.φ := by
     rw [← hφ', push_inv_hom]
   have hcyc' : (StructureCx C').d m (m - 1) φ' = 0 := by
-    rw [hφ'eq, d_push, W.boundary_cycle, map_zero]
+    rw [hφ'eq, StructureCx.d_push_apply, W.boundary_cycle, map_zero]
   have hcyc : (StructureCx C').d m (m - 1) (s • φ') = 0 := by
     rw [units_smul_apply, hcyc', smul_zero]
   have hrel : (StructureCx W.D).d n m (s • W.δφ) =
@@ -109,7 +97,7 @@ theorem SymPair.transport {m n : ℤ} (W : SymPair B m n) {C' : ChainComplex B �
         ((HomologicalComplex.eval _ _ r).mapIso u)
       boundary_cycle := hcyc
       boundary_symmetric := by
-        rw [units_smul_apply, hφ'eq, T_push, W.boundary_symmetric]
+        rw [units_smul_apply, hφ'eq, StructureCx.T_push_apply, W.boundary_symmetric]
       boundary_poincare := ?_
       bounded := W.bounded
       symmetric := by rw [units_smul_apply, W.symmetric]

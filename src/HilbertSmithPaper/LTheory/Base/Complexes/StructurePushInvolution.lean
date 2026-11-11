@@ -30,4 +30,12 @@ theorem StructureCx.push_T {C D : ChainComplex B ℤ} (g : C ⟶ D) :
   simp only [dualHom_comp, dualHom_dualHom, Category.assoc, Linear.units_smul_comp,
     Linear.comp_units_smul, eqToHom_trans, eqToHom_refl, Category.comp_id]
 
+/-- `g_%` commutes with `T`, applied to an element. -/
+lemma StructureCx.T_push_apply {C D : ChainComplex B ℤ} (g : C ⟶ D) (n : ℤ)
+    (x : (StructureCx C).X n) :
+    (StructureCx.T D).f n ((StructureCx.push g).f n x) =
+      (StructureCx.push g).f n ((StructureCx.T C).f n x) := by
+  have := ConcreteCategory.congr_hom (congrArg (fun h => h.f n) (StructureCx.push_T g)) x
+  simpa using this.symm
+
 end HSP
