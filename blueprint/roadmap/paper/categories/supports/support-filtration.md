@@ -8,7 +8,7 @@ lean: HSP.supp_karoubiFiltration
 
 # Support filtration
 
-Let $S,S'\subset X$, and write $\mathcal A_{S'}\subset\mathcal A_S$ for the predicate "$S'$-supported" on the objects of the duality category $\mathcal A_S$. For all $S,S'$ it is a full additive subcategory closed under $M^*=M$, so the quotient $\mathcal A_S/\mathcal A_{S'}$ exists. If the action is isometric and $S'$ is invariant, $\mathcal A_{S'}\subset\mathcal A_S$ is an [involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md), with the following chosen decompositions. Those of $M=(n_i,x_i)\in\mathcal A_S$ are indexed by the null sequences $r=(r_i)$ of nonnegative reals. For each such $r$, $M=M_{\le r}\oplus M_{>r}$, where $M_{\le r}$ keeps the indices $k$ with $x_i(k)\in\overline N_{r_i}(S')$ (the closed $r_i$-thickening), $M_{>r}$ keeps the rest, and the inclusions and projections are coordinate matrices with $\iota^{T}=\pi$.
+Let $S,S'\subset X$, and write $\mathcal A_{S'}\subset\mathcal A_S$ for the predicate "$S'$-supported" on the objects of the duality category $\mathcal A_S$. For all $S,S'$ it is a full additive subcategory closed under $M^*=M$, so the quotient $\mathcal A_S/\mathcal A_{S'}$ exists. If the action is isometric and $S'$ is invariant, $\mathcal A_{S'}\subset\mathcal A_S$ is an [involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md), with the following chosen decompositions. Those of $M=(n_i,x_i)\in\mathcal A_S$ are indexed by the null sequences $r=(r_i)$ of nonnegative reals. For each such $r$, $M=M_{\le r}\oplus M_{>r}$; the chosen decomposition is the diagonal coordinate projection $p_r$ onto $M_{\le r}$, where $M_{\le r}$ keeps the indices $k$ with $x_i(k)\in\overline N_{r_i}(S')$ (the closed $r_i$-thickening), $M_{>r}$ keeps the rest, and the inclusions and projections are coordinate matrices with $\iota^{T}=\pi$.
 
 *Proof sketch.*
 1. $\mathcal A_{S'}$ is a full additive subcategory of $\mathcal A_S$ closed under $M^*=M$: it contains the empty sequence and the concatenation of two of its objects.
@@ -28,6 +28,8 @@ Let $S,S'\subset X$, and write $\mathcal A_{S'}\subset\mathcal A_S$ for the pred
 
 - [Support subcategory](support-subcategory.md)
 - [Involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md)
+- [Restriction to a sub-basis](../asymptotic/restriction-sub-basis.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 
 ## Proof depends on
 
