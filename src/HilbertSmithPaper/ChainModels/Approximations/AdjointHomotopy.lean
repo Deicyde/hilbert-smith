@@ -1,6 +1,6 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopy
-import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopy
+import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
+import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopies
 
 /-!
 # The adjoint homotopy

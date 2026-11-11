@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
-import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
+import HilbertSmithPaper.ChainModels.Torus.ContinuousLift
 import HilbertSmithPaper.ChainModels.Torus.NormLift
 import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.LocalData.Control.FixedLocalData

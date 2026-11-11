@@ -3,7 +3,7 @@ import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
 import HilbertSmithPaper.ChainModels.Torus.Dist2ProjLe
 import HilbertSmithPaper.ChainModels.Torus.LiftProj
 import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
-import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
+import HilbertSmithPaper.ChainModels.Torus.ContinuousLift
 import HilbertSmithPaper.ChainModels.Torus.ProjLift
 import HilbertSmithPaper.ChainModels.Torus.Dist2
 import HilbertSmithPaper.ChainModels.Torus.Proj

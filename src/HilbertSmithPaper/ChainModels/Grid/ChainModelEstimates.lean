@@ -1,10 +1,10 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.BasedInclusion
-import HilbertSmithPaper.ChainModels.Grid.BufferedCells
-import HilbertSmithPaper.ChainModels.Grid.ControlLabels
-import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopy
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BasedInclusion
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedCells
+import HilbertSmithPaper.ChainModels.Grid.Buffers.ControlLabels
+import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
-import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopy
+import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies

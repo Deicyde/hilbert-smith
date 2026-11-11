@@ -1,9 +1,9 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Torus.Lift
-import HilbertSmithPaper.ChainModels.Grid.BufferedCells
-import HilbertSmithPaper.ChainModels.Grid.ControlLabels
-import HilbertSmithPaper.ChainModels.Grid.BasedInclusion
-import HilbertSmithPaper.ChainModels.Grid.Restriction
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedCells
+import HilbertSmithPaper.ChainModels.Grid.Buffers.ControlLabels
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BasedInclusion
+import HilbertSmithPaper.ChainModels.Grid.Buffers.Restriction
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.LocalData.Chart.OpenTestRegion
