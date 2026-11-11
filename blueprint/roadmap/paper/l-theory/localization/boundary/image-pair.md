@@ -31,4 +31,6 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 ## Proof depends on
 
 - [Pair map](../../base/pairs/pair-map.md)
-- [Pushforward commutes with T](../../base/complexes/structure-push-involution.md)
+- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [Mapping cone](../../base/complexes/cone.md)
+- [Pushforward of structures](../../base/complexes/structure-push.md)

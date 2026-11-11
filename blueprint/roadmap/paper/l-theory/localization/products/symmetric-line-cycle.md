@@ -25,3 +25,8 @@ which sum to zero.
 - [Structure of the symmetric line](symmetric-line-structure.md)
 - [Structure complex](../../base/complexes/structure-complex.md)
 - [The involution T](../../base/complexes/structure-involution.md)
+
+## Proof depends on
+
+- [The symmetric line](symmetric-line.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
