@@ -16,6 +16,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
+import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
