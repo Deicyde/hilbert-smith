@@ -17,4 +17,4 @@ Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal
 
 ## Depends on
 
-- [Idempotent completion with duality](../categories/karoubi-duality.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)

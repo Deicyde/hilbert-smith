@@ -19,5 +19,3 @@ Let $X$ be a metric space with an isometric action $(c,x)\mapsto c\cdot x$ of $C
 
 ## Depends on
 
-- [Standing data](../standing-data.md)
-- [Propagation](../../categories/asymptotic/propagation.md)

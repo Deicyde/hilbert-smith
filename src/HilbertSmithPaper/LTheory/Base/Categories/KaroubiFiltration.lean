@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualAdditiveSubcategory
+import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 
 /-!
 # Involution-invariant Karoubi filtration
@@ -61,21 +62,21 @@ structure KaroubiFiltration (U : ObjectProperty A) [IsDualAdditive U] where
   /-- Duality: `p ∈ D M ↔ p^* ∈ D M^*`. -/
   dual_mem_iff {M : A} (p : M ⟶ M) : p ∈ D M ↔ dualHom p ∈ D (dual M)
 
-/-- Non-vacuity: all objects form a dual-closed additive subcategory. -/
-private theorem isDualAdditive_top : IsDualAdditive (⊤ : ObjectProperty A) where
-  exists_zero := ⟨0, trivial, isZero_zero A⟩
+/-- Non-vacuity: all based vector spaces form a dual-closed additive subcategory of `FreeQ`. -/
+private theorem isDualAdditive_top : IsDualAdditive (⊤ : ObjectProperty FreeQ) where
+  exists_zero := ⟨0, trivial, isZero_zero FreeQ⟩
   exists_biprod {V W} _ _ := by
-    have := hasBinaryBiproducts_of_finite_biproducts A
+    have := hasBinaryBiproducts_of_finite_biproducts FreeQ
     exact ⟨BinaryBiproduct.bicone V W, ⟨BinaryBiproduct.isBilimit V W⟩, trivial⟩
   dual_mem _ := trivial
 
-/-- Non-vacuity: the filtration of `𝒜` by all objects, with `D M = {𝟙 M}`. -/
+/-- Non-vacuity: the filtration of `FreeQ` by all objects, with `D M = {𝟙 M}`. -/
 private noncomputable def karoubiFiltrationTop :
-    @KaroubiFiltration A _ _ _ _ _ ⊤ isDualAdditive_top :=
-  @KaroubiFiltration.mk A _ _ _ _ _ ⊤ isDualAdditive_top (fun M => {𝟙 M})
+    @KaroubiFiltration FreeQ _ _ _ _ _ ⊤ isDualAdditive_top :=
+  @KaroubiFiltration.mk FreeQ _ _ _ _ _ ⊤ isDualAdditive_top (fun M => {𝟙 M})
     (by rintro M p rfl; simp)
     (by rintro M p rfl; exact ⟨M, trivial, 𝟙 M, 𝟙 M, by simp, by simp⟩)
-    (by rintro M p rfl; exact ⟨0, 0, 0, (isZero_zero A).eq_of_src _ _, by simp⟩)
+    (by rintro M p rfl; exact ⟨0, 0, 0, (isZero_zero FreeQ).eq_of_src _ _, by simp⟩)
     (fun M => ⟨𝟙 M, rfl⟩)
     (by rintro M p p' rfl rfl; exact ⟨𝟙 M, rfl, by simp⟩)
     (fun g _ => ⟨𝟙 _, rfl, by simp⟩)

@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
+import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 
 /-!
 # Dual complex
