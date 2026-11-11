@@ -3,6 +3,7 @@ article_id: af_76e0960710c35845a2099231
 declaration: theorem
 origin: bridged
 statement: formalized
+proof: formalized
 lean: HSP.exists_good_point
 ---
 
