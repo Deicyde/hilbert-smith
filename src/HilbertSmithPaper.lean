@@ -15,6 +15,7 @@ import HilbertSmithPaper.Proofs.IntrinsicInteriorDense
 import HilbertSmithPaper.Proofs.IntrinsicInteriorInvariant
 import HilbertSmithPaper.Proofs.IntrinsicInteriorOpen
 import HilbertSmithPaper.Proofs.LocalExclusion
+import HilbertSmithPaper.Proofs.NoSmallSubgroups
 import HilbertSmithPaper.Proofs.OneChart
 import HilbertSmithPaper.Proofs.PadicExclusion
 import HilbertSmithPaper.Proofs.PadicExclusionBoundary
