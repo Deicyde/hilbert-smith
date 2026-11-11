@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LocalData.Control.ZplusAction
 import HilbertSmithPaper.LocalData.Control.ControlSpace
+import HilbertSmithPaper.LocalData.Control.ControlQuotientMap
 
 /-!
 # The cyclic action on the control space

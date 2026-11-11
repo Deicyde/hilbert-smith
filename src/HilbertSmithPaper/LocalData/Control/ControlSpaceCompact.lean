@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LocalData.Control.ControlSpace
 import HilbertSmithPaper.LocalData.Chart.TestRegionCompact
+import HilbertSmithPaper.LocalData.Control.ControlTopology
 
 /-!
 # The control space is compact

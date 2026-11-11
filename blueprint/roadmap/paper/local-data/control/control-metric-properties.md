@@ -19,6 +19,8 @@ For a local datum, $d_T$ is a metric on $T$ that induces the quotient topology.
 
 ## Depends on
 
+- [The quotient topology on the control space](control-topology.md)
+- [The quotient map to the control space](control-quotient-map.md)
 - [The orbit metric on the control space](control-metric.md)
 
 ## Proof depends on

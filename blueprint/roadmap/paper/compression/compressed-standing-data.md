@@ -14,6 +14,7 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer r
 
 ## Depends on
 
+- [The control space is an isometric $C_p$-space](../local-data/control/control-isometric-action.md)
 - [Fixed local data](../local-data/control/fixed-local-data.md)
 - [The control space](../local-data/control/control-space.md)
 - [Standing data](../corner/standing-data.md)

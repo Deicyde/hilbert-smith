@@ -19,6 +19,7 @@ For a local datum, the control space $T$ is compact in the quotient topology.
 
 ## Depends on
 
+- [The quotient topology on the control space](control-topology.md)
 - [The control space](control-space.md)
 
 ## Proof depends on

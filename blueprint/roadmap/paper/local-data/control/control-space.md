@@ -8,7 +8,7 @@ lean: HSP.LocalDatum.T
 
 # The control space
 
-For a local datum, the control space is $T=Z^+/H_1$, the set of $H_1$-orbits of the restricted action on $Z^+$, with quotient map $\pi:Z^+\to T$ and the quotient topology.
+For a local datum, the control space is $T=Z^+/H_1$, the set of $H_1$-orbits of the restricted action on $Z^+$, with [quotient map](control-quotient-map.md) $\pi:Z^+\to T$ and the [quotient topology](control-topology.md).
 
 ## Sources
 

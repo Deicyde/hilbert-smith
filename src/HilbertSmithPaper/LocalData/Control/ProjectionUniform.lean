@@ -1,6 +1,8 @@
 import Mathlib
 import HilbertSmithPaper.LocalData.Control.ControlMetric
 import HilbertSmithPaper.LocalData.Chart.TestRegionCompact
+import HilbertSmithPaper.LocalData.Control.ControlQuotientMap
+import HilbertSmithPaper.LocalData.Control.ControlTopology
 
 /-!
 # The orbit map is uniformly continuous
