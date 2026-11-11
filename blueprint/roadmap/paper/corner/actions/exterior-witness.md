@@ -2,6 +2,8 @@
 article_id: af_260b6d618c2adfd3b7919d59
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.Corner.IsExteriorWitness
 ---
 
 # Exterior witnesses

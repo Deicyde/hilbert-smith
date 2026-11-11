@@ -13,6 +13,8 @@ import HilbertSmithPaper.Corner.CutFlag
 import HilbertSmithPaper.Corner.ExteriorClosed
 import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.StandingData
+import HilbertSmithPaper.Corner.Actions.GraphType
+import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 
 /-!
 # The paper
