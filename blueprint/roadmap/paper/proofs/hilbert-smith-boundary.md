@@ -2,6 +2,8 @@
 article_id: af_4796f2c2d5509fee76b295c9
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.hilbertSmith_boundary
 ---
 
 # Hilbert–Smith with boundary

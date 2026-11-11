@@ -2,6 +2,9 @@
 article_id: af_5412e775425ab1c9a9725a76
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.d₁_vadd
 ---
 
 # The orbit sup-distance is invariant

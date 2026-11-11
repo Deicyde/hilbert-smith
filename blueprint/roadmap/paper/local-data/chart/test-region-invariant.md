@@ -2,6 +2,8 @@
 article_id: af_94e1d0854abab605ae3c0de7
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.vadd_mem_Zplus_Uplus
 ---
 
 # The test regions are invariant

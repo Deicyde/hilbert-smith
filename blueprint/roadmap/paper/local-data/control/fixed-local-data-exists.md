@@ -2,6 +2,8 @@
 article_id: af_95b12b0869f2fcc24caf6fa1
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.exists_fixedLocalData
 ---
 
 # Fixed local data from a faithful action

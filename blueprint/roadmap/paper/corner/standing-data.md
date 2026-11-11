@@ -1,7 +1,9 @@
 ---
 article_id: af_b02080be1c6eb585871a5846
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.Corner.StandingData
 ---
 
 # Standing data

@@ -2,6 +2,8 @@
 article_id: af_27b94c6769ae0597e5f51a5c
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.Uplus
 ---
 
 # The open test region

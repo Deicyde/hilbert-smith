@@ -2,6 +2,9 @@
 article_id: af_4a900deaec2cdf778e52fbc7
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.faithfulSMul_intrinsicInterior
 ---
 
 # The restricted action is faithful

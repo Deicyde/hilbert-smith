@@ -2,6 +2,8 @@
 article_id: af_04969b40a9f6937b1e5b7a50
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.Corner.exterior
 ---
 
 # The exterior
