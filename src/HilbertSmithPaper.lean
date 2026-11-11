@@ -46,6 +46,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct
+import HilbertSmithPaper.LTheory.Localization.Products.ProductDualIso
 import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
 import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
