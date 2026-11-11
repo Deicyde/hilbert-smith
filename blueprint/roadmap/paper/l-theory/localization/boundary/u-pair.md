@@ -1,7 +1,9 @@
 ---
 article_id: af_4a2f7da8448eb69417b67e16
-declaration: def
+declaration: structure
 origin: background
+statement: formalized
+lean: HSP.UPair
 ---
 
 # U-pairs
