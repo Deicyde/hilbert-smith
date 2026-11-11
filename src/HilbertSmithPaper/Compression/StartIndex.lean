@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.Compression.BufferConditions
 import HilbertSmithPaper.Compression.BufferEventually
 
 /-!
