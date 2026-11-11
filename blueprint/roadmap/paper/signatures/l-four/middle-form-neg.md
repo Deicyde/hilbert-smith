@@ -9,7 +9,7 @@ lean: HSP.middleForm_neg
 
 # Middle form of the negative
 
-$b_{(C,-\varphi)}=-b_{(C,\varphi)}$ on the same space $H^2(C;\mathbb R)$.
+For a strict 4-dimensional symmetric Poincaré complex $(C,\varphi)$ in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$, $b_{(C,-\varphi)}=-b_{(C,\varphi)}$ on the same space $H^2(C;\mathbb R)$.
 
 *Proof sketch.* $H^2(C;\mathbb R)$ does not involve $\varphi$, and $b$ is linear in $\varphi_2$.
 

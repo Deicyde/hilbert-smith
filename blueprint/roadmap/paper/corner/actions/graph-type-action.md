@@ -32,3 +32,4 @@ such that, for every $i$ and all $g,h\in G_i$, with the same bound $\delta_i$:
 - [Exterior witnesses](exterior-witness.md)
 - [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)
 - [Dual complex](../../l-theory/base/complexes/dual-complex.md)
+- [Exterior quotient](../../categories/supports/exterior-quotient.md)
