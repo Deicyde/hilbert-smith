@@ -30,26 +30,6 @@ variable {A : Type u₁} [Category.{v₁} A] [Preadditive A] [Linear ℚ A] [Has
   {A' : Type u₂} [Category.{v₂} A'] [Preadditive A'] [Linear ℚ A'] [HasFiniteBiproducts A']
   [DualCat A']
 
-private lemma dualHom_diag' {M N : Bounded A'} (d : ∀ n, M.X n ⟶ N.X n) :
-    dualHom (diag d) = diag (M := dual N) (N := dual M) (fun n => dualHom (d n)) :=
-  hom_ext fun a b => by
-    rw [dualHom_apply]
-    change dualHom (diagF d b a) = diagF (M := dual N) (N := dual M) (fun n => dualHom (d n)) a b
-    by_cases h : a = b
-    · subst h
-      rw [diagF_self, diagF_self]
-    · rw [diagF_ne _ (Ne.symm h), diagF_ne _ h, dualHom_zero]
-
-omit [HasFiniteBiproducts A'] [DualCat A'] in
-private lemma diag_add {M N : Bounded A'} (d e : ∀ n, M.X n ⟶ N.X n) :
-    diag d + diag e = diag fun n => d n + e n :=
-  hom_ext fun a b => by
-    rw [add_apply, diag_apply, diag_apply, diag_apply]
-    by_cases h : a = b
-    · subst h
-      rw [diagF_self, diagF_self, diagF_self]
-    · rw [diagF_ne _ h, diagF_ne _ h, diagF_ne _ h, add_zero]
-
 variable {P F G : DualFunctor A A'}
 
 /-- The component `π σ_M : P M → F M` of `σ : P ≅ F ⊕ G`. -/
@@ -225,7 +205,7 @@ private def stepUnitary (σ : DualFunctor.UnitaryIso P (F.biprod G)) :
         (diag (M := (map P).toFunctor.obj M) (N := (map G).toFunctor.obj M)
           fun n => sndσ σ (M.X n))) = _
     rw [DualFunctor.lift_biprod_ξ_dualHom_lift, map_ξ_hom, map_ξ_hom, map_ξ_hom]
-    erw [dualHom_diag', dualHom_diag', diag_comp_diag, diag_comp_diag, diag_comp_diag,
+    erw [dualHom_diag_eq, dualHom_diag_eq, diag_comp_diag, diag_comp_diag, diag_comp_diag,
       diag_comp_diag, diag_add]
     congr 1
     funext n
@@ -235,10 +215,7 @@ private def stepUnitary (σ : DualFunctor.UnitaryIso P (F.biprod G)) :
 `σ_j : C_{ℤ^j}(F ⊕ G) ≅ C_{ℤ^j} F ⊕ C_{ℤ^j} G`, with `σ_0` the identity. -/
 def sumIsoIter (F G : DualFunctor A A') :
     ∀ j : ℕ, DualFunctor.UnitaryIso (mapIter (F.biprod G) j) ((mapIter F j).biprod (mapIter G j))
-  | 0 => ⟨Iso.refl _, fun M => by
-      simp only [Iso.refl_hom, NatTrans.id_app]
-      erw [Category.id_comp, dualHom_id, Category.comp_id]
-      rfl⟩
+  | 0 => DualFunctor.UnitaryIso.refl (F.biprod G)
   | j + 1 => stepUnitary (sumIsoIter F G j)
 
 end Bounded
