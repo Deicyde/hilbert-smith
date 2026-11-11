@@ -2,6 +2,8 @@
 article_id: af_6794108011a5ee96c9f56045
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.padicSubgroup
 ---
 
 # The subgroups $H_j$

@@ -2,6 +2,9 @@
 article_id: af_89c732b22d4feb34a0feecb8
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.prop_mul_le
 ---
 
 # Propagation of a product

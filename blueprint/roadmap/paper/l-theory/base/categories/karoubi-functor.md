@@ -2,6 +2,8 @@
 article_id: af_6ed7cc0fd0a48b96f41bd89e
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.DualFunctor.kar
 ---
 
 # Completion of a duality functor

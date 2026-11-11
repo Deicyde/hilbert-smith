@@ -2,6 +2,8 @@
 article_id: af_3c8fbf4b7108e0d970e67bc4
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.karEmb
 ---
 
 # Embedding into the idempotent completion
