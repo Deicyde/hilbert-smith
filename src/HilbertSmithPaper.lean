@@ -45,6 +45,7 @@ import HilbertSmithPaper.LocalData.Chart.PinchHomeomorph
 import HilbertSmithPaper.LocalData.Chart.TestMap
 import HilbertSmithPaper.LocalData.Chart.TestMapProper
 import HilbertSmithPaper.LocalData.Chart.TestRegion
+import HilbertSmithPaper.LocalData.Chart.TestRegionBounded
 import HilbertSmithPaper.LocalData.Chart.TestRegionInvariant
 import HilbertSmithPaper.LocalData.Control.ControlAction
 import HilbertSmithPaper.LocalData.Control.ControlActionIsometric
