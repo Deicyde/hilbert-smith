@@ -416,10 +416,13 @@ import HilbertSmithPaper.LocalData.Chart.TestRegionNotFixed
 import HilbertSmithPaper.LocalData.Control.ControlAction
 import HilbertSmithPaper.LocalData.Control.ControlActionFree
 import HilbertSmithPaper.LocalData.Control.ControlActionIsometric
+import HilbertSmithPaper.LocalData.Control.ControlIsometricAction
 import HilbertSmithPaper.LocalData.Control.ControlMetric
 import HilbertSmithPaper.LocalData.Control.ControlMetricProperties
 import HilbertSmithPaper.LocalData.Control.ControlMetricSpace
 import HilbertSmithPaper.LocalData.Control.ControlSpace
+import HilbertSmithPaper.LocalData.Control.ControlQuotientMap
+import HilbertSmithPaper.LocalData.Control.ControlTopology
 import HilbertSmithPaper.LocalData.Control.ControlSpaceCompact
 import HilbertSmithPaper.LocalData.Control.DisplacementGap
 import HilbertSmithPaper.LocalData.Control.FixedLocalData

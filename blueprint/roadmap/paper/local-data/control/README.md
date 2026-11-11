@@ -13,6 +13,8 @@ The control space is the orbit space of the test region under $H_1$, with the or
 - [The orbit sup-distance is a metric](orbit-sup-metric-properties.md)
 - [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)
 - [The control space](control-space.md)
+- [The quotient map to the control space](control-quotient-map.md)
+- [The quotient topology on the control space](control-topology.md)
 - [The control space is compact](control-space-compact.md)
 - [The orbit metric on the control space](control-metric.md)
 - [The orbit metric metrizes the control space](control-metric-properties.md)
@@ -21,6 +23,7 @@ The control space is the orbit space of the test region under $H_1$, with the or
 - [The cyclic action on the control space](control-action.md)
 - [The cyclic action is free](control-action-free.md)
 - [The cyclic action is isometric](control-action-isometric.md)
+- [The control space is an isometric $C_p$-space](control-isometric-action.md)
 - [The orbit map is uniformly continuous](projection-uniform.md)
 - [A uniform displacement gap](displacement-gap.md)
 
