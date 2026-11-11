@@ -22,6 +22,11 @@ import HilbertSmithPaper.Categories.Asymptotic.PropMul
 import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
+import HilbertSmithPaper.Signatures.Forms.FormSignature
+import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
+import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
+import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
+import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
 
 /-!
 # The paper
