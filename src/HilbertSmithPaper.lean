@@ -234,6 +234,8 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BoxComponents
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BoxObject
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.DualComplexFinite
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjection
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjectionNe

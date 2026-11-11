@@ -21,3 +21,5 @@ For $N$ in $\operatorname{Kar}\mathcal B$ and $V$ in $C_\mathbb Z(\mathbb Q)$, l
 - [Box product with a bounded vector space](box-product.md)
 - [Duality pairings](duality-pairing.md)
 - [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Objects of the box product](bookkeeping/box-object.md)
+- [Components of box products of maps](bookkeeping/box-components.md)
