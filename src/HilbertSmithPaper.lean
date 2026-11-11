@@ -21,6 +21,7 @@ import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
 import HilbertSmithPaper.Categories.Supports.SupportSubcategory
+import HilbertSmithPaper.Categories.Supports.SupportWhole
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMapsProperties
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
