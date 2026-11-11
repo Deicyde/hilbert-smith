@@ -2,7 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.ChainApprox
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
+import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 
 /-!
 # Group approximations

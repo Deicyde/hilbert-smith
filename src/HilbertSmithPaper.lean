@@ -96,6 +96,7 @@ import HilbertSmithPaper.ChainModels.Approximations.GroupApproxCarried
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
 import HilbertSmithPaper.ChainModels.Approximations.ProductHomotopies
+import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
@@ -136,7 +137,6 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleK
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleKDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhi
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhiSym
-import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridHDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridStructureU
@@ -179,7 +179,6 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomId
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Torus.ContinuousLift
 import HilbertSmithPaper.ChainModels.Torus.ContinuousProj

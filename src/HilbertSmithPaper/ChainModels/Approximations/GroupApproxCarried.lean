@@ -3,7 +3,7 @@ import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
 import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
+import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 
 /-!
 # Carried group approximations
