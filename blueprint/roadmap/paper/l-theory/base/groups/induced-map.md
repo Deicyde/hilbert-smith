@@ -22,5 +22,7 @@ A duality functor $(F,\xi):\mathcal B\to\mathcal B'$ induces a homomorphism $F_*
 
 ## Proof depends on
 
+- [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
+- [Duality functors carry pairs to pairs](../pairs/functor-pair.md)
 - [Transport of pairs along isomorphisms](../pairs/pair-transport.md)
 - [Homotopy-isometry invariance](homotopy-isometry-invariance.md)
