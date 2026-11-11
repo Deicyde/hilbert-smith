@@ -2,6 +2,9 @@
 article_id: af_2b416b062c1c2e12ac31dd01
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.isOpen_intrinsicInterior
 ---
 
 # The intrinsic interior is open
