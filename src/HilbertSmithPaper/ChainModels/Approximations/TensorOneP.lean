@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg

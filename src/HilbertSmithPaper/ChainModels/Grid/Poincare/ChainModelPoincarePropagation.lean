@@ -3,6 +3,7 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelHDual
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # The chain model is Poincaré: part 3

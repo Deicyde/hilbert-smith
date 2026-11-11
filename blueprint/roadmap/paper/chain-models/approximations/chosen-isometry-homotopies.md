@@ -16,6 +16,7 @@ Fix $U^T_g\in M(C(k_i))_{n+1}$ for all $i\in\mathbb N$ and $g\in G_i$ as in [iso
 
 ## Depends on
 
+- [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [The cellular chain complex of CP^2](../grid/cp2/cp2-complex.md)
 - [The structure of CP^2](../grid/cp2/cp2-structure.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)

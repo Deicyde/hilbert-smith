@@ -3,6 +3,7 @@ import HilbertSmithPaper.Compression.CompressionProductRule
 import HilbertSmithPaper.Compression.BoundSequence
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Exterior
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # Endpoint lemma

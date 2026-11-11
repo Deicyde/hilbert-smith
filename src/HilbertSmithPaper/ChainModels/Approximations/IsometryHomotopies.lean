@@ -6,6 +6,7 @@ import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # Isometry homotopies

@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex

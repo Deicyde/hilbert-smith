@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridHDual
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
 

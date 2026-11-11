@@ -18,6 +18,7 @@ Let $e$ be a top cube whose closed cube meets $\overline B(0,3/2)$, and $L=\wide
 ## Sources
 - New: replaces the degree argument of HS paper, Section 9.
 ## Depends on
-- [Group approximations](group-approx.md), [chain model](../grid/chain-model.md)
+- [Fundamental cycle of the chain model](../grid/model/chain-model-fundamental.md)
+- [Group approximations](group-approx.md), [chain model](../grid/model/chain-model.md)
 ## Proof depends on
 - [Chain approximations exist](chain-approx-exists.md), [carried group approximations](group-approx-carried.md), [box hull properties](../grid/box-hull-properties.md), [properties](completed-maps-properties.md), [mesh sequence](../grid/mesh-sequence.md)

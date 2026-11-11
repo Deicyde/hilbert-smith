@@ -119,7 +119,11 @@ import HilbertSmithPaper.ChainModels.Grid.Buffers.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Buffers.Restriction
 import HilbertSmithPaper.ChainModels.Grid.CarriedChainMap
 import HilbertSmithPaper.ChainModels.Grid.CarriedHomotopy
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelCube
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.ChainModelEstimates
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare

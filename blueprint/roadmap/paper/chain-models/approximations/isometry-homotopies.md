@@ -16,6 +16,7 @@ with $d$ the differentials of $D_i$ and $D_i^{N-*}$, and $U_g$ has $d_\infty$-pr
 ## Sources
 - HS paper, Section 9.
 ## Depends on
+- [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [The cellular chain complex of CP^2](../grid/cp2/cp2-complex.md)
 - [The structure of CP^2](../grid/cp2/cp2-structure.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)

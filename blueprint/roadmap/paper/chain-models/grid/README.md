@@ -22,7 +22,7 @@ The torus, the cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and 
 - [Carried homotopies](carried-homotopy.md)
 - [Circle duality](circle-duality.md)
 - [Mesh sequence](mesh-sequence.md)
-- [Chain model](chain-model.md)
+- [The chain model](model/README.md)
 - [Chain-model duality](chain-model-duality.md)
 - [The chain model is Poincaré](chain-model-poincare.md)
 - [The chain model is Poincaré, part by part](poincare/README.md)

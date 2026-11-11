@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Aug
 

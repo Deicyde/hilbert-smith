@@ -19,6 +19,8 @@ Here $\mathcal B_i(v)$ are the [buffered cells](../chain-models/grid/buffers/buf
 
 ## Depends on
 
+- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
+- [Torus labels of dual cells](../chain-models/grid/model/chain-model-dual-label.md)
 - [Based inclusion](../chain-models/grid/buffers/based-inclusion.md)
 - [The metric on the control space](../local-data/control/control-metric-space.md)
 - [Retained cells](retained-cells.md)

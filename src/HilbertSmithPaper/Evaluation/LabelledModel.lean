@@ -1,8 +1,11 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelH
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelHDual
 import HilbertSmithPaper.Categories.Asymptotic.AsymptoticDuality
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.Corner.RoundSphere
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # The labelled chain model is Poincaré

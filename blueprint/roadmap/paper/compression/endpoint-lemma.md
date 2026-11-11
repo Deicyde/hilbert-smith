@@ -25,6 +25,7 @@ For the witness: $Z$ is $C_p$-invariant and $C_p$ acts isometrically ([graph-typ
 
 ## Depends on
 
+- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
 - [Product rule](compression-product-rule.md)
 - [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)
 - [Buffered cells](../chain-models/grid/buffers/buffered-cells.md)

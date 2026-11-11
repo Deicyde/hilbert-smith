@@ -16,6 +16,7 @@ For $i\ge i_0$ the retained cells lie in $\mathcal B_i(t')$ by the [buffer condi
 
 ## Depends on
 
+- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
 - [The metric on the control space](../local-data/control/control-metric-space.md)
 - [Start index](start-index.md)
 - [Retained cells](retained-cells.md)

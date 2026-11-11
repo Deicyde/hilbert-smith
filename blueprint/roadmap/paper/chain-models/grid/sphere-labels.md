@@ -12,4 +12,6 @@ Fix a local datum and a radius $\rho$. A cell $b$ of $D_i$, or its dual in $D_i^
 ## Sources
 - HS paper, Section 9 (labels through the test map).
 ## Depends on
-- [Chain model](chain-model.md), [torus test map](../approximations/torus-test-map.md), [propagation](../../categories/asymptotic/propagation.md), [round sphere](../../corner/round-sphere.md)
+- [Torus labels of chain-model cells](model/chain-model-label.md)
+- [Torus labels of dual cells](model/chain-model-dual-label.md)
+- [Chain model](model/chain-model.md), [torus test map](../approximations/torus-test-map.md), [propagation](../../categories/asymptotic/propagation.md), [round sphere](../../corner/round-sphere.md)
