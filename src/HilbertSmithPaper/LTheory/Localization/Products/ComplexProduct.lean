@@ -1,6 +1,5 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
-import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 
 /-!
 # Tensor product of complexes
@@ -39,7 +38,7 @@ instance tensorSignsDownInt : ComplexShape.TensorSigns (ComplexShape.down ℤ) w
     rw [Int.negOnePow_succ, neg_neg]
 
 @[simp]
-lemma ε_down_int (n : ℤ) : (ComplexShape.down ℤ).ε n = n.negOnePow := rfl
+private lemma ε_down_int (n : ℤ) : (ComplexShape.down ℤ).ε n = n.negOnePow := rfl
 
 /-- A family with finitely many nonzero members has a coproduct. -/
 private lemma hasCoproduct_of_finite {C : Type*} [Category C] [Preadditive C]
@@ -74,11 +73,11 @@ namespace DualityPairing
 
 variable (P : DualityPairing B E B'')
 
-lemma map_zero_left {N N' : B} {V V' : E} (g : V ⟶ V') :
+private lemma map_zero_left {N N' : B} {V V' : E} (g : V ⟶ V') :
     P.tensor.map ((0 : N ⟶ N') ×ₘ g) = 0 := by
   simpa using P.map_smul_left 0 (0 : N ⟶ N') g
 
-lemma map_zero_right {N N' : B} {V V' : E} (f : N ⟶ N') :
+private lemma map_zero_right {N N' : B} {V V' : E} (f : N ⟶ N') :
     P.tensor.map (f ×ₘ (0 : V ⟶ V')) = 0 := by
   simpa using P.map_smul_right 0 f (0 : V ⟶ V')
 
@@ -92,12 +91,14 @@ instance additive_curry : (Functor.curry.obj P.tensor).Additive where
     simpa [Functor.curry_obj_map_app] using P.map_add_left f f' (𝟙 V)
 
 /-- `N ⊠ V` is a zero object when `N` is. -/
-lemma isZero_tensor_left {N : B} (hN : IsZero N) (V : E) : IsZero (P.tensor.obj (N, V)) := by
+private lemma isZero_tensor_left {N : B} (hN : IsZero N) (V : E) :
+    IsZero (P.tensor.obj (N, V)) := by
   rw [IsZero.iff_id_eq_zero] at hN ⊢
   rw [← P.tensor.map_id, show 𝟙 (N, V) = 𝟙 N ×ₘ 𝟙 V from rfl, hN, P.map_zero_left]
 
 /-- `N ⊠ V` is a zero object when `V` is. -/
-lemma isZero_tensor_right (N : B) {V : E} (hV : IsZero V) : IsZero (P.tensor.obj (N, V)) := by
+private lemma isZero_tensor_right (N : B) {V : E} (hV : IsZero V) :
+    IsZero (P.tensor.obj (N, V)) := by
   rw [IsZero.iff_id_eq_zero] at hV ⊢
   rw [← P.tensor.map_id, show 𝟙 (N, V) = 𝟙 N ×ₘ 𝟙 V from rfl, hV, P.map_zero_right]
 
@@ -135,5 +136,103 @@ noncomputable abbrev cxProdMap {C C' : ChainComplex B ℤ} {D D' : ChainComplex 
   haveI := P.hasMapBifunctor_of_finite hC hD
   haveI := P.hasMapBifunctor_of_finite hC' hD'
   HomologicalComplex.mapBifunctorMap f g (Functor.curry.obj P.tensor) (ComplexShape.down ℤ)
+
+namespace cxProd
+
+variable {C : ChainComplex B ℤ} {D : ChainComplex E ℤ}
+  (hC : {r | ¬ IsZero (C.X r)}.Finite) (hD : {r | ¬ IsZero (D.X r)}.Finite)
+
+/-- The pairs `(p, q)` with `p + q = r` where both `C_p` and `D_q` are nonzero: outside them the
+summand `C_p ⊠ D_q` of `(C ⊗ D)_r` is a zero object. -/
+noncomputable def supp (r : ℤ) : Finset (ℤ × ℤ) :=
+  (hC.toFinset ×ˢ hD.toFinset).filter fun x => x.1 + x.2 = r
+
+omit [Linear ℚ B] [HasFiniteBiproducts B] [DualCat B] [Linear ℚ E] [HasFiniteBiproducts E]
+  [DualCat E] in
+lemma mem_supp {r : ℤ} {x : ℤ × ℤ} :
+    x ∈ supp hC hD r ↔ (¬ IsZero (C.X x.1) ∧ ¬ IsZero (D.X x.2)) ∧ x.1 + x.2 = r := by
+  simp [supp]
+
+/-- The inclusion of the summand `C_p ⊠ D_q` into `(C ⊗ D)_r` (zero unless `p + q = r`). -/
+noncomputable abbrev ι (p q r : ℤ) : P.tensor.obj (C.X p, D.X q) ⟶ (cxProd P C D hC hD).X r :=
+  haveI := P.hasMapBifunctor_of_finite hC hD
+  HomologicalComplex.ιMapBifunctorOrZero C D (Functor.curry.obj P.tensor) (ComplexShape.down ℤ)
+    p q r
+
+/-- The projection of `(C ⊗ D)_r` onto the summand `C_p ⊠ D_q` (zero unless `p + q = r`). -/
+noncomputable def π (p q r : ℤ) : (cxProd P C D hC hD).X r ⟶ P.tensor.obj (C.X p, D.X q) :=
+  haveI := P.hasMapBifunctor_of_finite hC hD
+  HomologicalComplex.mapBifunctorDesc (K₁ := C) (K₂ := D) (F := Functor.curry.obj P.tensor)
+    (c := ComplexShape.down ℤ) (j := r) fun p' q' _ =>
+      if h : p' = p ∧ q' = q then eqToHom (by obtain ⟨rfl, rfl⟩ := h; rfl) else 0
+
+lemma ι_π_self {p q r : ℤ} (h : p + q = r) : ι P hC hD p q r ≫ π P hC hD p q r = 𝟙 _ := by
+  have := P.hasMapBifunctor_of_finite hC hD
+  rw [ι, HomologicalComplex.ιMapBifunctorOrZero_eq _ _ _ _ _ _ _ h, π,
+    HomologicalComplex.ι_mapBifunctorDesc, dite_eq_left ⟨rfl, rfl⟩, eqToHom_refl]
+  rfl
+
+lemma ι_π_of_ne {p q p' q' r : ℤ} (hne : ¬ (p = p' ∧ q = q')) :
+    ι P hC hD p q r ≫ π P hC hD p' q' r = 0 := by
+  have := P.hasMapBifunctor_of_finite hC hD
+  by_cases h : p + q = r
+  · rw [ι, HomologicalComplex.ιMapBifunctorOrZero_eq _ _ _ _ _ _ _ h, π,
+      HomologicalComplex.ι_mapBifunctorDesc, dite_eq_right hne]
+  · rw [ι, HomologicalComplex.ιMapBifunctorOrZero_eq_zero _ _ _ _ _ _ _ h, zero_comp]
+
+/-- `(C ⊗ D)_r` is the direct sum of its summands: `∑ π_{p,q} ≫ ι_{p,q} = 𝟙`. -/
+lemma total (r : ℤ) :
+    ∑ x ∈ supp hC hD r, π P hC hD x.1 x.2 r ≫ ι P hC hD x.1 x.2 r = 𝟙 _ := by
+  have := P.hasMapBifunctor_of_finite hC hD
+  ext p q h
+  change p + q = r at h
+  rw [Preadditive.comp_sum, Category.comp_id]
+  have hι : HomologicalComplex.ιMapBifunctor C D (Functor.curry.obj P.tensor)
+      (ComplexShape.down ℤ) p q r h = ι P hC hD p q r :=
+    (HomologicalComplex.ιMapBifunctorOrZero_eq _ _ _ _ _ _ _ h).symm
+  rw [hι]
+  by_cases hx : (p, q) ∈ supp hC hD r
+  · rw [Finset.sum_eq_single (p, q)]
+    · rw [← Category.assoc, ι_π_self P hC hD h]
+      exact Category.id_comp _
+    · rintro ⟨p', q'⟩ _ hne
+      rw [← Category.assoc, ι_π_of_ne P hC hD (fun h' => hne (by rw [h'.1, h'.2])), zero_comp]
+    · exact fun h' => absurd hx h'
+  · have hz : IsZero (P.tensor.obj (C.X p, D.X q)) := by
+      rw [mem_supp] at hx
+      by_cases hp : IsZero (C.X p)
+      · exact P.isZero_tensor_left hp _
+      · by_cases hq : IsZero (D.X q)
+        · exact P.isZero_tensor_right _ hq
+        · exact absurd ⟨⟨hp, hq⟩, h⟩ hx
+    rw [hz.eq_of_src (ι P hC hD p q r) 0, Finset.sum_eq_zero fun _ _ => zero_comp]
+
+/-- Morphisms into `(C ⊗ D)_r` agree when their projections to every summand agree. -/
+lemma hom_ext_to {r : ℤ} {Z : B''} {f g : Z ⟶ (cxProd P C D hC hD).X r}
+    (h : ∀ p q, p + q = r → f ≫ π P hC hD p q r = g ≫ π P hC hD p q r) : f = g := by
+  rw [← Category.comp_id f, ← Category.comp_id g, ← total P hC hD r, Preadditive.comp_sum,
+    Preadditive.comp_sum]
+  refine Finset.sum_congr rfl fun x hx => ?_
+  rw [← Category.assoc, ← Category.assoc, h x.1 x.2 ((mem_supp hC hD).1 hx).2]
+
+private lemma dualHom_sum {M N : B''} {ι' : Type*} (s : Finset ι') (f : ι' → (M ⟶ N)) :
+    DualCat.dualHom (∑ i ∈ s, f i) = ∑ i ∈ s, DualCat.dualHom (f i) :=
+  map_sum (AddMonoidHom.mk' (DualCat.dualHom (M := M) (N := N)) DualCat.dualHom_add) f s
+
+/-- Morphisms out of `((C ⊗ D)_r)^*` agree when they agree on the dual of every summand. -/
+lemma dual_hom_ext {r : ℤ} {Z : B''} {f g : DualCat.dual ((cxProd P C D hC hD).X r) ⟶ Z}
+    (h : ∀ p q, p + q = r →
+      DualCat.dualHom (π P hC hD p q r) ≫ f = DualCat.dualHom (π P hC hD p q r) ≫ g) :
+    f = g := by
+  have h1 : 𝟙 (DualCat.dual ((cxProd P C D hC hD).X r)) =
+      ∑ x ∈ supp hC hD r, DualCat.dualHom (ι P hC hD x.1 x.2 r) ≫
+        DualCat.dualHom (π P hC hD x.1 x.2 r) := by
+    rw [← DualCat.dualHom_id, ← total P hC hD r, dualHom_sum]
+    simp only [DualCat.dualHom_comp]
+  rw [← Category.id_comp f, ← Category.id_comp g, h1, Preadditive.sum_comp, Preadditive.sum_comp]
+  refine Finset.sum_congr rfl fun x hx => ?_
+  rw [Category.assoc, Category.assoc, h x.1 x.2 ((mem_supp hC hD).1 hx).2]
+
+end cxProd
 
 end HSP
