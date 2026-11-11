@@ -8,7 +8,7 @@ lean: HSP.LocalDatum.F₀
 
 # The averaged chart map
 
-Let $\mu$ be the Haar probability measure on $\mathbb Z_p$. Given a local datum, $F_0:\Omega\to\mathbb R^n$ is
+Let $\mu$ be the [Haar probability measure](../subgroups/haar-zp.md) on $\mathbb Z_p$. Given a local datum, $F_0:\Omega\to\mathbb R^n$ is
 $$F_0(x)=\int_{\mathbb Z_p} a\cdot x\,d\mu(a).$$
 
 ## Sources
@@ -18,3 +18,4 @@ $$F_0(x)=\int_{\mathbb Z_p} a\cdot x\,d\mu(a).$$
 ## Depends on
 
 - [Local datum](local-datum.md)
+- [The Haar probability measure on $\mathbb Z_p$](../subgroups/haar-zp.md)

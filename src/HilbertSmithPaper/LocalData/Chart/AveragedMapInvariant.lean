@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LocalData.Subgroups.HaarZp
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 
 /-!
