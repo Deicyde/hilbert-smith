@@ -12,6 +12,7 @@ For an involution-invariant Karoubi filtration $\mathcal U\subset\mathcal A$: de
 - [Decorated quotient L-group](decorated-l-group.md)
 - [Complexes in a full subcategory](complex-in-subcategory.md)
 - [Sums in a full subcategory](subcategory-sum.md)
+- [Cobordisms in a full subcategory](subcategory-cobordism.md)
 - [Decorated induced map](decorated-induced-map.md)
 - [Equivalence invariance for decorated groups](decorated-equivalence-invariance.md)
 - [Functor induced on quotients](induced-quotient-functor.md)

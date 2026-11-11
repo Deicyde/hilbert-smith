@@ -4,7 +4,7 @@ article_id: af_2467eceb6f6f137d414cd6f2
 
 # Functors on complexes and structures
 
-Images of complexes and structures under a duality functor, with their compatibility with the boundary, the involution $T$, the duality map and dual complexes; duals of chain maps and of isomorphisms, the functoriality of duals and of the pushforward, images of sums of structures, and images of mapping cones and pair maps.
+Images of complexes and structures under a duality functor, with their compatibility with the boundary, the involution $T$, the duality map and dual complexes; duals of chain maps and of isomorphisms, the functoriality of duals and of the pushforward, images of sums of structures, images of mapping cones and pair maps, and lifting homotopy equivalences to a full subcategory.
 
 - [Image of a complex under a duality functor](functor-complex.md)
 - [Image of structures under a duality functor](functor-structure.md)
@@ -20,3 +20,4 @@ Images of complexes and structures under a duality functor, with their compatibi
 - [Pushforward commutes with the boundary](push-boundary.md)
 - [Duality functors and mapping cones](functor-cone.md)
 - [Duality functors and pair maps](functor-pair-map.md)
+- [Lifting homotopy equivalences to a full subcategory](lift-homotopy-equiv.md)

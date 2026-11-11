@@ -321,6 +321,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorPairMap
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureSum
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.LiftHomotopyEquiv
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushBoundary
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
@@ -392,6 +393,7 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedClosure
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
+import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategoryCobordism
 import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategorySum
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
