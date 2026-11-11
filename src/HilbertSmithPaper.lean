@@ -142,6 +142,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
+import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
