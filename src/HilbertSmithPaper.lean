@@ -21,6 +21,36 @@ import HilbertSmithPaper.Proofs.NoSmallSubgroups
 import HilbertSmithPaper.Proofs.OneChart
 import HilbertSmithPaper.Proofs.PadicExclusion
 import HilbertSmithPaper.Proofs.PadicExclusionBoundary
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
+import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
+import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
+import HilbertSmithPaper.LocalData.Chart.AveragedMap
+import HilbertSmithPaper.LocalData.Chart.LocalDatum
+import HilbertSmithPaper.LocalData.Chart.Pinch
+import HilbertSmithPaper.LocalData.Chart.PinchContinuous
+import HilbertSmithPaper.LocalData.Control.FixedLocalData
+import HilbertSmithPaper.LocalData.Control.ReductionKernel
+import HilbertSmithPaper.LocalData.Control.RepresentativeMap
+import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
+import HilbertSmithPaper.LocalData.Subgroups.FixedSets
+import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
+import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
+import HilbertSmithPaper.LocalData.Subgroups.SmallDisplacement
+import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
+import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.Categories.Asymptotic.PropAdd
+import HilbertSmithPaper.Categories.Asymptotic.PropMul
+import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
+import HilbertSmithPaper.Categories.Asymptotic.PropSmul
+import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
+import HilbertSmithPaper.Signatures.Forms.FormSignature
+import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
+import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
+import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
+import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
+import HilbertSmithPaper.Proofs.PadicExclusion
+import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 
 /-!
 # The paper

@@ -1,12 +1,14 @@
 ---
 article_id: af_f1ed2441c87cc0c5931df036
-declaration: def
+declaration: instance
 origin: background
+statement: formalized
+lean: HSP.instDualCatKaroubi
 ---
 
 # Idempotent completion with duality
 
-For a duality category $\mathcal A$, $\mathrm{Kar}\,\mathcal A$ has objects $(M,e)$ with $e^2=e$, and morphisms $f:(M,e)\to(N,e')$ with $e'fe=f$. Its duality is $(M,e)^*=(M^*,e^*)$, $f\mapsto f^*$. It is a duality category.
+For a duality category $\mathcal A$, $\mathrm{Kar}\,\mathcal A$ has objects $(M,e)$ with $e^2=e$, and morphisms $f:(M,e)\to(N,e')$ with $e'fe=f$; composition, sums and rational multiples of morphisms are computed in $\mathcal A$, which makes it a $\mathbb Q$-linear additive category (it has finite biproducts). Its duality is $(M,e)^*=(M^*,e^*)$, $f\mapsto f^*$. It is a duality category.
 
 ## Sources
 

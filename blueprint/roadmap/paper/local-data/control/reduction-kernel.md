@@ -2,6 +2,9 @@
 article_id: af_ebc5377a0d2b43fdeb191364
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.ker_toZModPow_eq
 ---
 
 # The kernel of reduction modulo $p^i$

@@ -2,6 +2,8 @@
 article_id: af_64e082c3cdc4617f671ee1be
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.exists_signatureSplitting
 ---
 
 # Invariant signature splittings exist

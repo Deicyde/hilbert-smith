@@ -2,6 +2,9 @@
 article_id: af_360a5e321d9b3a5fff62b330
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.padicSubgroup_basis
 ---
 
 # The subgroups $H_j$ form a basis at $0$
