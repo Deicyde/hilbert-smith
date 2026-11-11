@@ -2,6 +2,9 @@
 article_id: af_d7579c14213a35f0a713484c
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.dist_F₀_le
 ---
 
 # The averaged map moves points little

@@ -2,6 +2,9 @@
 article_id: af_057027b7317566ac445809e0
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.isClosed_fixSet
 ---
 
 # Fixed sets are closed
