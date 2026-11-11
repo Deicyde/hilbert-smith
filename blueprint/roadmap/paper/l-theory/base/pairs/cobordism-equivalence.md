@@ -2,6 +2,8 @@
 article_id: af_2ede78d607eb45f0a7205c70
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.cobordant_equivalence
 ---
 
 # Cobordism is an equivalence relation
