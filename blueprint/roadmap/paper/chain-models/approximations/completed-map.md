@@ -12,6 +12,8 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and let $\theta(x)=\m
 ## Sources
 - HS paper, Section 9 (completed maps).
 ## Depends on
+- [The lift](../torus/lift.md)
+- [The quotient map](../torus/proj.md)
 - [Local datum](../../local-data/chart/local-datum.md)
 - [Representatives](../../local-data/control/representative-map.md)
 - [The torus](../grid/torus.md)

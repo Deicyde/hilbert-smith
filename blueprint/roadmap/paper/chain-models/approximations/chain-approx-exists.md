@@ -14,6 +14,7 @@ Let $E(k)\subseteq C(k)$ be spanned by the cubes whose closed cubes miss $\overl
 ## Sources
 - New: replaces simplicial approximation (HS paper, Section 9).
 ## Depends on
+- [The quotient map](../torus/proj.md)
 - [Box hull](../grid/box-hull.md), [boxes are acyclic](../grid/grid-box-acyclic.md), [realization](../grid/realization.md), [track maps](track-map.md), [modulus of the track family](modulus.md), [mesh sequence](../grid/mesh-sequence.md), [carriers](../grid/acyclic-carriers.md), [cubical torus grid](../grid/cubical-torus-grid.md)
 ## Proof depends on
 - [Carried chain maps](../grid/carried-chain-map.md), [box hull properties](../grid/box-hull-properties.md), [properties](completed-maps-properties.md)

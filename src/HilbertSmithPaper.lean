@@ -94,6 +94,17 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Torus
+import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
+import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
+import HilbertSmithPaper.ChainModels.Torus.Dist2
+import HilbertSmithPaper.ChainModels.Torus.Dist2ProjLe
+import HilbertSmithPaper.ChainModels.Torus.DistLeTwo
+import HilbertSmithPaper.ChainModels.Torus.Lift
+import HilbertSmithPaper.ChainModels.Torus.LiftProj
+import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
+import HilbertSmithPaper.ChainModels.Torus.NormLift
+import HilbertSmithPaper.ChainModels.Torus.ProjLift
+import HilbertSmithPaper.ChainModels.Torus.Proj
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.CompressedMaps

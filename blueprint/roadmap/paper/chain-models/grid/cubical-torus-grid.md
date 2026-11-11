@@ -8,7 +8,7 @@ lean: HSP.ChainModels.gridComplex
 
 # Cubical torus grid
 
-Fix $n\in\mathbb N$, and let $\mathbb T^n=(\mathbb R/4\mathbb Z)^n$, its distance functions $d_\infty$ and $d_2$, and the neighbourhoods $N_r(X)$ be those of [the torus](torus.md). For an integer $k\ge1$ put $h=4/k$. The complexes below are defined for every $k\in\mathbb N$; $k\ge1$ is needed only for the mesh $h$ and the faces.
+Fix $n\in\mathbb N$, and let $\mathbb T^n=(\mathbb R/4\mathbb Z)^n$, its distance $d_\infty$, and the neighbourhoods $N_r(X)$ be those of [the torus](torus.md). For an integer $k\ge1$ put $h=4/k$. The complexes below are defined for every $k\in\mathbb N$; $k\ge1$ is needed only for the mesh $h$ and the faces.
 
 The *circle complex* $S_k$ is defined as follows. $S_{k,0}$ has basis $[w]$ and $S_{k,1}$ has basis $e_w$, both indexed by $w\in\mathbb Z/k=\{0,\dots,k-1\}$. The differential is $de_w=[w+1]-[w]$, and the augmentation is $\varepsilon[w]=1$. The realization of $[w]$ is the point $4w/k$, and the realization of $e_w$ is the arc from $4w/k$ to $4(w+1)/k$.
 

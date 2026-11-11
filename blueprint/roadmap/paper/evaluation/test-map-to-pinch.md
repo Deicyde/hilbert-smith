@@ -23,6 +23,10 @@ For [fixed local data](../local-data/control/fixed-local-data.md) and every $s>0
 - [Torus test map](../chain-models/approximations/torus-test-map.md)
 - [The torus](../chain-models/grid/torus.md)
 ## Proof depends on
+- [The lift](../chain-models/torus/lift.md)
+- [The maximum norm of the lift](../chain-models/torus/norm-lift.md)
+- [Continuity of the lift](../chain-models/torus/continuous-lift.md)
+- [The torus norm and the Euclidean norm of the lift](../chain-models/torus/norm-le-norm-lift.md)
 - [Test map](../local-data/chart/test-map.md)
 - [Averaged map continuous](../local-data/chart/averaged-map-continuous.md)
 - [Averaged map displacement](../local-data/chart/averaged-map-displacement.md)

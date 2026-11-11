@@ -1,4 +1,7 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.Proj
+import HilbertSmithPaper.ChainModels.Torus.ProjLift
+import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Grid.Torus
 
