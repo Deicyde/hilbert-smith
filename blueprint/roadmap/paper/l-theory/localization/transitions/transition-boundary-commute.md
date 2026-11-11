@@ -10,7 +10,7 @@ lean: HSP.transitionLower_levelBoundary
 
 Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration. For $j\ge0$ and $x\in L^{\langle -j\rangle}_k(\mathcal A/\mathcal U)$,
 $$t\big(\partial^{(j)}x\big)=\partial^{(j+1)}(t\,x)\quad\text{in }L^{\langle -j-2\rangle}_{k-1}(\mathcal U),$$
-where $\partial^{(j)}$ is the [stage boundary](level-boundary.md), on the left $t$ is the [transition map](transition-map.md) of $\mathcal U$ at stage $j+1$, and on the right that of $\mathcal A/\mathcal U$ at stage $j$. Here $\partial^{(j)}x$, an element of $L^p_{k+j}$ of the full subcategory $C_{\mathbb Z^{j+1}}\mathcal U\subset C_{\mathbb Z^{j+1}}\mathcal A$, is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ through the identification of [Iterated bounded categories of a subcategory](../../ultimate/boundary/sub-pow-identification.md). (Lean: followed by the transport of L-groups along $k+j=(k-1)+(j+1)$ of [The class map](../../ultimate/groups/ultimate-cls.md).)
+where $\partial^{(j)}$ is the [stage boundary](level-boundary.md), on the left $t$ is the [lower transition map](transition-lower.md) of $\mathcal U$ at stage $j+1$, and on the right that of $\mathcal A/\mathcal U$ at stage $j$. Here $\partial^{(j)}x$, an element of $L^p_{k+j}$ of the full subcategory $C_{\mathbb Z^{j+1}}\mathcal U\subset C_{\mathbb Z^{j+1}}\mathcal A$, is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ through the identification of [Iterated bounded categories of a subcategory](../../ultimate/boundary/sub-pow-identification.md). (Lean: followed by the transport of L-groups along $k+j=(k-1)+(j+1)$ of [The class map](../../ultimate/groups/ultimate-cls.md).)
 
 *Proof sketch.* Write $\mathcal U_n=C_{\mathbb Z^n}\mathcal U\subset C_{\mathbb Z^n}\mathcal A$, an involution-invariant Karoubi filtration ([Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)).
 1. Lift. By [Lifting closed complexes](../boundary/lift-to-pair-closed.md) for $\mathcal U_{j+1}$, there is a strict $(k+j+1)$-dimensional $\mathcal U_{j+1}$-[pair](../boundary/u-pair.md) $V$ over $(P,\pi)$ with $[qV]=t^{\mathrm{im}}x$, where $qV$ is its [image](../boundary/image-pair.md). By the [pair formula](../boundary/pair-formula.md), $\partial^{(j)}x=\partial\,t^{\mathrm{im}}x=[P,\pi]$.
@@ -28,7 +28,7 @@ where $\partial^{(j)}$ is the [stage boundary](level-boundary.md), on the left $
 ## Depends on
 
 - [Stage boundary](level-boundary.md)
-- [Transition map](transition-map.md)
+- [Lower transition map](transition-lower.md)
 - [Iterated bounded categories of a subcategory](../../ultimate/boundary/sub-pow-identification.md)
 - [The class map](../../ultimate/groups/ultimate-cls.md)
 
