@@ -300,6 +300,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
 import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBiproduct
+import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualityFunctorSum
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
