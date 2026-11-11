@@ -35,3 +35,4 @@ This result rests, through the good point, on the open statement [Newman's theor
 - [Uniformly small displacement near the identity](../local-data/subgroups/small-displacement.md)
 - [The subgroups $H_j$ form a basis at $0$](../local-data/subgroups/padic-subgroups-basis.md)
 - [Closed subgroups of $\mathbb Z_p$](../local-data/subgroups/closed-subgroups.md)
+- [The subgroups $H_j$](../local-data/subgroups/padic-subgroups.md)

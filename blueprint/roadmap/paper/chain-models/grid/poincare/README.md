@@ -17,6 +17,7 @@ The circle duality data, the unsymmetrized structure, the homotopies and the aug
 - [The homotopy of the chain model](chain-model-h.md)
 - [The dual homotopy of the chain model](chain-model-h-dual.md)
 - [The augmentation of the chain model](chain-model-aug.md)
+- [Propagation of the differential of the chain model](chain-model-d-propagation.md)
 - [The chain model is Poincaré: the cycle](chain-model-poincare-cycle.md)
 - [The chain model is Poincaré: the inverse and the homotopies](chain-model-poincare-inverse.md)
 - [The chain model is Poincaré: propagation](chain-model-poincare-propagation.md)
