@@ -2,6 +2,8 @@
 article_id: af_cef2c99b33a69c4152008802
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.Bounded.unitaryIsoIter
 ---
 
 # Bounded extension of a unitary isomorphism

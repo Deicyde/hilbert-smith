@@ -261,6 +261,7 @@ import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisionBoundary
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdentification
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.UltimateBoundary
+import HilbertSmithPaper.LTheory.Ultimate.Groups.BoundedUnitaryExtension
 import HilbertSmithPaper.LTheory.Ultimate.Groups.EquivalenceInvariance
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapCls
