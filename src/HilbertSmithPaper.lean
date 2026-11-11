@@ -66,11 +66,13 @@ import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
 import HilbertSmithPaper.ChainModels.Approximations.ApproximationsGraphType
 import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 import HilbertSmithPaper.ChainModels.Approximations.ChainApprox
+import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxExists
 import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMapsProperties
+import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.FundamentalCycleFixed
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
 import HilbertSmithPaper.ChainModels.Approximations.GroupApproxCarried
@@ -106,6 +108,8 @@ import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Realization
+import HilbertSmithPaper.ChainModels.Grid.Buffers.Restriction
+import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom

@@ -1,10 +1,9 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Torus.Proj
-import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
-import HilbertSmithPaper.ChainModels.Grid.Realization
-import HilbertSmithPaper.ChainModels.Grid.MeshSequence
+import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
+import HilbertSmithPaper.ChainModels.Approximations.FarCubes
+import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
 
@@ -19,12 +18,9 @@ some chain map `a : C(k) → C(k)` carried by `Γ_L` has `a|_{E(k)} = 1` and `ε
 
 * `C(k)` is `gridComplex k n`; as a source and target of a carrier it is realized
   (`realizeCx`, with the standard basis `realizeBasis`, indexed by the basis cubes), with the
-  augmentation `gridAugLin k n`, the realization of `ε`.
-* `IsFarCube c` says the closed cube `|c|` misses `B̄(0, 3/2)` (the image in `𝕋ⁿ` of the closed
-  Euclidean ball); the basis cubes of `E(k)` are the far cubes.
-* `chainApproxBox A hk L r e` is `Γ_L(c) = Box_k(N_h(L|c|))` for the cube `c` of the basis vector
-  `e` of `C(k)_r`, `h = 4/k`, `N_h` the closed `d_∞`-neighbourhood (`Metric.cthickening`). Its
-  degree-`s` part is `cubeSpan (chainApproxBox …).cubes s`. The `d_∞`-diameter of the carrier is
+  realized augmentation `gridAugLin k n`.
+* The basis cubes of `E(k)` are the far cubes (`IsFarCube`).
+* `Γ_L(c)` is `chainApproxBox A hk L r e` (approximation boxes); its degree-`s` part is `cubeSpan (chainApproxBox …).cubes s`. The `d_∞`-diameter of the carrier is
   that of the realizations `|Γ_L(c)|`.
 * `exists_chainApprox` (the declaration of the article): a carrier `Γ` whose subcomplexes are
   the `Γ_L(c)`, the diameter bound, and a chain map `a` of `C(k)` (in based vector spaces) whose
@@ -38,27 +34,6 @@ namespace HSP.ChainModels
 open FreeQ Matrix
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
-
-/-- The augmentation `ε : C(k)_0 → ℚ`, realized as a linear map on columns. -/
-noncomputable def gridAugLin (k n : ℕ) : (realizeCx (gridComplex k n)).X 0 →ₗ[ℚ] ℚ :=
-  (LinearMap.proj (0 : Fin 1)).comp (Matrix.mulVecLin (toMatrix (gridAug k n)))
-
-/-- The closed cube `|c|` misses `B̄(0, 3/2) ⊆ 𝕋ⁿ`: `c` is a cube of `E(k)`. -/
-def IsFarCube {k : ℕ} (c : GridCube k n) : Prop :=
-  Disjoint c.realization
-    (Torus.proj '' Metric.closedBall (0 : EuclideanSpace ℝ (Fin n)) (3 / 2))
-
-/-- `k ≥ k₀` gives `k ≥ 8`. -/
-private lemma eight_le_of_meshStart_le (A : LocalDatum p n D ρplus) {k : ℕ} (hk : meshStart A ≤ k) :
-    8 ≤ k :=
-  (meshStart_spec A).1.trans hk
-
-/-- `Γ_L(c) = Box_k(N_h(L|c|))`, `h = 4/k`, for the cube `c` of the basis vector `e` of
-`C(k)_r`. -/
-noncomputable def chainApproxBox (A : LocalDatum p n D ρplus) {k : ℕ} (hk : meshStart A ≤ k)
-    (L : Torus n → Torus n) (r : ℤ) (e : Fin ((gridComplex k n).X r).dim) : GridBox k n :=
-  boxHull k (eight_le_of_meshStart_le A hk)
-    (Metric.cthickening (4 / k : ℝ) (L '' (gridCell k n r e).realization))
 
 /-- **Chain approximations exist.** For `k ≥ k₀` and `L ∈ 𝓕`, `Γ_L(c) = Box_k(N_h(L|c|))` is a
 carrier of `d_∞`-diameter at most `ω(h) + 4h`, and there is a chain map `a : C(k) → C(k)`

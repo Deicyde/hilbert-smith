@@ -11,6 +11,7 @@ The torus, the cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and 
 - [Tensor calculus of based complexes](tensor/README.md)
 - [Realization of based complexes](realization.md)
 - [Cubical torus grid](cubical-torus-grid.md)
+- [Realized augmentation](realized-augmentation.md)
 - [Cells of CP^2](cp2-cells.md)
 - [Grid boxes](grid-box.md)
 - [Boxes are acyclic](grid-box-acyclic.md)

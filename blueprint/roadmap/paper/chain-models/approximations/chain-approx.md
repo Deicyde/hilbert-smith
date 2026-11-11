@@ -10,4 +10,4 @@ lean: HSP.ChainModels.chainApprox
 For $L\in\mathcal F$, $a_i[L]$ is a chain map of $C(k_i)$ chosen by [chain approximations exist](chain-approx-exists.md) for $k=k_i\ge k_0$.
 
 ## Depends on
-- [Chain approximations exist](chain-approx-exists.md)
+- [Chain approximations exist](chain-approx-exists.md), [far cubes](far-cubes.md), [approximation boxes](chain-approx-box.md), [realized augmentation](../grid/realized-augmentation.md)
