@@ -11,7 +11,7 @@ lean: HSP.forget_supp
 
 For closed invariant $S\subset X$, [forgetting the group](forget-group.md) carries $\mathcal A_S$ into $\mathcal A_S\subset\mathcal A_{\mathbf 1}(X)$.
 
-The statement does not need $S$ to be closed.
+The statement needs neither that $S$ is closed nor that $X$ is compact.
 
 *Proof sketch.* The new labels are $\chi_i(g)x_i(k)$, and they are as far from the invariant set $S$ as $x_i(k)$ is.
 

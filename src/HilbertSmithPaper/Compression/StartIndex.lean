@@ -30,7 +30,7 @@ lemma bufferBound_spec (F : FixedLocalData p n D ρplus) :
   (buffer_eventually F).choose_spec
 
 /-- Some `i₀ ≥ 1` has items (1)-(3) with `(ε'_i)` for every `i ≥ i₀`. -/
-lemma exists_startIndex (F : FixedLocalData p n D ρplus) :
+private lemma exists_startIndex (F : FixedLocalData p n D ρplus) :
     ∃ i₀ : ℕ, 1 ≤ i₀ ∧ ∀ i ≥ i₀, BuffersHold F (bufferBound F) i := by
   obtain ⟨N, hN⟩ := eventually_atTop.1 (bufferBound_spec F).2
   exact ⟨max N 1, le_max_right _ _, fun i hi => hN i ((le_max_left _ _).trans hi)⟩

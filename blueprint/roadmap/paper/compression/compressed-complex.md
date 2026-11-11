@@ -11,7 +11,7 @@ Take [fixed local data](../local-data/control/fixed-local-data.md), with control
 
 Notation: $\mathrm{pr}_i:D_i\to C_i$ and $\mathrm{in}_i:C_i\to D_i$ are the based projection and inclusion, and $Q_i=1-\mathrm{in}_i\mathrm{pr}_i$; on cochains they are $\mathrm{in}_i^*$, $\mathrm{pr}_i^*$ and $Q_i^*$.
 
-**Remark (not formalized).** Retained cells lie in $\mathcal B_i(t')$ for $i\ge i_0$ ([buffers](buffer-eventually.md) (1)), so $\tilde x_b\in Z^+$ by [buffered restriction](../chain-models/approximations/buffered-restriction.md) (1) and the label needs no point of $T$. Only retained cells get labels; the full $D_i$ is never an object over $T\times S^n$.
+For $i\ge i_0$ the retained cells lie in $\mathcal B_i(t')$ by [buffers](buffer-eventually.md) (1), which hold for every $i\ge i_0$ by the choice of the start index; so the control label of [control labels](../chain-models/grid/control-labels.md) is defined on them, and no point of $T$ is needed. Only retained cells get labels; the full $D_i$ is never an object over $T\times S^n$.
 
 ## Sources
 - HS paper, Section 10 (the quotient by far simplices). New: the zero levels, and labels only on retained cells.
@@ -26,4 +26,4 @@ Notation: $\mathrm{pr}_i:D_i\to C_i$ and $\mathrm{in}_i:C_i\to D_i$ are the base
 - [The control space is compact](../local-data/control/control-space-compact.md)
 - [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
 - [Buffers hold eventually](buffer-eventually.md)
-- [Buffered restriction](../chain-models/approximations/buffered-restriction.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md)
