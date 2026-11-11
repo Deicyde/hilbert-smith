@@ -51,6 +51,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.PairMap
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
