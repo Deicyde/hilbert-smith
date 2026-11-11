@@ -2,6 +2,8 @@
 article_id: af_a9b87805ceacda28b7707ea5
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.complexSign
 ---
 
 # Signature of a complex

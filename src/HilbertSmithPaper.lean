@@ -221,6 +221,7 @@ import HilbertSmithPaper.Signatures.LFour.MiddleForm
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNeg
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNonsingular
 import HilbertSmithPaper.Signatures.LFour.MiddleFormSum
+import HilbertSmithPaper.Signatures.LFour.ComplexSignature
 
 /-!
 # The paper
