@@ -464,6 +464,7 @@ import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
 import HilbertSmithPaper.LocalData.Subgroups.ProperClosedSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.SmallDisplacement
+import HilbertSmithPaper.Proofs.EmptyControlClass
 import HilbertSmithPaper.Proofs.FaithfulHausdorff
 import HilbertSmithPaper.Proofs.HalfSpaceInterior
 import HilbertSmithPaper.Proofs.HilbertSmith

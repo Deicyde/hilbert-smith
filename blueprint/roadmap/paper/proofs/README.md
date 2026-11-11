@@ -19,6 +19,7 @@ The first half moves a faithful action into one chart. A point with no fixed nei
 The second half excludes such an action. Fixed local data for it give a control space $T$, a compact metric space with a free isometric $C_p$-action, possibly empty, and one cube parameter $s$ fixes the [scalar iterated cut](../corner/theorem/scalar-iterated-cut.md), which needs no control space. [Theorem C](../compression/theorem-c.md) compresses the labelled chain models of the torus test map into a strict Poincaré complex over $T\times S^n$ whose image after forgetting $T$ is the class of the torus test map, and [Theorem B for the test map](../evaluation/theorem-b-test-map.md) makes the [tail signature](../signatures/tail/tail-signature.md) of that class's iterated cut eventually $\pm1$. If $T$ is empty, the complex is zero, so the tail is zero, which is absurd. Otherwise the data form [standing data](../corner/standing-data.md), Theorem C adds a graph-type homotopy action, and [Theorem A](../corner/theorem/theorem-a.md), whose arithmetic core is [divisibility of the signature tail](../divisibility/divisibility.md), makes the same tail eventually divisible by $p$. No integer sequence does both.
 
 - [Local exclusion](local-exclusion.md)
+- [The class over an empty space vanishes](empty-control-class.md)
 - [Integer tails](integer-tails.md)
 
 ## Manifolds with boundary
