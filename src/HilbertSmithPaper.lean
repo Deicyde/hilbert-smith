@@ -35,6 +35,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
 import HilbertSmithPaper.LocalData.Chart.AveragedMapDisplacement
+import HilbertSmithPaper.LocalData.Chart.AveragedMapFixed
 import HilbertSmithPaper.LocalData.Chart.LocalDatum
 import HilbertSmithPaper.LocalData.Chart.OpenTestRegion
 import HilbertSmithPaper.LocalData.Chart.Pinch

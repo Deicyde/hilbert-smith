@@ -2,6 +2,9 @@
 article_id: af_9d407c9cba10ec893b0792e4
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.F₀_of_fixed
 ---
 
 # The averaged map at a fixed point
