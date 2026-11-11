@@ -4,6 +4,7 @@ declaration: lemma
 origin: bridged
 statement: formalized
 lean: HSP.SymPoincare.map_cobordant
+proof: formalized
 ---
 
 # Duality functors on cobordism classes

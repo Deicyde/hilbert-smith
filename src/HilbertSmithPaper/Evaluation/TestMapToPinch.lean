@@ -1,4 +1,8 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
+import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
+import HilbertSmithPaper.ChainModels.Torus.NormLift
+import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.LocalData.Control.FixedLocalData
 import HilbertSmithPaper.LocalData.Chart.TestMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
@@ -36,10 +40,6 @@ variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 /-- `|y|_∞ ≤ |y|_2`. -/
 private lemma norm_ofLp_le (y : EuclideanSpace ℝ (Fin n)) : ‖WithLp.ofLp y‖ ≤ ‖y‖ :=
   (pi_norm_le_iff_of_nonneg (norm_nonneg _)).2 fun j => PiLp.norm_apply_le y j
-
-/-- `d_∞(x, 0) ≤ |x̃|_2`. -/
-private lemma norm_le_norm_lift (x : Torus n) : ‖x‖ ≤ ‖Torus.lift x‖ := by
-  rw [← Torus.norm_ofLp_lift]; exact norm_ofLp_le _
 
 open Classical in
 /-- The first stage: `σ_ρ((1 - v) F₀(w) + v w)` for `w ∈ Ω`, and `∞` otherwise. -/
@@ -121,7 +121,7 @@ private lemma continuous_gFun_lift (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ
       filter_upwards [(isOpen_lt continuous_const
         (continuous_norm.comp continuous_snd)).mem_nhds
         (show ρ + D < ‖(v₀, x₀).2‖ by simp only; linarith)] with q hq
-      exact gFun_big A ρ q.1 _ (lt_of_lt_of_le hq (norm_le_norm_lift q.2))
+      exact gFun_big A ρ q.1 _ (lt_of_lt_of_le hq (Torus.norm_le_norm_lift q.2))
     exact ContinuousAt.congr continuousAt_const hev.symm
 
 /-- The interpolated scale `c_v(y) = (1 - v)(ρ - |y|_2) + v c_κ(y)`. -/

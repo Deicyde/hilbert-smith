@@ -21,9 +21,20 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and $0<\rho<\rho_+$, 
 ## Sources
 - HS paper, Section 9; it transfers.
 ## Depends on
+- [Representatives of the finite quotients](../../local-data/control/representative-map.md)
+- [Completed map](completed-map.md)
+- [The lift](../torus/lift.md)
+- [The quotient Euclidean metric](../torus/dist2.md)
 - [Modulus of the track family](modulus.md), [track maps](track-map.md)
 - [Torus test map](torus-test-map.md)
 - [The torus](../grid/torus.md)
 - [Local datum](../../local-data/chart/local-datum.md), [round sphere](../../corner/round-sphere.md)
 ## Proof depends on
+- [The quotient map](../torus/proj.md)
+- [The quotient map inverts the lift](../torus/proj-lift.md)
+- [Continuity of the lift](../torus/continuous-lift.md)
+- [The torus norm and the Euclidean norm of the lift](../torus/norm-le-norm-lift.md)
+- [The lift inverts the quotient map near the origin](../torus/lift-proj.md)
+- [The quotient map does not increase distances](../torus/dist2-proj-le.md)
+- [Continuity of the quotient map](../torus/continuous-proj.md)
 - [Test map invariant](../../local-data/chart/test-map-invariant.md), [test map continuous](../../local-data/chart/test-map-continuous.md), [averaged map displacement](../../local-data/chart/averaged-map-displacement.md), [representatives](../../local-data/control/representatives.md)

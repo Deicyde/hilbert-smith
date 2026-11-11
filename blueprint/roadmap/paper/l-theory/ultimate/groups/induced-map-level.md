@@ -2,6 +2,9 @@
 article_id: af_48287743acf010b57afbd408
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ultL.map_of
+proof: formalized
 ---
 
 # The induced map at each stage

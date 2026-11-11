@@ -2,6 +2,8 @@
 article_id: af_b4b6570e9cced5c05462a455
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.transitionMap_natural
 ---
 
 # Naturality of the transition

@@ -24,3 +24,4 @@ Every object of $\mathcal A_{\mathbf G}(X)$ lies in the [support subcategory](su
 - [Support subcategory](support-subcategory.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)

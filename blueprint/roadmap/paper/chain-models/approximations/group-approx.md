@@ -2,6 +2,8 @@
 article_id: af_903667922cf1fc4aca1f33f1
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.groupApprox
 ---
 # Group approximations
 

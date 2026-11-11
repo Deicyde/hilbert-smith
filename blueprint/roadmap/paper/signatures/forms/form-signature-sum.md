@@ -24,4 +24,5 @@ Let $(W,b,\rho)$ and $(W',b',\rho')$ be as in [the existence lemma](../l-four/si
 
 ## Proof depends on
 
+- [Signature splittings](signature-splitting.md)
 - [Independence](../l-four/signature-splitting-independence.md)

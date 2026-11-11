@@ -20,7 +20,7 @@ For a local datum, the control space is $T=Z^+/H_1$, the set of $H_1$-orbits of 
 
 - [The test region](../chart/test-region.md)
 - [The subgroups $H_j$](../subgroups/padic-subgroups.md)
+- [The action on the test region](zplus-action.md)
 
 ## Proof depends on
 
-- [The test regions are invariant](../chart/test-region-invariant.md)

@@ -21,11 +21,11 @@ open DualCat
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
 
 /-- Every object of `𝒜_𝐆(X)` is `X`-supported. -/
-theorem supp_univ (P : AsymCat G X) : supp (Set.univ : Set X) P := fun _ hε =>
+private theorem supp_univ (P : AsymCat G X) : supp (Set.univ : Set X) P := fun _ hε =>
   Eventually.of_forall fun _ _ => Metric.self_subset_thickening hε _ (Set.mem_univ _)
 
 /-- The corestriction `ι⁻¹ : 𝒜_𝐆(X) → 𝒜_X` of the identity functor, `M ↦ M`, `u ↦ u`. -/
-abbrev supportWholeInvFunctor :
+private abbrev supportWholeInvFunctor :
     AsymCat G X ⥤ (supp (Set.univ : Set X) : ObjectProperty (AsymCat G X)).FullSubcategory :=
   ObjectProperty.lift _ (𝟭 _) supp_univ
 

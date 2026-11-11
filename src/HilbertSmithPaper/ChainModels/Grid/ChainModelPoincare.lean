@@ -4,6 +4,9 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 
 /-!
 # The chain model is Poincaré
@@ -16,11 +19,7 @@ at their centers, `φ_i`, `b_i`, `H_i`, `H'_i` have `d_∞`-propagation at most 
 
 ## Encoding
 
-* Tensors of maps, in the explicit bases of the tensor product of based complexes:
-  `basedTensorHom` is `f ⊗ g` for maps of degrees `d`, `e`, with
-  `(f ⊗ g)(x ⊗ y) = (-1)^{|g||x|} f(x) ⊗ g(y)`; `basedDualTensorHom` is `Ξ^{-1}(F ⊗ G)Ξ` on
-  `(C ⊗ E)^{k-*}` for maps `F`, `G` of `C^{m-*}`, `E^{m'-*}`, with the signs
-  `s(a,b) = (-1)^{b(a+m)}` of `Ξ`.
+* Tensors of maps are `basedTensorHom` and `basedDualTensorHom` (their own articles).
 * The homotopies are built by the telescoping recursion over `C(k) = (⋯(𝟙 ⊗ S) ⋯) ⊗ S`:
   `H^{(j+1)} = H^{(j)} ⊗ A + 1 ⊗ K` with `A = φ^s b`, and `H_i = H^{(n)} ⊗ 1_P`; this unfolds to
   `∑_j 1^{⊗(j-1)} ⊗ K ⊗ A^{⊗(n-j)} ⊗ 1_P`. Likewise `H'_i` with `A' = b φ^s` and `K'` through `Ξ`.
@@ -37,53 +36,6 @@ namespace HSP.ChainModels
 
 open FreeQ DualCat
 
-section TensorHom
-
-variable {C C' E E' : ChainComplex FreeQ ℤ}
-
-/-- The tensor `f ⊗ g` of maps of degrees `d` and `e`: on `C_a ⊠ E_c` it is
-`(-1)^{e a} f_a ⊠ g_c` into `C'_{a+d} ⊠ E'_{c+e}`. -/
-noncomputable def basedTensorHom (hE : ∀ q < 0, (E.X q).dim = 0)
-    (hE' : ∀ q < 0, (E'.X q).dim = 0) (d e : ℤ) (f : ∀ r, C.X r ⟶ C'.X (r + d))
-    (g : ∀ r, E.X r ⟶ E'.X (r + e)) (r : ℤ) :
-    (basedComplexTensor C E hE).X r ⟶ (basedComplexTensor C' E' hE').X (r + (d + e)) :=
-  ∑ a : Fin (r.toNat + 1), ∑ a' : Fin ((r + (d + e)).toNat + 1),
-    if h : ((a' : ℕ) : ℤ) = (a : ℕ) + d then
-      (e * (a : ℕ)).negOnePow •
-        (blockProj (tensorSummandDim C E r) a ≫ basedKron (f (a : ℕ)) (g (r - (a : ℕ))) ≫
-          eqToHom (by
-            simp only [tensorSummandDim]
-            rw [h, show r + (d + e) - (((a : ℕ) : ℤ) + d) = r - ((a : ℕ) : ℤ) + e by ring]) ≫
-          blockInc (tensorSummandDim C' E' (r + (d + e))) a')
-    else 0
-
-/-- The map `Ξ^{-1}(F ⊗ G)Ξ` of `(C ⊗ E)^{k-*}`, `m + m' = k`, for maps `F` of `C^{m-*}` and `G`
-of `E^{m'-*}` of degrees `d`, `e`: from the dual of `C_{m-a} ⊠ E_{m'-b}` to the dual of
-`C_{m-a-d} ⊠ E_{m'-b-e}` it is `s(a+d,b+e) (-1)^{e a} s(a,b) F_a ⊠ G_b`. -/
-noncomputable def basedDualTensorHom (hE : ∀ q < 0, (E.X q).dim = 0) (m m' k : ℤ)
-    (hk : m + m' = k) (d e : ℤ) (F : ∀ r, dual (C.X (m - r)) ⟶ dual (C.X (m - (r + d))))
-    (G : ∀ r, dual (E.X (m' - r)) ⟶ dual (E.X (m' - (r + e)))) (r : ℤ) :
-    dual ((basedComplexTensor C E hE).X (k - r)) ⟶
-      dual ((basedComplexTensor C E hE).X (k - (r + (d + e)))) :=
-  ∑ p : Fin ((k - r).toNat + 1), ∑ p' : Fin ((k - (r + (d + e))).toNat + 1),
-    if h : ((p' : ℕ) : ℤ) = (p : ℕ) - d then
-      (((r - (m - (p : ℕ))) + e) * ((m - (p : ℕ)) + d + m) + e * (m - (p : ℕ)) +
-          (r - (m - (p : ℕ))) * ((m - (p : ℕ)) + m)).negOnePow •
-        (blockProj (tensorSummandDim C E (k - r)) p ≫
-          eqToHom (by
-            simp only [tensorSummandDim, dual_eq]
-            rw [show m - (m - ((p : ℕ) : ℤ)) = ((p : ℕ) : ℤ) by ring,
-              show m' - (r - (m - ((p : ℕ) : ℤ))) = k - r - ((p : ℕ) : ℤ) by omega]) ≫
-          basedKron (F (m - (p : ℕ))) (G (r - (m - (p : ℕ)))) ≫
-          eqToHom (by
-            simp only [tensorSummandDim, dual_eq]
-            rw [h, show m - (m - ((p : ℕ) : ℤ) + d) = ((p : ℕ) : ℤ) - d by ring,
-              show m' - (r - (m - ((p : ℕ) : ℤ)) + e) = k - (r + (d + e)) - (((p : ℕ) : ℤ) - d) by
-                omega]) ≫
-          blockInc (tensorSummandDim C E (k - (r + (d + e)))) p')
-    else 0
-
-end TensorHom
 
 /-! ### The unsymmetrized structure, the homotopies and the augmentation -/
 
@@ -103,10 +55,6 @@ def circleA' (k : ℕ) (r : ℤ) :
     dual ((circleComplex k).X (1 - r)) ⟶ dual ((circleComplex k).X (1 - (r + 0))) :=
   circlePhiSym k ⟨(r, 1 - r), by ring⟩ ≫ circleB k r ≫
     eqToHom (by rw [add_zero])
-
-/-- The identity of a complex, as a map of degree `0`. -/
-def idDeg0 (C : ChainComplex FreeQ ℤ) (r : ℤ) : C.X r ⟶ C.X (r + 0) :=
-  eqToHom (congrArg C.X (add_zero r).symm)
 
 /-- The identity of a dual complex `C^{m-*}`, as a map of degree `0`. -/
 def idDualDeg0 (C : ChainComplex FreeQ ℤ) (m r : ℤ) : dual (C.X (m - r)) ⟶ dual (C.X (m - (r + 0))) :=

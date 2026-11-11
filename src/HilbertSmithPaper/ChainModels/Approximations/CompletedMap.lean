@@ -1,4 +1,6 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.Proj
+import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.LocalData.Chart.LocalDatum
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.ChainModels.Grid.Torus

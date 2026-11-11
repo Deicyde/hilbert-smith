@@ -1,4 +1,8 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
+import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
+import HilbertSmithPaper.ChainModels.Torus.NormLift
+import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.ChainModels.Grid.Torus
 
 /-!
@@ -95,10 +99,7 @@ private lemma continuous_κfun (s : ℝ) (hs : 0 < s) : Continuous (κfun (n := 
       have hvM : ‖(cubicalPinchScale s (Torus.lift x))⁻¹ • Torus.lift x‖ ≤ M' := by
         have := hM hv; rw [Metric.mem_closedBall, dist_zero_right] at this
         exact this.trans (le_max_left _ _)
-      have hnorm : ‖x‖ ≤ ‖Torus.lift x‖ := by
-        rw [← Torus.norm_ofLp_lift]
-        refine (pi_norm_le_iff_of_nonneg (norm_nonneg _)).2 fun j => ?_
-        exact PiLp.norm_apply_le (Torus.lift x) j
+      have hnorm : ‖x‖ ≤ ‖Torus.lift x‖ := Torus.norm_le_norm_lift x
       rw [norm_smul, Real.norm_eq_abs, abs_inv, abs_of_pos hpos] at hvM
       have h3 : (1 / (4 * M'))⁻¹ < (cubicalPinchScale s (Torus.lift x))⁻¹ :=
         (inv_lt_inv₀ (by positivity) hpos).2 hx2
