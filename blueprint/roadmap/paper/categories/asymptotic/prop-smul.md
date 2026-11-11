@@ -2,6 +2,9 @@
 article_id: af_80a181ed1d0d46452ae7ce88
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.prop_smul_le
 ---
 
 # Propagation of a scalar multiple
