@@ -1,5 +1,6 @@
-import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
-import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
+import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapComp
+import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapId
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UnitaryInvariance
 
 /-!
 # Equivalence invariance on ultimate L
@@ -29,6 +30,8 @@ theorem ultL.map_inverse (F : DualFunctor A B) (G : DualFunctor B A)
     (ε : DualFunctor.UnitaryIso (G.comp F) (DualFunctor.id B)) (k : ℤ) :
     (ultL.map G k).comp (ultL.map F k) = AddMonoidHom.id _ ∧
       (ultL.map F k).comp (ultL.map G k) = AddMonoidHom.id _ := by
-  sorry
+  constructor
+  · rw [← ultL.map_comp, ← ultL.map_eq_of_unitaryIso η, ultL.map_id]
+  · rw [← ultL.map_comp, ultL.map_eq_of_unitaryIso ε, ultL.map_id]
 
 end HSP
