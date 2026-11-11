@@ -54,6 +54,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
