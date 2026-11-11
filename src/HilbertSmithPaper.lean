@@ -5,6 +5,7 @@ import HilbertSmithPaper.Inputs.Newman.NewmanSmallOrbits
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.Proofs.FaithfulHausdorff
 import HilbertSmithPaper.Proofs.HilbertSmith
+import HilbertSmithPaper.Proofs.HilbertSmithBoundary
 import HilbertSmithPaper.Proofs.IntegerTails
 import HilbertSmithPaper.Proofs.InteriorAction
 import HilbertSmithPaper.Proofs.InteriorActionContinuous
