@@ -2,6 +2,9 @@
 article_id: af_224488306d01d0552d62325f
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.StructureCx.push_T
+proof: formalized
 ---
 
 # Pushforward commutes with T
