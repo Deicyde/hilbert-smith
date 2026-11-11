@@ -1,9 +1,11 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateStageMap
+import HilbertSmithPaper.LTheory.Ultimate.Groups.TransitionIter
 
 /-!
 # Stages are compatible with the transition
 
-`ι_{j+1} ∘ t = ι_j` on `L^{⟨-j⟩}_k(A)`. Hence `ι_{j+m} ∘ t^m = ι_j` for every `m ≥ 0`.
+`ι_{j+1} ∘ t = ι_j` on `L^{⟨-j⟩}_k(A)`. Hence `ι_{j+m} ∘ t^m = ι_j` for every `m ≥ 0`, with `t^m`
+the iterated transition (`transitionIter`).
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -14,11 +16,6 @@ universe v u
 
 variable (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFiniteBiproducts A]
   [DualCat A]
-
-/-- The iterated transition `t^m : L^{⟨-j⟩}_k(A) → L^{⟨-j-m⟩}_k(A)`. -/
-noncomputable def transitionIter (k : ℤ) (j : ℕ) : ∀ m : ℕ, lowerL A j k →+ lowerL A (j + m) k
-  | 0 => AddMonoidHom.id _
-  | m + 1 => (transitionLower A (j + m) k).comp (transitionIter k j m)
 
 /-- `ι_{j+1} ∘ t = ι_j`, and hence `ι_{j+m} ∘ t^m = ι_j`. -/
 theorem ultL.of_trans (k : ℤ) :
