@@ -2,6 +2,8 @@
 article_id: af_251cccb60e3303ff0ab37e1a
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.localExclusion
 ---
 
 # Local exclusion

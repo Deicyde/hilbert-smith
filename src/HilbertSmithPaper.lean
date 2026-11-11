@@ -14,6 +14,7 @@ import HilbertSmithPaper.Proofs.IntrinsicInteriorConnected
 import HilbertSmithPaper.Proofs.IntrinsicInteriorDense
 import HilbertSmithPaper.Proofs.IntrinsicInteriorInvariant
 import HilbertSmithPaper.Proofs.IntrinsicInteriorOpen
+import HilbertSmithPaper.Proofs.LocalExclusion
 import HilbertSmithPaper.Proofs.OneChart
 import HilbertSmithPaper.Proofs.PadicExclusion
 
