@@ -3,6 +3,9 @@ import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Corner.Theorem.ScalarIteratedCut
 import HilbertSmithPaper.Signatures.Tail.TailSignature
+import HilbertSmithPaper.Evaluation.GermHomotopy
+import HilbertSmithPaper.Evaluation.PinchEvaluation
+import HilbertSmithPaper.Evaluation.ConstantTail
 
 /-!
 # Theorem B
@@ -13,6 +16,9 @@ Let `n ≥ 1`, `R > 0` and `0 < s < R/√n`, let `κ : 𝕋ⁿ → Sⁿ` be the 
 homotopic to `κ`, `σ_tail(Δ_𝟏 𝔪_c) = [(ε, ε, …)] ∈ ℤ^ℕ ⧸ ℤ^(ℕ)`.
 
 This rests on the open statements lifting, the two sides of an excision boundary, and Lemma U.
+
+Proof: `𝔪_c = 𝔪_κ` (homotopic labellings), `Δ_𝟏 𝔪_κ = ε q_* cls[𝐏]` with `ε = (-1)^{n(n+1)/2}`
+(evaluation at the cubical pinch), and `σ_tail(q_* cls[𝐏]) = [(1, 1, …)]` (constant tail).
 
 ## Encoding
 
@@ -34,6 +40,11 @@ theorem theoremB (n : ℕ) (hn : 1 ≤ n) : ∃ ε : ℤ, (ε = 1 ∨ ε = -1) �
       c.Homotopic (cubicalPinch n s hs) →
       tailSign (GroupSeq.trivial p) (Corner.scalarIteratedCut p n R s hn hR hs hs' (germ A R c)) =
         ((fun _ : ℕ => ε) : Filter.Germ Filter.cofinite ℤ) := by
-  sorry
+  refine ⟨(-1 : ℤ) ^ (n * (n + 1) / 2), neg_one_pow_eq_or ℤ _, fun p _ D ρplus R s hR hs hs' A c hc => ?_⟩
+  rw [germ_eq_of_homotopic A R hc, iterCut_pinch A R s hn hR hs hs', map_zsmul, tailSign_const,
+    ← Filter.Germ.coe_smul]
+  congr 1
+  funext i
+  simp
 
 end HSP.Evaluation
