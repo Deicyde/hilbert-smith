@@ -52,6 +52,8 @@ import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Evaluation.TestMapToPinch
+import HilbertSmithPaper.Evaluation.LabelledModel
+import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
