@@ -295,6 +295,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProj
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjectionNe
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.PairingAdditiveLeft
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.PairingAdditiveRight
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductAdditiveLeft
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDifferential
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDualHomExt
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductHomExt
@@ -320,6 +321,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
 import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
 import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
+import HilbertSmithPaper.LTheory.Localization.Products.ProductSum
 import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLineCycle

@@ -23,6 +23,7 @@ The symmetric line is a Poincaré complex over $C_{\mathbb Z}(\mathbb Q)$. A dua
 - [Leibniz rule for products](product-leibniz.md)
 - [Products commute with T](product-involution.md)
 - [Pushforward of products](product-push.md)
+- [Products distribute over sums](product-sum.md)
 - [Dual of a tensor product](product-dual-iso.md)
 - [Duality map of a product](product-duality-map.md)
 - [Tensor products of equivalences](product-equivalence.md)
