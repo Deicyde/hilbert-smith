@@ -2,6 +2,8 @@
 article_id: af_0e4f3a5f3730269ed4641fee
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.Corner.theoremA
 ---
 
 # Theorem A

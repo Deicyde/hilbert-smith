@@ -2,6 +2,8 @@
 article_id: af_87aaf4d61581a062daba23da
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.Corner.scalarIteratedCut
 ---
 
 # Scalar iterated cut
@@ -16,7 +18,7 @@ where:
 - $\pi_+:\mathbb L_4(\mathcal A_{Y_n})\to\mathbb L_4(\mathcal V_{\mathbf 1})$ is the [scalar component projection](../../evaluation/scalar-component-projection.md) for $n$ and $s$;
 - $j_*$ and $q_*$ are [induced maps](../../l-theory/ultimate/groups/induced-map.md).
 
-The hypotheses of each cut hold. $A_m$ and $B_m$ are closed ([cut flag](../cut-flag.md), item 1), $Z_0$ is closed ([the exterior is closed](../exterior-closed.md)), and all are invariant because the group acts trivially on $S^n$. $Z_0\subseteq A_1$ and $Z_0\cap B_1=\varnothing$ ([the exterior lies in the first cut](../exterior-first-cut.md)), and these are trivial for $Z^0_m=\varnothing$. The union and intersection of the $m$-th cut are $Y_{m-1}$ and $Y_m$ (cut flag, items 2 and 3), and $Y_n=\{y_-,y_+\}$ with $y_-\ne y_+$ (cut flag), as $\pi_+$ requires; $\pi_+$ needs only $n\ge1$ and $s>0$.
+The hypotheses of each cut hold. $A_m$ and $B_m$ are closed ([cut flag](../cut-flag.md), item 1), $Z_0$ is closed ([the exterior is closed](../exterior-closed.md)), and all are invariant because the group acts trivially on $S^n$. $Z_0\cap B_1=\varnothing$ ([the exterior lies in the first cut](../exterior-first-cut.md)), and this is trivial for $Z^0_m=\varnothing$. The union and intersection of the $m$-th cut are $Y_{m-1}$ and $Y_m$ (cut flag, items 2 and 3), and $Y_n=\{y_-,y_+\}$ with $y_-\ne y_+$ (cut flag), as $\pi_+$ requires; $\pi_+$ needs only $n\ge1$ and $s>0$.
 
 This definition rests on the open statement [Lifting](../../l-theory/localization/boundary/lift-to-pair.md), through the cut boundary.
 
