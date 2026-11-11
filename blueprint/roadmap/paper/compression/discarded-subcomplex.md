@@ -36,3 +36,8 @@ Let $\mathrm{pr}_i$ be the based projection of $D_i$ onto the span of the [retai
 - [The cells of CP^2 vanish in negative degrees](../chain-models/grid/cp2/cp2-dim-neg.md)
 - [The cube of a chain-model cell](../chain-models/grid/model/chain-model-cube.md)
 - [Compressed complex](compressed-complex.md)
+- [Realization of a circle cell](../chain-models/grid/cubical/cell-realization.md)
+- [The cell of a basis vector of the circle complex](../chain-models/grid/cubical/circle-cell.md)
+- [Realization of a grid cube](../chain-models/grid/cubical/grid-cube-realization.md)
+- [Start index](start-index.md)
+- [Based category](../l-theory/localization/products/bookkeeping/based-category.md)
