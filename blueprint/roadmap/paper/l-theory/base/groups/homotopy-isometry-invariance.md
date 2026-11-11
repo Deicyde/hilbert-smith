@@ -25,3 +25,4 @@ Let $(C,\phi)$ and $(C',\phi')$ be strict $k$-dimensional symmetric Poincaré co
 ## Proof depends on
 
 - [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md)
+- [Cobordism](../pairs/cobordism.md)

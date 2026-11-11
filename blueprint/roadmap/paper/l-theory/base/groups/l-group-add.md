@@ -27,3 +27,4 @@ Here $(C,\phi)\oplus(C',\phi')$, $(C,-\phi)$ and $(0,0)$ are the strict Poincar√
 ## Proof depends on
 
 - [Sum of Poincar√© complexes up to cobordism](l-group-add-laws.md)
+- [Cobordism is an equivalence relation](../pairs/cobordism-equivalence.md)
