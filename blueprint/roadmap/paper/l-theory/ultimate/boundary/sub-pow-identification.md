@@ -20,6 +20,7 @@ from the full subcategory $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\math
 
 ## Depends on
 
+- [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
 - [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)

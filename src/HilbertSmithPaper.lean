@@ -229,11 +229,13 @@ import HilbertSmithPaper.LTheory.Base.Pairs.TransportCobordism
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Comparison.FreeComparison
@@ -299,6 +301,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionLower
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisionBoundary
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdentification
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.UltimateBoundary

@@ -8,8 +8,6 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 For a duality functor `(F, ξ) : A → A'`, `C_ℤ(F, ξ) : C_ℤ(A) → C_ℤ(A')` applies `F` entrywise:
 `(M_n) ↦ (F M_n)`, `(f_{mn}) ↦ (F f_{mn})`, with duality isomorphism the diagonal matrix
 `(ξ_{M_n})_n` (`Bounded.map`). If `F` is strict, so is `C_ℤ(F, ξ)` (`Bounded.map_isStrict`).
-The `j`-fold iterate `C_{ℤ^j}(F, ξ) : C_{ℤ^j}(A) → C_{ℤ^j}(A')` is `Bounded.mapIter`, by recursion
-on `j`.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -123,11 +121,6 @@ lemma map_isStrict {F : DualFunctor A A'} (hF : F.IsStrict) : (map F).IsStrict :
   congr 1
   funext n
   exact (hF (M.X n)).choose_spec
-
-/-- The iterate `C_{ℤ^j}(F, ξ) : C_{ℤ^j}(A) → C_{ℤ^j}(A')`. -/
-def mapIter (F : DualFunctor A A') : ∀ j : ℕ, DualFunctor (BoundedPow A j) (BoundedPow A' j)
-  | 0 => F
-  | j + 1 => map (mapIter F j)
 
 end Bounded
 

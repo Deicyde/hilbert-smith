@@ -14,6 +14,7 @@ The ultimate boundary and its naturality for every duality functor; the decorate
 - [Ultimate exactness at the quotient](exact-at-quotient.md)
 - [Ultimate exactness in the middle](exact-in-middle.md)
 - [Ultimate pair formula](pair-formula.md)
+- [Intersection of full subcategories](excisive-intersection.md)
 - [Excisive pair of filtrations](excisive-pair.md)
 - [Excision square](excision-square.md)
 - [Excision boundary](excision-boundary.md)

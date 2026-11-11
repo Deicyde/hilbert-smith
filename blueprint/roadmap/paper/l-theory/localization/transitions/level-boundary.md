@@ -19,6 +19,7 @@ where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md) a
 
 ## Depends on
 
+- [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Decorated transition](decorated-transition.md)
 - [Localization boundary](../boundary/localization-boundary.md)
 - [Lower L-group](lower-l-group.md)

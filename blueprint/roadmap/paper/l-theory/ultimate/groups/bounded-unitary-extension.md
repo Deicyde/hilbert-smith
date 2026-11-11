@@ -18,6 +18,7 @@ Let $\eta:F\cong G$ be a [unitary natural isomorphism](../../base/categories/uni
 
 ## Depends on
 
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)

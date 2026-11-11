@@ -21,6 +21,7 @@ is a well-defined homomorphism. Here $e_{j+1}$ is the isomorphism of [Iterated b
 
 ## Depends on
 
+- [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Transition map](transition-map.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Decorated objects](../decorations/decorated-object.md)

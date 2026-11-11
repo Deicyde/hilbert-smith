@@ -1,6 +1,7 @@
 import HilbertSmithPaper.Categories.Supports.RelativeSupportAdditive
 import HilbertSmithPaper.Categories.Supports.SupportConcatenation
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 
 /-!
 # Supported objects of a relative support subcategory are additive
