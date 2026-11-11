@@ -284,6 +284,8 @@ import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
+import HilbertSmithPaper.Corner.Theorem.ScalarIteratedCut
+import HilbertSmithPaper.Corner.Theorem.TheoremA
 import HilbertSmithPaper.Evaluation.BasedToFree
 import HilbertSmithPaper.Evaluation.ConstantCp2Sequence
 import HilbertSmithPaper.Evaluation.ConstantTail
