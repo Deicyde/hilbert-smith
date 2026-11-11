@@ -20,6 +20,7 @@ satisfy $\varphi_ib_i-1=dH_i+H_id$ and $b_i\varphi_i-1=dH'_i+H'_id$. Tensors of 
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: replaces the cap-block comparison of HS paper, Section 7.
 ## Depends on
+- [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
 - [circle structure](circle-data/circle-phi.md), [symmetric circle structure](circle-data/circle-phi-sym.md), [circle inverse](circle-data/circle-b.md), [circle homotopy](circle-data/circle-k.md), [dual circle homotopy](circle-data/circle-k-dual.md)
 - [Product of structures in explicit bases](tensor/structure-products/based-str-prod.md), [product of duality maps in explicit bases](tensor/structure-products/based-dual-prod.md)
 - [Chain-model duality](chain-model-duality.md), [chain model](chain-model.md), [propagation](../../categories/asymptotic/propagation.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md), [tensor product of based complexes](based-complex-tensor.md), [tensor of graded maps](tensor/based-tensor-hom.md), [dual tensor of graded maps](tensor/based-dual-tensor-hom.md), [identity of degree zero](tensor/id-deg0.md), [circle duality](circle-duality.md), [cells of CP^2](cp2-cells.md), [the involution T](../../l-theory/base/complexes/structure-involution.md)

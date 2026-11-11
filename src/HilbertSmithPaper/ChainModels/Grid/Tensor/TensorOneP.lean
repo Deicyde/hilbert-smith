@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 
 /-!
 # Tensoring with `1_P`
@@ -23,18 +24,12 @@ namespace HSP.ChainModels
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
-private lemma cp2Complex_dim_neg_t : ∀ q < 0, (cp2Complex.X q).dim = 0 := by
-  intro q hq
-  rcases q with q | q
-  · exact absurd hq (by simp)
-  · rfl
-
 /-- The map `f ⊗ 1_P` of degree `m` of `D_i = C(k_i) ⊗ P`, for a map `f` of degree `m` of
 `C(k_i)`. -/
 noncomputable def tensorOneP (A : LocalDatum p n D ρplus) (i : ℕ) (m : ℤ)
     (f : ∀ r, (gridComplex (meshSequence A i) n).X r ⟶ (gridComplex (meshSequence A i) n).X (r + m))
     (r : ℤ) : (chainModel A i).X r ⟶ (chainModel A i).X (r + m) :=
-  basedTensorHom cp2Complex_dim_neg_t cp2Complex_dim_neg_t m 0 f (idDeg0 cp2Complex) r ≫
+  basedTensorHom cp2Complex_dim_neg cp2Complex_dim_neg m 0 f (idDeg0 cp2Complex) r ≫
     eqToHom (congrArg (chainModel A i).X (show r + (m + 0) = r + m by ring))
 
 end HSP.ChainModels

@@ -12,4 +12,5 @@ Fix a local datum in dimension $n$, so that the [mesh sequence](mesh-sequence.md
 ## Sources
 - HS paper, Section 9 (common models).
 ## Depends on
+- [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
 - [Cubical torus grid](cubical-torus-grid.md), [cells of CP^2](cp2-cells.md), [mesh sequence](mesh-sequence.md), [tensor product of based complexes](based-complex-tensor.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md)
