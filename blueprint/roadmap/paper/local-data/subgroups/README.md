@@ -25,6 +25,10 @@ Joint continuity and compactness give the one estimate used again and again: ele
 
 - [Uniformly small displacement near the identity](small-displacement.md)
 
+The compact group $\mathbb Z_p$ has a Haar probability measure, used to average the chart map.
+
+- [The Haar probability measure on $\mathbb Z_p$](haar-zp.md)
+
 ## A good point
 
 Newman's theorem on fixing an open set, an input stated in the appendix on [Newman's theorem](../../inputs/newman/README.md), shows that the interiors of the fixed sets are closed when every point has a fixed neighbourhood. Connectedness and faithfulness then rule that out: some point has no neighbourhood fixed by any $H_j$. Fixed sets of the $H_j$ may still have interior elsewhere; only this one point is needed.
