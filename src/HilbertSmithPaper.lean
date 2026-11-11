@@ -4,6 +4,7 @@ import HilbertSmithPaper.LocalData.Chart.Pinch
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.LocalData.Subgroups.FixedSets
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
+import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
 import HilbertSmithPaper.LocalData.Subgroups.SmallDisplacement
 
 /-!
