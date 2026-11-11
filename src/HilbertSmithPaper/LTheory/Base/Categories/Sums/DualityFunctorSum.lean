@@ -117,7 +117,7 @@ noncomputable def biprod : DualFunctor B B' where
       exact eqToHom_snd' _ _ _ (congrArg F.toFunctor.obj (dual_dual M)).symm
         (congrArg G.toFunctor.obj (dual_dual M)).symm _ _
 
-lemma biprod_obj (M : B) :
+private lemma biprod_obj (M : B) :
     (F.biprod G).toFunctor.obj M = (F.toFunctor.obj M ⊞ G.toFunctor.obj M) :=
   rfl
 
@@ -125,7 +125,7 @@ lemma biprod_map {M N : B} (f : M ⟶ N) :
     (F.biprod G).toFunctor.map f = biprod.map (F.toFunctor.map f) (G.toFunctor.map f) :=
   rfl
 
-lemma biprod_ξ_hom (M : B) :
+private lemma biprod_ξ_hom (M : B) :
     ((F.biprod G).ξ M).hom = biprod.map (F.ξ M).hom (G.ξ M).hom ≫
       (dualBiprodIso (F.toFunctor.obj M) (G.toFunctor.obj M)).inv :=
   rfl
