@@ -2,10 +2,12 @@
 article_id: af_5e654f5ddb7995444a14b6a9
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.Evaluation.torusTestMap_homotopic_pinch
 ---
 # The torus test map is homotopic to the cubical pinch
 
-For [fixed local data](../local-data/control/fixed-local-data.md) and every $s>0$, there is a continuous $H:[0,1]\times\mathbb T^n\to S^n$ with $H(0,x)=f_T(x)$ and $H(1,x)=\kappa(x)$ for all $x\in\mathbb T^n$, where $f_T$ is the [torus test map](../chain-models/approximations/torus-test-map.md) and $\kappa$ the [cubical pinch](cubical-pinch.md) for $n$ and $s$.
+For [fixed local data](../local-data/control/fixed-local-data.md) and every $s>0$, there is a continuous $H:[0,1]\times\mathbb T^n\to S^n$ with $H(0,x)=f_T(x)$ and $H(1,x)=\kappa(x)$ for all $x\in\mathbb T^n$, where $f_T$ is the [torus test map](../chain-models/approximations/torus-test-map.md) of the pinch radius $\rho$ and $\kappa$ the [cubical pinch](cubical-pinch.md) for $n$ and $s$.
 
 *Proof sketch.* Write $\tilde x\in[-2,2)^n$ for the lift of $x\in\mathbb T^n$, and recall $b=1/2$ and $c_\kappa$ from the cubical pinch.
 1. Put $G(v,x)=\sigma_\rho((1-v)F_0(\tilde x)+v\tilde x)$ for $\tilde x\in\Omega$, and $\infty$ otherwise. The argument stays within $D$ of $\tilde x$ ([averaged map displacement](../local-data/chart/averaged-map-displacement.md)), so $G=\infty$ unless $|\tilde x|<\rho+D<1/2$. Thus $G$ is continuous on $[0,1]\times\mathbb T^n$ ([averaged map continuous](../local-data/chart/averaged-map-continuous.md), [pinch continuous](../local-data/chart/pinch-continuous.md)) and joins $f_T$ to $\sigma_\rho\circ(\text{lift})$.
