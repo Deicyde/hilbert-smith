@@ -2,6 +2,8 @@
 article_id: af_4af78b87b5f4af640ec254d1
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.basedTensorPairing
 ---
 
 # Tensor product of based vector spaces
