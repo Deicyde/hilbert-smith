@@ -14,6 +14,7 @@ import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
+import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Corner.CutFlag
