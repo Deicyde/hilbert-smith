@@ -271,10 +271,13 @@ import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
 import HilbertSmithPaper.Evaluation.BasedToFree
 import HilbertSmithPaper.Evaluation.ConstantCp2Sequence
+import HilbertSmithPaper.Evaluation.ConstantTail
 import HilbertSmithPaper.Evaluation.CubicalPinch
+import HilbertSmithPaper.Evaluation.ExcisiveIntersectionQuotient
 import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.GermHomotopy
 import HilbertSmithPaper.Evaluation.LabelledModel
+import HilbertSmithPaper.Evaluation.ScalarComponentProjection
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe

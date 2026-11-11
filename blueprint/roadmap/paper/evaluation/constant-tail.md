@@ -1,7 +1,9 @@
 ---
 article_id: af_f97d77644e7ff6dc40477ba5
-declaration: lemma
+declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.Evaluation.tailSign_const
 ---
 # Constant tail
 

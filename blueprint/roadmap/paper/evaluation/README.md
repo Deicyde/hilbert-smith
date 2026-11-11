@@ -11,6 +11,7 @@ Articles, in reading order:
 - [Homotopic labellings have equal classes](germ-homotopy.md)
 - [The cut boundary from the inner side](inner-cut.md)
 - [Inner cut formula](inner-cut-formula.md)
+- [Quotient of an excisive intersection](excisive-intersection-quotient.md)
 - [Scalar component projection](scalar-component-projection.md)
 - [Component projection](component-projection.md)
 - [The component projection commutes with forgetting](component-projection-natural.md)

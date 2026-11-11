@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPair
+import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush
 import HilbertSmithPaper.LTheory.Base.Pairs.IsoCobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.TransportCobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincareSum
@@ -53,28 +54,6 @@ end StructureCx
 
 open StructureCx
 
-namespace DualFunctor
-
-private lemma inv_natural_aux (F : DualFunctor B B') {M N : B} (f : M ⟶ N) :
-    (F.ξ N).inv ≫ F.toFunctor.map (dualHom f) = dualHom (F.toFunctor.map f) ≫ (F.ξ M).inv := by
-  rw [Iso.inv_comp_eq, ← Category.assoc, ← F.ξ_natural, Category.assoc, Iso.hom_inv_id,
-    Category.comp_id]
-
-/-- `F_%` commutes with pushforward: `F_% (f_% φ) = (F f)_% (F_% φ)`. -/
-private lemma mapStructure_push (F : DualFunctor B B') {C D : ChainComplex B ℤ} (f : C ⟶ D)
-    (n : ℤ) (φ : (StructureCx C).X n) :
-    F.mapStructure D n ((StructureCx.push f).f n φ) =
-      (StructureCx.push ((F.toFunctor.mapHomologicalComplex _).map f)).f n
-        (F.mapStructure C n φ) := by
-  refine funext fun x => ?_
-  obtain ⟨⟨p, q⟩, hpq⟩ := x
-  rw [mapStructure_apply, StructureCx.push_apply, StructureCx.push_apply, mapStructure_apply]
-  simp only [Functor.map_comp, Functor.mapHomologicalComplex_map_f]
-  rw [← Category.assoc, inv_natural_aux, Category.assoc]
-  simp only [Category.assoc]
-
-end DualFunctor
-
 namespace InducedMapLaws
 
 open StructureCx
@@ -98,7 +77,7 @@ private lemma push_mapBiprodIso (F : DualFunctor B B') (X Y : ChainComplex B ℤ
       F.mapStructure (X ⊞ Y) k (StructureCx.sum a b) := by
   rw [push_sum]
   simp only [mapBiprodIso, biprod.inl_desc, biprod.inr_desc]
-  rw [← F.mapStructure_push, ← F.mapStructure_push, StructureCx.sum, map_add]
+  rw [← F.mapStructure_pushforward, ← F.mapStructure_pushforward, StructureCx.sum, map_add]
 
 end InducedMapLaws
 
@@ -117,7 +96,7 @@ theorem SymPoincare.map_cobordant (F : DualFunctor B B') {k : ℤ} :
       (F.toFunctor.mapHomologicalComplex _).map u.hom)).f k
         (StructureCx.sum (F.mapStructure x.C k x.φ) (-F.mapStructure y.C k y.φ)) =
           F.mapStructure W.C k W.φ
-    rw [push_comp_apply, ← map_neg, push_mapBiprodIso, ← F.mapStructure_push, hu]
+    rw [push_comp_apply, ← map_neg, push_mapBiprodIso, ← F.mapStructure_pushforward, hu]
   · intro x y
     obtain ⟨s, hs⟩ := SymPoincare.exists_sum_iso x y
     obtain ⟨s', hs'⟩ : ∃ u : F.mapCx x.C ⊞ F.mapCx y.C ≅ ((x.map F).sum (y.map F)).C,
@@ -129,7 +108,7 @@ theorem SymPoincare.map_cobordant (F : DualFunctor B B') {k : ℤ} :
     change (push ((F.toFunctor.mapHomologicalComplex _).map s.inv ≫
       (mapBiprodIso F x.C y.C).inv ≫ s'.hom)).f k
         (F.mapStructure (x.sum y).C k (x.sum y).φ) = _
-    rw [push_comp_apply, push_comp_apply, ← hs, ← F.mapStructure_push, push_inv_hom, ← push_mapBiprodIso, push_inv_hom]
+    rw [push_comp_apply, push_comp_apply, ← hs, ← F.mapStructure_pushforward, push_inv_hom, ← push_mapBiprodIso, push_inv_hom]
     exact hs'
 
 end HSP

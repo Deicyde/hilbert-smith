@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
+import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 
@@ -38,18 +39,6 @@ private lemma inv_natural'' {M N : B} (f : M ⟶ N) :
     (F.ξ N).inv ≫ F.toFunctor.map (dualHom f) = dualHom (F.toFunctor.map f) ≫ (F.ξ M).inv := by
   rw [Iso.inv_comp_eq, ← Category.assoc, ← F.ξ_natural, Category.assoc, Iso.hom_inv_id,
     Category.comp_id]
-
-/-- `F_%` commutes with pushforward: `F_% (f_% φ) = (F f)_% (F_% φ)`. -/
-private lemma mapStructure_push {C D : ChainComplex B ℤ} (f : C ⟶ D) (n : ℤ) (φ : (StructureCx C).X n) :
-    F.mapStructure D n ((StructureCx.push f).f n φ) =
-      (StructureCx.push ((F.toFunctor.mapHomologicalComplex _).map f)).f n
-        (F.mapStructure C n φ) := by
-  refine funext fun x => ?_
-  obtain ⟨⟨p, q⟩, hpq⟩ := x
-  rw [mapStructure_apply, StructureCx.push_apply, StructureCx.push_apply, mapStructure_apply]
-  simp only [Functor.map_comp, Functor.mapHomologicalComplex_map_f]
-  rw [← Category.assoc, inv_natural'', Category.assoc]
-  simp only [Category.assoc]
 
 /-- `F(X ⊞ Y) ≅ F X ⊞ F Y` for the additive functor `F`. -/
 private noncomputable def biprodIso (X Y : B) :
@@ -126,7 +115,7 @@ noncomputable def map (F : DualFunctor B B') {m n : ℤ} (W : SymPair B m n) : S
   boundary_poincare := (W.boundary.map F).poincare
   bounded r hr := F.toFunctor.map_isZero (W.bounded r hr)
   symmetric := by rw [F.mapStructure_compat.2.1, W.symmetric]
-  rel := by rw [F.mapStructure_compat.1, W.rel, F.mapStructure_push]
+  rel := by rw [F.mapStructure_compat.1, W.rel, F.mapStructure_pushforward]
   poincare := by
     obtain ⟨e, he⟩ := W.poincare
     refine ⟨(HomotopyEquiv.ofIso (F.dualCxIso W.D n)).trans
