@@ -9,6 +9,7 @@ import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.LocalData.Chart.OpenTestRegion
 import HilbertSmithPaper.LocalData.Control.ControlActionIsometric
 import HilbertSmithPaper.LocalData.Control.ControlMetricSpace
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedSphereLabels
 
 /-!
 # Buffered restriction
