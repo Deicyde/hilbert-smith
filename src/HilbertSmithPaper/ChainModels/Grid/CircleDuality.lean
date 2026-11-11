@@ -13,6 +13,7 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhiSym
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleB
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleK
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleKDual
+import HilbertSmithPaper.LTheory.Base.Complexes.Shift
 
 /-!
 # Circle duality

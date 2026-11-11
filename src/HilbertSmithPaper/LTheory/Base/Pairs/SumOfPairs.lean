@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
 
 /-!
 # Sums of pairs

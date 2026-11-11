@@ -3,6 +3,8 @@ import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolutionSquare
 import HilbertSmithPaper.LTheory.Base.Complexes.DualHomotopyEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.ShiftEquivalence
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
 
 /-!
 # Homotopy-isometric complexes are cobordant

@@ -6,7 +6,7 @@ import Mathlib
 For a chain map `g : C ⟶ D` of `ℤ`-graded chain complexes in a preadditive category with binary
 biproducts, the mapping cone has `cone g _r = D_r ⊞ C_{r-1}` and differential
 `d (x, y) = (d x + (-1)^{r-1} g y, d y)`. This is the paper's sign convention, which differs
-from Mathlib's `homotopyCofiber`. The shift is `Σ C = cone (C ⟶ 0)`.
+from Mathlib's `homotopyCofiber`.
 
 In Lean the differential `d i j` is defined for all `i j`; it is the formula above when
 `i - 1 = j` and zero otherwise, and `D.XIsoOfEq` transports `D_{i-1}` to `D_j`.
@@ -51,10 +51,5 @@ noncomputable abbrev cone (g : C ⟶ D) : ChainComplex V ℤ where
     have h2 : j - 1 = k := by omega
     subst h1 h2
     ext <;> simp [cone.d, Preadditive.comp_add, Preadditive.add_comp, Int.negOnePow_sub]
-
-open ZeroObject in
-/-- The shift `Σ C = 𝒞(C ⟶ 0)`: `(Σ C)_r = 0 ⊞ C_{r-1}` with differential `d` on `C_{r-1}`. -/
-noncomputable abbrev cone.shift [HasZeroObject V] (C : ChainComplex V ℤ) : ChainComplex V ℤ :=
-  cone (0 : C ⟶ 0)
 
 end HSP

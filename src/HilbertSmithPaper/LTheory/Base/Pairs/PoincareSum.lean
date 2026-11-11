@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
 
 /-!
 # Sum of Poincaré complexes

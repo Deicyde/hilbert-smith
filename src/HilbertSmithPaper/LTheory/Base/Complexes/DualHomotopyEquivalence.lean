@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapIso
 
 /-!
 # Duals of homotopy equivalences

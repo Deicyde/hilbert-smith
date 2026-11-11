@@ -36,3 +36,5 @@ Let $\mathcal B$ be a duality category and use the [sum](../pairs/poincare-sum.m
 - [Transported pairs are cobordisms](../pairs/transport-cobordism.md)
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
 - [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md)
+- [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../complexes/functors/push-id.md)

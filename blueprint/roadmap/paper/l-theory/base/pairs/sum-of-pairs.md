@@ -21,7 +21,11 @@ If $(f:C\to D,\delta\phi,\phi)$ and $(f':C'\to D',\delta\phi',\phi')$ are strict
 
 - [Strict Poincaré pair](poincare-pair.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Dual of a chain map](../complexes/functors/dual-map.md)
 
 ## Proof depends on
 
 - [Sums of Poincaré complexes](sum-of-poincare.md)
+- [Duals of chain maps reverse composition](../complexes/functors/dual-map-comp.md)
+- [Duals of identity chain maps](../complexes/functors/dual-map-id.md)
+- [Pushforward preserves composition](../complexes/functors/push-comp.md)

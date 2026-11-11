@@ -4,6 +4,8 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMapComp
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMapId
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductAdditiveLeft
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
 
 /-!
 # Products distribute over sums

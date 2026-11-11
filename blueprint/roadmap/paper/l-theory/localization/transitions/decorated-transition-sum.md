@@ -31,3 +31,5 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 - [Duality functors commute with pushforward](../../base/complexes/functor-push.md)
 - [Sums in a full subcategory](../decorations/subcategory-sum.md)
 - [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
+- [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../../base/complexes/functors/push-id.md)

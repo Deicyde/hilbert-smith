@@ -33,3 +33,5 @@ of [tensor products](complex-product.md) carrying $(\phi\oplus\phi')\otimes\thet
 - [Tensor products of chain maps compose](bookkeeping/product-map-comp.md)
 - [Tensor product of identities](bookkeeping/product-map-id.md)
 - [External products are additive in the first structure](bookkeeping/product-additive-left.md)
+- [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../../base/complexes/functors/push-id.md)

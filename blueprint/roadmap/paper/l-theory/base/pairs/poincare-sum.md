@@ -18,3 +18,7 @@ For strict $k$-dimensional symmetric Poincaré complexes $(C,\phi)$ and $(C',\ph
 
 - [Sums of Poincaré complexes](sum-of-poincare.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
+
+## Proof depends on
+
+- [Pushforward preserves identities](../complexes/functors/push-id.md)

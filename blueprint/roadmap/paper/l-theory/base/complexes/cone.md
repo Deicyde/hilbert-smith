@@ -8,7 +8,7 @@ lean: HSP.cone
 
 # Mapping cone
 
-For a chain map $g:C\to D$, $\mathcal C(g)_r=D_r\oplus C_{r-1}$ and $d(x,y)=(dx+(-1)^{r-1}gy,\ dy)$. Then $d^2=0$. Write $\Sigma C=\mathcal C(C\to0)$.
+For a chain map $g:C\to D$, $\mathcal C(g)_r=D_r\oplus C_{r-1}$ and $d(x,y)=(dx+(-1)^{r-1}gy,\ dy)$. Then $d^2=0$.
 
 ## Sources
 

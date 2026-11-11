@@ -45,3 +45,5 @@ is a well-defined homomorphism.
 - [Products distribute over sums](../products/product-sum.md)
 - [External products are additive in the first structure](../products/bookkeeping/product-additive-left.md)
 - [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
+- [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../../base/complexes/functors/push-id.md)

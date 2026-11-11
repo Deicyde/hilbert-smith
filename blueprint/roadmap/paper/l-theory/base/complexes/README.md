@@ -17,6 +17,7 @@ The dual complex, the structure complex with its involution $T$ and pushforward,
 - [Duality functors commute with pushforward](functor-push.md)
 - [Homologous cycles give homotopic maps](cycle-chain-map-homotopy.md)
 - [Mapping cone](cone.md)
+- [The shift of a complex](shift.md)
 - [Sum of structured complexes](sum-of-complexes.md)
 - [Twisted sum](twisted-sum.md)
 - [Triangular map](triangular-map.md)
