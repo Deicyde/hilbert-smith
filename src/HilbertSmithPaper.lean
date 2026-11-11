@@ -180,6 +180,7 @@ import HilbertSmithPaper.Compression.BoundSequenceNull
 import HilbertSmithPaper.Compression.BufferConditions
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
+import HilbertSmithPaper.Compression.CompressedDifferential
 import HilbertSmithPaper.Compression.CompressedMaps
 import HilbertSmithPaper.Compression.CompressedRep
 import HilbertSmithPaper.Compression.CompressedResiduals
