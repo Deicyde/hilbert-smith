@@ -142,6 +142,8 @@ import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
 import HilbertSmithPaper.ChainModels.Torus.NormLift
 import HilbertSmithPaper.ChainModels.Torus.Proj
 import HilbertSmithPaper.ChainModels.Torus.ProjLift
+import HilbertSmithPaper.Compression.BoundSequence
+import HilbertSmithPaper.Compression.BoundSequenceNull
 import HilbertSmithPaper.Compression.BufferConditions
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
