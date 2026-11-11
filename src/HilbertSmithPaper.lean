@@ -7,6 +7,7 @@ import HilbertSmithPaper.LocalData.Chart.PinchContinuous
 import HilbertSmithPaper.LocalData.Chart.TestMap
 import HilbertSmithPaper.LocalData.Chart.TestRegion
 import HilbertSmithPaper.LocalData.Control.FixedLocalData
+import HilbertSmithPaper.LocalData.Control.FixedLocalDataExists
 import HilbertSmithPaper.LocalData.Control.ReductionKernel
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
