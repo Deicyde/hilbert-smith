@@ -1,7 +1,10 @@
 ---
 article_id: af_2fc95d9c321cb0a287f03476
-declaration: lemma
+declaration: theorem
 origin: background
+statement: formalized
+lean: HSP.Bounded.mapIter_id_comp
+proof: formalized
 ---
 
 # Bounded extension is functorial

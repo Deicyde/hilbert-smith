@@ -337,6 +337,9 @@ import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
+import HilbertSmithPaper.LTheory.Base.Groups.LpMapComp
+import HilbertSmithPaper.LTheory.Base.Groups.LpMapId
+import HilbertSmithPaper.LTheory.Base.Groups.LpMapUnitary
 import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 import HilbertSmithPaper.LTheory.Base.Groups.UnitaryInvariance
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
@@ -360,6 +363,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorComp
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
