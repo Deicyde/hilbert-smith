@@ -273,4 +273,13 @@ noncomputable def prodDualIso (k : ℤ) (hk : m + n = k) :
   HomologicalComplex.Hom.isoOfComponents (xiIso P hC hD m n k hk) fun i j hij =>
     xi_comm P hC hD m n k hk i j hij
 
+/-- The block of `Ξ` from the dual of the summand `C_{m-a} ⊠ D_{n-b}`: `(-1)^{b(a+m)} κ` followed by
+the inclusion of the summand `C_{m-a}^* ⊠ D_{n-b}^*` in position `(a, b)`. -/
+@[reassoc]
+lemma prodDualIso_hom_block (k : ℤ) (hk : m + n = k) {a b r : ℤ} (h : a + b = r) :
+    dualHom (cxProd.π P hC hD (m - a) (n - b) (k - r)) ≫ (prodDualIso P hC hD m n k hk).hom.f r =
+      (b * (a + m)).negOnePow • ((P.κ (C.X (m - a)) (D.X (n - b))).hom ≫
+        cxProd.ι P (dualCx_finite hC m) (dualCx_finite hD n) a b r) :=
+  dualπ_xiHom P hC hD m n hk h
+
 end HSP
