@@ -1,1 +1,0 @@
-Plan: `HSP.faithfulSMul_intrinsicInterior [T2Space M] [NeZero n] [ChartedSpace (EuclideanHalfSpace n) M] [FaithfulSMul G M] : FaithfulSMul G (intrinsicInterior n M)`, with `to_additive`. No connectedness needed: it cites the density lemma only (verifier). Mathlib: `Continuous.ext_on` (Topology/Separation/Hausdorff). HS paper lines 1357-1359.

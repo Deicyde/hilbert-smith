@@ -7,6 +7,7 @@ import HilbertSmithPaper.Proofs.FaithfulHausdorff
 import HilbertSmithPaper.Proofs.IntegerTails
 import HilbertSmithPaper.Proofs.InteriorAction
 import HilbertSmithPaper.Proofs.InteriorActionContinuous
+import HilbertSmithPaper.Proofs.InteriorActionFaithful
 import HilbertSmithPaper.Proofs.IntrinsicInterior
 import HilbertSmithPaper.Proofs.IntrinsicInteriorCharted
 import HilbertSmithPaper.Proofs.IntrinsicInteriorConnected
