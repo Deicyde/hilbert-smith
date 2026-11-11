@@ -24,3 +24,5 @@ For $N=(M,e)$ and $V=(\mathbb Q^{d_n})_n$, $N\boxtimes V$ has $M^{\oplus d_n}$ i
 - [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 - [The bounded category](../../bounded/categories/bounded-category.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Objects of the box product](bookkeeping/box-object.md)
+- [Components of box products of maps](bookkeeping/box-components.md)

@@ -7,11 +7,12 @@ lean: HSP.Compression.startIndex
 ---
 # Start index and bound sequence
 
-Fix the null sequence $(\epsilon'_i)$ chosen in [buffers hold eventually](buffer-eventually.md). The *start index* $i_0$ is the least integer $i_0\ge1$ such that items (1)-(3) of that lemma hold with $(\epsilon'_i)$ for every $i\ge i_0$. The *bound sequence* is $\delta_i=\epsilon'_i$ for $i\ge i_0$ and $\delta_i=0$ for $i<i_0$; it is a null sequence.
+Fix the null sequence $(\epsilon'_i)$ chosen in [buffers hold eventually](buffer-eventually.md). The *start index* $i_0$ is the least integer $i_0\ge1$ such that the [buffer conditions](buffer-conditions.md) hold with $(\epsilon'_i)$ for every $i\ge i_0$. The *bound sequence* is $\delta_i=\epsilon'_i$ for $i\ge i_0$ and $\delta_i=0$ for $i<i_0$; it is a null sequence.
 
 ## Sources
 - New: the index from which the compression is defined, and one bound for every estimate.
 
 ## Depends on
 
+- [Buffer conditions](buffer-conditions.md)
 - [Buffers hold eventually](buffer-eventually.md)
