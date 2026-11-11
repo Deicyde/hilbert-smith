@@ -114,6 +114,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorSummandTransport
 import HilbertSmithPaper.ChainModels.Grid.Torus
