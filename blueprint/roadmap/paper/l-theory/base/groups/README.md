@@ -22,5 +22,8 @@ $L_k(\mathcal B)$ is the group of cobordism classes of strict $k$-dimensional sy
 - [Sums of functors](sum-of-functors.md)
 - [Equivalence invariance](equivalence-invariance.md)
 - [Functoriality on L^p](lp-functoriality.md)
+- [The identity on L^p](lp-map-id.md)
+- [Composites on L^p](lp-map-comp.md)
+- [Unitary invariance on L^p](lp-map-unitary.md)
 - [Products](product.md)
 - [Finite-support sum](finite-support-sum.md)
