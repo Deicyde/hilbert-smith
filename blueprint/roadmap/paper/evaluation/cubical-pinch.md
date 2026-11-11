@@ -17,6 +17,6 @@ The *cubical pinch* is the continuous map $\kappa:\mathbb T^n\to S^n$, $\mathbb 
 ## Sources
 - New.
 ## Depends on
-- [Cubical torus grid](../chain-models/grid/cubical-torus-grid.md)
+- [The torus](../chain-models/grid/torus.md)
 ## Proof depends on
 - [The pinch is continuous](../local-data/chart/pinch-continuous.md)

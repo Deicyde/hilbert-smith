@@ -11,3 +11,4 @@ For $x\in \mathbb T^n$ let $\tilde x\in[-2,2)^n$ be its lift. Define $f_T:\mathb
 - New: the torus closing of the chart cube.
 ## Depends on
 - [Test map](../../local-data/chart/test-map.md)
+- [The torus](../grid/torus.md)

@@ -33,6 +33,7 @@ import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
 import HilbertSmithPaper.Proofs.PadicExclusion
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
+import HilbertSmithPaper.ChainModels.Grid.Torus
 
 /-!
 # The paper

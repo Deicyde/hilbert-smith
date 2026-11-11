@@ -18,6 +18,7 @@ For [fixed local data](../local-data/control/fixed-local-data.md) and every $s>0
 - [Fixed local data](../local-data/control/fixed-local-data.md)
 - [Cubical pinch](cubical-pinch.md)
 - [Torus test map](../chain-models/approximations/torus-test-map.md)
+- [The torus](../chain-models/grid/torus.md)
 ## Proof depends on
 - [Test map](../local-data/chart/test-map.md)
 - [Averaged map continuous](../local-data/chart/averaged-map-continuous.md)

@@ -12,4 +12,4 @@ with $\mathcal F$ the family of [track maps](track-map.md). The supremum is fini
 ## Sources
 - HS paper, Section 9 (a common modulus for the completed maps and their tracks). New: the explicit formula.
 ## Depends on
-- [Track maps](track-map.md), [cubical torus grid](../grid/cubical-torus-grid.md)
+- [Track maps](track-map.md), [the torus](../grid/torus.md)

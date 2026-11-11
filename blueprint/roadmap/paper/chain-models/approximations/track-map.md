@@ -11,3 +11,4 @@ For $a,b,c\in\mathbb Z_p$ and $t\in[0,1]$, put $L_{a,b,c,t}=(1-t)\,\widehat a\wi
 - HS paper, Section 9 (raw product tracks).
 ## Depends on
 - [Completed map](completed-map.md)
+- [The torus](../grid/torus.md)

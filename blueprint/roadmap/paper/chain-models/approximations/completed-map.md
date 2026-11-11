@@ -12,3 +12,4 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and let $\theta(x)=\m
 ## Depends on
 - [Local datum](../../local-data/chart/local-datum.md)
 - [Representatives](../../local-data/control/representative-map.md)
+- [The torus](../grid/torus.md)
