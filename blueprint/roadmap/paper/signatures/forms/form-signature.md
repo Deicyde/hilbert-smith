@@ -10,7 +10,7 @@ lean: HSP.formSign
 
 Let $W$ be a real vector space, $b$ a bilinear form on $W$ and $\rho$ an action of $G$ on $W$ by linear maps. If $(W,b,\rho)$ has a signature splitting, fix one, $(V^+,V^-)$, and set
 $$\mathrm{sign}_b(g)=\mathrm{tr}(\rho(g)|V^+)-\mathrm{tr}(\rho(g)|V^-)\in\mathbb R,\qquad g\in G.$$
-Otherwise set $\mathrm{sign}_b=0$. By [the existence lemma](../l-four/signature-splitting-exists.md), the second case does not occur for $(W,b,\rho)$ as there.
+Otherwise set $\mathrm{sign}_b=0$. The trace of an endomorphism of an infinite-dimensional space is taken to be $0$; the signature is only used for finite-dimensional $W$. By [the existence lemma](../l-four/signature-splitting-exists.md), the second case does not occur for $(W,b,\rho)$ as there.
 
 ## Sources
 
