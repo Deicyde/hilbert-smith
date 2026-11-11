@@ -16,3 +16,4 @@ The product of structures and the product of duality maps on the tensor product 
 - [Blocks of a dual tensor of graded maps](dual-tensor-hom-blocks.md)
 - [Blocks of a product of duality maps](dual-prod-blocks.md)
 - [A product of structures after a product of duality maps](dual-prod-comp-str-prod.md)
+- [A product of duality maps after a product of structures](str-prod-comp-dual-prod.md)
