@@ -145,6 +145,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Comparison.FreeComparison
 import HilbertSmithPaper.LTheory.Localization.Boundary.UPair
+import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
