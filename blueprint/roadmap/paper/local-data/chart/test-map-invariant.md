@@ -9,7 +9,7 @@ lean: HSP.LocalDatum.testMap_vadd
 
 # The test map is invariant
 
-For a local datum and any radius $\rho$, $f(a\cdot x)=f(x)$ for all $a\in\mathbb Z_p$ and $x\in\Omega$.
+For a local datum and every real $\rho$, $f(a\cdot x)=f(x)$ for all $a\in\mathbb Z_p$ and $x\in\Omega$.
 
 *Proof sketch.* $F_0$ is invariant.
 
