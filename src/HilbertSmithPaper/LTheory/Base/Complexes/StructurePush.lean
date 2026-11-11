@@ -57,6 +57,20 @@ lemma push_apply {C D : ChainComplex B ℤ} (g : C ⟶ D) (n : ℤ) (f : (Struct
     ((push g).f n f) ⟨(p, q), h⟩ = dualHom (g.f q) ≫ f ⟨(p, q), h⟩ ≫ g.f p :=
   rfl
 
+/-- Pushforward is functorial: `(g ≫ h)_% = g_% ≫ h_%`. -/
+lemma push_comp {C D E : ChainComplex B ℤ} (g : C ⟶ D) (h : D ⟶ E) :
+    push (g ≫ h) = push g ≫ push h := by
+  ext n f ⟨⟨p, q⟩, hpq⟩
+  change dualHom ((g ≫ h).f q) ≫ f ⟨(p, q), hpq⟩ ≫ (g ≫ h).f p =
+    dualHom (h.f q) ≫ (dualHom (g.f q) ≫ f ⟨(p, q), hpq⟩ ≫ g.f p) ≫ h.f p
+  simp
+
+/-- Pushforward is functorial: `(1_C)_% = 1`. -/
+lemma push_id (C : ChainComplex B ℤ) : push (𝟙 C) = 𝟙 (StructureCx C) := by
+  ext n f ⟨⟨p, q⟩, hpq⟩
+  change dualHom (𝟙 (C.X q)) ≫ f ⟨(p, q), hpq⟩ ≫ 𝟙 (C.X p) = f ⟨(p, q), hpq⟩
+  simp
+
 end StructureCx
 
 end HSP

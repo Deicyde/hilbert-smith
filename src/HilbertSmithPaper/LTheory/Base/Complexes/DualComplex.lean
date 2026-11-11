@@ -52,4 +52,24 @@ def dualCx.map {C D : ChainComplex B ℤ} (f : C ⟶ D) (n : ℤ) : dualCx D n �
       (i.negOnePow • dualHom (D.d (n - j) (n - i))) ≫ dualHom (f.f (n - j))
     rw [Linear.comp_units_smul, Linear.units_smul_comp, ← dualHom_comp, ← dualHom_comp, f.comm]
 
+/-- `(f ≫ g)^{n-*} = g^{n-*} ≫ f^{n-*}`. -/
+lemma dualCx.map_comp {C D E : ChainComplex B ℤ} (f : C ⟶ D) (g : D ⟶ E) (n : ℤ) :
+    dualCx.map (f ≫ g) n = dualCx.map g n ≫ dualCx.map f n := by
+  ext r
+  simp
+
+/-- `(1_C)^{n-*} = 1`. -/
+lemma dualCx.map_id (C : ChainComplex B ℤ) (n : ℤ) : dualCx.map (𝟙 C) n = 𝟙 (dualCx C n) := by
+  ext r
+  simp
+
+/-- The dual `u^{n-*}` of an isomorphism of complexes `u : C ≅ D`, an isomorphism
+`D^{n-*} ≅ C^{n-*}`. -/
+@[simps]
+def dualCx.mapIso {C D : ChainComplex B ℤ} (u : C ≅ D) (n : ℤ) : dualCx D n ≅ dualCx C n where
+  hom := dualCx.map u.hom n
+  inv := dualCx.map u.inv n
+  hom_inv_id := by rw [← dualCx.map_comp, u.inv_hom_id, dualCx.map_id]
+  inv_hom_id := by rw [← dualCx.map_comp, u.hom_inv_id, dualCx.map_id]
+
 end HSP
