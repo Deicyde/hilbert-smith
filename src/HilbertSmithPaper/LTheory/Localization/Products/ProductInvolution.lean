@@ -1,6 +1,8 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductHomExt
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDualHomExt
 
 /-!
 # Products commute with T

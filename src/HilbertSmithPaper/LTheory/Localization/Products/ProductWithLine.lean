@@ -4,6 +4,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Localization.Products.BoxPairingPow
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLineStructure
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMap
 
 /-!
 # Product of a pair with the line

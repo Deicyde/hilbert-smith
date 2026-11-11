@@ -5,6 +5,8 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
 import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.DualComplexFinite
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductTotal
 
 /-!
 # Product of a complex with the line

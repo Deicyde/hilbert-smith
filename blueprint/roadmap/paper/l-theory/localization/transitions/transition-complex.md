@@ -36,3 +36,6 @@ For $j\ge0$ and a strict $m$-dimensional symmetric Poincaré complex $(C,\phi)$ 
 - [Dual of a tensor product](../products/product-dual-iso.md)
 - [Tensor products of equivalences](../products/product-equivalence.md)
 - [The line is Poincaré](../products/symmetric-line-poincare.md)
+- [Dual complexes have finitely many nonzero chain objects](../products/bookkeeping/dual-complex-finite.md)
+- [Support of a tensor product of complexes](../products/bookkeeping/product-support.md)
+- [A tensor product is the sum of its summands](../products/bookkeeping/product-total.md)
