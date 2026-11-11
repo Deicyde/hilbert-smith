@@ -128,6 +128,10 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelHDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareAugmentation
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareCycle
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareInverse
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelInverseChainMap
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelInverseExact
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelHomotopy
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelDualHomotopy
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincarePropagation
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelStructureU
 import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleA
