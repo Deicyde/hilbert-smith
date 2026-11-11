@@ -65,7 +65,7 @@ lemma mk_add {k : ℤ} (x y : SymPoincare B k) :
     LGroup.mk x + LGroup.mk y = LGroup.mk (x.sum y) :=
   rfl
 
-lemma mk_neg {k : ℤ} (x : SymPoincare B k) : -LGroup.mk x = LGroup.mk x.neg :=
+private lemma mk_neg {k : ℤ} (x : SymPoincare B k) : -LGroup.mk x = LGroup.mk x.neg :=
   rfl
 
 lemma mk_zero (k : ℤ) : (0 : LGroup B k) = LGroup.mk (SymPoincare.zero k) :=

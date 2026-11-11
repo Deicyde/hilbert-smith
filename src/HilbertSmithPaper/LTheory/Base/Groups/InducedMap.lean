@@ -32,7 +32,7 @@ noncomputable def LGroup.map (F : DualFunctor B B') (k : ℤ) : LGroup B k →+ 
     induction b using Quotient.ind
     exact Quotient.sound ((SymPoincare.map_cobordant F).2 _ _))
 
-lemma LGroup.map_mk (F : DualFunctor B B') {k : ℤ} (x : SymPoincare B k) :
+private lemma LGroup.map_mk (F : DualFunctor B B') {k : ℤ} (x : SymPoincare B k) :
     LGroup.map F k (LGroup.mk x) = LGroup.mk (x.map F) :=
   rfl
 
