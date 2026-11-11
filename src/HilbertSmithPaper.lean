@@ -122,6 +122,7 @@ import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelAug
+import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelDPropagation
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelHDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelPoincareAugmentation

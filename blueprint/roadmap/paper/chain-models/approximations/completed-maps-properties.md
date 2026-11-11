@@ -38,3 +38,5 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and $0<\rho<\rho_+$, 
 - [The quotient map does not increase distances](../torus/dist2-proj-le.md)
 - [Continuity of the quotient map](../torus/continuous-proj.md)
 - [Test map invariant](../../local-data/chart/test-map-invariant.md), [test map continuous](../../local-data/chart/test-map-continuous.md), [averaged map displacement](../../local-data/chart/averaged-map-displacement.md), [representatives](../../local-data/control/representatives.md)
+- [Test map](../../local-data/chart/test-map.md)
+- [The pinch map](../../local-data/chart/pinch.md)
