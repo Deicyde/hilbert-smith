@@ -45,6 +45,7 @@ import HilbertSmithPaper.LocalData.Chart.PinchContinuous
 import HilbertSmithPaper.LocalData.Chart.PinchHomeomorph
 import HilbertSmithPaper.LocalData.Chart.TestMap
 import HilbertSmithPaper.LocalData.Chart.TestMapContinuous
+import HilbertSmithPaper.LocalData.Chart.TestMapInvariant
 import HilbertSmithPaper.LocalData.Chart.TestMapProper
 import HilbertSmithPaper.LocalData.Chart.TestRegion
 import HilbertSmithPaper.LocalData.Chart.TestRegionBounded
