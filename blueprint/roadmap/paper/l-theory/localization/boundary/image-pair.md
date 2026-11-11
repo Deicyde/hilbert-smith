@@ -34,3 +34,5 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 - [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
 - [Mapping cone](../../base/complexes/cone.md)
 - [Pushforward of structures](../../base/complexes/structure-push.md)
+- [Images of structures commute with the boundary, T and the duality map](../../base/complexes/functors/functor-structure-laws.md)
+- [Duality functors and dual complexes](../../base/complexes/functors/functor-dual-iso.md)

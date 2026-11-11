@@ -125,8 +125,8 @@ noncomputable def map (F : DualFunctor B B') {m n : ℤ} (W : SymPair B m n) : S
   boundary_symmetric := (W.boundary.map F).symmetric
   boundary_poincare := (W.boundary.map F).poincare
   bounded r hr := F.toFunctor.map_isZero (W.bounded r hr)
-  symmetric := by rw [F.mapStructure_T, W.symmetric]
-  rel := by rw [F.mapStructure_d, W.rel, F.mapStructure_push]
+  symmetric := by rw [F.mapStructure_compat.2.1, W.symmetric]
+  rel := by rw [F.mapStructure_compat.1, W.rel, F.mapStructure_push]
   poincare := by
     obtain ⟨e, he⟩ := W.poincare
     refine ⟨(HomotopyEquiv.ofIso (F.dualCxIso W.D n)).trans

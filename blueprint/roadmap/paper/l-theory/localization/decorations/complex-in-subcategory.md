@@ -26,3 +26,5 @@ Let $\mathcal B$ be a [duality category](../../base/categories/duality-category.
 ## Proof depends on
 
 - [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [Images of structures commute with the boundary, T and the duality map](../../base/complexes/functors/functor-structure-laws.md)
+- [Duality functors and dual complexes](../../base/complexes/functors/functor-dual-iso.md)

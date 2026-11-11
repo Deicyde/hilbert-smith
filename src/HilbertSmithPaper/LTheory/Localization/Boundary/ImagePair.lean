@@ -91,7 +91,7 @@ private lemma q_push_eq_zero :
 private lemma q_cycle :
     (StructureCx ((FiltQuot.q U).kar.mapCx V.V.D)).d k (k - 1)
       ((FiltQuot.q U).kar.mapStructure V.V.D k V.V.δφ) = 0 := by
-  rw [DualFunctor.mapStructure_d, V.V.rel, q_push_eq_zero]
+  rw [((FiltQuot.q U).kar).mapStructure_compat.1, V.V.rel, q_push_eq_zero]
 
 /-- `(q D, q_% δφ)` in `Kar(𝒜/𝒰)`. -/
 private noncomputable def imageKar : SymPoincare (Karoubi (FiltQuot U)) k where
@@ -99,7 +99,7 @@ private noncomputable def imageKar : SymPoincare (Karoubi (FiltQuot U)) k where
   φ := (FiltQuot.q U).kar.mapStructure V.V.D k V.V.δφ
   bounded r hr := (FiltQuot.q U).kar.toFunctor.map_isZero (V.V.bounded r hr)
   cycle := V.q_cycle
-  symmetric := by rw [DualFunctor.mapStructure_T, V.V.symmetric]
+  symmetric := by rw [((FiltQuot.q U).kar).mapStructure_compat.2.1, V.V.symmetric]
   poincare := by
     obtain ⟨e, he⟩ := V.V.poincare
     refine ⟨(HomotopyEquiv.ofIso ((FiltQuot.q U).kar.dualCxIso V.V.D k)).trans
