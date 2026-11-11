@@ -1,5 +1,4 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 
 /-!

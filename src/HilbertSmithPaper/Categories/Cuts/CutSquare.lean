@@ -430,19 +430,6 @@ section UnitCounit
 
 variable [IsIsometricVAdd (ZMod p) X] {A B Z : Set X}
 
-/-- On representatives, `r ∘ e ∘ K = K ∘ r₀ ∘ e₀`. -/
-private theorem cut_star (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
-    (hZ : ∀ c : ZMod p, ∀ x ∈ Z, c +ᵥ x ∈ Z)
-    {M N : FiltQuot (ExcisivePair.inter (suppIn (G := G) (A ∪ B) A) (suppIn (A ∪ B) (B ∪ Z)))}
-    (f : M ⟶ N) :
-    (cutR A B Z hB hZ).toFunctor.map
-        ((ExcisivePair.e (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)).toFunctor.map
-          ((cutK A B Z hB).map f)) =
-      (cutK A B Z hB).map ((cutExc A B Z hB hZ).1.toFunctor.map
-        ((ExcisivePair.e (suppIn (G := G) (A ∪ B) A) (suppIn (A ∪ B) (B ∪ Z))).toFunctor.map f)) := by
-  obtain ⟨g, rfl⟩ := (FiltQuot.functor _).map_surjective f
-  rfl
-
 /-- The duality isomorphism of `r` is the image under `K` of that of `r₀`. -/
 private theorem cutR_ξ (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
     (hZ : ∀ c : ZMod p, ∀ x ∈ Z, c +ᵥ x ∈ Z)

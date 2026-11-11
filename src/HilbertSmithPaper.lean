@@ -301,6 +301,7 @@ import HilbertSmithPaper.Evaluation.PinchEvaluation
 import HilbertSmithPaper.Evaluation.ScalarComponentProjection
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Evaluation.TheoremB
+import HilbertSmithPaper.Evaluation.TheoremBTestMap
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
@@ -486,6 +487,7 @@ import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdentification
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.UltimateBoundary
+import HilbertSmithPaper.LTheory.Ultimate.Groups.BoundedSumExtension
 import HilbertSmithPaper.LTheory.Ultimate.Groups.BoundedUnitaryExtension
 import HilbertSmithPaper.LTheory.Ultimate.Groups.EquivalenceInvariance
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
@@ -497,6 +499,7 @@ import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelExhaustive
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelKernel
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LowerLSequence
+import HilbertSmithPaper.LTheory.Ultimate.Groups.SumAdditivity
 import HilbertSmithPaper.LTheory.Ultimate.Groups.TransitionIter
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
