@@ -14,6 +14,7 @@ Strict symmetric Poincaré complexes and pairs, their images under duality funct
 - [Pair maps of homologous data](pair-map-homotopy.md)
 - [Dual form of the pair map](dual-pair-map.md)
 - [Split pair criterion](split-pair-criterion.md)
+- [Sums of Poincaré complexes](sum-of-poincare.md)
 - [Sums of pairs](sum-of-pairs.md)
 - [Transport of pairs along isomorphisms](pair-transport.md)
 - [Transport of pairs along homotopy equivalences](pair-transport-equivalence.md)

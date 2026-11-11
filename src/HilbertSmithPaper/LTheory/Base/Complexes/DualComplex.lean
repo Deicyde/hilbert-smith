@@ -5,11 +5,11 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 
 Complexes are `ℤ`-graded chain complexes `ChainComplex B ℤ` in a duality category `B`. For a
 complex `C` and `n : ℤ`, the dual complex `C^{n-*}` has `(C^{n-*})_r = (C_{n-r})^*` and
-differential `d_r = (-1)^r d^*`.
+differential `d_r = (-1)^r d^*`. A chain map `f : C ⟶ D` gives `f^{n-*} : D^{n-*} ⟶ C^{n-*}`,
+`(f^{n-*})_r = (f_{n-r})^*`.
 
 This module also records that a duality category has binary biproducts
-(`DualCat.hasBinaryBiproducts`), so that mapping cones and sums of complexes are available. A chain map `f : C ⟶ D` gives `f^{n-*} : D^{n-*} ⟶ C^{n-*}`,
-`(f^{n-*})_r = (f_{n-r})^*`.
+(`DualCat.hasBinaryBiproducts`), so that mapping cones and sums of complexes are available.
 -/
 
 open CategoryTheory CategoryTheory.Limits

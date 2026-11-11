@@ -1,7 +1,9 @@
 ---
 article_id: af_5897f0e625584e0e0b88c232
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.ExcisivePair
 ---
 
 # Excisive pair of filtrations

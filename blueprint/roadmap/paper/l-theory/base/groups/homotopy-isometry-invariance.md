@@ -2,6 +2,9 @@
 article_id: af_72d75e9bb517b9198f3926e0
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.LGroup.mk_eq_of_homotopyIsometry
+proof: formalized
 ---
 
 # Homotopy-isometry invariance
