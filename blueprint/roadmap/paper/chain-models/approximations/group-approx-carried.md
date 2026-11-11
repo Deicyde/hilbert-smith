@@ -14,6 +14,6 @@ For every $g\in G_i$, $a_g=a^T_g\otimes1_P$ where $a^T_g$ is a chain map of $C(k
 ## Sources
 - New.
 ## Depends on
-- [Group approximations](group-approx.md), [chain approximations exist](chain-approx-exists.md)
+- [Group approximations](group-approx.md), [chain approximations exist](chain-approx-exists.md), [tensoring with the identity of the cells of CP^2](../grid/tensor/tensor-one-p.md)
 ## Proof depends on
 - [Chain approximation](chain-approx.md), [completed map](completed-map.md), [box hull properties](../grid/box-hull-properties.md), [representatives](../../local-data/control/representative-map.md)

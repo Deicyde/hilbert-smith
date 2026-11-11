@@ -19,3 +19,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [Transport of summand projections](tensor-summand-transport.md)
 - [Blocks of a tensor of graded maps](tensor-hom-blocks.md)
 - [Composition of tensors of graded maps](based-tensor-hom-comp.md)
+- [Tensoring with the identity of the cells of CP^2](tensor-one-p.md)
