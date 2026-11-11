@@ -20,4 +20,5 @@ Let $W$ be a finite-dimensional real vector space, $b$ a bilinear form on $W$ an
 
 ## Depends on
 
+- [Signature splittings](../forms/signature-splitting.md)
 - [The equivariant signature](../forms/form-signature.md)

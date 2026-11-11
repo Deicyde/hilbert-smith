@@ -23,4 +23,5 @@ $\mathrm{sign}_{-b}=-\mathrm{sign}_b$, for every bilinear form $b$ on a finite-d
 
 ## Proof depends on
 
+- [Signature splittings](signature-splitting.md)
 - [Independence](../l-four/signature-splitting-independence.md)

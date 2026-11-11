@@ -52,6 +52,8 @@ import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
+import HilbertSmithPaper.ChainModels.Grid.BasedDualTensorHom
+import HilbertSmithPaper.ChainModels.Grid.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.BoxHullProperties
 import HilbertSmithPaper.ChainModels.Grid.BufferedCells
@@ -67,6 +69,7 @@ import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
+import HilbertSmithPaper.ChainModels.Grid.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Realization
 import HilbertSmithPaper.ChainModels.Grid.Restriction
@@ -144,6 +147,8 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Comparison.FreeComparison
+import HilbertSmithPaper.LTheory.Localization.Boundary.UPair
+import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
@@ -215,6 +220,7 @@ import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.LocalData.Control.Representatives
 import HilbertSmithPaper.LocalData.Control.RepresentativesAlgebra
 import HilbertSmithPaper.LocalData.Control.SheetSubgroup
+import HilbertSmithPaper.LocalData.Control.ZplusAction
 import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.FixedSets
 import HilbertSmithPaper.LocalData.Subgroups.FixedSetsClosed
@@ -249,6 +255,7 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureIdentity
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
 import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
+import HilbertSmithPaper.Signatures.Forms.SignatureSplitting
 import HilbertSmithPaper.Signatures.LFour.BoundarySignatureZero
 import HilbertSmithPaper.Signatures.LFour.ComplexSignature
 import HilbertSmithPaper.Signatures.LFour.IntegerSignature

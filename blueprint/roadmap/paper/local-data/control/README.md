@@ -8,6 +8,7 @@ article_id: af_4f0d60b1b0ab4bddfc1bf603
 
 The control space is the orbit space of the test region under $H_1$, with the orbit metric: first the maximum distance along $\mathbb Z_p$-orbits, then the minimum over $H_1$. The quotient $C_p=\mathbb Z_p/H_1$, realised as $\mathbb Z/p\mathbb Z$ through reduction modulo $p$, acts on it freely and isometrically, the orbit map is uniformly continuous, and distinct translates of a point stay a fixed distance apart.
 
+- [The action on the test region](zplus-action.md)
 - [The orbit sup-distance on the test region](orbit-sup-metric.md)
 - [The orbit sup-distance is a metric](orbit-sup-metric-properties.md)
 - [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)

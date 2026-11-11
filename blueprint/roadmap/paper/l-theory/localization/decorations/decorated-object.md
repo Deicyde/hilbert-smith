@@ -25,6 +25,7 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)
 - [Duality category](../../base/categories/duality-category.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
 
 ## Proof depends on
 

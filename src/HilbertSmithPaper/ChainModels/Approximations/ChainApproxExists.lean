@@ -48,7 +48,7 @@ def IsFarCube {k : ℕ} (c : GridCube k n) : Prop :=
     (Torus.proj '' Metric.closedBall (0 : EuclideanSpace ℝ (Fin n)) (3 / 2))
 
 /-- `k ≥ k₀` gives `k ≥ 8`. -/
-lemma eight_le_of_meshStart_le (A : LocalDatum p n D ρplus) {k : ℕ} (hk : meshStart A ≤ k) :
+private lemma eight_le_of_meshStart_le (A : LocalDatum p n D ρplus) {k : ℕ} (hk : meshStart A ≤ k) :
     8 ≤ k :=
   (meshStart_spec A).1.trans hk
 

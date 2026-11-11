@@ -23,7 +23,7 @@ open FreeQ
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
 /-- `k_i ≥ k₀`. -/
-lemma meshStart_le_meshSequence (A : LocalDatum p n D ρplus) (i : ℕ) :
+private lemma meshStart_le_meshSequence (A : LocalDatum p n D ρplus) (i : ℕ) :
     meshStart A ≤ meshSequence A i :=
   Nat.le_add_right _ _
 

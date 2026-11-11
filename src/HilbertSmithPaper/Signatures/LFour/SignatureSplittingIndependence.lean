@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.Signatures.Forms.SignatureSplitting
 import HilbertSmithPaper.Signatures.Forms.FormSignature
 
 /-!

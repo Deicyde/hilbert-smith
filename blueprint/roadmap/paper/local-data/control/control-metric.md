@@ -16,6 +16,7 @@ For a local datum, define $d_T(\pi z,\pi w)=\inf_{b\in H_1}d_1(z,b\cdot w)$ for 
 
 ## Depends on
 
+- [The action on the test region](zplus-action.md)
 - [The control space](control-space.md)
 - [The orbit sup-distance on the test region](orbit-sup-metric.md)
 

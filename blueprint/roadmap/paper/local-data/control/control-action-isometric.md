@@ -19,6 +19,7 @@ For a local datum, $d_T(c\cdot s,c\cdot t)=d_T(s,t)$ for all $c\in C_p$ and $s,t
 
 ## Depends on
 
+- [The action on the test region](zplus-action.md)
 - [The cyclic action on the control space](control-action.md)
 - [The orbit metric on the control space](control-metric.md)
 - [The orbit metric metrizes the control space](control-metric-properties.md)

@@ -26,6 +26,7 @@ $\sigma_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to\mathbb Z$ is the map $[C,\varphi
 
 ## Proof depends on
 
+- [Signature splittings](../forms/signature-splitting.md)
 - [Identity value](../forms/form-signature-identity.md)
 - [Signature of a complex](complex-signature.md)
 - [Signature hom](signature-hom.md)

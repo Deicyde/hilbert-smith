@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.Signatures.Forms.SignatureSplitting
 import HilbertSmithPaper.Signatures.LFour.SignatureHom
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIdentity
