@@ -12,6 +12,7 @@ $L_k(\mathcal B)$ is the group of cobordism classes of strict $k$-dimensional sy
 - [Negation in L](l-group-neg.md)
 - [Zero classes bound](l-group-zero-iff-bounds.md)
 - [Homotopy-isometry invariance](homotopy-isometry-invariance.md)
+- [Duality functors on cobordism classes](induced-map-laws.md)
 - [Induced homomorphism](induced-map.md)
 - [Functoriality of induced maps](induced-map-comp.md)
 - [Identity induces the identity](induced-map-id.md)

@@ -25,6 +25,7 @@ import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.HomotopyIsometryInvariance
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
+import HilbertSmithPaper.LTheory.Base.Groups.InducedMapLaws
 
 /-!
 # The paper
