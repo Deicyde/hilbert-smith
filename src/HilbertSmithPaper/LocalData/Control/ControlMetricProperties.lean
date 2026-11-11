@@ -15,11 +15,6 @@ Symmetry and the triangle inequality follow from those of `d₁` and its invaria
 `b ↦ d₁ z (b +ᵥ w)` is attained, so `z = b +ᵥ w` and `π z = π w`. For the topology: `U` is open in
 the quotient iff `π⁻¹ U` is open in `Z⁺`, which `d₁` metrizes; `d_T (π z) (π w) ≤ d₁ z w` gives one
 direction, and `d_T (π z) (π w) < ε` gives some `b ∈ H₁` with `d₁ z (b +ᵥ w) < ε`, the other.
-
-## Companion
-
-`HSP.LocalDatum.instMetricSpaceT` is the resulting `MetricSpace` structure on `T`, built with
-`MetricSpace.ofDistTopology`, so its topology is (definitionally) the quotient topology.
 -/
 
 namespace HSP
@@ -142,12 +137,5 @@ theorem LocalDatum.dT_metric (A : LocalDatum p n D ρplus) :
       refine (dtop _).2 fun z hz => ?_
       obtain ⟨ε, hε, hεU⟩ := hU (A.π z) hz
       exact ⟨ε, hε, fun w hw => hεU (A.π w) ((hle z w).trans_lt hw)⟩
-
-/-- The metric space structure on the control space given by `d_T`; its topology is the quotient
-topology. -/
-noncomputable instance LocalDatum.instMetricSpaceT (A : LocalDatum p n D ρplus) :
-    MetricSpace A.T :=
-  MetricSpace.ofDistTopology A.dT A.dT_metric.1 A.dT_metric.2.1 A.dT_metric.2.2.1
-    A.dT_metric.2.2.2.2 A.dT_metric.2.2.2.1
 
 end HSP

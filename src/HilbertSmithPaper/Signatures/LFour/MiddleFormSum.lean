@@ -1,5 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.Signatures.LFour.MiddleForm
+import HilbertSmithPaper.Signatures.Real.RealCohomologyAction
+import HilbertSmithPaper.Signatures.Real.RealCohomologyMap
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
 
 /-!

@@ -20,6 +20,7 @@ Graph types are those of [graph-type matrices](../../corner/actions/graph-type.m
 ## Sources
 - HS paper, Section 9 (the eventual definition of target labels).
 ## Depends on
+- [The metric on the control space](../../local-data/control/control-metric-space.md)
 - [The lift](../torus/lift.md)
 - [Buffered restriction of a matrix](../grid/restriction.md), [sphere labels](../grid/sphere-labels.md), [graph-type matrices](../../corner/actions/graph-type.md), [control labels](../grid/control-labels.md), [buffered cells](../grid/buffered-cells.md), [open test region](../../local-data/chart/open-test-region.md), [test region](../../local-data/chart/test-region.md), [torus test map](torus-test-map.md)
 ## Proof depends on

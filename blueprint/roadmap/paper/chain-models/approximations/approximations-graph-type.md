@@ -14,6 +14,7 @@ There is a null sequence $(\mu_i)$ such that, for all $i$, $g\in G_i$ and $v>0$,
 ## Sources
 - HS paper, Section 9.
 ## Depends on
+- [The metric on the control space](../../local-data/control/control-metric-space.md)
 - [Group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [control labels](../grid/control-labels.md), [restriction](../grid/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
 ## Proof depends on
 - [Carried group approximations](group-approx-carried.md), [chain approximations exist](chain-approx-exists.md), [properties](completed-maps-properties.md), [test region bounded](../../local-data/chart/test-region-bounded.md), [test region invariant](../../local-data/chart/test-region-invariant.md), [control action](../../local-data/control/control-action.md), [representatives algebra](../../local-data/control/representatives-algebra.md), [projection uniform](../../local-data/control/projection-uniform.md)

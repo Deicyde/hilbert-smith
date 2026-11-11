@@ -21,6 +21,8 @@ Let $(C,\varphi)$ be a strict 4-dimensional symmetric Poincaré complex in $\mat
 
 - [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)
 - [Real homology](real-homology.md)
+- [Real cohomology](../real/real-cohomology.md)
+- [The real matrix of a morphism](../real/real-matrix.md)
 - [The evaluation pairing](real-evaluation.md)
 
 ## Proof depends on

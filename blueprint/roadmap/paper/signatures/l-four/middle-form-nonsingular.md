@@ -20,6 +20,7 @@ For a strict 4-dimensional symmetric Poincaré complex $(C,\varphi)$ in $\mathrm
 ## Depends on
 
 - [The middle form](middle-form.md)
+- [The action of the group on real cohomology](../real/real-cohomology-action.md)
 
 ## Proof depends on
 

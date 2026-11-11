@@ -24,6 +24,7 @@ For a local datum there is $\varepsilon_T>0$ such that $d_T(t,c\cdot t)\ge\varep
 
 ## Proof depends on
 
+- [The metric on the control space](control-metric-space.md)
 - [The cyclic action is free](control-action-free.md)
 - [The cyclic action is isometric](control-action-isometric.md)
 - [The orbit metric metrizes the control space](control-metric-properties.md)

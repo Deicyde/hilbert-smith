@@ -18,3 +18,4 @@ For a strict 4-dimensional symmetric Poincaré complex $(C,\varphi)$ in $\mathrm
 
 - [The equivariant signature](../forms/form-signature.md)
 - [Middle form nonsingular](middle-form-nonsingular.md)
+- [The action of the group on real cohomology](../real/real-cohomology-action.md)
