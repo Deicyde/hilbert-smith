@@ -212,16 +212,18 @@ private def binaryBicone (M N : FreeCat G) : BinaryBicone M N where
     rw [mat_comp, mat_ofMat, mat_ofMat, incl_transpose_mul]
     ext p q; simp [Matrix.one_apply, Prod.ext_iff, (Fin.natAdd_injective _ _).eq_iff])
 
-private theorem isZero_zero : IsZero (⟨0⟩ : FreeCat G) := by
+/-- The zero object of `Free(ℚ[G])` is `0`. -/
+theorem isZero_zero : IsZero (⟨0⟩ : FreeCat G) := by
   refine ⟨fun Y => ⟨⟨⟨0⟩, fun f => hom_ext (Matrix.ext fun _ b => b.2.elim0)⟩⟩,
     fun Y => ⟨⟨⟨0⟩, fun f => hom_ext (Matrix.ext fun a _ => a.2.elim0)⟩⟩⟩
 
+instance : HasZeroObject (FreeCat G) := isZero_zero.hasZeroObject
+
+instance : HasBinaryBiproducts (FreeCat G) :=
+  ⟨fun M N => hasBinaryBiproduct_of_total (binaryBicone M N)
+    (hom_ext (incl_total M.n N.n))⟩
+
 instance : HasFiniteBiproducts (FreeCat G) := by
-  have : HasZeroObject (FreeCat G) := isZero_zero.hasZeroObject
-  have : HasBinaryBiproducts (FreeCat G) :=
-    ⟨fun M N => hasBinaryBiproduct_of_total (binaryBicone M N)
-      (hom_ext (by
-        exact incl_total M.n N.n))⟩
   have := hasFiniteProducts_of_has_binary_and_terminal (C := FreeCat G)
   exact HasFiniteBiproducts.of_hasFiniteProducts
 
