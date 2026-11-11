@@ -9,7 +9,7 @@ lean: HSP.exists_localDatum
 
 # A local datum from a faithful action
 
-Let $p$ be a prime, let $\mathbb Z_p$ act jointly continuously and faithfully on a connected $n$-manifold $M$, and let $0<D\le1/64$. Then there are $\rho_+\in(0,1/4)$ and a local datum with constants $(D,\rho_+)$ in dimension $n$.
+Let $p$ be a prime, let $\mathbb Z_p$ act jointly continuously and faithfully on a connected $n$-manifold $M$ (a connected Hausdorff space with an atlas of charts onto open subsets of $\mathbb R^n$, with no countability assumption), and let $0<D\le1/64$. Then there are $\rho_+\in(0,1/4)$ and a local datum with constants $(D,\rho_+)$ in dimension $n$.
 
 *Proof sketch.*
 1. Take a point $x_0$ with no fixed neighbourhood.
