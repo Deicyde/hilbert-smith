@@ -36,6 +36,7 @@ import HilbertSmithPaper.ChainModels.Grid.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.GridBox
+import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Restriction
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
