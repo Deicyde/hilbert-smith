@@ -2,6 +2,9 @@
 article_id: af_4d0d6c4f0685747934c42180
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.exists_nhds_one_small_displacement
 ---
 
 # Uniformly small displacement near the identity

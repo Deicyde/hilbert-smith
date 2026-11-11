@@ -3,6 +3,7 @@ import HilbertSmithPaper.LocalData.Chart.LocalDatum
 import HilbertSmithPaper.LocalData.Chart.Pinch
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
+import HilbertSmithPaper.LocalData.Subgroups.SmallDisplacement
 
 /-!
 # The paper
