@@ -1,12 +1,16 @@
 import Mathlib
 import HilbertSmithPaper.LocalData.Control.ControlAction
-import HilbertSmithPaper.LocalData.Control.ControlMetric
+import HilbertSmithPaper.LocalData.Control.ControlMetricProperties
 
 /-!
 # The cyclic action is isometric
 
 `d_T (c +ᵥ s) (c +ᵥ t) = d_T s t` for `c ∈ C_p` and `s, t ∈ T`. With `c` acting through its
 representative `a = c.val`, `b +ᵥ (a +ᵥ w) = a +ᵥ (b +ᵥ w)` and the invariance of `d₁` remove `a`.
+
+## Companion
+
+`HSP.LocalDatum.instIsIsometricVAddT`: `C_p` acts by isometries of the metric space `(T, d_T)`.
 -/
 
 namespace HSP
@@ -25,5 +29,10 @@ theorem LocalDatum.dT_vadd {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
       refine iInf_congr fun b => ?_
       rw [show (b : ℤ_[p]) +ᵥ ((c.val : ℤ_[p]) +ᵥ w) = (c.val : ℤ_[p]) +ᵥ ((b : ℤ_[p]) +ᵥ w) by
         rw [vadd_vadd, vadd_vadd, add_comm], A.d₁_vadd]
+
+/-- `C_p` acts by isometries of the metric space `(T, d_T)`. -/
+instance LocalDatum.instIsIsometricVAddT {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
+    (A : LocalDatum p n D ρplus) : IsIsometricVAdd (ZMod p) A.T :=
+  ⟨fun c => Isometry.of_dist_eq fun s t => A.dT_vadd c s t⟩
 
 end HSP

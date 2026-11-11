@@ -3,6 +3,7 @@ article_id: af_66215d157fd5163eb4303c88
 declaration: theorem
 origin: bridged
 statement: formalized
+proof: formalized
 lean: HSP.oneChart
 ---
 

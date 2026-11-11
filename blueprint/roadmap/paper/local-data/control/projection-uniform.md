@@ -2,6 +2,9 @@
 article_id: af_5aab3673b167b576deeb76a5
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.π_uniformContinuous
 ---
 
 # The orbit map is uniformly continuous

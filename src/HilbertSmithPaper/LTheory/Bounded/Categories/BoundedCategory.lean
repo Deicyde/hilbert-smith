@@ -1,158 +1,285 @@
-import Mathlib
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 
 /-!
 # The bounded category `C_ℤ(A)`
 
 For a ℚ-linear additive category `A`, an object of `C_ℤ(A)` is a family `M = (M_n)_{n ∈ ℤ}` of
-objects of `A`; a morphism `f : M → N` is a family `f_{mn} : M_n → N_m` with bounded propagation
-(some `r ≥ 0` with `f_{mn} = 0` whenever `|m - n| > r`). Composition is the matrix product
-`(gf)_{ln} = ∑_m g_{lm} f_{mn}`, a finite sum; biproducts are taken degreewise.
+objects of `A` (the structure `Bounded A` with field `X : ℤ → A`; a structure rather than the
+function type `ℤ → A`, which already carries Mathlib's product-category instance). A morphism
+`f : M ⟶ N` is a family `f m n : M_n ⟶ N_m` with some propagation `r : ℕ`: `f m n = 0` whenever
+`|m - n| > r`. The morphisms form the ℚ-submodule `Bounded.homSub M N` of all families, so the hom
+types inherit their `AddCommGroup` and `Module ℚ` structures.
 
-## Encoding
-
-* `Bounded A` is a type synonym for `ℤ → A`; `Bounded.Hom M N` is the structure of a family
-  `f m n : M n ⟶ N m` with an existential propagation bound.
-* Composition (in diagrammatic order `f ≫ g`) is `(f ≫ g)_{ln} = ∑ᶠ m, f_{mn} ≫ g_{lm}`; the
-  `finsum` has finite support, and `Bounded.comp_f_eq_sum` computes it over any finite window
-  containing the support.
-* `Bounded.diag φ` is the diagonal morphism of a degreewise family `φ_n : M_n ⟶ N_n`
-  (propagation `0`); the identity is `diag 𝟙`, and the biproduct bicones are diagonal.
-* Instances: `Category` so far. Partial work (handed over): `Preadditive` (entrywise sums),
-  `Linear ℚ` (entrywise scalars) and `HasFiniteBiproducts` (degreewise biproducts of `A`) remain.
+Composition (in diagrammatic order) is `(f ≫ g) l n = ∑ᶠ m, f m n ≫ g l m`, the paper's
+`(gf)_{ln} = ∑_m g_{lm} f_{mn}`; the sum is a `finsum` whose support lies in the band of `f`, so it
+is a finite sum (`Bounded.comp_apply_eq_sum`). Identities and the structure maps of biproducts are
+diagonal families (`Bounded.diag`). Biproducts are taken degreewise.
 -/
 
 open CategoryTheory CategoryTheory.Limits
+
+noncomputable section
 
 namespace HSP
 
 universe v u
 
-/-- The objects of the bounded category `C_ℤ(A)`: families `(M_n)_{n ∈ ℤ}` of objects of `A`. -/
-def Bounded (A : Type u) : Type u := ℤ → A
+/-- An object of the bounded category `C_ℤ(A)`: a family `(M_n)_{n ∈ ℤ}` of objects of `A`. -/
+@[ext]
+structure Bounded (A : Type u) where
+  /-- The object `M_n` in degree `n`. -/
+  X : ℤ → A
 
 namespace Bounded
 
-variable {A : Type u} [Category.{v} A] [Preadditive A]
+variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A]
 
-/-- A morphism `f : M → N` of `C_ℤ(A)`: a family `f_{mn} : M_n → N_m` with bounded
-propagation. -/
-@[ext]
-structure Hom (M N : Bounded A) : Type v where
-  /-- The matrix entry `f_{mn} : M_n → N_m`. -/
-  f : ∀ m n : ℤ, (M n : A) ⟶ N m
-  /-- Some `r ≥ 0` bounds the propagation: `f_{mn} = 0` whenever `|m - n| > r`. -/
-  bounded : ∃ r : ℕ, ∀ m n : ℤ, (r : ℤ) < |m - n| → f m n = 0
+/-- The bounded families `f m n : M_n ⟶ N_m`: those vanishing outside some band
+`|m - n| ≤ r`. They form a ℚ-submodule of all families. -/
+def homSub (M N : Bounded A) : Submodule ℚ (∀ m n : ℤ, M.X n ⟶ N.X m) where
+  carrier := {f | ∃ r : ℕ, ∀ m n, (r : ℤ) < |m - n| → f m n = 0}
+  add_mem' := by
+    rintro f g ⟨r, hr⟩ ⟨s, hs⟩
+    refine ⟨max r s, fun m n h => ?_⟩
+    have h1 : (r : ℤ) < |m - n| := lt_of_le_of_lt (by exact_mod_cast le_max_left r s) h
+    have h2 : (s : ℤ) < |m - n| := lt_of_le_of_lt (by exact_mod_cast le_max_right r s) h
+    simp [hr m n h1, hs m n h2]
+  zero_mem' := ⟨0, fun _ _ _ => rfl⟩
+  smul_mem' := by
+    rintro c f ⟨r, hr⟩
+    exact ⟨r, fun m n h => by simp [hr m n h]⟩
 
-variable {M N P Q : Bounded A}
+private lemma lt_abs_of_not_mem {m n : ℤ} {r : ℕ} (h : m ∉ Finset.Icc (n - r) (n + r)) :
+    (r : ℤ) < |m - n| := by
+  rw [Finset.mem_Icc] at h
+  rw [lt_abs]
+  omega
 
-private lemma mem_window {r : ℕ} {m n : ℤ} (h : ¬ (r : ℤ) < |m - n|) :
-    m ∈ Finset.Icc (n - r) (n + r) := by
-  rw [not_lt, abs_sub_le_iff] at h
-  rw [Finset.mem_Icc]; constructor <;> linarith
+/-- The composite family `(f ≫ g) l n = ∑ᶠ m, f m n ≫ g l m`. -/
+def compF {M N P : Bounded A} (f : ∀ m n : ℤ, M.X n ⟶ N.X m) (g : ∀ m n : ℤ, N.X n ⟶ P.X m) :
+    ∀ l n : ℤ, M.X n ⟶ P.X l :=
+  fun l n => ∑ᶠ m, f m n ≫ g l m
 
-/-- Composition `(f ≫ g)_{ln} = ∑_m f_{mn} ≫ g_{lm}`. -/
-noncomputable def comp (f : Hom M N) (g : Hom N P) : Hom M P where
-  f l n := ∑ᶠ m, f.f m n ≫ g.f l m
-  bounded := by
-    obtain ⟨r, hr⟩ := f.bounded
-    obtain ⟨s, hs⟩ := g.bounded
-    refine ⟨r + s, fun l n h => ?_⟩
-    refine (finsum_congr fun m => ?_).trans finsum_zero
-    by_cases hm : (r : ℤ) < |m - n|
-    · rw [hr m n hm, zero_comp]
-    · have : (s : ℤ) < |l - m| := by
-        have h1 := abs_sub_abs_le_abs_sub (l - n) (m - n)
-        rw [sub_sub_sub_cancel_right] at h1
-        push_cast at h
-        linarith [not_lt.1 hm]
-      rw [hs l m this, comp_zero]
-
-/-- The composite over any finite window containing the support of the summands. -/
-lemma comp_f_eq_sum (f : Hom M N) (g : Hom N P) (l n : ℤ) (s : Finset ℤ)
-    (hs : ∀ m, f.f m n ≫ g.f l m ≠ 0 → m ∈ s) :
-    (comp f g).f l n = ∑ m ∈ s, f.f m n ≫ g.f l m :=
-  finsum_eq_sum_of_support_subset _ fun m hm => hs m hm
-
-/-- The diagonal morphism of a degreewise family `φ_n : M_n ⟶ N_n` (propagation `0`). -/
-def diag (φ : ∀ n, (M n : A) ⟶ N n) : Hom M N where
-  f m n := if h : m = n then φ n ≫ eqToHom (congrArg N h.symm) else 0
-  bounded := ⟨0, fun m n h => by
-    have hmn : m ≠ n := fun e => by subst e; simp at h
-    simp [hmn]⟩
-
-lemma diag_f_self (φ : ∀ n, (M n : A) ⟶ N n) (n : ℤ) : (diag φ).f n n = φ n := by
-  simp [diag]
-
-lemma diag_f_ne (φ : ∀ n, (M n : A) ⟶ N n) {m n : ℤ} (h : m ≠ n) : (diag φ).f m n = 0 := by
-  simp [diag, h]
-
-lemma comp_diag_f (f : Hom M N) (ψ : ∀ n, (N n : A) ⟶ P n) (l n : ℤ) :
-    (comp f (diag ψ)).f l n = f.f l n ≫ ψ l := by
-  rw [comp_f_eq_sum _ _ l n {l} fun m hm => ?_, Finset.sum_singleton, diag_f_self]
-  rw [Finset.mem_singleton]
+omit [Linear ℚ A] in
+lemma compF_eq_sum {M N P : Bounded A} (f : ∀ m n : ℤ, M.X n ⟶ N.X m)
+    (g : ∀ m n : ℤ, N.X n ⟶ P.X m) (l n : ℤ) (s : Finset ℤ)
+    (hs : ∀ m ∉ s, f m n ≫ g l m = 0) : compF f g l n = ∑ m ∈ s, f m n ≫ g l m := by
+  refine finsum_eq_sum_of_support_subset _ fun m hm => ?_
   by_contra h
-  exact hm (by rw [diag_f_ne _ (Ne.symm h), comp_zero])
+  exact hm (hs m h)
 
-lemma diag_comp_f (φ : ∀ n, (M n : A) ⟶ N n) (g : Hom N P) (l n : ℤ) :
-    (comp (diag φ) g).f l n = φ n ≫ g.f l n := by
-  rw [comp_f_eq_sum _ _ l n {n} fun m hm => ?_, Finset.sum_singleton, diag_f_self]
-  rw [Finset.mem_singleton]
-  by_contra h
-  exact hm (by rw [diag_f_ne _ h, zero_comp])
+omit [Linear ℚ A] in
+lemma compF_eq_zero {M N P : Bounded A} {f : ∀ m n : ℤ, M.X n ⟶ N.X m}
+    {g : ∀ m n : ℤ, N.X n ⟶ P.X m} {r s : ℕ} (hr : ∀ m n, (r : ℤ) < |m - n| → f m n = 0)
+    (hs : ∀ m n, (s : ℤ) < |m - n| → g m n = 0) {l n : ℤ} (h : ((r + s : ℕ) : ℤ) < |l - n|) :
+    compF f g l n = 0 := by
+  rw [compF_eq_sum f g l n (Finset.Icc (n - r) (n + r))
+    (fun m hm => by rw [hr m n (lt_abs_of_not_mem hm), zero_comp])]
+  refine Finset.sum_eq_zero fun m hm => ?_
+  rw [Finset.mem_Icc] at hm
+  have : (s : ℤ) < |l - m| := by
+    rw [lt_abs] at h ⊢
+    push_cast at h
+    omega
+  rw [hs l m this, comp_zero]
 
-/-- The composite has entries supported where some intermediate entries are nonzero. -/
-private lemma comp_f_eq_window (f : Hom M N) (g : Hom N P) {r : ℕ}
-    (hr : ∀ m n : ℤ, (r : ℤ) < |m - n| → f.f m n = 0) (l n : ℤ) :
-    (comp f g).f l n = ∑ m ∈ Finset.Icc (n - r) (n + r), f.f m n ≫ g.f l m :=
-  comp_f_eq_sum _ _ l n _ fun m hm => mem_window fun h => hm (by rw [hr m n h, zero_comp])
+lemma compF_mem {M N P : Bounded A} {f : ∀ m n : ℤ, M.X n ⟶ N.X m}
+    {g : ∀ m n : ℤ, N.X n ⟶ P.X m} (hf : f ∈ homSub M N) (hg : g ∈ homSub N P) :
+    compF f g ∈ homSub M P := by
+  obtain ⟨r, hr⟩ := hf
+  obtain ⟨s, hs⟩ := hg
+  exact ⟨r + s, fun l n h => compF_eq_zero hr hs h⟩
 
-private lemma comp_assoc (f : Hom M N) (g : Hom N P) (h : Hom P Q) :
-    comp (comp f g) h = comp f (comp g h) := by
-  obtain ⟨r, hr⟩ := f.bounded
-  obtain ⟨s, hs⟩ := g.bounded
-  ext l n
-  set W := Finset.Icc (n - (r + s : ℕ)) (n + (r + s : ℕ))
-  have hW : ∀ k m : ℤ, k ∈ Finset.Icc (n - r) (n + r) → ¬ (s : ℤ) < |m - k| → m ∈ W := by
-    intro k m h1 h2
-    refine mem_window fun h3 => ?_
-    rw [Finset.mem_Icc] at h1
-    have h4 := abs_sub_le m k n
-    have h5 : |k - n| ≤ r := abs_sub_le_iff.2 ⟨by linarith, by linarith⟩
-    push_cast at h3
-    linarith [not_lt.1 h2]
-  have hL : (comp (comp f g) h).f l n = ∑ m ∈ W, (comp f g).f m n ≫ h.f l m := by
-    refine comp_f_eq_sum _ _ l n W fun m hm => ?_
-    by_contra hmW
-    apply hm
-    rw [comp_f_eq_window f g hr, Preadditive.sum_comp]
-    refine Finset.sum_eq_zero fun k hk => ?_
-    rw [hs m k (not_not.1 fun h2 => hmW (hW k m hk h2)), comp_zero, zero_comp]
-  rw [hL, comp_f_eq_window f _ hr]
-  simp_rw [comp_f_eq_window f g hr, Preadditive.sum_comp, Category.assoc]
-  rw [Finset.sum_comm]
-  refine Finset.sum_congr rfl fun k hk => ?_
-  rw [comp_f_eq_sum g h l k W fun m hm => hW k m hk fun h2 => hm (by rw [hs m k h2, zero_comp]),
-    Preadditive.comp_sum]
+/-- The diagonal family with entries `d n : M_n ⟶ N_n` (propagation `0`). -/
+def diagF {M N : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) : ∀ m n : ℤ, M.X n ⟶ N.X m :=
+  fun m n => if h : m = n then d n ≫ eqToHom (congrArg N.X h.symm) else 0
 
-/-- `C_ℤ(A)` is a category: matrix composition, identity `diag 𝟙`. -/
-noncomputable instance instCategory : Category.{v} (Bounded A) where
-  Hom := Hom
-  id M := diag fun n => 𝟙 (M n)
-  comp := comp
-  id_comp f := by ext l n; rw [diag_comp_f, Category.id_comp]
-  comp_id f := by ext l n; rw [comp_diag_f, Category.comp_id]
-  assoc f g h := comp_assoc f g h
+omit [Linear ℚ A] in
+lemma diagF_self {M N : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) (n : ℤ) : diagF d n n = d n := by
+  simp [diagF]
+
+omit [Linear ℚ A] in
+lemma diagF_ne {M N : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) {m n : ℤ} (h : m ≠ n) :
+    diagF d m n = 0 := by
+  simp [diagF, h]
+
+lemma diagF_mem {M N : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) : diagF d ∈ homSub M N :=
+  ⟨0, fun m n h => diagF_ne d (by intro e; subst e; simp at h)⟩
+
+omit [Linear ℚ A] in
+lemma diagF_compF {M N P : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) (g : ∀ m n : ℤ, N.X n ⟶ P.X m)
+    (l n : ℤ) : compF (diagF d) g l n = d n ≫ g l n := by
+  rw [compF, finsum_eq_single _ n (fun m hm => by rw [diagF_ne d hm, zero_comp]), diagF_self]
+
+omit [Linear ℚ A] in
+lemma compF_diagF {M N P : Bounded A} (f : ∀ m n : ℤ, M.X n ⟶ N.X m) (e : ∀ n, N.X n ⟶ P.X n)
+    (l n : ℤ) : compF f (diagF e) l n = f l n ≫ e l := by
+  rw [compF, finsum_eq_single _ l (fun m hm => by rw [diagF_ne e (Ne.symm hm), comp_zero]),
+    diagF_self]
+
+instance : Category.{v} (Bounded A) where
+  Hom M N := homSub M N
+  id M := ⟨diagF fun n => 𝟙 (M.X n), diagF_mem _⟩
+  comp f g := ⟨compF f.1 g.1, compF_mem f.2 g.2⟩
+  id_comp f := Subtype.ext <| funext₂ fun l n => by
+    dsimp only
+    rw [diagF_compF, Category.id_comp]
+  comp_id f := Subtype.ext <| funext₂ fun l n => by
+    dsimp only
+    rw [compF_diagF, Category.comp_id]
+  assoc {M N P Q} f g h := Subtype.ext <| funext₂ fun l n => by
+    obtain ⟨r, hr⟩ := f.2
+    obtain ⟨s, hs⟩ := g.2
+    dsimp only
+    have key : ∀ k ∉ Finset.Icc (n - ↑(r + s)) (n + ↑(r + s)), compF f.1 g.1 k n = 0 :=
+      fun k hk => compF_eq_zero hr hs (lt_abs_of_not_mem hk)
+    rw [compF_eq_sum _ _ l n (Finset.Icc (n - ↑(r + s)) (n + ↑(r + s)))
+      (fun k hk => by rw [key k hk, zero_comp])]
+    rw [compF_eq_sum _ _ l n (Finset.Icc (n - r) (n + r))
+      (fun m hm => by rw [hr m n (lt_abs_of_not_mem hm), zero_comp])]
+    have e1 : ∀ k, compF f.1 g.1 k n ≫ h.1 l k =
+        ∑ m ∈ Finset.Icc (n - r) (n + r), f.1 m n ≫ g.1 k m ≫ h.1 l k := fun k => by
+      rw [compF_eq_sum f.1 g.1 k n (Finset.Icc (n - r) (n + r))
+        (fun m hm => by rw [hr m n (lt_abs_of_not_mem hm), zero_comp]), Preadditive.sum_comp]
+      simp only [Category.assoc]
+    simp_rw [e1]
+    rw [Finset.sum_comm]
+    refine Finset.sum_congr rfl fun m hm => ?_
+    rw [Finset.mem_Icc] at hm
+    rw [compF_eq_sum g.1 h.1 l m (Finset.Icc (n - ↑(r + s)) (n + ↑(r + s))) (fun k hk => by
+      have : (s : ℤ) < |k - m| := by
+        have := lt_abs_of_not_mem hk
+        rw [lt_abs] at this ⊢
+        push_cast at this
+        omega
+      rw [hs k m this, zero_comp]), Preadditive.comp_sum]
+
+variable {M N P : Bounded A}
+
+lemma comp_apply (f : M ⟶ N) (g : N ⟶ P) (l n : ℤ) : (f ≫ g).1 l n = compF f.1 g.1 l n := rfl
 
 @[ext]
-lemma hom_ext {f g : M ⟶ N} (h : ∀ m n, f.f m n = g.f m n) : f = g :=
-  Hom.ext (funext fun m => funext fun n => h m n)
+lemma hom_ext {f g : M ⟶ N} (h : ∀ m n, f.1 m n = g.1 m n) : f = g :=
+  Subtype.ext (funext₂ h)
 
-lemma comp_f (f : M ⟶ N) (g : N ⟶ P) (l n : ℤ) : (f ≫ g).f l n = ∑ᶠ m, f.f m n ≫ g.f l m :=
-  rfl
+private lemma exists_window {f : ∀ m n : ℤ, M.X n ⟶ N.X m} (hf : f ∈ homSub M N) (n : ℤ) :
+    ∃ s : Finset ℤ, ∀ m ∉ s, f m n = 0 := by
+  obtain ⟨r, hr⟩ := hf
+  exact ⟨Finset.Icc (n - r) (n + r), fun m hm => hr m n (lt_abs_of_not_mem hm)⟩
 
-lemma id_def (M : Bounded A) : 𝟙 M = diag fun n => 𝟙 (M n) := rfl
+instance : Preadditive (Bounded A) where
+  homGroup M N := inferInstanceAs (AddCommGroup (homSub M N))
+  add_comp M N P f f' g := hom_ext fun l n => by
+    obtain ⟨s, hs⟩ := exists_window f.2 n
+    obtain ⟨s', hs'⟩ := exists_window f'.2 n
+    have h1 : ∀ m ∉ s ∪ s', f.1 m n = 0 := fun m hm => hs m (by simp_all)
+    have h2 : ∀ m ∉ s ∪ s', f'.1 m n = 0 := fun m hm => hs' m (by simp_all)
+    change compF (f.1 + f'.1) g.1 l n = compF f.1 g.1 l n + compF f'.1 g.1 l n
+    rw [compF_eq_sum _ _ l n (s ∪ s') (fun m hm => by simp [h1 m hm, h2 m hm]),
+      compF_eq_sum _ _ l n (s ∪ s') (fun m hm => by simp [h1 m hm]),
+      compF_eq_sum _ _ l n (s ∪ s') (fun m hm => by simp [h2 m hm]), ← Finset.sum_add_distrib]
+    simp
+  comp_add M N P f g g' := hom_ext fun l n => by
+    obtain ⟨s, hs⟩ := exists_window f.2 n
+    change compF f.1 (g.1 + g'.1) l n = compF f.1 g.1 l n + compF f.1 g'.1 l n
+    rw [compF_eq_sum _ _ l n s (fun m hm => by simp [hs m hm]),
+      compF_eq_sum _ _ l n s (fun m hm => by simp [hs m hm]),
+      compF_eq_sum _ _ l n s (fun m hm => by simp [hs m hm]), ← Finset.sum_add_distrib]
+    simp
+
+lemma add_apply (f g : M ⟶ N) (m n : ℤ) : (f + g).1 m n = f.1 m n + g.1 m n := rfl
+
+lemma zero_apply (m n : ℤ) : (0 : M ⟶ N).1 m n = 0 := rfl
+
+lemma sum_apply {ι : Type*} (s : Finset ι) (f : ι → (M ⟶ N)) (m n : ℤ) :
+    (∑ i ∈ s, f i).1 m n = ∑ i ∈ s, (f i).1 m n := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simp [zero_apply]
+  | insert a s ha ih => rw [Finset.sum_insert ha, Finset.sum_insert ha, add_apply, ih]
+
+instance : Linear ℚ (Bounded A) where
+  homModule M N := inferInstanceAs (Module ℚ (homSub M N))
+  smul_comp M N P c f g := hom_ext fun l n => by
+    obtain ⟨s, hs⟩ := exists_window f.2 n
+    change compF (c • f.1) g.1 l n = c • compF f.1 g.1 l n
+    rw [compF_eq_sum _ _ l n s (fun m hm => by simp [hs m hm]),
+      compF_eq_sum _ _ l n s (fun m hm => by simp [hs m hm]), Finset.smul_sum]
+    simp
+  comp_smul M N P f c g := hom_ext fun l n => by
+    obtain ⟨s, hs⟩ := exists_window f.2 n
+    change compF f.1 (c • g.1) l n = c • compF f.1 g.1 l n
+    rw [compF_eq_sum _ _ l n s (fun m hm => by simp [hs m hm]),
+      compF_eq_sum _ _ l n s (fun m hm => by simp [hs m hm]), Finset.smul_sum]
+    simp
+
+lemma smul_apply (c : ℚ) (f : M ⟶ N) (m n : ℤ) : (c • f).1 m n = c • f.1 m n := rfl
+
+/-- The diagonal morphism with entries `d n : M_n ⟶ N_n`, of propagation `0`. -/
+def diag (d : ∀ n, M.X n ⟶ N.X n) : M ⟶ N := ⟨diagF d, diagF_mem d⟩
+
+lemma diag_apply (d : ∀ n, M.X n ⟶ N.X n) (m n : ℤ) : (diag d).1 m n = diagF d m n := rfl
+
+lemma id_eq_diag (M : Bounded A) : 𝟙 M = diag fun n => 𝟙 (M.X n) := rfl
+
+lemma diag_comp_diag (d : ∀ n, M.X n ⟶ N.X n) (e : ∀ n, N.X n ⟶ P.X n) :
+    diag d ≫ diag e = diag fun n => d n ≫ e n := hom_ext fun l n => by
+  show compF (diagF d) (diagF e) l n = diagF (fun n => d n ≫ e n) l n
+  rw [diagF_compF]
+  by_cases h : l = n
+  · subst h; rw [diagF_self, diagF_self]
+  · rw [diagF_ne _ h, diagF_ne _ h, comp_zero]
+
+lemma diag_zero : diag (fun n => (0 : M.X n ⟶ N.X n)) = 0 := hom_ext fun m n => by
+  rw [diag_apply, zero_apply]
+  by_cases h : m = n
+  · subst h; rw [diagF_self]
+  · rw [diagF_ne _ h]
+
+lemma sum_diag {ι : Type*} (s : Finset ι) (d : ι → ∀ n, M.X n ⟶ N.X n) :
+    ∑ i ∈ s, diag (d i) = diag fun n => ∑ i ∈ s, d i n := hom_ext fun m n => by
+  rw [sum_apply]
+  simp only [diag_apply]
+  by_cases h : m = n
+  · subst h; simp only [diagF_self]
+  · simp only [diagF_ne _ h, Finset.sum_const_zero]
+
+section Biproducts
+
+variable [HasFiniteBiproducts A]
+
+/-- The degreewise biproduct bicone of a finite family of objects of `C_ℤ(A)`. -/
+def biconeOf {J : Type} [Fintype J] [DecidableEq J] (F : J → Bounded A) : Bicone F where
+  pt := ⟨fun n => ⨁ fun j => (F j).X n⟩
+  π j := diag fun n => biproduct.π (fun j => (F j).X n) j
+  ι j := diag fun n => biproduct.ι (fun j => (F j).X n) j
+  ι_π j j' := by
+    rw [diag_comp_diag]
+    by_cases h : j = j'
+    · subst h
+      simp only [biproduct.ι_π_self, dite_true, eqToHom_refl]
+      rfl
+    · simp only [biproduct.ι_π_ne _ h, h, dite_false]
+      exact diag_zero
+
+lemma biconeOf_total {J : Type} [Fintype J] [DecidableEq J] (F : J → Bounded A) :
+    ∑ j, (biconeOf F).π j ≫ (biconeOf F).ι j = 𝟙 (biconeOf F).pt := by
+  have h : ∀ j, (biconeOf F).π j ≫ (biconeOf F).ι j =
+      diag (M := (biconeOf F).pt) (N := (biconeOf F).pt)
+        (fun n => biproduct.π (fun j => (F j).X n) j ≫ biproduct.ι (fun j => (F j).X n) j) :=
+    fun j => diag_comp_diag _ _
+  rw [Finset.sum_congr rfl (fun j _ => h j), sum_diag, id_eq_diag]
+  congr 1
+  funext n
+  exact biproduct.total
+
+instance : HasFiniteBiproducts (Bounded A) where
+  out _ := ⟨fun F => HasBiproduct.mk ⟨biconeOf F, isBilimitOfTotal _ (biconeOf_total F)⟩⟩
+
+end Biproducts
 
 end Bounded
 
 end HSP
+
+end

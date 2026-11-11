@@ -2,6 +2,9 @@
 article_id: af_f2a78df55345e9814b62cb3f
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.cxProd_homotopyEquiv
 ---
 
 # Tensor products of equivalences
@@ -21,3 +24,4 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 
 ## Proof depends on
 
+- [Tensor product of complexes](complex-product.md)

@@ -2,11 +2,14 @@
 article_id: af_9c2350aa2a89afa35b40a51c
 declaration: lemma
 origin: cited
+statement: formalized
+proof: formalized
+lean: HSP.Bounded.quotientEquiv
 ---
 
 # Bounded quotients
 
-For an involution-invariant Karoubi filtration $U\subset A$, the entrywise quotient functor induces a duality equivalence $C_\mathbb Z(A)/C_\mathbb Z(U)\simeq C_\mathbb Z(A/U)$, with identity unit and counit.
+For an involution-invariant Karoubi filtration $U\subset A$, the entrywise quotient functor induces a duality equivalence $C_\mathbb Z(A)/C_\mathbb Z(U)\simeq C_\mathbb Z(A/U)$, with identity unit and counit: the induced functor is a strict duality functor, identity on objects, with a strict duality functor inverse, both composites being identity functors.
 
 *Proof sketch.* The functor is the identity on objects and reduces each entry mod $U$. It kills the maps that factor through $C_\mathbb Z(U)$, so it descends to the quotient. It is full because each entry lifts and the lifted matrix keeps the same band. It is faithful because a bounded matrix whose entries all factor through $U$ factors through the degreewise splittings of [Bounded Karoubi filtrations](bounded-karoubi-filtration.md). It commutes with the duality entrywise.
 
@@ -16,6 +19,8 @@ For an involution-invariant Karoubi filtration $U\subset A$, the entrywise quoti
 
 ## Depends on
 
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Bounded extension of a duality functor](bounded-functor.md)
 - [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
 - [Karoubi filtration](../../base/categories/karoubi-filtration.md)
 

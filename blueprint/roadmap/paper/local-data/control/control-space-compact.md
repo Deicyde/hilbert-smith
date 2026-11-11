@@ -3,6 +3,7 @@ article_id: af_da10ec4d777701af54d1f3aa
 declaration: lemma
 origin: bridged
 statement: formalized
+proof: formalized
 lean: HSP.LocalDatum.compactSpace_T
 ---
 

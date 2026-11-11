@@ -2,6 +2,9 @@
 article_id: af_610915423a88754ff4eb564a
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.exists_pinchHomeomorph
 ---
 
 # The pinch opens the ball onto $\mathbb R^n$

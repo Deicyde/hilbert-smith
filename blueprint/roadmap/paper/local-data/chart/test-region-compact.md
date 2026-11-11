@@ -2,6 +2,9 @@
 article_id: af_a2220fda11e400fdb7b210d6
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.isCompact_Zplus
 ---
 
 # The test region is compact

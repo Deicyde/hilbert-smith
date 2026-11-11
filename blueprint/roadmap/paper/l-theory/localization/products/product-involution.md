@@ -2,6 +2,9 @@
 article_id: af_7ac498ab680e0970cc6787d5
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.strProd_T
 ---
 
 # Products commute with T

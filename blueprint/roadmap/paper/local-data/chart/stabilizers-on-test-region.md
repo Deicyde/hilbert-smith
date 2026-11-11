@@ -2,6 +2,9 @@
 article_id: af_aeb70523ebe6b43dee1218ca
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.stabilizer_le
 ---
 
 # Stabilizers on the test region

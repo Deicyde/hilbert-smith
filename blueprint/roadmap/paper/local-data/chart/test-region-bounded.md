@@ -2,6 +2,9 @@
 article_id: af_22fd39cd9eb62351604256ae
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.Zplus_subset
 ---
 
 # The test region is bounded

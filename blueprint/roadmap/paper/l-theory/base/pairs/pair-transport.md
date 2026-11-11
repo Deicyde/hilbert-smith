@@ -2,6 +2,8 @@
 article_id: af_d01b3ab7c021aae7f64b3646
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.SymPair.transport
 ---
 
 # Transport of pairs along isomorphisms
