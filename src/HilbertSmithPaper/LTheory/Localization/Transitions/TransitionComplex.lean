@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.LTheory.Localization.Products.BoxDual
+import HilbertSmithPaper.LTheory.Localization.Products.BoxPairingPow
 import HilbertSmithPaper.LTheory.Localization.Products.ProductDualityMap
 import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution

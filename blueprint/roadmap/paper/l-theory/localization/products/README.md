@@ -14,6 +14,7 @@ The symmetric line is a Poincaré complex over $C_{\mathbb Z}(\mathbb Q)$. A dua
 - [Duality pairings](duality-pairing.md)
 - [Box product with a bounded vector space](box-product.md)
 - [Duals of box products](box-dual.md)
+- [Box product on iterated bounded categories](box-pairing-pow.md)
 - [Tensor product of based vector spaces](based-tensor.md)
 - [Tensor product of complexes](complex-product.md)
 - [Supports of tensor products](complex-product-support.md)

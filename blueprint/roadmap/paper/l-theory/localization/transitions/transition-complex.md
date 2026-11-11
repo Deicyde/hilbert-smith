@@ -19,6 +19,7 @@ For $j\ge0$ and a strict $m$-dimensional symmetric Poincaré complex $(C,\phi)$ 
 
 ## Depends on
 
+- [Box product on iterated bounded categories](../products/box-pairing-pow.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Tensor product of complexes](../products/complex-product.md)
 - [External product of structures](../products/external-product.md)

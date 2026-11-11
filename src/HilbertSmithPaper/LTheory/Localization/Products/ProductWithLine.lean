@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
-import HilbertSmithPaper.LTheory.Localization.Products.BoxDual
+import HilbertSmithPaper.LTheory.Localization.Products.BoxPairingPow
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLineStructure
 

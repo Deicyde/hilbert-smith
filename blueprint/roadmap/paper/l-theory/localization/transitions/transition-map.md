@@ -24,6 +24,7 @@ is a well-defined homomorphism.
 
 ## Depends on
 
+- [Box product on iterated bounded categories](../products/box-pairing-pow.md)
 - [L-group](../../base/groups/l-group.md)
 - [Group structure on L](../../base/groups/l-group-add.md)
 - [Tensor product of complexes](../products/complex-product.md)

@@ -28,6 +28,7 @@ is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 
 ## Depends on
 
+- [Box product on iterated bounded categories](box-pairing-pow.md)
 - [Strict Poincaré pair](../../base/pairs/poincare-pair.md)
 - [Tensor product of complexes](complex-product.md)
 - [External product of structures](external-product.md)
