@@ -103,8 +103,8 @@ import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.ChainModels.Torus.LiftProj
 import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
 import HilbertSmithPaper.ChainModels.Torus.NormLift
-import HilbertSmithPaper.ChainModels.Torus.ProjLift
 import HilbertSmithPaper.ChainModels.Torus.Proj
+import HilbertSmithPaper.ChainModels.Torus.ProjLift
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.CompressedMaps
@@ -177,7 +177,12 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Comparison.FreeComparison
+import HilbertSmithPaper.LTheory.Localization.Boundary.BoundaryIndependence
+import HilbertSmithPaper.LTheory.Localization.Boundary.ImagePair
+import HilbertSmithPaper.LTheory.Localization.Boundary.LiftToPairClosed
+import HilbertSmithPaper.LTheory.Localization.Boundary.LocalizationBoundary
 import HilbertSmithPaper.LTheory.Localization.Boundary.UPair
+import HilbertSmithPaper.LTheory.Localization.Boundary.UPairSum
 import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
@@ -197,6 +202,11 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
 import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
+import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedLineProduct
+import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransition
+import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionCobordant
+import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionSum
+import HilbertSmithPaper.LTheory.Localization.Transitions.LevelBoundary
 import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
