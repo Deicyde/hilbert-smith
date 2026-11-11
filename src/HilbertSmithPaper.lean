@@ -1,6 +1,7 @@
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
+import HilbertSmithPaper.Inputs.Newman.NewmanSmallOrbits
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.Proofs.PadicExclusion
 
