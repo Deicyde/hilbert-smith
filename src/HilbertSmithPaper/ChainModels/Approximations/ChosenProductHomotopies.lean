@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.ProductHomotopies
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
+import HilbertSmithPaper.ChainModels.Grid.Buffers.SphereProp
 
 /-!
 # Chosen product homotopies

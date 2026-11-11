@@ -14,6 +14,7 @@ There is a null sequence $(\mu_i)$ such that, for all $i$, $g\in G_i$ and $v>0$,
 ## Sources
 - HS paper, Section 9.
 ## Depends on
+- [Sphere propagation](../grid/buffers/sphere-prop.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
 - [Group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [control labels](../grid/buffers/control-labels.md), [restriction](../grid/buffers/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)

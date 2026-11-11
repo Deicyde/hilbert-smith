@@ -18,6 +18,7 @@ The torus, the cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and 
 - [Box hull](box-hull.md)
 - [Box hull properties](box-hull-properties.md)
 - [Carriers](acyclic-carriers.md)
+- [Based subcomplexes](based-subcomplex.md)
 - [Carried chain maps](carried-chain-map.md)
 - [Carried homotopies](carried-homotopy.md)
 - [Circle duality](circle-duality.md)

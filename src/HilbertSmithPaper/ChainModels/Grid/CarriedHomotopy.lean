@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.CarriedChainMap
+import HilbertSmithPaper.ChainModels.Grid.BasedSubcomplex
 
 /-!
 # Carried homotopies

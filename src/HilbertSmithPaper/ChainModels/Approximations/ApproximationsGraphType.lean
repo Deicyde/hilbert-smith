@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
 import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
+import HilbertSmithPaper.ChainModels.Grid.Buffers.SphereProp
 
 /-!
 # Graph type of approximations

@@ -16,6 +16,7 @@ Fix $0<\rho<\rho_+$ and a family of maps $B^T_{g,h}$ of degree $+1$ of $C(k_i)$,
 
 ## Depends on
 
+- [Sphere propagation](../grid/buffers/sphere-prop.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [Product homotopies](product-homotopies.md)
 - [Tensoring with the identity of the cells of CP^2](tensor-one-p.md)

@@ -12,6 +12,8 @@ import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Cells
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
+import HilbertSmithPaper.ChainModels.Grid.Model.GridStructure
+import HilbertSmithPaper.ChainModels.Grid.Model.UnitStructure
 
 /-!
 # The chain model is Poincaré: part 1

@@ -19,6 +19,8 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 
 ## Depends on
 
+- [The structure of the unit complex](../model/unit-structure.md)
+- [The structure of the grid complex](../model/grid-structure.md)
 - [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
 - [The structure of CP^2](../cp2/cp2-structure.md)
 - [The circle complex](../cubical/circle-complex.md)

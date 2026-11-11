@@ -7,11 +7,10 @@ lean: HSP.ChainModels.sphereLabel
 ---
 # Sphere labels
 
-Fix a local datum and a radius $\rho$. A cell $b$ of $D_i$, or its dual in $D_i^{N-*}$, with torus label $x_b$, has the *sphere label* $s_b=f_T(x_b)\in S^n$, where $f_T$ is the [torus test map](../approximations/torus-test-map.md) of radius $\rho$. The *sphere propagation* of a matrix between spans of such cells is its [propagation](../../categories/asymptotic/propagation.md) for the labels $s_b$ and the round metric $d_S$ on $S^n$ of the [round sphere](../../corner/round-sphere.md); it depends only on the torus labels of the source and target cells.
+Fix a local datum and a radius $\rho$. A cell $b$ of $D_i$ with [torus label](model/chain-model-label.md) $x_b$ has the *sphere label* $s_b=f_T(x_b)\in S^n$, where $f_T$ is the [torus test map](../approximations/torus-test-map.md) of radius $\rho$.
 
 ## Sources
 - HS paper, Section 9 (labels through the test map).
 ## Depends on
 - [Torus labels of chain-model cells](model/chain-model-label.md)
-- [Torus labels of dual cells](model/chain-model-dual-label.md)
-- [Chain model](model/chain-model.md), [torus test map](../approximations/torus-test-map.md), [propagation](../../categories/asymptotic/propagation.md), [round sphere](../../corner/round-sphere.md)
+- [Chain model](model/chain-model.md), [torus test map](../approximations/torus-test-map.md), [round sphere](../../corner/round-sphere.md)

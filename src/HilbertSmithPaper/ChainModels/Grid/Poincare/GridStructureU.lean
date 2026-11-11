@@ -3,6 +3,7 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
+import HilbertSmithPaper.ChainModels.Grid.Model.UnitStructure
 
 /-!
 # The unsymmetrized grid structure

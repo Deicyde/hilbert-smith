@@ -16,6 +16,7 @@ For $k\ge1$, the unsymmetrized structure $\varphi^u_n\in M(C(k))_n$ of the [grid
 
 ## Depends on
 
+- [The structure of the unit complex](../model/unit-structure.md)
 - [The circle complex](../cubical/circle-complex.md)
 - [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
 - [Cubical torus grid](../cubical/cubical-torus-grid.md)

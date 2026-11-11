@@ -13,6 +13,7 @@ import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedSphereLabels
 import HilbertSmithPaper.LocalData.Control.ControlIsometricAction
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
+import HilbertSmithPaper.ChainModels.Grid.Buffers.SphereProp
 
 /-!
 # Buffered restriction

@@ -20,6 +20,7 @@ Graph types are those of [graph-type matrices](../../corner/actions/graph-type.m
 ## Sources
 - HS paper, Section 9 (the eventual definition of target labels).
 ## Depends on
+- [Sphere propagation](../grid/buffers/sphere-prop.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [Torus labels of dual cells](../grid/model/chain-model-dual-label.md)
 - [The control space is an isometric $C_p$-space](../../local-data/control/control-isometric-action.md)

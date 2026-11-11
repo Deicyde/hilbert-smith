@@ -19,6 +19,8 @@ For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, t
 
 ## Depends on
 
+- [The structure of the unit complex](../model/unit-structure.md)
+- [The structure of the grid complex](../model/grid-structure.md)
 - [Fundamental cycle of the chain model](../model/chain-model-fundamental.md)
 - [The structure of CP^2](../cp2/cp2-structure.md)
 - [Fundamental cycle of CP^2](../cp2/cp2-fundamental.md)

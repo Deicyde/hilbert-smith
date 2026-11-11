@@ -26,6 +26,7 @@ Take $\epsilon_i$ the maximum of the finitely many null sequences above.
 ## Sources
 - HS paper, Section 9 (closing choice of the bounds); these are the inputs of Section 10.
 ## Depends on
+- [Sphere propagation](buffers/sphere-prop.md)
 - [Fundamental cycle of the chain model](model/chain-model-fundamental.md)
 - [Grid cubes](cubical/grid-cube.md)
 - [The family of chain-model matrices](../approximations/chain-model-family.md)

@@ -14,6 +14,7 @@ For $g,h\in G_i$ there are $B_{g,h}=B^T_{g,h}\otimes1_P$ of degree $+1$ with $a_
 ## Sources
 - HS paper, Section 9. New: box carriers, with no width induction and no track steps.
 ## Depends on
+- [Sphere propagation](../grid/buffers/sphere-prop.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
 - [The metric on the control space](../../local-data/control/control-metric-space.md)

@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
+import HilbertSmithPaper.ChainModels.Grid.BasedSubcomplex
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 
 /-!
@@ -13,8 +14,7 @@ chain map `u : E → F` with `ε u = ε_E`. If every label of `Γ(e)` is within 
 ## Encoding
 
 * A based subcomplex `E' ⊆ E` is a set `S r` of basis elements in each degree whose span is
-  closed under `d`: every basis element occurring in `de`, `e ∈ S`, lies in `S`
-  (`IsBasedSubcomplex`).
+  closed under `d` (`IsBasedSubcomplex`, based subcomplexes).
 * The chain map `u' : E' → F` is given by a graded linear map `u' r : E_r → F_r` constrained on
   the basis elements of `E'` only (a linear map on `E'` is its values on these): `d u'(e) =
   u'(de)`, `u'(e) ∈ Γ(e)` and `ε u'(e) = ε_E(e)` for `e ∈ E'`. The extension `u` agrees with
@@ -30,13 +30,6 @@ chain map `u : E → F` with `ε u = ε_E`. If every label of `Γ(e)` is within 
 open CategoryTheory
 
 namespace HSP.ChainModels
-
-/-- The basis elements `S r ⊆ ι r` span a *based subcomplex* of `E`: every basis element
-occurring in `de`, for `e ∈ S`, lies in `S`. -/
-def IsBasedSubcomplex {E : ChainComplex (ModuleCat.{0} ℚ) ℤ} {ι : ℤ → Type}
-    (b : ∀ r, Module.Basis (ι r) ℚ (E.X r)) (S : ∀ r, Set (ι r)) : Prop :=
-  ∀ r, ∀ e ∈ S r, ∀ e' : ι (r - 1),
-    (b (r - 1)).repr ((E.d r (r - 1)).hom (b r e)) e' ≠ 0 → e' ∈ S (r - 1)
 
 /-- **Carried chain maps.** A carried chain map on a based subcomplex `E' ⊆ E`, compatible with
 the augmentations, extends to a carried chain map `u : E → F` with `ε u = ε_E`; if every label

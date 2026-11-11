@@ -4,6 +4,7 @@ import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
+import HilbertSmithPaper.ChainModels.Grid.Buffers.SphereProp
 
 /-!
 # Product homotopies
