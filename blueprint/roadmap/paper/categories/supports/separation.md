@@ -24,4 +24,4 @@ Let $X$ be compact with an isometric $C_p$-action. If $S,Z\subset X$ are disjoin
 
 ## Proof depends on
 
-- [Support ideal](support-ideal.md)
+- [Maps through a disjoint support vanish](disjoint-support-vanishing.md)
