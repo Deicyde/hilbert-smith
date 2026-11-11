@@ -23,4 +23,4 @@ For every $i$, with cells of the [chain model](../chain-model.md) labelled at th
 
 ## Proof depends on
 
-- [Cells of CP^2](../cp2-cells.md)
+- [Cells of CP^2](../cp2/cp2-cells.md)
