@@ -5,6 +5,12 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolutionSquare
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhi
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleH
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhiSym
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleB
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleK
+import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleKDual
 
 /-!
 # Circle duality
@@ -36,37 +42,6 @@ namespace HSP.ChainModels
 open FreeQ DualCat
 
 variable (k : ℕ)
-
-/-- The structure `φ ∈ M(S_k)_1`: `φ(e_w^*) = [w]` and `φ([w]^*) = e_{w-1}`. -/
-def circlePhi : (StructureCx (circleComplex k)).X 1 :=
-  fun x => ofMatrix (Matrix.of fun a b =>
-    if x.1.1 = 0 then (if (a : ℕ) = b then 1 else 0)
-    else if x.1.1 = 1 then (if (a : ℕ) = ((b : ℕ) + k - 1) % k then 1 else 0) else 0)
-
-/-- The element `H ∈ M(S_k)_2`: `H(e_w^*) = e_w`, `H([w]^*) = 0`. -/
-def circleH : (StructureCx (circleComplex k)).X 2 :=
-  fun x => ofMatrix (Matrix.of fun a b =>
-    if x.1.1 = 1 then (if (a : ℕ) = b then 1 else 0) else 0)
-
-/-- The symmetric structure `φ^s = φ + ½ ∂H`. -/
-def circlePhiSym : (StructureCx (circleComplex k)).X 1 :=
-  circlePhi k + (1 / 2 : ℚ) • (StructureCx (circleComplex k)).d 2 1 (circleH k)
-
-/-- The component `b_r : S_r → (S^{1-*})_r` of the inverse `b`: `b(e_w) = [w+1]^*`,
-`b([w]) = e_w^*`. -/
-def circleB (r : ℤ) : (circleComplex k).X r ⟶ (dualCx (circleComplex k) 1).X r :=
-  ofMatrix (Matrix.of fun a b =>
-    if r = 1 then (if (a : ℕ) = ((b : ℕ) + 1) % k then 1 else 0)
-    else if r = 0 then (if (a : ℕ) = b then 1 else 0) else 0)
-
-/-- The homotopy `K = ½ H b`, in degree `r`: `S_r → S_{r+1}`. -/
-def circleK (r : ℤ) : (circleComplex k).X r ⟶ (circleComplex k).X (r + 1) :=
-  (1 / 2 : ℚ) • (circleB k r ≫ circleH k ⟨(r + 1, 1 - r), by ring⟩)
-
-/-- The homotopy `K' = ½ b H`, in degree `r`: `(S^{1-*})_r → (S^{1-*})_{r+1}`. -/
-def circleK' (r : ℤ) :
-    (dualCx (circleComplex k) 1).X r ⟶ (dualCx (circleComplex k) 1).X (r + 1) :=
-  (1 / 2 : ℚ) • (circleH k ⟨(r + 1, 1 - r), by ring⟩ ≫ circleB k (r + 1))
 
 /-- The label of a cell of `S_{k,r}` (and of its dual): its center, `4w/k` or `(4w+2)/k`. -/
 noncomputable def circleLabel (r : ℤ) (a : Fin ((circleComplex k).X r).dim) :
