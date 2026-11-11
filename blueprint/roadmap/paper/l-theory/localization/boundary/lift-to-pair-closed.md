@@ -2,6 +2,8 @@
 article_id: af_bec907cda187aafbd826b950
 declaration: lemma
 origin: cited
+statement: formalized
+lean: HSP.UPair.exists_image_eq
 ---
 
 # Lifting closed complexes

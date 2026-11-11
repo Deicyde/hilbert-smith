@@ -2,6 +2,8 @@
 article_id: af_8e4160d96cfba8f2d33a3dcf
 declaration: lemma
 origin: cited
+statement: formalized
+lean: HSP.UPair.mk_P_eq_of_image
 ---
 
 # Independence of the lift

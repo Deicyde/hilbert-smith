@@ -2,6 +2,8 @@
 article_id: af_1e5f22ca0bfce71faf56f104
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.UPair.image
 ---
 
 # Image of a pair with boundary in Kar U
@@ -22,6 +24,7 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 - [Decorated objects](../decorations/decorated-object.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
+- [Complexes in a full subcategory](../decorations/complex-in-subcategory.md)
 
 ## Proof depends on
 

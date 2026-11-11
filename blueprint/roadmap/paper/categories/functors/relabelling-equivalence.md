@@ -20,7 +20,7 @@ Such a $\rho$ exists because $S$ is a nonempty closed subset of the compact spac
 
 *Remark (not formalized).* The triangle identities $\varepsilon_{P}\circ P\eta=\mathrm{id}_P$ and $R\varepsilon\circ\eta_R=\mathrm{id}_R$ hold, because every component is an identity matrix; the formalization records the data and does not state them.
 
-*Proof sketch.* $\rho$ fixes $S$ pointwise, since $d(s,\rho s)=0$, so $RP=\mathrm{id}$. Write $\varepsilon_i(M)=\max_kd(x_i(k),S)$. It tends to $0$ for $M\in\mathcal A_S$, and by isometry it bounds the label errors of $R(M)$. By [relabelling the propagation](../asymptotic/prop-relabel.md), $\operatorname{prop}(Ru_i)\le\operatorname{prop}(u_i)+\varepsilon_i(M)+\varepsilon_i(N)\to0$. So $R$ is well defined, and it is a strict duality functor because the matrices are unchanged. $\rho$ need not be equivariant, because labels are $\chi_i(g)\rho(x_i(k))$. The counit is natural and unitary, and the triangle identities hold, because every component is an identity matrix.
+*Proof sketch.* $\rho$ fixes $S$ pointwise, since $d(s,\rho s)=0$, so $RP=\mathrm{id}$. Write $\varepsilon_i(M)=\max_kd(x_i(k),S)$. It tends to $0$ for $M\in\mathcal A_S$, and by isometry it bounds the label errors of $R(M)$. By [relabelling the propagation](../asymptotic/prop-relabel.md), $\operatorname{prop}(Ru_i)\le\operatorname{prop}(u_i)+\varepsilon_i(M)+\varepsilon_i(N)\to0$. So $R$ is well defined, and it is a strict duality functor because the matrices are unchanged. $\rho$ need not be equivariant, because labels are $\chi_i(g)\rho(x_i(k))$. The counit is natural and unitary because every component is an identity matrix ([relabelling isomorphism](relabelling-isomorphism.md)); the unit is the identity, given by $RP=\mathrm{id}$.
 
 ## Sources
 

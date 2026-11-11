@@ -2,6 +2,8 @@
 article_id: af_aa7e416a5e4de880d7550064
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.levelBoundary
 ---
 
 # Stage boundary

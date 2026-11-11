@@ -1,1 +1,1 @@
-HSP.LTheory.boundary_indep. Uses only parts (a) of lift_rel; (b) and (c) are not needed here. The old proof's appeal to stabilization and relative-lift is gone: stabilization moved into the planned proof of lift_rel.
+HSP.UPair.mk_P_eq_of_image (F) (V V' : UPair U k) (h : [qV] = [qV']) : [V.P] = [V'.P] in Lp U.FullSubcategory (k-1) is stated (proof open). Uses only part (a) of Lifting. Plan: negate V' (transport with s = -1), sum with V (Sums of U-pairs style), image class 0 by homotopy-isometry in Dec, zero classes bound in Dec, then Lifting (a).

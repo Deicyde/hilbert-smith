@@ -8,7 +8,7 @@ lean: HSP.complexSign
 
 # Signature of a complex
 
-$\mathrm{Sign}_G(C,\varphi)=\mathrm{sign}_{b_C}:G\to\mathbb R$.
+For a strict 4-dimensional symmetric Poincaré complex $(C,\varphi)$ in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$, $\mathrm{Sign}_G(C,\varphi)=\mathrm{sign}_{b_C}:G\to\mathbb R$, the equivariant signature of the middle form $b_C$ for the permutation action of $G$ on $H^2(C;\mathbb R)$.
 
 ## Sources
 

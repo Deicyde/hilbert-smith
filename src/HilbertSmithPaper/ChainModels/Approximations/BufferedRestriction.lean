@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.ChainModels.Grid.ControlLabels
 import HilbertSmithPaper.ChainModels.Grid.Restriction
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
