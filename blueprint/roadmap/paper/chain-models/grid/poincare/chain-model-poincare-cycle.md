@@ -11,7 +11,7 @@ lean: HSP.ChainModels.chainModel_poincare_cycle
 
 For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model-duality.md) satisfies $\partial\varphi_i=0$ and $T\varphi_i=\varphi_i$.
 
-*Proof sketch.* Induct over the circle factors. For $\varphi_i=\varphi^{(n)}\otimes\varphi_P$ with $\varphi^{(n+1)}=\varphi^{(n)}\otimes\varphi^s$ and $\varphi^{(0)}$ the identity structure of the unit complex (zero differential, degree $0$), the [Leibniz rule](../tensor/structure-products/str-prod-leibniz.md) gives $\partial(\varphi\otimes\theta)=\partial\varphi\otimes\theta\pm\varphi\otimes\partial\theta=0$ from $\partial\varphi^s=0$ ([circle duality](../circle-duality.md) (2)) and $\partial\varphi_P=0$ ([cells of CP^2](../cp2/cp2-cells.md)); a product with a zero factor vanishes. Likewise [products commute with T](../tensor/structure-products/str-prod-involution.md), with $T\varphi^s=\varphi^s$ and $T\varphi_P=\varphi_P$.
+*Proof sketch.* Induct over the circle factors. For $\varphi_i=\varphi^{(n)}\otimes\varphi_P$ with $\varphi^{(n+1)}=\varphi^{(n)}\otimes\varphi^s$ and $\varphi^{(0)}$ the identity structure of the unit complex (zero differential, degree $0$), the [Leibniz rule](../tensor/structure-products/str-prod-leibniz.md) gives $\partial(\varphi\otimes\theta)=\partial\varphi\otimes\theta\pm\varphi\otimes\partial\theta=0$ from $\partial\varphi^s=0$ ([circle duality](../circle-duality.md) (2)) and $\partial\varphi_P=0$ ([cells of CP^2](../cp2/cp2-cells.md)); a product with a zero factor vanishes ([left](../tensor/structure-products/str-prod-zero-left.md), [right](../tensor/structure-products/str-prod-zero-right.md)), and the [unit structure is a cycle](../tensor/structure-products/unit-structure-cycle.md). Likewise [products commute with T](../tensor/structure-products/str-prod-involution.md), with $T\varphi^s=\varphi^s$ and $T\varphi_P=\varphi_P$.
 
 ## Sources
 
@@ -36,4 +36,6 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 - [Circle duality](../circle-duality.md)
 - [Cells of CP^2](../cp2/cp2-cells.md)
 - [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
-- [Kronecker product with a zero factor](../tensor/kron-zero.md)
+- [A product of structures with a zero left factor](../tensor/structure-products/str-prod-zero-left.md)
+- [A product of structures with a zero right factor](../tensor/structure-products/str-prod-zero-right.md)
+- [The unit structure is a cycle](../tensor/structure-products/unit-structure-cycle.md)
