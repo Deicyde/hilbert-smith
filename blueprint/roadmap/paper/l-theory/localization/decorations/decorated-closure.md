@@ -28,3 +28,4 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 
 - [Equality in $K_0$](../../bounded/categories/k-zero-stable-equality.md)
 - [Dual of a binary sum](../../base/categories/sums/dual-biproduct.md)
+- [Completion of a duality functor](../../base/categories/karoubi-functor.md)

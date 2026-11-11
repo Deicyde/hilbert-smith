@@ -38,9 +38,12 @@ Let $X$ be compact with an isometric $C_p$-action, let $A,B\subset X$ be closed 
 ## Proof depends on
 
 - [Lift of a duality functor to a quotient](../../l-theory/base/categories/quotient-dual-lift.md)
-- [Support filtrations in a quotient](../supports/quotient-support-filtration.md)
 - [Support intersection](../supports/support-intersection.md)
 - [Iterated quotient](../supports/iterated-quotient.md)
 - [Excision equivalence](../supports/excision.md)
 - [Involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md)
 - [Unitary natural isomorphism](../../l-theory/base/categories/unitary-isomorphism.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)
