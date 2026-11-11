@@ -160,12 +160,17 @@ import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence
 import HilbertSmithPaper.LTheory.Base.Pairs.CylinderCobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPair
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
+import HilbertSmithPaper.LTheory.Base.Pairs.IsoCobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.PairMap
 import HilbertSmithPaper.LTheory.Base.Pairs.PairTransport
+import HilbertSmithPaper.LTheory.Base.Pairs.PoincareNeg
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
+import HilbertSmithPaper.LTheory.Base.Pairs.PoincareSum
+import HilbertSmithPaper.LTheory.Base.Pairs.PoincareZero
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPairs
 import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
+import HilbertSmithPaper.LTheory.Base.Pairs.TransportCobordism
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor

@@ -11,9 +11,9 @@ proof: formalized
 
 Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/duality-functor.md) and use the [images](../pairs/functor-poincare.md) $(FC,F_\%\phi)$ of strict $k$-dimensional symmetric Poincaré complexes. Then:
 1. if $(C,\phi)$ is [cobordant](../pairs/cobordism.md) to $(C',\phi')$, then $(FC,F_\%\phi)$ is cobordant to $(FC',F_\%\phi')$;
-2. the image of $(C,\phi)\oplus(C',\phi')$ is cobordant to $(FC,F_\%\phi)\oplus(FC',F_\%\phi')$, with the sums of [Sums of Poincaré complexes](../pairs/sum-of-poincare.md).
+2. the image of $(C,\phi)\oplus(C',\phi')$ is cobordant to $(FC,F_\%\phi)\oplus(FC',F_\%\phi')$, with [the sum of two Poincaré complexes](../pairs/poincare-sum.md).
 
-*Proof sketch.* (1) A cobordism goes, by [Duality functors carry pairs to pairs](../pairs/functor-pair.md), to a pair with boundary $(F(C\oplus C'),F_\%(\phi\oplus(-\phi')))$. The canonical isomorphism $u:FC\oplus FC'\cong F(C\oplus C')$ carries $F_\%\phi\oplus(-F_\%\phi')$ to that structure, so [Transport of pairs along isomorphisms](../pairs/pair-transport.md) ($s=1$) makes it a cobordism. (2) [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md) with $h=u^{-1}$ and $\chi=0$.
+*Proof sketch.* (1) A cobordism goes, by [Duality functors carry pairs to pairs](../pairs/functor-pair.md), to a pair with boundary $(F(C\oplus C'),F_\%(\phi\oplus(-\phi')))$. The canonical isomorphism $u:FC\oplus FC'\cong F(C\oplus C')$ carries $F_\%\phi\oplus(-F_\%\phi')$ to that structure, so it is a cobordism by [Transported pairs are cobordisms](../pairs/transport-cobordism.md) with $s=1$. (2) The isomorphism $u^{-1}$, composed with the identifications of the sums with $C\oplus C'$ and $FC\oplus FC'$, carries the structures exactly, so [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md) applies.
 
 ## Sources
 
@@ -22,11 +22,11 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 ## Depends on
 
 - [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
-- [Sums of Poincaré complexes](../pairs/sum-of-poincare.md)
+- [The sum of two Poincaré complexes](../pairs/poincare-sum.md)
 - [Cobordism](../pairs/cobordism.md)
 
 ## Proof depends on
 
 - [Duality functors carry pairs to pairs](../pairs/functor-pair.md)
-- [Transport of pairs along isomorphisms](../pairs/pair-transport.md)
-- [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md)
+- [Transported pairs are cobordisms](../pairs/transport-cobordism.md)
+- [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
