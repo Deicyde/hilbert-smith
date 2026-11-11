@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
+import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBiproduct
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
 
@@ -45,19 +46,6 @@ private def dualIsoOf {M N : C} (e : M ≅ N) : dual N ≅ dual M where
   inv := dualHom e.inv
   hom_inv_id := by rw [← dualHom_comp, e.inv_hom_id, dualHom_id]
   inv_hom_id := by rw [← dualHom_comp, e.hom_inv_id, dualHom_id]
-
-/-- The canonical isomorphism `(M ⊕ N)^* ≅ M^* ⊕ N^*`. -/
-private noncomputable def dualBiprodIso (M N : C) : dual (M ⊞ N) ≅ dual M ⊞ dual N where
-  hom := biprod.lift (dualHom biprod.inl) (dualHom biprod.inr)
-  inv := biprod.desc (dualHom biprod.fst) (dualHom biprod.snd)
-  hom_inv_id := by
-    rw [biprod.lift_desc, ← dualHom_comp, ← dualHom_comp, ← dualHom_add, biprod.total,
-      dualHom_id]
-  inv_hom_id := by
-    apply biprod.hom_ext' <;> apply biprod.hom_ext <;>
-      simp only [biprod.inl_desc_assoc, biprod.inr_desc_assoc, biprod.lift_fst, biprod.lift_snd,
-        Category.assoc, ← dualHom_comp, biprod.inl_fst, biprod.inl_snd, biprod.inr_fst,
-        biprod.inr_snd, dualHom_id, dualHom_zero, Category.comp_id]
 
 end Helpers
 

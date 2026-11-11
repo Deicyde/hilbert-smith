@@ -29,3 +29,4 @@ Duality categories, duality functors and unitary isomorphisms; the idempotent co
 - [Maps factoring through Kar U](karoubi-of-filtration.md)
 - [Kernel of the completed quotient](karoubi-quotient-kernel.md)
 - [The completed quotient is full](karoubi-quotient-full.md)
+- [Sums and duality](sums/README.md)

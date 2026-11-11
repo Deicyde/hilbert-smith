@@ -101,7 +101,7 @@ private def fwdDual (hA : IsCompact A) (hB : IsClosed B) (hAB : Disjoint A B) :
 
 end
 
-/-- **Quotient of an excisive intersection.** For `A ⊆ S` with `A` compact, `B` closed and
+/-- **Quotient of an excisive intersection.** For `A` compact, `B` closed and
 `A ∩ B = ∅`, the functor `e : 𝒰_A/(𝒰_A ∩ 𝒰_B) → 𝒜_A/𝒜_∅` induced by `M ↦ M`, `u ↦ u`
 (characterized by `q ⋙ e = ι ⋙ q`) is a strict duality functor. -/
 noncomputable def excisiveInterQuotIso (S : Set X) {A B : Set X} (hA : IsCompact A)
