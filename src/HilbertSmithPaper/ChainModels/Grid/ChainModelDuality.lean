@@ -4,6 +4,7 @@ import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 
 /-!
 # Chain-model duality
@@ -110,21 +111,15 @@ structure ChainModelDualityData (Dc : ChainComplex FreeQ ℤ) (N : ℤ) where
   /-- The components `b_r : D_r → (D^{N-*})_r`. -/
   b : ∀ r, Dc.X r ⟶ (dualCx Dc N).X r
 
-private lemma cp2Complex_dim_neg' : ∀ q < 0, (cp2Complex.X q).dim = 0 := by
-  intro q hq
-  rcases q with q | q
-  · exact absurd hq (by simp)
-  · rfl
-
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
 /-- *Chain-model duality*: `φ_i = (⋯(φ^s ⊗ φ^s) ⊗ ⋯ ⊗ φ^s) ⊗ φ_P ∈ M(D_i)_N` and
 `b_i = Ξ^{-1} ∘ (b ⊗ ⋯ ⊗ b ⊗ b_P)`, `N = n + 4`. -/
 noncomputable def chainModelDuality (A : LocalDatum p n D ρplus) (i : ℕ) :
     ChainModelDualityData (chainModel A i) ((n + 4 : ℕ) : ℤ) where
-  φ := basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg' n 4
+  φ := basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg n 4
     ((n + 4 : ℕ) : ℤ) (by push_cast; ring) (gridStructure (meshSequence A i) n) cp2Structure
-  b := basedDualProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg' n 4
+  b := basedDualProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg n 4
     ((n + 4 : ℕ) : ℤ) (by push_cast; ring) (gridDualMap (meshSequence A i) n) cp2Inverse.f
 
 end HSP.ChainModels

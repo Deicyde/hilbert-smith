@@ -7,6 +7,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 
 /-!
 # The chain model is Poincaré
@@ -85,31 +86,25 @@ noncomputable def gridH' (k : ℕ) : ∀ (n : ℕ) (r : ℤ),
         eqToHom (congrArg (fun t => dual ((gridComplex k (n + 1)).X (((n + 1 : ℕ) : ℤ) - t)))
           (show r + (0 + 1) = r + 1 by ring))
 
-private lemma cp2Complex_dim_neg'' : ∀ q < 0, (cp2Complex.X q).dim = 0 := by
-  intro q hq
-  rcases q with q | q
-  · exact absurd hq (by simp)
-  · rfl
-
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
 /-- The unsymmetrized structure `φ_i^u = (⋯(φ ⊗ φ) ⊗ ⋯ ⊗ φ) ⊗ φ_P ∈ M(D_i)_N`. -/
 noncomputable def chainModelStructureU (A : LocalDatum p n D ρplus) (i : ℕ) :
     (StructureCx (chainModel A i)).X ((n + 4 : ℕ) : ℤ) :=
-  basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg'' n 4
+  basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg n 4
     ((n + 4 : ℕ) : ℤ) (by push_cast; ring) (gridStructureU (meshSequence A i) n) cp2Structure
 
 /-- The homotopy `H_i = H^{(n)} ⊗ 1_P` on `D_i`, in degree `r`. -/
 noncomputable def chainModelH (A : LocalDatum p n D ρplus) (i : ℕ) (r : ℤ) :
     (chainModel A i).X r ⟶ (chainModel A i).X (r + 1) :=
-  basedTensorHom cp2Complex_dim_neg'' cp2Complex_dim_neg'' 1 0 (gridH (meshSequence A i) n)
+  basedTensorHom cp2Complex_dim_neg cp2Complex_dim_neg 1 0 (gridH (meshSequence A i) n)
       (idDeg0 cp2Complex) r ≫ eqToHom (congrArg (chainModel A i).X (by ring))
 
 /-- The homotopy `H'_i = Ξ^{-1}(H'^{(n)} ⊗ 1_{P^{4-*}})Ξ` on `D_i^{N-*}`, in degree `r`. -/
 noncomputable def chainModelH' (A : LocalDatum p n D ρplus) (i : ℕ) (r : ℤ) :
     (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).X r ⟶
       (dualCx (chainModel A i) ((n + 4 : ℕ) : ℤ)).X (r + 1) :=
-  basedDualTensorHom cp2Complex_dim_neg'' n 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring) 1 0
+  basedDualTensorHom cp2Complex_dim_neg n 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring) 1 0
       (gridH' (meshSequence A i) n) (idDualDeg0 cp2Complex 4) r ≫
     eqToHom (congrArg (fun t => dual ((chainModel A i).X (((n + 4 : ℕ) : ℤ) - t)))
       (show r + (1 + 0) = r + 1 by ring))

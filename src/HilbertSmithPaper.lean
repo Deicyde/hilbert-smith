@@ -97,7 +97,7 @@ import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
-import HilbertSmithPaper.ChainModels.Grid.BlockProjections
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockProjections
 import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.BoxHullProperties
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BasedInclusion
@@ -119,6 +119,7 @@ import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhi
 import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhiSym
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic

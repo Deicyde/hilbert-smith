@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 
 /-!
 # Isometry homotopies
@@ -30,12 +31,6 @@ open FreeQ DualCat
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
-private lemma cp2Complex_dim_neg_ih : ∀ q < 0, (cp2Complex.X q).dim = 0 := by
-  intro q hq
-  rcases q with q | q
-  · exact absurd hq (by simp)
-  · rfl
-
 /-- **Isometry homotopies.** For `g ∈ G_i` there is `U^T_g ∈ M(C(k_i))_{n+1}` such that
 `U_g = U^T_g ⊗ φ_P` satisfies `a_g φ_i a_g^* - φ_i = dU_g + U_g d` and has `d_∞`-propagation at
 most `s_i + 2h_i`, `s_i = 3ω(2h_i) + 8h_i`, `h_i = 4/k_i`. -/
@@ -43,13 +38,13 @@ theorem isometry_homotopies (A : LocalDatum p n D ρplus) (i : ℕ) (g : ZMod (p
     ∃ UT : (StructureCx (gridComplex (meshSequence A i) n)).X ((n : ℤ) + 1),
       (∀ x : {x : ℤ × ℤ // x.1 + x.2 = ((n + 4 : ℕ) : ℤ)},
         (StructureCx (chainModel A i)).d (((n + 4 : ℕ) : ℤ) + 1) ((n + 4 : ℕ) : ℤ)
-            (basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg_ih
+            (basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg
               ((n : ℤ) + 1) 4 (((n + 4 : ℕ) : ℤ) + 1) (by push_cast; ring) UT cp2Structure) x =
           dualHom (groupApprox A i g x.1.2) ≫ (chainModelDuality A i).φ x ≫
               groupApprox A i g x.1.1 - (chainModelDuality A i).φ x) ∧
       ∀ x : {x : ℤ × ℤ // x.1 + x.2 = ((n + 4 : ℕ) : ℤ) + 1},
         (prop (chainModelLabel A i x.1.2) (chainModelLabel A i x.1.1)
-          (basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg_ih
+          (basedStrProd (gridComplex (meshSequence A i) n) cp2Complex cp2Complex_dim_neg
             ((n : ℤ) + 1) 4 (((n + 4 : ℕ) : ℤ) + 1) (by push_cast; ring) UT cp2Structure x) :
           ℝ) ≤
           (3 * trackModulus A (2 * (4 / (meshSequence A i : ℝ))) +
