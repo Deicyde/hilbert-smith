@@ -63,6 +63,7 @@ import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
 import HilbertSmithPaper.Categories.Asymptotic.EventuallyZeroSubcategory
 import HilbertSmithPaper.Categories.Asymptotic.PointIdeal
+import HilbertSmithPaper.Categories.Asymptotic.AsymptoticCategory
 import HilbertSmithPaper.Signatures.Forms.FormSignature
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIdentity
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
