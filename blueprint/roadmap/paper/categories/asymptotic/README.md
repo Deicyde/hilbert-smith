@@ -16,7 +16,6 @@ Group sequences, propagation and its bounds, the asymptotic category with its st
 - [Relabelling changes propagation by the labelling errors](prop-relabel.md)
 - [Asymptotic category](asymptotic-category.md)
 - [Duality on the asymptotic category](asymptotic-duality.md)
-- [Restriction to a sub-basis](restriction-sub-basis.md)
 - [Free category of a finite group](free-category.md)
 - [Bases of finite free G-sets](free-set-basis.md)
 - [Sequence category](point-sequence-category.md)
@@ -24,3 +23,7 @@ Group sequences, propagation and its bounds, the asymptotic category with its st
 - [Point ideal](point-ideal.md)
 - [Point filtration](point-filtration.md)
 - [Point category](point-quotient.md)
+
+## Sections
+
+- [Restriction to a sub-basis](restriction/README.md)

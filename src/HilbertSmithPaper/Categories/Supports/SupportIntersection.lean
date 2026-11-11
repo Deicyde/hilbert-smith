@@ -19,7 +19,7 @@ variable {X : Type*} [MetricSpace X]
 
 /-- For compact `X` and closed `A, B`, every `ε`-thickening of `A ∩ B` contains the intersection of
 some `δ`-thickenings of `A` and of `B`. -/
-theorem exists_thickening_inter_subset [CompactSpace X] {A B : Set X} (hA : IsClosed A)
+private theorem exists_thickening_inter_subset [CompactSpace X] {A B : Set X} (hA : IsClosed A)
     (hB : IsClosed B) {ε : ℝ} (hε : 0 < ε) :
     ∃ δ > 0, thickening δ A ∩ thickening δ B ⊆ thickening ε (A ∩ B) := by
   by_contra h

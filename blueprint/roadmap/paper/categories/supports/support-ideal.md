@@ -25,4 +25,8 @@ Let the $C_p$-action on $X$ be isometric and let $S\subset X$ be invariant. A mo
 ## Proof depends on
 
 - [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
-- [Restriction to a sub-basis](../asymptotic/restriction-sub-basis.md)
+- [Restriction to a sub-basis](../asymptotic/restriction/restriction-sub-basis.md)
+- [Coordinate projection onto a restriction](../asymptotic/restriction/coordinate-projection.md)
+- [Inclusion after projection](../asymptotic/restriction/projection-inclusion.md)
+- [Factorization through a diagonal projection, columns](../asymptotic/restriction/diagonal-projection-columns.md)
+- [Enumerated indices satisfy the predicate](../asymptotic/restriction/restriction-index-mem.md)
