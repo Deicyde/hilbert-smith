@@ -8,7 +8,7 @@ lean: HSP.dualCx
 
 # Dual complex
 
-Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal B$. For a complex $C$ and $n\in\mathbb Z$, $C^{n-*}$ has $(C^{n-*})_r=C_{n-r}^*$ and $d_r=(-1)^r d^*$. A duality category has binary direct sums, given by its finite direct sums; mapping cones and sums of complexes use them.
+Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal B$. For a complex $C$ and $n\in\mathbb Z$, $C^{n-*}$ has $(C^{n-*})_r=C_{n-r}^*$ and $d_r=(-1)^r d^*$.
 
 ## Sources
 
@@ -18,3 +18,4 @@ Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal
 ## Depends on
 
 - [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [A duality category has binary direct sums](../categories/dual-binary-biproducts.md)

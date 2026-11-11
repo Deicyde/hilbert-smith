@@ -20,3 +20,4 @@ $(C,\phi)\oplus(C',\phi')=(C\oplus C',\phi\oplus\phi')$, where $\phi\oplus\phi'=
 
 - [Structure complex](structure-complex.md)
 - [Pushforward of structures](structure-push.md)
+- [A duality category has binary direct sums](../categories/dual-binary-biproducts.md)

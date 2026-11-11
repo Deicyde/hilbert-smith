@@ -287,6 +287,7 @@ import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
 import HilbertSmithPaper.Inputs.Newman.NewmanSmallOrbits
 import HilbertSmithPaper.LTheory.Base.Categories.DualAdditiveSubcategory
+import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
