@@ -16,3 +16,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [Kronecker product of composites](kron-composite.md)
 - [Kronecker product of identities](kron-transport.md)
 - [Kronecker product with a zero factor](kron-zero.md)
+- [Transport of summand projections](tensor-summand-transport.md)
