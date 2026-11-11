@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionBoundaryCommute
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
+import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
 
 /-!
 # Ultimate boundary

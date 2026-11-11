@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapLevel
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
+import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
 
 /-!
 # The induced map commutes with cls
