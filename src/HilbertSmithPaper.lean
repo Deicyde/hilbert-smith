@@ -48,6 +48,7 @@ import HilbertSmithPaper.LocalData.Chart.PinchHomotopy
 import HilbertSmithPaper.LocalData.Chart.StabilizersOnTestRegion
 import HilbertSmithPaper.LocalData.Chart.TestMap
 import HilbertSmithPaper.LocalData.Chart.TestMapContinuous
+import HilbertSmithPaper.LocalData.Chart.TestMapHomotopy
 import HilbertSmithPaper.LocalData.Chart.TestMapInvariant
 import HilbertSmithPaper.LocalData.Chart.TestMapProper
 import HilbertSmithPaper.LocalData.Chart.TestRegion
