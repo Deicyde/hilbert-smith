@@ -24,6 +24,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
 import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.HomotopyIsometryInvariance
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
+import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 
 /-!
 # The paper
