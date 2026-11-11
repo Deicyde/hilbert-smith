@@ -4,6 +4,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
+import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 
 /-!
 # The paper
