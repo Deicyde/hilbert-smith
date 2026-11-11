@@ -66,6 +66,7 @@ import HilbertSmithPaper.Corner.ExteriorClosed
 import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
+import HilbertSmithPaper.Corner.Theorem.ScalarForget
 import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Evaluation.LabelledModel
