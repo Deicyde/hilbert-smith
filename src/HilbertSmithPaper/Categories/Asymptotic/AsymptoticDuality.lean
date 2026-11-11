@@ -1,8 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.Structure.Biproducts
 import HilbertSmithPaper.Categories.Asymptotic.Structure.ClassEq
-import HilbertSmithPaper.Categories.Asymptotic.Structure.MorphismPropagation
-import HilbertSmithPaper.Categories.Asymptotic.Structure.LevelwiseTranspose
+import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 
 /-!
@@ -38,10 +37,6 @@ private theorem transpose_add {M N : AsymPre G X} (u v : M ⟶ N) :
 private theorem transpose_smul {M N : AsymPre G X} (c : ℚ) (u : M ⟶ N) :
     transpose (c • u) = c • transpose u :=
   hom_ext fun i => DualCat.dualHom_smul c (coord u i)
-
-private theorem transpose_transpose' {M N : AsymPre G X} (u : M ⟶ N) :
-    transpose (transpose u) = u :=
-  hom_ext fun i => FreeCat.hom_ext (Matrix.transpose_transpose (FreeCat.mat (coord u i)))
 
 end AsymPre
 
@@ -90,7 +85,7 @@ instance dualCat : DualCat (AsymCat G X) where
   dual_dual _ := rfl
   dualHom_dualHom f := by
     obtain ⟨u, rfl⟩ := mkHom_surjective f
-    rw [dualHom'_mkHom, dualHom'_mkHom, AsymPre.transpose_transpose', eqToHom_refl,
+    rw [dualHom'_mkHom, dualHom'_mkHom, AsymPre.transpose_transpose, eqToHom_refl,
       eqToHom_refl, Category.id_comp, Category.comp_id]
   dualHom_zero := by
     intro P Q
