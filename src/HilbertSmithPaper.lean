@@ -15,6 +15,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
+import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
