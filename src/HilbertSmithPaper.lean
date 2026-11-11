@@ -188,6 +188,8 @@ import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
 import HilbertSmithPaper.Evaluation.CubicalPinch
+import HilbertSmithPaper.Evaluation.Germ
+import HilbertSmithPaper.Evaluation.GermHomotopy
 import HilbertSmithPaper.Evaluation.LabelledModel
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
