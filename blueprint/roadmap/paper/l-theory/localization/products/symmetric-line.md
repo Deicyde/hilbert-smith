@@ -2,6 +2,8 @@
 article_id: af_e14d11d332d9e89abdc3731a
 declaration: def
 origin: cited
+statement: formalized
+lean: HSP.symLine
 ---
 
 # The symmetric line
