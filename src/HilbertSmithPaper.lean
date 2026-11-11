@@ -130,6 +130,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductDualityMap
 import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
 import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
+import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
