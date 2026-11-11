@@ -55,7 +55,7 @@ theorem exists_carried_chainMap {E : ChainComplex (ModuleCat.{0} ℚ) ℤ} {ι :
       ε ∘ₗ (u.f 0).hom = εE ∧
       ∀ {X : Type} [MetricSpace X] {κ : ℤ → Type} [∀ s, Fintype (κ s)] [∀ r, Fintype (ι r)]
         (bF : ∀ s, Module.Basis (κ s) ℚ (F.X s)) (lE : ∀ r, ι r → X) (lF : ∀ s, κ s → X)
-        (a : ℝ),
+        (a : ℝ), 0 ≤ a →
         (∀ r (e : ι r) s, ∀ x ∈ Γ.sub r e s, ∀ f, (bF s).repr x f ≠ 0 →
           dist (lF s f) (lE r e) ≤ a) →
         ∀ r, (prop (lE r) (lF r) (Matrix.of fun f e => (bF r).repr ((u.f r).hom (b r e)) f) :

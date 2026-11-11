@@ -37,7 +37,7 @@ theorem carried_homotopy {E : ChainComplex (ModuleCat.{0} ℚ) ℤ} {ι : ℤ �
       (∀ r, ∀ e ∈ S r, (H.hom r (r + 1)).hom (b r e) = 0) ∧
       ∀ {X : Type} [MetricSpace X] {κ : ℤ → Type} [∀ s, Fintype (κ s)] [∀ r, Fintype (ι r)]
         (bF : ∀ s, Module.Basis (κ s) ℚ (F.X s)) (lE : ∀ r, ι r → X) (lF : ∀ s, κ s → X)
-        (a : ℝ),
+        (a : ℝ), 0 ≤ a →
         (∀ r (e : ι r) s, ∀ x ∈ Γ.sub r e s, ∀ f, (bF s).repr x f ≠ 0 →
           dist (lF s f) (lE r e) ≤ a) →
         ∀ r, (prop (lE r) (lF (r + 1))
