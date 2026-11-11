@@ -19,6 +19,7 @@ import HilbertSmithPaper.Categories.Cuts.ExteriorCutIdentification
 import HilbertSmithPaper.Categories.Functors.ForgetGroup
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
 import HilbertSmithPaper.Categories.Functors.Pushforward
+import HilbertSmithPaper.Categories.Functors.RelabellingEquivalence
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
 import HilbertSmithPaper.Categories.Supports.ExteriorFunctor
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
