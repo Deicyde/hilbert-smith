@@ -2,6 +2,9 @@
 article_id: af_5614e28ae11fa959a0aa2e6f
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.StructureCx.T_sq
+proof: formalized
 ---
 
 # T is an involution

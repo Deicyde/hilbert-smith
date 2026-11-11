@@ -2,10 +2,12 @@
 article_id: af_f429bc8df81b00dd937a1270
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.adjoint_homotopies
 ---
 # Adjoint homotopies
 
-Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$, so that $a'a-1=dS+Sd$. On $D_i^{N-*}$ (degree $r$ is $D^*_{N-r}$, with differential $d_r=(-1)^rd^*$) let $K$ be the map of degree $+1$ given by $(-1)^rS^*$ on degree $r$, and put $V_g=a\varphi_iK+U_ga'^*$. Then:
+Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$, so that $a'a-1=dS+Sd$. On $D_i^{N-*}$ (degree $r$ is $D^*_{N-r}$, with differential $d_r=(-1)^rd^*$) let $K$ be the map of degree $+1$ given by $(-1)^rS^*$ on degree $r$, and put $V_g=a\varphi_iK+U_ga'^*$. Then: Here $B_{-g,g}$ and $U_g$ are the ones chosen in [product homotopies](product-homotopies.md) and [isometry homotopies](isometry-homotopies.md), and labels, $\chi_i$ and $\rho$ are as in product homotopies.
 1. $dV_g+V_gd=a_g\varphi_i-\varphi_ia_{-g}^*$;
 2. there is a null sequence $(\mu''_i)$ such that $V_g$ has [sphere propagation](../grid/sphere-labels.md) at most $\mu''_i$ and, for every $v>0$, $V_g^{[v]}$ has [graph type](../../corner/actions/graph-type.md) $\chi_i(g)$ with bound $\mu''_i$ for all large $i$.
 
@@ -14,6 +16,6 @@ Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$, so that $a'a-1=dS+Sd$. On
 ## Sources
 - HS paper, Section 9; signs rechecked.
 ## Depends on
-- [Product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md)
+- [Product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
 ## Proof depends on
-- [Buffered restriction](buffered-restriction.md), [graph type of approximations](approximations-graph-type.md), [Poincaré](../grid/chain-model-poincare.md)
+- [graph type of approximations](approximations-graph-type.md), [Poincaré](../grid/chain-model-poincare.md)

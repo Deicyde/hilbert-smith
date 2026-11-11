@@ -1,7 +1,9 @@
 ---
 article_id: af_d8fc7b5325afaf87dcce725a
-declaration: def
+declaration: abbrev
 origin: background
+statement: formalized
+lean: HSP.Dec
 ---
 
 # Decorated objects

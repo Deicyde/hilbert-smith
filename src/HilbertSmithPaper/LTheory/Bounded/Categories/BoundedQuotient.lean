@@ -40,7 +40,7 @@ private lemma ideal_sum {X Y : A} {ι : Type*} (s : Finset ι) (f : ι → (X �
       (ih fun i hi => hf i (Finset.mem_insert_of_mem hi))
 
 /-- Every entry of a map factoring through `C_ℤ(U)` lies in `I_𝒰`. -/
-lemma ideal_apply_of_ideal_sub {M N : Bounded A} {f : M ⟶ N}
+private lemma ideal_apply_of_ideal_sub {M N : Bounded A} {f : M ⟶ N}
     (hf : FiltQuot.ideal (sub U) f) (l n : ℤ) : FiltQuot.ideal U (f.1 l n) := by
   obtain ⟨V, hV, a, b, rfl⟩ := hf
   obtain ⟨r, hr⟩ := a.2
@@ -62,7 +62,7 @@ def quotientFunctorF : FiltQuot (sub U) ⥤ Bounded (FiltQuot U) :=
     rw [← sub_eq_zero, ← Functor.map_sub]
     exact map_eq_zero_of_ideal U h
 
-lemma quotientFunctorF_map {M N : Bounded A} (f : M ⟶ N) :
+private lemma quotientFunctorF_map {M N : Bounded A} (f : M ⟶ N) :
     (quotientFunctorF U).map ((FiltQuot.functor (sub U)).map f) =
       (mapFunctor (FiltQuot.functor U)).map f := rfl
 

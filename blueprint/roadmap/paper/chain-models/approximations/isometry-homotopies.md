@@ -2,6 +2,8 @@
 article_id: af_90a5b0f9a0f674bee9fee189
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.isometry_homotopies
 ---
 # Isometry homotopies
 

@@ -216,10 +216,6 @@ def karoubiFiltration (F : KaroubiFiltration U) : KaroubiFiltration (sub U) wher
       · rw [F.dual_mem_iff, hdiag]
         exact hed n
 
-lemma karoubiFiltration_D (F : KaroubiFiltration U) (M : Bounded A) :
-    (karoubiFiltration F).D M =
-      {p | ∃ d : ∀ n, M.X n ⟶ M.X n, p = diag d ∧ ∀ n, d n ∈ F.D (M.X n)} := rfl
-
 end Bounded
 
 end HSP

@@ -12,6 +12,7 @@ Group sequences, propagation and its bounds, the asymptotic category with its st
 - [Propagation of a scalar multiple](prop-smul.md)
 - [Propagation of a product](prop-mul.md)
 - [Propagation of a transpose](prop-transpose.md)
+- [Propagation of the identity](prop-one.md)
 - [Relabelling changes propagation by the labelling errors](prop-relabel.md)
 - [Asymptotic category](asymptotic-category.md)
 - [Duality on the asymptotic category](asymptotic-duality.md)

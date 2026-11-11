@@ -1,7 +1,9 @@
 ---
 article_id: af_bce3eb446866237d5a2535bf
-declaration: lemma
+declaration: def
 origin: background
+statement: formalized
+lean: HSP.dualCx.mapHomotopyEquiv
 ---
 
 # Duals of homotopy equivalences

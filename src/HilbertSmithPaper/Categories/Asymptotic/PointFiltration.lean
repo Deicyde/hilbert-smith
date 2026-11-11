@@ -24,12 +24,6 @@ namespace HSP
 
 variable {p : ℕ} {G : GroupSeq p}
 
-private theorem freeCat_isZero_of_n {H : Type} [AddGroup H] [Fintype H] [DecidableEq H]
-    (Y : FreeCat H) (h : Y.n = 0) : IsZero Y := by
-  obtain ⟨n⟩ := Y
-  cases h
-  exact FreeCat.isZero_zero
-
 /-- Step 1: `𝒮_𝐆` is a full additive subcategory closed under the duality `M^* = M`. -/
 instance SCat.isDualAdditive : IsDualAdditive (SCat G) where
   exists_zero := ⟨fun _ => ⟨0⟩, by simp [SCat, PCat.coord], PCat.isZero_zero⟩
@@ -51,12 +45,12 @@ def truncObj : PCat G := fun i => ⟨if S i then (M.coord i).n else 0⟩
 
 variable {M S}
 
-theorem truncObj_coord_of {i : ℕ} (h : S i) : (truncObj M S).coord i = M.coord i := by
+private theorem truncObj_coord_of {i : ℕ} (h : S i) : (truncObj M S).coord i = M.coord i := by
   show (⟨if S i then (M.coord i).n else 0⟩ : FreeCat (G.G i)) = M.coord i
   rw [ite_eq_left h]
 
-theorem truncObj_isZero_of {i : ℕ} (h : ¬S i) : IsZero ((truncObj M S).coord i) :=
-  freeCat_isZero_of_n _ (by show (if S i then (M.coord i).n else 0) = 0; rw [ite_eq_right h])
+private theorem truncObj_isZero_of {i : ℕ} (h : ¬S i) : IsZero ((truncObj M S).coord i) :=
+  FreeCat.isZero_of_n_eq_zero _ (by show (if S i then (M.coord i).n else 0) = 0; rw [ite_eq_right h])
 
 variable (M S)
 
@@ -73,14 +67,14 @@ def truncPro : M ⟶ truncObj M S :=
 /-- The truncation `p_S : M → M`: the identity on `S` and zero elsewhere. -/
 def trunc : M ⟶ M := fun i => (if S i then 𝟙 (M.coord i) else 0 : M.coord i ⟶ M.coord i)
 
-theorem homCoord_trunc (i : ℕ) :
+private theorem homCoord_trunc (i : ℕ) :
     homCoord (trunc M S) i = if S i then 𝟙 (M.coord i) else 0 := rfl
 
-theorem homCoord_truncInc (i : ℕ) : homCoord (truncInc M S) i =
+private theorem homCoord_truncInc (i : ℕ) : homCoord (truncInc M S) i =
     (if h : S i then eqToHom (truncObj_coord_of h) else 0 :
       (truncObj M S).coord i ⟶ M.coord i) := rfl
 
-theorem homCoord_truncPro (i : ℕ) : homCoord (truncPro M S) i =
+private theorem homCoord_truncPro (i : ℕ) : homCoord (truncPro M S) i =
     (if h : S i then eqToHom (truncObj_coord_of h).symm else 0 :
       M.coord i ⟶ (truncObj M S).coord i) := rfl
 
@@ -97,7 +91,7 @@ theorem truncPro_truncInc : truncPro M S ≫ truncInc M S = trunc M S := by
   · rw [dite_eq_left h, dite_eq_left h, ite_eq_left h, eqToHom_trans, eqToHom_refl]
   · rw [dite_eq_right h, dite_eq_right h, ite_eq_right h, Limits.zero_comp]
 
-theorem trunc_not : trunc M (fun i => ¬S i) = 𝟙 M - trunc M S := by
+private theorem trunc_not : trunc M (fun i => ¬S i) = 𝟙 M - trunc M S := by
   refine hom_ext fun i => ?_
   rw [homCoord_sub, homCoord_trunc, homCoord_trunc, homCoord_id]
   by_cases h : S i
@@ -110,7 +104,7 @@ theorem trunc_comp_trunc (S' : ℕ → Prop) [DecidablePred S'] :
   rw [homCoord_comp, homCoord_trunc, homCoord_trunc, homCoord_trunc]
   by_cases h : S i <;> by_cases h' : S' i <;> simp [h, h']
 
-theorem trunc_congr {S' : ℕ → Prop} [DecidablePred S'] (h : ∀ i, S i ↔ S' i) :
+private theorem trunc_congr {S' : ℕ → Prop} [DecidablePred S'] (h : ∀ i, S i ↔ S' i) :
     trunc M S = trunc M S' := by
   refine hom_ext fun i => ?_
   rw [homCoord_trunc, homCoord_trunc]
@@ -171,7 +165,7 @@ noncomputable def SCat.karoubiFiltration : KaroubiFiltration (SCat G) where
     by_cases h : i < N
     · rw [ite_eq_left h, Category.comp_id]
     · rw [ite_eq_right h, Limits.comp_zero]
-      exact ((freeCat_isZero_of_n _ (hN i (by omega))).eq_of_src _ _).symm
+      exact ((FreeCat.isZero_of_n_eq_zero _ (hN i (by omega))).eq_of_src _ _).symm
   factor_right := by
     intro M V g hV
     obtain ⟨N, hN⟩ := exists_bound hV
@@ -180,7 +174,7 @@ noncomputable def SCat.karoubiFiltration : KaroubiFiltration (SCat G) where
     by_cases h : i < N
     · rw [ite_eq_left h, Category.id_comp]
     · rw [ite_eq_right h, Limits.zero_comp]
-      exact ((freeCat_isZero_of_n _ (hN i (by omega))).eq_of_tgt _ _).symm
+      exact ((FreeCat.isZero_of_n_eq_zero _ (hN i (by omega))).eq_of_tgt _ _).symm
   dual_mem_iff := by
     intro M q
     constructor
