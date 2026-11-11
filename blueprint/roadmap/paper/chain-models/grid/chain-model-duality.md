@@ -21,5 +21,5 @@ where $p_j=1-\dim x_j$ is the degree of $\varphi^s(x_j^*)$. The factor $\varphi_
 ## Depends on
 - [Product of structures in explicit bases](tensor/structure-products/based-str-prod.md), [product of duality maps in explicit bases](tensor/structure-products/based-dual-prod.md)
 - [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
-- [symmetric circle structure](circle-data/circle-phi-sym.md), [circle inverse](circle-data/circle-b.md)
+- [symmetric circle structure](poincare/circle-data/circle-phi-sym.md), [circle inverse](poincare/circle-data/circle-b.md)
 - [Chain model](chain-model.md), [circle duality](circle-duality.md), [cells of CP^2](cp2-cells.md), [tensor product of based complexes](based-complex-tensor.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [dual complex](../../l-theory/base/complexes/dual-complex.md)

@@ -2,8 +2,8 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhi
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleH
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhi
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleH
 
 /-!
 # The symmetric circle structure
