@@ -64,6 +64,7 @@ import HilbertSmithPaper.LocalData.Control.FixedLocalData
 import HilbertSmithPaper.LocalData.Control.FixedLocalDataExists
 import HilbertSmithPaper.LocalData.Control.OrbitSupMetric
 import HilbertSmithPaper.LocalData.Control.OrbitSupMetricInvariant
+import HilbertSmithPaper.LocalData.Control.OrbitSupMetricProperties
 import HilbertSmithPaper.LocalData.Control.ReductionKernel
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.LocalData.Control.Representatives
