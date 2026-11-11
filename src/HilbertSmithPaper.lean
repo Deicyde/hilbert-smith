@@ -315,7 +315,9 @@ import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapComp
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapId
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapIso
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorComplex
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorCone
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorDualIso
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorPairMap
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureSum
