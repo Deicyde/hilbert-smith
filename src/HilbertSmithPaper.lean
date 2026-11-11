@@ -105,7 +105,17 @@ import HilbertSmithPaper.ChainModels.Grid.Restriction
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHomComp
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockComp
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExt
+import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExtraction
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
+import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
+import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
+import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorSummandTransport
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
 import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
