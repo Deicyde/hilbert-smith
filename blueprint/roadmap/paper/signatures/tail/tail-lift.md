@@ -1,7 +1,9 @@
 ---
 article_id: af_7cd202bfef2264af4166272c
-declaration: lemma
+declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.tail_lift
 ---
 
 # Classes over $\mathcal V$ lift
