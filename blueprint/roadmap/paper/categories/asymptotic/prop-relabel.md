@@ -2,6 +2,9 @@
 article_id: af_4718c82ef7c7cad9779e3fdf
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.prop_relabel_le
 ---
 
 # Relabelling changes propagation by the labelling errors

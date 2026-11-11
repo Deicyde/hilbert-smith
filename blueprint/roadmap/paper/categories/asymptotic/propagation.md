@@ -2,6 +2,8 @@
 article_id: af_02b7f3db20d4caa4f3e65170
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.prop
 ---
 
 # Propagation

@@ -2,6 +2,8 @@
 article_id: af_df57c005e9d53870860a0788
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.hilbertSmith
 ---
 
 # Hilbert–Smith
