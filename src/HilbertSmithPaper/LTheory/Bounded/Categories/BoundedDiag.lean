@@ -1,16 +1,18 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 
 /-!
 # Diagonal morphisms of `C_ℤ(A)`
 
 For maps `d_n : M_n ⟶ N_n`, `diag(d) : M ⟶ N` has entries `d_n` at `(n, n)` and `0` elsewhere
-(propagation `0`); `diag(e) diag(d) = diag(e_n d_n)`, the zero family gives `0`, and
-`1_M = diag(1_{M_n})`.
+(propagation `0`); `diag(e) diag(d) = diag(e_n d_n)`, the zero family gives `0`,
+`1_M = diag(1_{M_n})`, `diag(d) + diag(d') = diag(d_n + d'_n)` and `diag(d)^* = diag(d_n^*)`.
 
 ## Encoding
 
 `Bounded.diag d` (the declaration of the article) is the bounded family `Bounded.diagF d`; the
-lemmas `diag_apply`, `diag_comp_diag`, `diag_zero` and `id_eq_diag` unfold it.
+lemmas `diag_apply`, `diag_comp_diag`, `diag_zero`, `id_eq_diag`, `diag_add` and `dualHom_diag_eq`
+unfold it.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -46,6 +48,26 @@ lemma diag_zero : diag (fun n => (0 : M.X n ⟶ N.X n)) = 0 := hom_ext fun m n =
   by_cases h : m = n
   · subst h; rw [diagF_self]
   · rw [diagF_ne _ h]
+
+
+lemma diag_add (d e : ∀ n, M.X n ⟶ N.X n) : diag d + diag e = diag fun n => d n + e n :=
+  hom_ext fun a b => by
+    rw [add_apply, diag_apply, diag_apply, diag_apply]
+    by_cases h : a = b
+    · subst h
+      rw [diagF_self, diagF_self, diagF_self]
+    · rw [diagF_ne _ h, diagF_ne _ h, diagF_ne _ h, add_zero]
+
+open DualCat in
+lemma dualHom_diag_eq [HasFiniteBiproducts A] [DualCat A] (d : ∀ n, M.X n ⟶ N.X n) :
+    dualHom (diag d) = diag (M := dual N) (N := dual M) (fun n => dualHom (d n)) :=
+  hom_ext fun a b => by
+    rw [dualHom_apply]
+    change dualHom (diagF d b a) = diagF (M := dual N) (N := dual M) (fun n => dualHom (d n)) a b
+    by_cases h : a = b
+    · subst h
+      rw [diagF_self, diagF_self]
+    · rw [diagF_ne _ (Ne.symm h), diagF_ne _ h, dualHom_zero]
 
 end Bounded
 
