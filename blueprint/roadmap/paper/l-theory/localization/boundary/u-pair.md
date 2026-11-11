@@ -20,6 +20,7 @@ Let $\mathcal U\subset\mathcal A$ be as in [Decorated objects](../decorations/de
 
 ## Depends on
 
+- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
 - [Decorated objects](../decorations/decorated-object.md)
 - [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)

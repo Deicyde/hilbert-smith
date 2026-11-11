@@ -20,6 +20,7 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 
 ## Depends on
 
+- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
 - [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 - [U-pairs](u-pair.md)
 - [Decorated objects](../decorations/decorated-object.md)

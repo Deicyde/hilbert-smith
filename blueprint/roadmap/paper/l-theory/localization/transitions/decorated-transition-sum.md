@@ -18,6 +18,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 
 ## Depends on
 
+- [The sum of two Poincaré complexes](../../base/pairs/poincare-sum.md)
 - [Decorated product with the line](decorated-line-product.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Group structure on L](../../base/groups/l-group-add.md)
