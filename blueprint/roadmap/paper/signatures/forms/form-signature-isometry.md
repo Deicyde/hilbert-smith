@@ -23,4 +23,5 @@ Let $W$, $W'$ be real vector spaces with $W$ finite-dimensional, $b$, $b'$ bilin
 
 ## Proof depends on
 
+- [Signature splittings](signature-splitting.md)
 - [Independence](../l-four/signature-splitting-independence.md)

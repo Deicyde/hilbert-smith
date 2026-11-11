@@ -247,6 +247,7 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureIdentity
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
 import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
+import HilbertSmithPaper.Signatures.Forms.SignatureSplitting
 import HilbertSmithPaper.Signatures.LFour.BoundarySignatureZero
 import HilbertSmithPaper.Signatures.LFour.ComplexSignature
 import HilbertSmithPaper.Signatures.LFour.IntegerSignature
