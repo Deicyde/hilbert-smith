@@ -1,1 +1,1 @@
-HSP.LTheory.lift_closed : ∀ x : decoratedL A U k, ∃ V : UPair A U k, decoratedL.mk V.image = x. Inherits the sorry of lift_rel until that is proved; the derivation itself is sorry-free. localization-boundary chooses from it.
+HSP.UPair.exists_image_eq (F : KaroubiFiltration U) (x : LIm U k) : ∃ V : UPair U k, LGroup.mk V.image = x is stated (proof open). It inherits the open statement Lifting (lift-to-pair) once that is stated; the derivation (zero U-pair, closed-pair, transport along iR ≅ D₀ ∪ R) is then sorry-free. localization-boundary chooses from it.
