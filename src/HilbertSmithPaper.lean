@@ -160,6 +160,8 @@ import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 import HilbertSmithPaper.ChainModels.Grid.Model.GridStructure
+import HilbertSmithPaper.ChainModels.Grid.Model.TensorLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.TensorLabelGrid
 import HilbertSmithPaper.ChainModels.Grid.Model.UnitStructure
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelAug
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelDPropagation
@@ -192,6 +194,7 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridInverse
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridInverseRight
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridStructureU
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.IdDualDeg0
+import HilbertSmithPaper.ChainModels.Grid.Poincare.PropProductMaps
 import HilbertSmithPaper.ChainModels.Grid.Poincare.TensorHomotopy
 import HilbertSmithPaper.ChainModels.Grid.Realization
 import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
