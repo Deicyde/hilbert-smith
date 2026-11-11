@@ -1,8 +1,5 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
-import HilbertSmithPaper.Corner.RoundSphere
-import HilbertSmithPaper.Corner.Exterior
-import HilbertSmithPaper.Corner.CutSets
 
 /-!
 # Standing data
@@ -86,3 +83,58 @@ def N : ℕ := D.n + 4
 end StandingData
 
 end HSP.Corner
+
+/-! ### Non-vacuity witnesses (private)
+
+Standing data from the toy control space `ZMod 2` (discrete metric, translation action),
+`G_i = ℤ/2^{max(i,1)}` with reduction mod 2, `n = 1`, `R = 2`, `s = 1`. -/
+
+section Witness
+open HSP.Corner
+
+/-- Toy control space: `ZMod 2` with the discrete metric. -/
+private def Tw : Type := ZMod 2
+
+private instance : DecidableEq Tw := inferInstanceAs (DecidableEq (ZMod 2))
+private instance : Fintype Tw := inferInstanceAs (Fintype (ZMod 2))
+private instance : AddAction (ZMod 2) Tw := inferInstanceAs (AddAction (ZMod 2) (ZMod 2))
+
+private instance : MetricSpace Tw where
+  dist x y := if x = y then 0 else 1
+  dist_self x := by simp
+  dist_comm x y := by by_cases h : x = y <;> simp [h, eq_comm]
+  dist_triangle x y z := by
+    by_cases h1 : x = y <;> by_cases h2 : y = z <;> by_cases h3 : x = z <;> simp_all
+  eq_of_dist_eq_zero {x y} h := by by_contra h'; simp [h'] at h
+
+private instance : IsIsometricVAdd (ZMod 2) Tw :=
+  ⟨fun c => Isometry.of_dist_eq fun x y => by
+    show (if c + (show ZMod 2 from x) = c + (show ZMod 2 from y) then (0:ℝ) else 1) = if (show ZMod 2 from x) = (show ZMod 2 from y) then 0 else 1
+    split_ifs with h1 h2 h2
+    · rfl
+    · exact absurd (add_left_cancel h1) h2
+    · exact absurd (by rw [h2]) h1
+    · rfl⟩
+
+private def standingWitness : StandingData where
+  p := 2
+  hp := ⟨Nat.prime_two⟩
+  a i := max i 1
+  one_le_a i := le_max_right _ _
+  χ i := (ZMod.castHom (dvd_pow_self 2 (by omega : max i 1 ≠ 0)) (ZMod 2)).toAddMonoidHom
+  χ_surjective i := ZMod.ringHom_surjective _
+  T := Tw
+  nonempty := ⟨(0 : ZMod 2)⟩
+  free c t h := by
+    have h' : c + (show ZMod 2 from t) = 0 + (show ZMod 2 from t) := by rw [zero_add]; exact h
+    exact add_right_cancel h'
+  n := 1
+  one_le_n := le_rfl
+  R := 2
+  s := 1
+  R_pos := by norm_num
+  s_pos := by norm_num
+  s_lt := by norm_num
+
+
+end Witness

@@ -31,6 +31,3 @@ The properties of these sets that the iterated cut uses are [the exterior is clo
 ## Depends on
 
 - [Group sequence](../categories/asymptotic/group-sequence.md)
-- [The round sphere](round-sphere.md)
-- [The exterior](exterior.md)
-- [The cut sets](cut-sets.md)

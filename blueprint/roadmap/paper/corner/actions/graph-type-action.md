@@ -28,6 +28,8 @@ such that, for every $i$ and all $g,h\in G_i$, with the same bound $\delta_i$:
 ## Depends on
 
 - [Standing data](../standing-data.md)
+- [The round sphere](../round-sphere.md)
+- [The exterior](../exterior.md)
 - [Graph-type matrices](graph-type.md)
 - [Exterior witnesses](exterior-witness.md)
 - [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)

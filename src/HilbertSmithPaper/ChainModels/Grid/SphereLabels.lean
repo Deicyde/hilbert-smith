@@ -2,7 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
-import HilbertSmithPaper.Corner.StandingData
+import HilbertSmithPaper.Corner.RoundSphere
 
 /-!
 # Sphere labels
