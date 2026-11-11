@@ -25,7 +25,7 @@ variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 /-- Some `i₀ ≥ 1` has the buffer conditions with `(ε'_i)` for every `i ≥ i₀`. -/
 private lemma exists_startIndex (F : FixedLocalData p n D ρplus) :
     ∃ i₀ : ℕ, 1 ≤ i₀ ∧ ∀ i ≥ i₀, BuffersHold F (buffer_eventually F).choose i := by
-  obtain ⟨N, hN⟩ := eventually_atTop.1 (buffer_eventually F).choose_spec.2
+  obtain ⟨N, hN⟩ := eventually_atTop.1 (buffer_eventually F).choose_spec.2.2
   exact ⟨max N 1, le_max_right _ _, fun i hi => hN i ((le_max_left _ _).trans hi)⟩
 
 open Classical in
