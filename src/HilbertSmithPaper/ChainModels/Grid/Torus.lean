@@ -115,6 +115,33 @@ lemma dist₂_le (x y : Torus n) : dist₂ x y ≤ √n * dist x y := by
         Finset.sum_le_sum fun j _ => pow_le_pow_left₀ dist_nonneg (dist_le_pi_dist x y j) 2
     _ = n * dist x y ^ 2 := by simp
 
+/-- `d_∞(x, 0) ≤ |x̃|`: the maximum norm of the lift is at most its Euclidean norm. -/
+lemma norm_le_norm_lift (x : Torus n) : ‖x‖ ≤ ‖lift x‖ := by
+  rw [← norm_ofLp_lift]
+  exact (pi_norm_le_iff_of_nonneg (norm_nonneg _)).2 fun j => PiLp.norm_apply_le _ j
+
+/-- The lift of `q(y)` is `y` when `|y| < 2`. -/
+lemma lift_proj (y : EuclideanSpace ℝ (Fin n)) (hy : ‖y‖ < 2) : lift (proj y) = y := by
+  refine PiLp.ext fun j => ?_
+  have hj : |y.ofLp j| < 2 :=
+    lt_of_le_of_lt (by simpa [Real.norm_eq_abs] using PiLp.norm_apply_le y j) hy
+  rw [abs_lt] at hj
+  simp only [lift, proj]
+  rw [AddCircle.equivIco_coe_eq (show y.ofLp j ∈ Set.Ico (-2 : ℝ) (-2 + 4) from
+    ⟨by linarith, by linarith⟩)]
+
+/-- `d_2(q y, q y') ≤ |y - y'|`. -/
+lemma dist₂_proj_le (y y' : EuclideanSpace ℝ (Fin n)) : dist₂ (proj y) (proj y') ≤ ‖y - y'‖ := by
+  rw [dist₂, EuclideanSpace.norm_eq]
+  refine Real.sqrt_le_sqrt (Finset.sum_le_sum fun j _ => pow_le_pow_left₀ dist_nonneg ?_ 2)
+  simp only [proj, dist_eq_norm, ← AddCircle.coe_sub, WithLp.ofLp_sub, Pi.sub_apply]
+  exact QuotientAddGroup.norm_mk_le_norm
+
+/-- The quotient map `q` is continuous. -/
+lemma continuous_proj : Continuous (proj (n := n)) :=
+  continuous_pi fun j => (AddCircle.continuous_mk' (4 : ℝ)).comp
+    ((continuous_apply j).comp (PiLp.continuous_ofLp 2 _))
+
 end Torus
 
 end HSP.ChainModels
