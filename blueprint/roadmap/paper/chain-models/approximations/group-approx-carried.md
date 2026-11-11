@@ -2,6 +2,8 @@
 article_id: af_d019634c542cb492d6dd2ba1
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.groupApprox_carried
 ---
 # Carried group approximations
 
