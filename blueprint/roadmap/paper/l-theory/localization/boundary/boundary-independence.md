@@ -18,6 +18,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 
 ## Depends on
 
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [U-pairs](u-pair.md)
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [L-group](../../base/groups/l-group.md)

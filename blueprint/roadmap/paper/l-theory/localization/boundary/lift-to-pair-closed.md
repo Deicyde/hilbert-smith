@@ -21,6 +21,7 @@ This lemma rests on the open statement [Lifting](lift-to-pair.md).
 
 ## Depends on
 
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [U-pairs](u-pair.md)
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)

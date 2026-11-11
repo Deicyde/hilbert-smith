@@ -8,7 +8,7 @@ lean: HSP.cxProd.supp
 
 # Support of a tensor product of complexes
 
-Let $C$ and $E$ be complexes, indexed by $\mathbb Z$, in additive categories, each with all but finitely many chain objects zero objects. For $r\in\mathbb Z$ the *support* of degree $r$ is the finite set of pairs $(p,q)\in\mathbb Z^2$ with $p+q=r$ such that neither $C_p$ nor $E_q$ is a zero object.
+Let $C$ and $E$ be complexes, indexed by $\mathbb Z$, in preadditive categories, each with all but finitely many chain objects zero objects. For $r\in\mathbb Z$ the *support* of degree $r$ is the finite set of pairs $(p,q)\in\mathbb Z^2$ with $p+q=r$ such that neither $C_p$ nor $E_q$ is a zero object.
 
 ## Sources
 
