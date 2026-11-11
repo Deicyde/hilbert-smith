@@ -9,7 +9,7 @@ lean: HSP.AsymPre.trunc
 
 # Diagonal coordinate projection
 
-Let $P$ be a decidable predicate on the indices of an object $M$ of the [asymptotic category](../asymptotic-category.md). The diagonal coordinate projection $p_P:M\to M$ is, at level $i$, the diagonal matrix with entry $1$ at $(g,k)$ if $P(i,k)$ and $0$ otherwise. It is $G_i$-equivariant and has [propagation](../propagation.md) $0$.
+Let $P$ be a decidable predicate on the indices of an object $M$ of the [asymptotic category](../asymptotic-category.md). The diagonal coordinate projection $p_P:M\to M$ is, at level $i$, the diagonal matrix with entry $1$ at $(g,k)$ if $P(i,k)$ and $0$ otherwise. It is a morphism of the asymptotic category (its matrices are $G_i$-equivariant with [propagation](../propagation.md) $0$).
 
 *Proof sketch.* A diagonal matrix whose entries depend only on $k$ is equivariant, and its nonzero entries join a basis element to itself.
 

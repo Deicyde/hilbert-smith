@@ -20,3 +20,7 @@ For a local datum with constants $(D,\rho_+)$, $|F_0(x)-x|\le D$ for all $x\in\O
 ## Depends on
 
 - [The averaged chart map](averaged-map.md)
+
+## Proof depends on
+
+- [The Haar probability measure on $\mathbb Z_p$](../subgroups/haar-zp.md)

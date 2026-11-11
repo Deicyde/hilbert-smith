@@ -28,8 +28,8 @@ theorem middleForm_neg (x : SymPoincare (Karoubi (FreeCat G)) 4) :
   change a.1 ⬝ᵥ realMap ((SymPoincare.neg x).φ ⟨(2, 2), _⟩).f b.1 =
     -(a.1 ⬝ᵥ realMap (x.φ ⟨(2, 2), by norm_num⟩).f b.1)
   rw [hneg]
-  erw [realMap_neg]
-  rw [LinearMap.neg_apply, dotProduct_neg]
+  erw [realMap_apply, realMap_apply, mat_neg]
+  rw [Matrix.map_neg _ (map_neg (Rat.castHom ℝ)), Matrix.neg_mulVec, dotProduct_neg]
   rfl
 
 end HSP

@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.Signatures.LFour.RealEvaluation
+import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 
 /-!
@@ -33,42 +34,48 @@ private theorem cycle_comp (p q : ℤ) (h : p + q = 4 - 1) (p' q' : ℤ) (hp' : 
   have := congrFun hc ⟨(p, q), h⟩
   rwa [StructureCx.dHom_apply x.C 4 (4 - 1) x.φ p q h p' q' hp' hq'] at this
 
-private theorem phi_cocycle : ∀ y ∈ realCocycles x.C 2,
-    realMap (x.φ ⟨(2, 2), by norm_num⟩).f y ∈ realCycles x.C 2 := fun y hy => by
-  have h := cycle_comp x (2 - 1) 2 (by norm_num) 2 (2 + 1) (by norm_num) (by norm_num)
-  rw [show ((2 : ℤ) - 1).negOnePow = -1 by rw [show (2 : ℤ) - 1 = 1 by norm_num]; rfl,
-    Units.neg_smul, one_smul, ← sub_eq_add_neg, sub_eq_zero] at h
-  have h' := congrArg (fun k => realMap k.f y) h
-  simp only [Karoubi.comp_f, realMap_comp_apply] at h'
-  refine ⟨realMap_mem_realSpace _ _, LinearMap.mem_ker.2 ?_⟩
-  rw [h']
-  change realMap _ (realMap (dualHom (x.C.d (2 + 1) 2)).f y) = 0
-  rw [LinearMap.mem_ker.1 hy.2, map_zero]
-
-private theorem phi_coboundary : ∀ y ∈ realCoboundaries x.C 2,
-    realMap (x.φ ⟨(2, 2), by norm_num⟩).f y ∈ realBoundaries x.C 2 := by
-  rintro _ ⟨w, -, rfl⟩
-  have h := cycle_comp x 2 (2 - 1) (by norm_num) (2 + 1) 2 (by norm_num) (by norm_num)
-  rw [Int.negOnePow_even 2 ⟨1, by norm_num⟩, one_smul, add_eq_zero_iff_neg_eq] at h
-  have h' := congrArg (fun k => realMap k.f w) h
-  simp only [Karoubi.comp_f, realMap_comp_apply] at h'
-  refine ⟨-realMap (x.φ ⟨(2 + 1, 2 - 1), by norm_num⟩).f w,
-    Submodule.neg_mem _ (realMap_mem_realSpace _ _), ?_⟩
-  have hneg : (-(x.φ ⟨(2 + 1, 2 - 1), by norm_num⟩ ≫ x.C.d (2 + 1) 2)).f =
-      -(x.φ ⟨(2 + 1, 2 - 1), by norm_num⟩ ≫ x.C.d (2 + 1) 2).f := rfl
-  rw [map_neg, ← h', hneg, realMap_neg, LinearMap.neg_apply, Karoubi.comp_f, realMap_comp_apply]
-
 /-- `[y] ↦ [φ_2 y] : H^2(C; ℝ) → H_2(C; ℝ)`. -/
 private noncomputable def phiMap : realHco x.C 2 →ₗ[ℝ] realH x.C 2 :=
-  Submodule.mapQ _ _ ((realMap (x.φ ⟨(2, 2), by norm_num⟩).f).restrict (phi_cocycle x))
-    fun y hy => phi_coboundary x y hy
+  Submodule.mapQ _ _ ((realMap (x.φ ⟨(2, 2), by norm_num⟩).f).restrict fun y hy => by
+      have h := cycle_comp x (2 - 1) 2 (by norm_num) 2 (2 + 1) (by norm_num) (by norm_num)
+      rw [show ((2 : ℤ) - 1).negOnePow = -1 by rw [show (2 : ℤ) - 1 = 1 by norm_num]; rfl,
+        Units.neg_smul, one_smul, ← sub_eq_add_neg, sub_eq_zero] at h
+      have h' := congrArg (fun k => realMap k.f y) h
+      simp only [Karoubi.comp_f, realMap_apply, mat_comp, Matrix.map_mul,
+        ← Matrix.mulVec_mulVec] at h'
+      refine ⟨⟨realMap (x.φ ⟨(2, 2), by norm_num⟩).f y, ?_⟩, LinearMap.mem_ker.2 ?_⟩
+      · simp only [realMap_apply]
+        rw [Matrix.mulVec_mulVec, ← Matrix.map_mul, ← mat_comp, Karoubi.comp_p]
+      · have hk := LinearMap.mem_ker.1 hy.2
+        rw [realMap_apply] at hk
+        simp only [realMap_apply] at hk ⊢
+        rw [h', hk, Matrix.mulVec_zero])
+    fun y hy => by
+      obtain ⟨w, -, hw⟩ := hy
+      have h := cycle_comp x 2 (2 - 1) (by norm_num) (2 + 1) 2 (by norm_num) (by norm_num)
+      rw [Int.negOnePow_even 2 ⟨1, by norm_num⟩, one_smul, add_eq_zero_iff_neg_eq] at h
+      have h' := congrArg (fun k => realMap k.f w) h
+      have hneg : (-(x.φ ⟨(2 + 1, 2 - 1), by norm_num⟩ ≫ x.C.d (2 + 1) 2)).f =
+          -(x.φ ⟨(2 + 1, 2 - 1), by norm_num⟩ ≫ x.C.d (2 + 1) 2).f := rfl
+      simp only [hneg, Karoubi.comp_f, realMap_apply, mat_comp, mat_neg,
+        Matrix.map_neg _ (map_neg (Rat.castHom ℝ)), Matrix.map_mul, Matrix.neg_mulVec,
+        ← Matrix.mulVec_mulVec] at h'
+      refine ⟨-realMap (x.φ ⟨(2 + 1, 2 - 1), by norm_num⟩).f w,
+        ⟨-realMap (x.φ ⟨(2 + 1, 2 - 1), by norm_num⟩).f w, ?_⟩, ?_⟩
+      · rw [map_neg]
+        simp only [realMap_apply]
+        rw [Matrix.mulVec_mulVec, ← Matrix.map_mul, ← mat_comp, Karoubi.comp_p]
+      · change _ = realMap (x.φ ⟨(2, 2), by norm_num⟩).f (y : G × Fin (x.C.X 2).X.n → ℝ)
+        rw [show (y : G × Fin (x.C.X 2).X.n → ℝ) = _ from hw.symm, map_neg]
+        simp only [realMap_apply]
+        exact h'
 
 /-- **The middle form** `b_C([x], [y]) = ⟨[x], [φ_2 y]⟩` on `H^2(C; ℝ)`. -/
 noncomputable def middleForm : LinearMap.BilinForm ℝ (realHco x.C 2) :=
   (realEval x.C 2).compl₂ (phiMap x)
 
-theorem middleForm_mk (y z : realCocycles x.C 2) :
+theorem middleForm_mk (y z) :
     middleForm x (Submodule.Quotient.mk y) (Submodule.Quotient.mk z) =
-      (y : G × Fin (x.C.X 2).X.n → ℝ) ⬝ᵥ realMap (x.φ ⟨(2, 2), by norm_num⟩).f z := rfl
+      y.1 ⬝ᵥ realMap (x.φ ⟨(2, 2), by norm_num⟩).f z.1 := rfl
 
 end HSP

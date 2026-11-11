@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNonsingular
+import HilbertSmithPaper.Signatures.Real.RealCohomologyAction
 import HilbertSmithPaper.Signatures.Forms.FormSignature
 
 /-!

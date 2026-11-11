@@ -21,3 +21,7 @@ For a local datum, $F_0(b\cdot x)=F_0(x)$ for all $b\in\mathbb Z_p$ and $x\in\Om
 ## Depends on
 
 - [The averaged chart map](averaged-map.md)
+
+## Proof depends on
+
+- [The Haar probability measure on $\mathbb Z_p$](../subgroups/haar-zp.md)

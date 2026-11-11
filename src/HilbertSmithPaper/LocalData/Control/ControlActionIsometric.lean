@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LocalData.Control.ZplusAction
 import HilbertSmithPaper.LocalData.Control.ControlAction
-import HilbertSmithPaper.LocalData.Control.ControlMetricProperties
+import HilbertSmithPaper.LocalData.Control.ControlMetricSpace
 
 /-!
 # The cyclic action is isometric

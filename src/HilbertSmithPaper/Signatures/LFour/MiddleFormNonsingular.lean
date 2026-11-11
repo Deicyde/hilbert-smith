@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.Signatures.LFour.MiddleForm
+import HilbertSmithPaper.Signatures.Real.RealCohomologyAction
 
 /-!
 # The middle form is nonsingular, symmetric and invariant

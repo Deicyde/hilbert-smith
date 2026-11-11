@@ -20,4 +20,5 @@ For a strict 4-dimensional symmetric Poincaré complex $(C,\varphi)$ in $\mathrm
 ## Depends on
 
 - [The middle form](middle-form.md)
+- [The real matrix of a morphism](../real/real-matrix.md)
 - [Sums of Poincaré complexes](../../l-theory/base/pairs/sum-of-poincare.md)
