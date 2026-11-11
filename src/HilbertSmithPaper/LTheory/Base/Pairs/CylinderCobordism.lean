@@ -37,42 +37,6 @@ namespace Cylinder
 variable {V : Type*} [Category V] [Preadditive V] [HasBinaryBiproducts V]
   {X Y : ChainComplex V ℤ}
 
-@[reassoc (attr := simp)]
-private lemma inl_fst_f (r : ℤ) :
-    (biprod.inl : X ⟶ X ⊞ Y).f r ≫ (biprod.fst : X ⊞ Y ⟶ X).f r = 𝟙 _ := by
-  rw [← HomologicalComplex.comp_f, biprod.inl_fst, HomologicalComplex.id_f]
-
-@[reassoc (attr := simp)]
-private lemma inr_snd_f (r : ℤ) :
-    (biprod.inr : Y ⟶ X ⊞ Y).f r ≫ (biprod.snd : X ⊞ Y ⟶ Y).f r = 𝟙 _ := by
-  rw [← HomologicalComplex.comp_f, biprod.inr_snd, HomologicalComplex.id_f]
-
-@[reassoc (attr := simp)]
-private lemma inl_snd_f (r : ℤ) :
-    (biprod.inl : X ⟶ X ⊞ Y).f r ≫ (biprod.snd : X ⊞ Y ⟶ Y).f r = 0 := by
-  rw [← HomologicalComplex.comp_f, biprod.inl_snd, HomologicalComplex.zero_f]
-
-@[reassoc (attr := simp)]
-private lemma inr_fst_f (r : ℤ) :
-    (biprod.inr : Y ⟶ X ⊞ Y).f r ≫ (biprod.fst : X ⊞ Y ⟶ X).f r = 0 := by
-  rw [← HomologicalComplex.comp_f, biprod.inr_fst, HomologicalComplex.zero_f]
-
-@[reassoc (attr := simp)]
-private lemma inl_desc_f {Z : ChainComplex V ℤ} (a : X ⟶ Z) (b : Y ⟶ Z) (r : ℤ) :
-    (biprod.inl : X ⟶ X ⊞ Y).f r ≫ (biprod.desc a b).f r = a.f r := by
-  rw [← HomologicalComplex.comp_f, biprod.inl_desc]
-
-@[reassoc (attr := simp)]
-private lemma inr_desc_f {Z : ChainComplex V ℤ} (a : X ⟶ Z) (b : Y ⟶ Z) (r : ℤ) :
-    (biprod.inr : Y ⟶ X ⊞ Y).f r ≫ (biprod.desc a b).f r = b.f r := by
-  rw [← HomologicalComplex.comp_f, biprod.inr_desc]
-
-private lemma total_f (r : ℤ) :
-    (biprod.fst : X ⊞ Y ⟶ X).f r ≫ (biprod.inl : X ⟶ X ⊞ Y).f r +
-      (biprod.snd : X ⊞ Y ⟶ Y).f r ≫ (biprod.inr : Y ⟶ X ⊞ Y).f r = 𝟙 _ := by
-  rw [← HomologicalComplex.comp_f, ← HomologicalComplex.comp_f, ← HomologicalComplex.add_f_apply,
-    biprod.total, HomologicalComplex.id_f]
-
 /-- The chain objects of `X ⊞ Y` are sums of those of `X` and `Y`: the components of the
 biproduct maps form a biproduct bicone. -/
 private noncomputable def bicone (r : ℤ) : BinaryBicone (X.X r) (Y.X r) where
@@ -81,13 +45,13 @@ private noncomputable def bicone (r : ℤ) : BinaryBicone (X.X r) (Y.X r) where
   snd := (biprod.snd : X ⊞ Y ⟶ Y).f r
   inl := (biprod.inl : X ⟶ X ⊞ Y).f r
   inr := (biprod.inr : Y ⟶ X ⊞ Y).f r
-  inl_fst := inl_fst_f r
-  inl_snd := inl_snd_f r
-  inr_fst := inr_fst_f r
-  inr_snd := inr_snd_f r
+  inl_fst := HomologicalComplex.biprod_inl_fst_f X Y r
+  inl_snd := HomologicalComplex.biprod_inl_snd_f X Y r
+  inr_fst := HomologicalComplex.biprod_inr_fst_f X Y r
+  inr_snd := HomologicalComplex.biprod_inr_snd_f X Y r
 
 private noncomputable def bicone_isBilimit (r : ℤ) : (bicone (X := X) (Y := Y) r).IsBilimit :=
-  isBinaryBilimitOfTotal _ (total_f r)
+  isBinaryBilimitOfTotal _ (HomologicalComplex.biprod_total_f X Y r)
 
 private lemma desc_f {C C' : ChainComplex V ℤ} (h : C ⟶ C') (r : ℤ) :
     (biprod.desc h (𝟙 C')).f r =
@@ -155,7 +119,7 @@ private noncomputable def projSect (h : C ⟶ C') : Homotopy (𝟙 _) (proj h �
     rw [Int.negOnePow_sub, Int.negOnePow_one, mul_neg_one, Units.neg_smul, neg_add_cancel]
   · simp only [proj, sect]
     simp [smul_smul, Int.units_mul_self, desc_f]
-    rw [← total_f (X := C) (Y := C') (r - 1)]
+    rw [← HomologicalComplex.biprod_total_f C C' (r - 1)]
     abel
 
 /-- `π` is a chain homotopy equivalence with inverse `σ`. -/
@@ -301,8 +265,9 @@ theorem cylinder_cobordism (P : ObjectProperty B)
     rw [hφq r (k + 1 - r) (k - (r - 1)) (by omega) (by omega) (by omega)]
     congr 1
     rw [StructureCx.sum, Pi.add_apply, StructureCx.push_apply, StructureCx.push_apply]
-    simp only [Preadditive.add_comp, Category.assoc, inl_fst_f, inr_fst_f,
+    simp only [Preadditive.add_comp, Category.assoc, HomologicalComplex.biprod_inl_fst_f,
+      HomologicalComplex.biprod_inr_fst_f,
       Category.comp_id, comp_zero, add_zero]
-    rw [← Category.assoc, ← dualHom_comp, inl_desc_f]
+    rw [← Category.assoc, ← dualHom_comp, HomologicalComplex.biprod_inl_desc_f]
 
 end HSP
