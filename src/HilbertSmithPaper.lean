@@ -70,6 +70,7 @@ import HilbertSmithPaper.LocalData.Subgroups.FixedSetsClosed
 import HilbertSmithPaper.LocalData.Subgroups.GoodPoint
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
+import HilbertSmithPaper.LocalData.Subgroups.ProperClosedSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.SmallDisplacement
 import HilbertSmithPaper.Proofs.FaithfulHausdorff
 import HilbertSmithPaper.Proofs.HalfSpaceInterior
