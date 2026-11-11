@@ -2,10 +2,12 @@
 article_id: af_eeca84e6f0698ef8f0ed946d
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.controlLabel
 ---
 # Control labels
 
-Let $v>0$. The *control label* of a [buffered cell](buffered-cells.md) $b\in\mathcal B_i(v)$, a cell of $D_i$ or its dual, is
+Fix a local datum and $0<\rho<\rho_+$, with $f_T$ and the sphere labels of radius $\rho$, and a real number $v$ (in use $v>0$). The *control label* of a [buffered cell](buffered-cells.md) $b\in\mathcal B_i(v)$, a cell of $D_i$ or its dual, is
 $$\lambda(b)=(\pi(\tilde x_b),s_b)\in T\times S^n,$$
 where $\tilde x_b\in[-2,2)^n$ is the lift of its torus label $x_b$, $s_b$ is its [sphere label](sphere-labels.md), and $\pi:Z^+\to T$ is the quotient map onto the [control space](../../local-data/control/control-space.md). Cells that are not buffered get no control label. $T\times S^n$ carries the maximum of $d_T$ and $d_S$ and the action of $C_p$ on $T$, as for [graph-type matrices](../../corner/actions/graph-type.md).
 
