@@ -2,6 +2,8 @@
 article_id: af_c79595557db064ad43eb7479
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.carried_homotopy
 ---
 # Carried homotopies
 

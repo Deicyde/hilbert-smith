@@ -29,6 +29,7 @@ import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.BoxHullProperties
 import HilbertSmithPaper.ChainModels.Grid.BufferedCells
 import HilbertSmithPaper.ChainModels.Grid.CarriedChainMap
+import HilbertSmithPaper.ChainModels.Grid.CarriedHomotopy
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
