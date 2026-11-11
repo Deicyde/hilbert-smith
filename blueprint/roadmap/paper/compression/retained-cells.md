@@ -2,6 +2,8 @@
 article_id: af_2d9f1a684d6a803f07cf3fa4
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.Compression.IsRetained
 ---
 # Retained and discarded cells
 

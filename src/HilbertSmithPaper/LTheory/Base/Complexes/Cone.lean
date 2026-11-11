@@ -54,7 +54,7 @@ noncomputable abbrev cone (g : C ⟶ D) : ChainComplex V ℤ where
 
 open ZeroObject in
 /-- The shift `Σ C = 𝒞(C ⟶ 0)`: `(Σ C)_r = 0 ⊞ C_{r-1}` with differential `d` on `C_{r-1}`. -/
-noncomputable def cone.shift [HasZeroObject V] (C : ChainComplex V ℤ) : ChainComplex V ℤ :=
+noncomputable abbrev cone.shift [HasZeroObject V] (C : ChainComplex V ℤ) : ChainComplex V ℤ :=
   cone (0 : C ⟶ 0)
 
 end HSP

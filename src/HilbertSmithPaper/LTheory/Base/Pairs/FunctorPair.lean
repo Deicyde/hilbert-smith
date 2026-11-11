@@ -8,8 +8,8 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 A duality functor `(F, ξ) : B → B'` sends a strict `n`-dimensional Poincaré pair
 `(f : C ⟶ D, δφ, φ)` to `(F f : F C ⟶ F D, F_% δφ, F_% φ)`. The boundary conditions are those of
 `SymPoincare.map`; `F_%` commutes with `T`, with `∂` and with pushforward along `f`
-(`DualFunctor.mapStructure_push`); and the pair map of the image is `κ ∘ F(ψ) ∘ ξ⁻¹`, with
-`κ : F(𝒞(f)) ≅ 𝒞(F f)` the canonical isomorphism (`DualFunctor.mapConeIso`), so it is a chain
+; and the pair map of the image is `κ ∘ F(ψ) ∘ ξ⁻¹`, with
+`κ : F(𝒞(f)) ≅ 𝒞(F f)` the canonical isomorphism , so it is a chain
 homotopy equivalence. For a duality functor `A → A'` this is applied to `Kar F`.
 -/
 
@@ -40,7 +40,7 @@ private lemma inv_natural'' {M N : B} (f : M ⟶ N) :
     Category.comp_id]
 
 /-- `F_%` commutes with pushforward: `F_% (f_% φ) = (F f)_% (F_% φ)`. -/
-lemma mapStructure_push {C D : ChainComplex B ℤ} (f : C ⟶ D) (n : ℤ) (φ : (StructureCx C).X n) :
+private lemma mapStructure_push {C D : ChainComplex B ℤ} (f : C ⟶ D) (n : ℤ) (φ : (StructureCx C).X n) :
     F.mapStructure D n ((StructureCx.push f).f n φ) =
       (StructureCx.push ((F.toFunctor.mapHomologicalComplex _).map f)).f n
         (F.mapStructure C n φ) := by
@@ -64,7 +64,7 @@ private noncomputable def biprodIso (X Y : B) :
       simp [← F.toFunctor.map_comp]
 
 /-- The canonical isomorphism `κ : F(𝒞(f)) ≅ 𝒞(F f)`, `F(D_r ⊞ C_{r-1}) ≅ F D_r ⊞ F C_{r-1}`. -/
-noncomputable def mapConeIso {C D : ChainComplex B ℤ} (f : C ⟶ D) :
+private noncomputable def mapConeIso {C D : ChainComplex B ℤ} (f : C ⟶ D) :
     F.mapCx (cone f) ≅ cone ((F.toFunctor.mapHomologicalComplex _).map f) :=
   HomologicalComplex.Hom.isoOfComponents (fun r => biprodIso F (D.X r) (C.X (r - 1)))
     (by
@@ -80,7 +80,7 @@ noncomputable def mapConeIso {C D : ChainComplex B ℤ} (f : C ⟶ D) :
       · simp [← Functor.map_comp])
 
 /-- The pair map of the image is `κ ∘ F(ψ) ∘ ξ⁻¹`. -/
-lemma pairMap_map {C D : ChainComplex B ℤ} (f : C ⟶ D) {m n : ℤ} (hmn : m + 1 = n)
+private lemma pairMap_map {C D : ChainComplex B ℤ} (f : C ⟶ D) {m n : ℤ} (hmn : m + 1 = n)
     (δφ : (StructureCx D).X n) (φ : (StructureCx C).X m)
     (hφ : (StructureCx C).d m (m - 1) φ = 0)
     (hδφ : (StructureCx D).d n m δφ = (StructureCx.push f).f m φ)

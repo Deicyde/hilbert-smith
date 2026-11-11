@@ -1,7 +1,9 @@
 ---
 article_id: af_b19812d72923ec75460886cb
-declaration: lemma
+declaration: def
 origin: background
+statement: formalized
+lean: HSP.cone.shift_homotopyEquiv
 ---
 
 # Shifts of homotopy equivalences

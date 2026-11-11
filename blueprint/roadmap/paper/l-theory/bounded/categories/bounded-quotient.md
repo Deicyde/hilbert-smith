@@ -3,6 +3,7 @@ article_id: af_9c2350aa2a89afa35b40a51c
 declaration: lemma
 origin: cited
 statement: formalized
+proof: formalized
 lean: HSP.Bounded.quotientEquiv
 ---
 

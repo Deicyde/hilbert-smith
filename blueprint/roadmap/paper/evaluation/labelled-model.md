@@ -2,6 +2,8 @@
 article_id: af_4771ee01ff5de0bc3a416bbb
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.Evaluation.labelledModel_poincare
 ---
 # The labelled chain model is Poincaré
 
