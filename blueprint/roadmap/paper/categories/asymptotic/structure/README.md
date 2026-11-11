@@ -15,4 +15,5 @@ The inclusion matrix of the coordinate inclusions, and basic facts about the mor
 - [Concatenation](concatenation.md)
 - [The concatenation is a biproduct](concatenation-bilimit.md)
 - [The asymptotic category has finite biproducts](biproducts.md)
+- [The levelwise transpose](levelwise-transpose.md)
 - [Transposing twice](transpose-transpose.md)
