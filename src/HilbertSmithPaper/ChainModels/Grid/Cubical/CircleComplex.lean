@@ -6,17 +6,15 @@ import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 # The circle complex
 
 The circle complex `S_k`: cells `[w]` in degree `0` and `e_w` in degree `1`, `w ∈ ℤ/k`, with
-`d e_w = [w+1] - [w]`; the realization of a cell is the point `4w/k` or the arc from `4w/k` to
-`4(w+1)/k` of `ℝ/4ℤ`.
+`d e_w = [w+1] - [w]`.
 
 ## Encoding
 
 * `circleComplex k` (the declaration of the article) is `ChainComplex.of` of the dimensions
   `circleDim k` and the differential `circleD k`, whose matrix out of degree `1` is
   `circleDiffMatrix k` (`circleComplex_X`, `circleComplex_d` unfold it).
-* `ℤ/k` is `Fin k`; a cell is a pair `(w, b) : Fin k × Bool`, `b = true` for `e_w`.
-  `circleCell` reads a basis vector of `S_{k,r}` as a cell (in the order `[0], …, [k-1]` and
-  `e_0, …, e_{k-1}`), and `cellRealization` is the realization of a cell.
+* `ℤ/k` is `Fin k`; the basis of `S_{k,0}` is `[0], …, [k-1]` and that of `S_{k,1}` is
+  `e_0, …, e_{k-1}`.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -62,19 +60,5 @@ lemma circleComplex_X (k : ℕ) (r : ℤ) : (circleComplex k).X r = ⟨circleDim
 
 lemma circleComplex_d (k : ℕ) : (circleComplex k).d 1 0 = ofMatrix (circleDiffMatrix k) :=
   ChainComplex.of_d (fun r => (⟨circleDim k r⟩ : FreeQ)) (circleD k) (0 : ℤ)
-
-/-- The cell `[w]` (for `r = 0`) or `e_w` (for `r = 1`) of the `w`-th basis vector of `S_{k,r}`. -/
-def circleCell (k : ℕ) : ∀ r : ℤ, Fin ((circleComplex k).X r).dim → Fin k × Bool
-  | .ofNat 0, w => (w, false)
-  | .ofNat 1, w => (w, true)
-  | .ofNat (_ + 2), w => w.elim0
-  | .negSucc _, w => w.elim0
-
-/-- The realization of a cell of `S_k`: the point `4w/k`, or the arc from `4w/k` to
-`4(w+1)/k`. -/
-def cellRealization (k : ℕ) (b : Fin k × Bool) : Set (AddCircle (4 : ℝ)) :=
-  if b.2 then (fun t : ℝ => (t : AddCircle (4 : ℝ))) ''
-      Set.Icc (4 * (b.1 : ℕ) / k : ℝ) (4 * ((b.1 : ℕ) + 1) / k)
-  else {((4 * (b.1 : ℕ) / k : ℝ) : AddCircle (4 : ℝ))}
 
 end HSP.ChainModels

@@ -1,8 +1,9 @@
 import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualLift
+import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 import HilbertSmithPaper.Categories.Supports.NullThickening
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.ProjectionInclusion
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionComplement
-import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 
 /-!
 # Iterated quotient
@@ -88,63 +89,15 @@ private theorem ideal_union_split {S Y Z : Set X}
   · rw [← Preadditive.comp_add, ← Category.assoc py, ← Category.assoc pz,
       ← Preadditive.add_comp, htot, Category.id_comp]
 
-section Lift
-
-variable {A : Type*} [Category A] [Preadditive A] [Linear ℚ A] [HasFiniteBiproducts A]
-  [DualCat A] {B : Type*} [Category B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
-  [DualCat B] (U : ObjectProperty A) [IsDualAdditive U]
-
-/-- The functor `𝒜/𝒰 → ℬ` induced by a functor `𝒜 → ℬ` killing the ideal of `𝒰`. -/
-private abbrev liftFun (F : A ⥤ B)
-    (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ → F.map f₁ = F.map f₂) :
-    FiltQuot U ⥤ B :=
-  CategoryTheory.Quotient.lift (FiltQuot.rel U) F H
-
-private instance (F : A ⥤ B) [F.Additive]
-    (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ → F.map f₁ = F.map f₂) :
-    (liftFun U F H).Additive where
-  map_add {_ _ f g} := by
-    obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
-    obtain ⟨g, rfl⟩ := (FiltQuot.functor U).map_surjective g
-    rw [← Functor.map_add, CategoryTheory.Quotient.lift_map_functor_map,
-      CategoryTheory.Quotient.lift_map_functor_map,
-      CategoryTheory.Quotient.lift_map_functor_map, Functor.map_add]
-
-private instance (F : A ⥤ B) [F.Linear ℚ]
-    (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ → F.map f₁ = F.map f₂) :
-    (liftFun U F H).Linear ℚ where
-  map_smul {_ _} f c := by
-    obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
-    rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,
-      CategoryTheory.Quotient.lift_map_functor_map, Functor.map_smul]
-
-/-- The duality functor `𝒜/𝒰 → ℬ` induced by a duality functor `𝒜 → ℬ` killing the ideal of
-`𝒰`, with the same `ξ`. -/
-private def liftDual (F : DualFunctor A B)
-    (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ →
-      F.toFunctor.map f₁ = F.toFunctor.map f₂) : DualFunctor (FiltQuot U) B where
-  toFunctor := liftFun U F.toFunctor H
-  ξ M := F.ξ M.as
-  ξ_natural {M N} f := by
-    obtain ⟨f, rfl⟩ := (FiltQuot.functor U).map_surjective f
-    rw [FiltQuot.dualHom_map, CategoryTheory.Quotient.lift_map_functor_map,
-      CategoryTheory.Quotient.lift_map_functor_map]
-    exact F.ξ_natural f
-  ξ_dual M := F.ξ_dual M.as
-
-private theorem liftDual_isStrict (F : DualFunctor A B)
-    (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ →
-      F.toFunctor.map f₁ = F.toFunctor.map f₂) (hF : F.IsStrict) :
-    (liftDual U F H).IsStrict :=
+private theorem liftDual_isStrict {A B : Type*} [Category A] [Preadditive A] [Linear ℚ A]
+    [HasFiniteBiproducts A] [DualCat A] [Category B] [Preadditive B] [Linear ℚ B]
+    [HasFiniteBiproducts B] [DualCat B] {U : ObjectProperty A} [IsDualAdditive U]
+    {F : DualFunctor A B}
+    {H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ →
+      F.toFunctor.map f₁ = F.toFunctor.map f₂} (hF : F.IsStrict) :
+    (FiltQuot.liftDual U F H).IsStrict :=
   fun M => hF M.as
 
-private theorem liftDual_spec (F : DualFunctor A B)
-    (H : ∀ (x y : A) (f₁ f₂ : x ⟶ y), FiltQuot.rel U f₁ f₂ →
-      F.toFunctor.map f₁ = F.toFunctor.map f₂) :
-    FiltQuot.functor U ⋙ (liftDual U F H).toFunctor = F.toFunctor :=
-  CategoryTheory.Quotient.lift_spec _ _ H
-
-end Lift
 
 private theorem comp_isStrict' {A B C : Type*} [Category A] [Preadditive A] [Linear ℚ A]
     [HasFiniteBiproducts A] [DualCat A] [Category B] [Preadditive B] [Linear ℚ B]
@@ -171,7 +124,7 @@ private theorem compat₀ (x y : (supp S : ObjectProperty (AsymCat G X)).FullSub
 /-- `𝒜_S/𝒜_Z → 𝒜_S/𝒜_{Y ∪ Z}`, `[u] ↦ [u]`. -/
 private def iterQuot₀ :
     DualFunctor (FiltQuot (suppIn (G := G) S Z)) (FiltQuot (suppIn (G := G) S (Y ∪ Z))) :=
-  liftDual (suppIn S Z) (FiltQuot.q _) (compat₀ S Y Z)
+  FiltQuot.liftDual (suppIn S Z) (FiltQuot.q _) (compat₀ S Y Z)
 
 private theorem compat (x y : FiltQuot (suppIn (G := G) S Z)) (f₁ f₂ : x ⟶ y)
     (h : FiltQuot.rel (quotSupp S Z Y) f₁ f₂) :
@@ -184,7 +137,7 @@ private theorem compat (x y : FiltQuot (suppIn (G := G) S Z)) (f₁ f₂ : x ⟶
   rw [← Functor.map_sub, ← Functor.map_comp, FiltQuot.functor_map_eq_iff] at hAB
   change (FiltQuot.functor (suppIn S Z) ⋙ (iterQuot₀ S Y Z).toFunctor).map g₁ =
     (FiltQuot.functor (suppIn S Z) ⋙ (iterQuot₀ S Y Z).toFunctor).map g₂
-  rw [iterQuot₀, liftDual_spec]
+  rw [iterQuot₀, FiltQuot.liftDual_spec]
   change (FiltQuot.functor _).map g₁ = (FiltQuot.functor _).map g₂
   rw [FiltQuot.functor_map_eq_iff]
   have he : g₁ - g₂ = (g₁ - g₂ - a ≫ b) + a ≫ b := by abel
@@ -195,7 +148,7 @@ private theorem compat (x y : FiltQuot (suppIn (G := G) S Z)) (f₁ f₂ : x ⟶
 /-- The strict duality functor `(𝒜_S/𝒜_Z)/𝒰_Y → 𝒜_S/𝒜_{Y ∪ Z}`, `[[u]] ↦ [u]`. -/
 private def iterQuotDual :
     DualFunctor (FiltQuot (quotSupp (G := G) S Z Y)) (FiltQuot (suppIn (G := G) S (Y ∪ Z))) :=
-  liftDual (quotSupp S Z Y) (iterQuot₀ S Y Z) (compat S Y Z)
+  FiltQuot.liftDual (quotSupp S Z Y) (iterQuot₀ S Y Z) (compat S Y Z)
 
 private theorem compatInv (x y : (supp S : ObjectProperty (AsymCat G X)).FullSubcategory)
     (f₁ f₂ : x ⟶ y) (h : FiltQuot.rel (suppIn S (Y ∪ Z)) f₁ f₂) :
@@ -217,25 +170,25 @@ private theorem compatInv (x y : (supp S : ObjectProperty (AsymCat G X)).FullSub
 /-- The strict duality functor `𝒜_S/𝒜_{Y ∪ Z} → (𝒜_S/𝒜_Z)/𝒰_Y`, `[u] ↦ [[u]]`. -/
 private def iterQuotInvDual :
     DualFunctor (FiltQuot (suppIn (G := G) S (Y ∪ Z))) (FiltQuot (quotSupp (G := G) S Z Y)) :=
-  liftDual (suppIn S (Y ∪ Z)) ((FiltQuot.q (suppIn S Z)).comp (FiltQuot.q (quotSupp S Z Y)))
+  FiltQuot.liftDual (suppIn S (Y ∪ Z)) ((FiltQuot.q (suppIn S Z)).comp (FiltQuot.q (quotSupp S Z Y)))
     (compatInv S Y Z)
 
 private theorem iterQuotDual_isStrict : (iterQuotDual (G := G) S Y Z).IsStrict :=
-  liftDual_isStrict _ _ _ (liftDual_isStrict _ _ _ (FiltQuot.q_isStrict _))
+  liftDual_isStrict (liftDual_isStrict (FiltQuot.q_isStrict _))
 
 private theorem iterQuotInvDual_isStrict : (iterQuotInvDual (G := G) S Y Z).IsStrict :=
-  liftDual_isStrict _ _ _ (comp_isStrict' (FiltQuot.q_isStrict _) (FiltQuot.q_isStrict _))
+  liftDual_isStrict (comp_isStrict' (FiltQuot.q_isStrict _) (FiltQuot.q_isStrict _))
 
 private theorem spec₁ :
     (FiltQuot.functor (suppIn S Z) ⋙ FiltQuot.functor (quotSupp S Z Y)) ⋙
       (iterQuotDual (G := G) S Y Z).toFunctor = FiltQuot.functor (suppIn S (Y ∪ Z)) := by
-  rw [Functor.assoc, iterQuotDual, liftDual_spec, iterQuot₀, liftDual_spec]
+  rw [Functor.assoc, iterQuotDual, FiltQuot.liftDual_spec, iterQuot₀, FiltQuot.liftDual_spec]
   rfl
 
 private theorem spec₂ :
     FiltQuot.functor (suppIn S (Y ∪ Z)) ⋙ (iterQuotInvDual (G := G) S Y Z).toFunctor =
       FiltQuot.functor (suppIn S Z) ⋙ FiltQuot.functor (quotSupp S Z Y) := by
-  rw [iterQuotInvDual, liftDual_spec]
+  rw [iterQuotInvDual, FiltQuot.liftDual_spec]
   rfl
 
 private theorem comp₁ :

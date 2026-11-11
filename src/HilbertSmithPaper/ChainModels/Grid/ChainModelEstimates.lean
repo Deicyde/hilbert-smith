@@ -10,6 +10,7 @@ import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
 import HilbertSmithPaper.ChainModels.Grid.Buffers.SphereProp
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCubeRealization
 
 /-!
 # Chain-model estimates

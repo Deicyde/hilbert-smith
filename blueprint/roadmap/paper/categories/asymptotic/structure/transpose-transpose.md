@@ -9,7 +9,7 @@ lean: HSP.AsymPre.transpose_transpose
 
 # Transposing twice
 
-For a sequence $u$ of matrices of the [asymptotic category](../asymptotic-category.md), the levelwise transpose of the levelwise transpose of $u$ is $u$.
+For a sequence $u$ of matrices of the [asymptotic category](../asymptotic-category.md), the [levelwise transpose](levelwise-transpose.md) of the levelwise transpose of $u$ is $u$.
 
 *Proof sketch.* $(u_i^T)^T=u_i$ at every level.
 
@@ -19,7 +19,7 @@ For a sequence $u$ of matrices of the [asymptotic category](../asymptotic-catego
 
 ## Depends on
 
-- [Duality on the asymptotic category](../asymptotic-duality.md)
+- [The levelwise transpose](levelwise-transpose.md)
 
 ## Proof depends on
 

@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCubeRealization
 
 /-!
 # Box hull properties

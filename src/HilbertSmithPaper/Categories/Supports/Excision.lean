@@ -270,7 +270,7 @@ private theorem exRFunctor_map (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x 
       (FiltQuot.functor _).map (exMap S A u) :=
   CategoryTheory.Quotient.lift_map_functor_map _ _ _ _
 
-instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :
+private instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :
     (exRFunctor (G := G) S A B hS hB).Additive where
   map_add {_ _ f g} := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S B)).map_surjective f
@@ -279,7 +279,7 @@ instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
       exRFunctor_map S A B hS hB, exMap_add, Functor.map_add]
     rfl
 
-instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :
+private instance (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :
     (exRFunctor (G := G) S A B hS hB).Linear ℚ where
   map_smul {_ _} f c := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn S B)).map_surjective f

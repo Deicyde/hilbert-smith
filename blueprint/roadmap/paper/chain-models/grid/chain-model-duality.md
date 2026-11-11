@@ -19,6 +19,7 @@ where $p_j=1-\dim x_j$ is the degree of $\varphi^s(x_j^*)$. The factor $\varphi_
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: the cubical tensor form.
 ## Depends on
+- [The iterated grid duality map](poincare/grid-factor/grid-dual-map.md)
 - [The structure of the grid complex](model/grid-structure.md)
 - [The cellular chain complex of CP^2](cp2/cp2-complex.md)
 - [The structure of CP^2](cp2/cp2-structure.md)

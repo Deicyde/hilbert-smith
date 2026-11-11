@@ -1,16 +1,17 @@
 ---
 article_id: af_a8cefed955eecb5eba0a6161
-declaration: lemma
+declaration: theorem
 origin: background
 statement: formalized
 lean: HSP.ultL.map_eq_of_unitaryIso
+proof: formalized
 ---
 
 # Unitary invariance on ultimate L
 
 If $\eta:F\cong G$ is a unitary natural isomorphism of duality functors $\mathcal A\to\mathcal B$, then $F_*=G_*$ on $\mathbb L_k(\mathcal A)$. Here the categories have objects and morphisms of the same size, as for the [induced map](induced-map.md).
 
-*Proof sketch.* At stage $j$, [Bounded extension of a unitary isomorphism](bounded-unitary-extension.md) gives a unitary natural isomorphism $C_{\mathbb Z^j}\eta:C_{\mathbb Z^j}F\cong C_{\mathbb Z^j}G$. [Functoriality on L^p](../../base/groups/lp-functoriality.md), item 2, gives $(C_{\mathbb Z^j}F)_*=(C_{\mathbb Z^j}G)_*$, so $F_*\iota_j=G_*\iota_j$ by [The induced map at each stage](induced-map-level.md). Every element of the colimit comes from a finite stage ([Every element comes from a finite stage](level-exhaustive.md)).
+*Proof sketch.* At stage $j$, [Bounded extension of a unitary isomorphism](bounded-unitary-extension.md) gives a unitary natural isomorphism $C_{\mathbb Z^j}\eta:C_{\mathbb Z^j}F\cong C_{\mathbb Z^j}G$. [Unitary invariance on L^p](../../base/groups/lp-map-unitary.md) gives $(C_{\mathbb Z^j}F)_*=(C_{\mathbb Z^j}G)_*$, so $F_*\iota_j=G_*\iota_j$ by [The induced map at each stage](induced-map-level.md). Every element of the colimit comes from a finite stage ([Every element comes from a finite stage](level-exhaustive.md)).
 
 ## Sources
 
@@ -24,6 +25,6 @@ If $\eta:F\cong G$ is a unitary natural isomorphism of duality functors $\mathca
 ## Proof depends on
 
 - [Bounded extension of a unitary isomorphism](bounded-unitary-extension.md)
-- [Functoriality on L^p](../../base/groups/lp-functoriality.md)
+- [Unitary invariance on L^p](../../base/groups/lp-map-unitary.md)
 - [The induced map at each stage](induced-map-level.md)
 - [Every element comes from a finite stage](level-exhaustive.md)

@@ -25,6 +25,7 @@ For every $i$, with $d$ the differential of the [chain model](../model/chain-mod
 
 ## Proof depends on
 
+- [The iterated grid duality map](grid-factor/grid-dual-map.md)
 - [A product of structures after a product of duality maps](../tensor/structure-products/dual-prod-comp-str-prod.md)
 - [The CP^2 inverse inverts the structure](cp2-inverse.md)
 - [Tensor product of homotopies](tensor-homotopy.md)

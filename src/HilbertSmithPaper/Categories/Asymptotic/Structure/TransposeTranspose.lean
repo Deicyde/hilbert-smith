@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.Categories.Asymptotic.AsymptoticDuality
+import HilbertSmithPaper.Categories.Asymptotic.Structure.LevelwiseTranspose
 
 /-!
 # Transposing twice

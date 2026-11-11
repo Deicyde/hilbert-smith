@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Torus.Proj
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCubeRealization
 
 /-!
 # Far cubes

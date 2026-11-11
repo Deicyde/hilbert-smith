@@ -1,20 +1,20 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleCell
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCubeDim
 
 /-!
 # The cube of a basis vector
 
 The basis vector `x ⊗ y` of the summand `C(k)_p ⊠ S_{k,r-p}` of `(C(k) ⊗ S_k)_r` has the cube of
-`x` followed by the cell of `y`. The cube of a basis vector of `C(k)_r` has dimension `r`, distinct
-basis vectors have distinct cubes, and every cube of dimension `r` is the cube of a basis vector of
-`C(k)_r`.
+`x` followed by the cell of `y`.
 
 ## Encoding
 
-`gridCell k n r a` (the declaration of the article), by recursion on `n`; `gridCell_dim`,
-`gridCell_injective` and `gridCell_surjective` record that the basis vectors of `C(k)_r` are the
-cubes of dimension `r`.
+`gridCell k n r a` (the declaration of the article), by recursion on `n`. The private lemmas
+`gridCell_dim`, `gridCell_injective` and `gridCell_surjective` check that the basis vectors of
+`C(k)_r` are the cubes of dimension `r` (not part of the article).
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -74,7 +74,7 @@ private lemma gridCell_succ_mk (k n : ℕ) (r : ℤ) (p : Fin (r.toNat + 1))
     (finProdFinEquiv.symm_apply_apply (i, j))
 
 /-- The cube of a basis vector of `C(k)_r` has dimension `r`. -/
-lemma gridCell_dim (k : ℕ) : ∀ (n : ℕ) (r : ℤ) (a : Fin ((gridComplex k n).X r).dim),
+private lemma gridCell_dim (k : ℕ) : ∀ (n : ℕ) (r : ℤ) (a : Fin ((gridComplex k n).X r).dim),
     ((gridCell k n r a).dim : ℤ) = r
   | 0, r, a => by
     rcases r with (_ | r) | r
@@ -89,7 +89,7 @@ lemma gridCell_dim (k : ℕ) : ∀ (n : ℕ) (r : ℤ) (a : Fin ((gridComplex k 
       omega
 
 /-- Distinct basis vectors of `C(k)_r` have distinct cubes. -/
-lemma gridCell_injective (k : ℕ) : ∀ (n : ℕ) (r : ℤ), Function.Injective (gridCell k n r)
+private lemma gridCell_injective (k : ℕ) : ∀ (n : ℕ) (r : ℤ), Function.Injective (gridCell k n r)
   | 0, r, a, a', _ => by
     rcases r with (_ | r) | r
     · exact Subsingleton.elim (α := Fin 1) a a'
@@ -112,7 +112,7 @@ lemma gridCell_injective (k : ℕ) : ∀ (n : ℕ) (r : ℤ), Function.Injective
     rw [gridCell_injective k n _ hi, circleCell_injective k _ hj]
 
 /-- Every cube of dimension `r` is the cube of a basis vector of `C(k)_r`. -/
-lemma gridCell_surjective (k : ℕ) : ∀ (n : ℕ) (r : ℤ) (c : GridCube k n), (c.dim : ℤ) = r →
+private lemma gridCell_surjective (k : ℕ) : ∀ (n : ℕ) (r : ℤ) (c : GridCube k n), (c.dim : ℤ) = r →
     ∃ a, gridCell k n r a = c
   | 0, r, c, h => by
     have hr : r = 0 := by rw [← h]; simp [GridCube.dim]

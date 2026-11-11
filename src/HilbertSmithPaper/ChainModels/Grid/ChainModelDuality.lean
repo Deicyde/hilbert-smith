@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Model.GridStructure
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridDualMap
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
@@ -38,23 +39,6 @@ open CategoryTheory
 namespace HSP.ChainModels
 
 open FreeQ DualCat
-
-/-- The map `𝟙 → 𝟙^{0-*}`: the identity of `ℚ` in degree `0`. -/
-def unitDualMap (r : ℤ) : unitComplex.X r ⟶ dual (unitComplex.X (0 - r)) :=
-  ofMatrix (Matrix.of fun _ _ => 1)
-
-private lemma unitComplex_dim_neg : ∀ q < 0, (unitComplex.X q).dim = 0 := by
-  intro q hq
-  rcases q with q | q
-  · exact absurd hq (by simp)
-  · rfl
-
-/-- The iterated map `b ⊗ ⋯ ⊗ b : C(k) → C(k)^{n-*}` (through `Ξ^{-1}`), by components. -/
-noncomputable def gridDualMap (k : ℕ) :
-    ∀ (n : ℕ) (r : ℤ), (gridComplex k n).X r ⟶ dual ((gridComplex k n).X ((n : ℤ) - r))
-  | 0 => unitDualMap
-  | n + 1 => basedDualProd (gridComplex k n) (circleComplex k) (circleComplex_dim_neg k) n 1
-      ((n + 1 : ℕ) : ℤ) (by push_cast; ring) (gridDualMap k n) (circleB k)
 
 /-- The duality data of the chain model: a structure `φ` and the components `b_r` of a map
 `b : D → D^{N-*}`. -/
