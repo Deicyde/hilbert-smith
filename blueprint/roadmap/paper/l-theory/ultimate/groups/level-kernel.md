@@ -2,6 +2,9 @@
 article_id: af_9f9005872fa408e9069f3b2e
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ultL.of_eq_zero_iff
+proof: formalized
 ---
 
 # Classes zero in the colimit
