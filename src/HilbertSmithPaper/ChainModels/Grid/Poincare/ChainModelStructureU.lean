@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.Poincare.GridStructureU
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridStructureU
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid

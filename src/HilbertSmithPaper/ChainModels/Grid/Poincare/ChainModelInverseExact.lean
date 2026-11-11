@@ -1,10 +1,10 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
 import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelStructureU
-import HilbertSmithPaper.ChainModels.Grid.Poincare.GridDimNeg
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2Inverse
-import HilbertSmithPaper.ChainModels.Grid.Poincare.GridInverse
-import HilbertSmithPaper.ChainModels.Grid.Poincare.IdDualDeg0
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridInverse
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.IdDualDeg0
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomId
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.DualProdCompStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdCompDualProd

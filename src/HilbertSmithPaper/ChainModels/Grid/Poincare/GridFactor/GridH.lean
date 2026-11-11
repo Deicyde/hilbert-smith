@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
-import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleA
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.CircleA
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
 
