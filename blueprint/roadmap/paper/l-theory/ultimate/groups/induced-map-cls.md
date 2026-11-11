@@ -2,6 +2,9 @@
 article_id: af_09ef95516f47e482e4aa7404
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ultL.map_cls
+proof: formalized
 ---
 
 # The induced map commutes with cls
