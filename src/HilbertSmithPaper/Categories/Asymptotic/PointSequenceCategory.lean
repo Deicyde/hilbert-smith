@@ -137,7 +137,7 @@ instance dualCat : DualCat (PCat G) where
 
 /-- The coordinate functor `π_i : 𝒫_𝐆 → Free(ℚ[G_i])`. -/
 @[simps]
-private def projFunctor (G : GroupSeq p) (i : ℕ) : PCat G ⥤ FreeCat (G.G i) where
+def projFunctor (G : GroupSeq p) (i : ℕ) : PCat G ⥤ FreeCat (G.G i) where
   obj X := X.coord i
   map f := homCoord f i
 
@@ -145,7 +145,7 @@ private instance (i : ℕ) : (projFunctor G i).Additive where
 private instance (i : ℕ) : (projFunctor G i).Linear ℚ where
 
 /-- The coordinate functor `π_i : 𝒫_𝐆 → Free(ℚ[G_i])` as a duality functor, with `ξ = id`. -/
-private def proj (G : GroupSeq p) (i : ℕ) : DualFunctor (PCat G) (FreeCat (G.G i)) where
+def proj (G : GroupSeq p) (i : ℕ) : DualFunctor (PCat G) (FreeCat (G.G i)) where
   toFunctor := projFunctor G i
   ξ _ := Iso.refl _
   ξ_natural f := by simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]; rfl

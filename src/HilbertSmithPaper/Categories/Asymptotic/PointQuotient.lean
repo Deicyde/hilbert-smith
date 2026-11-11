@@ -28,7 +28,7 @@ namespace VCat
 variable (G : GroupSeq p)
 
 /-- The quotient functor `q : 𝒫_𝐆 → 𝒱_𝐆`, a duality functor with `ξ = id`. -/
-private def q : DualFunctor (PCat G) (VCat G) := FiltQuot.q (SCat G)
+def q : DualFunctor (PCat G) (VCat G) := FiltQuot.q (SCat G)
 
 /-- The quotient functor is a strict duality functor. -/
 private theorem q_isStrict : (q G).IsStrict := FiltQuot.q_isStrict (SCat G)
