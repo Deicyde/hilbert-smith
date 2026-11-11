@@ -299,6 +299,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
+import HilbertSmithPaper.LTheory.Base.Categories.TopDualAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone

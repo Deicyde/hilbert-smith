@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
-import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
 
 /-!
 # Duality functors commute with pushforward

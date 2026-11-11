@@ -17,6 +17,7 @@ Duality categories, duality functors and unitary isomorphisms; the idempotent co
 - [Inclusion of a dual-closed subcategory](subcategory-inclusion.md)
 - [Involution-invariant Karoubi filtration](karoubi-filtration.md)
 - [Filtrations are compatible with sums](karoubi-filtration-sums.md)
+- [All objects form a dual-closed additive subcategory](top-dual-additive.md)
 - [The whole filtration](whole-filtration.md)
 - [Maps factoring through a subcategory](filtration-ideal.md)
 - [Maps factoring through a dual-closed subcategory form an ideal](filtration-ideal-closure.md)

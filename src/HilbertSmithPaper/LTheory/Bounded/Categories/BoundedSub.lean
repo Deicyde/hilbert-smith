@@ -26,6 +26,7 @@ namespace Bounded
 variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFiniteBiproducts A]
   [DualCat A]
 
+omit [DualCat A] in
 /-- `C_ℤ(U)`: the objects of `C_ℤ(A)` with every `M_n` in `U`. -/
 def sub (U : ObjectProperty A) : ObjectProperty (Bounded A) := fun M => ∀ n, U (M.X n)
 
