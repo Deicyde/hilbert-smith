@@ -8,6 +8,8 @@ The symmetric line is a Poincaré complex over $C_{\mathbb Z}(\mathbb Q)$. A dua
 
 - [Based vector spaces](based-vector-spaces.md)
 - [The symmetric line](symmetric-line.md)
+- [Structure of the symmetric line](symmetric-line-structure.md)
+- [The symmetric line is a symmetric complex](symmetric-line-cycle.md)
 - [The line is Poincaré](symmetric-line-poincare.md)
 - [Duality pairings](duality-pairing.md)
 - [Box product with a bounded vector space](box-product.md)

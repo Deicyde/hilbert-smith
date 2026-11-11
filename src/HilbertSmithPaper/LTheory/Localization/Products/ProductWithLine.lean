@@ -3,7 +3,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Localization.Products.BoxDual
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct
-import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
+import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLineStructure
 
 /-!
 # Product of a pair with the line

@@ -24,7 +24,10 @@ $\lambda_\natural:\Lambda^{1-*}\to\Lambda$ is a chain homotopy equivalence in $C
 ## Depends on
 
 - [The symmetric line](symmetric-line.md)
+- [Structure of the symmetric line](symmetric-line-structure.md)
+- [The symmetric line is a symmetric complex](symmetric-line-cycle.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
+- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
 
 ## Proof depends on
 
