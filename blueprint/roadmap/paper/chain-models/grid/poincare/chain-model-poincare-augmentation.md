@@ -19,6 +19,11 @@ For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, t
 
 ## Depends on
 
+- [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
+- [Augmentation of the circle complex](../cubical/circle-aug.md)
+- [Fundamental chain of the circle complex](../cubical/circle-fundamental.md)
+- [Augmentation of the grid complex](../cubical/grid-aug.md)
+- [Fundamental chain of the grid complex](../cubical/grid-fundamental.md)
 - [Chain-model duality](../chain-model-duality.md)
 - [The augmentation of the chain model](chain-model-aug.md)
 - [Chain model](../chain-model.md)

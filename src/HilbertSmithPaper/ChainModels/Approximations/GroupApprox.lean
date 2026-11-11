@@ -4,6 +4,7 @@ import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackFamilyMembers
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 
 /-!
 # Group approximations

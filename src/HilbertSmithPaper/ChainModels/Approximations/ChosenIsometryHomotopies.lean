@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies
 import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 
 /-!
 # Chosen isometry homotopies

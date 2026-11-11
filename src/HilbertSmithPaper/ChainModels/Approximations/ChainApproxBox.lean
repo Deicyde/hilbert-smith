@@ -1,6 +1,9 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.BoxHull
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCell
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 
 /-!
 # Approximation boxes

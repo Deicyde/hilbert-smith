@@ -8,7 +8,7 @@ lean: HSP.ChainModels.gridAugLin
 
 # Realized augmentation
 
-The augmentation $\varepsilon:C(k)_0\to\mathbb Q$ of the [cubical torus grid](cubical-torus-grid.md), $\varepsilon[w]=1$ on every vertex, is a $1\times\dim C(k)_0$ matrix. On the [realization](realization.md) of $C(k)_0$ it is the linear map sending a column $z$ to the single entry of $\varepsilon z$, the sum of the entries of $z$. This is the augmentation used when $C(k)$ is the source of a carrier.
+The augmentation $\varepsilon:C(k)_0\to\mathbb Q$ of the [cubical torus grid](cubical/cubical-torus-grid.md), $\varepsilon[w]=1$ on every vertex, is a $1\times\dim C(k)_0$ matrix. On the [realization](realization.md) of $C(k)_0$ it is the linear map sending a column $z$ to the single entry of $\varepsilon z$, the sum of the entries of $z$. This is the augmentation used when $C(k)$ is the source of a carrier.
 
 ## Sources
 
@@ -16,4 +16,5 @@ The augmentation $\varepsilon:C(k)_0\to\mathbb Q$ of the [cubical torus grid](cu
 
 ## Depends on
 
-- [Cubical torus grid](cubical-torus-grid.md), [realization](realization.md)
+- [Augmentation of the grid complex](cubical/grid-aug.md)
+- [Cubical torus grid](cubical/cubical-torus-grid.md), [realization](realization.md)

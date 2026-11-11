@@ -16,6 +16,7 @@ On the [dual complex](../../../l-theory/base/complexes/dual-complex.md) $S^{1-*}
 
 ## Depends on
 
+- [The circle complex](../cubical/circle-complex.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
 - [The circle inverse](circle-data/circle-b.md)
 - [The symmetric circle structure](circle-data/circle-phi-sym.md)

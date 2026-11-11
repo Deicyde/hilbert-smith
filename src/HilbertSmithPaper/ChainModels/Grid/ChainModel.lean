@@ -1,5 +1,8 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCell
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridFundamental
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor

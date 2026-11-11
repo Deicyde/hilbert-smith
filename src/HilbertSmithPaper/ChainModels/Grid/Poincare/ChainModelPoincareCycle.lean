@@ -5,6 +5,10 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdLeibni
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
 import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.UnitComplex
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
 
 /-!
 # The chain model is Poincaré: part 1

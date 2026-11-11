@@ -14,4 +14,5 @@ Let $k\ge8$ and $X\subseteq\mathbb T^n$, with coordinate projections $X_j\subset
 ## Sources
 - New.
 ## Depends on
+- [Grid cubes](cubical/grid-cube.md)
 - [Grid boxes](grid-box.md)

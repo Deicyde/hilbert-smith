@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
 
 /-!
 # The degree-zero map `A' = b φ^s` of the dual circle
