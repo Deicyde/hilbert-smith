@@ -63,4 +63,18 @@ theorem relabelIso_dual {n : ℕ → ℕ} {x x' : ∀ i, Fin (n i) → X}
     DualCat.dualHom (relabelIso (G := G) hx).hom = (relabelIso hx).inv :=
   congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => DualCat.dualHom_id (⟨n i⟩ : FreeCat (G.G i)))
 
+/-- The relabelling isomorphisms commute with morphisms given by the same matrices. -/
+theorem relabelIso_natural {n m : ℕ → ℕ} {x x' : ∀ i, Fin (n i) → X} {y y' : ∀ i, Fin (m i) → X}
+    (hx : Tendsto (fun i => Finset.univ.sup fun k => nndist (x i k) (x' i k)) atTop (𝓝 0))
+    (hy : Tendsto (fun i => Finset.univ.sup fun k => nndist (y i k) (y' i k)) atTop (𝓝 0))
+    (u : (⟨n, x⟩ : AsymPre G X) ⟶ ⟨m, y⟩) (u' : (⟨n, x'⟩ : AsymPre G X) ⟶ ⟨m, y'⟩)
+    (h : ∀ i, AsymPre.coord u i = AsymPre.coord u' i) :
+    AsymCat.mkHom u ≫ (relabelIso hy).hom = (relabelIso hx).hom ≫ AsymCat.mkHom u' := by
+  show AsymCat.mkHom u ≫ AsymCat.mkHom (relabelHom m y y' hy) =
+    AsymCat.mkHom (relabelHom n x x' hx) ≫ AsymCat.mkHom u'
+  rw [← Functor.map_comp, ← Functor.map_comp]
+  refine congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => ?_)
+  simp only [AsymPre.coord_comp, relabelHom, h i]
+  exact (Category.comp_id _).trans (Category.id_comp _).symm
+
 end HSP
