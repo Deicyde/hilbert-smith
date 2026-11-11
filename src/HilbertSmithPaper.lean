@@ -14,6 +14,7 @@ import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
+import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMapsProperties
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
