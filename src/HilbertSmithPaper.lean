@@ -8,6 +8,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
+import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
 
 /-!
 # The paper
