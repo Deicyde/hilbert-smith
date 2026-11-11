@@ -2,11 +2,13 @@
 article_id: af_55f7afeaa4327b49773db3de
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.rep
 ---
 
 # Representatives of the finite quotients
 
-For $i\ge1$, define $r_i:\mathbb Z/p^i\mathbb Z\to\mathbb Z_p$ by sending a residue class to its representative in $\{0,\dots,p^i-1\}$, viewed as a $p$-adic integer.
+For $i\in\mathbb N$, define $r_i:\mathbb Z/p^i\mathbb Z\to\mathbb Z_p$ by sending a residue class to its representative in $\{0,\dots,p^i-1\}$, viewed as a $p$-adic integer.
 
 ## Sources
 
