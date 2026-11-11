@@ -2,6 +2,8 @@
 article_id: af_ae98ff4aff47b3fc8c958f05
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.strProd_boundary
 ---
 
 # Leibniz rule for products
