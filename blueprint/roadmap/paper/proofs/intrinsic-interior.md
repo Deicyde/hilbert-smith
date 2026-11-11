@@ -2,6 +2,8 @@
 article_id: af_a9d5263f02028413380112c2
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.intrinsicInterior
 ---
 
 # Intrinsic interior
