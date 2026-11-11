@@ -2,6 +2,8 @@
 article_id: af_413bed12f4f459aae55d7d00
 declaration: lemma
 origin: cited
+statement: formalized
+lean: HSP.symLine_poincare
 ---
 
 # The line is Poincaré
