@@ -2,6 +2,9 @@
 article_id: af_9df7ebae074e4306c48e8481
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.continuous_pinch
 ---
 
 # The pinch is continuous
