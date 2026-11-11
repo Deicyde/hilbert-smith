@@ -17,6 +17,7 @@ import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
 import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Corner.CutFlag
