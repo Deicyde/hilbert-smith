@@ -20,3 +20,8 @@ Let $n\ge1$ and let $M$ be a topological space with an atlas of charts onto open
 ## Depends on
 
 - [Intrinsic interior](intrinsic-interior.md)
+
+## Proof depends on
+
+- [Points over the open half-space are interior](half-space-interior.md)
+- [The open half-space is dense in the half-space](open-half-space-dense.md)

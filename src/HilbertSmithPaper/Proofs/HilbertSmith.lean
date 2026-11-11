@@ -1,4 +1,6 @@
-import Mathlib
+import HilbertSmithPaper.Proofs.FaithfulHausdorff
+import HilbertSmithPaper.Proofs.NoSmallSubgroups
+import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 
 /-!
 # Hilbert–Smith
@@ -11,7 +13,8 @@ Neither `M` nor `G` is assumed second countable, and `G` is not assumed Hausdorf
 is the same as that of `HSP.gleasonYamabe`. `n` and `M` are explicit, since the conclusion
 mentions only `G`.
 
-The statement is in place; its proof is still `sorry`.
+Proof: `G` is Hausdorff (`HSP.t2Space_of_faithfulSMul`) and has no small subgroups
+(`HSP.noSmallSubgroups`), so Gleason–Yamabe (`HSP.gleasonYamabe`) applies.
 -/
 
 open scoped ContDiff Manifold
@@ -28,6 +31,7 @@ theorem hilbertSmith (n : ℕ) (M : Type u) [TopologicalSpace M] [T2Space M] [Co
     [IsTopologicalGroup G] [LocallyCompactSpace G] [MulAction G M] [ContinuousSMul G M]
     [FaithfulSMul G M] :
     ∃ (d : ℕ) (_ : ChartedSpace (EuclideanSpace ℝ (Fin d)) G), LieGroup (𝓡 d) ∞ G := by
-  sorry
+  have := t2Space_of_faithfulSMul (Q := G) (X := M)
+  exact gleasonYamabe G (noSmallSubgroups n M G)
 
 end HSP
