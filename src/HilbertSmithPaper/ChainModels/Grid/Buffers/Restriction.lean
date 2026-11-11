@@ -1,6 +1,6 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.BufferedCells
-import HilbertSmithPaper.ChainModels.Grid.ControlLabels
+import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedCells
+import HilbertSmithPaper.ChainModels.Grid.Buffers.ControlLabels
 
 /-!
 # Buffered restriction of a matrix
