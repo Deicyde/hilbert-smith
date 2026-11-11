@@ -8,7 +8,9 @@ lean: HSP.FreeQ.instDualCat
 
 # Based vector spaces
 
-$\mathbb Q$ also denotes the duality category whose objects are the based vector spaces $\mathbb Q^d$ ($d\ge0$), whose morphisms $\mathbb Q^d\to\mathbb Q^{d'}$ are the $d'\times d$ rational matrices, with composition the matrix product, sums and rational multiples of matrices taken entrywise, finite biproducts (the block inclusions and projections make $\mathbb Q^{d+d'}$ a biproduct of $\mathbb Q^d$ and $\mathbb Q^{d'}$, and $\mathbb Q^0$ is a zero object), and the duality $(\mathbb Q^d)^*=\mathbb Q^d$, $g^*=g^{\mathsf T}$ (transpose). Both identities $M^{**}=M$ and $g^{**}=g$ hold on the nose. The standard basis vector $e_i$ of $\mathbb Q^d$ has dual basis vector $e_i^*$, the same vector of $(\mathbb Q^d)^*$.
+The duality on the [category of based vector spaces](bookkeeping/based-category.md) $\mathbb Q$ is $(\mathbb Q^d)^*=\mathbb Q^d$ on objects and $g^*=g^{\mathsf T}$ (transpose) on morphisms. It makes $\mathbb Q$ a duality category, and both identities $M^{**}=M$ and $g^{**}=g$ hold on the nose. The standard basis vector $e_i$ of $\mathbb Q^d$ has dual basis vector $e_i^*$, the same vector of $(\mathbb Q^d)^*$.
+
+*Proof sketch.* (Proof obligations.) Transposition reverses products, preserves identities, sums and scalar multiples, and is an involution.
 
 ## Sources
 
@@ -16,4 +18,5 @@ $\mathbb Q$ also denotes the duality category whose objects are the based vector
 
 ## Depends on
 
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
 - [Duality category](../../base/categories/duality-category.md)

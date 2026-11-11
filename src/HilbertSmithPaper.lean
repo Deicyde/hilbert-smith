@@ -251,6 +251,8 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedCategory
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedKron
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BoxComponents
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BoxObject
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.DualComplexFinite
@@ -258,6 +260,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProj
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjectionNe
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.PairingAdditiveLeft
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.PairingAdditiveRight
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDifferential
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDualHomExt
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductHomExt
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMap
