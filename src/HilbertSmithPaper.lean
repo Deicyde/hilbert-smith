@@ -21,6 +21,7 @@ import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
 import HilbertSmithPaper.Categories.Supports.ExteriorFunctor
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
 import HilbertSmithPaper.Categories.Supports.QuotientByEmpty
+import HilbertSmithPaper.Categories.Supports.QuotientSupportFiltration
 import HilbertSmithPaper.Categories.Supports.Separation
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
