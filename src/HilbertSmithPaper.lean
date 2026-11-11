@@ -68,6 +68,7 @@ import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 import HilbertSmithPaper.ChainModels.Approximations.ChainApprox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxExists
+import HilbertSmithPaper.ChainModels.Approximations.ChainModelFamily
 import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap

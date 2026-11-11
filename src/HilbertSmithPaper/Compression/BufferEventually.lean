@@ -3,6 +3,7 @@ import HilbertSmithPaper.ChainModels.Grid.Buffers.BasedInclusion
 import HilbertSmithPaper.ChainModels.Grid.Buffers.BufferedCells
 import HilbertSmithPaper.ChainModels.Grid.Buffers.ControlLabels
 import HilbertSmithPaper.Compression.RetainedCells
+import HilbertSmithPaper.ChainModels.Approximations.ChainModelFamily
 import HilbertSmithPaper.ChainModels.Grid.ChainModelEstimates
 
 /-!

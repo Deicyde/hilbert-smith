@@ -7,7 +7,7 @@ lean: HSP.Compression.buffer_eventually
 ---
 # Buffers hold eventually
 
-Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer radii $t<u$, and put $t'=(t+u)/2$. Let $\mathcal P_i$ be the family of typed matrices of the [chain-model estimates](../chain-models/grid/chain-model-estimates.md). There are an index $i_1$ and a null sequence $(\epsilon'_i)$ such that, for every $i\ge i_1$:
+Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer radii $t<u$, and put $t'=(t+u)/2$. Let $\mathcal P_i$ be the [family of chain-model matrices](../chain-models/approximations/chain-model-family.md) for the radius $\rho$ of the fixed local data. There are an index $i_1$ and a null sequence $(\epsilon'_i)$ such that, for every $i\ge i_1$:
 1. every [retained cell](retained-cells.md) of $D_i$, and its dual, lies in $\mathcal B_i(t')$;
 2. every $w\in\mathcal P_i$ satisfies $w\,\iota_{t'}=\iota_u\,w^{[t',u]}$;
 3. every $w\in\mathcal P_i$ has [restriction](../chain-models/grid/buffers/restriction.md) $w^{[u]}$ of [graph type](../corner/actions/graph-type.md) equal to the type of $w$, with bound $\epsilon'_i$, for the [control labels](../chain-models/grid/buffers/control-labels.md).
@@ -29,6 +29,7 @@ Take $i_1$ the largest of the three thresholds.
 - [The metric on the control space](../local-data/control/control-metric-space.md)
 - [Retained cells](retained-cells.md)
 - [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)
+- [The family of chain-model matrices](../chain-models/approximations/chain-model-family.md)
 - [Buffered cells](../chain-models/grid/buffers/buffered-cells.md)
 - [Restriction](../chain-models/grid/buffers/restriction.md)
 - [Control labels](../chain-models/grid/buffers/control-labels.md)
