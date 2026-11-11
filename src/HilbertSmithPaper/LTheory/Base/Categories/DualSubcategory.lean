@@ -26,7 +26,8 @@ variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFinite
 namespace DualSubcategory
 
 omit [Preadditive A] [Linear ℚ A] [HasFiniteBiproducts A] [DualCat A] [IsDualAdditive U] in
-private lemma isZero_of_mem {Z : A} (hZ : U Z) (h : IsZero Z) : IsZero (⟨Z, hZ⟩ : U.FullSubcategory) :=
+private lemma isZero_of_mem {Z : A} (hZ : U Z) (h : IsZero Z) :
+    IsZero (⟨Z, hZ⟩ : U.FullSubcategory) :=
   ⟨fun Y => ⟨⟨⟨ObjectProperty.homMk (h.to_ Y.obj)⟩, fun _ =>
       ObjectProperty.hom_ext _ (h.eq_of_src _ _)⟩⟩,
     fun Y => ⟨⟨⟨ObjectProperty.homMk (h.from_ Y.obj)⟩, fun _ =>

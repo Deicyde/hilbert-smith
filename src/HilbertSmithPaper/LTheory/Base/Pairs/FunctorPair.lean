@@ -101,7 +101,8 @@ lemma pairMap_map {C D : ChainComplex B ℤ} (f : C ⟶ D) {m n : ℤ} (hmn : m 
   · simp only [biprod.lift_fst, Category.assoc, ← Functor.map_comp]
     rfl
   · simp only [Category.assoc, biprod.lift_snd]
-    rw [← F.toFunctor.map_comp, biprod.lift_snd, map_units_smul'', Linear.comp_units_smul, F.toFunctor.map_comp,
+    rw [← F.toFunctor.map_comp, biprod.lift_snd, map_units_smul'', Linear.comp_units_smul,
+      F.toFunctor.map_comp,
       ← Category.assoc (F.ξ (D.X (n - r))).inv, inv_natural'', Category.assoc]
     rfl
 
