@@ -215,7 +215,11 @@ import HilbertSmithPaper.Compression.TheoremC
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Corner.Actions.GraphTypeAction
+import HilbertSmithPaper.Corner.CutFace
+import HilbertSmithPaper.Corner.CutFaceBoundary
 import HilbertSmithPaper.Corner.CutFlag
+import HilbertSmithPaper.Corner.CutPointMinus
+import HilbertSmithPaper.Corner.CutPointPlus
 import HilbertSmithPaper.Corner.CutSets
 import HilbertSmithPaper.Corner.Exterior
 import HilbertSmithPaper.Corner.ExteriorClosed
