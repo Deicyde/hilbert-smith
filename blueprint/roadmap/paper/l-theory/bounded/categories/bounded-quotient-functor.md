@@ -24,6 +24,7 @@ which is the identity on objects and sends the class of a bounded matrix $(f_{l,
 - [Bounded extension of a duality functor](bounded-functor.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Duality functor](../../base/categories/duality-functor.md)
+- [The entrywise functor](entrywise-functor.md)
 
 ## Proof depends on
 

@@ -8,7 +8,7 @@ lean: HSP.K0
 
 # $K_0$ of an idempotent completion
 
-$K_0(\mathrm{Kar}\,A)$ is the Grothendieck group of the commutative monoid of isomorphism classes of objects of $\mathrm{Kar}\,A$ under $\oplus$. Write $[P]$ for the class of $P$.
+$K_0(\mathrm{Kar}\,A)$ is the Grothendieck group of the commutative monoid of [isomorphism classes of objects](classes/iso-classes.md) of $\mathrm{Kar}\,A$ under $\oplus$.
 
 ## Sources
 
@@ -17,3 +17,4 @@ $K_0(\mathrm{Kar}\,A)$ is the Grothendieck group of the commutative monoid of is
 ## Depends on
 
 - [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Isomorphism classes of objects](classes/iso-classes.md)

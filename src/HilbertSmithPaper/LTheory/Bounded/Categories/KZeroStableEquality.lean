@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
+import HilbertSmithPaper.LTheory.Bounded.Categories.Classes.KZeroClass
 
 /-!
 # Equality in `K_0`

@@ -28,6 +28,7 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 ## Proof depends on
 
 - [Duality functors carry pairs to pairs](../pairs/functor-pair.md)
+- [Duality functors commute with pushforward](../complexes/functor-push.md)
 - [Transported pairs are cobordisms](../pairs/transport-cobordism.md)
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)

@@ -4,6 +4,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
+import HilbertSmithPaper.LTheory.Bounded.Categories.Classes.KZeroClass
 
 /-!
 # Decorated objects of the completed quotient

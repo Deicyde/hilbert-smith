@@ -30,6 +30,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 - [Decorated objects](../decorations/decorated-object.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
 - [Duals of box products](../products/box-dual.md)
+- [The class of an object in $K_0$](../../bounded/categories/classes/k-zero-class.md)
 
 ## Proof depends on
 

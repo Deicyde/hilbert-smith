@@ -274,10 +274,13 @@ import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
 import HilbertSmithPaper.Evaluation.BasedToFree
 import HilbertSmithPaper.Evaluation.ConstantCp2Sequence
+import HilbertSmithPaper.Evaluation.ConstantTail
 import HilbertSmithPaper.Evaluation.CubicalPinch
+import HilbertSmithPaper.Evaluation.ExcisiveIntersectionQuotient
 import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.GermHomotopy
 import HilbertSmithPaper.Evaluation.LabelledModel
+import HilbertSmithPaper.Evaluation.ScalarComponentProjection
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
@@ -357,6 +360,9 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotientFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
+import HilbertSmithPaper.LTheory.Bounded.Categories.Classes.IsoClasses
+import HilbertSmithPaper.LTheory.Bounded.Categories.Classes.KZeroClass
+import HilbertSmithPaper.LTheory.Bounded.Categories.EntrywiseFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
