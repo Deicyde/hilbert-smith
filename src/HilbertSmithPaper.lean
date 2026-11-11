@@ -259,7 +259,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisionBoundary
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
-import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdent
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdentification
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.UltimateBoundary
 import HilbertSmithPaper.LTheory.Ultimate.Groups.EquivalenceInvariance
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
