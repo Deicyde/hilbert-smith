@@ -2,6 +2,9 @@
 article_id: af_dd9c112b59eeec724fad55b5
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.F₀_vadd
 ---
 
 # The averaged map is invariant
