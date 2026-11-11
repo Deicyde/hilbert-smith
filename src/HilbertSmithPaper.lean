@@ -120,6 +120,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedDualProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BlockDual
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.DualTensorHomBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdLeibniz
