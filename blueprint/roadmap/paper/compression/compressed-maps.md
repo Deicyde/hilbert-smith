@@ -7,7 +7,7 @@ lean: HSP.Compression.compress
 ---
 # Compressed maps
 
-Let $M_1,M_2\in\{D_i,D_i^{N-*}\}$, and let $p_2$ be the retained projection of $M_2$ and $\jmath_1$ the retained inclusion of $M_1$: $\mathrm{pr}_i$ and $\mathrm{in}_i$ on chains, $\mathrm{in}_i^*$ and $\mathrm{pr}_i^*$ on cochains ([compressed complex](compressed-complex.md)). The *compression* of a matrix $w:M_1\to M_2$ is $\hat w=p_2\,w\,\jmath_1$ for $i\ge i_0$, and $\hat w=0$ for $i<i_0$.
+Let $M_1,M_2\in\{D_i,D_i^{N-*}\}$, and let $p_2$ be the retained projection of $M_2$ and $\jmath_1$ the retained inclusion of $M_1$: $\mathrm{pr}_i$ and $\mathrm{in}_i$ on chains, $\mathrm{in}_i^*$ and $\mathrm{pr}_i^*$ on cochains ([retained projection](retained-projection.md)). The *compression* of a matrix $w:M_1\to M_2$ is $\hat w=p_2\,w\,\jmath_1$ for $i\ge i_0$, and $\hat w=0$ for $i<i_0$.
 
 The compressed maps are the compressions, for $g,h\in G_i$, of the matrices of the [chain models](../chain-models/grid/chain-model-poincare.md) and the [approximations](../chain-models/approximations/group-approx.md):
 - $\hat d$, of the differential $d$ of $D_i$, and of the differential $d$ of $D_i^{N-*}$ (with $d_r=(-1)^rd^*$);
@@ -23,6 +23,7 @@ The compressed maps are the compressions, for $g,h\in G_i$, of the matrices of t
 ## Depends on
 
 - [Compressed complex](compressed-complex.md)
+- [Retained projection](retained-projection.md)
 - [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
 - [Group approximations](../chain-models/approximations/group-approx.md)
 - [Chosen product homotopies](../chain-models/approximations/chosen-product-homotopies.md)

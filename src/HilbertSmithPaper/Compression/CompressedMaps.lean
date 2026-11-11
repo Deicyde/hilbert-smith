@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.Compression.CompressedComplex
+import HilbertSmithPaper.Compression.RetainedProjection
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopies
 
 /-!
@@ -38,7 +39,7 @@ variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 noncomputable def compress (F : FixedLocalData p n D ρplus) (i : ℕ) (r s : ℤ)
     (w : Matrix (Fin ((chainModel F.toLocalDatum i).X s).dim)
       (Fin ((chainModel F.toLocalDatum i).X r).dim) ℚ) :
-    Matrix (Fin (compressedDim F i s)) (Fin (compressedDim F i r)) ℚ :=
+    Matrix (Fin ((compressed F s).as.n i)) (Fin ((compressed F r).as.n i)) ℚ :=
   retainedProj F i s * w * retainedInc F i r
 
 /-- `d̂` on `C`, in degree `r`. -/
