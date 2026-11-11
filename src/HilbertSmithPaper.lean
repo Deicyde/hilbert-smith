@@ -1,3 +1,5 @@
+import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
+
 /-!
 # The paper
 

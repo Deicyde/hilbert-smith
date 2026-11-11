@@ -1,7 +1,9 @@
 ---
 article_id: af_7dca2f3e90dbd89bce73e302
-declaration: def
+declaration: class
 origin: background
+statement: formalized
+lean: HSP.DualCat
 ---
 
 # Small Q-linear category with strict duality
