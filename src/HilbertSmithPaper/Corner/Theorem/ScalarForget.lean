@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.Corner.ExteriorClosed
+import HilbertSmithPaper.Corner.Exterior
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Categories.Functors.ForgetControlSupport
 import HilbertSmithPaper.Categories.Supports.ExteriorFunctor

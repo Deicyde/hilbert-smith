@@ -37,6 +37,8 @@ import HilbertSmithPaper.Categories.Functors.PushSupport
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.RelabellingEquivalence
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
+import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismNatural
+import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismUnitary
 import HilbertSmithPaper.Categories.Supports.DisjointSupportVanishing
 import HilbertSmithPaper.Categories.Supports.Excision
 import HilbertSmithPaper.Categories.Supports.ExteriorFunctor
