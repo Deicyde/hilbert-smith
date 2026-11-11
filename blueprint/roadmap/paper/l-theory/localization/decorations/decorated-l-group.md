@@ -1,7 +1,9 @@
 ---
 article_id: af_537424e382be4638a43bd932
-declaration: def
+declaration: abbrev
 origin: cited
+statement: formalized
+lean: HSP.LIm
 ---
 
 # Decorated quotient L-group
