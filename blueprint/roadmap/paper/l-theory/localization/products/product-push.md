@@ -2,6 +2,9 @@
 article_id: af_b73ccdcd714c3691304bc0c6
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.strProd_push
+proof: formalized
 ---
 
 # Pushforward of products
