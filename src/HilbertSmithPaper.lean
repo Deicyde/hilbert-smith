@@ -118,6 +118,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
+import HilbertSmithPaper.LTheory.Localization.Boundary.ImagePair
 import HilbertSmithPaper.LTheory.Localization.Boundary.UPair
 import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
