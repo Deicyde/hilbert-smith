@@ -54,6 +54,8 @@ def trivial (p : ℕ) : GroupSeq p where
   G _ := Unit
   χ _ := 0
 
+instance (p i : ℕ) : Unique ((trivial p).G i) := inferInstanceAs (Unique Unit)
+
 end GroupSeq
 
 end HSP

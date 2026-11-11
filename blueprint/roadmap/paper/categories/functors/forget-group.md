@@ -2,6 +2,8 @@
 article_id: af_cc5556435173cb9c35f10655
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.forgetGroup
 ---
 
 # Forgetting the group
@@ -22,3 +24,4 @@ $U:\mathcal A_{\mathbf G}(X)\to\mathcal A_{\mathbf 1}(X)$ is the strict duality 
 ## Depends on
 
 - [Asymptotic duality](../asymptotic/asymptotic-duality.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)

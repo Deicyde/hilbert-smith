@@ -1,7 +1,9 @@
 ---
 article_id: af_545fb65fc416fbfc3bb9fe70
-declaration: def
+declaration: instance
 origin: bridged
+statement: formalized
+lean: HSP.AsymCat.dualCat
 ---
 
 # Duality on the asymptotic category

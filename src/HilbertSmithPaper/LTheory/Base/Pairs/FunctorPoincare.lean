@@ -92,7 +92,8 @@ lemma mapStructure_apply (C : ChainComplex B ℤ) (n : ℤ) (φ : (StructureCx C
   rfl
 
 private lemma dualHom_ξ_inv (M : B) :
-    dualHom (F.ξ M).inv = (F.ξ (dual M)).inv ≫ eqToHom ((congrArg F.toFunctor.obj (dual_dual M)).trans
+    dualHom (F.ξ M).inv = (F.ξ (dual M)).inv ≫
+      eqToHom ((congrArg F.toFunctor.obj (dual_dual M)).trans
       (dual_dual (F.toFunctor.obj M)).symm) := by
   have h1 : dualHom (F.ξ M).hom ≫ dualHom (F.ξ M).inv = 𝟙 _ := by
     rw [← dualHom_comp, Iso.inv_hom_id, dualHom_id]
