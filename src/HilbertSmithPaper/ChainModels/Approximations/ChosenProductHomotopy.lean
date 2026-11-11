@@ -40,11 +40,11 @@ lemma productHomotopy_spec (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < �
         (∀ r : ℤ, (sphereProp A ρ (chainModelLabel A i r) (chainModelLabel A i (r + 1))
           (toMatrix (productHomotopy A hρ hρ' i g h r)) : ℝ) ≤ μ' i) ∧
         (∀ v > 0, ∀ r : ℤ,
-          IsGraphType (bufferedLabel A hρ hρ' (chainModelLabel A i r) v)
-            (bufferedLabel A hρ hρ' (chainModelLabel A i (r + 1)) v)
+          IsGraphType (controlLabel A hρ hρ' (chainModelLabel A i r) v)
+            (controlLabel A hρ hρ' (chainModelLabel A i (r + 1)) v)
             (ZMod.cast (g + h) : ZMod p) (μ' i)
-            (restrict (bufferedSet A ρ (chainModelLabel A i (r + 1)) v)
-              (bufferedSet A ρ (chainModelLabel A i r) v)
+            (restrict (bufferedCells A ρ (chainModelLabel A i (r + 1)) v)
+              (bufferedCells A ρ (chainModelLabel A i r) v)
               (toMatrix (productHomotopy A hρ hρ' i g h r)))) :=
   (product_homotopies A hρ hρ').choose_spec
 
