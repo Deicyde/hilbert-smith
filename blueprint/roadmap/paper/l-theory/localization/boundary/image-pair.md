@@ -27,6 +27,7 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [Complexes in a full subcategory](../decorations/complex-in-subcategory.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
 
 ## Proof depends on
 

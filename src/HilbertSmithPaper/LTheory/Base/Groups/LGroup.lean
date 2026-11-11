@@ -6,8 +6,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 
 For a duality category `B`, `L_k(B)` is the set of cobordism classes `[C, φ]` of strict
 `k`-dimensional symmetric Poincaré complexes in `B`: the quotient of `SymPoincare B k` by the
-equivalence relation `Cobordant` (an equivalence relation by `cobordant_equivalence`). The
-projective L-group of a duality category `A` is `L^p_k(A) = L_k(Kar A)`.
+equivalence relation `Cobordant` (an equivalence relation by `cobordant_equivalence`).
 -/
 
 open CategoryTheory CategoryTheory.Limits CategoryTheory.Idempotents
@@ -31,10 +30,5 @@ def LGroup (B : Type u) [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFini
 def LGroup.mk {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
     [DualCat B] {k : ℤ} (x : SymPoincare B k) : LGroup B k :=
   Quotient.mk _ x
-
-/-- The projective L-group `L^p_k(A) = L_k(Kar A)`. -/
-abbrev Lp (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFiniteBiproducts A]
-    [DualCat A] (k : ℤ) : Type (max u v) :=
-  LGroup (Karoubi A) k
 
 end HSP

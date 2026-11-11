@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
+import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
 
 /-!
 # Complexes in a full subcategory

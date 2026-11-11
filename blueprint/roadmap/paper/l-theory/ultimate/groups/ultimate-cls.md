@@ -25,3 +25,4 @@ Here $L^{\langle 0\rangle}_k(\mathcal A)=L^p_{k+0}(C_{\mathbb Z^0}\mathcal A)$, 
 - [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
 - [Embedding into the idempotent completion](../../base/categories/karoubi-embedding.md)
 - [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

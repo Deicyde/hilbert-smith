@@ -270,6 +270,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
@@ -297,6 +298,7 @@ import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
+import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence
 import HilbertSmithPaper.LTheory.Base.Pairs.CylinderCobordism

@@ -7,6 +7,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
 import HilbertSmithPaper.LTheory.Localization.Products.ProductSum
 import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
+import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 
 /-!
 # Transition map

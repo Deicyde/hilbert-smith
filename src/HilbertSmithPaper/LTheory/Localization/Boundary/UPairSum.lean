@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Localization.Boundary.ImagePair
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
+import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 
 /-!
 # Sums of U-pairs

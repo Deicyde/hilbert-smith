@@ -22,6 +22,7 @@ Let $\mathcal B$ be a [duality category](../../base/categories/duality-category.
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
 
 ## Proof depends on
 

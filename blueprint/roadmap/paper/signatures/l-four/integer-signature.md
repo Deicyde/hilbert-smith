@@ -25,6 +25,7 @@ $\sigma_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to\mathbb Z$ is the map $[C,\varphi
 - [Middle form nonsingular](middle-form-nonsingular.md)
 - [L-group](../../l-theory/base/groups/l-group.md)
 - [Group structure on L](../../l-theory/base/groups/l-group-add.md)
+- [The projective L-group](../../l-theory/base/groups/projective-l-group.md)
 
 ## Proof depends on
 
