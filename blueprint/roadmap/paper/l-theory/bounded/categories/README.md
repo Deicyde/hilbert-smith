@@ -15,6 +15,7 @@ The bounded category $C_{\mathbb Z}(\mathcal A)$ and its duality, iterated bound
 - [Iterated bounded extension](bounded-functor-iter.md)
 - [Bounded extension is functorial](bounded-functor-comp.md)
 - [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
+- [The entrywise quotient functor](bounded-quotient-functor.md)
 - [Bounded quotients](bounded-quotient.md)
 - [Iterated bounded subcategories](iterated-bounded-sub.md)
 - [Iterated bounded subcategories are closed under sums and duals](iterated-bounded-sub-additive.md)

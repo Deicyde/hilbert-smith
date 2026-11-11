@@ -8,7 +8,7 @@ lean: HSP.Bounded.powQuotientIso
 
 # Iterated bounded quotients
 
-Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration, so that $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$ is one for every $j\ge0$ ([Iterated bounded filtrations](iterated-bounded-filtration.md)). The *iterated bounded quotient isomorphism* is the isomorphism of duality categories $e_j:C_{\mathbb Z^j}\mathcal A/C_{\mathbb Z^j}\mathcal U\to C_{\mathbb Z^j}(\mathcal A/\mathcal U)$ (a strict duality functor together with a strict duality functor inverse to it), defined by $e_0=\mathrm{id}$ and $e_{j+1}=C_\mathbb Z(e_j)\circ\tilde e_j$, where $\tilde e_j:C_\mathbb Z(C_{\mathbb Z^j}\mathcal A)/C_\mathbb Z(C_{\mathbb Z^j}\mathcal U)\to C_\mathbb Z(C_{\mathbb Z^j}\mathcal A/C_{\mathbb Z^j}\mathcal U)$ is the entrywise quotient functor of [Bounded quotients](bounded-quotient.md).
+Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration, so that $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$ is one for every $j\ge0$ ([Iterated bounded filtrations](iterated-bounded-filtration.md)). The *iterated bounded quotient isomorphism* is the isomorphism of duality categories $e_j:C_{\mathbb Z^j}\mathcal A/C_{\mathbb Z^j}\mathcal U\to C_{\mathbb Z^j}(\mathcal A/\mathcal U)$ (a strict duality functor together with a strict duality functor inverse to it), defined by $e_0=\mathrm{id}$ and $e_{j+1}=C_\mathbb Z(e_j)\circ\tilde e_j$, where $\tilde e_j:C_\mathbb Z(C_{\mathbb Z^j}\mathcal A)/C_\mathbb Z(C_{\mathbb Z^j}\mathcal U)\to C_\mathbb Z(C_{\mathbb Z^j}\mathcal A/C_{\mathbb Z^j}\mathcal U)$ is the [entrywise quotient functor](bounded-quotient-functor.md), an isomorphism by [Bounded quotients](bounded-quotient.md).
 
 *Proof sketch.* (Proof obligations: that each composite is identity on objects, bijective on morphisms and strict, so that it has a strict inverse.) Induction on $j$; for $j=0$, $e_0=\mathrm{id}$.
 1. The first factor. By [Bounded quotients](bounded-quotient.md) for the filtration $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$, $\tilde e_j$ is the identity on objects, full, faithful and commutes with the duality on the nose.
@@ -24,6 +24,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 
 ## Depends on
 
+- [The entrywise quotient functor](bounded-quotient-functor.md)
 - [Iterated bounded subcategories are closed under sums and duals](iterated-bounded-sub-additive.md)
 - [Iterated bounded subcategories](iterated-bounded-sub.md)
 - [Iterated bounded filtrations](iterated-bounded-filtration.md)
