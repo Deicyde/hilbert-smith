@@ -198,6 +198,7 @@ import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.CompressedDifferential
 import HilbertSmithPaper.Compression.CompressedMaps
+import HilbertSmithPaper.Compression.CompressedPoincare
 import HilbertSmithPaper.Compression.CompressedRep
 import HilbertSmithPaper.Compression.CompressedResiduals
 import HilbertSmithPaper.Compression.CompressionProductRule
