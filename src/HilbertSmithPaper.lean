@@ -243,6 +243,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
+import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMapHomotopy
