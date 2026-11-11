@@ -21,7 +21,7 @@ has sphere propagation at most `μ'_i` and, for every `v > 0`, `B_{g,h}^{[v]}` h
   as `a_h a_g - a_{g+h} = B_r ≫ d + d ≫ B_{r-1}`.
 * Sphere labels and control labels come from `f_T` of radius `ρ`, `0 < ρ < ρ₊`; sphere
   propagation is `sphereProp`, the restriction `B^{[v]}` is `restrict` to the buffered cells, and
-  graph types are `Corner.IsGraphType` for `bufferedLabel`.
+  graph types are `Corner.IsGraphType` for `controlLabel`.
 * The chosen family is `productHomotopy` (chosen product homotopies).
 -/
 
@@ -51,11 +51,11 @@ theorem product_homotopies (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < �
         (∀ r : ℤ, (sphereProp A ρ (chainModelLabel A i r) (chainModelLabel A i (r + 1))
           (toMatrix (tensorOneP A i 1 (BT i g h) r)) : ℝ) ≤ μ' i) ∧
         (∀ v > 0, ∀ r : ℤ,
-          IsGraphType (bufferedLabel A hρ hρ' (chainModelLabel A i r) v)
-            (bufferedLabel A hρ hρ' (chainModelLabel A i (r + 1)) v)
+          IsGraphType (controlLabel A hρ hρ' (chainModelLabel A i r) v)
+            (controlLabel A hρ hρ' (chainModelLabel A i (r + 1)) v)
             (ZMod.cast (g + h) : ZMod p) (μ' i)
-            (restrict (bufferedSet A ρ (chainModelLabel A i (r + 1)) v)
-              (bufferedSet A ρ (chainModelLabel A i r) v)
+            (restrict (bufferedCells A ρ (chainModelLabel A i (r + 1)) v)
+              (bufferedCells A ρ (chainModelLabel A i r) v)
               (toMatrix (tensorOneP A i 1 (BT i g h) r)))) := by
   sorry
 

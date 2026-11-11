@@ -52,7 +52,8 @@ noncomputable def compressedCell (F : FixedLocalData p n D ρplus) {i : ℕ}
 
 lemma compressedCell_buffered (F : FixedLocalData p n D ρplus) {i : ℕ}
     (hi : startIndex F ≤ i) (r : ℤ) (b : Fin (compressedDim F i r)) :
-    compressedCell F hi r b ∈ bufferedCells F.toLocalDatum F.ρ i r ((F.t + F.u) / 2) :=
+    compressedCell F hi r b ∈
+      bufferedCells F.toLocalDatum F.ρ (chainModelLabel F.toLocalDatum i r) ((F.t + F.u) / 2) :=
   ((startIndex_spec F).2 i hi).1.1 r _
     ((mem_retainedCells F i r _).1 (Finset.orderEmbOfFin_mem _ _ b))
 
@@ -60,7 +61,7 @@ lemma compressedCell_buffered (F : FixedLocalData p n D ρplus) {i : ℕ}
 noncomputable def compressedLabel (F : FixedLocalData p n D ρplus) {i : ℕ}
     (hi : startIndex F ≤ i) (r : ℤ) (b : Fin (compressedDim F i r)) :
     F.T × Corner.RoundSphere n :=
-  controlLabel F.toLocalDatum F.ρ_pos F.ρ_lt i r ((F.t + F.u) / 2)
+  controlLabel F.toLocalDatum F.ρ_pos F.ρ_lt (chainModelLabel F.toLocalDatum i r) ((F.t + F.u) / 2)
     ⟨compressedCell F hi r b, compressedCell_buffered F hi r b⟩
 
 open Classical in

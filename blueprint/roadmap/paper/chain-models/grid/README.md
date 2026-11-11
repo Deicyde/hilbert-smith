@@ -26,7 +26,5 @@ The torus, the cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and 
 - [Chain-model duality](chain-model-duality.md)
 - [The chain model is Poincaré](chain-model-poincare.md)
 - [Sphere labels](sphere-labels.md)
-- [Buffered cells](buffered-cells.md)
-- [Control labels](control-labels.md)
-- [Buffered restriction of a matrix](restriction.md)
+- [Buffered cells and restriction](buffers/README.md)
 - [Chain-model estimates](chain-model-estimates.md)

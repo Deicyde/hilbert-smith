@@ -12,4 +12,4 @@ For a real number $v$ let $\iota_v$ be the based inclusion of the span of the [b
 ## Sources
 - HS paper, Section 9 (the eventual definition of target labels).
 ## Depends on
-- [Buffered cells](buffered-cells.md), [control labels](control-labels.md)
+- [Buffered cells](buffered-cells.md), [control labels](control-labels.md), [based inclusion](based-inclusion.md)

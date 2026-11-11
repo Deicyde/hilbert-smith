@@ -12,8 +12,8 @@ labels.
 ## Encoding
 
 As in product homotopies: labels from `f_T` of radius `0 < ρ < ρ₊`, `sphereProp`, the square
-restriction to buffered cells (`restrict`, `bufferedSet`), `Corner.IsGraphType` for
-`bufferedLabel`, and `χ_i = ZMod.cast`. The statement is made in every degree `r`.
+restriction to buffered cells (`restrict`, `bufferedCells`), `Corner.IsGraphType` for
+`controlLabel`, and `χ_i = ZMod.cast`. The statement is made in every degree `r`.
 -/
 
 open CategoryTheory Filter Topology
@@ -33,10 +33,10 @@ theorem approx_graphType (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
       ∀ (i : ℕ) (g : ZMod (p ^ i)) (r : ℤ),
         (sphereProp A ρ (chainModelLabel A i r) (chainModelLabel A i r)
           (toMatrix (groupApprox A i g r)) : ℝ) ≤ μ i ∧
-        ∀ v > 0, IsGraphType (bufferedLabel A hρ hρ' (chainModelLabel A i r) v)
-          (bufferedLabel A hρ hρ' (chainModelLabel A i r) v) (ZMod.cast g : ZMod p) (μ i)
-          (restrict (bufferedSet A ρ (chainModelLabel A i r) v)
-            (bufferedSet A ρ (chainModelLabel A i r) v) (toMatrix (groupApprox A i g r))) := by
+        ∀ v > 0, IsGraphType (controlLabel A hρ hρ' (chainModelLabel A i r) v)
+          (controlLabel A hρ hρ' (chainModelLabel A i r) v) (ZMod.cast g : ZMod p) (μ i)
+          (restrict (bufferedCells A ρ (chainModelLabel A i r) v)
+            (bufferedCells A ρ (chainModelLabel A i r) v) (toMatrix (groupApprox A i g r))) := by
   sorry
 
 end HSP.ChainModels

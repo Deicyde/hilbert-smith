@@ -50,10 +50,10 @@ theorem adjoint_homotopies (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < �
           (adjointHomotopy A hρ hρ' i g x) : ℝ) ≤ μ'' i) ∧
       ∀ v > 0, ∀ᶠ i in atTop, ∀ (g : ZMod (p ^ i))
         (x : {x : ℤ × ℤ // x.1 + x.2 = ((n + 4 : ℕ) : ℤ) + 1}),
-        IsGraphType (bufferedLabel A hρ hρ' (chainModelLabel A i x.1.2) v)
-          (bufferedLabel A hρ hρ' (chainModelLabel A i x.1.1) v) (ZMod.cast g : ZMod p) (μ'' i)
-          (restrict (bufferedSet A ρ (chainModelLabel A i x.1.1) v)
-            (bufferedSet A ρ (chainModelLabel A i x.1.2) v) (adjointHomotopy A hρ hρ' i g x)) := by
+        IsGraphType (controlLabel A hρ hρ' (chainModelLabel A i x.1.2) v)
+          (controlLabel A hρ hρ' (chainModelLabel A i x.1.1) v) (ZMod.cast g : ZMod p) (μ'' i)
+          (restrict (bufferedCells A ρ (chainModelLabel A i x.1.1) v)
+            (bufferedCells A ρ (chainModelLabel A i x.1.2) v) (adjointHomotopy A hρ hρ' i g x)) := by
   sorry
 
 end HSP.ChainModels
