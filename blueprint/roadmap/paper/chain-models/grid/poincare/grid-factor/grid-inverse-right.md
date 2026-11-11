@@ -19,6 +19,7 @@ For every $k$, $n$ and $r$, the [unsymmetrized grid structure](grid-structure-u.
 
 ## Depends on
 
+- [The iterated grid duality map](grid-dual-map.md)
 - [The unsymmetrized grid structure](grid-structure-u.md)
 - [Chain-model duality](../../chain-model-duality.md)
 

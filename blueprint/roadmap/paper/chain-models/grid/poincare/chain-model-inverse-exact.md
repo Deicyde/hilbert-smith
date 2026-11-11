@@ -24,6 +24,7 @@ For every $i$ and $N=n+4$, the map $b_i$ of [chain-model duality](../chain-model
 
 ## Proof depends on
 
+- [The iterated grid duality map](grid-factor/grid-dual-map.md)
 - [The unsymmetrized grid structure inverts the grid duality map](grid-factor/grid-inverse-right.md)
 - [A product of structures after a product of duality maps](../tensor/structure-products/dual-prod-comp-str-prod.md)
 - [A product of duality maps after a product of structures](../tensor/structure-products/str-prod-comp-dual-prod.md)

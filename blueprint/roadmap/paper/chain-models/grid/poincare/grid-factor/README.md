@@ -10,6 +10,7 @@ The degree-zero maps of the circle, the unsymmetrized grid structure, the grid h
 - [The degree-zero map A' of the dual circle](circle-a-dual.md)
 - [The identity of a dual complex as a map of degree zero](id-dual-deg0.md)
 - [The unsymmetrized grid structure](grid-structure-u.md)
+- [The iterated grid duality map](grid-dual-map.md)
 - [The grid homotopy](grid-h.md)
 - [The dual grid homotopy](grid-h-dual.md)
 - [The grid complex vanishes in negative degrees](grid-dim-neg.md)

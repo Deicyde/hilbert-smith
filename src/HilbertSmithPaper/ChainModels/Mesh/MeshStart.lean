@@ -22,7 +22,7 @@ namespace HSP.ChainModels
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
 /-- Some `k ≥ 8` satisfies `3ω(2·4/k) + 8·4/k ≤ 1/16`. -/
-lemma exists_meshStart (A : LocalDatum p n D ρplus) :
+private lemma exists_meshStart (A : LocalDatum p n D ρplus) :
     ∃ k : ℕ, 8 ≤ k ∧ 3 * trackModulus A (2 * (4 / k)) + 8 * (4 / k) ≤ 1 / 16 := by
   have h := (completedMaps_properties A (half_pos A.ρplus_pos)
     (half_lt_self A.ρplus_pos)).1.2.2.1

@@ -177,6 +177,7 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2Inverse
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.CircleA
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.CircleADual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridDimNeg
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridDualMap
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridH
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridHDual
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridInverse

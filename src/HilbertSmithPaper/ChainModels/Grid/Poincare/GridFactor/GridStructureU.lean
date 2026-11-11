@@ -1,5 +1,6 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedStrProd
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhi
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex

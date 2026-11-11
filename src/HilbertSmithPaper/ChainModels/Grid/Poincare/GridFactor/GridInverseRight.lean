@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
+import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridDualMap
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridStructureU
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.GridDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.IdDualDeg0
@@ -25,8 +26,8 @@ namespace HSP.ChainModels
 
 open FreeQ DualCat
 
-private lemma unit_inverse_right (r : ℤ) :
-    unitStructure ⟨(r, 0 - r), by ring⟩ ≫ unitDualMap r = 𝟙 _ := by
+private lemma unit_inverse_right (k : ℕ) (r : ℤ) :
+    unitStructure ⟨(r, 0 - r), by ring⟩ ≫ gridDualMap k 0 r = 𝟙 _ := by
   refine Matrix.ext fun a b => ?_
   by_cases hr : r = 0
   · subst hr
@@ -47,7 +48,7 @@ private lemma unit_inverse_right (r : ℤ) :
 /-- *The unsymmetrized grid structure inverts the grid duality map*: `b φ^u_n = 1`. -/
 lemma gridStructureU_comp_gridDualMap (k : ℕ) : ∀ (n : ℕ) (r : ℤ),
     gridStructureU k n ⟨(r, (n : ℤ) - r), by ring⟩ ≫ gridDualMap k n r = 𝟙 _
-  | 0, r => unit_inverse_right r
+  | 0, r => unit_inverse_right k r
   | n + 1, r => by
     have e := basedStrProd_comp_basedDualProd (circleComplex_dim_neg k) (gridComplex_dim_neg k n)
         n 1

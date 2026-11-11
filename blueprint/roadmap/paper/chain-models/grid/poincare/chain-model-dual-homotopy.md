@@ -25,6 +25,7 @@ For every $i$, with $d$ the differential of the [dual complex](../../../l-theory
 
 ## Proof depends on
 
+- [The iterated grid duality map](grid-factor/grid-dual-map.md)
 - [A tensor between a product of structures and a product of duality maps](../tensor/structure-products/str-prod-tensor-dual-prod.md)
 - [Circle duality](../circle-duality.md)
 - [The unsymmetrized grid structure inverts the grid duality map](grid-factor/grid-inverse-right.md)
