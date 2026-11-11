@@ -28,3 +28,4 @@ $\mathcal A_{\mathbf G}(X)$ is a [strict duality category](../../l-theory/base/c
 - [Equality of classes](structure/class-eq.md)
 - [Every morphism is a class](structure/class-surjective.md)
 - [Free category of a finite group](free-category.md)
+- [Transposing twice](structure/transpose-transpose.md)
