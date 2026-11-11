@@ -18,7 +18,7 @@ The isomorphism `(C ⊕ C') ⊗ Λ ≅ C ⊗ Λ ⊕ C' ⊗ Λ` carrying `(φ ⊕
 `φ ⊗ λ ⊕ φ' ⊗ λ` (`HSP.cxProd_sum_iso`, composed with the identification of the chosen sum with
 `C ⊕ C'`) is carried by `e_{j+1}^{-1}` to an isomorphism onto the sum of the images, which carries
 the structures (`HSP.DualFunctor.mapStructure_pushforward`). Sums in the full subcategory of
-decorated objects then give the claim (`HSP.SymPoincare.mk_toSub_of_sumIso`).
+decorated objects then give the claim (`HSP.SymPoincare.mk_eq_add_of_sumIso`).
 -/
 
 open CategoryTheory CategoryTheory.Limits CategoryTheory.Idempotents
@@ -61,6 +61,24 @@ private lemma push_mapBiprod_inv {W : Type*} [Category W] [Preadditive W] [Linea
     DualFunctor.mapStructure_pushforward]
 
 end Push
+
+/-- The image of `x.toSub` under the inclusion carries the structure of `x`. -/
+private lemma mapStructure_toSub {B : Type*} [Category B] [Preadditive B] [Linear ℚ B]
+    [HasFiniteBiproducts B] [DualCat B] {P : ObjectProperty B} [IsDualAdditive P] {k : ℤ}
+    (x : SymPoincare B k) (hx : ∀ r, P (x.C.X r)) :
+    (DualSubcategory.incl P).mapStructure _ k (x.toSub P hx).φ = x.φ :=
+  funext fun _ => Category.id_comp _
+
+/-- Sums in a full subcategory, for complexes given in `ℬ`. -/
+private lemma mk_toSub_eq_add {B : Type*} [Category B] [Preadditive B] [Linear ℚ B]
+    [HasFiniteBiproducts B] [DualCat B] (P : ObjectProperty B) [IsDualAdditive P] {k : ℤ}
+    (z x y : SymPoincare B k) (hz : ∀ r, P (z.C.X r)) (hx : ∀ r, P (x.C.X r))
+    (hy : ∀ r, P (y.C.X r)) (u : z.C ≅ x.C ⊞ y.C)
+    (hu : (StructureCx.push u.hom).f k z.φ = StructureCx.sum x.φ y.φ) :
+    LGroup.mk (z.toSub P hz) = LGroup.mk (x.toSub P hx) + LGroup.mk (y.toSub P hy) :=
+  SymPoincare.mk_eq_add_of_sumIso P _ _ _ u (by
+    rw [mapStructure_toSub, mapStructure_toSub, mapStructure_toSub]
+    exact hu)
 
 variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFiniteBiproducts A]
   [DualCat A] {U : ObjectProperty A} [IsDualAdditive U]
@@ -118,6 +136,6 @@ theorem decTransitionCx_sum (F : KaroubiFiltration U) (j : ℕ) {m m' : ℤ} (hm
   have hu : (StructureCx.push u.hom).f m' z.φ = StructureCx.sum a.φ b.φ := by
     rw [← hinv, ← push_comp_apply, u.inv_hom_id, push_id_apply]
   rw [← LGroup.mk_add]
-  exact SymPoincare.mk_toSub_of_sumIso (IsDecorated (Bounded.subPow U (j + 1))) z a b _ _ _ u hu
+  exact mk_toSub_eq_add (IsDecorated (Bounded.subPow U (j + 1))) z a b _ _ _ u hu
 
 end HSP
