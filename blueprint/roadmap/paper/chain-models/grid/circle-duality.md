@@ -3,6 +3,7 @@ article_id: af_c2c4733f486398f482f90979
 declaration: lemma
 origin: bridged
 statement: formalized
+proof: formalized
 lean: HSP.ChainModels.circle_duality
 ---
 
@@ -18,7 +19,7 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 4. $\varepsilon\varphi^s(e_w^*)=1=e_w^*(\sum_ve_v)$;
 5. with every cell and its dual labelled at the cell's center in $\mathbb R/4\mathbb Z$ ($[w]$ at $4w/k$, $e_w$ at $(4w+2)/k$), every component of $\varphi,\varphi^s,b,H,K,K'$ has [propagation](../../categories/asymptotic/propagation.md) at most $h/2$.
 
-*Proof sketch.* Direct computation. (1) $d\varphi([w]^*)=[w]-[w-1]$, and $d[w]^*=-d^*[w]^*=e_w^*-e_{w-1}^*$, so $\varphi(d[w]^*)=[w]-[w-1]$. (2) $T\varphi$ sends $[w]^*\mapsto e_w$ and $e_w^*\mapsto[w+1]$. The difference $T\varphi-\varphi$ is $[w]^*\mapsto e_w-e_{w-1}=Hd[w]^*$ and $e_w^*\mapsto[w+1]-[w]=dHe_w^*$. Then $T\partial=\partial T$ and $T^2=1$ give the rest. (3) $\varphi^sb=1+\tfrac12(dH+Hd)b$, and $b$ is a chain map; likewise for $b\varphi^s$. (4) $\varphi^s(e_w^*)=\tfrac12([w]+[w+1])$. (5) Read off the formulas.
+*Proof sketch.* Direct computation. Write $\sigma$ for the shift $[w]\mapsto[w+1]$ of $\mathbb Q^k$; then $d=\sigma-1$, $d^*=\sigma^{-1}-1$, $\varphi_{0,1}=1$, $\varphi_{1,0}=\sigma^{-1}$, $b_0=1$, $b_1=\sigma$, and components in other degrees live on zero objects. (1) $d\varphi([w]^*)=[w]-[w-1]$, and $d[w]^*=-d^*[w]^*=e_w^*-e_{w-1}^*$, so $\varphi(d[w]^*)=[w]-[w-1]$. (2) $T\varphi$ sends $[w]^*\mapsto e_w$ and $e_w^*\mapsto[w+1]$. The difference $T\varphi-\varphi$ is $[w]^*\mapsto e_w-e_{w-1}=Hd[w]^*$ and $e_w^*\mapsto[w+1]-[w]=dHe_w^*$. Then $T\partial=\partial T$ and $T^2=1$ give the rest. (3) $\varphi^sb=1+\tfrac12(dH+Hd)b$, and $b$ is a chain map; likewise for $b\varphi^s$. (4) $\varphi^s(e_w^*)=\tfrac12([w]+[w+1])$. (5) Read off the formulas.
 
 ## Sources
 
