@@ -246,6 +246,7 @@ import HilbertSmithPaper.LocalData.Control.ControlActionFree
 import HilbertSmithPaper.LocalData.Control.ControlActionIsometric
 import HilbertSmithPaper.LocalData.Control.ControlMetric
 import HilbertSmithPaper.LocalData.Control.ControlMetricProperties
+import HilbertSmithPaper.LocalData.Control.ControlMetricSpace
 import HilbertSmithPaper.LocalData.Control.ControlSpace
 import HilbertSmithPaper.LocalData.Control.ControlSpaceCompact
 import HilbertSmithPaper.LocalData.Control.DisplacementGap

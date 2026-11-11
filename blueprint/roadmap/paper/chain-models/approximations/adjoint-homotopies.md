@@ -16,6 +16,7 @@ Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$, so that $a'a-1=dS+Sd$. On
 ## Sources
 - HS paper, Section 9; signs rechecked.
 ## Depends on
+- [The metric on the control space](../../local-data/control/control-metric-space.md)
 - [Product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
 ## Proof depends on
 - [graph type of approximations](approximations-graph-type.md), [Poincaré](../grid/chain-model-poincare.md)

@@ -25,6 +25,7 @@ Take $i_1$ the largest of the three thresholds.
 
 ## Depends on
 
+- [The metric on the control space](../local-data/control/control-metric-space.md)
 - [Retained cells](retained-cells.md)
 - [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)
 - [Buffered cells](../chain-models/grid/buffered-cells.md)
