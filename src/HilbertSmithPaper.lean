@@ -20,6 +20,7 @@ import HilbertSmithPaper.Categories.Functors.ForgetLabels
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
 import HilbertSmithPaper.Categories.Supports.SupportSubcategory
+import HilbertSmithPaper.ChainModels.Approximations.ChainApprox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxExists
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMapsProperties

@@ -2,6 +2,8 @@
 article_id: af_58380df02b288c97a654629a
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.chainApprox
 ---
 # Chain approximation
 
