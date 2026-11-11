@@ -1,5 +1,8 @@
 import HilbertSmithPaper.Categories.Supports.SupportSubcategory
-import HilbertSmithPaper.Categories.Asymptotic.RestrictionSubBasis
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.CoordinateProjection
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.ProjectionInclusion
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionColumns
+import HilbertSmithPaper.Categories.Asymptotic.Restriction.RestrictionIndexMem
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 
 /-!
@@ -37,12 +40,12 @@ variable [IsIsometricVAdd (ZMod p) X] {S : Set X}
 
 /-- For an invariant `S` and an isometric action, `c +ᵥ y` is in the `ε`-thickening of `S` as soon
 as `y` is. -/
-theorem vadd_mem_thickening (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S) (c : ZMod p) {ε : ℝ} {y : X}
+private theorem vadd_mem_thickening (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S) (c : ZMod p) {ε : ℝ} {y : X}
     (hy : y ∈ thickening ε S) : c +ᵥ y ∈ thickening ε S := by
   obtain ⟨z, hz, hd⟩ := mem_thickening_iff.1 hy
   exact mem_thickening_iff.2 ⟨c +ᵥ z, hS c z hz, by rwa [dist_vadd]⟩
 
-theorem vadd_mem_thickening_iff (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S) (c : ZMod p) {ε : ℝ}
+private theorem vadd_mem_thickening_iff (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S) (c : ZMod p) {ε : ℝ}
     {y : X} : c +ᵥ y ∈ thickening ε S ↔ y ∈ thickening ε S :=
   ⟨fun h => by simpa using vadd_mem_thickening hS (-c) h, vadd_mem_thickening hS c⟩
 

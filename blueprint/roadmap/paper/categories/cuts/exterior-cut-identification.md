@@ -21,6 +21,8 @@ Let $Z\subset X$. The functor $j_Z:\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\m
 
 ## Depends on
 
+- [Support subcategory inside a support subcategory](../supports/relative-support.md)
+- [The support subcategory inside a support subcategory is additive](../supports/relative-support-additive.md)
 - [Exterior quotient](../supports/exterior-quotient.md)
 - [Support subcategory](../supports/support-subcategory.md)
 - [Support filtration](../supports/support-filtration.md)

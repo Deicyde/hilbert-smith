@@ -19,9 +19,16 @@ namespace HSP
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
   [IsIsometricVAdd (ZMod p) X]
 
+/-- For an invariant `S` and an isometric action, `c +ᵥ y` is in the `ε`-thickening of `S` as soon
+as `y` is. -/
+private theorem vadd_mem_thickening {S : Set X} (hS : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S)
+    (c : ZMod p) {ε : ℝ} {y : X} (hy : y ∈ thickening ε S) : c +ᵥ y ∈ thickening ε S := by
+  obtain ⟨z, hz, hd⟩ := mem_thickening_iff.1 hy
+  exact mem_thickening_iff.2 ⟨c +ᵥ z, hS c z hz, by rwa [dist_vadd]⟩
+
 /-- A map into an `S`-supported object factoring through `𝒜_Z`, with `S, Z` disjoint, closed and
 invariant in a compact `X`, is zero. -/
-theorem mkHom_eq_zero_of_disjoint [CompactSpace X] {S Z : Set X} (hS : IsClosed S)
+private theorem mkHom_eq_zero_of_disjoint [CompactSpace X] {S Z : Set X} (hS : IsClosed S)
     (hZ : IsClosed Z) (hSi : ∀ c : ZMod p, ∀ x ∈ S, c +ᵥ x ∈ S)
     (hZi : ∀ c : ZMod p, ∀ x ∈ Z, c +ᵥ x ∈ Z) (hSZ : Disjoint S Z) {M N : AsymPre G X}
     (hN : supp S (⟨N⟩ : AsymCat G X)) (u : M ⟶ N)

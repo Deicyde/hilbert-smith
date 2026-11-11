@@ -30,7 +30,7 @@ private theorem lift_compat (F : DualFunctor (AsymCat G X) (AsymCat G' X')) {Z :
   exact ⟨_, hZ V hV, _, _, rfl⟩
 
 /-- The underlying functor of `F̄`: `⟨M⟩ ↦ ⟨F M⟩`, `[u] ↦ [F u]`. -/
-abbrev extFunctorAux (F : DualFunctor (AsymCat G X) (AsymCat G' X')) {Z : Set X} {Z' : Set X'}
+private abbrev extFunctorAux (F : DualFunctor (AsymCat G X) (AsymCat G' X')) {Z : Set X} {Z' : Set X'}
     (hZ : ∀ P, supp Z P → supp Z' (F.toFunctor.obj P)) : Ext G X Z ⥤ Ext G' X' Z' :=
   CategoryTheory.Quotient.lift (FiltQuot.rel (supp Z)) (F.toFunctor ⋙ FiltQuot.functor (supp Z'))
     (lift_compat F hZ)

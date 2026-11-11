@@ -24,6 +24,8 @@ Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, henc
 
 ## Depends on
 
+- [Support subcategory inside a support subcategory](relative-support.md)
+- [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Support subcategory](support-subcategory.md)
 - [Support filtration](support-filtration.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
