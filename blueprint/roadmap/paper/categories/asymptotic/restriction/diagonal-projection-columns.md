@@ -9,7 +9,7 @@ lean: HSP.AsymPre.trunc_comp_eq
 
 # Factorization through a diagonal projection, columns
 
-Let $u:M\to N$ be a sequence of matrices such that, for every $i$, every nonzero entry of $u_i$ lies in a column $(g,k)$ with $P(i,k)$. Then $u\,p_P=u$ for the [diagonal coordinate projection](diagonal-projection.md) $p_P$ of $M$.
+Let $u:M\to N$ be a sequence of $G_i$-equivariant matrices with propagation tending to $0$ such that, for every $i$, every nonzero entry of $u_i$ lies in a column $(g,k)$ with $P(i,k)$. Then $u\,p_P=u$ for the [diagonal coordinate projection](diagonal-projection.md) $p_P$ of $M$.
 
 *Proof sketch.* Multiplying by $p_P$ on the right kills exactly the columns outside $P$, which vanish.
 

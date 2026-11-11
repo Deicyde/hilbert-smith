@@ -9,7 +9,7 @@ lean: HSP.AsymPre.mkHom_comp_trunc_eq
 
 # Factorization through a diagonal projection, rows
 
-Let $u:N\to M$ be a sequence of matrices such that, eventually, every nonzero entry of $u_i$ lies in a row $(g,k)$ with $P(i,k)$. Then $[p_P][u]=[u]$ in the [asymptotic category](../asymptotic-category.md), for the [diagonal coordinate projection](diagonal-projection.md) $p_P$ of $M$.
+Let $u:N\to M$ be a sequence of $G_i$-equivariant matrices with propagation tending to $0$ such that, eventually, every nonzero entry of $u_i$ lies in a row $(g,k)$ with $P(i,k)$. Then $[p_P][u]=[u]$ in the [asymptotic category](../asymptotic-category.md), for the [diagonal coordinate projection](diagonal-projection.md) $p_P$ of $M$.
 
 *Proof sketch.* Multiplying by $p_P$ on the left kills exactly the rows outside $P$, which eventually vanish; morphisms are taken modulo eventual equality.
 

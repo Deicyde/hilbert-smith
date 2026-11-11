@@ -16,7 +16,7 @@ Let $S\subset X$ be nonempty, closed and invariant. Fix $\rho:X\to S$ with $d(x,
 
 $\mathcal A_S$ is a duality category as a [dual subcategory](../../l-theory/base/categories/dual-subcategory.md), $P$ and $R$ are strict duality functors, and the identity $\mathrm{id}\cong RP$ and the counit $PR\cong\mathrm{id}$ are [unitary natural isomorphisms](../../l-theory/base/categories/unitary-isomorphism.md).
 
-The functor $R$ needs neither that $S$ is closed or nonempty nor that $X$ is compact.
+Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$ needs neither that $S$ is closed nor that $X$ is compact.
 
 Such a $\rho$ exists because $S$ is a nonempty closed subset of the compact space $X$, so the distance to $S$ is attained.
 

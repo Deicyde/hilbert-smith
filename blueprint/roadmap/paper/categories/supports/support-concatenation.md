@@ -20,5 +20,6 @@ The concatenation $(n_i+m_i,\;x_i\sqcup y_i)$ of two $S$-supported objects, the 
 
 ## Depends on
 
+- [Concatenation](../asymptotic/structure/concatenation.md)
 - [Support subcategory](support-subcategory.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)

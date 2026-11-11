@@ -8,9 +8,9 @@ lean: HSP.isDualAdditive_supp
 
 # The support subcategory is additive
 
-For every $S\subset X$, the [support subcategory](support-subcategory.md) $\mathcal A_S$ is a [full additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md) of the [asymptotic category](../asymptotic/asymptotic-category.md): it contains the empty object, which is a zero object; it contains the concatenation of two of its objects, which with the coordinate inclusions and projections is a biproduct; and it is closed under $M^*=M$ ([duality](../asymptotic/asymptotic-duality.md)). So the quotient by $\mathcal A_S$ exists.
+For every $S\subset X$, the [support subcategory](support-subcategory.md) $\mathcal A_S$ is a [full additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md) of the [asymptotic category](../asymptotic/asymptotic-category.md) with its [duality](../asymptotic/asymptotic-duality.md). So the quotient by $\mathcal A_S$ exists.
 
-*Proof sketch.* The empty object has no labels, so it is supported on every set. Eventually the labels of both pieces of a concatenation lie in the $\varepsilon$-thickening of $S$. $M^*$ has the same labels as $M$.
+*Proof sketch.* The witnesses are the empty object, a zero object; the concatenation of two objects with the coordinate inclusions and projections, a biproduct; and $M^*=M$. The empty object has no labels, so it is supported on every set. Eventually the labels of both pieces of a concatenation lie in the $\varepsilon$-thickening of $S$. $M^*$ has the same labels as $M$.
 
 ## Sources
 
