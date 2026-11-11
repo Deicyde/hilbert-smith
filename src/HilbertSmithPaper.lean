@@ -5,6 +5,7 @@ import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
@@ -133,6 +134,26 @@ import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
+import HilbertSmithPaper.Proofs.PadicExclusion
+import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
+import HilbertSmithPaper.ChainModels.Grid.Torus
+import HilbertSmithPaper.ChainModels.Grid.MeshSequence
+import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
+import HilbertSmithPaper.ChainModels.Approximations.TrackMap
+import HilbertSmithPaper.ChainModels.Approximations.Modulus
+import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
+import HilbertSmithPaper.ChainModels.Approximations.CompletedMapsProperties
+import HilbertSmithPaper.Evaluation.CubicalPinch
+import HilbertSmithPaper.Evaluation.TestMapToPinch
+import HilbertSmithPaper.Corner.RoundSphere
+import HilbertSmithPaper.Corner.Exterior
+import HilbertSmithPaper.Corner.CutSets
+import HilbertSmithPaper.Corner.CutFlag
+import HilbertSmithPaper.Corner.ExteriorClosed
+import HilbertSmithPaper.Corner.ExteriorFirstCut
+import HilbertSmithPaper.Corner.StandingData
+import HilbertSmithPaper.Corner.Actions.GraphType
+import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 
 /-!
 # The paper

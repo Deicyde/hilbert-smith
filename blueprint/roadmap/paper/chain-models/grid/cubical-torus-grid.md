@@ -6,7 +6,7 @@ origin: background
 
 # Cubical torus grid
 
-Fix $n\ge1$. Let $\mathbb T^n=(\mathbb R/4\mathbb Z)^n$. It carries two metrics: $d_\infty$, the maximum of the circle distances, and $d_2$, the quotient Euclidean metric, so that $d_\infty\le d_2\le\sqrt n\,d_\infty$. For $X\subseteq\mathbb T^n$ and $r\ge0$, $N_r(X)$ is the closed $d_\infty$-neighbourhood of $X$ of radius $r$. For an integer $k\ge3$ put $h=4/k$.
+Fix $n\ge1$, and let $\mathbb T^n=(\mathbb R/4\mathbb Z)^n$, its metrics $d_\infty$ and $d_2$, and the neighbourhoods $N_r(X)$ be those of [the torus](torus.md). For an integer $k\ge3$ put $h=4/k$.
 
 The *circle complex* $S_k$ is defined as follows. $S_{k,0}$ has basis $[w]$ and $S_{k,1}$ has basis $e_w$, both indexed by $w\in\mathbb Z/k$. The differential is $de_w=[w+1]-[w]$, and the augmentation is $\varepsilon[w]=1$. The realization of $[w]$ is the point $4w/k$, and the realization of $e_w$ is the arc from $4w/k$ to $4(w+1)/k$.
 
@@ -23,4 +23,5 @@ The *fundamental chain* is $z(k)=\bigotimes_j\sum_w e_w$. A *subcomplex* is the 
 
 ## Depends on
 
+- [The torus](torus.md)
 - [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md), [tensor product of complexes](../../l-theory/localization/products/complex-product.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md)
