@@ -1,7 +1,8 @@
 # The route-separation checks of PLAN section 5 that need no Lean build: the import boundary of
-# the library HilbertSmith, its coverage by src/HilbertSmith.lean, pin equality with HS_proof, and
-# no copying of HS_proof's files. The checks that need the build (the purity audit and its tests)
-# run inside `lake build`, in autoform-verify.yml.
+# the library HilbertSmith, its coverage by src/HilbertSmith.lean, pin equality with HS_proof, no
+# copying of HS_proof's files, and the paper's import boundary and clean-room checks. The checks
+# that need the build (the purity audit and its tests) run inside `lake build`, in
+# autoform-verify.yml.
 
 name: route checks
 

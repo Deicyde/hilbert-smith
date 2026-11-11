@@ -15,6 +15,12 @@
    declares a name in it. No tracked `.lean` file, top-level declaration or docstring equals one
    of HS_proof's at the pinned revision, compared by digest after normalization (comments and
    whitespace removed for files and declarations; whitespace collapsed for docstrings).
+6. The paper: the library `HilbertSmithPaper` imports only itself, Mathlib, TauCeti and their
+   foundations, and every file of it is imported by `src/HilbertSmithPaper.lean`. Its files, the
+   paper's articles under `blueprint/roadmap/paper/`, their implementation notes and the paper's
+   sources under `blueprint/sources/paper/` never name HS_proof, its library or its Lean files,
+   nor HSGeneral or HSBridge. Every `lean:` name of a paper article is in the namespace `HSP`, no
+   other article names one, and only the paper's files open that namespace.
 
 HS_proof is read with git at the pinned revision: from `.lake/packages/hsformal` if that checkout
 has the commit (a local build), otherwise fetched from GitHub into a temporary directory.
@@ -48,6 +54,16 @@ DECL_IN_NAMESPACE_RE = re.compile(
 # Top-level units shorter than this (normalized) are not compared: they are too generic.
 MIN_DECL_CHARS = 80
 MIN_DOC_CHARS = 60
+# The paper (check 6): its library, the roots it may import, its articles and sources, and the
+# names it may never mention.
+PAPER_LIB = "HilbertSmithPaper"
+PAPER_IMPORT_ROOTS = (PAPER_LIB, "Mathlib", "TauCeti", "Batteries", "Aesop", "Qq", "Init", "Lean",
+                      "Std")
+PAPER_ARTICLES = "blueprint/roadmap/paper"
+PAPER_SOURCES = "blueprint/sources/paper"
+PAPER_NAMESPACE = "HSP"
+PAPER_FORBIDDEN_RE = re.compile(
+    r"\bHSF|HS_proof|hs_proof|hsformal|adbrw|\bHSGeneral\b|\bHSBridge\b|\.lean:\d")
 
 failures = []
 
@@ -231,8 +247,22 @@ def self_test():
         fail(f"self-test: declarations: got {decls}")
     if len(docstrings(decl_text)) != 1:
         fail("self-test: docstrings")
+    fm = [
+        ("---\narticle_id: af_1\nlean: A.b C.d\n---\n# T\n",
+         {"article_id": "af_1", "lean": "A.b C.d"}),
+        ("---\nlean:\n  - A.b\n  - C.d\nproof: formalized\n---\n",
+         {"lean": "A.b C.d", "proof": "formalized"}),
+        ("# no frontmatter\nlean: A.b\n", {}),
+    ]
+    for text, expected in fm:
+        got = frontmatter(text)
+        if got != expected:
+            fail(f"self-test: frontmatter of {text!r}: expected {expected}, got {got}")
+    if lean_names("A.b, C.d") != ["A.b", "C.d"]:
+        fail("self-test: lean names")
     if not failures:
-        ok("self-tests: import parsing, normalization, declaration and docstring splitting")
+        ok("self-tests: import parsing, normalization, declaration and docstring splitting, "
+           "frontmatter")
 
 
 # ### Checks
@@ -253,9 +283,9 @@ def check_import_boundary():
            "HSGeneral or HSBridge")
 
 
-def check_coverage():
+def check_coverage(lib="HilbertSmith"):
     src = ROOT / "src"
-    seen, todo = set(), ["HilbertSmith"]
+    seen, todo = set(), [lib]
     while todo:
         mod = todo.pop()
         if mod in seen:
@@ -265,16 +295,92 @@ def check_coverage():
         if not path.exists():
             fail(f"module {mod} is imported but {path.relative_to(ROOT)} does not exist")
             continue
-        todo.extend(m for m in imports_of(path) if m.split(".")[0] == "HilbertSmith")
-    files = sorted((src / "HilbertSmith").rglob("*.lean"))
+        todo.extend(m for m in imports_of(path) if m.split(".")[0] == lib)
+    files = sorted((src / lib).rglob("*.lean"))
     missing = [f for f in files
                if ".".join(f.relative_to(src).with_suffix("").parts) not in seen]
     if missing:
-        fail("not imported by src/HilbertSmith.lean:\n  "
+        fail(f"not imported by src/{lib}.lean:\n  "
              + "\n  ".join(str(f.relative_to(ROOT)) for f in missing))
     else:
-        ok(f"coverage: all {len(files)} files under src/HilbertSmith are imported by "
-           "src/HilbertSmith.lean")
+        ok(f"coverage: all {len(files)} files under src/{lib} are imported by src/{lib}.lean")
+
+
+def paper_lean_files():
+    return [ROOT / f"src/{PAPER_LIB}.lean", *sorted((ROOT / "src" / PAPER_LIB).rglob("*.lean"))]
+
+
+def check_paper_imports():
+    files = paper_lean_files()
+    bad = [f"{f.relative_to(ROOT)}: import {mod}" for f in files for mod in imports_of(f)
+           if mod.split(".")[0] not in PAPER_IMPORT_ROOTS]
+    if bad:
+        fail(f"files of {PAPER_LIB} import outside {', '.join(PAPER_IMPORT_ROOTS)}:\n  "
+             + "\n  ".join(bad))
+    else:
+        ok(f"paper imports: the {len(files)} files of {PAPER_LIB} import only "
+           f"{', '.join(PAPER_IMPORT_ROOTS)}")
+
+
+def frontmatter(text):
+    """The keys of a Markdown file's YAML frontmatter: an inline value as written, or the items of
+    a block list (`- item` lines under an empty value) joined by spaces."""
+    m = re.match(r"---\n(.*?)\n---\n", text, re.S)
+    if not m:
+        return {}
+    fields, key = {}, None
+    for line in m.group(1).splitlines():
+        kv = re.match(r"([\w-]+):[ \t]*(.*?)[ \t]*$", line)
+        item = re.match(r"\s+-\s+(.*?)\s*$", line)
+        if kv:
+            key, fields[kv.group(1)] = kv.group(1), kv.group(2)
+        elif item and key is not None:
+            fields[key] = (fields[key] + " " + item.group(1)).strip()
+    return fields
+
+
+def lean_names(value):
+    return value.replace(",", " ").split() if value else []
+
+
+def check_paper_clean_room():
+    articles = sorted((ROOT / PAPER_ARTICLES).rglob("*.md"))
+    ids = [frontmatter(f.read_text(encoding="utf-8")).get("article_id") for f in articles]
+    notes = [ROOT / "blueprint/.implementation-notes" / f"{i}.md" for i in ids if i]
+    sources = sorted((ROOT / PAPER_SOURCES).rglob("*")) if (ROOT / PAPER_SOURCES).exists() else []
+    scanned = paper_lean_files() + articles + [n for n in notes if n.exists()] + \
+        [s for s in sources if s.is_file()]
+    hits = []
+    for f in scanned:
+        for n, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            m = PAPER_FORBIDDEN_RE.search(line)
+            if m:
+                hits.append(f"{f.relative_to(ROOT)}:{n}: {m.group(0)}")
+    if hits:
+        fail("the paper's files name HS_proof, its library or files, HSGeneral or HSBridge:\n  "
+             + "\n  ".join(hits))
+    else:
+        ok(f"paper clean room: {len(scanned)} paper files name none of HS_proof, its library or "
+           "files, HSGeneral or HSBridge")
+
+    prefix = PAPER_NAMESPACE + "."
+    paper = set(articles)
+    misplaced = []
+    for f in sorted((ROOT / "blueprint/roadmap").rglob("*.md")):
+        for name in lean_names(frontmatter(f.read_text(encoding="utf-8")).get("lean")):
+            if (f in paper) != name.startswith(prefix):
+                misplaced.append(f"{f.relative_to(ROOT)}: lean: {name}")
+    namespace_re = re.compile(r"^\s*namespace\s+(?:_root_\.)?" + PAPER_NAMESPACE + r"\b", re.M)
+    own = set(paper_lean_files())
+    for f in sorted((ROOT / "src").rglob("*.lean")):
+        if f not in own and namespace_re.search(lex(f.read_text(encoding="utf-8"))[0]):
+            misplaced.append(f"{f.relative_to(ROOT)}: opens namespace {PAPER_NAMESPACE}")
+    if misplaced:
+        fail(f"the namespace {PAPER_NAMESPACE} belongs to the paper's articles and library "
+             "alone:\n  " + "\n  ".join(misplaced))
+    else:
+        ok(f"paper namespace: paper articles name only {PAPER_NAMESPACE} declarations, no other "
+           f"article names one, and only {PAPER_LIB} opens {PAPER_NAMESPACE}")
 
 
 def manifest_packages(text):
@@ -405,6 +511,9 @@ def main():
     self_test()
     check_import_boundary()
     check_coverage()
+    check_paper_imports()
+    check_coverage(PAPER_LIB)
+    check_paper_clean_room()
     rev = manifest_packages((ROOT / "lake-manifest.json").read_text())["hsformal"]["rev"]
     with tempfile.TemporaryDirectory() as tmp:
         repo = hs_proof_repo(rev, tmp)
