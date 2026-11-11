@@ -8,6 +8,7 @@ The torus, the cubical torus grid, the cells of $\mathbb{CP}^2$, grid boxes and 
 
 - [The torus](torus.md)
 - [Tensor product of based complexes](based-complex-tensor.md)
+- [Tensor calculus of based complexes](tensor/README.md)
 - [Realization of based complexes](realization.md)
 - [Cubical torus grid](cubical-torus-grid.md)
 - [Cells of CP^2](cp2-cells.md)
