@@ -17,6 +17,7 @@ For a local datum, let $C_p=\mathbb Z/p\mathbb Z$ and let $q_1:\mathbb Z_p\to C_
 
 ## Depends on
 
+- [The action on the test region](zplus-action.md)
 - [The control space](control-space.md)
 
 ## Proof depends on

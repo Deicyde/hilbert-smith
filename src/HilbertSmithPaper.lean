@@ -211,6 +211,7 @@ import HilbertSmithPaper.LocalData.Control.RepresentativeMap
 import HilbertSmithPaper.LocalData.Control.Representatives
 import HilbertSmithPaper.LocalData.Control.RepresentativesAlgebra
 import HilbertSmithPaper.LocalData.Control.SheetSubgroup
+import HilbertSmithPaper.LocalData.Control.ZplusAction
 import HilbertSmithPaper.LocalData.Subgroups.ClosedSubgroups
 import HilbertSmithPaper.LocalData.Subgroups.FixedSets
 import HilbertSmithPaper.LocalData.Subgroups.FixedSetsClosed
