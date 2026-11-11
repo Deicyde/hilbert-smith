@@ -14,6 +14,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductHomExt
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDualHomExt
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.SummandZero
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.InclusionProjectionNe
+import HilbertSmithPaper.LTheory.Localization.Line.SummandDifferential
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
 
 /-!
@@ -73,27 +74,6 @@ variable {C D : ChainComplex B ℤ} (f : C ⟶ D) {L : ChainComplex E ℤ}
   (hC : {r | ¬ IsZero (C.X r)}.Finite) (hD : {r | ¬ IsZero (D.X r)}.Finite)
   (hK : {r | ¬ IsZero ((cone f).X r)}.Finite) (hL : {r | ¬ IsZero (L.X r)}.Finite)
 
-/-- The differential on a summand (a copy of the private `cxProd.ι_d`). -/
-private lemma ι_d {C : ChainComplex B ℤ} (hC : {r | ¬ IsZero (C.X r)}.Finite) {p q r r' p' q' : ℤ}
-    (h : p + q = r) (hp : p' + 1 = p) (hq : q' + 1 = q) :
-    cxProd.ι P hC hL p q r ≫ (cxProd P C L hC hL).d r r' =
-      P.tensor.map (C.d p p' ×ₘ 𝟙 (L.X q)) ≫ cxProd.ι P hC hL p' q r' +
-        p.negOnePow • (P.tensor.map (𝟙 (C.X p) ×ₘ L.d q q') ≫ cxProd.ι P hC hL p q' r') := by
-  have := P.hasMapBifunctor_of_finite hC hL
-  have hp' : (ComplexShape.down ℤ).Rel p p' := hp
-  have hq' : (ComplexShape.down ℤ).Rel q q' := hq
-  rw [cxProd.ι, HomologicalComplex.ιMapBifunctorOrZero_eq _ _ _ _ _ _ _ h,
-    HomologicalComplex.mapBifunctor.d_eq, Preadditive.comp_add,
-    HomologicalComplex.mapBifunctor.ι_D₁, HomologicalComplex.mapBifunctor.ι_D₂,
-    HomologicalComplex.mapBifunctor.d₁_eq' _ _ _ _ hp',
-    HomologicalComplex.mapBifunctor.d₂_eq' _ _ _ _ _ hq']
-  have e1 : ComplexShape.ε₁ (ComplexShape.down ℤ) (ComplexShape.down ℤ) (ComplexShape.down ℤ)
-      (p, q) = 1 := rfl
-  have e2 : ComplexShape.ε₂ (ComplexShape.down ℤ) (ComplexShape.down ℤ) (ComplexShape.down ℤ)
-      (p, q) = p.negOnePow := rfl
-  rw [e1, e2, one_smul]
-  rfl
-
 /-- `ι ≫ (f ⊗ 1) = (f ⊠ 1) ≫ ι`. -/
 private lemma ι_map {a b r : ℤ} (h : a + b = r) :
     cxProd.ι P hC hL a b r ≫ (cxProdMap P f (𝟙 L) hC hL hD hL).f r =
@@ -148,7 +128,7 @@ private lemma jF_comm (i j : ℤ) (hij : (ComplexShape.down ℤ).Rel i j) :
   rw [← HomologicalComplex.ιMapBifunctorOrZero_eq _ _ _ _ _ _ _ hab]
   change cxProd.ι P hK hL a b i ≫ _ = cxProd.ι P hK hL a b i ≫ _
   rw [ι_jF_assoc P f hC hD hK hL hab,
-    ← Category.assoc, ι_d P hL hK hab (sub_add_cancel a 1) (sub_add_cancel b 1)]
+    ← Category.assoc, cxProd.ι_d P hK hL hab (sub_add_cancel a 1) (sub_add_cancel b 1)]
   simp only [Preadditive.add_comp, Linear.units_smul_comp, Category.assoc,
     ι_jF P f hC hD hK hL (show a - 1 + b = i - 1 by omega),
     ι_jF P f hC hD hK hL (show a + (b - 1) = i - 1 by omega)]
@@ -160,7 +140,7 @@ private lemma jF_comm (i j : ℤ) (hij : (ComplexShape.down ℤ).Rel i j) :
       biprod.inl_fst_assoc, biprod.inr_fst_assoc, Preadditive.comp_add, Linear.comp_units_smul,
       zero_comp, smul_zero, add_zero, zero_add, biprod.inl_snd_assoc,
       biprod.inr_snd_assoc]
-    rw [ι_d P hL hD rfl (sub_add_cancel a 1) (sub_add_cancel b 1),
+    rw [cxProd.ι_d P hD hL rfl (sub_add_cancel a 1) (sub_add_cancel b 1),
       ι_map P f hC hD hL (show a - 1 + b = a + b - 1 by omega)]
     simp only [tmap_comp_assoc, Preadditive.comp_add, Linear.comp_units_smul, biprod.lift_fst,
       Category.id_comp, Category.comp_id, P.map_add_left, tmap_units_smul_left,
@@ -172,7 +152,7 @@ private lemma jF_comm (i j : ℤ) (hij : (ComplexShape.down ℤ).Rel i j) :
   · simp only [Preadditive.add_comp, Linear.units_smul_comp, Category.assoc, biprod.lift_snd,
       biprod.inl_snd_assoc, biprod.inr_snd_assoc, Preadditive.comp_add, Linear.comp_units_smul,
       comp_zero, zero_comp, zero_add]
-    rw [ι_d P hL hC (show a - 1 + b = a + b - 1 by omega) (sub_add_cancel (a - 1) 1)
+    rw [cxProd.ι_d P hC hL (show a - 1 + b = a + b - 1 by omega) (sub_add_cancel (a - 1) 1)
       (sub_add_cancel b 1)]
     simp only [tmap_comp_assoc, Preadditive.comp_add, Linear.comp_units_smul, biprod.lift_snd,
       Category.id_comp, Category.comp_id, 

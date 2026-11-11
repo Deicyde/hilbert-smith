@@ -47,5 +47,5 @@ with $\Xi:(D\otimes\Lambda)^{n+1-*}\cong D^{n-*}\otimes\Lambda^{1-*}$ the [duali
 - [Maps out of the dual of a tensor product are determined by their components](../products/bookkeeping/product-dual-hom-ext.md)
 - [Support of a tensor product of complexes](../products/bookkeeping/product-support.md)
 - [Summands outside the support vanish](../products/bookkeeping/summand-zero.md)
-- [Differential of a tensor product on summands](../products/bookkeeping/product-differential.md)
+- [Differential of a tensor product on a summand](summand-differential.md)
 - [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
