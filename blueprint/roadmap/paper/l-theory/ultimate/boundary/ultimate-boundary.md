@@ -32,3 +32,4 @@ Here $\partial^{(j)}x$ is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ th
 - [Stage maps into the ultimate L-group](../groups/ultimate-stage-map.md)
 - [Sequence of lower L-groups](../groups/lower-l-sequence.md)
 - [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

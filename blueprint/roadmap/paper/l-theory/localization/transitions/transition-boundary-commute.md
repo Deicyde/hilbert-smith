@@ -31,6 +31,7 @@ where $\partial^{(j)}$ is the [stage boundary](level-boundary.md), on the left $
 - [Lower transition map](transition-lower.md)
 - [Iterated bounded categories of a subcategory](../../ultimate/boundary/sub-pow-identification.md)
 - [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

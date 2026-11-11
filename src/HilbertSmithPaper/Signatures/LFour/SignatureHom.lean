@@ -6,6 +6,7 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
 import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
 import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
+import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 
 /-!
 # The equivariant signature on `L^p_4`

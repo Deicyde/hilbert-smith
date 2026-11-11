@@ -24,6 +24,7 @@ $$t\circ(C_{\mathbb Z^j}F)_*=(C_{\mathbb Z^{j+1}}F)_*\circ t:\ L^p_m(C_{\mathbb 
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

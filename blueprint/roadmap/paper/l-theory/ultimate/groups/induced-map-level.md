@@ -22,6 +22,7 @@ For a duality functor $F:\mathcal A\to\mathcal A'$ and every $j\ge0$, $F_*\circ\
 - [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Induced map on ultimate L](induced-map.md)
 - [Stage maps into the ultimate L-group](ultimate-stage-map.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

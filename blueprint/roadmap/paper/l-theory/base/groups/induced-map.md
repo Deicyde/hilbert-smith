@@ -21,6 +21,7 @@ A duality functor $(F,\xi):\mathcal B\to\mathcal B'$ induces a homomorphism $F_*
 - [Group structure on L](l-group-add.md)
 - [Duality functor](../categories/duality-functor.md)
 - [Completion of a duality functor](../categories/karoubi-functor.md)
+- [The projective L-group](projective-l-group.md)
 
 ## Proof depends on
 

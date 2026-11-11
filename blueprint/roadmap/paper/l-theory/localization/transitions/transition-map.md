@@ -33,6 +33,7 @@ is a well-defined homomorphism.
 - [Duals of box products](../products/box-dual.md)
 - [Product of a complex with the line](transition-complex.md)
 - [Structure of the symmetric line](../products/symmetric-line-structure.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 
