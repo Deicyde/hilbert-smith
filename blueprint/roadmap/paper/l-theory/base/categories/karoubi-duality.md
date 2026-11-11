@@ -18,4 +18,3 @@ For a duality category $\mathcal A$, $\mathrm{Kar}\,\mathcal A$ has objects $(M,
 ## Depends on
 
 - [Small Q-linear category with strict duality](duality-category.md)
-- [Duality functor](duality-functor.md)

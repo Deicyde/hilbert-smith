@@ -1,5 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.Corner.StandingData
+import HilbertSmithPaper.Corner.RoundSphere
+import HilbertSmithPaper.Corner.Exterior
 import HilbertSmithPaper.Corner.Actions.GraphType
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient

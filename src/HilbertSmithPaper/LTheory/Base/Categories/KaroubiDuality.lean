@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 
 /-!
 # Idempotent completion with duality

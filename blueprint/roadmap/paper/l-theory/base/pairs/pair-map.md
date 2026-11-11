@@ -19,4 +19,3 @@ Let $f:C\to D$ be a chain map, $m=n-1$, $\phi\in M(C)_m$ with $\partial\phi=0$, 
 
 - [Mapping cone](../complexes/cone.md)
 - [Pushforward of structures](../complexes/structure-push.md)
-- [Duality map of a cycle](../complexes/cycle-chain-map.md)

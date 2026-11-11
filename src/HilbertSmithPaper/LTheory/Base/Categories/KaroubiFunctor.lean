@@ -1,3 +1,4 @@
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 
 /-!
