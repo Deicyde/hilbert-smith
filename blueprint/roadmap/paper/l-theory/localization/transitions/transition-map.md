@@ -2,6 +2,8 @@
 article_id: af_4857639783789f947085c969
 declaration: def
 origin: cited
+statement: formalized
+lean: HSP.transitionMap
 ---
 
 # Transition map

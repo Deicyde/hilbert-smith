@@ -140,6 +140,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
+import HilbertSmithPaper.LTheory.Localization.Products.BoxDual
 import HilbertSmithPaper.LTheory.Localization.Products.BoxProduct
 import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
@@ -149,7 +150,12 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductDualityMap
 import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
 import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
 import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
+import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
+import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
+import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
+import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
