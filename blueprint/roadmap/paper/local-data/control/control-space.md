@@ -2,6 +2,8 @@
 article_id: af_03e1a41a9dea9c1ac2875cfe
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.T
 ---
 
 # The control space
