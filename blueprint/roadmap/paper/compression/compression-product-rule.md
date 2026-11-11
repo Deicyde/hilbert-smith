@@ -19,3 +19,4 @@ $$\hat\alpha\,\hat\beta-\widehat{\alpha\beta}=-p_2\,\alpha\,Q_1\,\beta\,\jmath_0
 ## Depends on
 
 - [Compressed maps](compressed-maps.md)
+- [Retained projection](retained-projection.md)
