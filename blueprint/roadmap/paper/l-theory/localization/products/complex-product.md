@@ -1,6 +1,6 @@
 ---
 article_id: af_c686bd2c7b2aa2403e3cf272
-declaration: def
+declaration: abbrev
 origin: background
 statement: formalized
 lean: HSP.cxProd

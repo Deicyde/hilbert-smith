@@ -82,15 +82,14 @@ lemma map_zero_right {N N' : B} {V V' : E} (f : N ⟶ N') :
     P.tensor.map (f ×ₘ (0 : V ⟶ V')) = 0 := by
   simpa using P.map_smul_right 0 f (0 : V ⟶ V')
 
-instance preservesZeroMorphisms_curry_obj (N : B) :
-    ((Functor.curry.obj P.tensor).obj N).PreservesZeroMorphisms where
-  map_zero _ _ := P.map_zero_right (𝟙 N)
+instance additive_curry_obj (N : B) : ((Functor.curry.obj P.tensor).obj N).Additive where
+  map_add {_ _ g g'} := by
+    simpa [Functor.curry_obj_obj_map] using P.map_add_right (𝟙 N) g g'
 
-instance preservesZeroMorphisms_curry :
-    (Functor.curry.obj P.tensor).PreservesZeroMorphisms where
-  map_zero N N' := by
+instance additive_curry : (Functor.curry.obj P.tensor).Additive where
+  map_add {_ _ f f'} := by
     ext V
-    exact P.map_zero_left (𝟙 V)
+    simpa [Functor.curry_obj_map_app] using P.map_add_left f f' (𝟙 V)
 
 /-- `N ⊠ V` is a zero object when `N` is. -/
 lemma isZero_tensor_left {N : B} (hN : IsZero N) (V : E) : IsZero (P.tensor.obj (N, V)) := by
@@ -121,14 +120,14 @@ variable (P : DualityPairing B E B'')
 /-- **Tensor product of complexes.** For complexes `C` in `B` and `D` in `E` with finitely many
 nonzero chain objects, `C ⊗ D` has `(C ⊗ D)_r = ⨁_{p+q=r} C_p ⊠ D_q` and differential
 `d ⊠ 1 + (-1)^p 1 ⊠ d` on `C_p ⊠ D_q`. -/
-noncomputable def cxProd (C : ChainComplex B ℤ) (D : ChainComplex E ℤ)
+noncomputable abbrev cxProd (C : ChainComplex B ℤ) (D : ChainComplex E ℤ)
     (hC : {r | ¬ IsZero (C.X r)}.Finite) (hD : {r | ¬ IsZero (D.X r)}.Finite) :
     ChainComplex B'' ℤ :=
   haveI := P.hasMapBifunctor_of_finite hC hD
   C.mapBifunctor D (Functor.curry.obj P.tensor) (ComplexShape.down ℤ)
 
 /-- The chain map `f ⊗ g : C ⊗ D ⟶ C' ⊗ D'`, equal to `f_p ⊠ g_q` on `C_p ⊠ D_q`. -/
-noncomputable def cxProdMap {C C' : ChainComplex B ℤ} {D D' : ChainComplex E ℤ}
+noncomputable abbrev cxProdMap {C C' : ChainComplex B ℤ} {D D' : ChainComplex E ℤ}
     (f : C ⟶ C') (g : D ⟶ D') (hC : {r | ¬ IsZero (C.X r)}.Finite)
     (hD : {r | ¬ IsZero (D.X r)}.Finite) (hC' : {r | ¬ IsZero (C'.X r)}.Finite)
     (hD' : {r | ¬ IsZero (D'.X r)}.Finite) :
