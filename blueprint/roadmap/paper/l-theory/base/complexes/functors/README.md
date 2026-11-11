@@ -4,7 +4,7 @@ article_id: af_2467eceb6f6f137d414cd6f2
 
 # Functors on complexes and structures
 
-Images of complexes and structures under a duality functor, with their compatibility with the boundary, the involution $T$, the duality map and dual complexes; duals of chain maps and of isomorphisms, and the functoriality of duals and of the pushforward.
+Images of complexes and structures under a duality functor, with their compatibility with the boundary, the involution $T$, the duality map and dual complexes; duals of chain maps and of isomorphisms, the functoriality of duals and of the pushforward, and images of sums of structures.
 
 - [Image of a complex under a duality functor](functor-complex.md)
 - [Image of structures under a duality functor](functor-structure.md)
@@ -16,3 +16,4 @@ Images of complexes and structures under a duality functor, with their compatibi
 - [Dual of an isomorphism of complexes](dual-map-iso.md)
 - [Pushforward preserves composition](push-comp.md)
 - [Pushforward preserves identities](push-id.md)
+- [Duality functors preserve sums of structures](functor-structure-sum.md)

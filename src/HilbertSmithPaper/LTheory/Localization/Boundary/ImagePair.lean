@@ -118,6 +118,12 @@ symmetric Poincaré complex in `Dec(𝒜/𝒰)`. -/
 noncomputable def image : SymPoincare (Dec U) k :=
   SymPoincare.toSub (IsDecorated U) V.imageKar fun r => ⟨V.V.D.X r, rfl⟩
 
+/-- The defining equation of `q V`: its structure, viewed in `Kar(𝒜/𝒰)`, is `q_% δφ`. -/
+lemma incl_mapStructure_image :
+    (DualSubcategory.incl (IsDecorated U)).mapStructure V.image.C k V.image.φ =
+      (FiltQuot.q U).kar.mapStructure V.V.D k V.V.δφ :=
+  funext fun x => Category.id_comp (((FiltQuot.q U).kar.mapStructure V.V.D k V.V.δφ) x)
+
 end UPair
 
 end HSP

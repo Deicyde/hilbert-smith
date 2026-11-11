@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
 import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureSum
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincareSum
 import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategorySum
 import HilbertSmithPaper.LTheory.Localization.Products.ProductSum
@@ -48,17 +49,6 @@ private lemma push_id_apply (C : ChainComplex V ℤ) (n : ℤ) (φ : (StructureC
 private lemma push_inv_hom {C D : ChainComplex V ℤ} (u : C ≅ D) (n : ℤ)
     (φ : (StructureCx C).X n) : (StructureCx.push u.inv).f n ((StructureCx.push u.hom).f n φ) = φ := by
   rw [← push_comp_apply, u.hom_inv_id, push_id_apply]
-
-private lemma push_mapBiprod_inv {W : Type*} [Category W] [Preadditive W] [Linear ℚ W]
-    [HasFiniteBiproducts W] [DualCat W] (Fd : DualFunctor V W) (X Y : ChainComplex V ℤ) (n : ℤ)
-    (φ : (StructureCx X).X n) (ψ : (StructureCx Y).X n) :
-    (StructureCx.push ((Fd.toFunctor.mapHomologicalComplex (ComplexShape.down ℤ)).mapBiprod
-      X Y).inv).f n (StructureCx.sum (Fd.mapStructure X n φ) (Fd.mapStructure Y n ψ)) =
-      Fd.mapStructure (X ⊞ Y) n (StructureCx.sum φ ψ) := by
-  unfold StructureCx.sum
-  rw [Functor.mapBiprod_inv, map_add, map_add, ← push_comp_apply, ← push_comp_apply,
-    biprod.inl_desc, biprod.inr_desc, DualFunctor.mapStructure_pushforward,
-    DualFunctor.mapStructure_pushforward]
 
 end Push
 
@@ -119,7 +109,7 @@ theorem decTransitionCx_sum (F : KaroubiFiltration U) (j : ℕ) {m m' : ℤ} (hm
   let b := SymPoincare.map G (transitionCx hm y)
   let u : z.C ≅ a.C ⊞ b.C := (G.toFunctor.mapHomologicalComplex (ComplexShape.down ℤ)).mapIso v ≪≫
     (G.toFunctor.mapHomologicalComplex (ComplexShape.down ℤ)).mapBiprod (transitionCx hm x).C (transitionCx hm y).C
-  have key1 := push_mapBiprod_inv G (transitionCx hm x).C (transitionCx hm y).C m'
+  have key1 := DualFunctor.mapStructure_sum G (transitionCx hm x).C (transitionCx hm y).C m'
     (transitionCx hm x).φ (transitionCx hm y).φ
   have key2 : (StructureCx.push v.inv).f m'
       (StructureCx.sum (transitionCx hm x).φ (transitionCx hm y).φ) =

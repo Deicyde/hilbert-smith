@@ -33,3 +33,4 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 - [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
 - [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../../base/complexes/functors/push-id.md)
+- [Duality functors preserve sums of structures](../../base/complexes/functors/functor-structure-sum.md)
