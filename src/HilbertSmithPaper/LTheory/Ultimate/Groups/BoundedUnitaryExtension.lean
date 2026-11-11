@@ -37,16 +37,6 @@ private def diagIsoU {M N : Bounded A'} (e : ∀ n, M.X n ≅ N.X n) : M ≅ N w
   hom_inv_id := by rw [diag_comp_diag]; simp only [Iso.hom_inv_id]; rfl
   inv_hom_id := by rw [diag_comp_diag]; simp only [Iso.inv_hom_id]; rfl
 
-private lemma dualHom_diag {M N : Bounded A'} (d : ∀ n, M.X n ⟶ N.X n) :
-    dualHom (diag d) = diag (M := dual N) (N := dual M) (fun n => dualHom (d n)) :=
-  hom_ext fun a b => by
-    rw [dualHom_apply]
-    change dualHom (diagF d b a) = diagF (M := dual N) (N := dual M) (fun n => dualHom (d n)) a b
-    by_cases h : a = b
-    · subst h
-      rw [diagF_self, diagF_self]
-    · rw [diagF_ne _ (Ne.symm h), diagF_ne _ h, dualHom_zero]
-
 /-- One level: the diagonal extension `C_ℤ η : C_ℤ F ≅ C_ℤ G` of a unitary isomorphism. -/
 private def mapUnitaryIso {F G : DualFunctor A A'} (η : DualFunctor.UnitaryIso F G) :
     DualFunctor.UnitaryIso (map F) (map G) where
@@ -62,7 +52,7 @@ private def mapUnitaryIso {F G : DualFunctor A A'} (η : DualFunctor.UnitaryIso 
           (N := ⟨fun n => G.toFunctor.obj (M.X n)⟩) (P := ⟨fun n => G.toFunctor.obj (N.X n)⟩)
           (fun n => (η.iso.app (M.X n)).hom) (fun m n => G.toFunctor.map (f.1 m n)) a b).symm))
   unitary M := by
-    simp only [NatIso.ofComponents_hom_app, diagIsoU, map_ξ_hom, dualHom_diag]
+    simp only [NatIso.ofComponents_hom_app, diagIsoU, map_ξ_hom, dualHom_diag_eq]
     erw [diag_comp_diag, diag_comp_diag]
     congr 1
     funext n
