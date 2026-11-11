@@ -16,4 +16,5 @@ The basis cell $c\otimes e_r$ of the [chain model](chain-model.md) $D_i$ carries
 
 ## Depends on
 
+- [The center of a grid cube](../cubical/grid-cube-center.md)
 - [The cube of a chain-model cell](chain-model-cube.md)

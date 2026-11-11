@@ -14,6 +14,7 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer r
 
 ## Depends on
 
+- [The closed cube](../chain-models/grid/cubical/grid-cube-realization.md)
 - [The cube of a chain-model cell](../chain-models/grid/model/chain-model-cube.md)
 - [Grid cubes](../chain-models/grid/cubical/grid-cube.md)
 - [Fixed local data](../local-data/control/fixed-local-data.md)

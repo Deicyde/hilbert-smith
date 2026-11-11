@@ -18,6 +18,7 @@ the [box hull](../grid/box-hull.md) of the closed $d_\infty$-neighbourhood $N_h(
 
 ## Depends on
 
+- [The closed cube](../grid/cubical/grid-cube-realization.md)
 - [Mesh start](../mesh/mesh-start.md)
 - [Grid cubes](../grid/cubical/grid-cube.md)
 - [The cube of a basis vector](../grid/cubical/grid-cell.md)

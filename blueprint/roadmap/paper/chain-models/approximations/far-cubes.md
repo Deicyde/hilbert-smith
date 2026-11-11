@@ -18,5 +18,6 @@ A cube $c$ of the [cubical torus grid](../grid/cubical/cubical-torus-grid.md) $C
 
 ## Depends on
 
+- [The closed cube](../grid/cubical/grid-cube-realization.md)
 - [Grid cubes](../grid/cubical/grid-cube.md)
 - [The quotient map](../torus/proj.md), [cubical torus grid](../grid/cubical/cubical-torus-grid.md)

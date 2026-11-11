@@ -8,7 +8,7 @@ lean: HSP.ChainModels.gridCell
 
 # The cube of a basis vector
 
-The basis vectors of the [grid complex](cubical-torus-grid.md) $C(k)_r$ are [cubes](grid-cube.md) of dimension $r$: for $n=0$ the single basis vector is the empty cube, and the basis vector $x\otimes y$ of the summand $C(k)_p\boxtimes S_{k,r-p}$ of $(C(k)\otimes S_k)_r$ is the cube of $x$ followed by the cell of $y$. Distinct basis vectors give distinct cubes, and every cube of dimension $r$ arises.
+Each basis vector of the [grid complex](cubical-torus-grid.md) $C(k)_r$ has a [cube](grid-cube.md): for $n=0$ the single basis vector is the empty cube, and the basis vector $x\otimes y$ of the summand $C(k)_p\boxtimes S_{k,r-p}$ of $(C(k)\otimes S_k)_r$ is the cube of $x$ followed by the [cell](circle-cell.md) of $y$.
 
 ## Sources
 
@@ -16,5 +16,7 @@ The basis vectors of the [grid complex](cubical-torus-grid.md) $C(k)_r$ are [cub
 
 ## Depends on
 
+- [The dimension of a grid cube](grid-cube-dim.md)
 - [Cubical torus grid](cubical-torus-grid.md)
 - [Grid cubes](grid-cube.md)
+- [The cell of a basis vector of the circle complex](circle-cell.md)

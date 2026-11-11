@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelCube
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCubeCenter
 
 /-!
 # Torus labels of chain-model cells

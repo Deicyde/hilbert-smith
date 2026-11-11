@@ -14,7 +14,7 @@ Poincaré complex over based vector spaces, with inverse `b_P`.
 
 `cp2Cells : SymPoincare FreeQ 4` (the declaration of the article) packages `P` and `φ_P` with
 `∂φ_P = 0`, `T φ_P = φ_P` (`r(4-r)` is even) and the Poincaré property, witnessed by the strict
-inverse `b_P` (zero homotopies). The middle form `φ_{2,2} = 1` is a companion.
+inverse `b_P` (zero homotopies).
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -89,11 +89,5 @@ def cp2Cells : SymPoincare FreeQ 4 where
       ext r
       exact ones_mul_ones_of_eq (a := cp2Dim r) (b := cp2Dim (4 - r)) (cp2Dim_symm r).symm
         (cp2Dim_le (4 - r))) }, rfl⟩
-
-/-- The induced form on `P_2` is `⟨1⟩`: `φ_{2,2} = 1`. -/
-lemma cp2Cells_middle_form : cp2Cells.φ ⟨(2, 2), rfl⟩ = 𝟙 _ := by
-  have h : (Matrix.of fun _ _ => (1 : ℚ) : Matrix (Fin 1) (Fin 1) ℚ) = 1 := by
-    ext a b; fin_cases a; fin_cases b; rfl
-  exact h
 
 end HSP.ChainModels
