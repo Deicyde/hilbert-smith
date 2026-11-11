@@ -1,6 +1,6 @@
 import HilbertSmithPaper.LTheory.Localization.Transitions.LevelBoundary
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
-import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdent
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.SubPowIdentification
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
 import HilbertSmithPaper.LTheory.Base.Groups.InducedMap
 

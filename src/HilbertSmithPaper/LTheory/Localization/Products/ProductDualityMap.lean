@@ -2,6 +2,9 @@ import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct
 import HilbertSmithPaper.LTheory.Localization.Products.ProductDualIso
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMap
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductHomExt
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDualHomExt
 
 /-!
 # Duality map of a product
