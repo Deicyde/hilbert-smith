@@ -167,6 +167,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
+import HilbertSmithPaper.LTheory.Ultimate.Groups.EquivalenceInvariance
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapLevel
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
