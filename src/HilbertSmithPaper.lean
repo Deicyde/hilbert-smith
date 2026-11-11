@@ -116,6 +116,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomId
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorSummandTransport
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.ChainModels.Torus.ContinuousAtLift
