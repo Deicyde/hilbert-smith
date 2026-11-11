@@ -15,10 +15,14 @@ import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.Categories.Functors.ForgetControl
+import HilbertSmithPaper.Categories.Functors.ForgetControlSupport
 import HilbertSmithPaper.Categories.Cuts.ExteriorCutIdentification
 import HilbertSmithPaper.Categories.Functors.ForgetGroup
+import HilbertSmithPaper.Categories.Functors.ForgetGroupSupport
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
+import HilbertSmithPaper.Categories.Functors.PushSupport
 import HilbertSmithPaper.Categories.Functors.Pushforward
+import HilbertSmithPaper.Categories.Functors.RelabellingEquivalence
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
 import HilbertSmithPaper.Categories.Supports.ExteriorFunctor
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
@@ -73,6 +77,7 @@ import HilbertSmithPaper.Corner.ExteriorClosed
 import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
+import HilbertSmithPaper.Corner.Theorem.ScalarForget
 import HilbertSmithPaper.Evaluation.CubicalPinch
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Evaluation.LabelledModel

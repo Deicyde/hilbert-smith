@@ -15,3 +15,4 @@ Let $u,v:E\to F$ be chain maps carried by $\Gamma$ that agree on a based subcomp
 - HS paper, Section 7 (carrier lemma).
 ## Depends on
 - [Carriers](acyclic-carriers.md)
+- [Carried chain maps](carried-chain-map.md)
