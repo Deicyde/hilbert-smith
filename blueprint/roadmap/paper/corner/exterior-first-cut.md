@@ -25,3 +25,5 @@ The hypothesis $R>0$ is not used: it follows from $0<s<R/\sqrt n$.
 
 - [The exterior](exterior.md)
 - [The cut sets](cut-sets.md)
+- [The cube face](cut-face.md)
+- [The boundary of the cube face](cut-face-boundary.md)

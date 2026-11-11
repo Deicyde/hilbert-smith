@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.GridBox
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 
 /-!
 # Box hull

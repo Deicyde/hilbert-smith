@@ -20,10 +20,12 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 
 - [Duality functor](../categories/duality-functor.md)
 - [Strict Poincaré pair](poincare-pair.md)
-- [Completion of a duality functor](../categories/karoubi-functor.md)
 
 ## Proof depends on
 
 - [Duality functors carry Poincaré complexes](functor-poincare.md)
 - [Pair map](pair-map.md)
 - [Mapping cone](../complexes/cone.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Images of structures commute with the boundary, T and the duality map](../complexes/functors/functor-structure-laws.md)
+- [Duality functors and dual complexes](../complexes/functors/functor-dual-iso.md)

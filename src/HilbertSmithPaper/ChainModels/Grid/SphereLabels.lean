@@ -1,5 +1,7 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelDualLabel
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.Corner.RoundSphere

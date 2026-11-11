@@ -3,6 +3,7 @@ import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
 import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # The family of chain-model matrices

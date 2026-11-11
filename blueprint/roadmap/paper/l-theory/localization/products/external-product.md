@@ -8,9 +8,9 @@ lean: HSP.strProd
 
 # External product of structures
 
-Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality pairing](duality-pairing.md), $C$ a complex in $\mathcal B$ and $E$ a complex in $\mathcal E$, each with all but finitely many chain objects zero objects, and let $C\otimes E$ be their [tensor product](complex-product.md). For $\phi\in M(C)_m$ and $\theta\in M(E)_n$, the structure $\phi\otimes\theta\in M(C\otimes E)_{m+n}$ has, from the summand $C^*_{m-p}\boxtimes E^*_{n-q}$ of $(C\otimes E)^*_{m+n-p-q}$ (identified through $\kappa$) to $C_p\boxtimes E_q$, the block
+Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality pairing](duality-pairing.md), $C$ a complex in $\mathcal B$ and $E$ a complex in $\mathcal E$, each with all but finitely many chain objects zero objects, and let $C\otimes E$ be their [tensor product](complex-product.md). For $\phi\in M(C)_m$, $\theta\in M(E)_n$ and every $k$ with $m+n=k$, the structure $\phi\otimes\theta\in M(C\otimes E)_k$ has, from the summand $C^*_{m-p}\boxtimes E^*_{n-q}$ of $(C\otimes E)^*_{m+n-p-q}$ (identified through $\kappa$) to $C_p\boxtimes E_q$, the block
 $$(-1)^{q(p+m)}\,\phi_p\boxtimes\theta_q,$$
-and zero blocks elsewhere. The degree $k=m+n$ of $\phi\otimes\theta$ is recorded as a number $k$ with $m+n=k$, so that structures of degrees $(m-1)+n$ and $m+n-1$ can be compared directly. Equivalently, the block of $\phi\otimes\theta$ from the dual of the summand $C_c\boxtimes E_d$ to the summand $C_a\boxtimes E_b$ is $(-1)^{b(a+m)}(\phi_a\boxtimes\theta_b)\kappa$ when $a+c=m$ and $b+d=n$, and zero otherwise.
+and zero blocks elsewhere. Equivalently, the block of $\phi\otimes\theta$ from the dual of the summand $C_c\boxtimes E_d$ to the summand $C_a\boxtimes E_b$ is $(-1)^{b(a+m)}(\phi_a\boxtimes\theta_b)\kappa$ when $a+c=m$ and $b+d=n$, and zero otherwise.
 
 ## Sources
 

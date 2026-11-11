@@ -11,7 +11,7 @@ lean: HSP.ChainModels.chainModel_poincare_cycle
 
 For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model-duality.md) satisfies $\partial\varphi_i=0$ and $T\varphi_i=\varphi_i$.
 
-*Proof sketch.* Induct over the circle factors. For $\varphi_i=\varphi^{(n)}\otimes\varphi_P$ with $\varphi^{(n+1)}=\varphi^{(n)}\otimes\varphi^s$ and $\varphi^{(0)}$ the identity structure of the unit complex (zero differential, degree $0$), the [Leibniz rule](../tensor/structure-products/str-prod-leibniz.md) gives $\partial(\varphi\otimes\theta)=\partial\varphi\otimes\theta\pm\varphi\otimes\partial\theta=0$ from $\partial\varphi^s=0$ ([circle duality](../circle-duality.md) (2)) and $\partial\varphi_P=0$ ([cells of CP^2](../cp2-cells.md)); a product with a zero factor vanishes. Likewise [products commute with T](../tensor/structure-products/str-prod-involution.md), with $T\varphi^s=\varphi^s$ and $T\varphi_P=\varphi_P$.
+*Proof sketch.* Induct over the circle factors. For $\varphi_i=\varphi^{(n)}\otimes\varphi_P$ with $\varphi^{(n+1)}=\varphi^{(n)}\otimes\varphi^s$ and $\varphi^{(0)}$ the identity structure of the unit complex (zero differential, degree $0$), the [Leibniz rule](../tensor/structure-products/str-prod-leibniz.md) gives $\partial(\varphi\otimes\theta)=\partial\varphi\otimes\theta\pm\varphi\otimes\partial\theta=0$ from $\partial\varphi^s=0$ ([circle duality](../circle-duality.md) (2)) and $\partial\varphi_P=0$ ([cells of CP^2](../cp2/cp2-cells.md)); a product with a zero factor vanishes. Likewise [products commute with T](../tensor/structure-products/str-prod-involution.md), with $T\varphi^s=\varphi^s$ and $T\varphi_P=\varphi_P$.
 
 ## Sources
 
@@ -19,6 +19,12 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 
 ## Depends on
 
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [The structure of CP^2](../cp2/cp2-structure.md)
+- [The circle complex](../cubical/circle-complex.md)
+- [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
+- [The unit complex](../cubical/unit-complex.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [Chain-model duality](../chain-model-duality.md)
 
 ## Proof depends on
@@ -26,6 +32,6 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 - [Leibniz rule for products of structures](../tensor/structure-products/str-prod-leibniz.md)
 - [Products of structures commute with T](../tensor/structure-products/str-prod-involution.md)
 - [Circle duality](../circle-duality.md)
-- [Cells of CP^2](../cp2-cells.md)
-- [The cells of CP^2 vanish in negative degrees](../cp2-dim-neg.md)
+- [Cells of CP^2](../cp2/cp2-cells.md)
+- [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
 - [Kronecker product with a zero factor](../tensor/kron-zero.md)

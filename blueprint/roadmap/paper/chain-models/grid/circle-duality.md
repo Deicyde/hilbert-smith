@@ -27,8 +27,11 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 
 ## Depends on
 
+- [The circle complex](cubical/circle-complex.md)
+- [Augmentation of the circle complex](cubical/circle-aug.md)
+- [Fundamental chain of the circle complex](cubical/circle-fundamental.md)
 - [circle duality data](poincare/circle-data/circle-phi.md), [circle homotopy element](poincare/circle-data/circle-h.md), [symmetric circle structure](poincare/circle-data/circle-phi-sym.md), [circle inverse](poincare/circle-data/circle-b.md), [circle homotopy](poincare/circle-data/circle-k.md), [dual circle homotopy](poincare/circle-data/circle-k-dual.md)
-- [Cubical torus grid](cubical-torus-grid.md), [dual complex](../../l-theory/base/complexes/dual-complex.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [the involution T](../../l-theory/base/complexes/structure-involution.md), [propagation](../../categories/asymptotic/propagation.md)
+- [Cubical torus grid](cubical/cubical-torus-grid.md), [dual complex](../../l-theory/base/complexes/dual-complex.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [the involution T](../../l-theory/base/complexes/structure-involution.md), [propagation](../../categories/asymptotic/propagation.md)
 
 ## Proof depends on
 

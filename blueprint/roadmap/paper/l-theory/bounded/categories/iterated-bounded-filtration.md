@@ -8,9 +8,9 @@ lean: HSP.Bounded.powKaroubiFiltration
 
 # Iterated bounded filtrations
 
-Let $\mathcal U\subset\mathcal A$ be an [involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md). For every $j\ge0$, $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$ is an involution-invariant Karoubi filtration, with the [iterated bounded categories](iterated-bounded-category.md).
+Let $\mathcal U\subset\mathcal A$ be an [involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md). For every $j\ge0$, the *iterated bounded filtration* is the involution-invariant Karoubi filtration of $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$, in the [iterated bounded categories](iterated-bounded-category.md), given by the data (a choice of decompositions for each object) defined by induction on $j$: for $j=0$ the given filtration, and for $j+1$ the [bounded Karoubi filtration](bounded-karoubi-filtration.md) of the one for $j$.
 
-*Proof sketch.* Induction on $j$; the case $j=0$ is the hypothesis. For the step apply [Bounded Karoubi filtrations](bounded-karoubi-filtration.md) to $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$, since $C_{\mathbb Z^{j+1}}=C_\mathbb ZC_{\mathbb Z^j}$.
+*Proof sketch.* (Proof obligations of the induction step.) Apply [Bounded Karoubi filtrations](bounded-karoubi-filtration.md) to $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\mathcal A$, since $C_{\mathbb Z^{j+1}}=C_\mathbb ZC_{\mathbb Z^j}$.
 
 ## Sources
 
@@ -23,6 +23,7 @@ Let $\mathcal U\subset\mathcal A$ be an [involution-invariant Karoubi filtration
 - [Iterated bounded subcategories](iterated-bounded-sub.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [Iterated bounded categories](iterated-bounded-category.md)
+- [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
 
 ## Proof depends on
 

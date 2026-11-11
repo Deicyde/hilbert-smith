@@ -16,7 +16,11 @@ with $d$ the differentials of $D_i$ and $D_i^{N-*}$, and $U_g$ has $d_\infty$-pr
 ## Sources
 - HS paper, Section 9.
 ## Depends on
-- [The cells of CP^2 vanish in negative degrees](../grid/cp2-dim-neg.md)
+- [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
+- [The cellular chain complex of CP^2](../grid/cp2/cp2-complex.md)
+- [The structure of CP^2](../grid/cp2/cp2-structure.md)
+- [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [The cells of CP^2 vanish in negative degrees](../grid/cp2/cp2-dim-neg.md)
 - [Poincaré](../grid/chain-model-poincare.md), [group approximations](group-approx.md), [modulus of the track family](modulus.md), [chain-model duality](../grid/chain-model-duality.md)
 ## Proof depends on
 - [Carried homotopies](../grid/carried-homotopy.md), [carried group approximations](group-approx-carried.md), [fundamental cycle](fundamental-cycle-fixed.md), [box hull properties](../grid/box-hull-properties.md), [pushforward of products](../../l-theory/localization/products/product-push.md), [Leibniz rule for products](../../l-theory/localization/products/product-leibniz.md)

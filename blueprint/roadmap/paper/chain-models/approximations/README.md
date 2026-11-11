@@ -6,6 +6,7 @@ article_id: af_966bd456388b5ef24fd7e068
 
 The completed maps, their tracks and modulus, the torus test map, the buffered restriction lemma, chain approximations of the group action, their homotopies, the fixed fundamental cycle and the graph types.
 
+- [Completed maps and tracks: components](maps/README.md)
 - [Completed map](completed-map.md)
 - [Track maps](track-map.md)
 - [Modulus of the track family](modulus.md)

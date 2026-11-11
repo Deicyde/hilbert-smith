@@ -23,6 +23,7 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 - [Duality pairings](duality-pairing.md)
 - [External product of structures](external-product.md)
 - [The involution T](../../base/complexes/structure-involution.md)
+- [Tensor product of complexes](complex-product.md)
 
 ## Proof depends on
 

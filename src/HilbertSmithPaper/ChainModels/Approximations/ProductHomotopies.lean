@@ -2,6 +2,8 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
 import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
 import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # Product homotopies

@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.LocalData.Control.ControlAction
 import HilbertSmithPaper.LocalData.Chart.StabilizersOnTestRegion
 import HilbertSmithPaper.LocalData.Control.ReductionKernel
+import HilbertSmithPaper.LocalData.Control.ControlQuotientMap
 
 /-!
 # The cyclic action is free

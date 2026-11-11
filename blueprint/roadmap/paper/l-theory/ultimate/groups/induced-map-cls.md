@@ -22,6 +22,7 @@ For a duality functor $F:\mathcal A\to\mathcal A'$, $F_*\circ\mathrm{cls}=\mathr
 - [Induced map on ultimate L](induced-map.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
 - [The class map](ultimate-cls.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

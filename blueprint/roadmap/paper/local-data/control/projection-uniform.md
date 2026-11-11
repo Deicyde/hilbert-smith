@@ -19,6 +19,8 @@ For a local datum and $\varepsilon>0$ there is $\delta>0$ such that $d_T(\pi z,\
 
 ## Depends on
 
+- [The quotient topology on the control space](control-topology.md)
+- [The quotient map to the control space](control-quotient-map.md)
 - [The orbit metric on the control space](control-metric.md)
 
 ## Proof depends on

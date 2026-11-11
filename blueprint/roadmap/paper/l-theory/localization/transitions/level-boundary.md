@@ -26,3 +26,4 @@ where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md) a
 - [Localization boundary](../boundary/localization-boundary.md)
 - [Lower L-group](lower-l-group.md)
 - [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

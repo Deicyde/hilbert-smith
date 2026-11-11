@@ -2,6 +2,8 @@ import Mathlib
 import HilbertSmithPaper.LocalData.Control.ControlMetric
 import HilbertSmithPaper.LocalData.Control.OrbitSupMetricProperties
 import HilbertSmithPaper.LocalData.Subgroups.PadicSubgroupsBasis
+import HilbertSmithPaper.LocalData.Control.ControlQuotientMap
+import HilbertSmithPaper.LocalData.Control.ControlTopology
 
 /-!
 # The orbit metric metrizes the control space

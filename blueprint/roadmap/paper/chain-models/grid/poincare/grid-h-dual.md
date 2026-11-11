@@ -16,6 +16,8 @@ On the [dual complex](../../../l-theory/base/complexes/dual-complex.md) $C(k)^{n
 
 ## Depends on
 
+- [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
 - [Dual tensor of graded maps of based complexes](../tensor/based-dual-tensor-hom.md)
 - [The degree-zero map A' of the dual circle](circle-a-dual.md)

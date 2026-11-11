@@ -4,6 +4,10 @@ import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
 import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
+import HilbertSmithPaper.ChainModels.Approximations.Maps.CompletedRep
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCell
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 
 /-!
 # Carried group approximations

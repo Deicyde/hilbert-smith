@@ -3,6 +3,7 @@ import HilbertSmithPaper.Compression.StartIndex
 import HilbertSmithPaper.Categories.Asymptotic.AsymptoticCategory
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
 import HilbertSmithPaper.LocalData.Control.ControlSpaceCompact
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
 
 /-!
 # Compressed complex

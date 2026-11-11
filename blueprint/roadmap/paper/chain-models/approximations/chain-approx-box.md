@@ -8,7 +8,7 @@ lean: HSP.ChainModels.chainApproxBox
 
 # Approximation boxes
 
-Let $k\ge k_0$ (see the [mesh sequence](../grid/mesh-sequence.md)), put $h=4/k$, and let $L:\mathbb T^n\to\mathbb T^n$ be a map. For a cube $c$ of the [cubical torus grid](../grid/cubical-torus-grid.md) $C(k)$, the *approximation box* is
+Let $k\ge k_0$ (see the [mesh sequence](../grid/mesh-sequence.md)), put $h=4/k$, and let $L:\mathbb T^n\to\mathbb T^n$ be a map. For a cube $c$ of the [cubical torus grid](../grid/cubical/cubical-torus-grid.md) $C(k)$, the *approximation box* is
 $$\Gamma_L(c)=\mathrm{Box}_k(N_h(L|c|)),$$
 the [box hull](../grid/box-hull.md) of the closed $d_\infty$-neighbourhood $N_h(L|c|)$ of the image of the closed cube $|c|$. The box hull is taken in $C(k)$, which is defined since $k\ge k_0\ge 8$.
 
@@ -18,4 +18,6 @@ the [box hull](../grid/box-hull.md) of the closed $d_\infty$-neighbourhood $N_h(
 
 ## Depends on
 
-- [Box hull](../grid/box-hull.md), [mesh sequence](../grid/mesh-sequence.md), [cubical torus grid](../grid/cubical-torus-grid.md)
+- [Grid cubes](../grid/cubical/grid-cube.md)
+- [The cube of a basis vector](../grid/cubical/grid-cell.md)
+- [Box hull](../grid/box-hull.md), [mesh sequence](../grid/mesh-sequence.md), [cubical torus grid](../grid/cubical/cubical-torus-grid.md)

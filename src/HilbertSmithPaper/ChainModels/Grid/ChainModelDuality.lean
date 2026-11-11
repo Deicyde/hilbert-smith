@@ -1,12 +1,18 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
-import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedDualProd
-import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
+import HilbertSmithPaper.ChainModels.Grid.Cubical.UnitComplex
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Inverse
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
 
 /-!
 # Chain-model duality

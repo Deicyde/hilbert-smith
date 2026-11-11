@@ -22,7 +22,10 @@ Let $\mathcal B$ be a [duality category](../../base/categories/duality-category.
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
 
 ## Proof depends on
 
 - [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [Images of structures commute with the boundary, T and the duality map](../../base/complexes/functors/functor-structure-laws.md)
+- [Duality functors and dual complexes](../../base/complexes/functors/functor-dual-iso.md)

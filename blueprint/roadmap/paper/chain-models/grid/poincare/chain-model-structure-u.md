@@ -8,7 +8,7 @@ lean: HSP.ChainModels.chainModelStructureU
 
 # The unsymmetrized structure of the chain model
 
-For the [chain model](../chain-model.md) $D_i=C(k_i)\otimes P$ and $N=n+4$, $\varphi_i^u=\varphi^u_n\otimes\varphi_P\in M(D_i)_N$ is the [product of structures](../tensor/structure-products/based-str-prod.md) of the [unsymmetrized grid structure](grid-structure-u.md) and the structure $\varphi_P$ of the [cells of CP^2](../cp2-cells.md).
+For the [chain model](../model/chain-model.md) $D_i=C(k_i)\otimes P$ and $N=n+4$, $\varphi_i^u=\varphi^u_n\otimes\varphi_P\in M(D_i)_N$ is the [product of structures](../tensor/structure-products/based-str-prod.md) of the [unsymmetrized grid structure](grid-structure-u.md) and the structure $\varphi_P$ of the [cells of CP^2](../cp2/cp2-cells.md).
 
 ## Sources
 
@@ -16,8 +16,11 @@ For the [chain model](../chain-model.md) $D_i=C(k_i)\otimes P$ and $N=n+4$, $\va
 
 ## Depends on
 
-- [The cells of CP^2 vanish in negative degrees](../cp2-dim-neg.md)
-- [Chain model](../chain-model.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [The structure of CP^2](../cp2/cp2-structure.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
+- [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
+- [Chain model](../model/chain-model.md)
 - [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)
 - [The unsymmetrized grid structure](grid-structure-u.md)
-- [Cells of CP^2](../cp2-cells.md)
+- [Cells of CP^2](../cp2/cp2-cells.md)

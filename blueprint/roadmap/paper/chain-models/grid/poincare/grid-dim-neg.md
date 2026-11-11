@@ -9,7 +9,7 @@ lean: HSP.ChainModels.gridComplex_dim_neg
 
 # The grid complex vanishes in negative degrees
 
-For every $k$ and $n$, the [grid complex](../cubical-torus-grid.md) $C(k)$ with $n$ circle factors vanishes in negative degrees: $C(k)_q=0$ for $q<0$.
+For every $k$ and $n$, the [grid complex](../cubical/cubical-torus-grid.md) $C(k)$ with $n$ circle factors vanishes in negative degrees: $C(k)_q=0$ for $q<0$.
 
 *Proof sketch.* For $n=0$ it is the unit complex, $\mathbb Q$ in degree $0$. For $n+1$ it is a tensor product with the circle complex, which vanishes in negative degrees ([the tensor product vanishes in negative degrees](../tensor/tensor-dim-neg.md)).
 
@@ -19,7 +19,7 @@ For every $k$ and $n$, the [grid complex](../cubical-torus-grid.md) $C(k)$ with 
 
 ## Depends on
 
-- [Cubical torus grid](../cubical-torus-grid.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
 
 ## Proof depends on
 

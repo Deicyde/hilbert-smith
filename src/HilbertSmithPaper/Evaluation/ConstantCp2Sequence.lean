@@ -1,8 +1,8 @@
 import HilbertSmithPaper.Evaluation.BasedToFree
-import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
 import HilbertSmithPaper.Categories.Asymptotic.TrivialGroupSequence
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Cells
 
 /-!
 # The constant sequence of `CP²`

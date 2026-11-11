@@ -22,6 +22,7 @@ Let $\mathcal U\subset\mathcal A$ be as in [Decorated objects](../decorations/de
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Group structure on L](../../base/groups/l-group-add.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

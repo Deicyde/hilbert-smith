@@ -7,6 +7,8 @@ import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
+import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
+import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelFundamental
 
 /-!
 # Chain-model estimates

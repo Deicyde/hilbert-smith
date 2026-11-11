@@ -16,7 +16,7 @@ Let $Q=\bigotimes_jA_j\subseteq C(k)$ be a product of grid arcs $A_j\cong I_{m_j
 ## Depends on
 - [Chain-model duality](../chain-models/grid/chain-model-duality.md)
 - [Block pair](../chain-models/blocks/block-pair.md)
-- [Chain model](../chain-models/grid/chain-model.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
 ## Proof depends on
 - [Circle duality](../chain-models/grid/circle-duality.md)
 - [Arc pair](../chain-models/blocks/arc-pair.md)
