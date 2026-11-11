@@ -16,6 +16,7 @@ Fix a local datum and an index $i$, and let $f$ be a map of degree $m$ of the [c
 
 ## Depends on
 
+- [The cells of CP^2 vanish in negative degrees](../cp2-dim-neg.md)
 - [Chain model](../chain-model.md)
 - [Tensor of graded maps of based complexes](based-tensor-hom.md)
 - [The identity as a map of degree zero](id-deg0.md)

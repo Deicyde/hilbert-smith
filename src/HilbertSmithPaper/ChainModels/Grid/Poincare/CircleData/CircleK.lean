@@ -2,8 +2,8 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleB
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleH
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleB
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleH
 
 /-!
 # The circle homotopy
