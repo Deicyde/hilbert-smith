@@ -10,7 +10,7 @@ lean: HSP.SymPair.exists_prod_line
 
 Let $(f:C\to D,\delta\phi,\phi)$ be a strict $k$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^j}\mathcal A$. Then
 $$(f\otimes1:C\otimes\Lambda\to D\otimes\Lambda,\ \delta\phi\otimes\lambda,\ \phi\otimes\lambda)$$
-is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^{j+1}}\mathcal A$. Its boundary is $(C\otimes\Lambda,\phi\otimes\lambda)$, with no sign.
+is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^{j+1}}\mathcal A$. Its boundary is $(C\otimes\Lambda,\phi\otimes\lambda)$, with no sign. The complexes $C$, $D$ and $\Lambda$ have only finitely many nonzero chain objects by their degree bounds, so the products are defined.
 
 *Proof sketch.* Write $s(a,b)=(-1)^{b(a+k)}$ for the sign of $\delta\phi\otimes\lambda$ on the block with target $D_a\boxtimes\Lambda_b$.
 1. Degrees. $D\otimes\Lambda$ has zero objects outside degrees $[0,k+1]$ and $C\otimes\Lambda$ outside $[0,k]$.

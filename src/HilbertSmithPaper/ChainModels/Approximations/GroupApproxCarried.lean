@@ -33,7 +33,7 @@ theorem groupApprox_carried (A : LocalDatum p n D ρplus) (i : ℕ) (g : ZMod (p
           (realizeBasis (gridComplex (meshSequence A i) n))
           (realizeCx (gridComplex (meshSequence A i) n)) (gridAugLin (meshSequence A i) n),
         (∀ r e s, Γ.sub r e s =
-          cubeSpan (chainApproxBox A (meshStart_le_meshSequence A i) (completedRep A i g) r e).cubes
+          cubeSpan (chainApproxBox A (Nat.le_add_right (meshStart A) i) (completedRep A i g) r e).cubes
             s) ∧
         Γ.IsCarried (σ := fun r => r) (fun r => realization.map (aT.f r)) ∧
         (∀ r (e : Fin ((gridComplex (meshSequence A i) n).X r).dim),
