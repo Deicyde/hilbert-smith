@@ -3,6 +3,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructurePushInvolution
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapIso
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushBoundary
 
 /-!
 # Transport of pairs along isomorphisms

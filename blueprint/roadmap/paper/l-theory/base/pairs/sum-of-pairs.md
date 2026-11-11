@@ -29,3 +29,4 @@ If $(f:C\to D,\delta\phi,\phi)$ and $(f':C'\to D',\delta\phi',\phi')$ are strict
 - [Duals of chain maps reverse composition](../complexes/functors/dual-map-comp.md)
 - [Duals of identity chain maps](../complexes/functors/dual-map-id.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)

@@ -17,3 +17,4 @@ Images of complexes and structures under a duality functor, with their compatibi
 - [Pushforward preserves composition](push-comp.md)
 - [Pushforward preserves identities](push-id.md)
 - [Duality functors preserve sums of structures](functor-structure-sum.md)
+- [Pushforward commutes with the boundary](push-boundary.md)

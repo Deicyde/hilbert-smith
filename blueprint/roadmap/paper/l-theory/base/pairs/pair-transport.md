@@ -32,3 +32,4 @@ Let $(f:C\to D,\delta\phi,\phi)$ be a strict $n$-dimensional Poincaré pair in a
 - [Dual complex](../complexes/dual-complex.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../complexes/functors/push-id.md)
+- [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)

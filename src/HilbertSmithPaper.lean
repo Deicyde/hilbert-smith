@@ -314,6 +314,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorDualIso
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureSum
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushBoundary
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushComp
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushId
 import HilbertSmithPaper.LTheory.Base.Complexes.Shift

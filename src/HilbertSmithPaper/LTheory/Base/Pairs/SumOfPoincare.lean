@@ -4,6 +4,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructurePushInvolution
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincareNeg
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincareZero
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapIso
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.PushBoundary
 
 /-!
 # Sums of Poincaré complexes

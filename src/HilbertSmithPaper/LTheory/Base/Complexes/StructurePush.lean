@@ -57,12 +57,6 @@ lemma push_apply {C D : ChainComplex B ℤ} (g : C ⟶ D) (n : ℤ) (f : (Struct
     ((push g).f n f) ⟨(p, q), h⟩ = dualHom (g.f q) ≫ f ⟨(p, q), h⟩ ≫ g.f p :=
   rfl
 
-/-- `g_%` commutes with `∂`, applied to an element. -/
-lemma d_push_apply {C D : ChainComplex B ℤ} (g : C ⟶ D) (n m : ℤ) (x : (StructureCx C).X n) :
-    (StructureCx D).d n m ((push g).f n x) = (push g).f m ((StructureCx C).d n m x) := by
-  have := ConcreteCategory.congr_hom ((push g).comm n m) x
-  simpa using this
-
 end StructureCx
 
 end HSP

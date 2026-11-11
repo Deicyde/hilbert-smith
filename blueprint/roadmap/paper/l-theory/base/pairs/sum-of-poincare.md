@@ -30,3 +30,4 @@ If $(C,\phi)$ and $(C',\phi')$ are strict $k$-dimensional symmetric Poincaré co
 - [Pushforward of structures](../complexes/structure-push.md)
 - [Duals of chain maps reverse composition](../complexes/functors/dual-map-comp.md)
 - [Duals of identity chain maps](../complexes/functors/dual-map-id.md)
+- [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)
