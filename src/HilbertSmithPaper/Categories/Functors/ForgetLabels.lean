@@ -44,7 +44,7 @@ def forgetLabelsFunctor : AsymCat G X ⥤ VCat G :=
   CategoryTheory.Quotient.lift (asymRel G X) (AsymPre.forgetLabels ⋙ FiltQuot.functor (SCat G))
     forgetLabels_resp
 
-theorem forgetLabelsFunctor_map_mkHom {M N : AsymPre G X} (u : M ⟶ N) :
+private theorem forgetLabelsFunctor_map_mkHom {M N : AsymPre G X} (u : M ⟶ N) :
     forgetLabelsFunctor.map (AsymCat.mkHom u) =
       (FiltQuot.functor (SCat G)).map (AsymPre.forgetLabels.map u) := rfl
 

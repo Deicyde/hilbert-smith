@@ -4,6 +4,7 @@ import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.Categories.Asymptotic.PropAdd
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropMul
+import HilbertSmithPaper.Categories.Asymptotic.PropOne
 import HilbertSmithPaper.Categories.Asymptotic.FreeCategory
 
 /-!
@@ -77,15 +78,6 @@ def preHom (M N : AsymPre G X) : Submodule ℚ (∀ i, M.free i ⟶ N.free i) wh
     refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hu
       (fun _ => zero_le) fun i => ?_
     exact prop_smul_le (M.label i) (N.label i) c (FreeCat.mat (u i))
-
-private theorem prop_one {B : Type*} [Fintype B] [DecidableEq B] (l : B → X) :
-    prop l l (1 : Matrix B B ℚ) = 0 := by
-  refine le_antisymm (Finset.sup_le fun q hq => ?_) zero_le
-  have h := (Finset.mem_filter.1 hq).2
-  rw [Matrix.one_apply] at h
-  split_ifs at h with hq'
-  · rw [hq', nndist_self]
-  · exact absurd rfl h
 
 instance : Quiver (AsymPre G X) where
   Hom M N := preHom M N
@@ -329,6 +321,28 @@ instance : HasBinaryBiproducts (AsymCat G X) :=
 instance : HasFiniteBiproducts (AsymCat G X) := by
   have := hasFiniteProducts_of_has_binary_and_terminal (C := AsymCat G X)
   exact HasFiniteBiproducts.of_hasFiniteProducts
+
+section
+
+/-- The trivial action of `C_2` on a point, for the non-vacuity witness. -/
+private abbrev unitAction : AddAction (ZMod 2) Unit := AddAction.compHom Unit (0 : ZMod 2 →+ Unit)
+
+attribute [local instance] unitAction
+
+/-- Non-vacuity: over a one-point space and the trivial group sequence, the object with one
+generator at every level is not a zero object (its identity is eventually nonzero). -/
+private theorem nonvacuous :
+    ¬IsZero (⟨⟨fun _ => 1, fun _ _ => ()⟩⟩ : AsymCat (GroupSeq.trivial 2) Unit) := by
+  intro h
+  have h2 : mkHom (𝟙 (⟨fun _ => 1, fun _ _ => ()⟩ : AsymPre (GroupSeq.trivial 2) Unit)) =
+      mkHom 0 := by
+    exact h.eq_of_src _ _
+  obtain ⟨i, hi⟩ := ((mkHom_eq_iff _ _).1 h2).exists
+  have h3 := congrArg FreeCat.mat hi
+  have h4 := congrFun (congrFun h3 (default, ⟨0, Nat.one_pos⟩)) (default, ⟨0, Nat.one_pos⟩)
+  simp at h4
+
+end
 
 end AsymCat
 

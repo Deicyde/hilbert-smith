@@ -22,4 +22,5 @@ Suppose the $C_p$-action on $X$ is isometric. Let $M=(n_i,x_i)$ and $M'=(n_i,x'_
 
 ## Proof depends on
 
+- [Propagation of the identity](../asymptotic/prop-one.md)
 - [Relabelling changes propagation](../asymptotic/prop-relabel.md)
