@@ -51,6 +51,7 @@ import HilbertSmithPaper.ChainModels.Grid.CarriedChainMap
 import HilbertSmithPaper.ChainModels.Grid.CarriedHomotopy
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
+import HilbertSmithPaper.ChainModels.Grid.ChainModelEstimates
 import HilbertSmithPaper.ChainModels.Grid.ChainModelPoincare
 import HilbertSmithPaper.ChainModels.Grid.CircleDuality
 import HilbertSmithPaper.ChainModels.Grid.ControlLabels
