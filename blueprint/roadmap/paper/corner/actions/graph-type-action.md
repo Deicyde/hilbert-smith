@@ -1,7 +1,9 @@
 ---
 article_id: af_46ac22b0839af260e2d30f14
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.Corner.GraphAction
 ---
 
 # Graph-type homotopy action

@@ -79,6 +79,7 @@ import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.Compression.StartIndex
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
+import HilbertSmithPaper.Corner.Actions.GraphTypeAction
 import HilbertSmithPaper.Corner.CutFlag
 import HilbertSmithPaper.Corner.CutSets
 import HilbertSmithPaper.Corner.Exterior
