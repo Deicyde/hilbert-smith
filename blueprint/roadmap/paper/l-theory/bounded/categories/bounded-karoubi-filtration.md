@@ -22,6 +22,7 @@ Let $U\subset A$ be an involution-invariant Karoubi filtration, and let $C_\math
 
 ## Depends on
 
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [The induced duality](bounded-duality.md)
 - [The bounded subcategory](bounded-sub.md)

@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualAdditiveSubcategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 
 /-!
 # The bounded subcategory is closed under sums and duals

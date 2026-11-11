@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.BoxProduct
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 
 /-!
 # Duals of box products

@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 
 /-!
 # Bounded extension of a duality functor

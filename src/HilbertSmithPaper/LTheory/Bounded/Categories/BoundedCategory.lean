@@ -13,7 +13,7 @@ types inherit their `AddCommGroup` and `Module ℚ` structures.
 Composition (in diagrammatic order) is `(f ≫ g) l n = ∑ᶠ m, f m n ≫ g l m`, the paper's
 `(gf)_{ln} = ∑_m g_{lm} f_{mn}`; the sum is a `finsum` whose support lies in the band of `f`, so it
 is a finite sum (`Bounded.comp_apply_eq_sum`). Identities and the structure maps of biproducts are
-diagonal families (`Bounded.diag`). Biproducts are taken degreewise.
+diagonal families (`Bounded.diagF`). Biproducts are taken degreewise.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -215,31 +215,32 @@ instance : Linear ℚ (Bounded A) where
 
 lemma smul_apply (c : ℚ) (f : M ⟶ N) (m n : ℤ) : (c • f).1 m n = c • f.1 m n := rfl
 
-/-- The diagonal morphism with entries `d n : M_n ⟶ N_n`, of propagation `0`. -/
-def diag (d : ∀ n, M.X n ⟶ N.X n) : M ⟶ N := ⟨diagF d, diagF_mem d⟩
+/-- The diagonal morphism with entries `d n : M_n ⟶ N_n` (local copy for the biproducts). -/
+private def diagMor (d : ∀ n, M.X n ⟶ N.X n) : M ⟶ N := ⟨diagF d, diagF_mem d⟩
 
-lemma diag_apply (d : ∀ n, M.X n ⟶ N.X n) (m n : ℤ) : (diag d).1 m n = diagF d m n := rfl
+private lemma diagMor_apply (d : ∀ n, M.X n ⟶ N.X n) (m n : ℤ) :
+    (diagMor d).1 m n = diagF d m n := rfl
 
-private lemma id_eq_diag (M : Bounded A) : 𝟙 M = diag fun n => 𝟙 (M.X n) := rfl
+private lemma id_eq_diagMor (M : Bounded A) : 𝟙 M = diagMor fun n => 𝟙 (M.X n) := rfl
 
-lemma diag_comp_diag (d : ∀ n, M.X n ⟶ N.X n) (e : ∀ n, N.X n ⟶ P.X n) :
-    diag d ≫ diag e = diag fun n => d n ≫ e n := hom_ext fun l n => by
+private lemma diagMor_comp (d : ∀ n, M.X n ⟶ N.X n) (e : ∀ n, N.X n ⟶ P.X n) :
+    diagMor d ≫ diagMor e = diagMor fun n => d n ≫ e n := hom_ext fun l n => by
   show compF (diagF d) (diagF e) l n = diagF (fun n => d n ≫ e n) l n
   rw [diagF_compF]
   by_cases h : l = n
   · subst h; rw [diagF_self, diagF_self]
   · rw [diagF_ne _ h, diagF_ne _ h, comp_zero]
 
-lemma diag_zero : diag (fun n => (0 : M.X n ⟶ N.X n)) = 0 := hom_ext fun m n => by
-  rw [diag_apply, zero_apply]
+private lemma diagMor_zero : diagMor (fun n => (0 : M.X n ⟶ N.X n)) = 0 := hom_ext fun m n => by
+  rw [diagMor_apply, zero_apply]
   by_cases h : m = n
   · subst h; rw [diagF_self]
   · rw [diagF_ne _ h]
 
 private lemma sum_diag {ι : Type*} (s : Finset ι) (d : ι → ∀ n, M.X n ⟶ N.X n) :
-    ∑ i ∈ s, diag (d i) = diag fun n => ∑ i ∈ s, d i n := hom_ext fun m n => by
+    ∑ i ∈ s, diagMor (d i) = diagMor fun n => ∑ i ∈ s, d i n := hom_ext fun m n => by
   rw [sum_apply]
-  simp only [diag_apply]
+  simp only [diagMor_apply]
   by_cases h : m = n
   · subst h; simp only [diagF_self]
   · simp only [diagF_ne _ h, Finset.sum_const_zero]
@@ -251,24 +252,24 @@ variable [HasFiniteBiproducts A]
 /-- The degreewise biproduct bicone of a finite family of objects of `C_ℤ(A)`. -/
 def biconeOf {J : Type} [Fintype J] [DecidableEq J] (F : J → Bounded A) : Bicone F where
   pt := ⟨fun n => ⨁ fun j => (F j).X n⟩
-  π j := diag fun n => biproduct.π (fun j => (F j).X n) j
-  ι j := diag fun n => biproduct.ι (fun j => (F j).X n) j
+  π j := diagMor fun n => biproduct.π (fun j => (F j).X n) j
+  ι j := diagMor fun n => biproduct.ι (fun j => (F j).X n) j
   ι_π j j' := by
-    rw [diag_comp_diag]
+    rw [diagMor_comp]
     by_cases h : j = j'
     · subst h
       simp only [biproduct.ι_π_self, dite_true, eqToHom_refl]
       rfl
     · simp only [biproduct.ι_π_ne _ h, h, dite_false]
-      exact diag_zero
+      exact diagMor_zero
 
 private lemma biconeOf_total {J : Type} [Fintype J] [DecidableEq J] (F : J → Bounded A) :
     ∑ j, (biconeOf F).π j ≫ (biconeOf F).ι j = 𝟙 (biconeOf F).pt := by
   have h : ∀ j, (biconeOf F).π j ≫ (biconeOf F).ι j =
-      diag (M := (biconeOf F).pt) (N := (biconeOf F).pt)
+      diagMor (M := (biconeOf F).pt) (N := (biconeOf F).pt)
         (fun n => biproduct.π (fun j => (F j).X n) j ≫ biproduct.ι (fun j => (F j).X n) j) :=
-    fun j => diag_comp_diag _ _
-  rw [Finset.sum_congr rfl (fun j _ => h j), sum_diag, id_eq_diag]
+    fun j => diagMor_comp _ _
+  rw [Finset.sum_congr rfl (fun j _ => h j), sum_diag, id_eq_diagMor]
   congr 1
   funext n
   exact biproduct.total

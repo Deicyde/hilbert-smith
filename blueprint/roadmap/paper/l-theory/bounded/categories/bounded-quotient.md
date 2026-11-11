@@ -19,6 +19,7 @@ For an involution-invariant Karoubi filtration $U\subset A$, the entrywise quoti
 
 ## Depends on
 
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [The bounded subcategory is closed under sums and duals](bounded-sub-additive.md)
 - [The bounded subcategory](bounded-sub.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)

@@ -20,6 +20,7 @@ where $C_\mathbb Z F$ sends $(M_n)\mapsto(FM_n)$ and $(f_{mn})\mapsto(Ff_{mn})$,
 
 ## Depends on
 
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [The induced duality](bounded-duality.md)
 - [Iterated bounded categories](iterated-bounded-category.md)

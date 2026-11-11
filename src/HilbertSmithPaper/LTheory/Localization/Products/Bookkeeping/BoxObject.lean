@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 
 /-!
 # Objects of the box product

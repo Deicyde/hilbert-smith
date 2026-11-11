@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 
 /-!
 # Bounded extension of a unitary isomorphism

@@ -273,6 +273,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.LTheory.Base.Pairs.TransportCobordism
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter

@@ -18,4 +18,5 @@ If $U\subset A$ is a full additive subcategory closed under the duality, so is t
 
 ## Depends on
 
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [The bounded subcategory](bounded-sub.md), [the induced duality](bounded-duality.md), [additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)

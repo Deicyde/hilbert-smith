@@ -18,6 +18,7 @@ Let $\eta:F\cong G$ be a [unitary natural isomorphism](../../base/categories/uni
 
 ## Depends on
 
+- [Diagonal morphisms of $C_\mathbb Z(A)$](../../bounded/categories/bounded-diag.md)
 - [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)

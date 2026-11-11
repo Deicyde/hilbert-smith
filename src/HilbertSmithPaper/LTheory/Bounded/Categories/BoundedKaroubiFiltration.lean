@@ -2,6 +2,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 
 /-!
 # Bounded Karoubi filtrations

@@ -7,6 +7,7 @@ article_id: af_0b54117f42f13cc17677c39c
 The bounded category $C_{\mathbb Z}(\mathcal A)$ and its duality, iterated bounded categories, bounded Karoubi filtrations and quotients, $K_0$ of an idempotent completion, the lower K-groups, the swindle, stable lifts, and constant objects.
 
 - [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
 - [Iterated bounded categories](iterated-bounded-category.md)
 - [The bounded subcategory](bounded-sub.md)
