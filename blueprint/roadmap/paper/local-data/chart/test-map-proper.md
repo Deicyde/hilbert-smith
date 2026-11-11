@@ -2,6 +2,8 @@
 article_id: af_35d70cce2896537b56048224
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.isCompact_testMap_preimage
 ---
 
 # Preimages under the test map
