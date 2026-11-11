@@ -343,6 +343,7 @@ import HilbertSmithPaper.LTheory.Base.Groups.LpMapComp
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapId
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapUnitary
 import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
+import HilbertSmithPaper.LTheory.Base.Groups.SumOfFunctors
 import HilbertSmithPaper.LTheory.Base.Groups.UnitaryInvariance
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence
