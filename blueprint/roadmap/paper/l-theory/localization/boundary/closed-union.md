@@ -10,7 +10,7 @@ Let $V=(f:iP\to D,\delta\phi,i_\%\pi)$ be a strict $k$-dimensional [$\mathcal U$
 $$D\cup_PR:=V\cup_{iP}R',$$
 a strict $k$-dimensional symmetric Poincaré complex $(D\cup_PR,\Phi)$ in $\mathrm{Kar}\,\mathcal A$ with chain objects $D_r\oplus iR_{\bullet,r}\oplus iP_{r-1}$.
 
-*Proof sketch.* (The union is defined and Poincaré.) (1) $(ig,i_\%\rho,-i_\%\pi)$ is a strict pair in $\mathrm{Kar}\,\mathcal A$ by [Duality functors carry pairs to pairs](functor-pair.md), $i$ being strict. (2) $u$ is an isomorphism carrying $0\oplus(-i_\%\pi)$ to $-i_\%\pi$, so $R'$ is a strict pair with boundary $(Z\oplus iP,0\oplus(-i_\%\pi))$ by [Pair transport](../../base/pairs/pair-transport.md). This is the shape of $V_B$ in the algebraic union with $C_B=Z$. (3) [Closed gluing](../../base/pairs/gluing-closed.md).
+*Proof sketch.* (The union is defined and Poincaré.) (1) $(ig,i_\%\rho,-i_\%\pi)$ is a strict pair in $\mathrm{Kar}\,\mathcal A$ by [Duality functors carry pairs to pairs](../../base/pairs/functor-pair.md), $i$ being strict. (2) $u$ is an isomorphism carrying $0\oplus(-i_\%\pi)$ to $-i_\%\pi$, so $R'$ is a strict pair with boundary $(Z\oplus iP,0\oplus(-i_\%\pi))$ by [Pair transport](../../base/pairs/pair-transport.md). This is the shape of $V_B$ in the algebraic union with $C_B=Z$. (3) [Closed gluing](../../base/pairs/gluing-closed.md).
 
 ## Sources
 
@@ -25,6 +25,6 @@ a strict $k$-dimensional symmetric Poincaré complex $(D\cup_PR,\Phi)$ in $\math
 
 ## Proof depends on
 
-- [Duality functors carry pairs to pairs](functor-pair.md)
+- [Duality functors carry pairs to pairs](../../base/pairs/functor-pair.md)
 - [Pair transport](../../base/pairs/pair-transport.md)
 - [Closed gluing](../../base/pairs/gluing-closed.md)

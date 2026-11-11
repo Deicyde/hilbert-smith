@@ -6,7 +6,7 @@ origin: bridged
 
 # $p$-adic exclusion
 
-Let $p$ be a prime, $n\in\mathbb N$, and let $X$ be a connected $n$-manifold: a connected Hausdorff space with an atlas of charts onto open subsets of $\mathbb{R}^n$, with no countability assumption. Let $\mathbb{Z}_p$ act on $X$ with $(a,x)\mapsto a\cdot x$ jointly continuous. Then the action is not faithful: there are $a\ne b$ in $\mathbb{Z}_p$ with $a\cdot x=b\cdot x$ for all $x\in X$.
+Let $p$ be a prime, $n\in\mathbb N$, and let $X$ be a connected $n$-manifold: a connected Hausdorff space with an atlas of charts onto open subsets of $\mathbb{R}^n$, with no countability assumption. Let $\mathbb{Z}_p$ act on $X$ with $(a,x)\mapsto a\cdot x$ jointly continuous. Then the action is not faithful, where faithful means that $a\cdot x=b\cdot x$ for all $x\in X$ implies $a=b$.
 
 *Proof sketch.* Suppose the action is faithful. The reduction to one chart gives a faithful jointly continuous action of $\mathbb{Z}_p$ on a nonempty connected open subset of $\mathbb{R}^n$, and local exclusion says that no such action exists.
 

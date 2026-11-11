@@ -20,5 +20,8 @@ Notation: $\mathrm{pr}_i:D_i\to C_i$ and $\mathrm{in}_i:C_i\to D_i$ are the base
 - [Retained cells](retained-cells.md)
 - [Control labels](../chain-models/grid/control-labels.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [The orbit metric metrizes the control space](../local-data/control/control-metric-properties.md)
+- [The control space is compact](../local-data/control/control-space-compact.md)
+- [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
 - [Buffers hold eventually](buffer-eventually.md)
 - [Buffered restriction](../chain-models/approximations/buffered-restriction.md)

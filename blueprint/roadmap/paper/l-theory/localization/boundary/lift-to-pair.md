@@ -16,7 +16,7 @@ such that
 
 (c) $[W\cup(-E^\sharp)]=0$ in $L^{\mathrm{im}}_{k+1}(\mathcal A/\mathcal U)$.
 
-Here $p:q(D\cup_PR)\to qD$ is the isomorphism of [The closed union becomes the image of the pair](union-image.md), and $E^\sharp=(qe\circ p^{-1}:qD\to qE_\bullet,\ q_\%\delta\epsilon,\ q_\%\delta\phi)$, a strict pair in $\mathrm{Dec}(\mathcal A/\mathcal U)$ by [Duality functors carry pairs to pairs](functor-pair.md) and [Pair transport](../../base/pairs/pair-transport.md). $W\cup(-E^\sharp)$ is the [algebraic union](../../base/pairs/algebraic-union.md) with $V_A=W$ and $V_B$ the negation of $E^\sharp$, its boundary map precomposed with the canonical isomorphism $Z\oplus qD\to qD$ for the zero complex $Z$ ([Pair transport](../../base/pairs/pair-transport.md)). It is a strict $(k+1)$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A/\mathcal U)$ by [Closed gluing](../../base/pairs/gluing-closed.md).
+Here $p:q(D\cup_PR)\to qD$ is the isomorphism of [The closed union becomes the image of the pair](union-image.md), and $E^\sharp=(qe\circ p^{-1}:qD\to qE_\bullet,\ q_\%\delta\epsilon,\ q_\%\delta\phi)$, a strict pair in $\mathrm{Dec}(\mathcal A/\mathcal U)$ by [Duality functors carry pairs to pairs](../../base/pairs/functor-pair.md) and [Pair transport](../../base/pairs/pair-transport.md). $W\cup(-E^\sharp)$ is the [algebraic union](../../base/pairs/algebraic-union.md) with $V_A=W$ and $V_B$ the negation of $E^\sharp$, its boundary map precomposed with the canonical isomorphism $Z\oplus qD\to qD$ for the zero complex $Z$ ([Pair transport](../../base/pairs/pair-transport.md)). It is a strict $(k+1)$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A/\mathcal U)$ by [Closed gluing](../../base/pairs/gluing-closed.md).
 
 **Remark (not formalized).** *Status.* This is an open statement: the Lean states it now and proves it later. With $V$ the zero $\mathcal U$-pair (all chain objects zero objects) it gives [Lifting closed complexes](lift-to-pair-closed.md). Parts (a) and (b) alone say that a $\mathcal U$-pair whose image bounds in $\mathrm{Dec}(\mathcal A/\mathcal U)$ is null-cobordant relative to $\mathcal U$. Together the two cases say that the comparison map from the relative L-groups of $\mathcal U\subset\mathcal A$ to $L^{\mathrm{im}}$ is bijective, the form in which the localization theorem is usually proved [U]. This paper does not define relative L-groups.
 
@@ -37,7 +37,7 @@ Here $p:q(D\cup_PR)\to qD$ is the isomorphism of [The closed union becomes the i
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [Closing a pair by a null-cobordism of its boundary](closed-union.md)
 - [The closed union becomes the image of the pair](union-image.md)
-- [Duality functors carry pairs to pairs](functor-pair.md)
+- [Duality functors carry pairs to pairs](../../base/pairs/functor-pair.md)
 - [Pair transport](../../base/pairs/pair-transport.md)
 - [Algebraic union](../../base/pairs/algebraic-union.md)
 - [Closed gluing](../../base/pairs/gluing-closed.md)

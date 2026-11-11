@@ -18,3 +18,7 @@ $\mathcal A_{\mathbf G}(X)$ is a [strict duality category](../../l-theory/base/c
 
 - [Asymptotic category](asymptotic-category.md)
 - [Strict duality category](../../l-theory/base/categories/duality-category.md)
+
+## Proof depends on
+
+- [Propagation of a transpose](prop-transpose.md)

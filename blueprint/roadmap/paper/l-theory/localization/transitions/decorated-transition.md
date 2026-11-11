@@ -32,4 +32,6 @@ is a well-defined homomorphism. Here $e_{j+1}$ is the isomorphism of [Iterated b
 - [Transition map](transition-map.md)
 - [Products with the line are decorated](line-product-decorated.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
+- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [Duality functors carry pairs to pairs](../../base/pairs/functor-pair.md)
 - [Homotopy-isometric complexes are cobordant](../../base/pairs/cylinder-cobordism.md)

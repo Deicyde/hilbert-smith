@@ -9,7 +9,6 @@ $\mathcal U$-pairs, that is pairs in $\mathrm{Kar}\,\mathcal A$ with boundary fr
 - [U-pairs](u-pair.md)
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [Closed complexes are pairs with zero boundary](closed-pair.md)
-- [Duality functors carry pairs to pairs](functor-pair.md)
 - [Closing a pair by a null-cobordism of its boundary](closed-union.md)
 - [The closed union becomes the image of the pair](union-image.md)
 - [Lifting](lift-to-pair.md)
