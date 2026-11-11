@@ -301,6 +301,7 @@ import HilbertSmithPaper.Evaluation.PinchEvaluation
 import HilbertSmithPaper.Evaluation.ScalarComponentProjection
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Evaluation.TheoremB
+import HilbertSmithPaper.Evaluation.TheoremBTestMap
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
 import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
