@@ -2,6 +2,8 @@
 article_id: af_4eac8636dc0bf73b2d1803c4
 declaration: theorem
 origin: cited
+statement: formalized
+lean: HSP.gleasonYamabe
 ---
 
 # Gleason–Yamabe: no small subgroups implies Lie

@@ -2,6 +2,8 @@
 article_id: af_1a0e78e8013db101e14e8b59
 declaration: theorem
 origin: cited
+statement: formalized
+lean: HSP.newman_open_set
 ---
 
 # Newman's theorem: fixing an open set
