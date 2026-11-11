@@ -2,6 +2,9 @@
 article_id: af_59b41e87b71c00d9039dc5a5
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.pinch_homotopicRel_id
 ---
 
 # The pinch is homotopic to the identity
@@ -20,7 +23,7 @@ For $\rho>0$, $\sigma_\rho$ is homotopic to $\mathrm{id}_{S^n}$ relative to $\{\
 ## Depends on
 
 - [The pinch map](pinch.md)
+- [The pinch is continuous](pinch-continuous.md)
 
 ## Proof depends on
 
-- [The pinch is continuous](pinch-continuous.md)

@@ -2,6 +2,9 @@
 article_id: af_61b1e04079d960213bc6a15b
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.exists_moved_of_mem_Zplus
 ---
 
 # No point of the test region is fixed
