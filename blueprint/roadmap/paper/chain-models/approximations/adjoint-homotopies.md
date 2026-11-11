@@ -7,7 +7,7 @@ lean: HSP.ChainModels.adjoint_homotopies
 ---
 # Adjoint homotopies
 
-Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$, so that $a'a-1=dS+Sd$. On $D_i^{N-*}$ (degree $r$ is $D^*_{N-r}$, with differential $d_r=(-1)^rd^*$) let $K$ be the map of degree $+1$ given by $(-1)^rS^*$ on degree $r$, and put $V_g=a\varphi_iK+U_ga'^*$, where $B_{-g,g}$ and $U_g$ are the ones chosen in [product homotopies](product-homotopies.md) and [isometry homotopies](isometry-homotopies.md), and labels, $\chi_i$ and $\rho$ are as in product homotopies. Then:
+Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$ ([chosen product homotopies](chosen-product-homotopies.md)), so that $a'a-1=dS+Sd$, and let $V_g=a\varphi_iK+U_ga'^*$ be the [adjoint homotopy](adjoint-homotopy.md), with $d$ the differentials of $D_i$ and of $D_i^{N-*}$ (on the latter $d_r=(-1)^rd^*$); labels, $\chi_i$ and $\rho$ are as in [product homotopies](product-homotopies.md). Then:
 1. $dV_g+V_gd=a_g\varphi_i-\varphi_ia_{-g}^*$;
 2. there is a null sequence $(\mu''_i)$ such that, for all $i$ and $g\in G_i$, $V_g$ has [sphere propagation](../grid/sphere-labels.md) at most $\mu''_i$, and for every $v>0$ there is $i_2$ such that $V_g^{[v]}$ has [graph type](../../corner/actions/graph-type.md) $\chi_i(g)$ with bound $\mu''_i$ for all $i\ge i_2$ and $g\in G_i$.
 
@@ -17,6 +17,6 @@ Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$, so that $a'a-1=dS+Sd$. On
 - HS paper, Section 9; signs rechecked.
 ## Depends on
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
-- [Product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
+- [Adjoint homotopy](adjoint-homotopy.md), [product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
 ## Proof depends on
 - [graph type of approximations](approximations-graph-type.md), [Poincaré](../grid/chain-model-poincare.md)

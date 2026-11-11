@@ -23,10 +23,7 @@ The compressed maps are the compressions, for $g,h\in G_i$, of the matrices of t
 ## Depends on
 
 - [Compressed complex](compressed-complex.md)
-- [The orbit metric metrizes the control space](../local-data/control/control-metric-properties.md)
-- [The control space is compact](../local-data/control/control-space-compact.md)
-- [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
 - [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
 - [Group approximations](../chain-models/approximations/group-approx.md)
-- [Product homotopies](../chain-models/approximations/product-homotopies.md)
-- [Adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md)
+- [Chosen product homotopies](../chain-models/approximations/chosen-product-homotopies.md)
+- [The adjoint homotopy](../chain-models/approximations/adjoint-homotopy.md)
