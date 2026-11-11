@@ -3,6 +3,7 @@ import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.LocalDatum
 import HilbertSmithPaper.LocalData.Chart.Pinch
 import HilbertSmithPaper.LocalData.Chart.PinchContinuous
+import HilbertSmithPaper.LocalData.Chart.TestRegion
 import HilbertSmithPaper.LocalData.Control.FixedLocalData
 import HilbertSmithPaper.LocalData.Control.ReductionKernel
 import HilbertSmithPaper.LocalData.Control.RepresentativeMap
