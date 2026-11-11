@@ -13,6 +13,7 @@ import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.Categories.Functors.ForgetGroup
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
