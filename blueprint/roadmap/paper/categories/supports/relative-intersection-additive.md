@@ -19,6 +19,7 @@ For $S,A,B\subset X$, let $\mathcal U_A$ be the full subcategory of $A$-supporte
 
 ## Depends on
 
+- [Intersection of full subcategories](../../l-theory/ultimate/boundary/excisive-intersection.md)
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Excisive pair of filtrations](../../l-theory/ultimate/boundary/excisive-pair.md)

@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.UltimateBoundary
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 
 /-!
 # Excision boundary

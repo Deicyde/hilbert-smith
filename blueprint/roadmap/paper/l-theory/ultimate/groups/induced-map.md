@@ -16,6 +16,7 @@ Let $(F,\xi):\mathcal A\to\mathcal A'$ be a duality functor, not necessarily str
 
 ## Depends on
 
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Ultimate L-group](ultimate-l-group.md)
 - [Sequence of lower L-groups](lower-l-sequence.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)

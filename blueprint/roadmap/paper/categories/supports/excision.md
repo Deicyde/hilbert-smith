@@ -23,6 +23,7 @@ Let the action be isometric, let $A,B\subset X$ with $B$ invariant, and let $S\s
 
 ## Depends on
 
+- [Intersection of full subcategories](../../l-theory/ultimate/boundary/excisive-intersection.md)
 - [Support filtration](support-filtration.md)
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)

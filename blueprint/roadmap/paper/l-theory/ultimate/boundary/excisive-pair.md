@@ -21,6 +21,7 @@ where $e:\mathcal U_A/\mathcal U_Y\to\mathcal A/\mathcal U_B$ is the strict dual
 
 ## Depends on
 
+- [Intersection of full subcategories](excisive-intersection.md)
 - [Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Duality functor](../../base/categories/duality-functor.md)

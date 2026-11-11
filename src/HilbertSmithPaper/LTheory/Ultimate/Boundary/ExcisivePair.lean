@@ -2,6 +2,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 
 /-!
 # Excisive pair of filtrations
@@ -14,7 +15,7 @@ the identity on objects and sends the class of a morphism modulo `𝒰_Y` to its
 `𝒰_B` (`ExcisivePair.e`).
 
 Lean: `𝒰_A` is the duality category `UA.FullSubcategory` (`HSP.instDualCatFullSubcategory`),
-and `𝒰_Y` is the property `fun V => UB V.obj` on it. The closure of `𝒰_Y` under zero objects,
+and `𝒰_Y` is the intersection `ExcisivePair.inter UA UB`, a property of objects of `𝒰_A`. The closure of `𝒰_Y` under zero objects,
 sums and duals inside `𝒰_A` is asked as a hypothesis (it is part of "`𝒰_Y` is a filtration of
 `𝒰_A`").
 -/
@@ -31,10 +32,6 @@ variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFinite
   [DualCat A]
 
 namespace ExcisivePair
-
-/-- The intersection `𝒰_Y = 𝒰_A ∩ 𝒰_B`, as a property of objects of `𝒰_A`. -/
-abbrev inter (UA UB : ObjectProperty A) : ObjectProperty UA.FullSubcategory :=
-  fun V => UB V.obj
 
 variable (UA UB : ObjectProperty A) [IsDualAdditive UA] [IsDualAdditive UB]
   [IsDualAdditive (inter UA UB)]

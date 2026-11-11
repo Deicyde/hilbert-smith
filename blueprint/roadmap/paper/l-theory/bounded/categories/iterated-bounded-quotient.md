@@ -24,6 +24,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 
 ## Depends on
 
+- [Iterated bounded subcategories](iterated-bounded-sub.md)
 - [Iterated bounded filtrations](iterated-bounded-filtration.md)
 - [Bounded quotients](bounded-quotient.md)
 - [Iterated bounded categories](iterated-bounded-category.md)

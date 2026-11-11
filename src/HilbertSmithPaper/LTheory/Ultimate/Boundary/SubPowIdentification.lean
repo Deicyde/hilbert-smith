@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
 
 /-!
 # Iterated bounded categories of a subcategory
