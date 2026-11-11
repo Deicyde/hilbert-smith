@@ -1,6 +1,6 @@
 ---
 article_id: af_300b073fd8fba075f7376acf
-declaration: def
+declaration: abbrev
 origin: bridged
 statement: formalized
 lean: HSP.Ext
