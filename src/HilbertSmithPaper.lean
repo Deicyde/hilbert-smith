@@ -161,6 +161,8 @@ import HilbertSmithPaper.Compression.BufferConditions
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.CompressedMaps
+import HilbertSmithPaper.Compression.CompressionProductRule
+import HilbertSmithPaper.Compression.DiscardedSubcomplex
 import HilbertSmithPaper.Compression.RetainedCells
 import HilbertSmithPaper.Compression.RetainedProjection
 import HilbertSmithPaper.Compression.StartIndex

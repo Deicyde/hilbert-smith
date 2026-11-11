@@ -2,6 +2,8 @@
 article_id: af_078a65cf2fae004f3c008dda
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.Compression.pr_d_Q
 ---
 # The discarded cells form a subcomplex
 
