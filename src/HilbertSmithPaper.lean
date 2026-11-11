@@ -17,6 +17,7 @@ import HilbertSmithPaper.Categories.Functors.ForgetGroup
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
+import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
 import HilbertSmithPaper.Categories.Supports.SupportSubcategory
