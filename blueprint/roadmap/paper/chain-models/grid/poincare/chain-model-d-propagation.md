@@ -25,6 +25,7 @@ For every $i$, with cells of the [chain model](../model/chain-model.md) labelled
 
 ## Proof depends on
 
+- [Labels of the circle cells](../cubical/circle-label.md)
 - [Propagation bounds for the based product and tensor maps](prop-product-maps.md)
 - [Grid and chain-model labels are tensor labels](../model/tensor-label-grid.md)
 - [Labels on a tensor product of based complexes](../model/tensor-label.md)
@@ -35,3 +36,4 @@ For every $i$, with cells of the [chain model](../model/chain-model.md) labelled
 - [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
 - [Propagation of a sum](../../../categories/asymptotic/prop-add.md)
 - [Propagation of a product](../../../categories/asymptotic/prop-mul.md)
+- [Propagation of the identity](../../../categories/asymptotic/prop-one.md)

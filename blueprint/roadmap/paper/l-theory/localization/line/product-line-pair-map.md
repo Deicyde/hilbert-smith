@@ -4,6 +4,7 @@ declaration: lemma
 origin: background
 statement: formalized
 lean: HSP.pairMap_prod_line
+proof: formalized
 ---
 
 # The pair map of a product with the line
@@ -34,3 +35,17 @@ with $\Xi:(D\otimes\Lambda)^{n+1-*}\cong D^{n-*}\otimes\Lambda^{1-*}$ the [duali
 - [Structure of the symmetric line](../products/symmetric-line-structure.md)
 - [Dual of a tensor product](../products/product-dual-iso.md)
 - [Box product on iterated bounded categories](../products/box-pairing-pow.md)
+
+## Proof depends on
+
+- [Duality pairings](../products/duality-pairing.md)
+- [The sums in a tensor product of complexes exist](../products/bookkeeping/product-sums-exist.md)
+- [Summand projections of a tensor product](../products/bookkeeping/summand-projection.md)
+- [Projection after inclusion of the same summand](../products/bookkeeping/inclusion-projection.md)
+- [Projection after inclusion of another summand](../products/bookkeeping/inclusion-projection-ne.md)
+- [Maps into a tensor product are determined by their components](../products/bookkeeping/product-hom-ext.md)
+- [Maps out of the dual of a tensor product are determined by their components](../products/bookkeeping/product-dual-hom-ext.md)
+- [Support of a tensor product of complexes](../products/bookkeeping/product-support.md)
+- [Summands outside the support vanish](../products/bookkeeping/summand-zero.md)
+- [Differential of a tensor product on summands](../products/bookkeeping/product-differential.md)
+- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)

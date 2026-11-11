@@ -36,13 +36,7 @@ private lemma unit_inverse_right (k : ℕ) (r : ℤ) :
     intro a b
     fin_cases a; fin_cases b
     simp
-  · have hd : unitDim (0 - r) = 0 := by
-      rcases r with (_ | r) | r
-      · exact absurd rfl hr
-      · rcases r with _ | r
-        · rfl
-        · rfl
-      · rfl
+  · have hd : (unitComplex.X (0 - r)).dim = 0 := unitComplex_X_dim_of_ne (by omega)
     exact (Fin.cast hd a).elim0
 
 /-- *The unsymmetrized grid structure inverts the grid duality map*: `b φ^u_n = 1`. -/
