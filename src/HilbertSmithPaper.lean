@@ -145,7 +145,6 @@ import HilbertSmithPaper.ChainModels.Grid.Cubical.GridFundamental
 import HilbertSmithPaper.ChainModels.Grid.Cubical.UnitComplex
 import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
-import HilbertSmithPaper.ChainModels.Mesh.MeshStart
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelCube
@@ -223,6 +222,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomAddRight
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomId
 import HilbertSmithPaper.ChainModels.Grid.Torus
+import HilbertSmithPaper.ChainModels.Mesh.MeshStart
 import HilbertSmithPaper.ChainModels.Torus.ContinuousLift
 import HilbertSmithPaper.ChainModels.Torus.ContinuousProj
 import HilbertSmithPaper.ChainModels.Torus.Dist2
