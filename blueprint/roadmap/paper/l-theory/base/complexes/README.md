@@ -13,6 +13,8 @@ The dual complex, the structure complex with its involution $T$ and pushforward,
 - [Pushforward of structures](structure-push.md)
 - [Pushforward commutes with T](structure-push-involution.md)
 - [Duality map of a cycle](cycle-chain-map.md)
+- [Bounded complexes have finitely many nonzero chain objects](finite-bounded.md)
+- [Duality functors commute with pushforward](functor-push.md)
 - [Homologous cycles give homotopic maps](cycle-chain-map-homotopy.md)
 - [Mapping cone](cone.md)
 - [Sum of structured complexes](sum-of-complexes.md)

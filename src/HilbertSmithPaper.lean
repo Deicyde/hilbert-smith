@@ -220,6 +220,8 @@ import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMapHomotopy
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.DualHomotopyEquivalence
+import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
+import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush
 import HilbertSmithPaper.LTheory.Base.Complexes.ShiftEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
@@ -277,6 +279,7 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedClosure
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedPredicate
+import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategorySum
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.BasedCategory

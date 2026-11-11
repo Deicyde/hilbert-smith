@@ -29,3 +29,4 @@ is a strict $(m+1)$-dimensional symmetric Poincaré complex in the duality categ
 - [Complexes in a full subcategory](../decorations/complex-in-subcategory.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
 - [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)

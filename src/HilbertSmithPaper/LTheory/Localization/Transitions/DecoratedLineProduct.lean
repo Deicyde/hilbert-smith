@@ -4,6 +4,7 @@ import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
+import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
 
 /-!
 # Decorated product with the line
@@ -23,14 +24,6 @@ universe v u
 variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFiniteBiproducts A]
   [DualCat A] {U : ObjectProperty A} [IsDualAdditive U]
 
-private lemma finite_of_isZero {B : Type*} [Category B] [Preadditive B]
-    {C : ChainComplex B ℤ} {k : ℤ} (h : ∀ r : ℤ, r < 0 ∨ k < r → IsZero (C.X r)) :
-    {r | ¬ IsZero (C.X r)}.Finite :=
-  (Set.finite_Icc 0 k).subset fun r hr => by
-    by_contra h'
-    rw [Set.mem_Icc, not_and_or, not_le, not_le] at h'
-    exact hr (h r (by omega))
-
 /-- **Decorated product with the line.** `(e_{j+1}^{-1}(C ⊗ Λ), (e_{j+1}^{-1})_%(φ ⊗ λ))` as a
 strict `m'`-dimensional symmetric Poincaré complex in `Dec(C_{ℤ^{j+1}}𝒜/C_{ℤ^{j+1}}𝒰)`. -/
 noncomputable def decTransitionCx (F : KaroubiFiltration U) (j : ℕ) {m m' : ℤ} (hm : m + 1 = m')
@@ -38,7 +31,7 @@ noncomputable def decTransitionCx (F : KaroubiFiltration U) (j : ℕ) {m m' : �
     SymPoincare (Dec (Bounded.subPow U (j + 1))) m' :=
   SymPoincare.toSub (IsDecorated (Bounded.subPow U (j + 1)))
     (SymPoincare.map (Bounded.powQuotientIso F (j + 1)).1.2.kar (transitionCx hm x))
-    fun r => (cxProd_line_decorated F j x.C (finite_of_isZero x.bounded)
-      (finite_of_isZero (k := 1) fun _ h => symLine.isZero_X (by omega)) r).2
+    fun r => (cxProd_line_decorated F j x.C (finite_of_bounded x.bounded)
+      (finite_of_bounded (k := 1) fun _ h => symLine.isZero_X (by omega)) r).2
 
 end HSP

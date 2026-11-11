@@ -26,6 +26,7 @@ For $j\ge0$ and a strict $m$-dimensional symmetric Poincaré complex $(C,\phi)$ 
 - [The symmetric line](../products/symmetric-line.md)
 - [Structure of the symmetric line](../products/symmetric-line-structure.md)
 - [Duals of box products](../products/box-dual.md)
+- [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
 
 ## Proof depends on
 
