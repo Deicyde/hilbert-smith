@@ -17,6 +17,7 @@ import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.Categories.Functors.ForgetControl
 import HilbertSmithPaper.Categories.Cuts.ExteriorCutIdentification
 import HilbertSmithPaper.Categories.Functors.ForgetGroup
+import HilbertSmithPaper.Categories.Functors.ForgetGroupSupport
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
 import HilbertSmithPaper.Categories.Functors.PushSupport
 import HilbertSmithPaper.Categories.Functors.Pushforward
