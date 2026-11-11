@@ -26,3 +26,4 @@ The completed maps, their tracks and modulus, the torus test map, the buffered r
 - [Chosen isometry homotopies](chosen-isometry-homotopies.md)
 - [The adjoint homotopy](adjoint-homotopy.md)
 - [Adjoint homotopies](adjoint-homotopies.md)
+- [The family of chain-model matrices](chain-model-family.md)

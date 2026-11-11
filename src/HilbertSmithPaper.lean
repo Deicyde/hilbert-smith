@@ -69,6 +69,7 @@ import HilbertSmithPaper.ChainModels.Approximations.BufferedRestriction
 import HilbertSmithPaper.ChainModels.Approximations.ChainApprox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxExists
+import HilbertSmithPaper.ChainModels.Approximations.ChainModelFamily
 import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
@@ -142,6 +143,7 @@ import HilbertSmithPaper.ChainModels.Torus.NormLeNormLift
 import HilbertSmithPaper.ChainModels.Torus.NormLift
 import HilbertSmithPaper.ChainModels.Torus.Proj
 import HilbertSmithPaper.ChainModels.Torus.ProjLift
+import HilbertSmithPaper.Compression.BufferConditions
 import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.CompressedMaps
