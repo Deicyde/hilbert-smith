@@ -9,11 +9,11 @@ proof: formalized
 
 # Duality functors and pair maps
 
-Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../../categories/duality-functor.md), $f:C\to D$ a chain map, $\phi\in M(C)_m$ a cycle and $\delta\phi\in M(D)_n$ with $n=m+1$ and $\partial\delta\phi=f_\%\phi$, so that the [pair map](../../pairs/pair-map.md) $\psi:D^{n-*}\to\mathcal C(f)$ is defined. Suppose the [images](functor-structure.md) satisfy the same conditions for $Ff$, so that the pair map $\psi^F$ of $(Ff,F_\%\delta\phi,F_\%\phi)$ is defined. Then $\psi^F$ is
+Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../../categories/duality-functor.md), $f:C\to D$ a chain map, $\phi\in M(C)_m$ a cycle and $\delta\phi\in M(D)_n$ with $n=m+1$ and $\partial\delta\phi=f_\%\phi$, so that the [pair map](../../pairs/pair-map.md) $\psi:D^{n-*}\to\mathcal C(f)$ is defined. Then the [images](functor-structure.md) satisfy the same conditions for $Ff$, and the pair map $\psi^F$ of $(Ff,F_\%\delta\phi,F_\%\phi)$ is
 $$\psi^F=\kappa\circ F(\psi)\circ\xi^{-1}:(FD)^{n-*}\to F(D^{n-*})\to F(\mathcal C(f))\to\mathcal C(Ff),$$
 with $\xi^{-1}$ the isomorphism of [Duality functors and dual complexes](functor-dual-iso.md) and $\kappa$ that of [Duality functors and mapping cones](functor-cone.md).
 
-*Proof sketch.* In degree $r$, both sides have $D$-component $F(\delta\phi_r)\circ\xi^{-1}$ and $C$-component $(-1)^rF(\phi_{r-1})\circ F(f^*)\circ\xi^{-1}=(-1)^rF(\phi_{r-1})\circ\xi^{-1}\circ(Ff)^*$, by naturality of $\xi$.
+*Proof sketch.* The images satisfy the conditions since $F_\%$ commutes with $\partial$ ([Images of structures commute with the boundary, T and the duality map](functor-structure-laws.md)) and with pushforward ([Duality functors commute with pushforward](../functor-push.md)). In degree $r$, both sides have $D$-component $F(\delta\phi_r)\circ\xi^{-1}$ and $C$-component $(-1)^rF(\phi_{r-1})\circ F(f^*)\circ\xi^{-1}=(-1)^rF(\phi_{r-1})\circ\xi^{-1}\circ(Ff)^*$, by naturality of $\xi$.
 
 ## Sources
 
@@ -26,3 +26,8 @@ with $\xi^{-1}$ the isomorphism of [Duality functors and dual complexes](functor
 - [Image of structures under a duality functor](functor-structure.md)
 - [Duality functors and dual complexes](functor-dual-iso.md)
 - [Duality functors and mapping cones](functor-cone.md)
+
+## Proof depends on
+
+- [Images of structures commute with the boundary, T and the duality map](functor-structure-laws.md)
+- [Duality functors commute with pushforward](../functor-push.md)

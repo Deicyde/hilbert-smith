@@ -18,4 +18,3 @@ Complexes are $\mathbb Z$-graded chain complexes in a duality category $\mathcal
 ## Depends on
 
 - [Small Q-linear category with strict duality](../categories/duality-category.md)
-- [A duality category has binary direct sums](../categories/dual-binary-biproducts.md)

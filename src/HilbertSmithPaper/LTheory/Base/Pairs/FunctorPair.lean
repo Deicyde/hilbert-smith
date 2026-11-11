@@ -51,7 +51,7 @@ noncomputable def map (F : DualFunctor B B') {m n : ℤ} (W : SymPair B m n) : S
     obtain ⟨e, he⟩ := W.poincare
     refine ⟨(HomotopyEquiv.ofIso (F.dualCxIso W.D n)).trans
       ((F.toFunctor.mapHomotopyEquiv e).trans (HomotopyEquiv.ofIso (F.mapConeIso W.f))), ?_⟩
-    refine Eq.trans ?_ (F.pairMap_map W.f W.dim W.δφ W.φ W.boundary_cycle W.rel _ _).symm
+    refine Eq.trans ?_ (F.pairMap_map W.f W.dim W.δφ W.φ W.boundary_cycle W.rel).symm
     rw [← he]
     rfl
 
