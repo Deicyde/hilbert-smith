@@ -10,6 +10,7 @@ import HilbertSmithPaper.ChainModels.Torus.Proj
 import HilbertSmithPaper.ChainModels.Torus.Lift
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
+import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Grid.Torus
 import HilbertSmithPaper.Corner.RoundSphere
@@ -17,6 +18,13 @@ import HilbertSmithPaper.LocalData.Chart.TestMapInvariant
 import HilbertSmithPaper.LocalData.Chart.TestMapContinuous
 import HilbertSmithPaper.LocalData.Chart.AveragedMapDisplacement
 import HilbertSmithPaper.LocalData.Control.Representatives
+import HilbertSmithPaper.ChainModels.Approximations.Maps.CompletedCutoff
+import HilbertSmithPaper.ChainModels.Approximations.Maps.CompletedMapEuclid
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackMapEuclid
+import HilbertSmithPaper.ChainModels.Approximations.Maps.IdentityOffBall
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackFamily
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackOscillation
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackOscillationBounded
 
 /-!
 # Properties of completed maps
@@ -126,7 +134,7 @@ private lemma continuous_completedMapEuclid (A : LocalDatum p n D ρplus) :
       filter_upwards [(isOpen_lt continuous_const
         (continuous_norm.comp continuous_snd)).mem_nhds
         (show (3 / 2 : ℝ) < ‖(a₀, y₀).2‖ by simp only; linarith)] with q hq
-      exact completedMapEuclid_of_le A q.1 hq.le
+      exact (identity_off_ball A).1 q.1 _ hq.le
     exact continuousAt_snd.congr hev.symm
 
 /-- The track maps on `ℝⁿ`, jointly continuous in all parameters. -/
@@ -165,7 +173,7 @@ private lemma continuous_trackEval (A : LocalDatum p n D ρplus) :
         (continuous_norm.comp continuous_snd)).mem_nhds
         (show (3 / 2 : ℝ) < ‖Q₀.2‖ by linarith)] with Q hQ
       simp only [trackMap]
-      rw [trackMapEuclid_of_le A _ _ _ _ ((lt_of_lt_of_le hQ (Torus.norm_le_norm_lift _)).le),
+      rw [(identity_off_ball A).2 _ _ _ _ _ ((lt_of_lt_of_le hQ (Torus.norm_le_norm_lift _)).le),
         Torus.proj_lift]
     exact continuousAt_snd.congr hev.symm
 
@@ -308,7 +316,7 @@ theorem completedMaps_properties (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ :
         _ ≤ 2 * D := norm_trackMapEuclid_sub A _ _ _ _ _
     · intro h
       change Torus.proj (trackMapEuclid A q.1 q.2.1 q.2.2.1 q.2.2.2 (Torus.lift x)) = x
-      rw [trackMapEuclid_of_le A _ _ _ _ h.le, Torus.proj_lift]
+      rw [(identity_off_ball A).2 _ _ _ _ _ h.le, Torus.proj_lift]
   -- (3) `â = a·` on `B̄(0,1)`
   · exact fun a x hx => completedMapEuclid_of_norm_le_one A a x hx
   -- (3) `f_T ∘ â = f_T`
@@ -317,7 +325,7 @@ theorem completedMaps_properties (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ :
     change A.testMap ρ (Torus.lift (Torus.proj (completedMapEuclid A a (Torus.lift x))) : E) =
       A.testMap ρ (Torus.lift x : E)
     by_cases h32 : 3 / 2 ≤ ‖Torus.lift x‖
-    · rw [completedMapEuclid_of_le A a h32, Torus.proj_lift]
+    · rw [(identity_off_ball A).1 a _ h32, Torus.proj_lift]
     · push Not at h32
       have hd := norm_completedMapEuclid_sub A a (Torus.lift x)
       have hu := norm_sub_norm_le (completedMapEuclid A a (Torus.lift x)) (Torus.lift x)

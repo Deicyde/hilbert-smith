@@ -21,6 +21,13 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and $0<\rho<\rho_+$, 
 ## Sources
 - HS paper, Section 9; it transfers.
 ## Depends on
+- [The track oscillation is bounded](maps/track-oscillation-bounded.md)
+- [Track oscillation](maps/track-oscillation.md)
+- [The track family](maps/track-family.md)
+- [Completed and track maps are the identity off B(0,3/2)](maps/identity-off-ball.md)
+- [The track map on Euclidean space](maps/track-map-euclid.md)
+- [The completed map on Euclidean space](maps/completed-map-euclid.md)
+- [Completed cutoff](maps/completed-cutoff.md)
 - [Representatives of the finite quotients](../../local-data/control/representative-map.md)
 - [Completed map](completed-map.md)
 - [The lift](../torus/lift.md)

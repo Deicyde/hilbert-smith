@@ -3,6 +3,7 @@ import HilbertSmithPaper.ChainModels.Approximations.ChainApprox
 import HilbertSmithPaper.ChainModels.Approximations.CompletedMap
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Approximations.TensorOneP
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackFamilyMembers
 
 /-!
 # Group approximations
@@ -29,7 +30,7 @@ variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 noncomputable def groupApprox (A : LocalDatum p n D ρplus) (i : ℕ) (g : ZMod (p ^ i)) (r : ℤ) :
     (chainModel A i).X r ⟶ (chainModel A i).X r :=
   if g = 0 then 𝟙 _ else
-    tensorOneP A i 0 (fun s => (chainApprox A i (completedMap_mem_trackFamily A (rep p i g))).f s ≫
+    tensorOneP A i 0 (fun s => (chainApprox A i ((trackFamily_mem A).1 (rep p i g))).f s ≫
         eqToHom (congrArg (gridComplex (meshSequence A i) n).X (add_zero s).symm)) r ≫
       eqToHom (congrArg (chainModel A i).X (add_zero r))
 
