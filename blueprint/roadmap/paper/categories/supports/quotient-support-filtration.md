@@ -23,3 +23,7 @@ Let $S,Y,Z\subset X$, and let $\mathcal U_Y\subset\mathcal A_S/\mathcal A_Z$ be 
 - [Support filtration](support-filtration.md)
 - [Quotient by a filtration](../../l-theory/base/categories/filtration-quotient.md)
 - [Involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md)
+
+## Proof depends on
+
+- [Transposing twice](../asymptotic/structure/transpose-transpose.md)

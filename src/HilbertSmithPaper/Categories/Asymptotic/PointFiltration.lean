@@ -41,7 +41,7 @@ namespace PCat
 variable (M : PCat G) (S : ℕ → Prop) [DecidablePred S]
 
 /-- The truncated object: `n_i` for `i ∈ S`, the zero object `0` elsewhere. -/
-def truncObj : PCat G := fun i => ⟨if S i then (M.coord i).n else 0⟩
+private def truncObj : PCat G := fun i => ⟨if S i then (M.coord i).n else 0⟩
 
 variable {M S}
 
@@ -50,22 +50,23 @@ private theorem truncObj_coord_of {i : ℕ} (h : S i) : (truncObj M S).coord i =
   rw [ite_eq_left h]
 
 private theorem truncObj_isZero_of {i : ℕ} (h : ¬S i) : IsZero ((truncObj M S).coord i) :=
-  FreeCat.isZero_of_n_eq_zero _ (by show (if S i then (M.coord i).n else 0) = 0; rw [ite_eq_right h])
+  FreeCat.isZero_of_n_eq_zero _
+    (by show (if S i then (M.coord i).n else 0) = 0; rw [ite_eq_right h])
 
 variable (M S)
 
 /-- The inclusion `M_S → M`: identity matrices on `S`. -/
-def truncInc : truncObj M S ⟶ M :=
+private def truncInc : truncObj M S ⟶ M :=
   fun i => (if h : S i then eqToHom (truncObj_coord_of h) else 0 :
     (truncObj M S).coord i ⟶ M.coord i)
 
 /-- The projection `M → M_S`: identity matrices on `S`. -/
-def truncPro : M ⟶ truncObj M S :=
+private def truncPro : M ⟶ truncObj M S :=
   fun i => (if h : S i then eqToHom (truncObj_coord_of h).symm else 0 :
     M.coord i ⟶ (truncObj M S).coord i)
 
 /-- The truncation `p_S : M → M`: the identity on `S` and zero elsewhere. -/
-def trunc : M ⟶ M := fun i => (if S i then 𝟙 (M.coord i) else 0 : M.coord i ⟶ M.coord i)
+private def trunc : M ⟶ M := fun i => (if S i then 𝟙 (M.coord i) else 0 : M.coord i ⟶ M.coord i)
 
 private theorem homCoord_trunc (i : ℕ) :
     homCoord (trunc M S) i = if S i then 𝟙 (M.coord i) else 0 := rfl
@@ -78,13 +79,14 @@ private theorem homCoord_truncPro (i : ℕ) : homCoord (truncPro M S) i =
     (if h : S i then eqToHom (truncObj_coord_of h).symm else 0 :
       M.coord i ⟶ (truncObj M S).coord i) := rfl
 
-theorem truncInc_truncPro : truncInc M S ≫ truncPro M S = 𝟙 (truncObj M S) := by
+private theorem truncInc_truncPro : truncInc M S ≫ truncPro M S = 𝟙 (truncObj M S) := by
   refine hom_ext fun i => ?_
   by_cases h : S i
-  · rw [homCoord_comp, homCoord_truncInc, homCoord_truncPro, dite_eq_left h, dite_eq_left h, eqToHom_trans, eqToHom_refl]; rfl
+  · rw [homCoord_comp, homCoord_truncInc, homCoord_truncPro, dite_eq_left h, dite_eq_left h,
+      eqToHom_trans, eqToHom_refl]; rfl
   · exact (truncObj_isZero_of h).eq_of_src _ _
 
-theorem truncPro_truncInc : truncPro M S ≫ truncInc M S = trunc M S := by
+private theorem truncPro_truncInc : truncPro M S ≫ truncInc M S = trunc M S := by
   refine hom_ext fun i => ?_
   rw [homCoord_comp, homCoord_truncInc, homCoord_truncPro, homCoord_trunc]
   by_cases h : S i
@@ -98,7 +100,7 @@ private theorem trunc_not : trunc M (fun i => ¬S i) = 𝟙 M - trunc M S := by
   · rw [ite_eq_right (not_not.2 h), ite_eq_left h, sub_self]
   · rw [ite_eq_left h, ite_eq_right h, sub_zero]
 
-theorem trunc_comp_trunc (S' : ℕ → Prop) [DecidablePred S'] :
+private theorem trunc_comp_trunc (S' : ℕ → Prop) [DecidablePred S'] :
     trunc M S ≫ trunc M S' = trunc M (fun i => S i ∧ S' i) := by
   refine hom_ext fun i => ?_
   rw [homCoord_comp, homCoord_trunc, homCoord_trunc, homCoord_trunc]
@@ -112,7 +114,7 @@ private theorem trunc_congr {S' : ℕ → Prop} [DecidablePred S'] (h : ∀ i, S
   · rw [ite_eq_left hi, ite_eq_left ((h i).1 hi)]
   · rw [ite_eq_right hi, ite_eq_right (fun h' => hi ((h i).2 h'))]
 
-theorem dualHom_trunc : DualCat.dualHom (trunc M S) = trunc M S := by
+private theorem dualHom_trunc : DualCat.dualHom (trunc M S) = trunc M S := by
   refine hom_ext fun i => FreeCat.hom_ext ?_
   rw [homCoord_dualHom, FreeCat.mat_dualHom, homCoord_trunc]
   by_cases h : S i

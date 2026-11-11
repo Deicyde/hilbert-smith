@@ -1,6 +1,7 @@
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
+import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
 
 /-!
 # Support filtrations in a quotient

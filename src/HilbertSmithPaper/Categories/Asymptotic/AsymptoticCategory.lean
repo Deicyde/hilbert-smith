@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
+import HilbertSmithPaper.Categories.Asymptotic.TrivialGroupSequence
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 import HilbertSmithPaper.Categories.Asymptotic.PropAdd
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
@@ -14,8 +15,7 @@ Let `X` be a metric space with a `C_p`-action and `𝐆` a group sequence. An ob
 a sequence `(n_i, x_i)` with `n_i ∈ ℕ` and `x_i : Fin n_i → X`. Its basis at `i` is the free
 `G_i`-set `B_i = G_i × Fin n_i`, with labels `λ_i (g, k) = χ_i(g) +ᵥ x_i(k)`. A morphism is a
 sequence of `G_i`-equivariant matrices `u_i ∈ ℚ^{B'_i × B_i}` with `prop(u_i) → 0`, taken modulo
-eventual equality. The category is `ℚ`-linear and additive, the sum given by concatenating the
-`x_i`.
+eventual equality. The category is preadditive and `ℚ`-linear.
 
 Lean encoding (designed for the support subcategories, the support filtrations and their
 quotients, the exterior quotient, and the functors forgetting the group, the control space or the
@@ -31,10 +31,8 @@ labels).
   eventual equality `HSP.asymRel` (a congruence compatible with sums and scalars), with
   Mathlib's induced preadditive and `ℚ`-linear structures. Its objects are `⟨M⟩` for
   `M : AsymPre G X`; `HSP.AsymCat.mkHom u` is the class `[u]`.
-* The binary biproduct of `⟨M⟩` and `⟨N⟩` is the concatenation `M.sum N`
-  (`n_i + m_i`, `Fin.append`), with the coordinate inclusions and projections of
-  `Free(ℚ[G_i])` at each level (propagation `0`); the zero object is the empty sequence.
-  Hence `𝒜_𝐆(X)` has finite biproducts.
+* The finite biproducts (concatenation and the empty sequence) are constructed in the
+  subchapter on the structure of the asymptotic category.
 * Neither compactness of `X` nor isometry of the action is needed for these structures.
 -/
 
@@ -86,7 +84,7 @@ instance : Quiver (AsymPre G X) where
 def coord {M N : AsymPre G X} (u : M ⟶ N) (i : ℕ) : M.free i ⟶ N.free i :=
   Subtype.val (p := fun u => u ∈ preHom M N) u i
 
-theorem tendsto_prop {M N : AsymPre G X} (u : M ⟶ N) :
+private theorem tendsto_prop' {M N : AsymPre G X} (u : M ⟶ N) :
     Tendsto (fun i => prop (M.label i) (N.label i) (FreeCat.mat (coord u i))) atTop (𝓝 0) :=
   u.2
 
@@ -108,7 +106,7 @@ instance : Category (AsymPre G X) where
     exact prop_one _)
   comp u v := homMk (fun i => coord u i ≫ coord v i) (by
     refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds
-      (by simpa using (tendsto_prop v).add (tendsto_prop u)) (fun _ => zero_le) fun i => ?_
+      (by simpa using (tendsto_prop' v).add (tendsto_prop' u)) (fun _ => zero_le) fun i => ?_
     exact prop_mul_le _ _ _ (FreeCat.mat (coord u i)) (FreeCat.mat (coord v i)))
   id_comp _ := hom_ext fun _ => Category.id_comp _
   comp_id _ := hom_ext fun _ => Category.comp_id _
@@ -145,92 +143,6 @@ instance : Linear ℚ (AsymPre G X) where
     simp only [coord_comp, coord_smul, Linear.smul_comp]
   comp_smul _ _ _ f c g := hom_ext fun i => by
     simp only [coord_comp, coord_smul, Linear.comp_smul]
-
-/-- A matrix all of whose nonzero entries join equal labels has propagation `0`. -/
-private theorem prop_eq_zero_of {B B' : Type*} [Fintype B] [Fintype B'] (l : B → X)
-    (l' : B' → X) (u : Matrix B' B ℚ) (h : ∀ b' b, u b' b ≠ 0 → l' b' = l b) :
-    prop l l' u = 0 :=
-  le_antisymm (Finset.sup_le fun q hq => by
-    rw [h q.1 q.2 (Finset.mem_filter.1 hq).2, nndist_self]) zero_le
-
-/-- The concatenation `(n_i + m_i, x_i ⧺ y_i)`. -/
-def sum (M N : AsymPre G X) : AsymPre G X where
-  n i := M.n i + N.n i
-  x i := Fin.append (M.x i) (N.x i)
-
-omit [MetricSpace X] in
-private theorem label_sum_castAdd (M N : AsymPre G X) (i : ℕ) (g : G.G i) (k : Fin (M.n i)) :
-    (M.sum N).label i (g, Fin.castAdd (N.n i) k) = M.label i (g, k) := by
-  simp [label, sum]
-
-omit [MetricSpace X] in
-private theorem label_sum_natAdd (M N : AsymPre G X) (i : ℕ) (g : G.G i) (k : Fin (N.n i)) :
-    (M.sum N).label i (g, Fin.natAdd (M.n i) k) = N.label i (g, k) := by
-  simp [label, sum]
-
-private theorem inclMat_ne_zero {H : Type} [DecidableEq H] {m m' : ℕ} {e : Fin m → Fin m'}
-    {a : H × Fin m'} {b : H × Fin m} (h : FreeCat.inclMat e a b ≠ 0) : a = (b.1, e b.2) := by
-  by_contra h'
-  exact h (by simp [FreeCat.inclMat, h'])
-
-/-- The coordinate inclusion `M → M ⊕ N`. -/
-def inl (M N : AsymPre G X) : M ⟶ M.sum N :=
-  homMk (fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).inl) (by
-    refine (tendsto_congr fun i => ?_).2 tendsto_const_nhds
-    refine prop_eq_zero_of _ _ _ fun a b h => ?_
-    have h' : FreeCat.inclMat (G := G.G i) (Fin.castAdd (N.n i)) a b ≠ 0 := h
-    rw [inclMat_ne_zero h']
-    exact label_sum_castAdd M N i b.1 b.2)
-
-/-- The coordinate inclusion `N → M ⊕ N`. -/
-def inr (M N : AsymPre G X) : N ⟶ M.sum N :=
-  homMk (fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).inr) (by
-    refine (tendsto_congr fun i => ?_).2 tendsto_const_nhds
-    refine prop_eq_zero_of _ _ _ fun a b h => ?_
-    have h' : FreeCat.inclMat (G := G.G i) (Fin.natAdd (M.n i)) a b ≠ 0 := h
-    rw [inclMat_ne_zero h']
-    exact label_sum_natAdd M N i b.1 b.2)
-
-/-- The coordinate projection `M ⊕ N → M`. -/
-def fst (M N : AsymPre G X) : M.sum N ⟶ M :=
-  homMk (fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).fst) (by
-    refine (tendsto_congr fun i => ?_).2 tendsto_const_nhds
-    refine prop_eq_zero_of _ _ _ fun b a h => ?_
-    have h' : FreeCat.inclMat (G := G.G i) (Fin.castAdd (N.n i)) a b ≠ 0 := h
-    rw [inclMat_ne_zero h']
-    exact (label_sum_castAdd M N i b.1 b.2).symm)
-
-/-- The coordinate projection `M ⊕ N → N`. -/
-def snd (M N : AsymPre G X) : M.sum N ⟶ N :=
-  homMk (fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).snd) (by
-    refine (tendsto_congr fun i => ?_).2 tendsto_const_nhds
-    refine prop_eq_zero_of _ _ _ fun b a h => ?_
-    have h' : FreeCat.inclMat (G := G.G i) (Fin.natAdd (M.n i)) a b ≠ 0 := h
-    rw [inclMat_ne_zero h']
-    exact (label_sum_natAdd M N i b.1 b.2).symm)
-
-theorem inl_fst (M N : AsymPre G X) : inl M N ≫ fst M N = 𝟙 M :=
-  hom_ext fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).inl_fst
-theorem inl_snd (M N : AsymPre G X) : inl M N ≫ snd M N = 0 :=
-  hom_ext fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).inl_snd
-theorem inr_fst (M N : AsymPre G X) : inr M N ≫ fst M N = 0 :=
-  hom_ext fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).inr_fst
-theorem inr_snd (M N : AsymPre G X) : inr M N ≫ snd M N = 𝟙 N :=
-  hom_ext fun i => (FreeCat.binaryBicone (M.free i) (N.free i)).inr_snd
-theorem total (M N : AsymPre G X) :
-    fst M N ≫ inl M N + snd M N ≫ inr M N = 𝟙 (M.sum N) :=
-  hom_ext fun i => FreeCat.binaryBicone_total (M.free i) (N.free i)
-
-/-- The empty sequence, the zero object. -/
-def zero : AsymPre G X where
-  n _ := 0
-  x _ := Fin.elim0
-
-theorem hom_zero_eq {N : AsymPre G X} (u : (zero : AsymPre G X) ⟶ N) : u = 0 :=
-  hom_ext fun _ => FreeCat.hom_ext (Matrix.ext fun _ b => b.2.elim0)
-
-theorem zero_hom_eq {M : AsymPre G X} (u : M ⟶ (zero : AsymPre G X)) : u = 0 :=
-  hom_ext fun _ => FreeCat.hom_ext (Matrix.ext fun a _ => a.2.elim0)
 
 end AsymPre
 
@@ -275,52 +187,9 @@ instance : (Quotient.functor (asymRel G X)).Linear ℚ := Quotient.linear_functo
 abbrev mkHom {M N : AsymPre G X} (u : M ⟶ N) : (⟨M⟩ : AsymCat G X) ⟶ ⟨N⟩ :=
   (Quotient.functor (asymRel G X)).map u
 
-theorem mkHom_eq_iff {M N : AsymPre G X} (u v : M ⟶ N) :
+private theorem mkHom_eq_iff' {M N : AsymPre G X} (u v : M ⟶ N) :
     mkHom u = mkHom v ↔ ∀ᶠ i in atTop, AsymPre.coord u i = AsymPre.coord v i :=
   Quotient.functor_map_eq_iff _ u v
-
-theorem mkHom_surjective {P Q : AsymCat G X} (f : P ⟶ Q) :
-    ∃ u : P.as ⟶ Q.as, mkHom u = f :=
-  (Quotient.functor (asymRel G X)).map_surjective f
-
-/-- The binary biproduct of `⟨M⟩` and `⟨N⟩`: the concatenation, with the coordinate inclusions and
-projections. -/
-def binaryBicone (P Q : AsymCat G X) : BinaryBicone P Q where
-  pt := ⟨P.as.sum Q.as⟩
-  fst := mkHom (AsymPre.fst P.as Q.as)
-  snd := mkHom (AsymPre.snd P.as Q.as)
-  inl := mkHom (AsymPre.inl P.as Q.as)
-  inr := mkHom (AsymPre.inr P.as Q.as)
-  inl_fst := by rw [← Functor.map_comp, AsymPre.inl_fst, CategoryTheory.Functor.map_id]; rfl
-  inl_snd := by rw [← Functor.map_comp, AsymPre.inl_snd, CategoryTheory.Functor.map_zero]
-  inr_fst := by rw [← Functor.map_comp, AsymPre.inr_fst, CategoryTheory.Functor.map_zero]
-  inr_snd := by rw [← Functor.map_comp, AsymPre.inr_snd, CategoryTheory.Functor.map_id]; rfl
-
-theorem binaryBicone_total (P Q : AsymCat G X) :
-    (binaryBicone P Q).fst ≫ (binaryBicone P Q).inl +
-      (binaryBicone P Q).snd ≫ (binaryBicone P Q).inr = 𝟙 (binaryBicone P Q).pt := by
-  have h := congrArg (Quotient.functor (asymRel G X)).map (AsymPre.total P.as Q.as)
-  rw [CategoryTheory.Functor.map_add, Functor.map_comp, Functor.map_comp,
-    CategoryTheory.Functor.map_id] at h
-  exact h
-
-theorem isZero_zero : IsZero (⟨AsymPre.zero⟩ : AsymCat G X) := by
-  refine ⟨fun Y => ⟨⟨⟨0⟩, fun f => ?_⟩⟩, fun Y => ⟨⟨⟨0⟩, fun f => ?_⟩⟩⟩
-  · obtain ⟨u, rfl⟩ := mkHom_surjective f
-    rw [AsymPre.hom_zero_eq u]
-    exact (Quotient.functor (asymRel G X)).map_zero _ _
-  · obtain ⟨u, rfl⟩ := mkHom_surjective f
-    rw [AsymPre.zero_hom_eq u]
-    exact (Quotient.functor (asymRel G X)).map_zero _ _
-
-instance : HasZeroObject (AsymCat G X) := isZero_zero.hasZeroObject
-
-instance : HasBinaryBiproducts (AsymCat G X) :=
-  ⟨fun P Q => hasBinaryBiproduct_of_total (binaryBicone P Q) (binaryBicone_total P Q)⟩
-
-instance : HasFiniteBiproducts (AsymCat G X) := by
-  have := hasFiniteProducts_of_has_binary_and_terminal (C := AsymCat G X)
-  exact HasFiniteBiproducts.of_hasFiniteProducts
 
 section
 
@@ -337,7 +206,7 @@ private theorem nonvacuous :
   have h2 : mkHom (𝟙 (⟨fun _ => 1, fun _ _ => ()⟩ : AsymPre (GroupSeq.trivial 2) Unit)) =
       mkHom 0 := by
     exact h.eq_of_src _ _
-  obtain ⟨i, hi⟩ := ((mkHom_eq_iff _ _).1 h2).exists
+  obtain ⟨i, hi⟩ := ((mkHom_eq_iff' _ _).1 h2).exists
   have h3 := congrArg FreeCat.mat hi
   have h4 := congrFun (congrFun h3 (default, ⟨0, Nat.one_pos⟩)) (default, ⟨0, Nat.one_pos⟩)
   simp at h4
