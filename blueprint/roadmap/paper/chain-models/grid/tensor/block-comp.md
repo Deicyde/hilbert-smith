@@ -9,7 +9,7 @@ lean: HSP.ChainModels.block_comp
 
 # Blocks of a composite
 
-For maps $F:\mathbb Q^{\sum_ad_a}\to\mathbb Q^{\sum_{a'}d'_{a'}}$ and $G:\mathbb Q^{\sum_{a'}d'_{a'}}\to\mathbb Q^{\sum_{a''}d''_{a''}}$ of [based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md), $\pi''_q(GF)\iota_p=\sum_{a'}(\pi''_qG\iota'_{a'})(\pi'_{a'}F\iota_p)$.
+For maps $F:\mathbb Q^{\sum_ad_a}\to\mathbb Q^{\sum_{a'}d'_{a'}}$ and $G:\mathbb Q^{\sum_{a'}d'_{a'}}\to\mathbb Q^{\sum_{a''}d''_{a''}}$ of [based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md), $\pi''_q(GF)\iota_p=\sum_{a'}(\pi''_qG\iota'_{a'})(\pi'_{a'}F\iota_p)$. Here $\iota$ and $\pi$ (with primes) are the block inclusions and projections of the concatenations, as in the [tensor product of based complexes](../based-complex-tensor.md).
 
 *Proof sketch.* Insert the [block decomposition of the identity](block-decomposition.md) between $F$ and $G$.
 
