@@ -30,7 +30,7 @@ variable {A : Type u₁} [Category.{v₁} A] [Preadditive A] [Linear ℚ A] [Has
   [DualCat A']
 
 omit [HasFiniteBiproducts A] [DualCat A] in
-lemma eqToHom_eq_diag {M N : Bounded A} (h : M = N) :
+private lemma eqToHom_eq_diag {M N : Bounded A} (h : M = N) :
     eqToHom h = diag fun n => eqToHom (congrArg (fun K : Bounded A => K.X n) h) := by
   subst h
   rfl
