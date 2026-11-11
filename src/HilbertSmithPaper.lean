@@ -26,6 +26,7 @@ import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
 import HilbertSmithPaper.ChainModels.Grid.BoxHull
+import HilbertSmithPaper.ChainModels.Grid.BoxHullProperties
 import HilbertSmithPaper.ChainModels.Grid.BufferedCells
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.ChainModelDuality
