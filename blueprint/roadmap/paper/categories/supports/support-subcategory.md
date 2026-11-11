@@ -20,3 +20,4 @@ For $S\subset X$ (closed and invariant in every use), $\mathcal A_S$ is the full
 
 - [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
