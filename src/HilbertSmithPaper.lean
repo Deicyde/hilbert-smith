@@ -5,6 +5,7 @@ import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
