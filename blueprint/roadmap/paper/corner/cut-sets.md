@@ -2,6 +2,8 @@
 article_id: af_0f19252ffe09ce926eb39b4e
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.Corner.cutA
 ---
 
 # The cut sets

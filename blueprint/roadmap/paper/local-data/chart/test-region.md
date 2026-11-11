@@ -2,6 +2,8 @@
 article_id: af_036832d19ba44f7317a39c55
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.Zplus
 ---
 
 # The test region

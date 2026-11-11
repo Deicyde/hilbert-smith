@@ -2,6 +2,8 @@
 article_id: af_eefcb5293d989a876c7b27c1
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.Corner.IsGraphType
 ---
 
 # Graph-type matrices

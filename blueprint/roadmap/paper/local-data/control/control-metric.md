@@ -2,11 +2,13 @@
 article_id: af_e5176fb9dbfe8fa21906f55d
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.dT
 ---
 
 # The orbit metric on the control space
 
-For a local datum, define $d_T(\pi z,\pi w)=\min_{b\in H_1}d_1(z,b\cdot w)$ for $z,w\in Z^+$. The minimum exists because $H_1$ is compact, and the value does not depend on the representatives $z,w$, because $d_1$ is $\mathbb Z_p$-invariant and $\mathbb Z_p$ is abelian.
+For a local datum, define $d_T(\pi z,\pi w)=\inf_{b\in H_1}d_1(z,b\cdot w)$ for $z,w\in Z^+$. The infimum is a minimum because $H_1$ is compact, and the value does not depend on the representatives $z,w$, because $d_1$ is $\mathbb Z_p$-invariant and $\mathbb Z_p$ is abelian.
 
 ## Sources
 
@@ -20,4 +22,3 @@ For a local datum, define $d_T(\pi z,\pi w)=\min_{b\in H_1}d_1(z,b\cdot w)$ for 
 ## Proof depends on
 
 - [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)
-- [The subgroups $H_j$ form a basis at $0$](../subgroups/padic-subgroups-basis.md)
