@@ -108,7 +108,6 @@ import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
 import HilbertSmithPaper.ChainModels.Grid.MeshSequence
 import HilbertSmithPaper.ChainModels.Grid.Realization
-import HilbertSmithPaper.ChainModels.Grid.Buffers.Restriction
 import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
 import HilbertSmithPaper.ChainModels.Grid.SphereLabels
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
