@@ -4,7 +4,7 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdLeibniz
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
-import HilbertSmithPaper.ChainModels.Grid.Poincare.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
 
 /-!
 # The chain model is Poincaré: part 1
@@ -107,13 +107,13 @@ theorem chainModel_poincare_cycle (A : LocalDatum p n D ρplus) (i : ℕ) :
       (StructureCx.T (chainModel A i)).f ((n + 4 : ℕ) : ℤ) (chainModelDuality A i).φ =
         (chainModelDuality A i).φ) := by
   constructor
-  · refine (basedStrProd_d cp2Complex_X_dim_neg (n : ℤ) 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring)
+  · refine (basedStrProd_d cp2Complex_dim_neg (n : ℤ) 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring)
       (gridStructure (meshSequence A i) n) cp2Structure).trans ?_
     have hc : (StructureCx cp2Complex).d 4 (4 - 1) cp2Structure = 0 := cp2Cells.cycle
     rw [gridStructure_cycle, hc, basedStrProd_zero_left, basedStrProd_zero_right, smul_zero,
       add_zero]
     rfl
-  · refine (basedStrProd_T cp2Complex_X_dim_neg (n : ℤ) 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring)
+  · refine (basedStrProd_T cp2Complex_dim_neg (n : ℤ) 4 ((n + 4 : ℕ) : ℤ) (by push_cast; ring)
       (gridStructure (meshSequence A i) n) cp2Structure).trans ?_
     have hs : (StructureCx.T cp2Complex).f 4 cp2Structure = cp2Structure := cp2Cells.symmetric
     rw [gridStructure_symmetric, hs]

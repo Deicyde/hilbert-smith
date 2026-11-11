@@ -27,5 +27,5 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 - [Products of structures commute with T](../tensor/structure-products/str-prod-involution.md)
 - [Circle duality](../circle-duality.md)
 - [Cells of CP^2](../cp2-cells.md)
-- [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
+- [The cells of CP^2 vanish in negative degrees](../cp2-dim-neg.md)
 - [Kronecker product with a zero factor](../tensor/kron-zero.md)
