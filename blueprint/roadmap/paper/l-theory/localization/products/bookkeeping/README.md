@@ -4,10 +4,11 @@ article_id: af_9f6cbdef9e46aacfd6aa3c04
 
 # Supporting constructions for products
 
-The category of based vector spaces and the Kronecker product of matrices, and the supporting facts for tensor products of complexes: the sign convention, additivity of a duality pairing in each variable, the finite supports and existence of the direct sums, tensor products of chain maps and their functoriality, the summand inclusions and projections with their identities and the differential on summands, finiteness of dual complexes, and the objects and components of the box product.
+The category of based vector spaces, the Kronecker product of matrices and entries of composites of constant families, and the supporting facts for tensor products of complexes: the sign convention, additivity of a duality pairing in each variable, the finite supports and existence of the direct sums, tensor products of chain maps and their functoriality, the summand inclusions and projections with their identities and the differential on summands, finiteness of dual complexes, and the objects and components of the box product.
 
 - [The category of based ℚ-vector spaces](based-category.md)
 - [Kronecker product of matrices](based-kron.md)
+- [Entries of composites of constant families](constant-family-comp.md)
 - [Signs for tensor products of chain complexes](tensor-signs.md)
 - [A duality pairing is additive in the first variable](pairing-additive-left.md)
 - [A duality pairing is additive in the second variable](pairing-additive-right.md)
