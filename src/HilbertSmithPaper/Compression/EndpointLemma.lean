@@ -20,7 +20,8 @@ label of `W` lies in `Z = T × Z_0`. Hence `p_2 α Q_1 β ȷ_0` is an exterior w
 * As in `compress`, the cells of `M_j` are the cells of `D_i` in a degree `r_j` (for a dual cell,
   the degree of the underlying cell), with labels `chainModelLabel _ i r_j`; then `p_j = pr`,
   `ȷ_j = in` and `Q_1 = Q` in these degrees. Membership in `𝒫_i` is
-  `TypedMatrix.of (labels) (labels) α c_α ∈ chainModelFamily _ _ _ i`.
+  `TypedMatrix.mk _ _ (labels) (labels) α c_α ∈ chainModelFamily _ _ _ i` (the constructor of
+  typed matrices).
 * `W` is the type of buffered cells `b ∈ 𝓑_i(u)` of degree `r_1` (for the pinch radius of the
   fixed local data) that are not retained; `μ` gives each its control label
   `controlLabel _ _ _ _ u b`; `ι_W` is the based inclusion matrix and `p_W = ι_Wᵀ`.
@@ -49,10 +50,10 @@ theorem endpoint (F : FixedLocalData p n D ρplus) {i : ℕ} (hi : startIndex F 
       (Fin ((chainModel F.toLocalDatum i).X r₁).dim) ℚ)
     (β : Matrix (Fin ((chainModel F.toLocalDatum i).X r₁).dim)
       (Fin ((chainModel F.toLocalDatum i).X r₀).dim) ℚ) {cα cβ : ZMod p}
-    (hα : TypedMatrix.of (chainModelLabel F.toLocalDatum i r₁)
+    (hα : TypedMatrix.mk _ _ (chainModelLabel F.toLocalDatum i r₁)
       (chainModelLabel F.toLocalDatum i r₂) α cα ∈
         chainModelFamily F.toLocalDatum F.ρ_pos F.ρ_lt i)
-    (hβ : TypedMatrix.of (chainModelLabel F.toLocalDatum i r₀)
+    (hβ : TypedMatrix.mk _ _ (chainModelLabel F.toLocalDatum i r₀)
       (chainModelLabel F.toLocalDatum i r₁) β cβ ∈
         chainModelFamily F.toLocalDatum F.ρ_pos F.ρ_lt i) :
     let W : Type :=
