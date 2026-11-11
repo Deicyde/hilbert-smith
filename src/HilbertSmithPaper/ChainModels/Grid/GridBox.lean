@@ -5,7 +5,7 @@ import HilbertSmithPaper.ChainModels.Grid.CubicalTorusGrid
 # Grid boxes
 
 A grid arc of `S_k` is the subcomplex spanned by `[w], …, [w+m]` and `e_w, …, e_{w+m-1}`
-(indices mod `k`), `0 ≤ m ≤ k - 2`, with realization the arc from `4w/k` to `4(w+m)/k`. A grid
+(indices mod `k`), `0 ≤ m ≤ max (k - 2) 0`, with realization the arc from `4w/k` to `4(w+m)/k`. A grid
 box is a tensor product `B = A_1 ⊗ ⋯ ⊗ A_n ⊆ C(k)` of grid arcs, spanned by the cubes whose
 factors are cells of the arcs, with realization `|B| = ∏_j |A_j|`.
 
@@ -19,7 +19,8 @@ realization in `𝕋ⁿ`.
 
 namespace HSP.ChainModels
 
-/-- A *grid arc* of `S_k`: start `[w]` and length `m`, with `0 ≤ m ≤ k - 2`. -/
+/-- A *grid arc* of `S_k`: start `[w]` and length `m`, with `0 ≤ m ≤ k - 2` in `ℕ`, that is
+`0 ≤ m ≤ max (k - 2) 0`. -/
 structure GridArc (k : ℕ) where
   /-- The start vertex `[w]`. -/
   start : Fin k
