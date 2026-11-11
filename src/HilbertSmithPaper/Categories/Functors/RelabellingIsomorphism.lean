@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Asymptotic.AsymptoticDuality
 import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
+import HilbertSmithPaper.Categories.Asymptotic.PropOne
 
 /-!
 # Relabelling isomorphism
@@ -25,15 +26,6 @@ namespace HSP
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
   [IsIsometricVAdd (ZMod p) X]
 
-private theorem prop_one' {B : Type*} [Fintype B] [DecidableEq B] (l : B → X) :
-    prop l l (1 : Matrix B B ℚ) = 0 := by
-  refine le_antisymm (Finset.sup_le fun q hq => ?_) zero_le
-  have h := (Finset.mem_filter.1 hq).2
-  rw [Matrix.one_apply] at h
-  split_ifs at h with hq'
-  · rw [hq', nndist_self]
-  · exact absurd rfl h
-
 /-- The identity matrices from `(n_i, x_i)` to `(n_i, x'_i)`, with propagation tending to `0`. -/
 private def relabelHom (n : ℕ → ℕ) (x x' : ∀ i, Fin (n i) → X)
     (hx : Tendsto (fun i => Finset.univ.sup fun k => nndist (x i k) (x' i k)) atTop (𝓝 0)) :
@@ -43,7 +35,7 @@ private def relabelHom (n : ℕ → ℕ) (x x' : ∀ i, Fin (n i) → X)
       (fun _ => zero_le) fun i => ?_
     refine (prop_relabel_le (AsymPre.label ⟨n, x⟩ i) (AsymPre.label ⟨n, x⟩ i)
       (AsymPre.label ⟨n, x⟩ i) (AsymPre.label ⟨n, x'⟩ i) (1 : Matrix _ _ ℚ)).trans ?_
-    rw [prop_one', zero_add]
+    rw [prop_one, zero_add]
     simp only [nndist_self]
     rw [show (Finset.univ.sup fun _ : G.G i × Fin (n i) => (0 : ℝ≥0)) = 0 from
       le_antisymm (Finset.sup_le fun _ _ => le_rfl) zero_le, zero_add]
