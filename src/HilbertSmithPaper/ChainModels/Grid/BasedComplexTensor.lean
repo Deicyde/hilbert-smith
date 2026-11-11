@@ -54,8 +54,8 @@ private lemma blockInc_proj_apply {m : ℕ} (d : Fin m → ℕ) (j j' : Fin m) (
   rw [Finset.sum_ite_eq']
   simp only [Finset.mem_univ, ite_true]
 
-@[reassoc (attr := simp)]
-lemma blockInc_proj_self {m : ℕ} (d : Fin m → ℕ) (j : Fin m) :
+@[reassoc]
+private lemma blockInc_proj_self_aux {m : ℕ} (d : Fin m → ℕ) (j : Fin m) :
     blockInc d j ≫ blockProj d j = 𝟙 _ := by
   refine Matrix.ext fun b' b => ?_
   change toMatrix (blockInc d j ≫ blockProj d j) b' b = _
@@ -64,8 +64,8 @@ lemma blockInc_proj_self {m : ℕ} (d : Fin m → ℕ) (j : Fin m) :
   change _ = (1 : Matrix (Fin (d j)) (Fin (d j)) ℚ) b' b
   rw [Matrix.one_apply]
 
-@[reassoc (attr := simp)]
-lemma blockInc_proj_ne {m : ℕ} (d : Fin m → ℕ) {j j' : Fin m} (h : j ≠ j') :
+@[reassoc]
+private lemma blockInc_proj_ne_aux {m : ℕ} (d : Fin m → ℕ) {j j' : Fin m} (h : j ≠ j') :
     blockInc d j ≫ blockProj d j' = 0 := by
   refine Matrix.ext fun b' b => ?_
   change toMatrix (blockInc d j ≫ blockProj d j') b' b = _
@@ -251,10 +251,10 @@ private lemma blockInc_comp_D (n : ℤ) (p' : Fin ((n + 1).toNat + 1)) :
       ∑ q', basedComplexTensorBlock C D n p' q' ≫ blockInc (tensorSummandDim C D n) q' := by
   unfold basedComplexTensorD
   rw [Preadditive.comp_sum, Finset.sum_eq_single p']
-  · rw [Preadditive.comp_sum]; simp only [blockInc_proj_self_assoc]
+  · rw [Preadditive.comp_sum]; simp only [blockInc_proj_self_aux_assoc]
   · intro q _ hq
     rw [Preadditive.comp_sum]
-    simp only [blockInc_proj_ne_assoc _ (Ne.symm hq), zero_comp, Finset.sum_const_zero]
+    simp only [blockInc_proj_ne_aux_assoc _ (Ne.symm hq), zero_comp, Finset.sum_const_zero]
   · intro h; exact absurd (Finset.mem_univ _) h
 
 /-- `d² = 0` for the tensor differential. -/

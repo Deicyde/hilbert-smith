@@ -23,4 +23,6 @@ For concatenations $\mathbb Q^{\sum_ad_a}$ and $\mathbb Q^{\sum_{a'}d'_{a'}}$ of
 
 ## Proof depends on
 
+- [Block projections of the inclusions](../block-projections.md)
+
 

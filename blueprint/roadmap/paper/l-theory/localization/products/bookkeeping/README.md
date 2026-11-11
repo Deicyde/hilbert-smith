@@ -23,6 +23,7 @@ The category of based vector spaces, the Kronecker product of matrices and entri
 - [Projection after inclusion of the same summand](inclusion-projection.md)
 - [Projection after inclusion of another summand](inclusion-projection-ne.md)
 - [Differential of a tensor product on summands](product-differential.md)
+- [External products are additive in the first structure](product-additive-left.md)
 - [A tensor product is the sum of its summands](product-total.md)
 - [Maps into a tensor product are determined by their components](product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](product-dual-hom-ext.md)

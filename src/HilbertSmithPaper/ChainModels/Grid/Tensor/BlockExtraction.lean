@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.BasedComplexTensor
+import HilbertSmithPaper.ChainModels.Grid.BlockProjections
 
 /-!
 # Block extraction

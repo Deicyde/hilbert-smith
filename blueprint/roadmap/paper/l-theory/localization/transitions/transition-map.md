@@ -41,6 +41,5 @@ is a well-defined homomorphism.
 - [The symmetric line is a symmetric complex](../products/symmetric-line-cycle.md)
 - [Pushforward of products](../products/product-push.md)
 - [Homotopy-isometry invariance](../../base/groups/homotopy-isometry-invariance.md)
-- [Tensor product of chain maps](../products/bookkeeping/product-map.md)
-- [Tensor products of chain maps compose](../products/bookkeeping/product-map-comp.md)
-- [Tensor product of identities](../products/bookkeeping/product-map-id.md)
+- [Products distribute over sums](../products/product-sum.md)
+- [External products are additive in the first structure](../products/bookkeeping/product-additive-left.md)
