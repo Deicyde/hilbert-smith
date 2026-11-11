@@ -18,3 +18,6 @@ The product of structures and the product of duality maps on the tensor product 
 - [A product of structures after a product of duality maps](dual-prod-comp-str-prod.md)
 - [A product of duality maps after a product of structures](str-prod-comp-dual-prod.md)
 - [Dual tensor of identities](dual-tensor-hom-id.md)
+- [A product of structures with a zero left factor](str-prod-zero-left.md)
+- [A product of structures with a zero right factor](str-prod-zero-right.md)
+- [The unit structure is a cycle](unit-structure-cycle.md)
