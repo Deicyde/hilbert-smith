@@ -295,6 +295,7 @@ import HilbertSmithPaper.Inputs.GleasonYamabe.GleasonYamabe
 import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
 import HilbertSmithPaper.Inputs.Newman.NewmanSmallOrbits
 import HilbertSmithPaper.LTheory.Base.Categories.DualAdditiveSubcategory
+import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
@@ -308,6 +309,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualLift
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
+import HilbertSmithPaper.LTheory.Base.Categories.TopDualAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
@@ -322,7 +324,9 @@ import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapComp
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapId
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.DualMapIso
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorComplex
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorCone
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorDualIso
+import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorPairMap
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructure
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureSum

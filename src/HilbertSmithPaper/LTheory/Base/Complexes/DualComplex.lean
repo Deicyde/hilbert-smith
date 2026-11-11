@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
+import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
 
 /-!
 # Dual complex
@@ -6,9 +7,6 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 Complexes are `ℤ`-graded chain complexes `ChainComplex B ℤ` in a duality category `B`. For a
 complex `C` and `n : ℤ`, the dual complex `C^{n-*}` has `(C^{n-*})_r = (C_{n-r})^*` and
 differential `d_r = (-1)^r d^*`.
-
-This module also records that a duality category has binary biproducts
-(`DualCat.hasBinaryBiproducts`), so that mapping cones and sums of complexes are available.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -21,11 +19,6 @@ universe v u
 
 variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
   [DualCat B]
-
-/-- A duality category has binary biproducts (Mathlib does not derive them from finite
-biproducts by instance); used for mapping cones and sums of complexes. -/
-instance (priority := 100) DualCat.hasBinaryBiproducts : HasBinaryBiproducts B :=
-  hasBinaryBiproducts_of_finite_biproducts B
 
 /-- The dual complex `C^{n-*}`: `(C^{n-*})_r = (C_{n-r})^*`, with differential
 `(-1)^i (d^C_{n-j, n-i})^*` from degree `i` to degree `j`. -/

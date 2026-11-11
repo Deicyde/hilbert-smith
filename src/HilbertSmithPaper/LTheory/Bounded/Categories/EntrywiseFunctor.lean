@@ -26,6 +26,7 @@ variable {A : Type u₁} [Category.{v₁} A] [Preadditive A] [Linear ℚ A] [Has
   {A' : Type u₂} [Category.{v₂} A'] [Preadditive A'] [Linear ℚ A'] [HasFiniteBiproducts A']
   [DualCat A']
 
+omit [DualCat A] [DualCat A'] in
 /-- **The entrywise functor.** `C_ℤ F`. -/
 def mapFunctor (F : A ⥤ A') [F.Additive] : Bounded A ⥤ Bounded A' where
   obj M := ⟨fun n => F.obj (M.X n)⟩
@@ -58,9 +59,11 @@ omit [HasFiniteBiproducts A] [DualCat A] [HasFiniteBiproducts A'] [DualCat A'] i
 lemma mapFunctor_map_apply (F : A ⥤ A') [F.Additive] {M N : Bounded A} (f : M ⟶ N) (m n : ℤ) :
     ((mapFunctor F).map f).1 m n = F.map (f.1 m n) := rfl
 
+omit [DualCat A] [DualCat A'] in
 instance (F : A ⥤ A') [F.Additive] : (mapFunctor F).Additive where
   map_add := hom_ext fun _ _ => F.map_add
 
+omit [DualCat A] [DualCat A'] in
 instance (F : A ⥤ A') [F.Additive] [F.Linear ℚ] : (mapFunctor F).Linear ℚ where
   map_smul _ _ := hom_ext fun _ _ => F.map_smul _ _
 
