@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
+import HilbertSmithPaper.LTheory.Ultimate.Groups.TransitionIter
 
 /-!
 # Kernels of the stage maps

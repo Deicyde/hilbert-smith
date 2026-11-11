@@ -26,3 +26,4 @@ For a duality functor $F:\mathcal A\to\mathcal A'$, $F_*\circ\mathrm{cls}=\mathr
 ## Proof depends on
 
 - [The induced map at each stage](induced-map-level.md)
+- [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)

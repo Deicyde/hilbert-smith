@@ -24,3 +24,4 @@ Every element of $\mathbb L_k(\mathcal A)$ is $\iota_j x$ for some $j\ge0$ and s
 ## Proof depends on
 
 - [Ultimate L-group](ultimate-l-group.md)
+- [Sequence of lower L-groups](lower-l-sequence.md)

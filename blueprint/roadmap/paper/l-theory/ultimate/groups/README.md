@@ -10,6 +10,7 @@ The lower L-groups, their colimit $\mathbb L_k$ along the transitions with the c
 - [Ultimate L-group](ultimate-l-group.md)
 - [Stage maps into the ultimate L-group](ultimate-stage-map.md)
 - [The class map](ultimate-cls.md)
+- [Iterated transition](transition-iter.md)
 - [Stages are compatible with the transition](level-compatible.md)
 - [Every element comes from a finite stage](level-exhaustive.md)
 - [Classes zero in the colimit](level-kernel.md)

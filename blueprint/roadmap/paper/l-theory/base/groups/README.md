@@ -10,6 +10,7 @@ $L_k(\mathcal B)$ is the group of cobordism classes of strict $k$-dimensional sy
 - [Sum of Poincaré complexes up to cobordism](l-group-add-laws.md)
 - [Group structure on L](l-group-add.md)
 - [Negation in L](l-group-neg.md)
+- [Transport of L-groups along an equality of degrees](l-group-cast.md)
 - [Zero classes bound](l-group-zero-iff-bounds.md)
 - [Homotopy-isometry invariance](homotopy-isometry-invariance.md)
 - [Duality functors on cobordism classes](induced-map-laws.md)
