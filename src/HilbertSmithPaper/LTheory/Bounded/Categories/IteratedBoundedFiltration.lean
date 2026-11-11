@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
 
 /-!
 # Iterated bounded filtrations

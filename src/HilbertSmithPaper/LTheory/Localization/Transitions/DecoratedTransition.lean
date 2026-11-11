@@ -3,6 +3,7 @@ import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedLGroup
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionCobordant
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransitionSum
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
 
 /-!
 # Decorated transition
