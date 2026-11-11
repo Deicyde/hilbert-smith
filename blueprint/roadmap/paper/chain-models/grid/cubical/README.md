@@ -8,6 +8,7 @@ The circle complex with the cells of its basis vectors, their realizations, its 
 
 - [The circle complex](circle-complex.md)
 - [The cell of a basis vector of the circle complex](circle-cell.md)
+- [Labels of the circle cells](circle-label.md)
 - [Realization of a circle cell](cell-realization.md)
 - [The circle complex vanishes in negative degrees](circle-dim-neg.md)
 - [Augmentation of the circle complex](circle-aug.md)
@@ -15,7 +16,6 @@ The circle complex with the cells of its basis vectors, their realizations, its 
 - [The unit complex](unit-complex.md)
 - [Cubical torus grid](cubical-torus-grid.md)
 - [Grid cubes](grid-cube.md)
-- [The dimension of a grid cube](grid-cube-dim.md)
 - [The closed cube](grid-cube-realization.md)
 - [The center of a grid cube](grid-cube-center.md)
 - [The cube of a basis vector](grid-cell.md)

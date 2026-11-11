@@ -43,19 +43,6 @@ section Generic
 
 variable {X : Type*} [MetricSpace X]
 
-/-- The propagation of a finite sum is at most the largest propagation of its terms. -/
-private lemma prop_sum_le {B B' : Type*} [Fintype B] [Fintype B'] (l : B → X) (l' : B' → X) {ι :
-Type*}
-    (s : Finset ι) (u : ι → Matrix B' B ℚ) (ε : ℝ≥0) (h : ∀ i ∈ s, prop l l' (u i) ≤ ε) :
-    prop l l' (∑ i ∈ s, u i) ≤ ε := by
-  classical
-  induction s using Finset.induction_on with
-  | empty => simp
-  | insert a s ha ih =>
-    rw [Finset.sum_insert ha]
-    exact (prop_add_le _ _ _ _).trans (max_le (h a (Finset.mem_insert_self _ _))
-      (ih fun i hi => h i (Finset.mem_insert_of_mem hi)))
-
 /-- A nonzero entry is at distance at most the propagation. -/
 private lemma nndist_le_prop {B B' : Type*} [Fintype B] [Fintype B'] (l : B → X) (l' : B' → X)
     (u : Matrix B' B ℚ) {b' : B'} {b : B} (h : u b' b ≠ 0) : nndist (l' b') (l b) ≤ prop l l' u :=
@@ -92,13 +79,9 @@ private lemma prop_eqToHom {Y Y' : FreeQ} (h : Y = Y') (l : Fin Y.dim → X) (l'
     (hl : ∀ i, l' (Fin.cast (congrArg FreeQ.dim h) i) = l i) :
     prop l l' (toMatrix (eqToHom h)) = 0 := by
   subst h
-  rw [eqToHom_refl, id_toMatrix]
-  refine le_antisymm (prop_le_of_entries _ _ _ _ fun i' i hi => ?_) zero_le
-  have hii : i' = i := by
-    by_contra hne
-    exact hi (Matrix.one_apply_ne hne)
-  subst hii
-  rw [← hl i', Fin.cast_eq_self, nndist_self]
+  have hl' : l' = l := funext fun i => by simpa using hl i
+  subst hl'
+  rw [eqToHom_refl, id_toMatrix, prop_one]
 
 /-- The propagation of a Kronecker product, for labels combined by a map `c` that is
 `1`-Lipschitz for the max distance. -/
@@ -119,9 +102,11 @@ private lemma prop_basedKron {Y Z : Type*} [MetricSpace Y] [MetricSpace Z] {P P'
 private lemma prop_units_smul_le {P Q : FreeQ} (u : ℤˣ) (f : P ⟶ Q) (l : Fin P.dim → X) (l' : Fin
 Q.dim → X) :
     prop l l' (toMatrix (u • f)) ≤ prop l l' (toMatrix f) := by
-  refine prop_le_of_entries _ _ _ _ fun b' b h => nndist_le_prop _ _ _ fun h0 => h ?_
-  change (u • toMatrix f) b' b = 0
-  rw [Matrix.smul_apply, h0, smul_zero]
+  have e : toMatrix (u • f) = ((u : ℤ) : ℚ) • toMatrix f := by
+    rw [Units.smul_def]
+    exact (Int.cast_smul_eq_zsmul ℚ (u : ℤ) (toMatrix f)).symm
+  rw [e]
+  exact prop_smul_le _ _ _ _
 
 private lemma prop_comp_le {P Q R : FreeQ} (l : Fin P.dim → X) (l' : Fin Q.dim → X) (l'' : Fin
 R.dim → X)
