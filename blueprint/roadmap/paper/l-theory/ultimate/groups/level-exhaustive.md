@@ -2,6 +2,9 @@
 article_id: af_077ed50cd0e51c5665460c76
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ultL.exists_of
+proof: formalized
 ---
 
 # Every element comes from a finite stage
