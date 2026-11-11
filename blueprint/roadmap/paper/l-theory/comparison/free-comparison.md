@@ -2,6 +2,8 @@
 article_id: af_05c38e0f1dac8049f5f9ede0
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.cls_bijective_free
 ---
 
 # Point comparison for the free categories

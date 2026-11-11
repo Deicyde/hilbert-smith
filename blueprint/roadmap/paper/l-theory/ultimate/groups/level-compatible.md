@@ -2,6 +2,9 @@
 article_id: af_e95e508d3d22e22ae0953ba1
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ultL.of_trans
+proof: formalized
 ---
 
 # Stages are compatible with the transition
