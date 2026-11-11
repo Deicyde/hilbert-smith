@@ -39,3 +39,5 @@ This result rests, through the good point, on the open statement [Newman's theor
 - [Uniformly small displacement near the identity](../subgroups/small-displacement.md)
 - [The subgroups $H_j$ form a basis at $0$](../subgroups/padic-subgroups-basis.md)
 - [Fixed sets are closed](../subgroups/fixed-sets-closed.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)
+- [Fixed sets of the subgroups $H_j$](../subgroups/fixed-sets.md)
