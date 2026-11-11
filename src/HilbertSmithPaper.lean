@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
+import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
 
 /-!
 # The paper
