@@ -25,3 +25,4 @@ where $e:\mathcal U_A/\mathcal U_Y\to\mathcal A/\mathcal U_B$ is the strict dual
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
+- [Full subcategory closed under duality](../../base/categories/dual-subcategory.md)
