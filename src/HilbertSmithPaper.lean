@@ -149,6 +149,7 @@ import HilbertSmithPaper.Compression.BufferEventually
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.Compression.CompressedMaps
 import HilbertSmithPaper.Compression.RetainedCells
+import HilbertSmithPaper.Compression.RetainedProjection
 import HilbertSmithPaper.Compression.StartIndex
 import HilbertSmithPaper.Corner.Actions.ExteriorWitness
 import HilbertSmithPaper.Corner.Actions.GraphType
