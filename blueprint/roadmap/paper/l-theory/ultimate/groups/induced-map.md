@@ -8,7 +8,7 @@ lean: HSP.ultL.map
 
 # Induced map on ultimate L
 
-Let $(F,\xi):\mathcal A\to\mathcal A'$ be a duality functor, not necessarily strict, and let $C_{\mathbb Z^j}F:C_{\mathbb Z^j}\mathcal A\to C_{\mathbb Z^j}\mathcal A'$ be its $j$-fold bounded extension, with $\xi$ applied entrywise ($C_{\mathbb Z^0}F=F$). $F_*:\mathbb L_k(\mathcal A)\to\mathbb L_k(\mathcal A')$ is the homomorphism of colimits induced by the levelwise homomorphisms $(C_{\mathbb Z^j}F)_*:L^{\langle -j\rangle}_k(\mathcal A)\to L^{\langle -j\rangle}_k(\mathcal A')$, which commute with $t$ by [Naturality of the transition](../../localization/transitions/transition-naturality.md). (Lean: $\mathcal A$ and $\mathcal A'$ have the same universe levels, so that both colimits are taken in one category of abelian groups.)
+Let $(F,\xi):\mathcal A\to\mathcal A'$ be a duality functor, not necessarily strict, and let $C_{\mathbb Z^j}F:C_{\mathbb Z^j}\mathcal A\to C_{\mathbb Z^j}\mathcal A'$ be its $j$-fold bounded extension, with $\xi$ applied entrywise ($C_{\mathbb Z^0}F=F$). $F_*:\mathbb L_k(\mathcal A)\to\mathbb L_k(\mathcal A')$ is the homomorphism of colimits induced by the levelwise homomorphisms $(C_{\mathbb Z^j}F)_*:L^{\langle -j\rangle}_k(\mathcal A)\to L^{\langle -j\rangle}_k(\mathcal A')$, which commute with $t$ by [Naturality of the transition](../../localization/transitions/transition-naturality.md). Here $\mathcal A$ and $\mathcal A'$ have objects and morphisms of the same size (one universe), so that both colimits are taken in one category of abelian groups.
 
 ## Sources
 
