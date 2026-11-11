@@ -2,6 +2,9 @@
 article_id: af_3f6d5fcef6452da01ae2f1f7
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.le_padicSubgroup_one_of_ne_top
 ---
 
 # Proper closed subgroups lie in $p\mathbb Z_p$

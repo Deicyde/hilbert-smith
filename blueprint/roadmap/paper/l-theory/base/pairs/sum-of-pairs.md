@@ -2,6 +2,8 @@
 article_id: af_7f7823629e69706a800e80d7
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.SymPair.sum
 ---
 
 # Sums of pairs

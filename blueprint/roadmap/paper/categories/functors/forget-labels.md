@@ -2,6 +2,8 @@
 article_id: af_2a17a828c567187315523309
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.forgetLabels
 ---
 
 # Forgetting labels

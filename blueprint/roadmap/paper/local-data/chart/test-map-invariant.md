@@ -2,11 +2,14 @@
 article_id: af_825606dabd0b03e22caf9bc5
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.testMap_vadd
 ---
 
 # The test map is invariant
 
-For a local datum and $0<\rho<\rho_+$, $f(a\cdot x)=f(x)$ for all $a\in\mathbb Z_p$ and $x\in\Omega$.
+For a local datum and any radius $\rho$, $f(a\cdot x)=f(x)$ for all $a\in\mathbb Z_p$ and $x\in\Omega$.
 
 *Proof sketch.* $F_0$ is invariant.
 

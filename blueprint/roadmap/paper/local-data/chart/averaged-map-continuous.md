@@ -2,6 +2,9 @@
 article_id: af_45ad456356a053aa36153a97
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.continuous_F₀
 ---
 
 # The averaged map is continuous

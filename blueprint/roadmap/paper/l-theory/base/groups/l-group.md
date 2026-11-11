@@ -2,6 +2,8 @@
 article_id: af_5a7a0f83b1814021c6ebb1c6
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LGroup
 ---
 
 # L-group

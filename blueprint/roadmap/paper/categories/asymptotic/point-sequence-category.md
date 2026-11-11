@@ -1,7 +1,9 @@
 ---
 article_id: af_72e3d8e3e2fbce9cc18c9eec
-declaration: def
+declaration: instance
 origin: bridged
+statement: formalized
+lean: HSP.PCat.dualCat
 ---
 
 # Sequence category
@@ -16,3 +18,4 @@ Let $\mathbf G=(G_i,\chi_i)$ be a [group sequence](group-sequence.md). The duali
 
 - [Free category of a finite group](free-category.md)
 - [Group sequence](group-sequence.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)

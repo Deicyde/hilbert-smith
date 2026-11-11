@@ -2,6 +2,9 @@
 article_id: af_d9f8e61313ad0ce35223caa8
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.rep_vadd_close
 ---
 
 # Representatives act approximately

@@ -2,11 +2,14 @@
 article_id: af_1c549630b84dc292f6335433
 declaration: theorem
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.exists_localDatum
 ---
 
 # A local datum from a faithful action
 
-Let $p$ be a prime, let $\mathbb Z_p$ act jointly continuously and faithfully on a connected $n$-manifold $M$, and let $0<D\le1/64$. Then there are $\rho_+\in(0,1/4)$ and a local datum with constants $(D,\rho_+)$ in dimension $n$.
+Let $p$ be a prime, let $\mathbb Z_p$ act jointly continuously and faithfully on a connected $n$-manifold $M$ (a connected Hausdorff space with an atlas of charts onto open subsets of $\mathbb R^n$, with no countability assumption), and let $0<D\le1/64$. Then there are $\rho_+\in(0,1/4)$ and a local datum with constants $(D,\rho_+)$ in dimension $n$.
 
 *Proof sketch.*
 1. Take a point $x_0$ with no fixed neighbourhood.
@@ -36,3 +39,5 @@ This result rests, through the good point, on the open statement [Newman's theor
 - [Uniformly small displacement near the identity](../subgroups/small-displacement.md)
 - [The subgroups $H_j$ form a basis at $0$](../subgroups/padic-subgroups-basis.md)
 - [Fixed sets are closed](../subgroups/fixed-sets-closed.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)
+- [Fixed sets of the subgroups $H_j$](../subgroups/fixed-sets.md)

@@ -2,6 +2,8 @@
 article_id: af_d1741c61cb3af86d5639a11d
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.SCat.karoubiFiltration
 ---
 
 # Point filtration

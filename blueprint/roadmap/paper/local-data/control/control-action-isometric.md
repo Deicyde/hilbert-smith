@@ -9,7 +9,7 @@ lean: HSP.LocalDatum.dT_vadd
 
 # The cyclic action is isometric
 
-For a local datum, $d_T(c\cdot s,c\cdot t)=d_T(s,t)$ for all $c\in C_p$ and $s,t\in T$.
+For a local datum, $d_T(c\cdot s,c\cdot t)=d_T(s,t)$ for all $c\in C_p$ and $s,t\in T$. Hence $C_p$ acts by isometries of the metric space $(T,d_T)$.
 
 *Proof sketch.* Write $c=q_1(a)$, $s=\pi z$, $t=\pi w$. Then $d_T(\pi(a\cdot z),\pi(a\cdot w))=\min_b d_1(a\cdot z,b\cdot(a\cdot w))=\min_b d_1(a\cdot z,a\cdot(b\cdot w))=\min_b d_1(z,b\cdot w)$ by invariance of $d_1$.
 
@@ -21,6 +21,7 @@ For a local datum, $d_T(c\cdot s,c\cdot t)=d_T(s,t)$ for all $c\in C_p$ and $s,t
 
 - [The cyclic action on the control space](control-action.md)
 - [The orbit metric on the control space](control-metric.md)
+- [The orbit metric metrizes the control space](control-metric-properties.md)
 
 ## Proof depends on
 

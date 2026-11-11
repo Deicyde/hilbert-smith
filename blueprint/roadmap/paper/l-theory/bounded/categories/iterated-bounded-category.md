@@ -2,6 +2,8 @@
 article_id: af_367424b75a8556aa806cf885
 declaration: def
 origin: cited
+statement: formalized
+lean: HSP.BoundedPow
 ---
 
 # Iterated bounded categories
