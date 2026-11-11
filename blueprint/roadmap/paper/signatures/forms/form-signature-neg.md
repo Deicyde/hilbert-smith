@@ -19,4 +19,8 @@ $\mathrm{sign}_{-b}=-\mathrm{sign}_b$, for every bilinear form $b$ on a finite-d
 
 ## Depends on
 
+- [The equivariant signature](form-signature.md)
+
+## Proof depends on
+
 - [Independence](../l-four/signature-splitting-independence.md)

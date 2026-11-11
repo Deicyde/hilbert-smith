@@ -11,7 +11,7 @@ lean: HSP.continuous_pinch
 
 For $\rho>0$, $\sigma_\rho$ is continuous.
 
-*Proof sketch.* On the open ball $B(0,\rho)$ it is a quotient of continuous functions with nonvanishing denominator. On the open set $S^n\setminus\overline B(0,\rho)$ it is constant. At a point with $|x|=\rho$, $|\sigma_\rho(y)|\ge|y|/(\rho-|y|)$ tends to infinity as $y\to x$ inside the ball, so $\sigma_\rho(y)\to\infty=\sigma_\rho(x)$.
+*Proof sketch.* On the open ball $B(0,\rho)$ it is a quotient of continuous functions with nonvanishing denominator. On the open set $S^n\setminus\overline B(0,\rho)$ it is constant. At a point with $|x|=\rho$, $|\sigma_\rho(y)|\ge|y|/(\rho-|y|)$ tends to infinity as $y\to x$ inside the ball, so $\sigma_\rho(y)\to\infty=\sigma_\rho(x)$; points $y$ with $\lvert y\rvert\ge\rho$ already have $\sigma_\rho(y)=\infty$.
 
 ## Sources
 

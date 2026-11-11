@@ -2,6 +2,8 @@
 article_id: af_76e0960710c35845a2099231
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.exists_good_point
 ---
 
 # A point with no fixed neighbourhood

@@ -2,6 +2,9 @@
 article_id: af_9bb9647151149f0e9b889af8
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.dT_vadd
 ---
 
 # The cyclic action is isometric
