@@ -4,7 +4,7 @@ article_id: af_9f6cbdef9e46aacfd6aa3c04
 
 # Tensor product bookkeeping
 
-The supporting facts for tensor products of complexes: the sign convention, additivity of a duality pairing in each variable, the finite supports and existence of the direct sums, tensor products of chain maps and their functoriality, the summand inclusions and projections with their identities, and finiteness of dual complexes.
+The supporting facts for tensor products of complexes: the sign convention, additivity of a duality pairing in each variable, the finite supports and existence of the direct sums, tensor products of chain maps and their functoriality, the summand inclusions and projections with their identities, finiteness of dual complexes, and the objects and components of the box product.
 
 - [Signs for tensor products of chain complexes](tensor-signs.md)
 - [A duality pairing is additive in the first variable](pairing-additive-left.md)
@@ -23,3 +23,5 @@ The supporting facts for tensor products of complexes: the sign convention, addi
 - [Maps into a tensor product are determined by their components](product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](product-dual-hom-ext.md)
 - [Dual complexes have finitely many nonzero chain objects](dual-complex-finite.md)
+- [Objects of the box product](box-object.md)
+- [Components of box products of maps](box-components.md)

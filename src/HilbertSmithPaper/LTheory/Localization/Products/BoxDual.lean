@@ -42,11 +42,12 @@ private lemma dual_ext {d : ℕ} {X Z : B} {φ ψ : dual (⨁ fun _ : Fin d => X
   exact Finset.sum_congr rfl fun i _ => by rw [Category.assoc, Category.assoc, h i]
 
 /-- The canonical map `(X^{⊕ d})^* ⟶ (X^*)^{⊕ d}`, with components the duals of the inclusions. -/
-noncomputable def can (X : B) (d : ℕ) : dual (⨁ fun _ : Fin d => X) ⟶ ⨁ fun _ : Fin d => dual X :=
+private noncomputable def can (X : B) (d : ℕ) :
+    dual (⨁ fun _ : Fin d => X) ⟶ ⨁ fun _ : Fin d => dual X :=
   biproduct.lift fun i => dualHom (biproduct.ι (fun _ : Fin d => X) i)
 
 /-- Its inverse, with components the duals of the projections. -/
-noncomputable def canInv (X : B) (d : ℕ) :
+private noncomputable def canInv (X : B) (d : ℕ) :
     (⨁ fun _ : Fin d => dual X) ⟶ dual (⨁ fun _ : Fin d => X) :=
   biproduct.desc fun i => dualHom (biproduct.π (fun _ : Fin d => X) i)
 
@@ -112,7 +113,7 @@ private lemma obj_p (N : Karoubi B) (V : Bounded FreeQ) :
     (Box.obj N V).p = Bounded.diag fun n => biproduct.map fun _ : Fin (V.X n).dim => N.p := rfl
 
 /-- `κ : (N ⊠ V)^* ⟶ N^* ⊠ V^*`, in position `n` the canonical map followed by `e^*`. -/
-noncomputable def kappaHom (N : Karoubi B) (V : Bounded FreeQ) :
+private noncomputable def kappaHom (N : Karoubi B) (V : Bounded FreeQ) :
     dual (Box.obj N V) ⟶ Box.obj (dual N) (dual V) where
   f := Bounded.diag (M := dual (Box.obj N V).X) (N := (Box.obj (dual N) (dual V)).X)
     fun n => can N.X (V.X n).dim ≫ biproduct.map fun _ => dualHom N.p
@@ -130,7 +131,7 @@ noncomputable def kappaHom (N : Karoubi B) (V : Bounded FreeQ) :
       N.idem]
 
 /-- `κ⁻¹ : N^* ⊠ V^* ⟶ (N ⊠ V)^*`. -/
-noncomputable def kappaInv (N : Karoubi B) (V : Bounded FreeQ) :
+private noncomputable def kappaInv (N : Karoubi B) (V : Bounded FreeQ) :
     Box.obj (dual N) (dual V) ⟶ dual (Box.obj N V) where
   f := Bounded.diag (M := (Box.obj (dual N) (dual V)).X) (N := dual (Box.obj N V).X)
     fun n => (biproduct.map fun _ => dualHom N.p) ≫ canInv N.X (V.X n).dim
@@ -148,7 +149,7 @@ noncomputable def kappaInv (N : Karoubi B) (V : Bounded FreeQ) :
       ← dualHom_comp, N.idem]
 
 /-- The isomorphism `κ : (N ⊠ V)^* ≅ N^* ⊠ V^*`. -/
-noncomputable def kappa (N : Karoubi B) (V : Bounded FreeQ) :
+private noncomputable def kappa (N : Karoubi B) (V : Bounded FreeQ) :
     dual (Box.obj N V) ≅ Box.obj (dual N) (dual V) where
   hom := kappaHom N V
   inv := kappaInv N V
@@ -190,15 +191,63 @@ private lemma ι_eqToHom_biproduct {d : ℕ} {X Y : B} (h : X = Y) (i : Fin d) :
       eqToHom h ≫ biproduct.ι (fun _ : Fin d => Y) i := by
   subst h; simp
 
+omit [Linear ℚ B] [DualCat B] in
+private lemma biprod_ext' {J K : Type} [Fintype J] [Fintype K] {f : J → B} {g : K → B}
+    {φ ψ : ⨁ f ⟶ ⨁ g}
+    (h : ∀ j k, biproduct.ι f j ≫ φ ≫ biproduct.π g k = biproduct.ι f j ≫ ψ ≫ biproduct.π g k) :
+    φ = ψ := by
+  refine biproduct.hom_ext' _ _ fun j => biproduct.hom_ext _ _ fun k => ?_
+  simpa only [Category.assoc] using h j k
+
+section Bilinear
+
+variable {N N' : Karoubi B} {V V' : Bounded FreeQ}
+
+omit [DualCat B] in
+private lemma map_add_left (f f' : N ⟶ N') (g : V ⟶ V') :
+    (boxProduct (B := B)).map ((f + f') ×ₘ g) =
+      (boxProduct (B := B)).map (f ×ₘ g) + (boxProduct (B := B)).map (f' ×ₘ g) := by
+  refine Karoubi.hom_ext _ _ (Bounded.hom_ext fun m n => biprod_ext' fun i i' => ?_)
+  change _ ≫ Box.F (f + f') g m n ≫ _ = _ ≫ (Box.F f g m n + Box.F f' g m n) ≫ _
+  rw [Preadditive.add_comp, Preadditive.comp_add, Box.F_entry, Box.F_entry, Box.F_entry]
+  exact smul_add _ _ _
+
+omit [DualCat B] in
+private lemma map_add_right (f : N ⟶ N') (g g' : V ⟶ V') :
+    (boxProduct (B := B)).map (f ×ₘ (g + g')) =
+      (boxProduct (B := B)).map (f ×ₘ g) + (boxProduct (B := B)).map (f ×ₘ g') := by
+  refine Karoubi.hom_ext _ _ (Bounded.hom_ext fun m n => biprod_ext' fun i i' => ?_)
+  change _ ≫ Box.F f (g + g') m n ≫ _ = _ ≫ (Box.F f g m n + Box.F f g' m n) ≫ _
+  rw [Preadditive.add_comp, Preadditive.comp_add, Box.F_entry, Box.F_entry, Box.F_entry,
+    Bounded.add_apply, FreeQ.add_toMatrix, Matrix.add_apply, add_smul]
+
+omit [DualCat B] in
+private lemma map_smul_left (c : ℚ) (f : N ⟶ N') (g : V ⟶ V') :
+    (boxProduct (B := B)).map ((c • f) ×ₘ g) = c • (boxProduct (B := B)).map (f ×ₘ g) := by
+  refine Karoubi.hom_ext _ _ (Bounded.hom_ext fun m n => biprod_ext' fun i i' => ?_)
+  change _ ≫ Box.F (c • f) g m n ≫ _ = _ ≫ (c • Box.F f g m n) ≫ _
+  rw [Linear.smul_comp, Linear.comp_smul, Box.F_entry, Box.F_entry, Karoubi.smul_f]
+  exact smul_comm _ _ _
+
+omit [DualCat B] in
+private lemma map_smul_right (c : ℚ) (f : N ⟶ N') (g : V ⟶ V') :
+    (boxProduct (B := B)).map (f ×ₘ (c • g)) = c • (boxProduct (B := B)).map (f ×ₘ g) := by
+  refine Karoubi.hom_ext _ _ (Bounded.hom_ext fun m n => biprod_ext' fun i i' => ?_)
+  change _ ≫ Box.F f (c • g) m n ≫ _ = _ ≫ (c • Box.F f g m n) ≫ _
+  rw [Linear.smul_comp, Linear.comp_smul, Box.F_entry, Box.F_entry, Bounded.smul_apply,
+    FreeQ.smul_toMatrix, Matrix.smul_apply, smul_eq_mul, mul_smul]
+
+end Bilinear
+
 /-- **Duals of box products.** With `κ`, the box product is a duality pairing
 `Kar B × C_ℤ(ℚ) → Kar C_ℤ(B)`. -/
 noncomputable def boxPairing :
     DualityPairing (Karoubi B) (Bounded FreeQ) (Karoubi (Bounded B)) where
   tensor := boxProduct
-  map_add_left f f' g := boxProduct.map_add_left f f' g
-  map_add_right f g g' := boxProduct.map_add_right f g g'
-  map_smul_left c f g := boxProduct.map_smul_left c f g
-  map_smul_right c f g := boxProduct.map_smul_right c f g
+  map_add_left f f' g := map_add_left f f' g
+  map_add_right f g g' := map_add_right f g g'
+  map_smul_left c f g := map_smul_left c f g
+  map_smul_right c f g := map_smul_right c f g
   κ N V := BoxDual.kappa N V
   κ_natural {N N' V V'} f g := by
     refine Karoubi.hom_ext _ _ (Bounded.hom_ext fun a b => ?_)
