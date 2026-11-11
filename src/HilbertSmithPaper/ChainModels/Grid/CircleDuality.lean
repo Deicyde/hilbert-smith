@@ -5,12 +5,12 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolutionSquare
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhi
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleH
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CirclePhiSym
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleB
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleK
-import HilbertSmithPaper.ChainModels.Grid.CircleData.CircleKDual
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhi
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleH
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CirclePhiSym
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleB
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleK
+import HilbertSmithPaper.ChainModels.Grid.Poincare.CircleData.CircleKDual
 
 /-!
 # Circle duality
