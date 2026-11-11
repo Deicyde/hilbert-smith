@@ -7,6 +7,7 @@ import HilbertSmithPaper.Proofs.FaithfulHausdorff
 import HilbertSmithPaper.Proofs.IntegerTails
 import HilbertSmithPaper.Proofs.IntrinsicInterior
 import HilbertSmithPaper.Proofs.IntrinsicInteriorCharted
+import HilbertSmithPaper.Proofs.IntrinsicInteriorDense
 import HilbertSmithPaper.Proofs.IntrinsicInteriorInvariant
 import HilbertSmithPaper.Proofs.IntrinsicInteriorOpen
 import HilbertSmithPaper.Proofs.PadicExclusion
