@@ -35,6 +35,7 @@ import HilbertSmithPaper.ChainModels.Approximations.CompletedMapsProperties
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.Modulus
+import HilbertSmithPaper.ChainModels.Approximations.ProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.TorusTestMap
 import HilbertSmithPaper.ChainModels.Approximations.TrackMap
 import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
