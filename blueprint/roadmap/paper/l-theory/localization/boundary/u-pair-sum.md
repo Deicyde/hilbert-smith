@@ -34,3 +34,5 @@ Let $\mathcal U\subset\mathcal A$ be as in [Decorated objects](../decorations/de
 - [Duality functors commute with pushforward](../../base/complexes/functor-push.md)
 - [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../../base/complexes/functors/push-id.md)
+- [The sum of two Poincaré complexes](../../base/pairs/poincare-sum.md)
+- [Sum of structured complexes](../../base/complexes/sum-of-complexes.md)

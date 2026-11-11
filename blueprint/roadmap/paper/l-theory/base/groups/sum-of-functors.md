@@ -29,3 +29,7 @@ For duality functors $(F,\xi),(G,\zeta):\mathcal B\to\mathcal B'$, let $F\oplus 
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward along the identity](../complexes/functors/push-id.md)
+- [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
+- [Image of structures under a duality functor](../complexes/functors/functor-structure.md)
+- [Image of a complex under a duality functor](../complexes/functors/functor-complex.md)

@@ -24,3 +24,5 @@ For duality functors $F:\mathcal B\to\mathcal B'$ and $G:\mathcal B'\to\mathcal 
 ## Proof depends on
 
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
+- [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
+- [Pushforward of structures](../complexes/structure-push.md)
