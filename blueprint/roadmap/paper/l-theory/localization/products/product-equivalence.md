@@ -2,6 +2,9 @@
 article_id: af_f2a78df55345e9814b62cb3f
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.cxProd_homotopyEquiv
 ---
 
 # Tensor products of equivalences
