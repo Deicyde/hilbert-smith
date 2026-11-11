@@ -297,6 +297,7 @@ import HilbertSmithPaper.Evaluation.ExcisiveIntersectionQuotient
 import HilbertSmithPaper.Evaluation.Germ
 import HilbertSmithPaper.Evaluation.GermHomotopy
 import HilbertSmithPaper.Evaluation.LabelledModel
+import HilbertSmithPaper.Evaluation.PinchEvaluation
 import HilbertSmithPaper.Evaluation.ScalarComponentProjection
 import HilbertSmithPaper.Evaluation.TestMapToPinch
 import HilbertSmithPaper.Inputs.CompactGroups.ZpInTorsionFree
