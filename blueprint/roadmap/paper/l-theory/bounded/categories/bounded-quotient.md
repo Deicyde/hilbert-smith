@@ -27,6 +27,7 @@ For an involution-invariant Karoubi filtration $U\subset A$, the [entrywise quot
 - [Bounded extension of a duality functor](bounded-functor.md)
 - [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
 - [Karoubi filtration](../../base/categories/karoubi-filtration.md)
+- [The entrywise functor](entrywise-functor.md)
 
 ## Proof depends on
 

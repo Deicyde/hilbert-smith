@@ -354,6 +354,9 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotientFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
+import HilbertSmithPaper.LTheory.Bounded.Categories.Classes.IsoClasses
+import HilbertSmithPaper.LTheory.Bounded.Categories.Classes.KZeroClass
+import HilbertSmithPaper.LTheory.Bounded.Categories.EntrywiseFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient

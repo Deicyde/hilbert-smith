@@ -21,6 +21,8 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 - [Decorated objects of the completed quotient](decorated-predicate.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [The quotient duality functor](../../base/categories/quotient-duality-functor.md)
+- [The class of an object in $K_0$](../../bounded/categories/classes/k-zero-class.md)
+- [Isomorphism classes of objects](../../bounded/categories/classes/iso-classes.md)
 
 ## Proof depends on
 

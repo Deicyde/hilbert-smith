@@ -33,6 +33,7 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Bounded extension of a duality functor](bounded-functor.md)
 - [Duality functor](../../base/categories/duality-functor.md)
+- [The entrywise functor](entrywise-functor.md)
 
 ## Proof depends on
 
