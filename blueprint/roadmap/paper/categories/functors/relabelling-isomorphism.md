@@ -2,6 +2,8 @@
 article_id: af_3921d1389770902612c57cf8
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.relabelIso
 ---
 
 # Relabelling isomorphism

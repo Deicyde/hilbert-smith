@@ -9,7 +9,7 @@ lean: HSP.isClosed_interior_fixSet
 
 # Interiors of fixed sets are closed
 
-Let $p$ be a prime and let $\mathbb Z_p$ act jointly continuously on an $n$-manifold $M$. Suppose every point of $M$ has a neighbourhood fixed pointwise by some $H_m$. Then for every $j$ the interior $F_j$ of $\operatorname{Fix}_j(M)$ is closed.
+Let $p$ be a prime and let $\mathbb Z_p$ act jointly continuously on an $n$-manifold $M$ (a Hausdorff space with an atlas of charts onto open subsets of $\mathbb R^n$, with no countability assumption). Suppose every point of $M$ has a neighbourhood fixed pointwise by some $H_m$. Then for every $j$ the interior $F_j$ of $\operatorname{Fix}_j(M)$ is closed.
 
 *Proof sketch.* Take $x\in\overline{F_j}$.
 1. $\operatorname{Fix}_j(M)$ is closed, so $H_j$ fixes $x$.

@@ -1,7 +1,9 @@
 ---
 article_id: af_6bbde0c50e82b2945e737aea
-declaration: def
+declaration: abbrev
 origin: bridged
+statement: formalized
+lean: HSP.VCat
 ---
 
 # Point category

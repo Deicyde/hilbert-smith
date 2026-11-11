@@ -1,7 +1,9 @@
 ---
 article_id: af_6f0d984f62a72e8854b57187
-declaration: def
+declaration: abbrev
 origin: background
+statement: formalized
+lean: HSP.K0
 ---
 
 # $K_0$ of an idempotent completion

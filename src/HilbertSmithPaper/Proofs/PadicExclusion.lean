@@ -15,7 +15,8 @@ The action of the additive group `ℤ_[p]` is Mathlib's `AddAction`, joint conti
 
 Proof: a faithful action gives, by the reduction to one chart (`HSP.oneChart`), a faithful
 jointly continuous action on a nonempty connected open subset of `ℝⁿ`, which local exclusion
-(`HSP.localExclusion`) rules out. Both are open statements for now, so this proof is conditional.
+(`HSP.localExclusion`) rules out. Local exclusion is still stated with `sorry` and the reduction
+to one chart rests on Newman's theorem, so this proof is conditional.
 -/
 
 namespace HSP

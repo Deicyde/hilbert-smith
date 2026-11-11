@@ -65,7 +65,8 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
 /-- The data `(f : C ⟶ D, δφ, φ)` of a pair, without the conditions. -/
 abbrev Data (B : Type u) [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFiniteBiproducts B]
     [DualCat B] (m n : ℤ) :=
-  Σ C : ChainComplex B ℤ, Σ D : ChainComplex B ℤ, (C ⟶ D) × (StructureCx D).X n × (StructureCx C).X m
+  Σ C : ChainComplex B ℤ, Σ D : ChainComplex B ℤ,
+    (C ⟶ D) × (StructureCx D).X n × (StructureCx C).X m
 
 /-- The data `(f : C ⟶ D, δφ, φ)` of a pair `W`. -/
 abbrev data {m n : ℤ} (W : SymPair B m n) : Data B m n := ⟨W.C, W.D, W.f, W.δφ, W.φ⟩

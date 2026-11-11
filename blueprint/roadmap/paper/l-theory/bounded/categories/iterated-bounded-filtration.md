@@ -1,7 +1,9 @@
 ---
 article_id: af_4496a9accf718111952d4757
-declaration: lemma
+declaration: def
 origin: cited
+statement: formalized
+lean: HSP.Bounded.powKaroubiFiltration
 ---
 
 # Iterated bounded filtrations

@@ -49,7 +49,8 @@ variable {A : Type u₁} [Category.{v₁} A] [Preadditive A] [Linear ℚ A] [Has
   {E : Type u₃} [Category.{v₃} E] [Preadditive E] [Linear ℚ E] [HasFiniteBiproducts E]
   [DualCat E]
 
-/-- A duality functor is *strict* if `ξ = id`: every `ξ M` is the identity of `F (M^*) = (F M)^*`. -/
+/-- A duality functor is *strict* if `ξ = id`: every `ξ M` is the identity of
+`F (M^*) = (F M)^*`. -/
 def IsStrict (F : DualFunctor A B) : Prop :=
   ∀ M : A, ∃ h : F.toFunctor.obj (dual M) = dual (F.toFunctor.obj M), (F.ξ M).hom = eqToHom h
 
