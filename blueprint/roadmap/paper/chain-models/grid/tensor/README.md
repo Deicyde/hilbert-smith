@@ -11,3 +11,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [The identity as a map of degree zero](id-deg0.md)
 - [Block decomposition of the identity](block-decomposition.md)
 - [Block extraction](block-extraction.md)
+- [Maps between concatenations are determined by their blocks](block-ext.md)
