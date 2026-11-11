@@ -1,7 +1,9 @@
 ---
 article_id: af_e875b151a685860f7cc015e7
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum
 ---
 
 # Local datum
@@ -11,7 +13,7 @@ Let $p$ be a prime, $n\in\mathbb N$, $0<D\le 1/64$ and $0<\rho_+<1/4$. A local d
 - an open set $\Omega\subseteq\mathbb R^n$ (Euclidean norm $|\cdot|$);
 - a jointly continuous action $(a,x)\mapsto a\cdot x$ of $\mathbb Z_p$ on $\Omega$;
 
-subject to three conditions:
+subject to three conditions (the bounds on $D$ and $\rho_+$ are part of the datum):
 
 - containment: $B(0,2)\subseteq\Omega$;
 - displacement: $|a\cdot x-x|\le D$ for all $a\in\mathbb Z_p$ and $x\in\Omega$;
