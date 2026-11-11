@@ -10,7 +10,7 @@ lean: HSP.lowerLSeq
 
 For a duality category $\mathcal A$ and $k\in\mathbb Z$, the *sequence of lower L-groups* is the diagram of abelian groups over $(\mathbb N,\le)$
 $$L^{\langle 0\rangle}_k(\mathcal A)\xrightarrow{t}L^{\langle -1\rangle}_k(\mathcal A)\xrightarrow{t}L^{\langle -2\rangle}_k(\mathcal A)\xrightarrow{t}\cdots$$
-of the [lower L-groups](../../localization/transitions/lower-l-group.md) and the [transition maps](../../localization/transitions/transition-map.md) $t$. The map from stage $j$ to stage $j'\ge j$ is the composite of the transitions between them.
+of the [lower L-groups](../../localization/transitions/lower-l-group.md) and the [transition maps](../../localization/transitions/transition-lower.md) $t$. The map from stage $j$ to stage $j'\ge j$ is the composite of the transitions between them.
 
 ## Sources
 
@@ -19,4 +19,4 @@ of the [lower L-groups](../../localization/transitions/lower-l-group.md) and the
 ## Depends on
 
 - [Lower L-group](../../localization/transitions/lower-l-group.md)
-- [Transition map](../../localization/transitions/transition-map.md)
+- [Lower transition map](../../localization/transitions/transition-lower.md)

@@ -1,6 +1,9 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMap
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductHomExt
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductDualHomExt
 
 /-!
 # Pushforward of products

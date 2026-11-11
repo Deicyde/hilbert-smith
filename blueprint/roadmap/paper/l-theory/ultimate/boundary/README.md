@@ -6,6 +6,7 @@ article_id: af_762d5976101641b5b8b5b59a
 
 The ultimate boundary and its naturality for every duality functor; the decorated transition of an image pair; the composite with the inclusion vanishes; exactness at the quotient and in the middle; the pair formula; excisive pairs of filtrations and the excision boundary, with the open statement that exchanging the two sides changes its sign; the union formula; and Mayer–Vietoris middle exactness.
 
+- [Iterated bounded categories of a subcategory](sub-pow-identification.md)
 - [Ultimate boundary](ultimate-boundary.md)
 - [The ultimate boundary at each stage](ultimate-boundary-level.md)
 - [Naturality of the ultimate boundary](ultimate-boundary-naturality.md)

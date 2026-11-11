@@ -1,4 +1,6 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
+import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.Compression.CompressedComplex
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopies
 

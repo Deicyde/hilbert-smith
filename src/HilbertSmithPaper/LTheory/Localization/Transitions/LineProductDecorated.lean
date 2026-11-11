@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedQuotient
 import HilbertSmithPaper.LTheory.Localization.Decorations.DecoratedObject
-import HilbertSmithPaper.LTheory.Localization.Products.BoxDual
+import HilbertSmithPaper.LTheory.Localization.Products.BoxPairingPow
 import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 

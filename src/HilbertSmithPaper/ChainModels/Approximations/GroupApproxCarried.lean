@@ -1,5 +1,9 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
+import HilbertSmithPaper.ChainModels.Approximations.FarCubes
+import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox
 import HilbertSmithPaper.ChainModels.Approximations.GroupApprox
+import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorOneP
 
 /-!
 # Carried group approximations
@@ -12,7 +16,7 @@ For every `g ∈ G_i`, `a_g = a^T_g ⊗ 1_P` where `a^T_g` is a chain map of `C(
 
 As in `exists_chainApprox`: the carrier is a `Carrier` on the realization of `C(k_i)` whose
 subcomplexes are `Γ_L(c) = chainApproxBox …` for `L = \widehat{r_i(g)}` (`completedRep`), and
-`a^T_g ⊗ 1_P` is `chainTensorOneP`, compared with `groupApprox` in every degree.
+`a^T_g ⊗ 1_P` is `tensorOneP` in degree `0`, compared with `groupApprox` in every degree.
 -/
 
 open CategoryTheory
@@ -28,7 +32,9 @@ chain map of `C(k_i)` carried by `Γ_{\widehat{r_i(g)}}`, `a^T_g|_{E(k_i)} = 1` 
 `ε a^T_g = ε`. -/
 theorem groupApprox_carried (A : LocalDatum p n D ρplus) (i : ℕ) (g : ZMod (p ^ i)) :
     ∃ aT : gridComplex (meshSequence A i) n ⟶ gridComplex (meshSequence A i) n,
-      (∀ r, groupApprox A i g r = chainTensorOneP A i aT r) ∧
+      (∀ r, groupApprox A i g r = tensorOneP A i 0 (fun s => aT.f s ≫
+        eqToHom (congrArg (gridComplex (meshSequence A i) n).X (add_zero s).symm)) r ≫
+          eqToHom (congrArg (chainModel A i).X (add_zero r))) ∧
       ∃ Γ : Carrier (realizeCx (gridComplex (meshSequence A i) n))
           (realizeBasis (gridComplex (meshSequence A i) n))
           (realizeCx (gridComplex (meshSequence A i) n)) (gridAugLin (meshSequence A i) n),

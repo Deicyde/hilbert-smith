@@ -4,18 +4,15 @@ import HilbertSmithPaper.LTheory.Base.Groups.HomotopyIsometryInvariance
 import HilbertSmithPaper.LTheory.Base.Pairs.PairTransport
 import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.ProductPush
-import HilbertSmithPaper.LTheory.Localization.Products.ProductInvolution
-import HilbertSmithPaper.LTheory.Localization.Products.ProductLeibniz
-import HilbertSmithPaper.LTheory.Localization.Products.ProductDualityMap
-import HilbertSmithPaper.LTheory.Localization.Products.ProductEquivalence
-import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMapComp
+import HilbertSmithPaper.LTheory.Localization.Products.Bookkeeping.ProductMapId
 
 /-!
 # Transition map
 
 For `j ≥ 0` and `m ∈ ℤ`, the transition map
 `t : L^p_m(C_{ℤ^j} A) → L^p_{m+1}(C_{ℤ^{j+1}} A)`, `[C, φ] ↦ [C ⊗ Λ, φ ⊗ λ]`, a homomorphism.
-For `m = k + j` it is a homomorphism `L^{⟨-j⟩}_k(A) → L^{⟨-j-1⟩}_k(A)`.
 
 Lean: the target degree is a parameter `m'` with `m + 1 = m'`, so that the lower-L-group version
 needs no transport along `k + j + 1 = k + (j + 1)`. Products are taken for the box product pairing
@@ -79,20 +76,6 @@ private lemma strProd_neg_left (P : DualityPairing B E B'') {C : ChainComplex B 
   refine eq_neg_of_add_eq_zero_left ?_
   rw [← strProd_add_left, neg_add_cancel, strProd_zero_left]
 
-private lemma tensor_zero_right (P : DualityPairing B E B'') {N N' : B} {V V' : E}
-    (f : N ⟶ N') : P.tensor.map (f ×ₘ (0 : V ⟶ V')) = 0 := by
-  simpa using P.map_smul_right 0 f (0 : V ⟶ V')
-
-private lemma strProd_zero_right (P : DualityPairing B E B'') {C : ChainComplex B ℤ}
-    {D : ChainComplex E ℤ} (hC : {r | ¬ IsZero (C.X r)}.Finite)
-    (hD : {r | ¬ IsZero (D.X r)}.Finite) {m n : ℤ} (φ : (StructureCx C).X m) (k : ℤ)
-    (hk : m + n = k) : strProd P hC hD φ (0 : (StructureCx D).X n) k hk = 0 := by
-  funext x
-  show strProd P hC hD φ (0 : (StructureCx D).X n) k hk x = 0
-  refine Finset.sum_eq_zero fun y _ => ?_
-  rw [show (0 : (StructureCx D).X n) ⟨(y.2, n - y.2), by ring⟩ = 0 from rfl, tensor_zero_right,
-    zero_comp, comp_zero, comp_zero, smul_zero]
-
 omit [Linear ℚ B] [DualCat B] in
 private lemma finite_biprod {C C' : ChainComplex B ℤ} (hC : {r | ¬ IsZero (C.X r)}.Finite)
     (hC' : {r | ¬ IsZero (C'.X r)}.Finite) : {r | ¬ IsZero ((C ⊞ C').X r)}.Finite :=
@@ -113,30 +96,6 @@ private lemma push_id_apply (C : ChainComplex B ℤ) (n : ℤ) (x : (StructureCx
     (StructureCx.push (𝟙 C)).f n x = x := by
   rw [StructureCx.push_id]
   rfl
-
-private lemma cxProdMap_comp (P : DualityPairing B E B'') {C C' C'' : ChainComplex B ℤ}
-    {D D' D'' : ChainComplex E ℤ} (f : C ⟶ C') (f' : C' ⟶ C'') (g : D ⟶ D') (g' : D' ⟶ D'')
-    (hC : {r | ¬ IsZero (C.X r)}.Finite) (hD : {r | ¬ IsZero (D.X r)}.Finite)
-    (hC' : {r | ¬ IsZero (C'.X r)}.Finite) (hD' : {r | ¬ IsZero (D'.X r)}.Finite)
-    (hC'' : {r | ¬ IsZero (C''.X r)}.Finite) (hD'' : {r | ¬ IsZero (D''.X r)}.Finite) :
-    cxProdMap P (f ≫ f') (g ≫ g') hC hD hC'' hD'' =
-      cxProdMap P f g hC hD hC' hD' ≫ cxProdMap P f' g' hC' hD' hC'' hD'' := by
-  have := P.hasMapBifunctor_of_finite hC hD
-  have := P.hasMapBifunctor_of_finite hC' hD'
-  have := P.hasMapBifunctor_of_finite hC'' hD''
-  ext j p q h
-  simp only [HomologicalComplex.comp_f, HomologicalComplex.ι_mapBifunctorMap,
-    HomologicalComplex.ι_mapBifunctorMap_assoc, Functor.curry_obj_map_app,
-    Functor.curry_obj_obj_map, ← Functor.map_comp_assoc, CategoryTheory.prod_comp,
-    Category.id_comp, Category.comp_id]
-
-private lemma cxProdMap_id (P : DualityPairing B E B'') {C : ChainComplex B ℤ}
-    {D : ChainComplex E ℤ} (hC : {r | ¬ IsZero (C.X r)}.Finite)
-    (hD : {r | ¬ IsZero (D.X r)}.Finite) :
-    cxProdMap P (𝟙 C) (𝟙 D) hC hD hC hD = 𝟙 _ := by
-  have := P.hasMapBifunctor_of_finite hC hD
-  ext j p q h
-  simp
 
 private lemma cxProdMap_add_left (P : DualityPairing B E B'') {C C' : ChainComplex B ℤ}
     {D D' : ChainComplex E ℤ} (f f' : C ⟶ C') (g : D ⟶ D')
@@ -203,51 +162,6 @@ variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFinite
 private lemma symLine_finite : {r | ¬ IsZero (symLine.X r)}.Finite :=
   finite_of_bounded (k := 1) fun r hr => symLine.isZero_X (by omega)
 
-/-- The chain objects of `C ⊗ Λ` vanish outside `[0, m + 1]` when those of `C` vanish outside
-`[0, m]`. -/
-private lemma isZero_prod_line {j : ℕ} {C : ChainComplex (Karoubi (BoundedPow A j)) ℤ} {m : ℤ}
-    (hC : ∀ r : ℤ, r < 0 ∨ m < r → IsZero (C.X r)) (r : ℤ) (hr : r < 0 ∨ m + 1 < r) :
-    IsZero ((cxProd (boxPairingPow A j) C symLine (finite_of_bounded hC) symLine_finite).X r) := by
-  rw [IsZero.iff_id_eq_zero, ← cxProd.total]
-  refine Finset.sum_eq_zero fun x hx => ?_
-  rw [cxProd.mem_supp] at hx
-  obtain ⟨⟨h1, h2⟩, h3⟩ := hx
-  exfalso
-  have hp : 0 ≤ x.1 ∧ x.1 ≤ m := by
-    by_contra h
-    exact h1 (hC _ (by omega))
-  have hq : x.2 = 0 ∨ x.2 = 1 := by
-    by_contra h
-    exact h2 (symLine.isZero_X h)
-  omega
-
-/-- The product `(C ⊗ Λ, φ ⊗ λ)` of a strict `m`-dimensional symmetric Poincaré complex with the
-symmetric line, a strict `m'`-dimensional one (`m' = m + 1`). -/
-noncomputable def transitionCx {j : ℕ} {m m' : ℤ} (hm : m + 1 = m')
-    (x : SymPoincare (Karoubi (BoundedPow A j)) m) :
-    SymPoincare (Karoubi (BoundedPow A (j + 1))) m' where
-  C := cxProd (boxPairingPow A j) x.C symLine (finite_of_bounded x.bounded) symLine_finite
-  φ := strProd (boxPairingPow A j) (finite_of_bounded x.bounded) symLine_finite x.φ symLine.str
-    m' hm
-  bounded r hr := isZero_prod_line x.bounded r (by omega)
-  cycle := by
-    have hl : (StructureCx symLine).d 1 (1 - 1) symLine.str = 0 := symLine.str_cycle
-    rw [strProd_boundary, x.cycle, hl, strProd_zero_left, strProd_zero_right, smul_zero,
-      add_zero]
-  symmetric := by
-    rw [strProd_T, x.symmetric, symLine.str_T]
-  poincare := by
-    have hl : (StructureCx symLine).d 1 (1 - 1) symLine.str = 0 := symLine.str_cycle
-    obtain ⟨e, he⟩ := cxProd_homotopyEquiv (boxPairingPow A j) x.poincare symLine_poincare
-      (dualCx_finite (finite_of_bounded x.bounded) m) (dualCx_finite symLine_finite 1)
-      (finite_of_bounded x.bounded) symLine_finite
-    refine ⟨(HomotopyEquiv.ofIso (prodDualIso (boxPairingPow A j) (finite_of_bounded x.bounded)
-      symLine_finite m 1 m' hm)).trans e, ?_⟩
-    rw [strProd_toHom (boxPairingPow A j) _ _ x.φ symLine.str x.cycle hl]
-    change _ ≫ e.hom = _
-    rw [he]
-    rfl
-
 /-- A pair with boundary `(Z, ψ)` has a product with the line with boundary
 `(Z ⊗ Λ, ψ ⊗ λ)`. -/
 private lemma exists_prod_line_of_eq {j : ℕ} {m : ℤ}
@@ -278,7 +192,7 @@ private lemma transport_of_data {B : Type*} [Category B] [Preadditive B] [Linear
   exact ⟨W', hW'⟩
 
 /-- Cobordant complexes have cobordant products with the line. -/
-theorem transitionCx_cobordant {j : ℕ} {m m' : ℤ} (hm : m + 1 = m')
+private theorem transitionCx_cobordant {j : ℕ} {m m' : ℤ} (hm : m + 1 = m')
     {x y : SymPoincare (Karoubi (BoundedPow A j)) m} (h : Cobordant x y) :
     Cobordant (transitionCx hm x) (transitionCx hm y) := by
   subst hm
@@ -317,7 +231,7 @@ private lemma mk_transitionCx_eq {j : ℕ} {m : ℤ} (z : SymPoincare (Karoubi (
   exact (sub_self _).symm
 
 /-- The product with the line of a sum is homotopy-isometric to the sum of the products. -/
-theorem transitionCx_sum {j : ℕ} {m m' : ℤ} (hm : m + 1 = m')
+private theorem transitionCx_sum {j : ℕ} {m m' : ℤ} (hm : m + 1 = m')
     (x y : SymPoincare (Karoubi (BoundedPow A j)) m) :
     LGroup.mk (transitionCx hm (x.sum y)) =
       LGroup.mk ((transitionCx hm x).sum (transitionCx hm y)) := by
@@ -346,10 +260,5 @@ lemma transitionMap_mk (j : ℕ) {m m' : ℤ} (hm : m + 1 = m')
     (x : SymPoincare (Karoubi (BoundedPow A j)) m) :
     transitionMap A j hm (LGroup.mk x) = LGroup.mk (transitionCx hm x) :=
   rfl
-
-/-- The transition map on lower L-groups, `L^{⟨-j⟩}_k(A) → L^{⟨-j-1⟩}_k(A)`. -/
-noncomputable def transitionLower (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ A]
-    [HasFiniteBiproducts A] [DualCat A] (j : ℕ) (k : ℤ) : lowerL A j k →+ lowerL A (j + 1) k :=
-  transitionMap A j (m := k + j) (m' := k + ↑(j + 1)) (by push_cast; ring)
 
 end HSP

@@ -4,6 +4,7 @@ declaration: lemma
 origin: background
 statement: formalized
 lean: HSP.ultL.map_inverse
+proof: formalized
 ---
 
 # Equivalence invariance on ultimate L

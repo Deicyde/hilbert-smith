@@ -26,8 +26,15 @@ where $\Xi$ is the isomorphism of [Dual of a tensor product](product-dual-iso.md
 - [Dual of a tensor product](product-dual-iso.md)
 - [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
 - [Tensor product of complexes](complex-product.md)
+- [Dual complexes have finitely many nonzero chain objects](bookkeeping/dual-complex-finite.md)
+- [Tensor product of chain maps](bookkeeping/product-map.md)
 
 ## Proof depends on
 
 - [External product of structures](external-product.md)
 - [Dual of a tensor product](product-dual-iso.md)
+- [Support of a tensor product of complexes](bookkeeping/product-support.md)
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+- [Summands outside the support vanish](bookkeeping/summand-zero.md)
+- [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
+- [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)

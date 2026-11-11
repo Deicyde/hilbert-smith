@@ -2,6 +2,8 @@
 article_id: af_9ae6446f2e3e152e8b884d20
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ultL.map_id
 ---
 
 # Identity on ultimate L

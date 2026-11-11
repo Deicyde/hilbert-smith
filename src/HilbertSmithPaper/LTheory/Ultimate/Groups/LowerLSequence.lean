@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionLower
 
 /-!
 # Sequence of lower L-groups
