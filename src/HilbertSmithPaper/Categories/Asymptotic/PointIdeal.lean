@@ -18,12 +18,6 @@ namespace HSP
 
 variable {p : ℕ} {G : GroupSeq p}
 
-private theorem isZero_of_n_eq_zero {H : Type} [AddGroup H] [Fintype H] [DecidableEq H]
-    (Y : FreeCat H) (h : Y.n = 0) : IsZero Y := by
-  obtain ⟨n⟩ := Y
-  cases h
-  exact FreeCat.isZero_zero
-
 /-- The point ideal: `(u_i)` factors through an object of `𝒮_𝐆` iff `u_i = 0` for all but
 finitely many `i`. -/
 theorem SCat.ideal_iff {M N : PCat G} (u : M ⟶ N) :
@@ -35,7 +29,7 @@ theorem SCat.ideal_iff {M N : PCat G} (u : M ⟶ N) :
     refine hV.subset fun i hi => ?_
     intro h0
     apply hi
-    rw [PCat.homCoord_comp, (isZero_of_n_eq_zero _ h0).eq_zero_of_src (PCat.homCoord w i),
+    rw [PCat.homCoord_comp, (FreeCat.isZero_of_n_eq_zero _ h0).eq_zero_of_src (PCat.homCoord w i),
       Limits.comp_zero]
   · intro hu
     let V : PCat G := fun i =>

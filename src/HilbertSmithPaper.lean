@@ -9,10 +9,12 @@ import HilbertSmithPaper.Categories.Asymptotic.PointQuotient
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
 import HilbertSmithPaper.Categories.Asymptotic.PropAdd
 import HilbertSmithPaper.Categories.Asymptotic.PropMul
+import HilbertSmithPaper.Categories.Asymptotic.PropOne
 import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
+import HilbertSmithPaper.Categories.Functors.ForgetControl
 import HilbertSmithPaper.Categories.Functors.ForgetGroup
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
 import HilbertSmithPaper.Categories.Functors.Pushforward
@@ -74,8 +76,11 @@ import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
+import HilbertSmithPaper.LTheory.Base.Complexes.DualHomotopyEquivalence
+import HilbertSmithPaper.LTheory.Base.Complexes.ShiftEquivalence
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
+import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolutionSquare
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePushInvolution
 import HilbertSmithPaper.LTheory.Base.Complexes.SumOfComplexes
@@ -108,6 +113,7 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.KZero
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
+import HilbertSmithPaper.LTheory.Localization.Products.BoxProduct
 import HilbertSmithPaper.LTheory.Localization.Products.ComplexProduct
 import HilbertSmithPaper.LTheory.Localization.Products.DualityPairing
 import HilbertSmithPaper.LTheory.Localization.Products.ExternalProduct

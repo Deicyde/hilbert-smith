@@ -45,8 +45,6 @@ instance : Zero (IsoClasses C) := ⟨mk 0⟩
 
 lemma mk_add (X Y : C) : mk X + mk Y = mk (X ⊞ Y) := rfl
 
-lemma zero_def : (0 : IsoClasses C) = mk 0 := rfl
-
 /-- The commutative monoid of isomorphism classes under `⊕`. -/
 instance : AddCommMonoid (IsoClasses C) where
   add_assoc := by
