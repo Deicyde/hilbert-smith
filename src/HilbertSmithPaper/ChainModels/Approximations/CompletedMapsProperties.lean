@@ -37,34 +37,6 @@ noncomputable def trackDefect (A : LocalDatum p n D ρplus) (i : ℕ) : ℝ :=
 
 /-! ### Auxiliary facts -/
 
-/-- `d_∞(x, 0) ≤ |x̃|_2`. -/
-private lemma norm_le_norm_lift (x : Torus n) : ‖x‖ ≤ ‖Torus.lift x‖ := by
-  rw [← Torus.norm_ofLp_lift]
-  exact (pi_norm_le_iff_of_nonneg (norm_nonneg _)).2 fun j => PiLp.norm_apply_le _ j
-
-/-- The lift of `q(y)` is `y` when `|y|_2 < 2`. -/
-private lemma lift_proj (y : EuclideanSpace ℝ (Fin n)) (hy : ‖y‖ < 2) :
-    Torus.lift (Torus.proj y) = y := by
-  refine PiLp.ext fun j => ?_
-  have hj : |y.ofLp j| < 2 :=
-    lt_of_le_of_lt (by simpa [Real.norm_eq_abs] using PiLp.norm_apply_le y j) hy
-  rw [abs_lt] at hj
-  simp only [Torus.lift, Torus.proj]
-  rw [AddCircle.equivIco_coe_eq (show y.ofLp j ∈ Set.Ico (-2 : ℝ) (-2 + 4) from
-    ⟨by linarith, by linarith⟩)]
-
-/-- `d_2(q y, q y') ≤ |y - y'|_2`. -/
-private lemma dist₂_proj_le (y y' : EuclideanSpace ℝ (Fin n)) :
-    Torus.dist₂ (Torus.proj y) (Torus.proj y') ≤ ‖y - y'‖ := by
-  rw [Torus.dist₂, EuclideanSpace.norm_eq]
-  refine Real.sqrt_le_sqrt (Finset.sum_le_sum fun j _ => pow_le_pow_left₀ dist_nonneg ?_ 2)
-  simp only [Torus.proj, dist_eq_norm, ← AddCircle.coe_sub, WithLp.ofLp_sub, Pi.sub_apply]
-  exact QuotientAddGroup.norm_mk_le_norm
-
-private lemma continuous_proj : Continuous (Torus.proj (n := n)) :=
-  continuous_pi fun j => (AddCircle.continuous_mk' (4 : ℝ)).comp
-    ((continuous_apply j).comp (PiLp.continuous_ofLp 2 _))
-
 /-- `â` moves points by at most `D`. -/
 private lemma norm_completedMapEuclid_sub (A : LocalDatum p n D ρplus) (a : ℤ_[p])
     (y : EuclideanSpace ℝ (Fin n)) : ‖completedMapEuclid A a y - y‖ ≤ D := by
@@ -173,7 +145,7 @@ private lemma continuous_trackEval (A : LocalDatum p n D ρplus) :
   have hL := continuous_trackMapEuclid A
   refine continuous_iff_continuousAt.2 fun Q₀ => ?_
   by_cases hx : ‖Q₀.2‖ < 2
-  · exact continuous_proj.continuousAt.comp
+  · exact Torus.continuous_proj.continuousAt.comp
       (ContinuousAt.comp (f := fun Q : (ℤ_[p] × ℤ_[p] × ℤ_[p] × unitInterval) × Torus n =>
         (Q.1, Torus.lift Q.2)) hL.continuousAt
         (continuousAt_fst.prodMk (ContinuousAt.comp (g := Torus.lift (n := n)) (f := Prod.snd)
@@ -184,7 +156,7 @@ private lemma continuous_trackEval (A : LocalDatum p n D ρplus) :
         (continuous_norm.comp continuous_snd)).mem_nhds
         (show (3 / 2 : ℝ) < ‖Q₀.2‖ by linarith)] with Q hQ
       simp only [trackMap]
-      rw [trackMapEuclid_of_le A _ _ _ _ ((lt_of_lt_of_le hQ (norm_le_norm_lift _)).le),
+      rw [trackMapEuclid_of_le A _ _ _ _ ((lt_of_lt_of_le hQ (Torus.norm_le_norm_lift _)).le),
         Torus.proj_lift]
     exact continuousAt_snd.congr hev.symm
 
@@ -229,7 +201,7 @@ private lemma continuous_torusTestMap (A : LocalDatum p n D ρplus) {ρ : ℝ} (
   · have hev : torusTestMap A ρ =ᶠ[𝓝 x₀] fun _ => ∞ := by
       filter_upwards [(isOpen_lt continuous_const continuous_norm).mem_nhds
         (show (17 / 64 : ℝ) < ‖x₀‖ by linarith)] with x hx
-      exact testMap_eq_infty A hρ' _ (lt_of_lt_of_le hx (norm_le_norm_lift x)).le
+      exact testMap_eq_infty A hρ' _ (lt_of_lt_of_le hx (Torus.norm_le_norm_lift x)).le
     exact continuousAt_const.congr hev.symm
 
 private lemma defect_bddAbove (A : LocalDatum p n D ρplus) (i : ℕ) :
@@ -323,7 +295,7 @@ theorem completedMaps_properties (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ :
           = Torus.dist₂ (Torus.proj (trackMapEuclid A q.1 q.2.1 q.2.2.1 q.2.2.2 (Torus.lift x)))
             (Torus.proj (Torus.lift x)) := by rw [Torus.proj_lift]
         _ ≤ ‖trackMapEuclid A q.1 q.2.1 q.2.2.1 q.2.2.2 (Torus.lift x) - Torus.lift x‖ :=
-            dist₂_proj_le _ _
+            Torus.dist₂_proj_le _ _
         _ ≤ 2 * D := norm_trackMapEuclid_sub A _ _ _ _ _
     · intro h
       change Torus.proj (trackMapEuclid A q.1 q.2.1 q.2.2.1 q.2.2.2 (Torus.lift x)) = x
@@ -344,7 +316,7 @@ theorem completedMaps_properties (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ :
       rw [norm_sub_rev] at hl
       have hlt : ‖completedMapEuclid A a (Torus.lift x)‖ < 2 := by
         linarith [A.D_le]
-      rw [lift_proj _ hlt]
+      rw [Torus.lift_proj _ hlt]
       by_cases h1 : ‖Torus.lift x‖ ≤ 1
       · have hyΩ : Torus.lift x ∈ A.Ω := A.ball_subset (mem_ball_zero_iff.2 (by linarith))
         have := completedMapEuclid_of_norm_le_one A a ⟨Torus.lift x, hyΩ⟩ h1
