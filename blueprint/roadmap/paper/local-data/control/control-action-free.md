@@ -19,6 +19,7 @@ For a local datum, if $c\in C_p$, $t\in T$ and $c\cdot t=t$, then $c=0$.
 
 ## Depends on
 
+- [The quotient map to the control space](control-quotient-map.md)
 - [The cyclic action on the control space](control-action.md)
 
 ## Proof depends on

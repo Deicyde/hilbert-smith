@@ -19,6 +19,7 @@ For a local datum there is $\varepsilon_T>0$ such that $d_T(t,c\cdot t)\ge\varep
 
 ## Depends on
 
+- [The control space is an isometric $C_p$-space](control-isometric-action.md)
 - [The cyclic action on the control space](control-action.md)
 - [The orbit metric on the control space](control-metric.md)
 

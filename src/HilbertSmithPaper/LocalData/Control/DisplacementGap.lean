@@ -2,6 +2,7 @@ import Mathlib
 import HilbertSmithPaper.LocalData.Control.ControlActionFree
 import HilbertSmithPaper.LocalData.Control.ControlActionIsometric
 import HilbertSmithPaper.LocalData.Control.ControlSpaceCompact
+import HilbertSmithPaper.LocalData.Control.ControlIsometricAction
 
 /-!
 # A uniform displacement gap
