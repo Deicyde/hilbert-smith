@@ -1,14 +1,17 @@
 ---
 article_id: af_c4b5a190314c76eeb69d5cd1
-declaration: lemma
+declaration: theorem
 origin: background
+statement: formalized
+lean: HSP.ultL.map_biprod
+proof: formalized
 ---
 
 # Additivity on ultimate L
 
-For duality functors $F,G:\mathcal A\to\mathcal B$, $(F\oplus G)_*=F_*+G_*$ on $\mathbb L_k(\mathcal A)$, with $F\oplus G$ as in [Sums of functors](../../base/groups/sum-of-functors.md).
+For duality functors $F,G:\mathcal A\to\mathcal B$, $(F\oplus G)_*=F_*+G_*$ on $\mathbb L_k(\mathcal A)$, with $F\oplus G$ their [sum](../../base/categories/sums/duality-functor-sum.md). Here the categories have objects and morphisms of the same size, as for the [induced map](induced-map.md).
 
-*Proof sketch.* At stage $j$, [Bounded extension of a sum of functors](bounded-sum-extension.md) gives a unitary natural isomorphism $C_{\mathbb Z^j}(F\oplus G)\cong C_{\mathbb Z^j}F\oplus C_{\mathbb Z^j}G$. [Functoriality on L^p](../../base/groups/lp-functoriality.md), items 2 and 3, give $(C_{\mathbb Z^j}(F\oplus G))_*=(C_{\mathbb Z^j}F)_*+(C_{\mathbb Z^j}G)_*$. Conclude with [The induced map at each stage](induced-map-level.md); every element of the colimit comes from a finite stage ([Every element comes from a finite stage](level-exhaustive.md)).
+*Proof sketch.* At stage $j$, [Bounded extension of a sum of functors](bounded-sum-extension.md) gives a unitary natural isomorphism $C_{\mathbb Z^j}(F\oplus G)\cong C_{\mathbb Z^j}F\oplus C_{\mathbb Z^j}G$. [Unitary invariance on L^p](../../base/groups/lp-map-unitary.md) and [Sums of functors on L^p](../../base/groups/lp-map-biprod.md) give $(C_{\mathbb Z^j}(F\oplus G))_*=(C_{\mathbb Z^j}F)_*+(C_{\mathbb Z^j}G)_*$. So $(F\oplus G)_*\iota_j=F_*\iota_j+G_*\iota_j$ by [The induced map at each stage](induced-map-level.md), since $\iota_j$ is additive. Every element of the colimit comes from a finite stage ([Every element comes from a finite stage](level-exhaustive.md)).
 
 ## Sources
 
@@ -17,11 +20,12 @@ For duality functors $F,G:\mathcal A\to\mathcal B$, $(F\oplus G)_*=F_*+G_*$ on $
 ## Depends on
 
 - [Induced map on ultimate L](induced-map.md)
-- [Sums of functors](../../base/groups/sum-of-functors.md)
+- [Sum of duality functors](../../base/categories/sums/duality-functor-sum.md)
 
 ## Proof depends on
 
 - [Bounded extension of a sum of functors](bounded-sum-extension.md)
-- [Functoriality on L^p](../../base/groups/lp-functoriality.md)
+- [Unitary invariance on L^p](../../base/groups/lp-map-unitary.md)
+- [Sums of functors on L^p](../../base/groups/lp-map-biprod.md)
 - [The induced map at each stage](induced-map-level.md)
 - [Every element comes from a finite stage](level-exhaustive.md)

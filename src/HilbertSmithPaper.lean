@@ -498,6 +498,7 @@ import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelCompatible
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelExhaustive
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelKernel
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LowerLSequence
+import HilbertSmithPaper.LTheory.Ultimate.Groups.SumAdditivity
 import HilbertSmithPaper.LTheory.Ultimate.Groups.TransitionIter
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
