@@ -12,6 +12,8 @@ The completed maps, their tracks and modulus, the torus test map, the buffered r
 - [Torus test map](torus-test-map.md)
 - [Properties of completed maps](completed-maps-properties.md)
 - [Buffered restriction](buffered-restriction.md)
+- [Far cubes](far-cubes.md)
+- [Approximation boxes](chain-approx-box.md)
 - [Chain approximations exist](chain-approx-exists.md)
 - [Chain approximation](chain-approx.md)
 - [Group approximations](group-approx.md)
