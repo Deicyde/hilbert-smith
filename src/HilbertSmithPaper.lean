@@ -356,6 +356,7 @@ import HilbertSmithPaper.LTheory.Base.Groups.LGroup
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAddLaws
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupCast
+import HilbertSmithPaper.LTheory.Base.Groups.LpMapBiprod
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapComp
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapId
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapUnitary

@@ -8,9 +8,9 @@ lean: HSP.DualFunctor.biprod
 
 # Sum of duality functors
 
-Let $(F,\xi),(G,\zeta):\mathcal B\to\mathcal B'$ be [duality functors](../duality-functor.md). The *sum* $F\oplus G$ is the functor $M\mapsto FM\oplus GM$, $f\mapsto Ff\oplus Gf$. Its duality isomorphism at $M$ is $\xi_M\oplus\zeta_M:F(M^*)\oplus G(M^*)\to FM^*\oplus GM^*$ followed by the inverse of the [canonical isomorphism](dual-biproduct.md) $(FM\oplus GM)^*\cong FM^*\oplus GM^*$. With these data $F\oplus G$ is a duality functor.
+Let $(F,\xi),(G,\zeta):\mathcal B\to\mathcal B'$ be [duality functors](../duality-functor.md). The *sum* $F\oplus G$ is the functor $M\mapsto FM\oplus GM$, $f\mapsto Ff\oplus Gf$. Its duality isomorphism at $M$ is $\xi_M\oplus\zeta_M:F(M^*)\oplus G(M^*)\to FM^*\oplus GM^*$ followed by the inverse of the [canonical isomorphism](dual-biproduct.md) $(FM\oplus GM)^*\cong FM^*\oplus GM^*$. With these data $F\oplus G$ is a duality functor. Unfolding: if $f:X\to F(M^*)$, $g:X\to G(M^*)$, $a:Y\to FM$, $b:Y\to GM$, and $(f,g):X\to F(M^*)\oplus G(M^*)$, $(a,b):Y\to FM\oplus GM$ are the maps with these components, then $(a,b)^*\circ\xi^{F\oplus G}_M\circ(f,g)=a^*\xi_Mf+b^*\zeta_Mg$.
 
-*Proof sketch.* $F\oplus G$ is $\mathbb Q$-linear because $F$ and $G$ are and $\oplus$ is linear in each summand. Naturality and the condition on the dual of the duality isomorphism are checked on each summand. On the $F$ summand they reduce to the same conditions for $\xi$, because the canonical isomorphism followed by $\iota_{FM}^*$ is the projection onto $FM^*$; the $G$ summand is the same with $\zeta$.
+*Proof sketch.* $F\oplus G$ is $\mathbb Q$-linear because $F$ and $G$ are and $\oplus$ is linear in each summand. Naturality and the condition on the dual of the duality isomorphism are checked on each summand. On the $F$ summand they reduce to the same conditions for $\xi$, because the canonical isomorphism followed by $\iota_{FM}^*$ is the projection onto $FM^*$; the $G$ summand is the same with $\zeta$. For the unfolding, the inverse of the canonical isomorphism followed by $(a,b)^*$ has components $a^*$ and $b^*$ on the summands.
 
 ## Sources
 

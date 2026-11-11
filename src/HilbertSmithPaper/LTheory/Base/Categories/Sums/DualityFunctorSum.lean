@@ -117,6 +117,40 @@ noncomputable def biprod : DualFunctor B B' where
       exact eqToHom_snd' _ _ _ (congrArg F.toFunctor.obj (dual_dual M)).symm
         (congrArg G.toFunctor.obj (dual_dual M)).symm _ _
 
+lemma biprod_obj (M : B) :
+    (F.biprod G).toFunctor.obj M = (F.toFunctor.obj M ⊞ G.toFunctor.obj M) :=
+  rfl
+
+lemma biprod_map {M N : B} (f : M ⟶ N) :
+    (F.biprod G).toFunctor.map f = biprod.map (F.toFunctor.map f) (G.toFunctor.map f) :=
+  rfl
+
+lemma biprod_ξ_hom (M : B) :
+    ((F.biprod G).ξ M).hom = biprod.map (F.ξ M).hom (G.ξ M).hom ≫
+      (dualBiprodIso (F.toFunctor.obj M) (G.toFunctor.obj M)).inv :=
+  rfl
+
+/-- The duality isomorphism of `F ⊕ G`, between maps into the summands: for
+`f, g` into `F(M^*), G(M^*)` and `a, b` into `F M, G M`,
+`(a, b)^* ∘ ξ^{F ⊕ G}_M ∘ (f, g) = a^* ξ_M f + b^* ζ_M g`. -/
+lemma lift_biprod_ξ_dualHom_lift {X Y : B'} (M : B) (f : X ⟶ F.toFunctor.obj (dual M))
+    (g : X ⟶ G.toFunctor.obj (dual M)) (a : Y ⟶ F.toFunctor.obj M) (b : Y ⟶ G.toFunctor.obj M) :
+    biprod.lift f g ≫ ((F.biprod G).ξ M).hom ≫ dualHom (biprod.lift a b) =
+      f ≫ (F.ξ M).hom ≫ dualHom a + g ≫ (G.ξ M).hom ≫ dualHom b := by
+  have h : (dualBiprodIso (F.toFunctor.obj M) (G.toFunctor.obj M)).inv ≫
+      dualHom (biprod.lift a b) = biprod.desc (dualHom a) (dualHom b) := by
+    apply biprod.hom_ext'
+    · rw [dualBiprodIso, biprod.inl_desc_assoc, ← dualHom_comp, biprod.lift_fst,
+        biprod.inl_desc]
+    · rw [dualBiprodIso, biprod.inr_desc_assoc, ← dualHom_comp, biprod.lift_snd,
+        biprod.inr_desc]
+  rw [biprod_ξ_hom]
+  erw [Category.assoc, h]
+  have h' : Limits.biprod.map (F.ξ M).hom (G.ξ M).hom ≫ Limits.biprod.desc (dualHom a) (dualHom b) =
+      Limits.biprod.desc ((F.ξ M).hom ≫ dualHom a) ((G.ξ M).hom ≫ dualHom b) := by
+    apply Limits.biprod.hom_ext' <;> simp
+  rw [h', Limits.biprod.lift_desc]
+
 end DualFunctor
 
 end HSP
