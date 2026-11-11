@@ -13,6 +13,7 @@ import HilbertSmithPaper.Inputs.Newman.NewmanSmallOrbits
 import HilbertSmithPaper.LTheory.Base.Categories.DualAdditiveSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiEmbedding
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
