@@ -8,7 +8,7 @@ lean: HSP.LocalDatum.d₁
 
 # The orbit sup-distance on the test region
 
-For a local datum, define $d_1(z,w)=\sup_{a\in\mathbb Z_p}|a\cdot z-a\cdot w|$ for $z,w\in Z^+$. The supremum is a maximum because $\mathbb Z_p$ is compact and the action is continuous.
+For a local datum, define $d_1(z,w)=\sup_{a\in\mathbb Z_p}|a\cdot z-a\cdot w|$ for $z,w\in Z^+$.
 
 ## Sources
 
