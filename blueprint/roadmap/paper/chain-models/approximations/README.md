@@ -19,5 +19,8 @@ The completed maps, their tracks and modulus, the torus test map, the buffered r
 - [Approximations fix the fundamental cycle](fundamental-cycle-fixed.md)
 - [Graph type of approximations](approximations-graph-type.md)
 - [Product homotopies](product-homotopies.md)
+- [Chosen product homotopies](chosen-product-homotopies.md)
 - [Isometry homotopies](isometry-homotopies.md)
+- [Chosen isometry homotopies](chosen-isometry-homotopies.md)
+- [The adjoint homotopy](adjoint-homotopy.md)
 - [Adjoint homotopies](adjoint-homotopies.md)

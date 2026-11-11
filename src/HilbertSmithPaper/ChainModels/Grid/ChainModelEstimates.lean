@@ -1,4 +1,7 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopy
+import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
+import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopy
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.IsometryHomotopies

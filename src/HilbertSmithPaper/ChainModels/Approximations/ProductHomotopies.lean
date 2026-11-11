@@ -22,7 +22,7 @@ has sphere propagation at most `μ'_i` and, for every `v > 0`, `B_{g,h}^{[v]}` h
 * Sphere labels and control labels come from `f_T` of radius `ρ`, `0 < ρ < ρ₊`; sphere
   propagation is `sphereProp`, the restriction `B^{[v]}` is `restrict` to the buffered cells, and
   graph types are `Corner.IsGraphType` for `bufferedLabel`.
-* `productHomotopyT A hρ hρ'` is a chosen family `B^T`.
+* The chosen family is `productHomotopy` (chosen product homotopies).
 -/
 
 open CategoryTheory Filter Topology
@@ -58,17 +58,5 @@ theorem product_homotopies (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < �
               (bufferedSet A ρ (chainModelLabel A i r) v)
               (toMatrix (tensorOneP A i 1 (BT i g h) r)))) := by
   sorry
-
-/-- A chosen family `B^T_{g,h}` of the product homotopies. -/
-noncomputable def productHomotopyT (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
-    (hρ' : ρ < ρplus) (i : ℕ) (g h : ZMod (p ^ i)) (r : ℤ) :
-    (gridComplex (meshSequence A i) n).X r ⟶ (gridComplex (meshSequence A i) n).X (r + 1) :=
-  (product_homotopies A hρ hρ').choose i g h r
-
-/-- The product homotopy `B_{g,h} = B^T_{g,h} ⊗ 1_P` in degree `r`. -/
-noncomputable def productHomotopy (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
-    (hρ' : ρ < ρplus) (i : ℕ) (g h : ZMod (p ^ i)) (r : ℤ) :
-    (chainModel A i).X r ⟶ (chainModel A i).X (r + 1) :=
-  tensorOneP A i 1 (productHomotopyT A hρ hρ' i g h) r
 
 end HSP.ChainModels
