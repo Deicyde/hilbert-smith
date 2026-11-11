@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
+import HilbertSmithPaper.Categories.Asymptotic.GroupSequence
 
 /-!
 # The paper
