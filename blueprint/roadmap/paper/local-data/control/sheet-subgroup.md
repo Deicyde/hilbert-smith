@@ -2,6 +2,8 @@
 article_id: af_3cfe7ed6613cbee73d779669
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.sheetSubgroup
 ---
 
 # The subgroup $P_i$

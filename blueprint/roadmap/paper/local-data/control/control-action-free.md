@@ -2,6 +2,9 @@
 article_id: af_e29fa47cce87cfd0f009bce6
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.free
 ---
 
 # The cyclic action is free

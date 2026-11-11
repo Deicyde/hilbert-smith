@@ -2,6 +2,9 @@
 article_id: af_5ba8d1a7ad3e2fe7af2ccbe0
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.d₁_metric
 ---
 
 # The orbit sup-distance is a metric

@@ -2,6 +2,9 @@
 article_id: af_0dc07d9371529837a1ebbec1
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.rep_spec
 ---
 
 # Algebra of the representatives

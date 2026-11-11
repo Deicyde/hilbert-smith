@@ -2,6 +2,9 @@
 article_id: af_406386be11f6e0eb39596e1b
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.continuous_testMap
 ---
 
 # The test map is continuous
