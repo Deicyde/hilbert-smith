@@ -4,6 +4,7 @@ import HilbertSmithPaper.Inputs.Newman.NewmanOpenSet
 import HilbertSmithPaper.Inputs.Newman.NewmanSmallOrbits
 import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.Proofs.FaithfulHausdorff
+import HilbertSmithPaper.Proofs.IntegerTails
 import HilbertSmithPaper.Proofs.PadicExclusion
 
 /-!
