@@ -1,0 +1,1 @@
+Split out of corner/exterior-first-cut.md (closedness no longer needs s). Mathlib: `isClosed_compl_iff`, `OnePoint.isOpen_image_coe` / `OnePoint.isOpenMap_coe`, `Metric.isOpen_ball`, `IsClosed.prod`, `isClosed_univ`. Invariance is immediate from the action on the first factor.

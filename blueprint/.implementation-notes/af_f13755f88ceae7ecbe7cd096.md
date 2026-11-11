@@ -1,0 +1,1 @@
+HSP.LTheory.quotIso_transIm. Round c1: item 1 split off to localization/line/quotient-level.md (one declaration per article, r2-loc-line should_fix 2); retitled "Forgetting after the decorated transition". Consumers: transition-boundary-commute, ultimate/boundary/exact-at-quotient step 4.

@@ -1,0 +1,1 @@
+HSP.LTheory.quotMapIm A U k : Lp A k →+ decoratedL A U k := LGroup.map of (Kar q) corestricted to Dec (ObjectProperty.lift). Used by exactness at the quotient and in the middle, by the ultimate chapter (D5, D6) and by the half-line comparison (E1), which writes it q_*.

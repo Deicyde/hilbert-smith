@@ -1,0 +1,1 @@
+HSP.lemmaU_free, a corollary of the open theorem HSP.lemmaU (no hypothesis is threaded). Only additivity of ι and π is used; ι puts the object 0 in the other slots, so it is strict on the nose, as is π. S_G and Free(G_i) are the categories chapter's definitions (eventually-zero-subcategory, free-category).

@@ -1,0 +1,27 @@
+---
+article_id: af_a8cefed955eecb5eba0a6161
+declaration: lemma
+origin: background
+---
+
+# Unitary invariance on ultimate L
+
+If $\eta:F\cong G$ is a unitary natural isomorphism of duality functors $\mathcal A\to\mathcal B$, then $F_*=G_*$ on $\mathbb L_k(\mathcal A)$.
+
+*Proof sketch.* At stage $j$, [Bounded extension of a unitary isomorphism](bounded-unitary-extension.md) gives a unitary natural isomorphism $C_{\mathbb Z^j}\eta:C_{\mathbb Z^j}F\cong C_{\mathbb Z^j}G$. [Functoriality on L^p](../../base/groups/lp-functoriality.md), item 2, gives $(C_{\mathbb Z^j}F)_*=(C_{\mathbb Z^j}G)_*$, so $F_*\iota_j=G_*\iota_j$ by [The induced map at each stage](induced-map-level.md). Every element of the colimit comes from a finite stage ([Every element comes from a finite stage](level-exhaustive.md)).
+
+## Sources
+
+- New: levelwise.
+
+## Depends on
+
+- [Induced map on ultimate L](induced-map.md)
+- [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
+
+## Proof depends on
+
+- [Bounded extension of a unitary isomorphism](bounded-unitary-extension.md)
+- [Functoriality on L^p](../../base/groups/lp-functoriality.md)
+- [The induced map at each stage](induced-map-level.md)
+- [Every element comes from a finite stage](level-exhaustive.md)

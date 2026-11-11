@@ -1,0 +1,1 @@
+HSP.LTheory.boundary_indep. Uses only parts (a) of lift_rel; (b) and (c) are not needed here. The old proof's appeal to stabilization and relative-lift is gone: stabilization moved into the planned proof of lift_rel.

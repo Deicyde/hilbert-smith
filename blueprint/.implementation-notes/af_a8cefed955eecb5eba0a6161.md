@@ -1,0 +1,1 @@
+HSP.LTheory.ultL.map_eq_of_iso. `AddCommGroup.DirectLimit.hom_ext`. Round c1 (r2-ultimate minor finding 6): the bounded extension of a unitary natural isomorphism is now its own article, bounded-unitary-extension (HSP.LTheory.iterBoundedIso). HS paper lines 340-347 (local triviality).

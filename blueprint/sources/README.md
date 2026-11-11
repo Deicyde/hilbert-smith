@@ -6,6 +6,8 @@
   proof uses, and survey-only references.
 - [HS paper source map](hs-paper.md) — the HS_proof paper's sections
   and labels, with the two-routes pages that discuss them.
+- [Sources of the paper](paper/README.md) — the published works the
+  paper in `roadmap/paper/` cites, one page each.
 
 <!-- AUTHORING NOTES — these comments are not published.
 

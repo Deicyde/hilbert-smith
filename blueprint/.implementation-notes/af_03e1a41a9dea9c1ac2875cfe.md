@@ -1,0 +1,1 @@
+Plan: `HSP.LocalDatum.T := AddAction.orbitRel.Quotient (padicSubgroup p 1) A.Zplus` (the H_1-action on Zplus by restriction, needs `test-region-invariant`), with `HSP.LocalDatum.π := Quotient.mk _`. Patterns: `t2Space_orbitQuotient`, `compactSpace_orbitQuotient` in src/HilbertSmith/CollapseCompactification.lean. Replaces HS's detector (HS paper lines 818-830).
