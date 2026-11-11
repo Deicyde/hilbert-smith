@@ -233,6 +233,12 @@ theorem binaryBicone_total (M N : FreeCat G) :
       (binaryBicone M N).snd ≫ (binaryBicone M N).inr = 𝟙 (binaryBicone M N).pt :=
   hom_ext (incl_total M.n N.n)
 
+/-- An object `n` with `n = 0` is a zero object. -/
+theorem isZero_of_n_eq_zero (Y : FreeCat G) (h : Y.n = 0) : IsZero Y := by
+  obtain ⟨n⟩ := Y
+  cases h
+  exact isZero_zero
+
 instance : HasZeroObject (FreeCat G) := isZero_zero.hasZeroObject
 
 instance : HasBinaryBiproducts (FreeCat G) :=

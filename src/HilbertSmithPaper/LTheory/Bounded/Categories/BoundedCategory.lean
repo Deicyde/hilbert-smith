@@ -69,7 +69,7 @@ lemma compF_eq_sum {M N P : Bounded A} (f : ∀ m n : ℤ, M.X n ⟶ N.X m)
   exact hm (hs m h)
 
 omit [Linear ℚ A] in
-lemma compF_eq_zero {M N P : Bounded A} {f : ∀ m n : ℤ, M.X n ⟶ N.X m}
+private lemma compF_eq_zero {M N P : Bounded A} {f : ∀ m n : ℤ, M.X n ⟶ N.X m}
     {g : ∀ m n : ℤ, N.X n ⟶ P.X m} {r s : ℕ} (hr : ∀ m n, (r : ℤ) < |m - n| → f m n = 0)
     (hs : ∀ m n, (s : ℤ) < |m - n| → g m n = 0) {l n : ℤ} (h : ((r + s : ℕ) : ℤ) < |l - n|) :
     compF f g l n = 0 := by
@@ -83,7 +83,7 @@ lemma compF_eq_zero {M N P : Bounded A} {f : ∀ m n : ℤ, M.X n ⟶ N.X m}
     omega
   rw [hs l m this, comp_zero]
 
-lemma compF_mem {M N P : Bounded A} {f : ∀ m n : ℤ, M.X n ⟶ N.X m}
+private lemma compF_mem {M N P : Bounded A} {f : ∀ m n : ℤ, M.X n ⟶ N.X m}
     {g : ∀ m n : ℤ, N.X n ⟶ P.X m} (hf : f ∈ homSub M N) (hg : g ∈ homSub N P) :
     compF f g ∈ homSub M P := by
   obtain ⟨r, hr⟩ := hf
@@ -103,7 +103,7 @@ lemma diagF_ne {M N : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) {m n : ℤ} (h : m
     diagF d m n = 0 := by
   simp [diagF, h]
 
-lemma diagF_mem {M N : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) : diagF d ∈ homSub M N :=
+private lemma diagF_mem {M N : Bounded A} (d : ∀ n, M.X n ⟶ N.X n) : diagF d ∈ homSub M N :=
   ⟨0, fun m n h => diagF_ne d (by intro e; subst e; simp at h)⟩
 
 omit [Linear ℚ A] in
@@ -191,7 +191,7 @@ lemma add_apply (f g : M ⟶ N) (m n : ℤ) : (f + g).1 m n = f.1 m n + g.1 m n 
 
 lemma zero_apply (m n : ℤ) : (0 : M ⟶ N).1 m n = 0 := rfl
 
-lemma sum_apply {ι : Type*} (s : Finset ι) (f : ι → (M ⟶ N)) (m n : ℤ) :
+private lemma sum_apply {ι : Type*} (s : Finset ι) (f : ι → (M ⟶ N)) (m n : ℤ) :
     (∑ i ∈ s, f i).1 m n = ∑ i ∈ s, (f i).1 m n := by
   classical
   induction s using Finset.induction_on with
@@ -220,7 +220,7 @@ def diag (d : ∀ n, M.X n ⟶ N.X n) : M ⟶ N := ⟨diagF d, diagF_mem d⟩
 
 lemma diag_apply (d : ∀ n, M.X n ⟶ N.X n) (m n : ℤ) : (diag d).1 m n = diagF d m n := rfl
 
-lemma id_eq_diag (M : Bounded A) : 𝟙 M = diag fun n => 𝟙 (M.X n) := rfl
+private lemma id_eq_diag (M : Bounded A) : 𝟙 M = diag fun n => 𝟙 (M.X n) := rfl
 
 lemma diag_comp_diag (d : ∀ n, M.X n ⟶ N.X n) (e : ∀ n, N.X n ⟶ P.X n) :
     diag d ≫ diag e = diag fun n => d n ≫ e n := hom_ext fun l n => by
@@ -236,7 +236,7 @@ lemma diag_zero : diag (fun n => (0 : M.X n ⟶ N.X n)) = 0 := hom_ext fun m n =
   · subst h; rw [diagF_self]
   · rw [diagF_ne _ h]
 
-lemma sum_diag {ι : Type*} (s : Finset ι) (d : ι → ∀ n, M.X n ⟶ N.X n) :
+private lemma sum_diag {ι : Type*} (s : Finset ι) (d : ι → ∀ n, M.X n ⟶ N.X n) :
     ∑ i ∈ s, diag (d i) = diag fun n => ∑ i ∈ s, d i n := hom_ext fun m n => by
   rw [sum_apply]
   simp only [diag_apply]
@@ -262,7 +262,7 @@ def biconeOf {J : Type} [Fintype J] [DecidableEq J] (F : J → Bounded A) : Bico
     · simp only [biproduct.ι_π_ne _ h, h, dite_false]
       exact diag_zero
 
-lemma biconeOf_total {J : Type} [Fintype J] [DecidableEq J] (F : J → Bounded A) :
+private lemma biconeOf_total {J : Type} [Fintype J] [DecidableEq J] (F : J → Bounded A) :
     ∑ j, (biconeOf F).π j ≫ (biconeOf F).ι j = 𝟙 (biconeOf F).pt := by
   have h : ∀ j, (biconeOf F).π j ≫ (biconeOf F).ι j =
       diag (M := (biconeOf F).pt) (N := (biconeOf F).pt)
@@ -277,6 +277,19 @@ instance : HasFiniteBiproducts (Bounded A) where
   out _ := ⟨fun F => HasBiproduct.mk ⟨biconeOf F, isBilimitOfTotal _ (biconeOf_total F)⟩⟩
 
 end Biproducts
+
+/-- Non-vacuity: the constant family at an object `M` that is not zero is not a zero object of
+`C_ℤ(A)` (its identity has the entry `𝟙 M ≠ 0` in degree `(0, 0)`). -/
+private theorem not_isZero_const (M : A) (hM : ¬ IsZero M) :
+    ¬ IsZero (⟨fun _ => M⟩ : Bounded A) := by
+  intro h
+  apply hM
+  rw [IsZero.iff_id_eq_zero]
+  have := congrArg (fun f : (⟨fun _ => M⟩ : Bounded A) ⟶ ⟨fun _ => M⟩ => f.1 0 0)
+    (h.eq_of_src (𝟙 _) 0)
+  have h1 : diagF (M := ⟨fun _ => M⟩) (N := ⟨fun _ => M⟩) (fun _ => 𝟙 M) 0 0 = 𝟙 M :=
+    diagF_self _ 0
+  exact h1.symm.trans this
 
 end Bounded
 

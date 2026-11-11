@@ -24,6 +24,7 @@ The construction needs neither compactness of $X$ nor that the action is isometr
 
 ## Proof depends on
 
+- [Propagation of the identity](prop-one.md)
 - [Propagation of a sum](prop-add.md)
 - [Propagation of a scalar multiple](prop-smul.md)
 - [Propagation of a product](prop-mul.md)
