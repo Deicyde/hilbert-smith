@@ -19,6 +19,8 @@ For an involution-invariant Karoubi filtration $U\subset A$, the entrywise quoti
 
 ## Depends on
 
+- [The bounded subcategory is closed under sums and duals](bounded-sub-additive.md)
+- [The bounded subcategory](bounded-sub.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Bounded extension of a duality functor](bounded-functor.md)
 - [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)

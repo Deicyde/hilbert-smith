@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
 
 /-!
 # Iterated bounded quotients

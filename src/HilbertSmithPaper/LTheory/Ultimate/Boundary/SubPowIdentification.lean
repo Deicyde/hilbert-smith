@@ -3,6 +3,9 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
 
 /-!
 # Iterated bounded categories of a subcategory

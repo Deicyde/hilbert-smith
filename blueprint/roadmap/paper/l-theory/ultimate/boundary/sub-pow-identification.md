@@ -20,6 +20,9 @@ from the full subcategory $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\math
 
 ## Depends on
 
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
+- [The bounded subcategory is closed under sums and duals](../../bounded/categories/bounded-sub-additive.md)
+- [The bounded subcategory](../../bounded/categories/bounded-sub.md)
 - [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
 - [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)

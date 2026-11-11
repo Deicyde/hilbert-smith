@@ -1,6 +1,8 @@
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
 
 /-!
 # Bounded quotients
