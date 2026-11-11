@@ -21,3 +21,4 @@ The product of structures and the product of duality maps on the tensor product 
 - [A product of structures with a zero left factor](str-prod-zero-left.md)
 - [A product of structures with a zero right factor](str-prod-zero-right.md)
 - [The unit structure is a cycle](unit-structure-cycle.md)
+- [A tensor between a product of structures and a product of duality maps](str-prod-tensor-dual-prod.md)

@@ -19,6 +19,7 @@ For every $k$, $n$ and $r$, the iterated duality map $b=b\otimes\cdots\otimes b$
 
 ## Depends on
 
+- [The iterated grid duality map](grid-dual-map.md)
 - [Chain-model duality](../../chain-model-duality.md)
 - [The unsymmetrized grid structure](grid-structure-u.md)
 
