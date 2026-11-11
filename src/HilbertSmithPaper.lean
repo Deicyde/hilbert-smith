@@ -135,6 +135,7 @@ import HilbertSmithPaper.LTheory.Localization.Products.ProductWithLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLine
 import HilbertSmithPaper.LTheory.Localization.Products.SymmetricLinePoincare
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
+import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
