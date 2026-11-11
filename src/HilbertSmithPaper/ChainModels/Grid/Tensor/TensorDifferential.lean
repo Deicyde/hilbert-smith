@@ -3,7 +3,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExt
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExtraction
-import HilbertSmithPaper.ChainModels.Grid.Tensor.TensorHomBlocks
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.TensorHomTransportBlocks
 
 /-!
 # Differential of a tensor product
@@ -54,24 +54,6 @@ private lemma blk_add {m m' : ℕ} {d : Fin m → ℕ} {d' : Fin m' → ℕ} (p 
       blockInc d p ≫ F ≫ blockProj d' q + blockInc d p ≫ G ≫ blockProj d' q := by
   rw [Preadditive.add_comp, Preadditive.comp_add]
 
-private lemma blk_tensor_transport (hE : ∀ q < 0, (E.X q).dim = 0)
-    (hE' : ∀ q < 0, (E'.X q).dim = 0) (d e : ℤ) (f : ∀ r, C.X r ⟶ C'.X (r + d))
-    (g : ∀ r, E.X r ⟶ E'.X (r + e)) (r s : ℤ) (h : r + (d + e) = s) (p : Fin (r.toNat + 1))
-    (q : Fin (s.toNat + 1)) :
-    blockInc (tensorSummandDim C E r) p ≫
-        (basedTensorHom hE hE' d e f g r ≫ eqToHom (congrArg (basedComplexTensor C' E' hE').X h)) ≫
-      blockProj (tensorSummandDim C' E' s) q =
-    (if h' : ((q : ℕ) : ℤ) = (p : ℕ) + d then
-      (e * (p : ℕ)).negOnePow •
-        (basedKron (f (p : ℕ)) (g (r - (p : ℕ))) ≫ eqToHom (by
-            simp only [tensorSummandDim]
-            rw [h', show s - (((p : ℕ) : ℤ) + d) = r - ((p : ℕ) : ℤ) + e by omega]))
-    else 0) := by
-  subst h
-  refine Eq.trans ?_ (blockInc_comp_basedTensorHom_comp_blockProj hE hE' d e f g r p q)
-  simp only [eqToHom_refl]
-  erw [Category.comp_id]
-
 private lemma negOnePow_neg_smul {X Y : FreeQ} (n : ℕ) (x : X ⟶ Y) :
     ((-1) * (n : ℤ)).negOnePow • x = ((-1 : ℚ) ^ n) • x := by
   rw [neg_one_mul, Int.negOnePow_neg, Units.smul_def, ← Int.cast_smul_eq_zsmul ℚ,
@@ -106,8 +88,8 @@ theorem basedComplexTensor_d_eq (hE : ∀ q < 0, (E.X q).dim = 0) (r : ℤ) :
   refine (blockInc_comp_D_transport (show r = r - 1 + 1 by ring) p q).trans ?_
   refine Eq.trans ?_ (blk_add p q _ _).symm
   refine Eq.trans ?_ (congrArg₂ (· + ·)
-    (blk_tensor_transport hE hE (-1) 0 _ _ r (r - 1) (by ring) p q).symm
-    (blk_tensor_transport hE hE 0 (-1) _ _ r (r - 1) (by ring) p q).symm)
+    (blockInc_comp_basedTensorHom_comp_eqToHom_comp_blockProj hE hE (-1) 0 _ _ r (r - 1) (by ring) p q).symm
+    (blockInc_comp_basedTensorHom_comp_eqToHom_comp_blockProj hE hE 0 (-1) _ _ r (r - 1) (by ring) p q).symm)
   simp only [basedComplexTensorBlock, Fin.coe_cast]
   by_cases h1 : (q : ℕ) + 1 = (p : ℕ)
   · have hA : (((q : ℕ) : ℤ) = (p : ℕ) + -1) = True := eq_true (by omega)

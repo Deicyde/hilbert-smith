@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionNaturality
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
 
 /-!
 # Induced map on ultimate L

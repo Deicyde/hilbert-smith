@@ -21,6 +21,8 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 
 ## Depends on
 
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
+- [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 - [Box product on iterated bounded categories](../products/box-pairing-pow.md)
 - [Tensor product of complexes](../products/complex-product.md)

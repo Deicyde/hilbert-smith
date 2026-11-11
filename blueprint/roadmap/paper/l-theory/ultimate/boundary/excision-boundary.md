@@ -18,6 +18,7 @@ where $\partial$ is the [ultimate boundary](ultimate-boundary.md) of $\mathcal U
 
 ## Depends on
 
+- [Intersection of full subcategories](excisive-intersection.md)
 - [Excisive pair of filtrations](excisive-pair.md)
 - [Ultimate boundary](ultimate-boundary.md)
 - [Induced map on ultimate L](../groups/induced-map.md)

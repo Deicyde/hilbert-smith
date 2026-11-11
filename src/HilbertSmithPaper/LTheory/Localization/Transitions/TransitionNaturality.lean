@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionMap
 import HilbertSmithPaper.LTheory.Base.Groups.InducedMap
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
 
 /-!
 # Naturality of the transition

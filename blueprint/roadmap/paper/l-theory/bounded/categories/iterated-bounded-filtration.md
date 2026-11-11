@@ -19,6 +19,8 @@ Let $\mathcal U\subset\mathcal A$ be an [involution-invariant Karoubi filtration
 
 ## Depends on
 
+- [Iterated bounded subcategories are closed under sums and duals](iterated-bounded-sub-additive.md)
+- [Iterated bounded subcategories](iterated-bounded-sub.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [Iterated bounded categories](iterated-bounded-category.md)
 

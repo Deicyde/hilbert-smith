@@ -1,13 +1,18 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
 
 /-!
 # Iterated bounded categories of a subcategory
 
 For a full additive subcategory `𝒰 ⊂ 𝒜` closed under duality and `j ≥ 0`, the full subcategory
 `C_{ℤ^j}𝒰 ⊂ C_{ℤ^j}𝒜` (objects with all entries in `𝒰`, iterated) is identified with the iterated
-bounded category `C_{ℤ^j}(𝒰)` of `𝒰` itself by a strict duality functor: the identity for `j = 0`,
+bounded category `C_{ℤ^j}(𝒰)` of `𝒰` itself by a duality functor: the identity for `j = 0`,
 and for `j + 1` the functor reading an object of `C_ℤ(C_{ℤ^j}𝒰)` as a family of objects of the
 full subcategory `C_{ℤ^j}𝒰`, followed by the bounded extension of the identification at level `j`.
 -/
@@ -68,10 +73,10 @@ private def restrictFunctor : (sub V).FullSubcategory ⥤ Bounded V.FullSubcateg
       (restrictObj V M).X n ⟶ (restrictObj V N).X m) ≫ (ObjectProperty.homMk (g.hom.1 l m) :
       (restrictObj V N).X m ⟶ (restrictObj V P).X l)) (Finset.Icc (n - r) (n + r))).symm)
 
-instance : (restrictFunctor V).Additive where
+private instance : (restrictFunctor V).Additive where
   map_add := hom_ext fun _ _ => ObjectProperty.hom_ext _ rfl
 
-instance : (restrictFunctor V).Linear ℚ where
+private instance : (restrictFunctor V).Linear ℚ where
   map_smul _ _ := hom_ext fun _ _ => ObjectProperty.hom_ext _ rfl
 
 /-- `C_ℤ(V) ⊂ C_ℤ(C)` as `C_ℤ` of the full subcategory `V`, a strict duality functor. -/

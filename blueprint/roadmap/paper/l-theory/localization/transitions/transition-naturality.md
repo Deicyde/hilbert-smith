@@ -19,6 +19,7 @@ $$t\circ(C_{\mathbb Z^j}F)_*=(C_{\mathbb Z^{j+1}}F)_*\circ t:\ L^p_m(C_{\mathbb 
 
 ## Depends on
 
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Transition map](transition-map.md)
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
 - [Duality functor](../../base/categories/duality-functor.md)

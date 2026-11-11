@@ -2,6 +2,8 @@ import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
 import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
 
 /-!
 # Decorated product with the line

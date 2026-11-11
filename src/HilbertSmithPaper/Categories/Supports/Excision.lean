@@ -8,6 +8,7 @@ import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionCom
 import HilbertSmithPaper.Categories.Asymptotic.Restriction.DiagonalProjectionColumns
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisivePair
 import HilbertSmithPaper.Categories.Asymptotic.Structure.TransposeTranspose
+import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 
 /-!
 # Excision equivalence

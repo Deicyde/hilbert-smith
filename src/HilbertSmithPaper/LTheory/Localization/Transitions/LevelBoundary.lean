@@ -2,6 +2,8 @@ import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Boundary.LocalizationBoundary
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedTransition
 import HilbertSmithPaper.LTheory.Localization.Transitions.LowerLGroup
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSub
+import HilbertSmithPaper.LTheory.Bounded.Categories.IteratedBoundedSubAdditive
 
 /-!
 # Stage boundary

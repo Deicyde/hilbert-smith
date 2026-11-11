@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateStageMap
+import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
 
 /-!
 # The induced map at each stage
