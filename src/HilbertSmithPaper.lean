@@ -220,6 +220,7 @@ import HilbertSmithPaper.Signatures.LFour.RealEvaluation
 import HilbertSmithPaper.Signatures.LFour.MiddleForm
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNeg
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNonsingular
+import HilbertSmithPaper.Signatures.LFour.MiddleFormSum
 
 /-!
 # The paper
