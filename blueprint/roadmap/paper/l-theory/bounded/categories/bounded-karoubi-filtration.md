@@ -1,7 +1,9 @@
 ---
 article_id: af_15dfabb847e433932a756aef
-declaration: lemma
+declaration: def
 origin: cited
+statement: formalized
+lean: HSP.Bounded.karoubiFiltration
 ---
 
 # Bounded Karoubi filtrations
@@ -11,7 +13,7 @@ Let $U\subset A$ be an involution-invariant Karoubi filtration, and let $C_\math
 *Proof sketch.*
 1. $C_\mathbb Z(U)$ is full, additive and closed under the duality, since $U$ is.
 2. Each $p\in\mathcal D(M)$ is a $C_\mathbb Z(U)$-decomposition: the degreewise splittings of $p_n$ through $E_n\in U$ and of $1-p_n$ assemble into splittings of propagation $0$. $\mathcal D(M)$ is nonempty and directed degreewise.
-3. Factorization. Let $g:V\to M$ have propagation $r$, with $V\in C_\mathbb Z(U)$. In degree $n$ the finitely many components $g_{nm}$, $|m-n|\le r$, form one map $\bigoplus_{|m-n|\le r}V_m\to M_n$ with source in $U$, so some $p_n\in\mathcal D(M_n)$ has $p_ng_{nm}=g_{nm}$ for all $m$. Then $p=(p_n)$ has $pg=g$. Maps $M\to V$ are handled in the same way.
+3. Factorization. Let $g:V\to M$ have propagation $r$, with $V\in C_\mathbb Z(U)$. In degree $n$ each of the finitely many components $g_{nm}$, $|m-n|\le r$, has source $V_m\in U$, so some decomposition in $\mathcal D(M_n)$ fixes it; since $\mathcal D(M_n)$ is directed, some $p_n\in\mathcal D(M_n)$ lies above all of them, and then $p_ng_{nm}=g_{nm}$ for all $m$. Then $p=(p_n)$ has $pg=g$. Maps $M\to V$ are handled in the same way.
 4. Duality. $p^*=(p_n^*)$, and $p_n\in\mathcal D(M_n)$ iff $p_n^*\in\mathcal D(M_n^*)$.
 
 ## Sources

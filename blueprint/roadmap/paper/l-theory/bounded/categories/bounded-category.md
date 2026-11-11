@@ -1,7 +1,9 @@
 ---
 article_id: af_2c03b6795d9d7651c6fe0be4
-declaration: def
+declaration: structure
 origin: cited
+statement: formalized
+lean: HSP.Bounded
 ---
 
 # The bounded category $C_\mathbb Z(A)$

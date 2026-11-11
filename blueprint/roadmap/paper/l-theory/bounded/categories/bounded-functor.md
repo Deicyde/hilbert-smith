@@ -2,6 +2,8 @@
 article_id: af_e23bdfa64e3bb3bc5b64452e
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.Bounded.map
 ---
 
 # Bounded extension of a duality functor
