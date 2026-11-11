@@ -16,7 +16,8 @@ On the [chain model](../chain-model.md) $D_i=C(k_i)\otimes P$, $H_i=H^{(n)}\otim
 
 ## Depends on
 
-- [The cells of CP^2 vanish in negative degrees](../cp2-dim-neg.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
 - [Chain model](../chain-model.md)
 - [Tensor of graded maps of based complexes](../tensor/based-tensor-hom.md)
 - [The grid homotopy](grid-h.md)

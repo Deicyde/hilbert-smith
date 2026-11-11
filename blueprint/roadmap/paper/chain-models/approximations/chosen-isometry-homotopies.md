@@ -16,8 +16,10 @@ Fix $U^T_g\in M(C(k_i))_{n+1}$ for all $i\in\mathbb N$ and $g\in G_i$ as in [iso
 
 ## Depends on
 
+- [The cellular chain complex of CP^2](../grid/cp2/cp2-complex.md)
+- [The structure of CP^2](../grid/cp2/cp2-structure.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
-- [The cells of CP^2 vanish in negative degrees](../grid/cp2-dim-neg.md)
+- [The cells of CP^2 vanish in negative degrees](../grid/cp2/cp2-dim-neg.md)
 - [Isometry homotopies](isometry-homotopies.md)
 - [Chain-model duality](../grid/chain-model-duality.md)
-- [Cells of CP^2](../grid/cp2-cells.md)
+- [Cells of CP^2](../grid/cp2/cp2-cells.md)

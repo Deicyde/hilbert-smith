@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.Cp2Cells
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
 
 /-!
 # The cells of CP² vanish in negative degrees

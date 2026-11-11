@@ -18,7 +18,7 @@ This rests on the open statements [Lemma U](../l-theory/comparison/lemma-u.md) a
 - [Tail signature](../signatures/tail/tail-signature.md)
 - [Sequence category](../categories/asymptotic/point-sequence-category.md)
 - [Point category](../categories/asymptotic/point-quotient.md)
-- [Cells of CP^2](../chain-models/grid/cp2-cells.md)
+- [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)
 - [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md)
 ## Proof depends on
 - [Computing the tail signature](../signatures/tail/tail-signature-lift.md)

@@ -1,7 +1,8 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridH
-import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.ChainModel
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
 
 /-!
 # The homotopy of the chain model

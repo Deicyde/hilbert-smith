@@ -7,7 +7,7 @@ lean: HSP.ChainModels.chainModelDuality
 ---
 # Chain-model duality
 
-The duality data of $D_i$ are a structure $\varphi_i\in M(D_i)_N$ and a map $b_i:D_i\to D_i^{N-*}$, built from $\varphi^s,b$ of [circle duality](circle-duality.md) on $S=S_{k_i}$ and $\varphi_P,b_P$ of the [cells of CP^2](cp2-cells.md). All products are computed in the explicit bases of the [tensor product of based complexes](based-complex-tensor.md), and the iterations start, like $C(k_i)$, from the unit complex $\mathbb 1$ with structure and map the identity of $\mathbb Q$ in degree $0$; the first step multiplies by the unit with sign $+1$.
+The duality data of $D_i$ are a structure $\varphi_i\in M(D_i)_N$ and a map $b_i:D_i\to D_i^{N-*}$, built from $\varphi^s,b$ of [circle duality](circle-duality.md) on $S=S_{k_i}$ and $\varphi_P,b_P$ of the [cells of CP^2](cp2/cp2-cells.md). All products are computed in the explicit bases of the [tensor product of based complexes](based-complex-tensor.md), and the iterations start, like $C(k_i)$, from the unit complex $\mathbb 1$ with structure and map the identity of $\mathbb Q$ in degree $0$; the first step multiplies by the unit with sign $+1$.
 
 1. $\varphi_i=(\cdots(\varphi^s\otimes\varphi^s)\otimes\cdots\otimes\varphi^s)\otimes\varphi_P$ is the iterated [product of structures in explicit bases](tensor/structure-products/based-str-prod.md), the based form of the [external product of structures](../../l-theory/localization/products/external-product.md) on the tensor product of based complexes: the product of $\phi\in M(A)_m$ and $\theta\in M(B)_{m'}$ has the block $(-1)^{q(p+m)}\phi_p\otimes\theta_q$ from $A^*_{m-p}\otimes B^*_{m'-q}$ to $A_p\otimes B_q$, where the dual of a basis element $x\otimes y$ is identified with $x^*\otimes y^*$, with no sign. Explicitly (not formalized), for a basis cell $x_1\otimes\dots\otimes x_n\otimes e$,
 $$\varphi_i\bigl((x_1\otimes\dots\otimes x_n\otimes e)^*\bigr)=(-1)^{\sum_jp_j(p_1+\dots+p_{j-1}+j-1)}\,\varphi^s(x_1^*)\otimes\dots\otimes\varphi^s(x_n^*)\otimes\varphi_P(e^*),$$
@@ -19,11 +19,14 @@ where $p_j=1-\dim x_j$ is the degree of $\varphi^s(x_j^*)$. The factor $\varphi_
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: the cubical tensor form.
 ## Depends on
+- [The cellular chain complex of CP^2](cp2/cp2-complex.md)
+- [The structure of CP^2](cp2/cp2-structure.md)
+- [The inverse of the structure of CP^2](cp2/cp2-inverse.md)
 - [The circle complex](cubical/circle-complex.md)
 - [The circle complex vanishes in negative degrees](cubical/circle-dim-neg.md)
 - [The unit complex](cubical/unit-complex.md)
 - [Cubical torus grid](cubical/cubical-torus-grid.md)
 - [Product of structures in explicit bases](tensor/structure-products/based-str-prod.md), [product of duality maps in explicit bases](tensor/structure-products/based-dual-prod.md)
-- [The cells of CP^2 vanish in negative degrees](cp2-dim-neg.md)
+- [The cells of CP^2 vanish in negative degrees](cp2/cp2-dim-neg.md)
 - [symmetric circle structure](poincare/circle-data/circle-phi-sym.md), [circle inverse](poincare/circle-data/circle-b.md)
-- [Chain model](chain-model.md), [circle duality](circle-duality.md), [cells of CP^2](cp2-cells.md), [tensor product of based complexes](based-complex-tensor.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [dual complex](../../l-theory/base/complexes/dual-complex.md)
+- [Chain model](chain-model.md), [circle duality](circle-duality.md), [cells of CP^2](cp2/cp2-cells.md), [tensor product of based complexes](based-complex-tensor.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [dual complex](../../l-theory/base/complexes/dual-complex.md)

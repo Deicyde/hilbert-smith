@@ -4,11 +4,14 @@ import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdLeibniz
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolution
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
-import HilbertSmithPaper.ChainModels.Grid.Cp2DimNeg
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cubical.UnitComplex
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleDimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CircleComplex
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Cells
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Complex
 
 /-!
 # The chain model is Poincaré: part 1

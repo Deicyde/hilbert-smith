@@ -22,4 +22,4 @@ Let $\mathrm{pr}_i$ be the based projection of $D_i$ onto the span of the [retai
 
 ## Proof depends on
 
-- [Cells of CP^2](../chain-models/grid/cp2-cells.md)
+- [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)

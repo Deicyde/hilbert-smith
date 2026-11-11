@@ -1,24 +1,20 @@
 import Mathlib
-import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Structure
+import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2Inverse
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.CycleChainMap
 
 /-!
 # Cells of `CP²`
 
-The cellular chains `P` of `CP²`: `P_r = ℚ e_r` for `r ∈ {0, 2, 4}`, zero otherwise, with zero
-differential, and the structure `φ_P : P^{4-*} → P`, `e_r^* ↦ e_{4-r}`, a strict symmetric
-Poincaré structure of dimension `4` over based vector spaces with inverse `b_P`.
+The cellular chains `P` of `CP²` with the structure `φ_P` form a strict `4`-dimensional symmetric
+Poincaré complex over based vector spaces, with inverse `b_P`.
 
 ## Encoding
 
-* `P` is a `ChainComplex FreeQ ℤ` with `P_r = ⟨cp2Dim r⟩`; the dual of `ℚ^d` is `ℚ^d`.
-* Every component `φ_{p,q} : (P_q)^* → P_p` (`p + q = 4`) is the all-ones matrix: the `1 × 1`
-  matrix `1` when `p, q ∈ {0,2,4}`, and the empty matrix otherwise; likewise `b_P`.
-* `cp2Cells : SymPoincare FreeQ 4` (the declaration of the article) packages `P` and `φ_P` with
-  `∂φ_P = 0`, `T φ_P = φ_P` (`r(4-r)` is even) and the Poincaré property, witnessed by the strict
-  inverse `b_P` (zero homotopies). The middle form, the fundamental cycle and the augmentation are
-  companions.
+`cp2Cells : SymPoincare FreeQ 4` (the declaration of the article) packages `P` and `φ_P` with
+`∂φ_P = 0`, `T φ_P = φ_P` (`r(4-r)` is even) and the Poincaré property, witnessed by the strict
+inverse `b_P` (zero homotopies). The middle form `φ_{2,2} = 1` is a companion.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -26,46 +22,6 @@ open CategoryTheory CategoryTheory.Limits
 namespace HSP.ChainModels
 
 open FreeQ DualCat
-
-/-- The number of cells of `CP²` in degree `r`: `1` for `r ∈ {0, 2, 4}`, else `0`. -/
-def cp2Dim : ℤ → ℕ
-  | .ofNat 0 => 1
-  | .ofNat 2 => 1
-  | .ofNat 4 => 1
-  | _ => 0
-
-private lemma cp2Dim_eq (r : ℤ) : cp2Dim r = if r = 0 ∨ r = 2 ∨ r = 4 then 1 else 0 :=
-  match r with
-  | .ofNat 0 => rfl
-  | .ofNat 1 => rfl
-  | .ofNat 2 => rfl
-  | .ofNat 3 => rfl
-  | .ofNat 4 => rfl
-  | .ofNat (n + 5) => by
-    show 0 = _
-    rw [eq_comm, ite_eq_right_iff]
-    intro h
-    simp only [Int.ofNat_eq_natCast] at h
-    omega
-  | .negSucc n => by
-    show 0 = _
-    rw [eq_comm, ite_eq_right_iff]
-    intro h
-    rw [Int.negSucc_eq] at h
-    omega
-
-/-- The cellular chain complex `P` of `CP²`, with zero differential. -/
-def cp2Complex : ChainComplex FreeQ ℤ :=
-  ChainComplex.of (fun r => ⟨cp2Dim r⟩) (fun _ => 0) fun _ => zero_comp
-
-private lemma cp2Complex_d (i j : ℤ) : cp2Complex.d i j = 0 := by
-  show ChainComplex.of.d (fun r => (⟨cp2Dim r⟩ : FreeQ)) (fun _ => 0) i j = 0
-  unfold ChainComplex.of.d
-  split_ifs <;> simp
-
-/-- The structure `φ_P`: `φ_{p,q} : (P_q)^* → P_p` sends `e_q^*` to `e_p` (`p + q = 4`). -/
-def cp2Structure : (StructureCx cp2Complex).X 4 :=
-  fun _ => ofMatrix (Matrix.of fun _ _ => 1)
 
 private lemma cp2Structure_cycle : (StructureCx cp2Complex).d 4 (4 - 1) cp2Structure = 0 := by
   funext ⟨⟨p, q⟩, h⟩
@@ -89,12 +45,6 @@ private lemma cp2Structure_symmetric :
   have hq : Even q := even_of_cp2Dim_ne fun e => (Fin.cast e b).elim0
   rw [Int.negOnePow_even _ (hp.mul_right q), one_smul, eqToHom_refl, Category.comp_id]
   rfl
-
-/-- The inverse `b_P : P → P^{4-*}` of `φ_P`, `e_{4-r} ↦ e_r^*`. -/
-def cp2Inverse : cp2Complex ⟶ dualCx cp2Complex 4 where
-  f _ := ofMatrix (Matrix.of fun _ _ => 1)
-  comm' i j _ := by
-    simp only [cp2Complex_d, zero_comp, dualHom_zero, smul_zero, comp_zero]
 
 private lemma cp2Dim_symm (r : ℤ) : cp2Dim (4 - r) = cp2Dim r := by
   rw [cp2Dim_eq, cp2Dim_eq]
@@ -145,13 +95,5 @@ lemma cp2Cells_middle_form : cp2Cells.φ ⟨(2, 2), rfl⟩ = 𝟙 _ := by
   have h : (Matrix.of fun _ _ => (1 : ℚ) : Matrix (Fin 1) (Fin 1) ℚ) = 1 := by
     ext a b; fin_cases a; fin_cases b; rfl
   exact h
-
-/-- The fundamental cycle `e_4`, as a column. -/
-def cp2Fundamental : (⟨1⟩ : FreeQ) ⟶ cp2Complex.X 4 :=
-  ofMatrix (Matrix.of fun _ _ => 1)
-
-/-- The augmentation `ε e_0 = 1`. -/
-def cp2Aug : cp2Complex.X 0 ⟶ (⟨1⟩ : FreeQ) :=
-  ofMatrix (Matrix.of fun _ _ => 1)
 
 end HSP.ChainModels
