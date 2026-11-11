@@ -19,7 +19,7 @@ Every element of $\mathbb L_k(\mathcal A)$ is $\iota_j x$ for some $j\ge0$ and s
 
 ## Depends on
 
-- [Ultimate L-group](ultimate-l-group.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)
 
 ## Proof depends on
 

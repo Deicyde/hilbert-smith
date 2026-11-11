@@ -19,8 +19,9 @@ For $x\in L^{\langle -j\rangle}_k(\mathcal A)$, $\iota_j x=0$ if and only if $t^
 
 ## Depends on
 
-- [Ultimate L-group](ultimate-l-group.md)
+- [Stages are compatible with the transition](level-compatible.md)
 
 ## Proof depends on
 
 - [Stages are compatible with the transition](level-compatible.md)
+- [Sequence of lower L-groups](lower-l-sequence.md)

@@ -20,6 +20,7 @@ For a duality functor $F:\mathcal A\to\mathcal A'$ and every $j\ge0$, $F_*\circ\
 ## Depends on
 
 - [Induced map on ultimate L](induced-map.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)
 
 ## Proof depends on
 

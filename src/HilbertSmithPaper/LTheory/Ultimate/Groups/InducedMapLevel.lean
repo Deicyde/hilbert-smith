@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMap
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateStageMap
 
 /-!
 # The induced map at each stage

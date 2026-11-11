@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.Categories.Functors.Pushforward
-import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphism
+import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismNatural
+import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismUnitary
 import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
@@ -9,22 +10,20 @@ import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 # Relabelling equivalence
 
 Let `S ⊆ X` be nonempty, closed and invariant, and fix `ρ : X → S` with `d(x, ρ x) = d(x, S)`.
-The relabelling equivalence consists of
-* `P : 𝒜_𝐆(S) → 𝒜_S`, the pushforward along `S ↪ X`, corestricted (`HSP.relabelP`);
-* `R : 𝒜_S → 𝒜_𝐆(S)`, `R(n_i, x_i) = (n_i, ρ ∘ x_i)`, `R[u] = [u]` (`HSP.relabelR`);
-* `RP = id` on the nose (`HSP.relabelP_comp_relabelR`);
-* the counit `PR(M) → M`, given by the relabelling isomorphism (`HSP.relabelCounit`).
+The relabelling equivalence (`HSP.relabelEquiv hS hρ : HSP.RelabelEquiv G S ρ`) consists of
+* `P : 𝒜_𝐆(S) → 𝒜_S`, the pushforward along `S ↪ X`, corestricted;
+* `R : 𝒜_S → 𝒜_𝐆(S)`, `R(n_i, x_i) = (n_i, ρ ∘ x_i)`, `R[u] = [u]`;
+* `RP = id` on the nose;
+* the unit `id ≅ RP`, the identity, and the counit `PR ≅ id`, given by relabelling isomorphisms;
+both `P` and `R` are strict duality functors and the unit and counit are unitary.
 
 Lean encoding. `X` is a compact metric space with an isometric `C_p`-action, and the invariant
 subset is a `SubAddAction (ZMod p) X`, so that `S` is a metric `C_p`-space (the subtype); it is
 compact because it is closed (`hS`). `𝒜_S` is the full subcategory `(supp S).FullSubcategory`,
 a duality category since `supp S` is a dual-closed additive subcategory. The map `ρ` is a
-parameter with `hρ : ∀ x, dist x (ρ x) = infDist x S`; it exists when `S` is nonempty
-(`HSP.exists_nearest`), and it need not be equivariant. `P` and `R` are strict duality functors
-(`ξ = id`). The unit is the identity, as the unitary isomorphism `HSP.relabelUnit` given by the
-equality `RP = id`, and the counit is the unitary isomorphism `HSP.relabelCounit`, whose
-components are relabelling isomorphisms; these are the data used by equivalence invariance. The
-triangle identities are not stated.
+parameter with `hρ : ∀ x, dist x (ρ x) = infDist x S`; it exists when `S` is nonempty, and it
+need not be equivariant. The functor `R` needs neither that `S` is closed or nonempty nor that `X`
+is compact. The triangle identities are not stated.
 -/
 
 open CategoryTheory CategoryTheory.Limits Filter Topology
@@ -36,7 +35,7 @@ variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod
 
 /-- A nonempty closed subset of a compact metric space has a nearest-point map
 `ρ : X → S`, `d(x, ρ x) = d(x, S)`. -/
-theorem exists_nearest [CompactSpace X] {S : Set X} (hS : IsClosed S) (hne : S.Nonempty) :
+private theorem exists_nearest [CompactSpace X] {S : Set X} (hS : IsClosed S) (hne : S.Nonempty) :
     ∃ ρ : X → S, ∀ x, dist x (ρ x : X) = Metric.infDist x S := by
   choose ρ hρS hρ using fun x => hS.isCompact.exists_infDist_eq_dist hne x
   exact ⟨fun x => ⟨ρ x, hρS x⟩, fun x => (hρ x).symm⟩
@@ -59,20 +58,20 @@ private noncomputable def inclPush : DualFunctor (AsymCat G S) (AsymCat G X) :=
   push (G := G) (f := ((↑) : S → X)) continuous_subtype_val fun _ _ => rfl
 
 /-- The underlying functor of `P`: the pushforward along `S ↪ X`, corestricted to `𝒜_S`. -/
-noncomputable def relabelPFunctor :
+private noncomputable def relabelPFunctor :
     AsymCat G S ⥤ (supp (G := G) (S : Set X)).FullSubcategory :=
   ObjectProperty.lift _ (inclPush (G := G) hS).toFunctor
     fun M _ hε => Eventually.of_forall fun i k =>
       Metric.self_subset_thickening hε _ (M.as.x i k).2
 
-instance : (relabelPFunctor (G := G) hS).Additive where
+private instance : (relabelPFunctor (G := G) hS).Additive where
   map_add := ObjectProperty.hom_ext _ ((inclPush hS).toFunctor.map_add)
 
-instance : (relabelPFunctor (G := G) hS).Linear ℚ where
+private instance : (relabelPFunctor (G := G) hS).Linear ℚ where
   map_smul _ _ := ObjectProperty.hom_ext _ ((inclPush hS).toFunctor.map_smul _ _)
 
 /-- `P : 𝒜_𝐆(S) → 𝒜_S`, `(n_i, x_i) ↦ (n_i, x_i)`, `[u] ↦ [u]`, a duality functor with `ξ = id`. -/
-noncomputable def relabelP : DualFunctor (AsymCat G S) (supp (G := G) (S : Set X)).FullSubcategory
+private noncomputable def relabelP : DualFunctor (AsymCat G S) (supp (G := G) (S : Set X)).FullSubcategory
     where
   toFunctor := relabelPFunctor hS
   ξ _ := Iso.refl _
@@ -86,7 +85,7 @@ noncomputable def relabelP : DualFunctor (AsymCat G S) (supp (G := G) (S : Set X
 
 omit [IsIsometricVAdd (ZMod p) X] in
 /-- `P` is a strict duality functor. -/
-theorem relabelP_isStrict : (relabelP (G := G) hS).IsStrict := fun _ => ⟨rfl, rfl⟩
+private theorem relabelP_isStrict : (relabelP (G := G) hS).IsStrict := fun _ => ⟨rfl, rfl⟩
 
 end P
 
@@ -95,7 +94,7 @@ section R
 variable {S} {ρ : X → S} (hρ : ∀ x, dist x (ρ x : X) = Metric.infDist x S)
 
 /-- The relabelled object `(n_i, ρ ∘ x_i)` of `𝒜_𝐆(S)`. -/
-def AsymPre.relabelObj (ρ : X → S) (M : AsymPre G X) : AsymPre G S := ⟨M.n, fun i => ρ ∘ M.x i⟩
+private def AsymPre.relabelObj (ρ : X → S) (M : AsymPre G X) : AsymPre G S := ⟨M.n, fun i => ρ ∘ M.x i⟩
 
 omit [IsIsometricVAdd (ZMod p) X] in
 include hρ in
@@ -151,7 +150,7 @@ private theorem relabelMap_mkHom {M N : AsymPre G X} (hM : supp (S : Set X) ⟨M
     relabelMap hρ hM hN (AsymCat.mkHom u) = AsymCat.mkHom (relabelHom hρ hM hN u) := rfl
 
 /-- The underlying functor of `R : 𝒜_S → 𝒜_𝐆(S)`. -/
-def relabelRFunctor : (supp (G := G) (S : Set X)).FullSubcategory ⥤ AsymCat G S where
+private def relabelRFunctor : (supp (G := G) (S : Set X)).FullSubcategory ⥤ AsymCat G S where
   obj V := ⟨AsymPre.relabelObj ρ V.obj.as⟩
   map {V W} f := relabelMap hρ V.property W.property f.hom
   map_id V := congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => rfl)
@@ -163,7 +162,7 @@ def relabelRFunctor : (supp (G := G) (S : Set X)).FullSubcategory ⥤ AsymCat G 
       ← Functor.map_comp]
     exact congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => rfl)
 
-instance : (relabelRFunctor (G := G) hρ).Additive where
+private instance : (relabelRFunctor (G := G) hρ).Additive where
   map_add {V W f g} := by
     obtain ⟨u, hu⟩ := AsymCat.mkHom_surjective f.hom
     obtain ⟨v, hv⟩ := AsymCat.mkHom_surjective g.hom
@@ -172,7 +171,7 @@ instance : (relabelRFunctor (G := G) hρ).Additive where
       ← Functor.map_add]
     exact congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => rfl)
 
-instance : (relabelRFunctor (G := G) hρ).Linear ℚ where
+private instance : (relabelRFunctor (G := G) hρ).Linear ℚ where
   map_smul {V W} f c := by
     obtain ⟨u, hu⟩ := AsymCat.mkHom_surjective f.hom
     show relabelMap hρ _ _ (c • f.hom) = c • relabelMap hρ _ _ f.hom
@@ -181,7 +180,7 @@ instance : (relabelRFunctor (G := G) hρ).Linear ℚ where
 
 /-- `R : 𝒜_S → 𝒜_𝐆(S)`, `(n_i, x_i) ↦ (n_i, ρ ∘ x_i)`, `[u] ↦ [u]`, a duality functor with
 `ξ = id`. -/
-def relabelR : DualFunctor (supp (G := G) (S : Set X)).FullSubcategory (AsymCat G S) where
+private def relabelR : DualFunctor (supp (G := G) (S : Set X)).FullSubcategory (AsymCat G S) where
   toFunctor := relabelRFunctor hρ
   ξ _ := Iso.refl _
   ξ_natural {V W} f := by
@@ -195,7 +194,7 @@ def relabelR : DualFunctor (supp (G := G) (S : Set X)).FullSubcategory (AsymCat 
     exact DualCat.dualHom_id _
 
 /-- `R` is a strict duality functor. -/
-theorem relabelR_isStrict : (relabelR (G := G) hρ).IsStrict := fun _ => ⟨rfl, rfl⟩
+private theorem relabelR_isStrict : (relabelR (G := G) hρ).IsStrict := fun _ => ⟨rfl, rfl⟩
 
 end R
 
@@ -231,7 +230,7 @@ private theorem relabelObj_pushObj (M : AsymPre G S) :
   exact funext fun i => funext fun k => rho_val hρ (x i k)
 
 /-- `RP = id` on the nose. -/
-theorem relabelP_comp_relabelR :
+private theorem relabelP_comp_relabelR :
     (relabelP (G := G) hS).toFunctor ⋙ (relabelR hρ).toFunctor = 𝟭 _ :=
   CategoryTheory.Functor.ext
     (fun M => congrArg (fun M => (⟨M⟩ : AsymCat G S)) (relabelObj_pushObj hρ M.as)) fun M N f => by
@@ -240,7 +239,7 @@ theorem relabelP_comp_relabelR :
       fun _ => HEq.rfl
 
 /-- The unit `id ≅ RP`, the identity, is unitary. -/
-noncomputable def relabelUnit :
+private noncomputable def relabelUnit :
     DualFunctor.UnitaryIso (DualFunctor.id (AsymCat G S)) ((relabelP hS).comp (relabelR hρ)) where
   iso := eqToIso (show (DualFunctor.id _).toFunctor = ((relabelP hS).comp (relabelR hρ)).toFunctor
     from (relabelP_comp_relabelR hS hρ).symm)
@@ -260,13 +259,13 @@ private theorem tendsto_counit (V : (supp (G := G) (S : Set X)).FullSubcategory)
   simpa only [nndist_comm] using tendsto_err hρ V.property
 
 /-- The component `PR(M) ≅ M` of the counit, the relabelling isomorphism. -/
-noncomputable def relabelCounitApp (V : (supp (G := G) (S : Set X)).FullSubcategory) :
+private noncomputable def relabelCounitApp (V : (supp (G := G) (S : Set X)).FullSubcategory) :
     (relabelP hS).toFunctor.obj ((relabelR hρ).toFunctor.obj V) ≅ V :=
   ObjectProperty.isoMk _ (relabelIso (n := V.obj.as.n) (x := fun i k => (ρ (V.obj.as.x i k) : X))
     (x' := V.obj.as.x) (tendsto_counit hρ V))
 
 /-- The counit `PR ≅ id`, given by relabelling isomorphisms, is a unitary natural isomorphism. -/
-noncomputable def relabelCounit :
+private noncomputable def relabelCounit :
     DualFunctor.UnitaryIso ((relabelR hρ).comp (relabelP hS))
       (DualFunctor.id (supp (G := G) (S : Set X)).FullSubcategory) where
   iso := NatIso.ofComponents (relabelCounitApp hS hρ) fun {V W} f => by
@@ -283,6 +282,42 @@ noncomputable def relabelCounit :
     rw [relabelIso_dual, Category.id_comp, Iso.hom_inv_id]
     simp [relabelP, relabelR]
     rfl
+
+/-- The data of the relabelling equivalence for `S` and `ρ`: the functors `P : 𝒜_𝐆(S) → 𝒜_S`
+(the pushforward along `S ↪ X`, corestricted) and `R : 𝒜_S → 𝒜_𝐆(S)` with
+`R(n_i, x_i) = (n_i, ρ ∘ x_i)`, both strict duality functors, with `RP = id` on the nose, the
+unit `id ≅ RP` and the counit `PR ≅ id` unitary natural isomorphisms. -/
+structure RelabelEquiv (G : GroupSeq p) (S : SubAddAction (ZMod p) X) (ρ : X → S) where
+  /-- `P : 𝒜_𝐆(S) → 𝒜_S`. -/
+  P : DualFunctor (AsymCat G S) (supp (G := G) (S : Set X)).FullSubcategory
+  /-- `R : 𝒜_S → 𝒜_𝐆(S)`. -/
+  R : DualFunctor (supp (G := G) (S : Set X)).FullSubcategory (AsymCat G S)
+  /-- `P` is the pushforward along `S ↪ X` on objects. -/
+  P_obj : ∀ M, (P.toFunctor.obj M).obj = ⟨⟨M.as.n, fun i => Subtype.val ∘ M.as.x i⟩⟩
+  /-- `R(n_i, x_i) = (n_i, ρ ∘ x_i)`. -/
+  R_obj : ∀ V, R.toFunctor.obj V = ⟨⟨V.obj.as.n, fun i => ρ ∘ V.obj.as.x i⟩⟩
+  /-- `P` is strict. -/
+  P_isStrict : P.IsStrict
+  /-- `R` is strict. -/
+  R_isStrict : R.IsStrict
+  /-- `RP = id` on the nose. -/
+  comp_eq : P.toFunctor ⋙ R.toFunctor = 𝟭 _
+  /-- The unit `id ≅ RP`, unitary. -/
+  unit : DualFunctor.UnitaryIso (DualFunctor.id _) (P.comp R)
+  /-- The counit `PR ≅ id`, unitary. -/
+  counit : DualFunctor.UnitaryIso (R.comp P) (DualFunctor.id _)
+
+/-- **The relabelling equivalence** for a closed invariant `S` and `ρ` with `d(x, ρ x) = d(x, S)`. -/
+noncomputable def relabelEquiv : RelabelEquiv G S ρ where
+  P := relabelP hS
+  R := relabelR hρ
+  P_obj _ := rfl
+  R_obj _ := rfl
+  P_isStrict := relabelP_isStrict hS
+  R_isStrict := relabelR_isStrict hρ
+  comp_eq := relabelP_comp_relabelR hS hρ
+  unit := relabelUnit hS hρ
+  counit := relabelCounit hS hρ
 
 end Equivalence
 

@@ -23,6 +23,7 @@ This rests on the open statement [Lemma U](lemma-u.md), through [Lemma U passes 
 - [Group sequence](../../categories/asymptotic/group-sequence.md)
 - [Free category](../../categories/asymptotic/free-category.md)
 - [Ultimate L-group](../ultimate/groups/ultimate-l-group.md)
+- [The class map](../ultimate/groups/ultimate-cls.md)
 
 ## Proof depends on
 

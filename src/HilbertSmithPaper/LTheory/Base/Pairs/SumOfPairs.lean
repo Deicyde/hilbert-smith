@@ -25,11 +25,6 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
 
 namespace SymPair
 
-omit [Linear ℚ B] [DualCat B] in
-private lemma isZero_biprod {X Y : B} (hX : IsZero X) (hY : IsZero Y) : IsZero (X ⊞ Y) := by
-  rw [IsZero.iff_id_eq_zero, ← biprod.total, hX.eq_of_tgt biprod.fst 0,
-    hY.eq_of_tgt biprod.snd 0, zero_comp, zero_comp, add_zero]
-
 private lemma dualCx_map_add {C D : ChainComplex B ℤ} (f g : C ⟶ D) (n : ℤ) :
     dualCx.map (f + g) n = dualCx.map f n + dualCx.map g n := by
   ext r
@@ -126,7 +121,7 @@ theorem sum {m n : ℤ} (W W' : SymPair B m n) :
       boundary_symmetric := zsymmetric
       boundary_poincare := zpoincare
       bounded := fun r hr => IsZero.of_iso
-        (isZero_biprod (W.bounded r hr) (W'.bounded r hr))
+        ((biprod_isZero_iff _ _).mpr ⟨W.bounded r hr, W'.bounded r hr⟩)
         (HomologicalComplex.biprodXIso W.D W'.D r)
       symmetric := by
         rw [StructureCx.sum, map_add, StructureCx.T_push_apply, StructureCx.T_push_apply,

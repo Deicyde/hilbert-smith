@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateStageMap
 
 /-!
 # Stages are compatible with the transition

@@ -7,15 +7,16 @@ import HilbertSmithPaper.Categories.Asymptotic.PropOne
 # Relabelling isomorphism
 
 Let `M = (n_i, x_i)` and `M' = (n_i, x'_i)` be objects with `max_k d(x_i(k), x'_i(k)) → 0`. The
-identity matrices give an isomorphism `f : M → M'` with `f^* = f⁻¹`.
+identity matrices give an isomorphism `f : M → M'`.
 
 The labels of `(g, k)` in `M` and in `M'` are `d(x_i(k), x'_i(k))` apart because the action is
 isometric; by relabelling the propagation, the identity matrices have propagation at most this
-error, which tends to `0`. They are mutually inverse and self-transpose.
+error, which tends to `0`. They are mutually inverse.
 
 Lean encoding: `HSP.relabelIso hx : ⟨⟨n, x⟩⟩ ≅ ⟨⟨n, x'⟩⟩`, with the hypothesis
 `hx : Tendsto (fun i => max_k nndist (x_i k) (x'_i k)) atTop (𝓝 0)` (an empty maximum is `0`),
-and `HSP.relabelIso_dual : (relabelIso hx).hom^* = (relabelIso hx).inv`.
+with the defining property `HSP.relabelIso_spec` (both directions are classes of identity
+matrices).
 -/
 
 open CategoryTheory CategoryTheory.Limits Filter Topology
@@ -57,24 +58,12 @@ def relabelIso {n : ℕ → ℕ} {x x' : ∀ i, Fin (n i) → X}
     rw [← Functor.map_comp]
     exact congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => Category.id_comp _)
 
-/-- The relabelling isomorphism is unitary: `f^* = f⁻¹`. -/
-theorem relabelIso_dual {n : ℕ → ℕ} {x x' : ∀ i, Fin (n i) → X}
+/-- The defining property of the relabelling isomorphism: both `f` and `f⁻¹` are given by identity
+matrices. -/
+theorem relabelIso_spec {n : ℕ → ℕ} {x x' : ∀ i, Fin (n i) → X}
     (hx : Tendsto (fun i => Finset.univ.sup fun k => nndist (x i k) (x' i k)) atTop (𝓝 0)) :
-    DualCat.dualHom (relabelIso (G := G) hx).hom = (relabelIso hx).inv :=
-  congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => DualCat.dualHom_id (⟨n i⟩ : FreeCat (G.G i)))
-
-/-- The relabelling isomorphisms commute with morphisms given by the same matrices. -/
-theorem relabelIso_natural {n m : ℕ → ℕ} {x x' : ∀ i, Fin (n i) → X} {y y' : ∀ i, Fin (m i) → X}
-    (hx : Tendsto (fun i => Finset.univ.sup fun k => nndist (x i k) (x' i k)) atTop (𝓝 0))
-    (hy : Tendsto (fun i => Finset.univ.sup fun k => nndist (y i k) (y' i k)) atTop (𝓝 0))
-    (u : (⟨n, x⟩ : AsymPre G X) ⟶ ⟨m, y⟩) (u' : (⟨n, x'⟩ : AsymPre G X) ⟶ ⟨m, y'⟩)
-    (h : ∀ i, AsymPre.coord u i = AsymPre.coord u' i) :
-    AsymCat.mkHom u ≫ (relabelIso hy).hom = (relabelIso hx).hom ≫ AsymCat.mkHom u' := by
-  show AsymCat.mkHom u ≫ AsymCat.mkHom (relabelHom m y y' hy) =
-    AsymCat.mkHom (relabelHom n x x' hx) ≫ AsymCat.mkHom u'
-  rw [← Functor.map_comp, ← Functor.map_comp]
-  refine congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => ?_)
-  simp only [AsymPre.coord_comp, relabelHom, h i]
-  exact (Category.comp_id _).trans (Category.id_comp _).symm
+    (∃ u, (relabelIso (G := G) hx).hom = AsymCat.mkHom u ∧ ∀ i, AsymPre.coord u i = 𝟙 _) ∧
+      ∃ v, (relabelIso (G := G) hx).inv = AsymCat.mkHom v ∧ ∀ i, AsymPre.coord v i = 𝟙 _ :=
+  ⟨⟨relabelHom n x x' hx, rfl, fun _ => rfl⟩, ⟨relabelHom n x' x _, rfl, fun _ => rfl⟩⟩
 
 end HSP
