@@ -6,6 +6,9 @@ import HilbertSmithPaper.Categories.Asymptotic.PropMul
 import HilbertSmithPaper.Categories.Asymptotic.PropRelabel
 import HilbertSmithPaper.Categories.Asymptotic.PropSmul
 import HilbertSmithPaper.Categories.Asymptotic.PropTranspose
+import HilbertSmithPaper.Corner.RoundSphere
+import HilbertSmithPaper.Corner.Exterior
+import HilbertSmithPaper.Corner.CutSets
 
 /-!
 # The paper
