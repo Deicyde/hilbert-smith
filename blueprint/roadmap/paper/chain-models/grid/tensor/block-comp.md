@@ -19,7 +19,7 @@ For maps $F:\mathbb Q^{\sum_ad_a}\to\mathbb Q^{\sum_{a'}d'_{a'}}$ and $G:\mathbb
 
 ## Depends on
 
-- [Block decomposition of the identity](block-decomposition.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
 
 ## Proof depends on
 
