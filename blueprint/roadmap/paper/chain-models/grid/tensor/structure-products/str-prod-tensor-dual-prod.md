@@ -33,6 +33,5 @@ Let $C$ and $E$ be complexes of based vector spaces vanishing in negative degree
 - [Blocks of a composite](../block-comp.md)
 - [Maps between concatenations are determined by their blocks](../block-ext.md)
 - [Kronecker product of composites](../kron-composite.md)
-- [Kronecker product of identities](../kron-transport.md)
 - [Composites through a zero space vanish](zero-dim-comp.md)
 - [Kronecker product with a zero factor](../kron-zero.md)

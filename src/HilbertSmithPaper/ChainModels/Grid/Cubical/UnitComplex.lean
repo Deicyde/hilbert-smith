@@ -8,7 +8,8 @@ The unit complex `𝟙`: `ℚ` in degree `0` and zero elsewhere, with zero diffe
 
 ## Encoding
 
-`unitComplex` (the declaration of the article) is `ChainComplex.of` of the dimensions `unitDim`.
+`unitComplex` (the declaration of the article) is `ChainComplex.of` of the dimensions `unitDim`;
+`unitComplex_X_dim_of_ne` unfolds the dimensions away from degree `0`.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -25,5 +26,12 @@ def unitDim : ℤ → ℕ
 /-- The unit complex `𝟙`: `ℚ` in degree `0`. -/
 def unitComplex : ChainComplex FreeQ ℤ :=
   ChainComplex.of (fun r => ⟨unitDim r⟩) (fun _ => 0) fun _ => zero_comp
+
+/-- The unit complex is zero away from degree `0`. -/
+lemma unitComplex_X_dim_of_ne {r : ℤ} (h : r ≠ 0) : (unitComplex.X r).dim = 0 := by
+  rcases r with (_ | r) | r
+  · exact absurd rfl h
+  · rfl
+  · rfl
 
 end HSP.ChainModels
