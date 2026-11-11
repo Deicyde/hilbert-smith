@@ -51,7 +51,7 @@ structure TypedMatrix (n p : ℕ) where
 attribute [instance] TypedMatrix.fintypeB TypedMatrix.fintypeB'
 
 /-- The typed matrix `u` of type `c`, with source labels `x` and target labels `x'`. -/
-def TypedMatrix.of {B B' : Type} [Fintype B] [Fintype B'] (x : B → Torus n) (x' : B' → Torus n)
+private def TypedMatrix.of {B B' : Type} [Fintype B] [Fintype B'] (x : B → Torus n) (x' : B' → Torus n)
     (u : Matrix B' B ℚ) (c : ZMod p) : TypedMatrix n p :=
   { B := B, B' := B', x := x, x' := x', u := u, c := c }
 
