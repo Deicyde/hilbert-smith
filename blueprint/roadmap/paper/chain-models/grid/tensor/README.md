@@ -23,3 +23,4 @@ Tensors of graded maps of based complexes and of their duals, and the rules by w
 - [Additivity of tensors of graded maps in the second factor](tensor-hom-add-right.md)
 - [Tensor of identities](tensor-hom-id.md)
 - [Differential of a tensor product](tensor-differential.md)
+- [Additivity of the Kronecker product in the first factor](kron-add-left.md)

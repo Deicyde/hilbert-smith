@@ -109,6 +109,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExt
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExtraction
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
+import HilbertSmithPaper.ChainModels.Grid.Tensor.KronAddLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero
