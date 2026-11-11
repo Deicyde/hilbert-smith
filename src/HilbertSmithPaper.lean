@@ -202,6 +202,7 @@ import HilbertSmithPaper.Compression.CompressedPoincare
 import HilbertSmithPaper.Compression.CompressedRep
 import HilbertSmithPaper.Compression.CompressedResiduals
 import HilbertSmithPaper.Compression.CompressedScalarImage
+import HilbertSmithPaper.Compression.CompressedStandingData
 import HilbertSmithPaper.Compression.CompressionProductRule
 import HilbertSmithPaper.Compression.DiscardedSubcomplex
 import HilbertSmithPaper.Compression.EndpointLemma
