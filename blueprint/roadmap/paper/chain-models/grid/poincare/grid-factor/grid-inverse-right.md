@@ -29,3 +29,4 @@ For every $k$, $n$ and $r$, the [unsymmetrized grid structure](grid-structure-u.
 - [Circle duality](../../circle-duality.md)
 - [The grid complex vanishes in negative degrees](grid-dim-neg.md)
 - [The identity of a dual complex as a map of degree zero](id-dual-deg0.md)
+- [The unit complex](../../cubical/unit-complex.md)

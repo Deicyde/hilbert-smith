@@ -37,18 +37,16 @@ open FreeQ DualCat
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
 
-private lemma eq_zero_of_unitDim_ne {r : ℤ} (h : unitDim r ≠ 0) : r = 0 := by
-  rcases r with (_ | r) | r
-  · rfl
-  · exact absurd rfl h
-  · exact absurd rfl h
+private lemma eq_zero_of_unit_dim_ne {r : ℤ} (h : (unitComplex.X r).dim ≠ 0) : r = 0 := by
+  by_contra hr
+  exact h (unitComplex_X_dim_of_ne hr)
 
 private lemma unitStructure_symmetric :
     (StructureCx.T unitComplex).f 0 unitStructure = unitStructure := by
   funext ⟨⟨a, b⟩, h⟩
   rw [StructureCx.T_apply]
   refine Matrix.ext fun x y => ?_
-  have ha : a = 0 := eq_zero_of_unitDim_ne fun e => (Fin.cast e x).elim0
+  have ha : a = 0 := eq_zero_of_unit_dim_ne fun e => (Fin.cast e x).elim0
   subst ha
   rw [zero_mul, Int.negOnePow_zero, one_smul, eqToHom_refl, Category.comp_id]
   rfl

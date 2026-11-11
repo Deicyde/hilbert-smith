@@ -16,7 +16,6 @@ Each basis vector of the [grid complex](cubical-torus-grid.md) $C(k)_r$ has a [c
 
 ## Depends on
 
-- [The dimension of a grid cube](grid-cube-dim.md)
 - [Cubical torus grid](cubical-torus-grid.md)
 - [Grid cubes](grid-cube.md)
 - [The cell of a basis vector of the circle complex](circle-cell.md)

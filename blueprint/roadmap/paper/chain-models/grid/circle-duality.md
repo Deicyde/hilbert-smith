@@ -17,7 +17,7 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 2. $T\varphi=\varphi+\partial H$, so that $\varphi^s=\tfrac12(\varphi+T\varphi)$, $\partial\varphi^s=0$ and $T\varphi^s=\varphi^s$;
 3. $\varphi^sb-1=dK+Kd$ and $b\varphi^s-1=dK'+K'd$, where $K=\tfrac12Hb$ and $K'=\tfrac12bH$;
 4. $\varepsilon\varphi^s(e_w^*)=1=e_w^*(\sum_ve_v)$;
-5. with every [cell](cubical/circle-cell.md) and its dual labelled at the cell's center in $\mathbb R/4\mathbb Z$ ($[w]$ at $4w/k$, $e_w$ at $(4w+2)/k$), every component of $\varphi,\varphi^s,b,H,K,K'$ has [propagation](../../categories/asymptotic/propagation.md) at most $h/2$.
+5. with every [cell](cubical/circle-cell.md) and its dual [labelled](cubical/circle-label.md) at the cell's center in $\mathbb R/4\mathbb Z$ ($[w]$ at $4w/k$, $e_w$ at $(4w+2)/k$), every component of $\varphi,\varphi^s,b,H,K,K'$ has [propagation](../../categories/asymptotic/propagation.md) at most $h/2$.
 
 *Proof sketch.* Direct computation. Write $\sigma$ for the shift $[w]\mapsto[w+1]$ of $\mathbb Q^k$; then $d=\sigma-1$, $d^*=\sigma^{-1}-1$, $\varphi_{0,1}=1$, $\varphi_{1,0}=\sigma^{-1}$, $b_0=1$, $b_1=\sigma$, and components in other degrees live on zero objects. (1) $d\varphi([w]^*)=[w]-[w-1]$, and $d[w]^*=-d^*[w]^*=e_w^*-e_{w-1}^*$, so $\varphi(d[w]^*)=[w]-[w-1]$. (2) $T\varphi$ sends $[w]^*\mapsto e_w$ and $e_w^*\mapsto[w+1]$. The difference $T\varphi-\varphi$ is $[w]^*\mapsto e_w-e_{w-1}=Hd[w]^*$ and $e_w^*\mapsto[w+1]-[w]=dHe_w^*$. Then $T\partial=\partial T$ and $T^2=1$ give the rest. (3) $\varphi^sb=1+\tfrac12(dH+Hd)b$, and $b$ is a chain map; likewise for $b\varphi^s$. (4) $\varphi^s(e_w^*)=\tfrac12([w]+[w+1])$. (5) Read off the formulas.
 
@@ -27,6 +27,7 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 
 ## Depends on
 
+- [Labels of the circle cells](cubical/circle-label.md)
 - [The circle complex](cubical/circle-complex.md)
 - [The cell of a basis vector of the circle complex](cubical/circle-cell.md)
 - [Augmentation of the circle complex](cubical/circle-aug.md)
