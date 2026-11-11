@@ -240,7 +240,11 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
+import HilbertSmithPaper.Signatures.Real.RealCohomology
+import HilbertSmithPaper.Signatures.Real.RealCohomologyAction
+import HilbertSmithPaper.Signatures.Real.RealCohomologyMap
 import HilbertSmithPaper.Signatures.LFour.RealHomology
+import HilbertSmithPaper.Signatures.Real.RealMatrix
 import HilbertSmithPaper.Signatures.LFour.RealEvaluation
 import HilbertSmithPaper.Signatures.LFour.MiddleForm
 import HilbertSmithPaper.Signatures.LFour.MiddleFormNeg

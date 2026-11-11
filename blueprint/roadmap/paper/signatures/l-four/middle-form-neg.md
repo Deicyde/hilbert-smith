@@ -20,4 +20,5 @@ $b_{(C,-\varphi)}=-b_{(C,\varphi)}$ on the same space $H^2(C;\mathbb R)$.
 ## Depends on
 
 - [The middle form](middle-form.md)
+- [The real matrix of a morphism](../real/real-matrix.md)
 - [Sums of Poincaré complexes](../../l-theory/base/pairs/sum-of-poincare.md)

@@ -16,6 +16,7 @@ The tail uses the categories chapter's [sequence category](../categories/asympto
 
 - [Functors on the free categories](point-functors/README.md)
 - [Signatures of invariant forms](forms/README.md)
+- [Real matrices and real cohomology](real/README.md)
 - [The signature on $L^p_4$](l-four/README.md)
 - [The tail signature](tail/README.md)
 

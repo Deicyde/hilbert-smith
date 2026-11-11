@@ -18,3 +18,4 @@ $\mathrm{Sign}_G(C,\varphi)=\mathrm{sign}_{b_C}:G\to\mathbb R$.
 
 - [The equivariant signature](../forms/form-signature.md)
 - [Middle form nonsingular](middle-form-nonsingular.md)
+- [The action of the group on real cohomology](../real/real-cohomology-action.md)

@@ -20,6 +20,7 @@ $b_C$ is nondegenerate and symmetric, and $G$ acts by $b_C$-isometries.
 ## Depends on
 
 - [The middle form](middle-form.md)
+- [The action of the group on real cohomology](../real/real-cohomology-action.md)
 
 ## Proof depends on
 
