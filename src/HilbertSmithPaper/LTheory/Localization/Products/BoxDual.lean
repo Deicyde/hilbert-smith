@@ -177,6 +177,12 @@ noncomputable def kappa (N : Karoubi B) (V : Bounded FreeQ) :
 
 end BoxDual
 
+omit [HasFiniteBiproducts B] [DualCat B] in
+private lemma comp_eqToHom_apply {M N N' : Bounded B} (f : M ⟶ N) (h : N = N') (m n : ℤ) :
+    (f ≫ eqToHom h).1 m n = f.1 m n ≫ eqToHom (congrArg (fun K : Bounded B => K.X m) h) := by
+  subst h
+  simp
+
 omit [Linear ℚ B] [DualCat B] in
 @[reassoc]
 private lemma ι_eqToHom_biproduct {d : ℕ} {X Y : B} (h : X = Y) (i : Fin d) :
@@ -221,7 +227,7 @@ noncomputable def boxPairing :
   κ_dual N V := by
     refine Karoubi.hom_ext _ _ (Bounded.hom_ext fun a b => ?_)
     rw [Karoubi.comp_f, Karoubi.eqToHom_f, ← Category.assoc, Karoubi.comp_p,
-      Bounded.comp_eqToHom_apply]
+      comp_eqToHom_apply]
     change dualHom (Bounded.diagF (M := dual (Box.obj N V).X) (N := (Box.obj (dual N) (dual V)).X)
         (fun n => BoxDual.can N.X (V.X n).dim ≫ biproduct.map fun _ => dualHom N.p) b a) =
       Bounded.diagF (M := dual (Box.obj (dual N) (dual V)).X)
