@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.DisjointSupportVanishing
+import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 
 /-!

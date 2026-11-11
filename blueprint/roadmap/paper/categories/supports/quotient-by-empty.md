@@ -30,7 +30,9 @@ Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, henc
 - [Support filtration](support-filtration.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [The support subcategory is additive](support-dual-additive.md)
 
 ## Proof depends on
 
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Free category of a finite group](../asymptotic/free-category.md)

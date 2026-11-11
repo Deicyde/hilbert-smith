@@ -21,7 +21,9 @@ Let $X$ be compact with an isometric $C_p$-action. If $S,Z\subset X$ are disjoin
 
 - [Support subcategory](support-subcategory.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+- [The support subcategory is additive](support-dual-additive.md)
 
 ## Proof depends on
 
 - [Maps through a disjoint support vanish](disjoint-support-vanishing.md)
+- [Translates and thickenings of an invariant set](thickening-invariant.md)
