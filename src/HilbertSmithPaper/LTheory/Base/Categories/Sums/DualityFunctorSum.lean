@@ -1,6 +1,7 @@
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBiproduct
+import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
 
 /-!
 # Sum of duality functors

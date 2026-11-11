@@ -1,5 +1,6 @@
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
+import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
 
 /-!
 # Pair map
