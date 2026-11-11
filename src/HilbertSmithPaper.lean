@@ -268,6 +268,7 @@ import HilbertSmithPaper.LTheory.Ultimate.Groups.LowerLSequence
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateCls
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateLGroup
 import HilbertSmithPaper.LTheory.Ultimate.Groups.UltimateStageMap
+import HilbertSmithPaper.LTheory.Ultimate.Groups.UnitaryInvariance
 import HilbertSmithPaper.LocalData.Chart.AveragedMap
 import HilbertSmithPaper.LocalData.Chart.AveragedMapContinuous
 import HilbertSmithPaper.LocalData.Chart.AveragedMapDisplacement
