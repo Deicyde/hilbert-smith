@@ -121,6 +121,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedDualProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BasedStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BlockDual
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.DualProdBlocks
+import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.DualProdCompStrProd
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.DualTensorHomBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdInvolution
