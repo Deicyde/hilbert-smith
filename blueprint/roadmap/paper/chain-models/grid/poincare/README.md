@@ -12,6 +12,7 @@ The circle duality data, the unsymmetrized structure, the homotopies and the aug
 - [The homotopy of the chain model](chain-model-h.md)
 - [The dual homotopy of the chain model](chain-model-h-dual.md)
 - [The augmentation of the chain model](chain-model-aug.md)
+- [Propagation bounds for the based product and tensor maps](prop-product-maps.md)
 - [Propagation of the differential of the chain model](chain-model-d-propagation.md)
 - [The CP^2 inverse inverts the structure](cp2-inverse.md)
 - [Tensor product of homotopies](tensor-homotopy.md)

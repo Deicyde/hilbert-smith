@@ -9,7 +9,7 @@ proof: formalized
 
 # Duality functors and pair maps
 
-Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../../categories/duality-functor.md), $f:C\to D$ a chain map, $\phi\in M(C)_m$ a cycle and $\delta\phi\in M(D)_n$ with $n=m+1$ and $\partial\delta\phi=f_\%\phi$, so that the [pair map](../../pairs/pair-map.md) $\psi:D^{n-*}\to\mathcal C(f)$ is defined. Then the [images](functor-structure.md) satisfy the same conditions for $Ff$, and the pair map $\psi^F$ of $(Ff,F_\%\delta\phi,F_\%\phi)$ is
+Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../../categories/duality-functor.md), $f:C\to D$ a chain map, $\phi\in M(C)_m$ a cycle and $\delta\phi\in M(D)_n$ with $n=m+1$ and $\partial\delta\phi=f_\%\phi$, so that the [pair map](../../pairs/pair-map.md) $\psi:D^{n-*}\to\mathcal C(f)$ is defined. Suppose the [images](functor-structure.md) satisfy the same conditions for $Ff$, so that the pair map $\psi^F$ of $(Ff,F_\%\delta\phi,F_\%\phi)$ is defined. Then $\psi^F$ is
 $$\psi^F=\kappa\circ F(\psi)\circ\xi^{-1}:(FD)^{n-*}\to F(D^{n-*})\to F(\mathcal C(f))\to\mathcal C(Ff),$$
 with $\xi^{-1}$ the isomorphism of [Duality functors and dual complexes](functor-dual-iso.md) and $\kappa$ that of [Duality functors and mapping cones](functor-cone.md).
 

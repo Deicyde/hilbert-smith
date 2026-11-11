@@ -9,6 +9,8 @@ The chain model, the cubes and torus labels of its cells and of their duals, its
 - [Chain model](chain-model.md)
 - [The cube of a chain-model cell](chain-model-cube.md)
 - [Torus labels of chain-model cells](chain-model-label.md)
+- [Labels on a tensor product of based complexes](tensor-label.md)
+- [Grid and chain-model labels are tensor labels](tensor-label-grid.md)
 - [Torus labels of dual cells](chain-model-dual-label.md)
 - [Fundamental cycle of the chain model](chain-model-fundamental.md)
 - [The structure of the unit complex](unit-structure.md)

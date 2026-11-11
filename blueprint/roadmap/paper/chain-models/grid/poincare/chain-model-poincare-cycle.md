@@ -28,6 +28,7 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 - [The unit complex](../cubical/unit-complex.md)
 - [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [Chain-model duality](../chain-model-duality.md)
+- [The involution T](../../../l-theory/base/complexes/structure-involution.md)
 
 ## Proof depends on
 
