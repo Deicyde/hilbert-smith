@@ -2,6 +2,8 @@
 article_id: af_bec2a6ea0ad99585d41b2635
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ChainModels.box_acyclic
 ---
 # Boxes are acyclic
 
