@@ -274,14 +274,6 @@ import HilbertSmithPaper.Signatures.Forms.FormSignatureIdentity
 import HilbertSmithPaper.Signatures.Forms.FormSignatureIsometry
 import HilbertSmithPaper.Signatures.Forms.FormSignatureNeg
 import HilbertSmithPaper.Signatures.Forms.FormSignatureSum
-import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
-import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
-import HilbertSmithPaper.Signatures.Real.RealCohomology
-import HilbertSmithPaper.Signatures.Real.RealCohomologyAction
-import HilbertSmithPaper.Signatures.Real.RealCohomologyMap
-import HilbertSmithPaper.Signatures.LFour.RealHomology
-import HilbertSmithPaper.Signatures.Real.RealMatrix
-import HilbertSmithPaper.Signatures.LFour.RealEvaluation
 import HilbertSmithPaper.Signatures.Forms.SignatureSplitting
 import HilbertSmithPaper.Signatures.LFour.BoundarySignatureZero
 import HilbertSmithPaper.Signatures.LFour.ComplexSignature
@@ -295,6 +287,10 @@ import HilbertSmithPaper.Signatures.LFour.RealHomology
 import HilbertSmithPaper.Signatures.LFour.SignatureHom
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingExists
 import HilbertSmithPaper.Signatures.LFour.SignatureSplittingIndependence
+import HilbertSmithPaper.Signatures.Real.RealCohomology
+import HilbertSmithPaper.Signatures.Real.RealCohomologyAction
+import HilbertSmithPaper.Signatures.Real.RealCohomologyMap
+import HilbertSmithPaper.Signatures.Real.RealMatrix
 
 /-!
 # The paper
