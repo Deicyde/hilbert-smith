@@ -7,7 +7,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 
 The functor `ℚ^d ↦ ℚ[{1}]^d` from based vector spaces to `Free(ℚ[{1}])` sends a `d' × d` matrix
 `u` to the equivariant matrix on the bases `{1} × {1..d}` with the same entries. With `ξ = id` it
-is a strict duality functor, since both dualities are the transpose.
+is a duality functor, since both dualities are the transpose.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -63,9 +63,5 @@ def basedToFree : DualFunctor FreeQ (FreeCat Unit) where
     exact FreeCat.hom_ext (by ext; rfl)
   ξ_dual M := by
     simp only [Iso.refl_hom, eqToHom_refl, Category.comp_id]; exact DualCat.dualHom_id _
-
-/-- `basedToFree` is a strict duality functor. -/
-private theorem basedToFree_isStrict : basedToFree.IsStrict :=
-  fun _ => ⟨rfl, rfl⟩
 
 end HSP.Evaluation

@@ -1,5 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualityFunctorSum
-import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
+import HilbertSmithPaper.LTheory.Base.Groups.UnitaryIdentityComposite
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter

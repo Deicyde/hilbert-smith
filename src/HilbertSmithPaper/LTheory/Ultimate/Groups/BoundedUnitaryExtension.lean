@@ -29,18 +29,10 @@ variable {A : Type u₁} [Category.{v₁} A] [Preadditive A] [Linear ℚ A] [Has
   {A' : Type u₂} [Category.{v₂} A'] [Preadditive A'] [Linear ℚ A'] [HasFiniteBiproducts A']
   [DualCat A']
 
-omit [HasFiniteBiproducts A'] [DualCat A'] in
-/-- The diagonal isomorphism with entries `e n : M_n ≅ N_n`. -/
-private def diagIsoU {M N : Bounded A'} (e : ∀ n, M.X n ≅ N.X n) : M ≅ N where
-  hom := diag fun n => (e n).hom
-  inv := diag fun n => (e n).inv
-  hom_inv_id := by rw [diag_comp_diag]; simp only [Iso.hom_inv_id]; rfl
-  inv_hom_id := by rw [diag_comp_diag]; simp only [Iso.inv_hom_id]; rfl
-
 /-- One level: the diagonal extension `C_ℤ η : C_ℤ F ≅ C_ℤ G` of a unitary isomorphism. -/
 private def mapUnitaryIso {F G : DualFunctor A A'} (η : DualFunctor.UnitaryIso F G) :
     DualFunctor.UnitaryIso (map F) (map G) where
-  iso := NatIso.ofComponents (fun M => diagIsoU (M := (map F).toFunctor.obj M)
+  iso := NatIso.ofComponents (fun M => diagIso (M := (map F).toFunctor.obj M)
       (N := (map G).toFunctor.obj M) fun n => η.iso.app (M.X n)) (by
     intro M N f
     refine hom_ext fun a b => ?_
@@ -52,7 +44,7 @@ private def mapUnitaryIso {F G : DualFunctor A A'} (η : DualFunctor.UnitaryIso 
           (N := ⟨fun n => G.toFunctor.obj (M.X n)⟩) (P := ⟨fun n => G.toFunctor.obj (N.X n)⟩)
           (fun n => (η.iso.app (M.X n)).hom) (fun m n => G.toFunctor.map (f.1 m n)) a b).symm))
   unitary M := by
-    simp only [NatIso.ofComponents_hom_app, diagIsoU, map_ξ_hom, dualHom_diag_eq]
+    simp only [NatIso.ofComponents_hom_app, diagIso, map_ξ_hom, dualHom_diag_eq]
     erw [diag_comp_diag, diag_comp_diag]
     congr 1
     funext n

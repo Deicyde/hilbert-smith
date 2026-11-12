@@ -16,7 +16,7 @@ For $i\ge i_0$ and $g,h\in G_i$, with $\hat d$ the compressed differential of $C
 6. $\hat\varphi\hat b-1-\hat d\hat H-\hat H\hat d=\mathrm{pr}\,H_iQd\,\mathrm{in}-\mathrm{pr}\,\varphi_iQ^*b_i\,\mathrm{in}$;
 7. $\hat b\hat\varphi-1-\hat d\hat H'-\hat H'\hat d=\mathrm{in}^*dQ^*H'_i\,\mathrm{pr}^*-\mathrm{in}^*b_iQ\varphi_i\,\mathrm{pr}^*$.
 
-Here $Q=Q_i$, and $d$ is the differential of $D_i$ or of $D_i^{N-*}$ as the source requires.
+Here $Q=Q_i$ is the [projection onto the discarded cells](discard-projection.md), and $d$ is the differential of $D_i$ or of $D_i^{N-*}$ as the source requires.
 
 *Proof sketch.* Expand each product of compressed maps with the [product rule](compression-product-rule.md). Apply the raw identities, all written with $d$ on both $D_i$ and $D_i^{N-*}$: $a_g$, $\varphi_i$ and $b_i$ are chain maps; $a_ga_h-a_{g+h}=dB_{g,h}+B_{g,h}d$; $dV_g+V_gd=a_g\varphi_i-\varphi_ia_{-g}^*$; $\varphi_ib_i-1=dH_i+H_id$; $b_i\varphi_i-1=dH'_i+H'_id$. The words through $Q$ with $d$ on the left vanish: $\mathrm{pr}\,dQ=0$ and $Q^*d\,\mathrm{pr}^*=0$ ([discarded subcomplex](discarded-subcomplex.md); on cochains $d$ is $\pm d^*$ in each degree). The involution commutes with $\varphi\mapsto\mathrm{pr}\,\varphi\,\mathrm{pr}^*$, and $a_0=1$ gives $\hat A_0=\mathrm{pr}\,\mathrm{in}=1$.
 
@@ -25,8 +25,20 @@ Here $Q=Q_i$, and $d$ is the differential of $D_i$ or of $D_i^{N-*}$ as the sour
 
 ## Depends on
 
+- [Fixed local data](../local-data/control/fixed-local-data.md)
+- [Start index](start-index.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
+- [Dual complex](../l-theory/base/complexes/dual-complex.md)
+- [Chain-model duality](../chain-models/grid/chain-model-duality.md)
+- [The homotopy of the chain model](../chain-models/grid/poincare/chain-model-h.md)
+- [The dual homotopy of the chain model](../chain-models/grid/poincare/chain-model-h-dual.md)
+- [Group approximations](../chain-models/approximations/group-approx.md)
+- [Chosen product homotopies](../chain-models/approximations/chosen-product-homotopies.md)
 - [Compressed maps](compressed-maps.md)
 - [Retained projection](retained-projection.md)
+- [Retained inclusion](retained-inclusion.md)
+- [Projection onto the discarded cells](discard-projection.md)
 
 ## Proof depends on
 
@@ -35,6 +47,5 @@ Here $Q=Q_i$, and $d$ is the differential of $D_i$ or of $D_i^{N-*}$ as the sour
 - [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
 - [Product homotopies](../chain-models/approximations/product-homotopies.md)
 - [Adjoint homotopies](../chain-models/approximations/adjoint-homotopies.md)
-- [Group approximations](../chain-models/approximations/group-approx.md)
 - [Carried group approximations](../chain-models/approximations/group-approx-carried.md)
 - [Chain-model estimates](../chain-models/grid/chain-model-estimates.md)

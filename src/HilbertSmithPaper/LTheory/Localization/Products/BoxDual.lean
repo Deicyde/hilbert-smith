@@ -99,15 +99,6 @@ private lemma map_map {d : ℕ} {X : B} (a b : X ⟶ X) :
       biproduct.map fun _ : Fin d => a ≫ b :=
   biproduct.hom_ext _ _ fun j => by simp
 
-private lemma dualHom_diag {M N : Bounded B} (d : ∀ n, M.X n ⟶ N.X n) :
-    dualHom (Bounded.diag d) =
-      Bounded.diag (M := dual N) (N := dual M) fun n => dualHom (d n) :=
-  Bounded.hom_ext fun a b => by
-    rw [Bounded.dualHom_apply, Bounded.diag_apply, Bounded.diag_apply]
-    by_cases h : a = b
-    · subst h; rw [Bounded.diagF_self, Bounded.diagF_self]
-    · rw [Bounded.diagF_ne _ (Ne.symm h), Bounded.diagF_ne _ h, dualHom_zero]
-
 omit [DualCat B] in
 /-- The idempotent of `N ⊠ V`, in position `n`. -/
 private lemma obj_p (N : Karoubi B) (V : Bounded FreeQ) :
@@ -119,7 +110,7 @@ private noncomputable def kappaHom (N : Karoubi B) (V : Bounded FreeQ) :
   f := Bounded.diag (M := dual (Box.obj N V).X) (N := (Box.obj (dual N) (dual V)).X)
     fun n => can N.X (V.X n).dim ≫ biproduct.map fun _ => dualHom N.p
   comm := by
-    rw [Karoubi.dual_p, obj_p, dualHom_diag, obj_p, Bounded.diag_comp_diag,
+    rw [Karoubi.dual_p, obj_p, Bounded.dualHom_diag_eq, obj_p, Bounded.diag_comp_diag,
       Bounded.diag_comp_diag]
     congr 1
     funext n
@@ -137,7 +128,7 @@ private noncomputable def kappaInv (N : Karoubi B) (V : Bounded FreeQ) :
   f := Bounded.diag (M := (Box.obj (dual N) (dual V)).X) (N := dual (Box.obj N V).X)
     fun n => (biproduct.map fun _ => dualHom N.p) ≫ canInv N.X (V.X n).dim
   comm := by
-    simp only [Karoubi.dual_p, dualHom_diag, Bounded.diag_comp_diag]
+    simp only [Karoubi.dual_p, Bounded.dualHom_diag_eq, Bounded.diag_comp_diag]
     congr 1
     funext n
     change (biproduct.map fun _ : Fin (V.X n).dim => dualHom N.p) ≫
@@ -156,7 +147,7 @@ private noncomputable def kappa (N : Karoubi B) (V : Bounded FreeQ) :
   inv := kappaInv N V
   hom_inv_id := by
     refine Karoubi.hom_ext _ _ ?_
-    rw [Karoubi.comp_f, Karoubi.id_f, Karoubi.dual_p, obj_p, dualHom_diag]
+    rw [Karoubi.comp_f, Karoubi.id_f, Karoubi.dual_p, obj_p, Bounded.dualHom_diag_eq]
     change Bounded.diag _ ≫ Bounded.diag _ = _
     rw [Bounded.diag_comp_diag]
     congr 1

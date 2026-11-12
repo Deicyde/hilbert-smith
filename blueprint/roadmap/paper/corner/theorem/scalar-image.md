@@ -16,7 +16,7 @@ where $(C,\phi)$, a complex in $\mathcal B_{\mathbf 1,Z}(T\times S^n)$, is read 
 This lemma rests on the open statement [Idempotents split in the bounded homotopy category](kb-idempotent-splitting.md), through the corner class.
 
 *Proof sketch.*
-1. $U_*\mathfrak d=\operatorname{cls}(UD,U\phi_D)$ and $U'_*\operatorname{cls}(C,\phi)=\operatorname{cls}(U'C,U'\phi)$ ([the induced map commutes with cls](../../l-theory/ultimate/groups/induced-map-cls.md); $U,U'$ are strict). $(UD,U\iota,Ur)$ splits $UE$, and $U(E\Phi)\simeq U(\Phi E^*)$, because $U$ is a strict duality functor. At level $i$, $U\operatorname{Ind}C=\bigoplus_{s\in G_i}U'C$, sheet by sheet.
+1. $U_*\mathfrak d=\operatorname{cls}(UD,U\phi_D)$ and $U'_*\operatorname{cls}(C,\phi)=\operatorname{cls}(U'C,U'\phi)$ ([the induced map commutes with cls](../../l-theory/ultimate/groups/induced-map-cls.md); $U,U'$ are [strict](scalar-forget-strict.md)). $(UD,U\iota,Ur)$ splits $UE$, and $U(E\Phi)\simeq U(\Phi E^*)$, because $U$ is a strict duality functor. At level $i$, $U\operatorname{Ind}C=\bigoplus_{s\in G_i}U'C$, sheet by sheet.
 2. Let $j_0,\pi_0$ be the inclusion and projection of sheet $0$, and put $v=UE\,j_0$ and $u=q\pi_0UE$. The block of $E$ from sheet $b$ to sheet $a$ is $E_{ab}=q^{-1}A_{b-a}$, so $u_b=A_b$ and $v_a=q^{-1}A_{-a}$.
 3. Check the relations of [Corner identification](corner-identification.md) for $C_0=U'C$, $\phi_0=U'\phi$; put $\varepsilon_i=2\delta_i+\operatorname{prop}\phi_i\to0$:
    - $uv=qE^2_{00}\simeq qE_{00}=A_0=1$ and $uE\simeq u$: apply $U$, $q\pi_0$ and $j_0$ to $E^2\simeq E$ ([Average is a compatible idempotent](../actions/average-compatible-idempotent.md)).
@@ -38,6 +38,7 @@ This lemma rests on the open statement [Idempotents split in the bounded homotop
 
 ## Proof depends on
 
+- [Forgetting to the scalar exterior quotient is strict](scalar-forget-strict.md)
 - [Corner identification](corner-identification.md)
 - [The average](../actions/average.md)
 - [Induction](../actions/induction.md)

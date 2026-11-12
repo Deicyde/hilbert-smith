@@ -18,6 +18,7 @@ $L_k(\mathcal B)$ is the group of cobordism classes of strict $k$-dimensional sy
 - [Induced homomorphism](induced-map.md)
 - [Functoriality of induced maps](induced-map-comp.md)
 - [Identity induces the identity](induced-map-id.md)
+- [Identity and composite of unitary isomorphisms](unitary-identity-composite.md)
 - [Unitary invariance](unitary-invariance.md)
 - [Sums of functors](sum-of-functors.md)
 - [Equivalence invariance](equivalence-invariance.md)

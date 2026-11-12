@@ -46,6 +46,7 @@ import HilbertSmithPaper.Categories.Cuts.CutBoundary
 import HilbertSmithPaper.Categories.Cuts.CutSquare
 import HilbertSmithPaper.Categories.Cuts.ExteriorCutIdentification
 import HilbertSmithPaper.Categories.Functors.ForgetControl
+import HilbertSmithPaper.Categories.Functors.ForgetControlStrict
 import HilbertSmithPaper.Categories.Functors.ForgetControlSupport
 import HilbertSmithPaper.Categories.Functors.ForgetGroup
 import HilbertSmithPaper.Categories.Functors.ForgetGroupSupport
@@ -266,9 +267,11 @@ import HilbertSmithPaper.Compression.CompressedResiduals
 import HilbertSmithPaper.Compression.CompressedScalarImage
 import HilbertSmithPaper.Compression.CompressedStandingData
 import HilbertSmithPaper.Compression.CompressionProductRule
+import HilbertSmithPaper.Compression.DiscardProjection
 import HilbertSmithPaper.Compression.DiscardedSubcomplex
 import HilbertSmithPaper.Compression.EndpointLemma
 import HilbertSmithPaper.Compression.RetainedCells
+import HilbertSmithPaper.Compression.RetainedInclusion
 import HilbertSmithPaper.Compression.RetainedProjection
 import HilbertSmithPaper.Compression.StartIndex
 import HilbertSmithPaper.Compression.TheoremC
@@ -287,6 +290,7 @@ import HilbertSmithPaper.Corner.ExteriorFirstCut
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Corner.StandingData
 import HilbertSmithPaper.Corner.Theorem.ScalarForget
+import HilbertSmithPaper.Corner.Theorem.ScalarForgetStrict
 import HilbertSmithPaper.Corner.Theorem.ScalarIteratedCut
 import HilbertSmithPaper.Corner.Theorem.TheoremA
 import HilbertSmithPaper.Evaluation.BasedToFree
@@ -371,6 +375,7 @@ import HilbertSmithPaper.LTheory.Base.Groups.LpMapId
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapUnitary
 import HilbertSmithPaper.LTheory.Base.Groups.ProjectiveLGroup
 import HilbertSmithPaper.LTheory.Base.Groups.SumOfFunctors
+import HilbertSmithPaper.LTheory.Base.Groups.UnitaryIdentityComposite
 import HilbertSmithPaper.LTheory.Base.Groups.UnitaryInvariance
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 import HilbertSmithPaper.LTheory.Base.Pairs.CobordismEquivalence

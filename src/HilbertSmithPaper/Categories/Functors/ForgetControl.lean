@@ -7,9 +7,10 @@ import HilbertSmithPaper.Categories.Functors.ForgetGroup
 
 For a compact metric `C_p`-space `T` and a compact metric space `X` with the trivial `C_p`-action,
 `T × X` carries the maximum metric (Mathlib's product metric) and the product action, which is
-the action on the first factor. Forgetting the control space is the strict duality functor
+the action on the first factor. Forgetting the control space is the duality functor
 `U_c = U ∘ pr_* : 𝒜_𝐆(T × X) → 𝒜_𝐆(X) → 𝒜_𝟏(X)`, the pushforward along `pr = Prod.snd` followed by
-forgetting the group (`HSP.forgetControl`, the composite `DualFunctor.comp`).
+forgetting the group (`HSP.forgetControl`, the composite `DualFunctor.comp`). Its strictness is
+the separate result `HSP.forgetControl_isStrict` (module `ForgetControlStrict`).
 
 Lean encoding. The projection is equivariant for the product action whatever the action on `X`,
 so the functor is defined for any `C_p`-action on `X`; the triviality of the action on `X`
@@ -30,10 +31,6 @@ variable {p : ℕ} {G : GroupSeq p}
 noncomputable def forgetControl :
     DualFunctor (AsymCat G (T × X)) (AsymCat (GroupSeq.trivial p) X) :=
   (push (G := G) (f := (Prod.snd : T × X → X)) continuous_snd fun _ _ => rfl).comp forgetGroup
-
-/-- Forgetting the control space is a strict duality functor. -/
-private theorem forgetControl_isStrict : (forgetControl (G := G) T X).IsStrict :=
-  fun _ => ⟨rfl, by simp [forgetControl, DualFunctor.comp, push, forgetGroup]; rfl⟩
 
 variable {T X}
 

@@ -16,6 +16,7 @@ Relabelling, pushforward of labels, forgetting the group, forgetting the control
 - [Forgetting the group](forget-group.md)
 - [Forgetting the group preserves support](forget-group-support.md)
 - [Forgetting the control space](forget-control.md)
+- [Forgetting the control space is strict](forget-control-strict.md)
 - [Forgetting the control space preserves support](forget-control-support.md)
 - [Permutation tensor](tensor-permutation.md)
 - [Permutation tensor preserves support](tensor-support.md)
