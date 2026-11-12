@@ -21,5 +21,10 @@ the [L-group](../../base/groups/l-group.md) of that duality category: cobordism 
 
 ## Depends on
 
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
 - [Decorated objects](decorated-object.md)
 - [L-group](../../base/groups/l-group.md)

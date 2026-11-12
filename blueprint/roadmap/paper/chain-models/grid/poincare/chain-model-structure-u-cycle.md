@@ -20,6 +20,9 @@ For every $i$, the [unsymmetrized structure](chain-model-structure-u.md) $\varph
 ## Depends on
 
 - [The unsymmetrized structure of the chain model](chain-model-structure-u.md)
+- [Chain model](../model/chain-model.md)
+- [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
@@ -30,3 +33,11 @@ For every $i$, the [unsymmetrized structure](chain-model-structure-u.md) $\varph
 - [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
 - [A product of structures with a zero left factor](../tensor/structure-products/str-prod-zero-left.md)
 - [A product of structures with a zero right factor](../tensor/structure-products/str-prod-zero-right.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [The structure of CP^2](../cp2/cp2-structure.md)
+- [The circle complex](../cubical/circle-complex.md)
+- [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [The circle structure](circle-data/circle-phi.md)
+- [The unsymmetrized grid structure](grid-factor/grid-structure-u.md)

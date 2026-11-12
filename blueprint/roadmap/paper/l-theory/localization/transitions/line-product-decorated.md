@@ -8,7 +8,7 @@ lean: HSP.cxProd_line_decorated
 
 # Products with the line are decorated
 
-Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration and $j\ge0$. For every complex $C$ in $\operatorname{Kar}C_{\mathbb Z^j}(\mathcal A/\mathcal U)$ with finitely many nonzero chain objects ($\Lambda$ has finitely many nonzero chain objects too), every chain object $X$ of $C\otimes\Lambda$ has $[X]=0$ in $K_0(\operatorname{Kar}C_{\mathbb Z^{j+1}}(\mathcal A/\mathcal U))$. Hence $(\operatorname{Kar}e_{j+1}^{-1})(X)$ is [decorated](../decorations/decorated-object.md) for the filtration $C_{\mathbb Z^{j+1}}\mathcal U\subset C_{\mathbb Z^{j+1}}\mathcal A$.
+Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration and $j\ge0$. For every complex $C$ in $\operatorname{Kar}C_{\mathbb Z^j}(\mathcal A/\mathcal U)$ with finitely many nonzero chain objects ($\Lambda$ has finitely many nonzero chain objects too), every chain object $X$ of $C\otimes\Lambda$ has $[X]=0$ in $K_0(\operatorname{Kar}C_{\mathbb Z^{j+1}}(\mathcal A/\mathcal U))$. Hence $(\operatorname{Kar}e_{j+1}^{-1})(X)$ is [decorated](../decorations/decorated-predicate.md) for the filtration $C_{\mathbb Z^{j+1}}\mathcal U\subset C_{\mathbb Z^{j+1}}\mathcal A$.
 
 *Proof sketch.*
 1. $(C\otimes\Lambda)_r=C_r\boxtimes\Lambda_0\oplus C_{r-1}\boxtimes\Lambda_1$, and each $\Lambda_i$ holds $\mathbb Q$ in every position. So $N\boxtimes\Lambda_i$ is isomorphic, by a map of propagation $0$, to the constant object $c(N)$.
@@ -21,16 +21,19 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 
 ## Depends on
 
-- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
 - [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 - [Box product on iterated bounded categories](../products/box-pairing-pow.md)
 - [Tensor product of complexes](../products/complex-product.md)
 - [The symmetric line](../products/symmetric-line.md)
-- [Decorated objects](../decorations/decorated-object.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
-- [Duals of box products](../products/box-dual.md)
 - [The class of an object in $K_0$](../../bounded/categories/classes/k-zero-class.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 
 ## Proof depends on
 

@@ -12,7 +12,7 @@ Take the [standing data](../standing-data.md). Let $(C,\phi)$ be a strict $N$-di
 $$\sigma_{\mathrm{tail}}\big(\Delta_{\mathbf 1}U'_*\operatorname{cls}(C,\phi)\big)\in\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)}$$
 satisfies $p\mid\sigma_i$ for all sufficiently large $i$. Here $\operatorname{cls}(C,\phi)$ is $\operatorname{cls}$ of the complex read in $\operatorname{Kar}\mathcal B_{\mathbf 1,Z}(T\times S^n)$ through the [Karoubi embedding](../../l-theory/base/categories/karoubi-embedding.md), $(C,\phi)\mapsto((C,1),\phi)$.
 
-This theorem rests on the open statements [Idempotents split in the bounded homotopy category](kb-idempotent-splitting.md) ([Balmer and Schlichting 2001, Theorem 2.8](../../../../sources/paper/balmer-schlichting-2001.md) [U]), through the corner class; [Lemma U](../../l-theory/comparison/lemma-u.md), through divisibility and the tail signature; and [Lifting](../../l-theory/localization/boundary/lift-to-pair.md), through the cut boundaries of the iterated cuts and through divisibility.
+This theorem rests on the open statements Idempotents split in the bounded homotopy category ([Balmer and Schlichting 2001, Theorem 2.8](../../../../sources/paper/balmer-schlichting-2001.md) [U]), through the corner class; Lemma U, through divisibility and the tail signature; and Lifting, through the cut boundaries of the iterated cuts and through divisibility. Its own proof is not yet formalized, and until the proofs of the following stated results are, its statement also rests on them: Transition commutes with the boundary, Products with the line are decorated, Lifting closed complexes and Independence of the lift (through the cut boundaries of the iterated cuts); Point comparison for the free categories, Boundaries have zero signature, The middle form is nonsingular, symmetric and invariant, Middle form of a sum, Classes over $\mathcal V$ lift and Lifts agree eventually (through the tail signature); Naturality of the transition (through the induced maps on ultimate L-groups); and Cobordism is an equivalence relation (through every L-group).
 
 *Proof sketch.*
 1. Form [the corner class](corner-class.md) $\mathfrak d\in\mathbb L_N(\mathcal B_{\mathbf G,Z}(T\times S^n))$.
@@ -21,7 +21,7 @@ This theorem rests on the open statements [Idempotents split in the bounded homo
 4. $U_{T*}\Delta_T\mathfrak d=\Delta_{\mathbf 1}U_*\mathfrak d$ ([Cuts commute with forgetting](cuts-commute-forgetting.md)).
 5. $U_*\mathfrak d=U'_*\operatorname{cls}(C,\phi)$, with $U$ [forgetting to the scalar exterior quotient](scalar-forget.md) for $\mathbf G$ ([Scalar image](scalar-image.md)).
 
-**Remark (not formalized).** The hypotheses are what the compression chapter's [Theorem C](../../compression/theorem-c.md) supplies for a nonempty control space, and Theorem C identifies $U'_*\operatorname{cls}(C,\phi)$ with the [labelled-model class](../../evaluation/germ.md) $\mathfrak m_{f_T}$ of the torus test map, which Theorem B evaluates.
+**Remark (not formalized).** The hypotheses are what the compression chapter's Theorem C supplies for a nonempty control space, and Theorem C identifies $U'_*\operatorname{cls}(C,\phi)$ with the labelled-model class $\mathfrak m_{f_T}$ of the torus test map, which Theorem B evaluates.
 
 ## Sources
 
@@ -36,8 +36,17 @@ This theorem rests on the open statements [Idempotents split in the bounded homo
 - [Forgetting to the scalar exterior quotient](scalar-forget.md)
 - [Scalar iterated cut](scalar-iterated-cut.md)
 - [The tail signature](../../signatures/tail/tail-signature.md)
-- [Ultimate L-group and cls](../../l-theory/ultimate/groups/ultimate-l-group.md)
 - [Embedding into the idempotent completion](../../l-theory/base/categories/karoubi-embedding.md)
+- [Asymptotic category](../../categories/asymptotic/asymptotic-category.md)
+- [The trivial group sequence](../../categories/asymptotic/trivial-group-sequence.md)
+- [Exterior quotient](../../categories/supports/exterior-quotient.md)
+- [The exterior](../exterior.md)
+- [The round sphere](../round-sphere.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+- [L-group](../../l-theory/base/groups/l-group.md)
+- [Duality functors carry Poincaré complexes](../../l-theory/base/pairs/functor-poincare.md)
+- [Induced map on ultimate L](../../l-theory/ultimate/groups/induced-map.md)
+- [The class map](../../l-theory/ultimate/groups/ultimate-cls.md)
 
 ## Proof depends on
 

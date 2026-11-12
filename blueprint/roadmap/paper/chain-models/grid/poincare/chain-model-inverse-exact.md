@@ -21,6 +21,7 @@ For every $i$ and $N=n+4$, the map $b_i$ of [chain-model duality](../chain-model
 
 - [Chain-model duality](../chain-model-duality.md)
 - [The unsymmetrized structure of the chain model](chain-model-structure-u.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
@@ -35,3 +36,11 @@ For every $i$ and $N=n+4$, the map $b_i$ of [chain-model duality](../chain-model
 - [The grid complex vanishes in negative degrees](grid-factor/grid-dim-neg.md)
 - [The identity of a dual complex as a map of degree zero](grid-factor/id-dual-deg0.md)
 - [The identity as a map of degree zero](../tensor/id-deg0.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
+- [The inverse of the structure of CP^2](../cp2/cp2-inverse.md)
+- [The structure of CP^2](../cp2/cp2-structure.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [The unsymmetrized grid structure](grid-factor/grid-structure-u.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)

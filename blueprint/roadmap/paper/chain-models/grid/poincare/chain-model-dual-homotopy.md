@@ -22,6 +22,8 @@ For every $i$, with $d$ the differential of the [dual complex](../../../l-theory
 - [Chain-model duality](../chain-model-duality.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
 - [The dual homotopy of the chain model](chain-model-h-dual.md)
+- [Chain model](../model/chain-model.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
@@ -45,3 +47,18 @@ For every $i$, with $d$ the differential of the [dual complex](../../../l-theory
 - [The dual circle homotopy](circle-data/circle-k-dual.md)
 - [The identity as a map of degree zero](../tensor/id-deg0.md)
 - [The identity of a dual complex as a map of degree zero](grid-factor/id-dual-deg0.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
+- [The inverse of the structure of CP^2](../cp2/cp2-inverse.md)
+- [The structure of CP^2](../cp2/cp2-structure.md)
+- [The circle complex](../cubical/circle-complex.md)
+- [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [The unsymmetrized structure of the chain model](chain-model-structure-u.md)
+- [The circle inverse](circle-data/circle-b.md)
+- [The circle structure](circle-data/circle-phi.md)
+- [The unsymmetrized grid structure](grid-factor/grid-structure-u.md)
+- [Tensor of graded maps of based complexes](../tensor/based-tensor-hom.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

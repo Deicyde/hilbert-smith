@@ -22,6 +22,7 @@ For every $i$, with $d$ the differential of the [chain model](../model/chain-mod
 - [Chain-model duality](../chain-model-duality.md)
 - [Chain model](../model/chain-model.md)
 - [The homotopy of the chain model](chain-model-h.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
@@ -44,3 +45,7 @@ For every $i$, with $d$ the differential of the [chain model](../model/chain-mod
 - [The inverse of the structure of CP^2](../cp2/cp2-inverse.md)
 - [The structure of CP^2](../cp2/cp2-structure.md)
 - [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [Tensor of graded maps of based complexes](../tensor/based-tensor-hom.md)

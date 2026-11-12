@@ -16,9 +16,16 @@ On the dual $D_i^{N-*}$ of the [chain model](../model/chain-model.md), $N=n+4$, 
 
 ## Depends on
 
+- [Chain model](../model/chain-model.md)
+- [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
 - [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
-- [Chain model](../model/chain-model.md)
 - [Dual tensor of graded maps of based complexes](../tensor/based-dual-tensor-hom.md)
 - [The dual grid homotopy](grid-factor/grid-h-dual.md)
 - [The identity of a dual complex as a map of degree zero](grid-factor/id-dual-deg0.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)

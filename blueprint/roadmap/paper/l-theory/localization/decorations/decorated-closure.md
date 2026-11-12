@@ -20,12 +20,15 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 
 - [Decorated objects of the completed quotient](decorated-predicate.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
-- [The quotient duality functor](../../base/categories/quotient-duality-functor.md)
-- [The class of an object in $K_0$](../../bounded/categories/classes/k-zero-class.md)
-- [Isomorphism classes of objects](../../bounded/categories/classes/iso-classes.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 
 ## Proof depends on
 
+- [The quotient duality functor](../../base/categories/quotient-duality-functor.md)
+- [The class of an object in $K_0$](../../bounded/categories/classes/k-zero-class.md)
+- [Isomorphism classes of objects](../../bounded/categories/classes/iso-classes.md)
 - [Equality in $K_0$](../../bounded/categories/k-zero-stable-equality.md)
 - [Dual of a binary sum](../../base/categories/sums/dual-biproduct.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)

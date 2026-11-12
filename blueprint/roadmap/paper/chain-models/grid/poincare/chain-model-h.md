@@ -16,9 +16,14 @@ On the [chain model](../model/chain-model.md) $D_i=C(k_i)\otimes P$, $H_i=H^{(n)
 
 ## Depends on
 
+- [Chain model](../model/chain-model.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
 - [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
-- [Chain model](../model/chain-model.md)
 - [Tensor of graded maps of based complexes](../tensor/based-tensor-hom.md)
 - [The grid homotopy](grid-factor/grid-h.md)
 - [The identity as a map of degree zero](../tensor/id-deg0.md)
+- [Mesh sequence](../mesh-sequence.md)

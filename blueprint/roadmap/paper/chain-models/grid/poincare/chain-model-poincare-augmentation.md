@@ -9,7 +9,7 @@ lean: HSP.ChainModels.chainModel_poincare_augmentation
 
 # The chain model is Poincaré: the augmentation
 
-For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, the structure $\varphi_i$ of [chain-model duality](../chain-model-duality.md) and the [augmentation](chain-model-aug.md) $\varepsilon$ of the [chain model](../model/chain-model.md) satisfy $\varepsilon\varphi_i(\alpha)=\alpha(z_i)$, where $z_i$ is the fundamental cycle.
+For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, the structure $\varphi_i$ of [chain-model duality](../chain-model-duality.md) and the [augmentation](chain-model-aug.md) $\varepsilon$ of the chain model satisfy $\varepsilon\varphi_i(\alpha)=\alpha(z_i)$, where $z_i$ is the fundamental cycle.
 
 *Proof sketch.* For a [product of structures](../tensor/structure-products/based-str-prod.md) $\varphi\otimes\theta$ with $\varphi\in M(C)_m$, $\theta\in M(E)_{m'}$, $k=m+m'$, only the block from the dual of $C_m\boxtimes E_{m'}$ lands in the summand $C_0\boxtimes E_0$ of degree $0$ ([blocks of a product of structures](../tensor/structure-products/str-prod-blocks.md)). A block landing in degree $0$ has $q=0$ at every step of the iterated product, so each factor $(-1)^{q(p+m)}$ is $+1$. So if $\varepsilon_C\varphi_{0,m}=z_C^*$ and $\varepsilon_E\theta_{0,m'}=z_E^*$, then $(\varepsilon_C\boxtimes\varepsilon_E)(\varphi\otimes\theta)_{0,k}=(z_C\boxtimes z_E)^*$ on the summand of $z_C\boxtimes z_E$ ([Kronecker product of composites](../tensor/kron-composite.md), [transpose of a Kronecker product](../tensor/kron-dual.md)). Induct over the circle factors: the unit structure and $\varepsilon\varphi^s(e^*)=1$ ([circle duality](../circle-duality.md) (4)) give it for $C(k_i)$, and $\varepsilon_P\varphi_P(e_4^*)=1$, a direct $1\times1$ computation from the [structure](../cp2/cp2-structure.md), [augmentation](../cp2/cp2-aug.md) and [fundamental cycle](../cp2/cp2-fundamental.md) of CP^2, for $D_i$.
 
@@ -19,9 +19,17 @@ For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, t
 
 ## Depends on
 
+- [Fundamental cycle of the chain model](../model/chain-model-fundamental.md)
+- [Chain-model duality](../chain-model-duality.md)
+- [The augmentation of the chain model](chain-model-aug.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 - [The structure of the unit complex](../model/unit-structure.md)
 - [The structure of the grid complex](../model/grid-structure.md)
-- [Fundamental cycle of the chain model](../model/chain-model-fundamental.md)
 - [The structure of CP^2](../cp2/cp2-structure.md)
 - [Fundamental cycle of CP^2](../cp2/cp2-fundamental.md)
 - [Augmentation of CP^2](../cp2/cp2-aug.md)
@@ -30,12 +38,6 @@ For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, t
 - [Fundamental chain of the circle complex](../cubical/circle-fundamental.md)
 - [Augmentation of the grid complex](../cubical/grid-aug.md)
 - [Fundamental chain of the grid complex](../cubical/grid-fundamental.md)
-- [Chain-model duality](../chain-model-duality.md)
-- [The augmentation of the chain model](chain-model-aug.md)
-- [Chain model](../model/chain-model.md)
-
-## Proof depends on
-
 - [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)
 - [Blocks of a product of structures](../tensor/structure-products/str-prod-blocks.md)
 - [Kronecker product of composites](../tensor/kron-composite.md)
@@ -43,3 +45,8 @@ For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, t
 - [Block decomposition of the identity](../tensor/block-decomposition.md)
 - [Circle duality](../circle-duality.md)
 - [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [The symmetric circle structure](circle-data/circle-phi-sym.md)
+- [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)

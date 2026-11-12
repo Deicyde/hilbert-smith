@@ -24,6 +24,8 @@ For every $i$, with $d$ the differential of $D_i$ and of $D_i^{N-*}$ (on the lat
 - [The homotopy of the chain model](chain-model-h.md)
 - [The dual homotopy of the chain model](chain-model-h-dual.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Chain model](../model/chain-model.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
