@@ -51,7 +51,9 @@ import HilbertSmithPaper.Categories.Functors.ForgetControlSupport
 import HilbertSmithPaper.Categories.Functors.ForgetGroup
 import HilbertSmithPaper.Categories.Functors.ForgetGroupSupport
 import HilbertSmithPaper.Categories.Functors.ForgetLabels
+import HilbertSmithPaper.Categories.Functors.ForgetLabelsStrict
 import HilbertSmithPaper.Categories.Functors.GroupEnumeration
+import HilbertSmithPaper.Categories.Functors.NearestPointMap
 import HilbertSmithPaper.Categories.Functors.PushSupport
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.RelabellingEquivalence
@@ -394,6 +396,7 @@ import HilbertSmithPaper.LTheory.Base.Pairs.SumOfPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 import HilbertSmithPaper.LTheory.Base.Pairs.TransportCobordism
 import HilbertSmithPaper.LTheory.Bounded.BoundedFunctorStrict
+import HilbertSmithPaper.LTheory.Bounded.BoundedQuotientFunctorStrict
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedCategory
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDiag
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedDuality

@@ -8,8 +8,9 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
 
 For a full additive subcategory `U ⊂ A` closed under duality, the entrywise quotient functor
 `C_ℤ(A) → C_ℤ(A/U)` kills the maps factoring through `C_ℤ(U)`, so it descends to
-`Bounded.quotientFunctor U : C_ℤ(A)/C_ℤ(U) → C_ℤ(A/U)`, a strict duality functor that is the
-identity on objects.
+`Bounded.quotientFunctor U : C_ℤ(A)/C_ℤ(U) → C_ℤ(A/U)`, a duality functor that is the identity
+on objects, with the identity duality isomorphism. That it is strict is a separate lemma
+(`HSP.Bounded.quotientFunctor_isStrict`).
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -87,9 +88,6 @@ def quotientFunctor : DualFunctor (FiltQuot (sub U)) (Bounded (FiltQuot U)) wher
   ξ_dual M := by
     erw [dualHom_id, Category.comp_id]
     exact (eqToHom_refl _ _).symm
-
-/-- The entrywise quotient functor is strict. -/
-lemma quotientFunctor_isStrict : (quotientFunctor U).IsStrict := fun _ => ⟨rfl, rfl⟩
 
 end Bounded
 

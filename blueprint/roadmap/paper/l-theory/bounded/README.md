@@ -9,3 +9,4 @@ For an additive category $\mathcal A$ with duality, $C_{\mathbb Z}(\mathcal A)$ 
 - [Bounded categories](categories/README.md)
 - [Half-lines](half-lines/README.md)
 - [Bounded extensions of strict functors are strict](bounded-functor-strict.md)
+- [The entrywise quotient functor is strict](bounded-quotient-functor-strict.md)

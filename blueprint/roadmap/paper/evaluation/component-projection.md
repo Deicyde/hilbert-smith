@@ -9,7 +9,7 @@ Let $Y_n=\{y_-,y_+\}$ be the last cut set of the [standing data](../corner/stand
 - the quotient by $\mathcal A_{T\times y_-}$ (the [support filtration](../categories/supports/support-filtration.md) of $T\times\{y_-\}\subseteq T\times Y_n$);
 - the inverse of the [excision](../categories/supports/excision.md) $\mathcal U_+/(\mathcal U_+\cap\mathcal U_-)\to\mathcal A_{T\times Y_n}/\mathcal A_{T\times y_-}$ for $A=T\times\{y_+\}$ and $B=T\times\{y_-\}$, where $\mathcal U_\pm$ are the [subcategories](../categories/supports/relative-support.md) of $T\times\{y_\pm\}$-supported objects of $\mathcal A_{T\times Y_n}$, followed by the identification $\mathcal U_+/(\mathcal U_+\cap\mathcal U_-)\to\mathcal A_{T\times y_+}/\mathcal A_\varnothing$ of the [quotient of an excisive intersection](excisive-intersection-quotient.md) ($T\times S^n$ is compact, and $T\times\{y_\pm\}$ are closed and disjoint);
 - the inverse of the [quotient isomorphism by the empty support](../categories/supports/quotient-by-empty.md) $\mathcal A_{T\times y_+}\to\mathcal A_{T\times y_+}/\mathcal A_\varnothing$;
-- the inverse of the [relabelling equivalence](../categories/functors/relabelling-equivalence.md) for $T\times\{y_+\}$, which is nonempty because $T$ is;
+- the inverse of the [relabelling equivalence](../categories/functors/relabelling-equivalence.md) for $T\times\{y_+\}$, with a map $\rho:T\times S^n\to T\times\{y_+\}$, $d(x,\rho x)=d(x,T\times\{y_+\})$, given by [Nearest-point maps](../categories/functors/nearest-point-map.md), since $T\times\{y_+\}$ is closed in the compact space $T\times S^n$ and nonempty because $T$ is;
 - [pushforward](../categories/functors/pushforward.md) along $T\times\{y_+\}\cong T$.
 
 Each inverse is the inverse of an induced isomorphism on ultimate L, by [equivalence invariance](../l-theory/ultimate/groups/equivalence-invariance.md); all maps are [induced maps](../l-theory/ultimate/groups/induced-map.md).
@@ -26,6 +26,7 @@ Each inverse is the inverse of an induced isomorphism on ultimate L, by [equival
 - [Quotient of an excisive intersection](excisive-intersection-quotient.md)
 - [Quotient by the empty support](../categories/supports/quotient-by-empty.md)
 - [Relabelling equivalence](../categories/functors/relabelling-equivalence.md)
+- [Nearest-point maps](../categories/functors/nearest-point-map.md)
 - [Pushforward](../categories/functors/pushforward.md)
 - [Support filtration](../categories/supports/support-filtration.md)
 - [Equivalence invariance on ultimate L](../l-theory/ultimate/groups/equivalence-invariance.md)

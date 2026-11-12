@@ -18,7 +18,7 @@ $\mathcal A_S$ is a duality category as a [dual subcategory](../../l-theory/base
 
 Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$ needs neither that $S$ is closed nor that $X$ is compact.
 
-**Remark (not formalized).** Such a $\rho$ exists: $S$ is a nonempty closed subset of the compact space $X$, hence compact, so for every $x$ the distance $d(x,S)$ is attained at a point of $S$, and $\rho$ chooses one such point for each $x$.
+*Remark.* Such a $\rho$ exists by [Nearest-point maps](nearest-point-map.md), because $S$ is a nonempty closed subset of the compact space $X$.
 
 **Remark (not formalized).** The triangle identities $\varepsilon_{P}\circ P\eta=\mathrm{id}_P$ and $R\varepsilon\circ\eta_R=\mathrm{id}_R$ hold, because every component is an identity matrix. They are not part of the data listed above.
 

@@ -21,3 +21,5 @@ Relabelling, pushforward of labels, forgetting the group, forgetting the control
 - [Permutation tensor](tensor-permutation.md)
 - [Permutation tensor preserves support](tensor-support.md)
 - [Forgetting labels](forget-labels.md)
+- [Forgetting labels is strict](forget-labels-strict.md)
+- [Nearest-point maps](nearest-point-map.md)
