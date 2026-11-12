@@ -5,6 +5,7 @@ import HilbertSmithPaper.ChainModels.Grid.Model.ChainModel
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelCube
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCubeRealization
+import HilbertSmithPaper.Compression.TestPreimage
 
 /-!
 # Retained and discarded cells
@@ -16,8 +17,7 @@ the set of retained cells of `D_i`.
 
 ## Encoding
 
-* `testPreimage F` is `K_t`, the preimage under `f_T` of the image of the closed Euclidean ball
-  `B̄(0, t) ⊆ ℝⁿ` in `Sⁿ`.
+* `testPreimage F` (`Compression.TestPreimage`) is `K_t`.
 * `IsRetained F i r a` (the declaration of the article) says that the closed cube of the basis
   cell `a` of `(D_i)_r` meets `K_t`; a cell is discarded when this fails.
 * `retainedCells F i r` is `Ret_i` in degree `r`, a finset of basis indices of `(D_i)_r` (the
@@ -31,12 +31,6 @@ namespace HSP.Compression
 open HSP.ChainModels
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
-
-/-- The set `K_t = f_T⁻¹(B̄(0, t)) ⊆ 𝕋ⁿ`, for the torus test map `f_T` of the pinch radius `ρ`
-and the buffer radius `t`. -/
-def testPreimage (F : FixedLocalData p n D ρplus) : Set (Torus n) :=
-  torusTestMap F.toLocalDatum F.ρ ⁻¹'
-    ((↑) '' Metric.closedBall (0 : EuclideanSpace ℝ (Fin n)) F.t)
 
 /-- The basis cell `a = c ⊗ e` of `(D_i)_r` is *retained* if its closed cube `|c|` meets
 `K_t`; it is *discarded* otherwise. -/

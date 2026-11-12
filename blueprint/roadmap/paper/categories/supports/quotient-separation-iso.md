@@ -27,6 +27,7 @@ Let $X$ be compact with an isometric $C_p$-action, let $S\subset X$, and let $Y,
 - [Supported objects of a support quotient](quotient-support.md)
 - [Supported objects of a support quotient are additive](quotient-support-additive.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
 
 ## Proof depends on
 

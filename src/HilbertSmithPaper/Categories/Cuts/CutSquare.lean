@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Categories.Supports.Excision
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Supports.IteratedQuotient
 import HilbertSmithPaper.Categories.Supports.QuotientSupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIntersection

@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration

@@ -3,7 +3,7 @@ article_id: af_cd214288ab36ac3e7b071271
 declaration: def
 origin: bridged
 statement: formalized
-lean: HSP.Compression.compress
+lean: HSP.Compression.compress, HSP.Compression.dHat, HSP.Compression.dHatDual, HSP.Compression.phiHat, HSP.Compression.bHat, HSP.Compression.HHat, HSP.Compression.H'Hat, HSP.Compression.AHat, HSP.Compression.BHat, HSP.Compression.VHat
 ---
 # Compressed maps
 

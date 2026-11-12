@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockDecomposition
 
 /-!
 # Blocks of a composite

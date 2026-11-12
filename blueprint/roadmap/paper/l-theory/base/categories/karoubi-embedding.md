@@ -22,3 +22,7 @@ For a duality category $\mathcal A$, the *Karoubi embedding* $\mathrm{emb}_{\mat
 
 - [Idempotent completion with duality](karoubi-duality.md)
 - [Duality functor](duality-functor.md)
+
+## Proof depends on
+
+- [Strict duality functor](duality-functors/strict-duality-functor.md)

@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.GridBox
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
+import HilbertSmithPaper.ChainModels.Grid.CircleArcs
 
 /-!
 # Box hull
@@ -10,28 +11,15 @@ For `k ≥ 8` and `X ⊆ 𝕋ⁿ`, let `J_j` be a shortest closed arc containing
 
 ## Encoding
 
-* A closed arc of `ℝ/4ℤ` is `circleArc a ℓ`, the image of `[a, a + ℓ]`, `ℓ ≥ 0`.
-* `shortestArc Y` is a closed arc containing `Y` of least length (a choice; it is unique under
-  the hypotheses of the article's remark); if no arc of least length exists it is the whole
-  circle, which never happens for the sets of the paper.
+* Closed arcs `circleArc a ℓ` and the shortest arc `shortestArc Y` are in
+  `ChainModels.Grid.CircleArcs` (the shortest arc is unique under the hypotheses of the
+  article's remark; the whole-circle fallback never happens for the sets of the paper).
 * `smallestGridArc k hk J` is a grid arc of least length whose realization contains `J` (a
   choice); if none exists it is the one-vertex arc at `[0]`, which uses `k ≥ 8 > 0`.
 * `boxHull k hk X` (the declaration of the article) applies these to each coordinate projection.
 -/
 
 namespace HSP.ChainModels
-
-/-- The closed arc of `ℝ/4ℤ` from `a` to `a + ℓ`. -/
-def circleArc (a ℓ : ℝ) : Set (AddCircle (4 : ℝ)) :=
-  (fun t : ℝ => (t : AddCircle (4 : ℝ))) '' Set.Icc a (a + ℓ)
-
-open Classical in
-/-- A shortest closed arc `J` containing `Y`. -/
-noncomputable def shortestArc (Y : Set (AddCircle (4 : ℝ))) : Set (AddCircle (4 : ℝ)) :=
-  if h : ∃ q : ℝ × ℝ, 0 ≤ q.2 ∧ Y ⊆ circleArc q.1 q.2 ∧
-      ∀ q' : ℝ × ℝ, 0 ≤ q'.2 → Y ⊆ circleArc q'.1 q'.2 → q.2 ≤ q'.2 then
-    circleArc h.choose.1 h.choose.2
-  else Set.univ
 
 open Classical in
 /-- A smallest grid arc `A` of `S_k` with `J ⊆ |A|`. -/

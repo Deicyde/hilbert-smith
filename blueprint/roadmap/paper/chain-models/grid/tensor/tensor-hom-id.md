@@ -11,7 +11,7 @@ lean: HSP.ChainModels.basedTensorHom_id
 
 Let $C$ and $E$ be complexes of based vector spaces, $E$ vanishing in negative degrees. The [tensor](based-tensor-hom.md) of the [identities of degree zero](id-deg0.md) of $C$ and $E$ is the identity of $C\otimes E$: $1_C\otimes1_E=1_{C\otimes E}$.
 
-*Proof sketch.* The block of $1_C\otimes1_E$ from the summand $p$ to the summand $p$ is the Kronecker product of identities, which is the identity ([Kronecker product of identities](kron-transport.md)); all other blocks vanish. The identity is the sum of its diagonal blocks ([block decomposition of the identity](block-decomposition.md)).
+*Proof sketch.* The block of $1_C\otimes1_E$ from the summand $p$ to the summand $p$ is the Kronecker product of identities, which is the identity ([Kronecker product of identities](kron-transport.md)); all other blocks vanish. The identity is the sum of its diagonal blocks ([block decomposition of the identity](blocks/block-decomposition.md)).
 
 ## Sources
 
@@ -25,4 +25,4 @@ Let $C$ and $E$ be complexes of based vector spaces, $E$ vanishing in negative d
 ## Proof depends on
 
 - [Kronecker product of identities](kron-transport.md)
-- [Block decomposition of the identity](block-decomposition.md)
+- [Block decomposition of the identity](blocks/block-decomposition.md)

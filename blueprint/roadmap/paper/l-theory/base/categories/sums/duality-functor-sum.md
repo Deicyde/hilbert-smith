@@ -20,4 +20,4 @@ Let $(F,\xi),(G,\zeta):\mathcal B\to\mathcal B'$ be [duality functors](../dualit
 
 - [Duality functor](../duality-functor.md)
 - [Dual of a binary sum](dual-biproduct.md)
-- [A duality category has binary direct sums](../dual-binary-biproducts.md)
+- [A duality category has binary direct sums](dual-binary-biproducts.md)

@@ -41,3 +41,4 @@ Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, henc
 - [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
 - [Equality of classes](../asymptotic/structure/class-eq.md)
 - [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [The quotient duality functor is strict](../../l-theory/base/categories/duality-functors/quotient-functor-strict.md)

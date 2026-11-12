@@ -45,3 +45,4 @@ such that:
 - [Duality category of a dual-closed subcategory](../l-theory/base/categories/dual-subcategory.md)
 - [The quotient duality functor](../l-theory/base/categories/quotient-duality-functor.md)
 - [Lift of a duality functor to a quotient](../l-theory/base/categories/quotient-dual-lift.md)
+- [The quotient duality functor is strict](../l-theory/base/categories/duality-functors/quotient-functor-strict.md)

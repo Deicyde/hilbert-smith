@@ -43,3 +43,5 @@ Let $S,Y,Z\subset X$. The identity on objects and on representatives gives mutua
 - [Coordinate projection onto a restriction](../asymptotic/restriction/coordinate-projection.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
+- [The quotient duality functor is strict](../../l-theory/base/categories/duality-functors/quotient-functor-strict.md)

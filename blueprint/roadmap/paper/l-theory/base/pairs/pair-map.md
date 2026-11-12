@@ -19,4 +19,4 @@ Let $f:C\to D$ be a chain map, $m=n-1$, $\phi\in M(C)_m$ with $\partial\phi=0$, 
 
 - [Mapping cone](../complexes/cone.md)
 - [Pushforward of structures](../complexes/structure-push.md)
-- [A duality category has binary direct sums](../categories/dual-binary-biproducts.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)

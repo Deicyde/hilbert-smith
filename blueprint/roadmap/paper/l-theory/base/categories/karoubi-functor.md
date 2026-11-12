@@ -8,9 +8,9 @@ lean: HSP.DualFunctor.kar
 
 # Completion of a duality functor
 
-A duality functor $(F,\xi):\mathcal A\to\mathcal B$ induces $\mathrm{Kar}\,F:(M,e)\mapsto(FM,Fe)$ with $\xi_{(M,e)}=\xi_M\circ F(e^*)$. This is a duality functor, and it is strict if $F$ is.
+A duality functor $(F,\xi):\mathcal A\to\mathcal B$ induces $\mathrm{Kar}\,F:(M,e)\mapsto(FM,Fe)$ with $\xi_{(M,e)}=\xi_M\circ F(e^*)$. This is a duality functor. It is [strict if $F$ is](duality-functors/karoubi-functor-strict.md).
 
-*Proof sketch.* $F(e^*)$ is idempotent and commutes past $\xi$ by naturality, so $\xi_M F(e^*)$ is a morphism of the completion with inverse $F(e^*)\xi_M^{-1}$. Naturality and $(\xi_{(M,e)})^*=\xi_{(M,e)^*}$ follow from those of $\xi$ together with $e^2=e$. If $\xi=\mathrm{id}$, then $\xi_M F(e^*)=F(e^*)$, which is the identity of $(F(M^*),F(e^*))$.
+*Proof sketch.* $F(e^*)$ is idempotent and commutes past $\xi$ by naturality, so $\xi_M F(e^*)$ is a morphism of the completion with inverse $F(e^*)\xi_M^{-1}$. Naturality and $(\xi_{(M,e)})^*=\xi_{(M,e)^*}$ follow from those of $\xi$ together with $e^2=e$.
 
 ## Sources
 

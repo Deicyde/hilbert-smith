@@ -20,6 +20,7 @@ For duality functors $F:\mathcal B\to\mathcal B'$ and $G:\mathcal B'\to\mathcal 
 ## Depends on
 
 - [Induced homomorphism](induced-map.md)
+- [Identity and composite duality functors](../categories/duality-functors/composite-duality-functor.md)
 
 ## Proof depends on
 

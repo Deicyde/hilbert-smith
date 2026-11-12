@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.Corner.Exterior
 import HilbertSmithPaper.Corner.RoundSphere
 import HilbertSmithPaper.Categories.Functors.ForgetControlSupport

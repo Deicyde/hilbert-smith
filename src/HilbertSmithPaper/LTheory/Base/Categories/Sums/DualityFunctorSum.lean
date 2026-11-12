@@ -1,4 +1,4 @@
-import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
+import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBinaryBiproducts
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBiproduct
 

@@ -3,7 +3,7 @@ article_id: af_01c33592a65c3062fa540c7f
 declaration: instance
 origin: bridged
 statement: formalized
-lean: HSP.Corner.roundMetric
+lean: HSP.Corner.roundMetric, HSP.Corner.RoundSphere
 ---
 
 # The round sphere

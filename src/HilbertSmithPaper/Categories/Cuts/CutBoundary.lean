@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Categories.Cuts.CutSquare
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Supports.QuotientSeparationIso
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisionBoundary
 

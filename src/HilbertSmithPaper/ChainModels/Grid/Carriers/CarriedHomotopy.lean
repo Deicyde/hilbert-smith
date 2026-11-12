@@ -1,5 +1,6 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.CarriedChainMap
+import HilbertSmithPaper.ChainModels.Grid.Carriers.CarriedMap
+import HilbertSmithPaper.ChainModels.Grid.Carriers.CarriedChainMap
 import HilbertSmithPaper.ChainModels.Grid.BasedSubcomplex
 
 /-!

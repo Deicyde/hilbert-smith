@@ -20,3 +20,7 @@ The functor needs neither that the actions are isometric nor that $X'$ is compac
 
 - [Asymptotic duality](../asymptotic/asymptotic-duality.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+
+## Proof depends on
+
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)

@@ -22,3 +22,7 @@ Let $\mathbf 1$ be the [trivial group sequence](../categories/asymptotic/trivial
 - [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)
 - [Based vector spaces over the trivial group](based-to-free.md)
 - [Duality functors carry Poincaré complexes](../l-theory/base/pairs/functor-poincare.md)
+
+## Proof depends on
+
+- [Identity and composite duality functors](../l-theory/base/categories/duality-functors/composite-duality-functor.md)

@@ -1,5 +1,6 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
+import HilbertSmithPaper.ChainModels.Grid.Carriers.AcyclicCarriers
+import HilbertSmithPaper.ChainModels.Grid.Carriers.CarriedMap
 import HilbertSmithPaper.ChainModels.Grid.BasedSubcomplex
 import HilbertSmithPaper.Categories.Asymptotic.Propagation
 

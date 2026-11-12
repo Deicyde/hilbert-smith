@@ -1,5 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Complexes.StructurePush
-import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
+import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBinaryBiproducts
 
 /-!
 # Sum of structured complexes

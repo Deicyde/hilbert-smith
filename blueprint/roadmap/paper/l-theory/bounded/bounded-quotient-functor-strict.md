@@ -23,3 +23,4 @@ Let $U\subset A$ be a [full additive subcategory closed under duality](../base/c
 - [Duality functor](../base/categories/duality-functor.md)
 - [Additive subcategory closed under duality](../base/categories/dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../base/categories/duality-category.md)
+- [Strict duality functor](../base/categories/duality-functors/strict-duality-functor.md)

@@ -42,7 +42,7 @@ For every $i$ and every $\alpha\in D_N^*$, the degree-$0$ part of $D_i^{N-*}$, t
 - [Blocks of a product of structures](../tensor/structure-products/str-prod-blocks.md)
 - [Kronecker product of composites](../tensor/kron-composite.md)
 - [Transpose of a Kronecker product](../tensor/kron-dual.md)
-- [Block decomposition of the identity](../tensor/block-decomposition.md)
+- [Block decomposition of the identity](../tensor/blocks/block-decomposition.md)
 - [Circle duality](../circle-duality.md)
 - [The cells of CP^2 vanish in negative degrees](../cp2/cp2-dim-neg.md)
 - [Mesh sequence](../mesh-sequence.md)

@@ -1,8 +1,8 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExt
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExtraction
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockExt
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockExtraction
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.TensorHomTransportBlocks
 
 /-!

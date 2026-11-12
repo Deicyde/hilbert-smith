@@ -4,7 +4,7 @@ article_id: af_3bc1a960ae5a4a565dcd78f5
 
 # Completed maps and tracks: components
 
-The cutoff, the completed and track maps on Euclidean space, the completed representative, the track family and its members, and the track oscillation.
+The cutoff, the completed and track maps on Euclidean space, the completed representative, the track family and its members, the track oscillation, and the track defect.
 
 - [Completed cutoff](completed-cutoff.md)
 - [The completed map on Euclidean space](completed-map-euclid.md)
@@ -15,3 +15,4 @@ The cutoff, the completed and track maps on Euclidean space, the completed repre
 - [The track family contains the completed maps and the identity](track-family-members.md)
 - [Track oscillation](track-oscillation.md)
 - [The track oscillation is bounded](track-oscillation-bounded.md)
+- [Track defect](track-defect.md)

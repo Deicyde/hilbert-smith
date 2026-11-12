@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Categories.Supports.RelativeIntersectionAdditive
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.QuotientFunctorStrict
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualLift

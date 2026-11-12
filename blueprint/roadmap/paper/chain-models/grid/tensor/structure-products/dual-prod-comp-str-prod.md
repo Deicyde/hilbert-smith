@@ -27,8 +27,8 @@ the [tensor](../based-tensor-hom.md) of the maps $\varphi_{a,m-a}f_a$ and $\thet
 
 ## Proof depends on
 
-- [Maps between concatenations are determined by their blocks](../block-ext.md)
-- [Blocks of a composite](../block-comp.md)
+- [Maps between concatenations are determined by their blocks](../blocks/block-ext.md)
+- [Blocks of a composite](../blocks/block-comp.md)
 - [Blocks of a product of structures](str-prod-blocks.md)
 - [Blocks of a product of duality maps](dual-prod-blocks.md)
 - [Kronecker product of composites](../kron-composite.md)

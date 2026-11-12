@@ -5,8 +5,8 @@ import Mathlib
 
 A *carrier* from a finite based chain complex `E` in degrees `≥ 0` to a rational chain complex
 `F` with augmentation `ε` assigns to every basis element `e` of `E` an augmented acyclic
-subcomplex `Γ(e) ⊆ F`, nested under the faces of `e`. A graded linear map `E → F` is *carried*
-when it sends every basis element `e` into `Γ(e)`.
+subcomplex `Γ(e) ⊆ F`, nested under the faces of `e`. Carried maps are in
+`ChainModels.Grid.Carriers.CarriedMap`.
 
 ## Encoding
 
@@ -20,9 +20,6 @@ when it sends every basis element `e` into `Γ(e)`.
   spelled out on elements: every cycle of positive degree bounds in `Γ(e)`, every degree-0 cycle
   with augmentation `0` bounds in `Γ(e)`, and some degree-0 cycle has augmentation `1`.
 * `e'` *occurs in* `de` when the `e'`-coordinate of `de` is nonzero.
-* A linear map of any degree is a family `u r : E_r → F_{σ r}`; a map of degree `m` has
-  `σ r = r + m`. Taking `σ` arbitrary lets a chain map (`σ = id`) and a homotopy
-  (`σ r = r + 1`) be passed directly.
 -/
 
 open CategoryTheory
@@ -57,17 +54,5 @@ structure Carrier (E : ChainComplex (ModuleCat.{0} ℚ) ℤ) {ι : ℤ → Type}
   /-- Nesting: `Γ(e') ⊆ Γ(e)` whenever `e'` occurs in `de`. -/
   nested : ∀ r (e : ι r) (e' : ι (r - 1)),
     (b (r - 1)).repr ((E.d r (r - 1)).hom (b r e)) e' ≠ 0 → ∀ s, sub (r - 1) e' s ≤ sub r e s
-
-namespace Carrier
-
-variable {E : ChainComplex (ModuleCat.{0} ℚ) ℤ} {ι : ℤ → Type}
-  {b : ∀ r, Module.Basis (ι r) ℚ (E.X r)} {F : ChainComplex (ModuleCat.{0} ℚ) ℤ} {ε : F.X 0 →ₗ[ℚ] ℚ}
-
-/-- A linear map `u` from `E` to `F`, sending `E_r` to `F_{σ r}` (of degree `m` when
-`σ r = r + m`), is *carried* by `Γ` if `u(e) ∈ Γ(e)` for every basis element `e`. -/
-def IsCarried (Γ : Carrier E b F ε) {σ : ℤ → ℤ} (u : ∀ r, E.X r ⟶ F.X (σ r)) : Prop :=
-  ∀ r (e : ι r), (u r).hom (b r e) ∈ Γ.sub r e (σ r)
-
-end Carrier
 
 end HSP.ChainModels

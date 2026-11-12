@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Evaluation.ExcisiveIntersectionQuotient
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Supports.Excision
 import HilbertSmithPaper.Categories.Supports.QuotientByEmpty
 import HilbertSmithPaper.Categories.Functors.RelabellingEquivalence

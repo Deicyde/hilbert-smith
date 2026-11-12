@@ -3,7 +3,7 @@ article_id: af_72e3d8e3e2fbce9cc18c9eec
 declaration: instance
 origin: bridged
 statement: formalized
-lean: HSP.PCat.dualCat
+lean: HSP.PCat.dualCat, HSP.PCat
 ---
 
 # Sequence category

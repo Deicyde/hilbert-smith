@@ -31,3 +31,4 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 - [Dual complex](../complexes/dual-complex.md)
 - [Images of structures commute with the boundary, T and the duality map](../complexes/functors/functor-structure-laws.md)
 - [Duality functors and dual complexes](../complexes/functors/functor-dual-iso.md)
+- [Strict duality functor](../categories/duality-functors/strict-duality-functor.md)

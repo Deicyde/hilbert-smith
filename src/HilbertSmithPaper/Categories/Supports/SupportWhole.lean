@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.InclusionStrict
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
 

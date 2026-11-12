@@ -7,13 +7,14 @@ lean: HSP.Evaluation.labelledModel_poincare
 ---
 # The labelled chain model is Poincaré
 
-Let $c:\mathbb T^n\to S^n$ be continuous. Give the basis cell $b$ of $D_i$ (and its dual) the label $c(x_b)$. Then $(D_i,\varphi_i)_i$ is a strict $N$-dimensional symmetric Poincaré complex in $\mathcal A_{\mathbf 1}(S^n)$: its chain objects are the labelled $(D_i)_r$, and its differential and structure are the classes of the sequences $d$ and $\varphi_i$; it is concentrated in $[0,N]$ because $D_i$ is. A homotopy inverse of $\varphi_\natural$ is the class of $b_i$, with the homotopy on the complex itself the class of $H_i$ ([the homotopy of the chain model](../chain-models/grid/poincare/chain-model-h.md)) and the homotopy on its dual the class of $H'_i$ ([the dual homotopy](../chain-models/grid/poincare/chain-model-h-dual.md)).
+Let $c:\mathbb T^n\to S^n$ be continuous. Give the basis cell $b$ of $D_i$ (and its dual) the label $c(x_b)$. Then $(D_i,\varphi_i)_i$ is a strict $N$-dimensional symmetric Poincaré complex in $\mathcal A_{\mathbf 1}(S^n)$: its chain objects are the [labelled objects](labelled-objects.md) $L_c(r)$, and its differential and structure are represented by the sequences $d$ and $\varphi_i$; it is concentrated in $[0,N]$ because $D_i$ is. A homotopy inverse of $\varphi_\natural$ is the class of $b_i$, with the homotopy on the complex itself the class of $H_i$ ([the homotopy of the chain model](../chain-models/grid/poincare/chain-model-h.md)) and the homotopy on its dual the class of $H'_i$ ([the dual homotopy](../chain-models/grid/poincare/chain-model-h-dual.md)).
 
 *Proof sketch.* $d^2=0$, $T\varphi_i=\varphi_i$ and the homotopy identities hold exactly ([Poincaré](../chain-models/grid/chain-model-poincare.md) (1), (2)). In torus labels, $d$ has $d_\infty$-propagation at most $h_i/2$ ([propagation of the differential](../chain-models/grid/poincare/chain-model-d-propagation.md)), and $\varphi_i,b_i,H_i,H'_i$ have propagation at most $h_i$ (Poincaré (3)). With the modulus $\omega_c$ of $c$ for $d_S$, the sphere propagation is at most $\omega_c(h_i)\to0$.
 
 ## Sources
 - HS paper, Section 12 (labellings by a continuous map).
 ## Depends on
+- [Labelled objects](labelled-objects.md)
 - [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
 - [Chain model](../chain-models/grid/model/chain-model.md)
 - [Chain-model duality](../chain-models/grid/chain-model-duality.md)

@@ -28,3 +28,4 @@ Let $e^G_n:G\times\{1..n\}\to\{1..|G|\,n\}$ be the [group enumeration](group-enu
 ## Proof depends on
 
 - [Every morphism is a class](../asymptotic/structure/class-surjective.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)

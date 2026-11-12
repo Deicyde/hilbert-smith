@@ -8,7 +8,9 @@ lean: HSP.DualFunctor
 
 # Duality functor
 
-A *duality functor* $(F,\xi):\mathcal A\to\mathcal B$ between duality categories is a $\mathbb Q$-linear (in particular additive) functor $F$ with a natural isomorphism $\xi_M:F(M^*)\to F(M)^*$, that is $\xi_M\circ F(f^*)=F(f)^*\circ\xi_N$ for $f:M\to N$, such that $(\xi_M)^*=\xi_{M^*}$, where both sides are read as maps $F(M)\to F(M^*)^*$ through $F(M)^{**}=F(M)=F(M^{**})$. It is *strict* if $\xi=\mathrm{id}$: $F(M^*)=F(M)^*$ and $\xi_M$ is the identity for every $M$. The identity duality functor has $\xi=\mathrm{id}$. Composition: $\xi^{GF}_M=\zeta_{FM}\circ G(\xi_M)$.
+A *duality functor* $(F,\xi):\mathcal A\to\mathcal B$ between duality categories is a $\mathbb Q$-linear (in particular additive) functor $F$ with a natural isomorphism $\xi_M:F(M^*)\to F(M)^*$, that is $\xi_M\circ F(f^*)=F(f)^*\circ\xi_N$ for $f:M\to N$, such that $(\xi_M)^*=\xi_{M^*}$, where both sides are read as maps $F(M)\to F(M^*)^*$ through $F(M)^{**}=F(M)=F(M^{**})$.
+
+*Remark.* [Strict duality functors](duality-functors/strict-duality-functor.md) and the [identity and composite duality functors](duality-functors/composite-duality-functor.md) are defined separately.
 
 ## Sources
 

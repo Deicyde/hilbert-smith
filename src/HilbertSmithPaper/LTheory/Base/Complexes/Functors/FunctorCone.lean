@@ -1,7 +1,7 @@
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorComplex
 import HilbertSmithPaper.LTheory.Base.Complexes.Cone
 import HilbertSmithPaper.LTheory.Base.Complexes.DualComplex
-import HilbertSmithPaper.LTheory.Base.Categories.DualBinaryBiproducts
+import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBinaryBiproducts
 
 /-!
 # Duality functors and mapping cones

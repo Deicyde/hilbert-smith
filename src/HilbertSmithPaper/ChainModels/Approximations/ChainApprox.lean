@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Grid.Carriers.CarriedMap
 import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
 import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox

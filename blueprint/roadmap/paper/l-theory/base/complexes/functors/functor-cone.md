@@ -21,4 +21,4 @@ from the [image](functor-complex.md) of the [mapping cone](../cone.md) to the ma
 - [Duality functor](../../categories/duality-functor.md)
 - [Image of a complex under a duality functor](functor-complex.md)
 - [Mapping cone](../cone.md)
-- [A duality category has binary direct sums](../../categories/dual-binary-biproducts.md)
+- [A duality category has binary direct sums](../../categories/sums/dual-binary-biproducts.md)

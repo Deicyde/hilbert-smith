@@ -8,7 +8,7 @@ lean: HSP.ChainModels.chainModelFamily
 
 # The family of chain-model matrices
 
-A *typed labelled matrix* is a matrix $u:\mathbb Q^B\to\mathbb Q^{B'}$ between finite sets of cells $B,B'$ with torus labels $x_b,x'_{b'}\in\mathbb T^n$, together with a type $c\in C_p$.
+The family consists of [typed labelled matrices](typed-matrix.md): matrices $u:\mathbb Q^B\to\mathbb Q^{B'}$ between finite sets of cells $B,B'$ with torus labels, each with a type $c\in C_p$.
 
 Let $G_i=\mathbb Z/p^i$, let $\chi_i:G_i\to C_p$ be reduction mod $p$, and $N=n+4$. The family $\mathcal P_i$ of the [chain model](../grid/model/chain-model.md) $D_i$ consists of the following typed labelled matrices, for $g,h\in G_i$:
 - of type $0$: the differentials $d$ of $D_i$ and of $D_i^{N-*}$ (on the latter $d_r=(-1)^rd^*$), the maps $\varphi_i,b_i$ of the [chain-model duality](../grid/chain-model-duality.md), $H_i,H'_i$ from [Poincaré](../grid/chain-model-poincare.md), and the [chosen isometry homotopies](chosen-isometry-homotopies.md) $U_g$;
@@ -24,5 +24,6 @@ Each map is listed in every degree, and the elements $\varphi_i,U_g,V_g$ of the 
 
 ## Depends on
 
+- [Typed labelled matrices](typed-matrix.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [Chain model](../grid/model/chain-model.md), [chain-model duality](../grid/chain-model-duality.md), [Poincaré](../grid/chain-model-poincare.md), [group approximations](group-approx.md), [chosen isometry homotopies](chosen-isometry-homotopies.md), [chosen product homotopies](chosen-product-homotopies.md), [adjoint homotopy](adjoint-homotopy.md)

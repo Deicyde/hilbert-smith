@@ -3,7 +3,7 @@ article_id: af_04164e37933ca6b13008b334
 declaration: def
 origin: bridged
 statement: formalized
-lean: HSP.relabelEquiv
+lean: HSP.relabelEquiv, HSP.RelabelEquiv
 ---
 
 # Relabelling equivalence
@@ -36,6 +36,8 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 - [Dual subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [Unitary natural isomorphism](../../l-theory/base/categories/unitary-isomorphism.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
 
 ## Proof depends on
 

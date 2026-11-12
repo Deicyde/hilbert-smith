@@ -1,5 +1,5 @@
 import Mathlib
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockDecomposition
 
 /-!
 # Maps between concatenations are determined by their blocks

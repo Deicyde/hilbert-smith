@@ -22,6 +22,7 @@ Let $(F,\xi):A\to A'$ and $(G,\zeta):A'\to A''$ be duality functors and $j\ge0$.
 - [Bounded extension of a duality functor](bounded-functor.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [Iterated bounded extension](bounded-functor-iter.md)
+- [Identity and composite duality functors](../../base/categories/duality-functors/composite-duality-functor.md)
 
 ## Proof depends on
 

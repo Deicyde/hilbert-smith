@@ -22,3 +22,4 @@ Let $\mathbf G$ be a [group sequence](../asymptotic/group-sequence.md) and $X$ a
 - [Forgetting labels](forget-labels.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Group sequence](../asymptotic/group-sequence.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)

@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotientFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 
 /-!
 # The entrywise quotient functor is strict

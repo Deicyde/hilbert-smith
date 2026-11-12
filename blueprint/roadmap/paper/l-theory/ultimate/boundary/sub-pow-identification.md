@@ -34,3 +34,4 @@ from the full subcategory $C_{\mathbb Z^j}\mathcal U\subset C_{\mathbb Z^j}\math
 - [The bounded subcategory is closed under sums and duals](../../bounded/categories/bounded-sub-additive.md)
 - [The bounded subcategory](../../bounded/categories/bounded-sub.md)
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
+- [Identity and composite duality functors](../../base/categories/duality-functors/composite-duality-functor.md)

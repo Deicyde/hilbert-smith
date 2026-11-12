@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Groups.InducedMapId
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Groups.UnitaryInvariance
 
 /-!

@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Complexes.Functors.FunctorStructureLaws
 import HilbertSmithPaper.LTheory.Base.Pairs.SymmetricPoincareComplex
 

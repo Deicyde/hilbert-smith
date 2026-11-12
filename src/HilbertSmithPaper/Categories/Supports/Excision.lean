@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Supports.ThickeningInvariant
 import HilbertSmithPaper.Categories.Supports.RelativeIntersectionAdditive
 import HilbertSmithPaper.Categories.Supports.NullThickening

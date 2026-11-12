@@ -20,6 +20,7 @@ For a duality category $\mathcal B$, $(\mathrm{id}_{\mathcal B})_*=\mathrm{id}$ 
 ## Depends on
 
 - [Induced homomorphism](induced-map.md)
+- [Identity and composite duality functors](../categories/duality-functors/composite-duality-functor.md)
 
 ## Proof depends on
 

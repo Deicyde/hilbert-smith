@@ -11,7 +11,7 @@ lean: HSP.ChainModels.blockInc_comp_basedTensorHom_comp_blockProj
 
 For graded maps $f_r:C_r\to C'_{r+d}$ and $g_r:E_r\to E'_{r+e}$ ($E,E'$ vanishing in negative degrees), the block of the [tensor of graded maps](based-tensor-hom.md) $f\otimes g$ from the summand $C_p\boxtimes E_{r-p}$ of $(C\otimes E)_r$ to the summand with index $q$ of $(C'\otimes E')_{r+d+e}$ is $(-1)^{ep}f_p\boxtimes g_{r-p}$, followed by the identification of $C'_{p+d}\boxtimes E'_{r-p+e}$ with that summand, if $q=p+d$, and $0$ otherwise.
 
-*Proof sketch.* Rewrite each summand of the definition as a block inclusion, a block and a block projection, and apply [block extraction](block-extraction.md).
+*Proof sketch.* Rewrite each summand of the definition as a block inclusion, a block and a block projection, and apply [block extraction](blocks/block-extraction.md).
 
 ## Sources
 
@@ -23,4 +23,4 @@ For graded maps $f_r:C_r\to C'_{r+d}$ and $g_r:E_r\to E'_{r+e}$ ($E,E'$ vanishin
 
 ## Proof depends on
 
-- [Block extraction](block-extraction.md)
+- [Block extraction](blocks/block-extraction.md)

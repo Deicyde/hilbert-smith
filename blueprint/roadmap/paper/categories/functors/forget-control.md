@@ -30,3 +30,4 @@ The functor itself needs neither that the action on $T$ is isometric nor that th
 - [Pushforward of labels](pushforward.md)
 - [Forgetting the group](forget-group.md)
 - [The group enumeration](group-enumeration.md)
+- [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)

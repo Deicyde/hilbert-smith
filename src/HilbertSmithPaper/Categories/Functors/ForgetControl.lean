@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.ForgetGroup
 

@@ -11,7 +11,7 @@ lean: HSP.ChainModels.blockInc_comp_basedStrProd_comp_blockProj
 
 For $\varphi\in M(C)_m$ and $\theta\in M(E)_{m'}$, the block of the [product of structures](based-str-prod.md) $(\varphi\otimes\theta)_{r,s}$ from the dual of the summand with index $a$ of $(C\otimes E)_s$ to the summand $C_p\boxtimes E_{r-p}$ of $(C\otimes E)_r$ is $(-1)^{(r-p)(p+m)}\varphi_p\boxtimes\theta_{r-p}$ (after identifying the dual summand with $C_{m-p}^*\boxtimes E_{m'-r+p}^*$) if $a=m-p$, and $0$ otherwise.
 
-*Proof sketch.* Rewrite each summand of the definition as a block inclusion, a block and a block projection, and apply [block extraction](../block-extraction.md).
+*Proof sketch.* Rewrite each summand of the definition as a block inclusion, a block and a block projection, and apply [block extraction](../blocks/block-extraction.md).
 
 ## Sources
 
@@ -23,4 +23,4 @@ For $\varphi\in M(C)_m$ and $\theta\in M(E)_{m'}$, the block of the [product of 
 
 ## Proof depends on
 
-- [Block extraction](../block-extraction.md)
+- [Block extraction](../blocks/block-extraction.md)

@@ -27,3 +27,7 @@ where $e:\mathcal U_A/\mathcal U_Y\to\mathcal A/\mathcal U_B$ is the strict dual
 - [Duality functor](../../base/categories/duality-functor.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
 - [Full subcategory closed under duality](../../base/categories/dual-subcategory.md)
+
+## Proof depends on
+
+- [Identity and composite duality functors](../../base/categories/duality-functors/composite-duality-functor.md)

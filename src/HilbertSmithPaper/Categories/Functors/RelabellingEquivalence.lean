@@ -1,4 +1,6 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismNatural
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismUnitary

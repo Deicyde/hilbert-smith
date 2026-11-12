@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.Categories.Supports.DisjointSupportVanishing
 import HilbertSmithPaper.Categories.Supports.SupportDualAdditive
 

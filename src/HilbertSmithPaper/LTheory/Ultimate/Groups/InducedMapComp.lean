@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Ultimate.Groups.InducedMapLevel
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.LTheory.Ultimate.Groups.LevelExhaustive
 import HilbertSmithPaper.LTheory.Base.Groups.LpMapComp
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorComp

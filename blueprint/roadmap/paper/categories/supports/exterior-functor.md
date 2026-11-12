@@ -20,3 +20,4 @@ Let $F:\mathcal A_{\mathbf G}(X)\to\mathcal A_{\mathbf G'}(X')$ be a strict dual
 
 - [Exterior quotient](exterior-quotient.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)

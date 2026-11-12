@@ -32,3 +32,5 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [The completion of a strict duality functor is strict](../../base/categories/duality-functors/karoubi-functor-strict.md)
+- [The quotient duality functor is strict](../../base/categories/duality-functors/quotient-functor-strict.md)

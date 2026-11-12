@@ -7,7 +7,6 @@ article_id: af_d88898d4c34300dc5ab67499
 Duality categories, duality functors and unitary isomorphisms; the idempotent completion with its induced duality and the embedding of a category into it; involution-invariant Karoubi filtrations, the quotient by a subcategory, and how the quotient behaves after idempotent completion.
 
 - [Small Q-linear category with strict duality](duality-category.md)
-- [A duality category has binary direct sums](dual-binary-biproducts.md)
 - [Duality functor](duality-functor.md)
 - [Unitary natural isomorphism](unitary-isomorphism.md)
 - [Idempotent completion with duality](karoubi-duality.md)
@@ -30,3 +29,4 @@ Duality categories, duality functors and unitary isomorphisms; the idempotent co
 - [Kernel of the completed quotient](karoubi-quotient-kernel.md)
 - [The completed quotient is full](karoubi-quotient-full.md)
 - [Sums and duality](sums/README.md)
+- [Strict, identity and composite duality functors](duality-functors/README.md)

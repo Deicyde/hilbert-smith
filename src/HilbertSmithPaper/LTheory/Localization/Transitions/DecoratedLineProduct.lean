@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.LTheory.Localization.Decorations.ComplexInSubcategory
 import HilbertSmithPaper.LTheory.Localization.Transitions.LineProductDecorated
 import HilbertSmithPaper.LTheory.Localization.Transitions.TransitionComplex

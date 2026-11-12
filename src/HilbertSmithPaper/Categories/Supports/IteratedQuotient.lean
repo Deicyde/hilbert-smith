@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Categories.Supports.QuotientSupportAdditive
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.QuotientFunctorStrict
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualLift
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 import HilbertSmithPaper.Categories.Supports.NullThickening

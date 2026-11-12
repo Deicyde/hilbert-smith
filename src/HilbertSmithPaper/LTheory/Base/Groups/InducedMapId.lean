@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Groups.InducedMap
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Pairs.IsoCobordism
 
 /-!

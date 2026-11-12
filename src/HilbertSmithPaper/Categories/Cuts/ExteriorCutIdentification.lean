@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportWhole
 

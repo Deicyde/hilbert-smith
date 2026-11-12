@@ -1,6 +1,7 @@
 import Mathlib
+import HilbertSmithPaper.ChainModels.Grid.Carriers.CarriedMap
 import HilbertSmithPaper.ChainModels.Grid.GridBoxAcyclic
-import HilbertSmithPaper.ChainModels.Grid.AcyclicCarriers
+import HilbertSmithPaper.ChainModels.Grid.Carriers.AcyclicCarriers
 import HilbertSmithPaper.ChainModels.Grid.RealizedAugmentation
 import HilbertSmithPaper.ChainModels.Approximations.FarCubes
 import HilbertSmithPaper.ChainModels.Approximations.ChainApproxBox

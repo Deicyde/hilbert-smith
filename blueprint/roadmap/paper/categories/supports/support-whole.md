@@ -27,3 +27,7 @@ Every object of $\mathcal A_{\mathbf G}(X)$ lies in the [support subcategory](su
 - [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [The support subcategory is additive](support-dual-additive.md)
 - [Inclusion of a dual-closed subcategory](../../l-theory/base/categories/subcategory-inclusion.md)
+
+## Proof depends on
+
+- [The inclusion of a dual-closed subcategory is strict](../../l-theory/base/categories/duality-functors/inclusion-strict.md)
