@@ -2,13 +2,16 @@
 article_id: af_7f7823629e69706a800e80d7
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.SymPair.sum
+proof: formalized
 ---
 
 # Sums of pairs
 
 If $(f:C\to D,\delta\phi,\phi)$ and $(f':C'\to D',\delta\phi',\phi')$ are strict $n$-dimensional Poincaré pairs in a duality category $\mathcal B$, then so is $(f\oplus f':C\oplus C'\to D\oplus D',\ \delta\phi\oplus\delta\phi',\ \phi\oplus\phi')$, with the sums of [Sum of structured complexes](../complexes/sum-of-complexes.md).
 
-*Proof sketch.* (1) Cycle, $T$-invariance, the identity $\partial(\delta\phi\oplus\delta\phi')=(f\oplus f')_\%(\phi\oplus\phi')$ and the support conditions hold componentwise; a sum of zero objects is a zero object. (2) $(\phi\oplus\phi')_\natural=\phi_\natural\oplus\phi'_\natural$ up to the canonical isomorphism $(C\oplus C')^{n-1-*}\cong C^{n-1-*}\oplus C'^{n-1-*}$, so the boundary is Poincaré by [Sums of equivalences](../complexes/sum-equivalence.md). (3) $\mathcal C(f\oplus f')=\mathcal C(f)\oplus\mathcal C(f')$, and under the canonical isomorphism $(D\oplus D')^{n-*}\cong D^{n-*}\oplus D'^{n-*}$ the pair map of the sum is $\psi\oplus\psi'$. It is an equivalence by [Sums of equivalences](../complexes/sum-equivalence.md).
+*Proof sketch.* (1) Cycle, $T$-invariance, the identity $\partial(\delta\phi\oplus\delta\phi')=(f\oplus f')_\%(\phi\oplus\phi')$ and the support conditions hold componentwise; a sum of zero objects is a zero object. (2) The boundary $(C\oplus C',\phi\oplus\phi')$ is Poincaré by [Sums of Poincaré complexes](sum-of-poincare.md). (3) The maps of cones induced by the biproduct projections and inclusions give an isomorphism $\mathcal C(f\oplus f')\cong\mathcal C(f)\oplus\mathcal C(f')$. Under it and the canonical isomorphism $(D\oplus D')^{n-*}\cong D^{n-*}\oplus D'^{n-*}$, the pair map of the sum is $\psi\oplus\psi'$. This is an equivalence: take the sums of the inverses and of the homotopies.
 
 ## Sources
 
@@ -18,7 +21,12 @@ If $(f:C\to D,\delta\phi,\phi)$ and $(f':C'\to D',\delta\phi',\phi')$ are strict
 
 - [Strict Poincaré pair](poincare-pair.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Dual of a chain map](../complexes/functors/dual-map.md)
 
 ## Proof depends on
 
-- [Sums of equivalences](../complexes/sum-equivalence.md)
+- [Sums of Poincaré complexes](sum-of-poincare.md)
+- [Duals of chain maps reverse composition](../complexes/functors/dual-map-comp.md)
+- [Duals of identity chain maps](../complexes/functors/dual-map-id.md)
+- [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)

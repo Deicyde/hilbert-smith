@@ -2,6 +2,8 @@
 article_id: af_05c38e0f1dac8049f5f9ede0
 declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.cls_bijective_free
 ---
 
 # Point comparison for the free categories
@@ -21,6 +23,7 @@ This rests on the open statement [Lemma U](lemma-u.md), through [Lemma U passes 
 - [Group sequence](../../categories/asymptotic/group-sequence.md)
 - [Free category](../../categories/asymptotic/free-category.md)
 - [Ultimate L-group](../ultimate/groups/ultimate-l-group.md)
+- [The class map](../ultimate/groups/ultimate-cls.md)
 
 ## Proof depends on
 

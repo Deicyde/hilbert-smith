@@ -2,6 +2,8 @@
 article_id: af_8e4160d96cfba8f2d33a3dcf
 declaration: lemma
 origin: cited
+statement: formalized
+lean: HSP.UPair.mk_P_eq_of_image
 ---
 
 # Independence of the lift
@@ -16,10 +18,12 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 
 ## Depends on
 
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [U-pairs](u-pair.md)
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [L-group](../../base/groups/l-group.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

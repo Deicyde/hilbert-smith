@@ -2,6 +2,8 @@
 article_id: af_723f83ce92dedcbb8d75baf1
 declaration: def
 origin: cited
+statement: formalized
+lean: HSP.ultBoundary
 ---
 
 # Ultimate boundary
@@ -12,6 +14,8 @@ where $\partial^{(j)}:L^{\langle -j\rangle}_k(\mathcal A/\mathcal U)\to L^{\lang
 $$\iota_{j+1}\partial^{(j)}x=\iota_{j+2}\,t\,\partial^{(j)}x=\iota_{j+2}\,\partial^{(j+1)}tx.$$
 
 This definition rests on the open statement [Lifting](../../localization/boundary/lift-to-pair.md), through the stage boundaries.
+
+Here $\partial^{(j)}x$ is read in $L^{\langle -j-1\rangle}_{k-1}(\mathcal U)$ through [Iterated bounded categories of a subcategory](sub-pow-identification.md), followed by the [transport of L-groups](../../base/groups/l-group-cast.md) along $k+j=(k-1)+(j+1)$, as in [Transition commutes with the boundary](../../localization/transitions/transition-boundary-commute.md), and the colimit maps are the [stage maps](../groups/ultimate-stage-map.md) of the [sequence of lower L-groups](../groups/lower-l-sequence.md).
 
 ## Sources
 
@@ -24,3 +28,10 @@ This definition rests on the open statement [Lifting](../../localization/boundar
 - [Stage boundary](../../localization/transitions/level-boundary.md)
 - [Transition commutes with the boundary](../../localization/transitions/transition-boundary-commute.md)
 - [Stages are compatible with the transition](../groups/level-compatible.md)
+- [Iterated bounded categories of a subcategory](sub-pow-identification.md)
+- [Stage maps into the ultimate L-group](../groups/ultimate-stage-map.md)
+- [Sequence of lower L-groups](../groups/lower-l-sequence.md)
+- [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
+- [Induced homomorphism](../../base/groups/induced-map.md)
+- [Lower transition map](../../localization/transitions/transition-lower.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

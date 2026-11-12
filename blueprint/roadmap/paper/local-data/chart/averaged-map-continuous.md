@@ -2,6 +2,9 @@
 article_id: af_45ad456356a053aa36153a97
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.continuous_F₀
 ---
 
 # The averaged map is continuous
@@ -18,3 +21,7 @@ For a local datum, $F_0$ is continuous on $\Omega$.
 ## Depends on
 
 - [The averaged chart map](averaged-map.md)
+
+## Proof depends on
+
+- [The Haar probability measure on $\mathbb Z_p$](../subgroups/haar-zp.md)

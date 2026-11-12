@@ -2,11 +2,14 @@
 article_id: af_76e0960710c35845a2099231
 declaration: theorem
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.exists_good_point
 ---
 
 # A point with no fixed neighbourhood
 
-Let $p$ be a prime and let $\mathbb Z_p$ act jointly continuously and faithfully on a connected $n$-manifold $M$. Then there is $x\in M$ such that, for every $j$, $\operatorname{Fix}_j(M)$ is not a neighbourhood of $x$.
+Let $p$ be a prime and let $\mathbb Z_p$ act jointly continuously and faithfully on a connected $n$-manifold $M$ (a connected Hausdorff space with an atlas of charts onto open subsets of $\mathbb R^n$, with no countability assumption). Then there is $x\in M$ such that, for every $j$, $\operatorname{Fix}_j(M)$ is not a neighbourhood of $x$.
 
 *Proof sketch.* Suppose every point has a neighbourhood fixed pointwise by some $H_j$.
 1. Each $F_j=\operatorname{int}\operatorname{Fix}_j(M)$ is open, and closed by the lemma on interiors of fixed sets.

@@ -7,9 +7,12 @@ article_id: af_09bfdb54b2204a6e9fd0517a
 Relabelling, pushforward of labels, forgetting the group, forgetting the control space, the permutation tensor and forgetting labels, with the supports that each one preserves.
 
 - [Relabelling isomorphism](relabelling-isomorphism.md)
+- [The relabelling isomorphism is unitary](relabelling-isomorphism-unitary.md)
+- [The relabelling isomorphism is natural](relabelling-isomorphism-natural.md)
 - [Pushforward of labels](pushforward.md)
 - [Relabelling equivalence](relabelling-equivalence.md)
 - [Pushforward preserves support](push-support.md)
+- [The group enumeration](group-enumeration.md)
 - [Forgetting the group](forget-group.md)
 - [Forgetting the group preserves support](forget-group-support.md)
 - [Forgetting the control space](forget-control.md)

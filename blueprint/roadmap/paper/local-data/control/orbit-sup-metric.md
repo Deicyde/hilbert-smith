@@ -2,11 +2,13 @@
 article_id: af_6b12e18dded5b61e12667b44
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.d₁
 ---
 
 # The orbit sup-distance on the test region
 
-For a local datum, define $d_1(z,w)=\max_{a\in\mathbb Z_p}|a\cdot z-a\cdot w|$ for $z,w\in Z^+$. The maximum exists because $\mathbb Z_p$ is compact and the action is continuous.
+For a local datum, define $d_1(z,w)=\sup_{a\in\mathbb Z_p}|a\cdot z-a\cdot w|$ for $z,w\in Z^+$.
 
 ## Sources
 

@@ -2,6 +2,8 @@
 article_id: af_5e222be924951f6ccfd35574
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.realEval
 ---
 
 # The evaluation pairing
@@ -17,3 +19,5 @@ For a chain complex $C$ in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$ with $C_r
 ## Depends on
 
 - [Real homology](real-homology.md)
+- [Real cohomology](../real/real-cohomology.md)
+- [The real matrix of a morphism](../real/real-matrix.md)

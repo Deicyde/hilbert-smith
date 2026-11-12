@@ -2,6 +2,8 @@
 article_id: af_bec2a6ea0ad99585d41b2635
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.ChainModels.box_acyclic
 ---
 # Boxes are acyclic
 
@@ -12,4 +14,8 @@ Every grid box $B$ is augmented acyclic: $H_r(B)=0$ for $r>0$, and $\varepsilon$
 ## Sources
 - [published: Künneth over a field] [U]. New: the arc contraction.
 ## Depends on
+- [Grid cubes](cubical/grid-cube.md)
+- [Cubical torus grid](cubical/cubical-torus-grid.md)
+- [The cube of a basis vector](cubical/grid-cell.md)
+- [Augmentation of the grid complex](cubical/grid-aug.md)
 - [Grid boxes](grid-box.md)

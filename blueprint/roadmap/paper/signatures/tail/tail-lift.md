@@ -1,12 +1,14 @@
 ---
 article_id: af_7cd202bfef2264af4166272c
-declaration: lemma
+declaration: theorem
 origin: bridged
+statement: formalized
+lean: HSP.tail_lift
 ---
 
 # Classes over $\mathcal V$ lift
 
-Let $\mathbf G$ be a [group sequence](../../categories/asymptotic/group-sequence.md), $\mathcal P_{\mathbf G}$ its [sequence category](../../categories/asymptotic/point-sequence-category.md) and $q:\mathcal P_{\mathbf G}\to\mathcal V_{\mathbf G}$ the quotient functor onto its [point category](../../categories/asymptotic/point-quotient.md). Every $x\in\mathbb L_4(\mathcal V_{\mathbf G})$ is $q_*y$ for some $y\in\mathbb L_4(\mathcal P_{\mathbf G})$.
+Let $\mathbf G$ be a [group sequence](../../categories/asymptotic/group-sequence.md), $\mathcal P_{\mathbf G}$ its [sequence category](../../categories/asymptotic/point-sequence-category.md) and $q:\mathcal P_{\mathbf G}\to\mathcal V_{\mathbf G}$ the [quotient functor](../../categories/asymptotic/point-quotient-functor.md) onto its [point category](../../categories/asymptotic/point-quotient.md). Every $x\in\mathbb L_4(\mathcal V_{\mathbf G})$ is $q_*y$ for some $y\in\mathbb L_4(\mathcal P_{\mathbf G})$.
 
 This rests on the open statements [Lemma U](../../l-theory/comparison/lemma-u.md), through [coordinates detect $\mathbb L_3(\mathcal S)$](../../l-theory/comparison/coordinates-injective-three.md), and [lifting](../../l-theory/localization/boundary/lift-to-pair.md), through the [ultimate boundary](../../l-theory/ultimate/boundary/ultimate-boundary.md) of the point filtration.
 
@@ -23,6 +25,7 @@ This rests on the open statements [Lemma U](../../l-theory/comparison/lemma-u.md
 - [Point category](../../categories/asymptotic/point-quotient.md)
 - [Ultimate L-group](../../l-theory/ultimate/groups/ultimate-l-group.md)
 - [Induced map on ultimate L](../../l-theory/ultimate/groups/induced-map.md)
+- [The quotient functor of the point category](../../categories/asymptotic/point-quotient-functor.md)
 
 ## Proof depends on
 

@@ -2,6 +2,9 @@
 article_id: af_f2a78df55345e9814b62cb3f
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.cxProd_homotopyEquiv
 ---
 
 # Tensor products of equivalences
@@ -18,6 +21,10 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 
 - [Duality pairings](duality-pairing.md)
 - [Tensor product of complexes](complex-product.md)
+- [Tensor product of chain maps](bookkeeping/product-map.md)
 
 ## Proof depends on
 
+- [Tensor product of complexes](complex-product.md)
+- [Tensor products of chain maps compose](bookkeeping/product-map-comp.md)
+- [Tensor product of identities](bookkeeping/product-map-id.md)

@@ -1,14 +1,18 @@
 ---
 article_id: af_a376b5aa3925993024cfc900
-declaration: def
+declaration: instance
 origin: bridged
+statement: formalized
+lean: HSP.LGroup.instAddCommGroup
 ---
 
 # Group structure on L
 
 For a duality category $\mathcal B$, $L_k(\mathcal B)$ is an abelian group with $[C,\phi]+[C',\phi']=[C\oplus C',\phi\oplus\phi']$, zero $[0,0]$ and negation $-[C,\phi]=[C,-\phi]$.
 
-*Proof sketch.* (1) Addition is well defined: given cobordisms $W_1$ and $W_2$, $W_1\oplus W_2$ is a pair by [Sums of pairs](../pairs/sum-of-pairs.md), and [Transport of pairs along isomorphisms](../pairs/pair-transport.md) ($s=1$) along the permutation of its boundary summands makes it a cobordism from $(C_1\oplus C_2,\phi_1\oplus\phi_2)$ to $(C'_1\oplus C'_2,\phi'_1\oplus\phi'_2)$. (2) Negation is well defined: transport a cobordism $W$ with $u=1$ and $s=-1$. (3) Associativity, commutativity and the unit come from canonical isomorphisms that carry structures exactly, by [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md) with $\chi=0$. (4) Inverse law: the reflexivity pair $((1,1):C\oplus C\to C,0,\phi\oplus(-\phi))$, transported along the unitary isomorphism $(C\oplus C)\oplus0\cong C\oplus C$, is a cobordism from $(C\oplus C,\phi\oplus(-\phi))$ to $(0,0)$.
+Here $(C,\phi)\oplus(C',\phi')$, $(C,-\phi)$ and $(0,0)$ are [the sum](../pairs/poincare-sum.md), the [negative](../pairs/poincare-neg.md) and the [zero Poincaré complex](../pairs/poincare-zero.md).
+
+*Proof sketch.* The operations are well defined on cobordism classes, and satisfy associativity, commutativity, the unit law and the inverse law, by [Sum of Poincaré complexes up to cobordism](l-group-add-laws.md).
 
 ## Sources
 
@@ -18,9 +22,11 @@ For a duality category $\mathcal B$, $L_k(\mathcal B)$ is an abelian group with 
 
 - [L-group](l-group.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [The sum of two Poincaré complexes](../pairs/poincare-sum.md)
+- [Negative of a Poincaré complex](../pairs/poincare-neg.md)
+- [Zero Poincaré complex](../pairs/poincare-zero.md)
 
 ## Proof depends on
 
-- [Sums of pairs](../pairs/sum-of-pairs.md)
-- [Transport of pairs along isomorphisms](../pairs/pair-transport.md)
-- [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md)
+- [Sum of Poincaré complexes up to cobordism](l-group-add-laws.md)
+- [Cobordism is an equivalence relation](../pairs/cobordism-equivalence.md)

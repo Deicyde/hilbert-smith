@@ -2,6 +2,8 @@
 article_id: af_08201599c9e8dd09f5eeb0bb
 declaration: theorem
 origin: background
+statement: formalized
+lean: HSP.newman_small_orbits
 ---
 
 # Newman's theorem: small orbits

@@ -2,6 +2,9 @@
 article_id: af_283bc4e94b786113155a768d
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.not_eventually_unit_and_dvd
 ---
 
 # Integer tails

@@ -2,11 +2,13 @@
 article_id: af_ef3cf69659baf1ff67e3b9b6
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.exteriorCutIdent
 ---
 
 # The exterior quotient as a cut domain
 
-Let $Z\subset X$ be closed and invariant. The functor $j_Z:\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\mathcal A_Z$ from the [exterior quotient](../supports/exterior-quotient.md) to the quotient of the [support subcategory](../supports/support-subcategory.md) $\mathcal A_X$ by the [support filtration](../supports/support-filtration.md) for $Z\subset X$ is $M\mapsto M$, $[u]\mapsto[u]$. It is a strict duality functor.
+Let $Z\subset X$. The functor $j_Z:\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\mathcal A_Z$ from the [exterior quotient](../supports/exterior-quotient.md) to the quotient of the [support subcategory](../supports/support-subcategory.md) $\mathcal A_X$ by its subcategory $\mathcal A_Z\subset\mathcal A_X$ of the [support filtration](../supports/support-filtration.md) is $M\mapsto M$, $[u]\mapsto[u]$; that is, $j_Z\circ q=q'\circ\iota^{-1}$ for the quotient functors $q,q'$ and the corestriction $\iota^{-1}:\mathcal A_{\mathbf G}(X)\to\mathcal A_X$ of the identity. It is a strict duality functor.
 
 *Proof sketch.* Every object of $\mathcal A_{\mathbf G}(X)$ is $X$-supported ([support subcategory of the whole space](../supports/support-whole.md)), and $\mathcal A_X\subset\mathcal A_{\mathbf G}(X)$ is full, so the two quotients have the same objects, the same hom-sets and the same ideal of maps factoring through $\mathcal A_Z$. Hence $j_Z$ is well defined and preserves composition, identities and transposes.
 
@@ -19,10 +21,9 @@ Let $Z\subset X$ be closed and invariant. The functor $j_Z:\mathcal B_{\mathbf G
 
 ## Depends on
 
+- [Support subcategory inside a support subcategory](../supports/relative-support.md)
+- [The support subcategory inside a support subcategory is additive](../supports/relative-support-additive.md)
 - [Exterior quotient](../supports/exterior-quotient.md)
 - [Support subcategory](../supports/support-subcategory.md)
 - [Support filtration](../supports/support-filtration.md)
-
-## Proof depends on
-
 - [The support subcategory of the whole space](../supports/support-whole.md)

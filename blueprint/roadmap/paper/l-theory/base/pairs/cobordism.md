@@ -2,6 +2,8 @@
 article_id: af_a270268fa2201a47bd0ae2e8
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.Cobordant
 ---
 
 # Cobordism
@@ -15,3 +17,4 @@ Strict $k$-dimensional symmetric Poincaré complexes $(C,\phi)$ and $(C',\phi')$
 ## Depends on
 
 - [Strict Poincaré pair](poincare-pair.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)

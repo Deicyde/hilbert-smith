@@ -2,6 +2,8 @@
 article_id: af_5f4486e992af67598310f3c5
 declaration: def
 origin: cited
+statement: formalized
+lean: HSP.locBoundary
 ---
 
 # Localization boundary
@@ -11,7 +13,7 @@ $$\partial:L^{\mathrm{im}}_k(\mathcal A/\mathcal U)\to L^p_{k-1}(\mathcal U),\qq
 
 This definition rests on the open statement [Lifting](lift-to-pair.md), through [Lifting closed complexes](lift-to-pair-closed.md).
 
-*Proof sketch.* (Additivity.) As in step (1) of [Independence of the lift](boundary-independence.md), but without negation: by [Sums of pairs](../../base/pairs/sum-of-pairs.md) and [Pair transport](../../base/pairs/pair-transport.md), $V_x\oplus V_y$ becomes a $\mathcal U$-pair over $(P_x\oplus P_y,\pi_x\oplus\pi_y)$. The canonical isomorphism $q(D_x\oplus D_y)\cong qD_x\oplus qD_y$ and [Homotopy-isometry invariance](../../base/groups/homotopy-isometry-invariance.md) in $\mathrm{Dec}(\mathcal A/\mathcal U)$ show that its image has class $x+y$. [Independence of the lift](boundary-independence.md) and [Group structure on L](../../base/groups/l-group-add.md) give $\partial(x+y)=[P_x\oplus P_y,\pi_x\oplus\pi_y]=\partial x+\partial y$.
+*Proof sketch.* (Additivity.) By [Sums of U-pairs](u-pair-sum.md) there is a $\mathcal U$-pair $V$ with $[qV]=x+y$ and boundary class $[P_x,\pi_x]+[P_y,\pi_y]$. [Independence of the lift](boundary-independence.md), applied to $V$ and $V_{x+y}$, gives $\partial(x+y)=\partial x+\partial y$.
 
 ## Sources
 
@@ -20,16 +22,15 @@ This definition rests on the open statement [Lifting](lift-to-pair.md), through 
 
 ## Depends on
 
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [U-pairs](u-pair.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [Lifting closed complexes](lift-to-pair-closed.md)
 - [L-group](../../base/groups/l-group.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 
-- [Sums of pairs](../../base/pairs/sum-of-pairs.md)
-- [Pair transport](../../base/pairs/pair-transport.md)
-- [Homotopy-isometry invariance](../../base/groups/homotopy-isometry-invariance.md)
+- [Sums of U-pairs](u-pair-sum.md)
 - [Independence of the lift](boundary-independence.md)
-- [Group structure on L](../../base/groups/l-group-add.md)

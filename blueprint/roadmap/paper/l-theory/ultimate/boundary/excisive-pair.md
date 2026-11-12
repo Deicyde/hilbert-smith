@@ -1,7 +1,9 @@
 ---
 article_id: af_5897f0e625584e0e0b88c232
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.ExcisivePair
 ---
 
 # Excisive pair of filtrations
@@ -19,7 +21,9 @@ where $e:\mathcal U_A/\mathcal U_Y\to\mathcal A/\mathcal U_B$ is the strict dual
 
 ## Depends on
 
+- [Intersection of full subcategories](excisive-intersection.md)
 - [Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
+- [Full subcategory closed under duality](../../base/categories/dual-subcategory.md)

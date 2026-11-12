@@ -2,6 +2,9 @@
 article_id: af_da10ec4d777701af54d1f3aa
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.compactSpace_T
 ---
 
 # The control space is compact
@@ -16,6 +19,7 @@ For a local datum, the control space $T$ is compact in the quotient topology.
 
 ## Depends on
 
+- [The quotient topology on the control space](control-topology.md)
 - [The control space](control-space.md)
 
 ## Proof depends on

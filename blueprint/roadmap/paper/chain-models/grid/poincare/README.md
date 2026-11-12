@@ -1,0 +1,27 @@
+---
+article_id: af_cddd7e116afc08b9644bbcad
+---
+
+# The chain model is Poincaré, part by part
+
+The circle duality data, the unsymmetrized structure, the homotopies and the augmentation of the chain model, and the four parts of the theorem that the chain model is Poincaré.
+
+- [Circle duality data](circle-data/README.md)
+- [The grid factor](grid-factor/README.md)
+- [The unsymmetrized structure of the chain model](chain-model-structure-u.md)
+- [The homotopy of the chain model](chain-model-h.md)
+- [The dual homotopy of the chain model](chain-model-h-dual.md)
+- [The augmentation of the chain model](chain-model-aug.md)
+- [Propagation bounds for the based product and tensor maps](prop-product-maps.md)
+- [Propagation of the differential of the chain model](chain-model-d-propagation.md)
+- [The CP^2 inverse inverts the structure](cp2-inverse.md)
+- [Tensor product of homotopies](tensor-homotopy.md)
+- [The chain model is Poincaré: the cycle](chain-model-poincare-cycle.md)
+- [The unsymmetrized structure of the chain model is a cycle](chain-model-structure-u-cycle.md)
+- [The chain-model inverse is a chain map](chain-model-inverse-chain-map.md)
+- [The chain-model inverse is exact](chain-model-inverse-exact.md)
+- [The chain-model homotopy](chain-model-homotopy.md)
+- [The chain-model dual homotopy](chain-model-dual-homotopy.md)
+- [The chain model is Poincaré: the inverse and the homotopies](chain-model-poincare-inverse.md)
+- [The chain model is Poincaré: propagation](chain-model-poincare-propagation.md)
+- [The chain model is Poincaré: the augmentation](chain-model-poincare-augmentation.md)

@@ -1,7 +1,9 @@
 ---
 article_id: af_4a2f7da8448eb69417b67e16
-declaration: def
+declaration: structure
 origin: background
+statement: formalized
+lean: HSP.UPair
 ---
 
 # U-pairs
@@ -18,8 +20,10 @@ Let $\mathcal U\subset\mathcal A$ be as in [Decorated objects](../decorations/de
 
 ## Depends on
 
+- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
 - [Decorated objects](../decorations/decorated-object.md)
 - [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Strict Poincaré pair](../../base/pairs/poincare-pair.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)

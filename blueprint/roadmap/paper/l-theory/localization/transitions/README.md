@@ -7,8 +7,13 @@ article_id: af_83a58fc281f9f4e2723186ec
 Product with the line defines the transition maps between stages and their decorated version. Both are natural for every duality functor, they are compatible with the quotient maps, and the transition commutes with the localization boundary.
 
 - [Lower L-group](lower-l-group.md)
+- [Product of a complex with the line](transition-complex.md)
 - [Transition map](transition-map.md)
+- [Lower transition map](transition-lower.md)
 - [Products with the line are decorated](line-product-decorated.md)
+- [Decorated product with the line](decorated-line-product.md)
+- [The decorated transition respects cobordism](decorated-transition-cobordant.md)
+- [The decorated transition is additive](decorated-transition-sum.md)
 - [Decorated transition](decorated-transition.md)
 - [Iterated quotient functors](quotient-functor-level.md)
 - [Quotient maps at each stage](quotient-level.md)

@@ -2,6 +2,9 @@
 article_id: af_8126f50ba0f256052d6e2636
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.testMap_homotopicRel_id
 ---
 
 # The test map is homotopic to the identity
@@ -21,6 +24,7 @@ For a local datum and $0<\rho<\rho_+$, the test map $f$ is homotopic to $\mathrm
 ## Depends on
 
 - [The test map](test-map.md)
+- [The test map is continuous](test-map-continuous.md)
 
 ## Proof depends on
 

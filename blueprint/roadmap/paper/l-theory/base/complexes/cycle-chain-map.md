@@ -2,6 +2,8 @@
 article_id: af_f7c80efc869a7e8749ace370
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.StructureCx.toHom
 ---
 
 # Duality map of a cycle

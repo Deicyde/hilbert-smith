@@ -8,17 +8,22 @@ article_id: af_4f0d60b1b0ab4bddfc1bf603
 
 The control space is the orbit space of the test region under $H_1$, with the orbit metric: first the maximum distance along $\mathbb Z_p$-orbits, then the minimum over $H_1$. The quotient $C_p=\mathbb Z_p/H_1$, realised as $\mathbb Z/p\mathbb Z$ through reduction modulo $p$, acts on it freely and isometrically, the orbit map is uniformly continuous, and distinct translates of a point stay a fixed distance apart.
 
+- [The action on the test region](zplus-action.md)
 - [The orbit sup-distance on the test region](orbit-sup-metric.md)
 - [The orbit sup-distance is a metric](orbit-sup-metric-properties.md)
 - [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)
 - [The control space](control-space.md)
+- [The quotient map to the control space](control-quotient-map.md)
+- [The quotient topology on the control space](control-topology.md)
 - [The control space is compact](control-space-compact.md)
 - [The orbit metric on the control space](control-metric.md)
 - [The orbit metric metrizes the control space](control-metric-properties.md)
+- [The metric on the control space](control-metric-space.md)
 - [The kernel of reduction modulo $p^i$](reduction-kernel.md)
 - [The cyclic action on the control space](control-action.md)
 - [The cyclic action is free](control-action-free.md)
 - [The cyclic action is isometric](control-action-isometric.md)
+- [The control space is an isometric $C_p$-space](control-isometric-action.md)
 - [The orbit map is uniformly continuous](projection-uniform.md)
 - [A uniform displacement gap](displacement-gap.md)
 

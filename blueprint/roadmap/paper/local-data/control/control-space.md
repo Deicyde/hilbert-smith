@@ -2,11 +2,13 @@
 article_id: af_03e1a41a9dea9c1ac2875cfe
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.LocalDatum.T
 ---
 
 # The control space
 
-For a local datum, the control space is $T=Z^+/H_1$, the set of $H_1$-orbits of the restricted action on $Z^+$, with quotient map $\pi:Z^+\to T$ and the quotient topology.
+For a local datum, the control space is $T=Z^+/H_1$, the set of $H_1$-orbits of the restricted action on $Z^+$, with [quotient map](control-quotient-map.md) $\pi:Z^+\to T$ and the [quotient topology](control-topology.md).
 
 ## Sources
 
@@ -18,7 +20,7 @@ For a local datum, the control space is $T=Z^+/H_1$, the set of $H_1$-orbits of 
 
 - [The test region](../chart/test-region.md)
 - [The subgroups $H_j$](../subgroups/padic-subgroups.md)
+- [The action on the test region](zplus-action.md)
 
 ## Proof depends on
 
-- [The test regions are invariant](../chart/test-region-invariant.md)

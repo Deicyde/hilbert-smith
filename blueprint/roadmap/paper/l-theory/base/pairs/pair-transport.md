@@ -2,6 +2,9 @@
 article_id: af_d01b3ab7c021aae7f64b3646
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.SymPair.transport
+proof: formalized
 ---
 
 # Transport of pairs along isomorphisms
@@ -19,3 +22,14 @@ Let $(f:C\to D,\delta\phi,\phi)$ be a strict $n$-dimensional Poincaré pair in a
 
 - [Strict Poincaré pair](poincare-pair.md)
 - [Pushforward of structures](../complexes/structure-push.md)
+- [Dual of an isomorphism of complexes](../complexes/functors/dual-map-iso.md)
+
+## Proof depends on
+
+- [Pushforward commutes with T](../complexes/structure-push-involution.md)
+- [Mapping cone](../complexes/cone.md)
+- [Pair map](pair-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Pushforward preserves composition](../complexes/functors/push-comp.md)
+- [Pushforward preserves identities](../complexes/functors/push-id.md)
+- [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)

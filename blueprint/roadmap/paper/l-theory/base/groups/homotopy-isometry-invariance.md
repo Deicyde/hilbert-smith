@@ -2,6 +2,9 @@
 article_id: af_72d75e9bb517b9198f3926e0
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.LGroup.mk_eq_of_homotopyIsometry
+proof: formalized
 ---
 
 # Homotopy-isometry invariance
@@ -22,3 +25,4 @@ Let $(C,\phi)$ and $(C',\phi')$ be strict $k$-dimensional symmetric Poincaré co
 ## Proof depends on
 
 - [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md)
+- [Cobordism](../pairs/cobordism.md)

@@ -2,6 +2,9 @@
 article_id: af_7ac498ab680e0970cc6787d5
 declaration: lemma
 origin: background
+statement: formalized
+proof: formalized
+lean: HSP.strProd_T
 ---
 
 # Products commute with T
@@ -20,7 +23,10 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 - [Duality pairings](duality-pairing.md)
 - [External product of structures](external-product.md)
 - [The involution T](../../base/complexes/structure-involution.md)
+- [Tensor product of complexes](complex-product.md)
 
 ## Proof depends on
 
 - [External product of structures](external-product.md)
+- [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
+- [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)

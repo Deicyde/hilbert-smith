@@ -2,6 +2,8 @@
 article_id: af_b4b6570e9cced5c05462a455
 declaration: lemma
 origin: background
+statement: formalized
+lean: HSP.transitionMap_natural
 ---
 
 # Naturality of the transition
@@ -17,10 +19,12 @@ $$t\circ(C_{\mathbb Z^j}F)_*=(C_{\mathbb Z^{j+1}}F)_*\circ t:\ L^p_m(C_{\mathbb 
 
 ## Depends on
 
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Transition map](transition-map.md)
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

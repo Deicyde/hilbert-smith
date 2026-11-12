@@ -1,3 +1,0 @@
-HSP.LTheory.strProd_boundary. Split out of product-formulas (r2-loc-line verdict, should_fix 2: one declaration per article). Consumers: product-with-line, product-with-pair, transition-map.
-
-c3: now takes a duality pairing (P : HSP.DualityPairing B E B'') instead of the box product, so that the chain-model chapter applies it to the Kronecker pairing on based vector spaces (based-tensor.md) with the same signs; the line articles instantiate the box pairing (box-dual.md). Consumers outside l-theory: chain-models/grid/chain-model-duality.md, chain-model-poincare.md, blocks/block-pair.md, block-duality.md, block-cut.md, approximations/isometry-homotopies.md.

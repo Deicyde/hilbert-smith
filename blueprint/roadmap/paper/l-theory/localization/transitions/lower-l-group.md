@@ -1,7 +1,9 @@
 ---
 article_id: af_3e2e29d634ac2ae8e7fb351a
-declaration: def
+declaration: abbrev
 origin: cited
+statement: formalized
+lean: HSP.lowerL
 ---
 
 # Lower L-group
@@ -16,3 +18,4 @@ For $j\ge0$ and $k\in\mathbb Z$, $L^{\langle -j\rangle}_k(\mathcal A):=L^p_{k+j}
 
 - [Projective L-group](../../base/groups/l-group.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

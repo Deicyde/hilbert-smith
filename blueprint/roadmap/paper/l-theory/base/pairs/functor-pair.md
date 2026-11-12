@@ -2,6 +2,8 @@
 article_id: af_ca496cdd8d39cea161e9a537
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.SymPair.map
 ---
 
 # Duality functors carry pairs to pairs
@@ -18,10 +20,15 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 
 - [Duality functor](../categories/duality-functor.md)
 - [Strict Poincaré pair](poincare-pair.md)
-- [Completion of a duality functor](../categories/karoubi-functor.md)
 
 ## Proof depends on
 
 - [Duality functors carry Poincaré complexes](functor-poincare.md)
+- [Duality functors commute with pushforward](../complexes/functor-push.md)
 - [Pair map](pair-map.md)
 - [Mapping cone](../complexes/cone.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Images of structures commute with the boundary, T and the duality map](../complexes/functors/functor-structure-laws.md)
+- [Duality functors and dual complexes](../complexes/functors/functor-dual-iso.md)
+- [Duality functors and mapping cones](../complexes/functors/functor-cone.md)
+- [Duality functors and pair maps](../complexes/functors/functor-pair-map.md)

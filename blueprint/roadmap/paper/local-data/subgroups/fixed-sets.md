@@ -2,6 +2,8 @@
 article_id: af_7a864f97d2c4f3d3e8db196a
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.fixSet
 ---
 
 # Fixed sets of the subgroups $H_j$

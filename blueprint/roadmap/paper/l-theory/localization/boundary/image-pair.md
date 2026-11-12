@@ -2,6 +2,8 @@
 article_id: af_1e5f22ca0bfce71faf56f104
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.UPair.image
 ---
 
 # Image of a pair with boundary in Kar U
@@ -18,12 +20,21 @@ a strict $k$-dimensional symmetric Poincaré complex in $\mathrm{Dec}(\mathcal A
 
 ## Depends on
 
+- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 - [U-pairs](u-pair.md)
 - [Decorated objects](../decorations/decorated-object.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
+- [Complexes in a full subcategory](../decorations/complex-in-subcategory.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
+- [The quotient duality functor](../../base/categories/quotient-duality-functor.md)
 
 ## Proof depends on
 
 - [Pair map](../../base/pairs/pair-map.md)
-- [Pushforward commutes with T](../../base/complexes/structure-push-involution.md)
+- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
+- [Mapping cone](../../base/complexes/cone.md)
+- [Pushforward of structures](../../base/complexes/structure-push.md)
+- [Images of structures commute with the boundary, T and the duality map](../../base/complexes/functors/functor-structure-laws.md)
+- [Duality functors and dual complexes](../../base/complexes/functors/functor-dual-iso.md)

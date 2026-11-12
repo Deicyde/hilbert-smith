@@ -2,6 +2,9 @@
 article_id: af_b1565d28b8471792fa98ddb4
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.isOpen_Uplus
 ---
 
 # The open test region is open

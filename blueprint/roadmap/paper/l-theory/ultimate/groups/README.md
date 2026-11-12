@@ -6,7 +6,11 @@ article_id: af_5092cd186913e372f0c25940
 
 The lower L-groups, their colimit $\mathbb L_k$ along the transitions with the class map from stage $0$, the facts about finite stages, and functoriality for every duality functor: induced maps, unitary invariance, additivity and equivalence invariance, with the bounded extensions of unitary isomorphisms and of sums they use.
 
+- [Sequence of lower L-groups](lower-l-sequence.md)
 - [Ultimate L-group](ultimate-l-group.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)
+- [The class map](ultimate-cls.md)
+- [Iterated transition](transition-iter.md)
 - [Stages are compatible with the transition](level-compatible.md)
 - [Every element comes from a finite stage](level-exhaustive.md)
 - [Classes zero in the colimit](level-kernel.md)

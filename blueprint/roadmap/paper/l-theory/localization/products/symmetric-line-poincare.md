@@ -2,6 +2,9 @@
 article_id: af_413bed12f4f459aae55d7d00
 declaration: lemma
 origin: cited
+statement: formalized
+lean: HSP.symLine_poincare
+proof: formalized
 ---
 
 # The line is Poincaré
@@ -22,10 +25,15 @@ $\lambda_\natural:\Lambda^{1-*}\to\Lambda$ is a chain homotopy equivalence in $C
 ## Depends on
 
 - [The symmetric line](symmetric-line.md)
+- [Structure of the symmetric line](symmetric-line-structure.md)
+- [The symmetric line is a symmetric complex](symmetric-line-cycle.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
+- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
 
 ## Proof depends on
 
 - [The symmetric line](symmetric-line.md)
 - [Homologous cycles give homotopic maps](../../base/complexes/cycle-chain-map-homotopy.md)
 - [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
+- [Entries of composites of constant families](bookkeeping/constant-family-comp.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)

@@ -2,6 +2,9 @@
 article_id: af_fc2488f4bac3234fd975aaa3
 declaration: theorem
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.noSmallSubgroups
 ---
 
 # A faithfully acting group has no small subgroups

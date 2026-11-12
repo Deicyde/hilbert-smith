@@ -2,16 +2,25 @@
 article_id: af_f022e376f56038bf29c126f9
 declaration: lemma
 origin: bridged
+statement: formalized
+lean: HSP.ChainModels.exists_chainApprox
 ---
 # Chain approximations exist
 
-Let $E(k)\subseteq C(k)$ be spanned by the cubes whose closed cubes miss $\overline B(0,3/2)$. For $k\ge k_0$ and $L\in\mathcal F$, put $\Gamma_L(c)=\mathrm{Box}_k(N_h(L|c|))$. This is a carrier of $d_\infty$-diameter at most $\omega(h)+4h$. There is a chain map $a:C(k)\to C(k)$ carried by $\Gamma_L$, with $a|_{E(k)}=1$ and $\varepsilon a=\varepsilon$.
+Let $E(k)\subseteq C(k)$ be spanned by the [far cubes](far-cubes.md), those whose closed cubes miss $\overline B(0,3/2)$. For $k\ge k_0$ and $L\in\mathcal F$, take the [approximation boxes](chain-approx-box.md) $\Gamma_L(c)=\mathrm{Box}_k(N_h(L|c|))$, with $h=4/k$ and $N_h$ the closed $d_\infty$-neighbourhood, a subcomplex of $C(k)$ [spanned by its cubes](../grid/grid-box-acyclic.md). On the [realization](../grid/realization.md) of $C(k)$, with its basis of cubes and the [realized augmentation](../grid/realized-augmentation.md) $\varepsilon$, this is a carrier, and $|\Gamma_L(c)|$ has $d_\infty$-diameter at most $\omega(h)+4h$ for every $c$. There is a chain map $a:C(k)\to C(k)$ whose realization is carried by $\Gamma_L$, with $a|_{E(k)}=1$ (every cube of $E(k)$ is fixed) and $\varepsilon a=\varepsilon$.
 
-*Proof sketch.* $L|c|$ has $d_\infty$-diameter at most $\omega(h)$ by [properties](completed-maps-properties.md) (1), so the hull of $N_h(L|c|)$ is defined. Box hull properties (1) give the nesting under faces and (2) the diameter bound; [boxes are acyclic](../grid/grid-box-acyclic.md). The identity on the subcomplex $E(k)$ is carried, because $L$ fixes $|c|$ and $c\in\mathrm{Box}_k(N_h(|c|))$ by box hull properties (3), and it preserves $\varepsilon$. Apply [carried chain maps](../grid/carried-chain-map.md) with $\varepsilon_E=\varepsilon$.
+*Proof sketch.* $L|c|$ has $d_\infty$-diameter at most $\omega(h)$ by [properties](completed-maps-properties.md) (1), so $N_h(L|c|)$ is admissible in the sense of [box hull properties](../grid/box-hull-properties.md): it is nonempty, and each coordinate projection lies in a closed arc of length at most $\omega(h)+2h\le1$, by the choice of $k_0$ in the [mesh sequence](../grid/mesh-sequence.md). Box hull properties (1) give the nesting under faces and (2) the diameter bound; [boxes are acyclic](../grid/grid-box-acyclic.md). The identity on the subcomplex $E(k)$ is carried, because $L$ fixes $|c|$ and $c\in\mathrm{Box}_k(N_h(|c|))$ by box hull properties (3), and it preserves $\varepsilon$. Apply [carried chain maps](../grid/carried-chain-map.md) with $\varepsilon_E=\varepsilon$.
 
 ## Sources
 - New: replaces simplicial approximation (HS paper, Section 9).
 ## Depends on
-- [Box hull](../grid/box-hull.md), [track maps](track-map.md), [modulus of the track family](modulus.md), [mesh sequence](../grid/mesh-sequence.md), [carriers](../grid/acyclic-carriers.md), [cubical torus grid](../grid/cubical-torus-grid.md)
+- [The closed cube](../grid/cubical/grid-cube-realization.md)
+- [Mesh start](../mesh/mesh-start.md)
+- [Grid cubes](../grid/cubical/grid-cube.md)
+- [The cube of a basis vector](../grid/cubical/grid-cell.md)
+- [Augmentation of the grid complex](../grid/cubical/grid-aug.md)
+- [The track family](maps/track-family.md)
+- [Far cubes](far-cubes.md), [approximation boxes](chain-approx-box.md), [realized augmentation](../grid/realized-augmentation.md)
+- [Boxes are acyclic](../grid/grid-box-acyclic.md), [realization](../grid/realization.md), [track maps](track-map.md), [modulus of the track family](modulus.md), [mesh sequence](../grid/mesh-sequence.md), [carriers](../grid/acyclic-carriers.md), [cubical torus grid](../grid/cubical/cubical-torus-grid.md)
 ## Proof depends on
-- [Carried chain maps](../grid/carried-chain-map.md), [box hull properties](../grid/box-hull-properties.md), [boxes are acyclic](../grid/grid-box-acyclic.md), [properties](completed-maps-properties.md)
+- [Carried chain maps](../grid/carried-chain-map.md), [box hull properties](../grid/box-hull-properties.md), [properties](completed-maps-properties.md)

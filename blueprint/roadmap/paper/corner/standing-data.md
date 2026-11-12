@@ -1,7 +1,9 @@
 ---
 article_id: af_b02080be1c6eb585871a5846
-declaration: def
+declaration: structure
 origin: bridged
+statement: formalized
+lean: HSP.Corner.StandingData
 ---
 
 # Standing data
@@ -29,6 +31,3 @@ The properties of these sets that the iterated cut uses are [the exterior is clo
 ## Depends on
 
 - [Group sequence](../categories/asymptotic/group-sequence.md)
-- [The round sphere](round-sphere.md)
-- [The exterior](exterior.md)
-- [The cut sets](cut-sets.md)

@@ -8,7 +8,7 @@ origin: bridged
 
 Let $L\subset W$ be a $G$-invariant subspace with $b|_{L\times L}=0$ and $2\dim L=\dim W$. Then $\mathrm{sign}_b(g)=0$ for every $g$.
 
-*Proof sketch.* Take a splitting. $L\cap V^\pm=0$ because $L$ is isotropic and $V^\pm$ is definite. So $\dim V^\pm\le\dim L$. Since $\dim V^++\dim V^-=2\dim L$, both are equalities. Hence $W=L\oplus V^+=L\oplus V^-$, and the quotient map gives $G$-isomorphisms $V^+\cong W/L\cong V^-$. The two traces are therefore equal.
+*Proof sketch.* Take a splitting. $L\cap V^\pm=0$ because $L$ is isotropic and $V^\pm$ is definite. So $\dim V^\pm\le\dim L$. Since $\dim V^++\dim V^-=2\dim L$, both are equalities. Hence $W=L\oplus V^+=L\oplus V^-$, and the quotient map gives $G$-isomorphisms $V^+\cong W/L\cong V^-$. The two traces are therefore equal. If $(W,b,\rho)$ has no splitting, $\mathrm{sign}_b=0$ by definition.
 
 ## Sources
 

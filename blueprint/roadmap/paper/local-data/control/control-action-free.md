@@ -2,13 +2,16 @@
 article_id: af_e29fa47cce87cfd0f009bce6
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.free
 ---
 
 # The cyclic action is free
 
 For a local datum, if $c\in C_p$, $t\in T$ and $c\cdot t=t$, then $c=0$.
 
-*Proof sketch.* Write $t=\pi z$ and $c=q_1(a)$. Then $\pi(a\cdot z)=\pi z$, so $a\cdot z=b\cdot z$ for some $b\in H_1$. The element $a-b$ fixes $z$, so it lies in $H_1$ by the lemma on stabilizers on the test region. Hence $a\in H_1$ and $c=0$.
+*Proof sketch.* Write $t=\pi z$ and let $a\in\{0,\dots,p-1\}\subset\mathbb Z_p$ be the representative of $c$, so $c=q_1(a)$. Then $\pi(a\cdot z)=\pi z$, so $a\cdot z=b\cdot z$ for some $b\in H_1$. The element $a-b$ fixes $z$, so it lies in $H_1$ by the lemma on stabilizers on the test region. Hence $a\in H_1$ and $c=0$.
 
 ## Sources
 
@@ -16,6 +19,7 @@ For a local datum, if $c\in C_p$, $t\in T$ and $c\cdot t=t$, then $c=0$.
 
 ## Depends on
 
+- [The quotient map to the control space](control-quotient-map.md)
 - [The cyclic action on the control space](control-action.md)
 
 ## Proof depends on

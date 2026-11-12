@@ -2,13 +2,16 @@
 article_id: af_35d70cce2896537b56048224
 declaration: lemma
 origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.LocalDatum.isCompact_testMap_preimage
 ---
 
 # Preimages under the test map
 
 For a local datum, $0<\rho<\rho_+$ and every compact $C\subseteq\mathbb R^n$, the set $f^{-1}(C)$ is a compact subset of $U^+$.
 
-*Proof sketch.* $K=\{x\in B(0,\rho):\sigma_\rho(x)\in C\}$ is the image of $C$ under the inverse homeomorphism of the pinch, so it is compact and lies in $B(0,\rho)$. Then $f^{-1}(C)$ is the set of points of $\overline B(0,\rho+D)$ at which $F_0$ lands in $K$, a closed subset of a compact ball inside $\Omega$, and it lies in $U^+$ because $\rho<\rho_+$.
+*Proof sketch.* $C$ is compact, hence closed in the compact Hausdorff space $S^n$, and $f$ is continuous, so $f^{-1}(C)$ is a closed subset of $S^n$ and therefore compact. If $f(x)\in C$ then $f(x)\ne\infty$, so $x\in\Omega$ and $\sigma_\rho(F_0(x))\ne\infty$, that is $|F_0(x)|<\rho<\rho_+$; hence $x\in U^+$.
 
 ## Sources
 
@@ -21,6 +24,4 @@ For a local datum, $0<\rho<\rho_+$ and every compact $C\subseteq\mathbb R^n$, th
 
 ## Proof depends on
 
-- [The pinch opens the ball onto $\mathbb R^n$](pinch-homeomorph.md)
-- [The averaged map is continuous](averaged-map-continuous.md)
-- [The averaged map moves points little](averaged-map-displacement.md)
+- [The test map is continuous](test-map-continuous.md)

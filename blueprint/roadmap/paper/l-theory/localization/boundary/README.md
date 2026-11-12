@@ -14,6 +14,7 @@ $\mathcal U$-pairs, that is pairs in $\mathrm{Kar}\,\mathcal A$ with boundary fr
 - [Lifting](lift-to-pair.md)
 - [Lifting closed complexes](lift-to-pair-closed.md)
 - [Independence of the lift](boundary-independence.md)
+- [Sums of U-pairs](u-pair-sum.md)
 - [Localization boundary](localization-boundary.md)
 - [Exactness in the middle](exact-in-middle.md)
 - [Pair formula](pair-formula.md)

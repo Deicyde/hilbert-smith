@@ -2,6 +2,8 @@
 article_id: af_c34efefcf14572297a47ac60
 declaration: theorem
 origin: cited
+statement: formalized
+lean: HSP.exists_padic_embedding
 ---
 
 # $\mathbb Z_p$ inside a compact torsion-free group

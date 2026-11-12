@@ -2,13 +2,15 @@
 article_id: af_9826c6c5fb5c31668271cb17
 declaration: def
 origin: background
+statement: formalized
+lean: HSP.prodDualIso
 ---
 
 # Dual of a tensor product
 
-Let $C$ and $E$ be as in [Tensor product of complexes](complex-product.md), let $m,n\in\mathbb Z$, $N=m+n$ and $s(a,b)=(-1)^{b(a+m)}$. The isomorphism of complexes
+Let $C$ and $E$ be as in [Tensor product of complexes](complex-product.md), let $m,n\in\mathbb Z$, let $N$ be any integer with $m+n=N$, and let $s(a,b)=(-1)^{b(a+m)}$. The isomorphism of complexes
 $$\Xi:(C\otimes E)^{N-*}\to C^{m-*}\otimes E^{n-*}$$
-is $s(a,b)$ times $\kappa$ on the summand $(C_{m-a}\boxtimes E_{n-b})^*$, which it carries to $C^*_{m-a}\boxtimes E^*_{n-b}$ in position $(a,b)$.
+is $s(a,b)$ times $\kappa$ on the summand $(C_{m-a}\boxtimes E_{n-b})^*$, which it carries to $C^*_{m-a}\boxtimes E^*_{n-b}$ in position $(a,b)$. Here $C^{m-*}$ and $E^{n-*}$ again have only finitely many nonzero chain objects. Precomposed with the dual of the projection onto the summand $C_{m-a}\boxtimes E_{n-b}$, $\Xi$ is $s(a,b)\,\kappa$ followed by the inclusion of the summand in position $(a,b)$.
 
 *Proof sketch.* (It is a chain map.) In position $(a,b)$, the differential of $(C\otimes E)^{N-*}$ has components $(-1)^{a+b}d^*\boxtimes1$ to $(a-1,b)$ and $(-1)^{b+m}1\boxtimes d^*$ to $(a,b-1)$; that of $C^{m-*}\otimes E^{n-*}$ has $(-1)^ad^*\boxtimes1$ and $(-1)^{a+b}1\boxtimes d^*$ ([Dual complex](../../base/complexes/dual-complex.md)). The identities $s(a-1,b)=(-1)^bs(a,b)$ and $s(a,b-1)=(-1)^{a+m}s(a,b)$ are exactly the chain-map condition. Each component is an isomorphism, so $\Xi$ is one.
 
@@ -22,3 +24,16 @@ is $s(a,b)$ times $\kappa$ on the summand $(C_{m-a}\boxtimes E_{n-b})^*$, which 
 - [Duality pairings](duality-pairing.md)
 - [Tensor product of complexes](complex-product.md)
 - [Dual complex](../../base/complexes/dual-complex.md)
+- [Dual complexes have finitely many nonzero chain objects](bookkeeping/dual-complex-finite.md)
+- [Summand inclusions of a tensor product](bookkeeping/summand-inclusion.md)
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+
+## Proof depends on
+
+- [Support of a tensor product of complexes](bookkeeping/product-support.md)
+- [Projection after inclusion of the same summand](bookkeeping/inclusion-projection.md)
+- [Projection after inclusion of another summand](bookkeeping/inclusion-projection-ne.md)
+- [Summands outside the support vanish](bookkeeping/summand-zero.md)
+- [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
+- [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)
+- [Differential of a tensor product on summands](bookkeeping/product-differential.md)

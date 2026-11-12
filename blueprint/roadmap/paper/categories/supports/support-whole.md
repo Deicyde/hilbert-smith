@@ -2,6 +2,8 @@
 article_id: af_e865625882293d1a9cf50630
 declaration: def
 origin: bridged
+statement: formalized
+lean: HSP.supportWholeIso
 ---
 
 # The support subcategory of the whole space
@@ -22,3 +24,6 @@ Every object of $\mathcal A_{\mathbf G}(X)$ lies in the [support subcategory](su
 - [Support subcategory](support-subcategory.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
+- [The support subcategory is additive](support-dual-additive.md)
+- [Inclusion of a dual-closed subcategory](../../l-theory/base/categories/subcategory-inclusion.md)
