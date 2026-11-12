@@ -26,17 +26,20 @@ Let $X$ be compact with an isometric $C_p$-action, let $A,B\subset X$ be closed 
 
 ## Depends on
 
-- [Support subcategory](../supports/support-subcategory.md)
+- [Group sequence](../asymptotic/group-sequence.md)
 - [Support subcategory inside a support subcategory](../supports/relative-support.md)
 - [Supported objects of a support quotient](../supports/quotient-support.md)
-- [Supported objects of a support quotient are additive](../supports/quotient-support-additive.md)
-- [Support filtrations in a quotient](../supports/quotient-support-filtration.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Excisive pair of filtrations](../../l-theory/ultimate/boundary/excisive-pair.md)
 - [Intersection of full subcategories](../../l-theory/ultimate/boundary/excisive-intersection.md)
 
 ## Proof depends on
 
+- [Support subcategory](../supports/support-subcategory.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Support filtrations in a quotient](../supports/quotient-support-filtration.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [The trivial group sequence](../asymptotic/trivial-group-sequence.md)
 - [Lift of a duality functor to a quotient](../../l-theory/base/categories/quotient-dual-lift.md)
 - [Support intersection](../supports/support-intersection.md)
 - [Iterated quotient](../supports/iterated-quotient.md)

@@ -22,6 +22,15 @@ is the [excision boundary](../../l-theory/ultimate/boundary/excision-boundary.md
 
 ## Depends on
 
+- [Group sequence](../asymptotic/group-sequence.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Support subcategory](../supports/support-subcategory.md)
+- [Support subcategory inside a support subcategory](../supports/relative-support.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+- [Ultimate L-group](../../l-theory/ultimate/groups/ultimate-l-group.md)
+
+## Proof depends on
+
 - [Cut square](cut-square.md)
 - [Separated support in a quotient](../supports/quotient-separation-iso.md)
 - [Excision boundary](../../l-theory/ultimate/boundary/excision-boundary.md)
@@ -29,7 +38,6 @@ is the [excision boundary](../../l-theory/ultimate/boundary/excision-boundary.md
 - [Supported objects of a support quotient](../supports/quotient-support.md)
 - [Intersection of full subcategories](../../l-theory/ultimate/boundary/excisive-intersection.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
-
-## Proof depends on
-
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
 - [Support intersection](../supports/support-intersection.md)
