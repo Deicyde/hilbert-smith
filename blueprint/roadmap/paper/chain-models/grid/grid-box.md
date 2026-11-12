@@ -15,5 +15,4 @@ A *grid arc* of $S_k$ is the subcomplex spanned by $[w],\dots,[w+m]$ and $e_w,\d
 - New.
 ## Depends on
 - [Grid cubes](cubical/grid-cube.md)
-- [Cubical torus grid](cubical/cubical-torus-grid.md)
 - [The torus](torus.md)

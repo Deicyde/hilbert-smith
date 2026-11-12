@@ -13,7 +13,7 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 $$(C\oplus C')\otimes E\cong C\otimes E\oplus C'\otimes E$$
 of [tensor products](complex-product.md) carrying $(\phi\oplus\phi')\otimes\theta$ to $\phi\otimes\theta\oplus\phi'\otimes\theta$, for the [sums of structures](../../base/complexes/sum-of-complexes.md) and [external products](external-product.md).
 
-*Proof sketch.* The inverse isomorphism has components $i\otimes1$ and $i'\otimes1$ for the inclusions $i$, $i'$ of $C\oplus C'$; its inverse has components $p\otimes1$ and $p'\otimes1$ for the projections. These are inverse by [functoriality](bookkeeping/product-map-comp.md) of $\otimes$ on chain maps, $\otimes$ of [identities](bookkeeping/product-map-id.md) and additivity of $\otimes$ in the first map. By [Pushforward of products](product-push.md), $(i\otimes1)_\%(\phi\otimes\theta)=i_\%\phi\otimes\theta$, and likewise for $i'$. Since $\phi\oplus\phi'=i_\%\phi+i'_\%\phi'$, [additivity of external products](bookkeeping/product-additive-left.md) gives the claim.
+*Proof sketch.* The inverse isomorphism has components the [tensor products of chain maps](bookkeeping/product-map.md) $i\otimes1$ and $i'\otimes1$ for the inclusions $i$, $i'$ of $C\oplus C'$; its inverse has components $p\otimes1$ and $p'\otimes1$ for the projections. These are inverse by [functoriality](bookkeeping/product-map-comp.md) of $\otimes$ on chain maps, $\otimes$ of [identities](bookkeeping/product-map-id.md) and additivity of $\otimes$ in the first map. By [Pushforward of products](product-push.md), $(i\otimes1)_\%(\phi\otimes\theta)=i_\%\phi\otimes\theta$, and likewise for $i'$. Since $\phi\oplus\phi'=i_\%\phi+i'_\%\phi'$, [additivity of external products](bookkeeping/product-additive-left.md) gives the claim.
 
 ## Sources
 
@@ -21,6 +21,7 @@ of [tensor products](complex-product.md) carrying $(\phi\oplus\phi')\otimes\thet
 
 ## Depends on
 
+- [Duality pairings](duality-pairing.md)
 - [Tensor product of complexes](complex-product.md)
 - [External product of structures](external-product.md)
 - [Sum of complexes](../../base/complexes/sum-of-complexes.md)

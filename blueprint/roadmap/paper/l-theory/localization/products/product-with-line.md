@@ -11,7 +11,7 @@ proof: formalized
 
 Let $(f:C\to D,\delta\phi,\phi)$ be a strict $k$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^j}\mathcal A$. Then
 $$(f\otimes1:C\otimes\Lambda\to D\otimes\Lambda,\ \delta\phi\otimes\lambda,\ \phi\otimes\lambda)$$
-is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^{j+1}}\mathcal A$. Its boundary is $(C\otimes\Lambda,\phi\otimes\lambda)$, with no sign. The complexes $C$, $D$ and $\Lambda$ have only finitely many nonzero chain objects by their degree bounds, so the products are defined.
+is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^{j+1}}\mathcal A$. Its boundary is $(C\otimes\Lambda,\phi\otimes\lambda)$, with no sign. Here $f\otimes1$ is the [tensor product of chain maps](bookkeeping/product-map.md). The complexes $C$, $D$ and $\Lambda$ have only finitely many nonzero chain objects by their degree bounds, so the products are defined.
 
 *Proof sketch.*
 1. Degrees. $D\otimes\Lambda$ has zero objects outside degrees $[0,k+1]$ ([Bounds of products with the line](../line/line-product-bounds.md)). The boundary $(C\otimes\Lambda,\phi\otimes\lambda)$ is the [product of the complex $(C,\phi)$ with the line](../transitions/transition-complex.md), a strict $k$-dimensional symmetric Poincaré complex.

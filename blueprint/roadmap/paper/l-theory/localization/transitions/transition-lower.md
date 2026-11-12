@@ -19,5 +19,9 @@ since $L^{\langle -j\rangle}_k(\mathcal A)=L^p_{k+j}(C_{\mathbb Z^j}\mathcal A)$
 
 ## Depends on
 
-- [Transition map](transition-map.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [Lower L-group](lower-l-group.md)
+
+## Proof depends on
+
+- [Transition map](transition-map.md)

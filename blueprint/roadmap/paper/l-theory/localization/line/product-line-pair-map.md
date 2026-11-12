@@ -35,6 +35,9 @@ with $\Xi:(D\otimes\Lambda)^{n+1-*}\cong D^{n-*}\otimes\Lambda^{1-*}$ the [duali
 - [Structure of the symmetric line](../products/symmetric-line-structure.md)
 - [Dual of a tensor product](../products/product-dual-iso.md)
 - [Box product on iterated bounded categories](../products/box-pairing-pow.md)
+- [The symmetric line is a symmetric complex](../products/symmetric-line-cycle.md)
+- [Dual complexes have finitely many nonzero chain objects](../products/bookkeeping/dual-complex-finite.md)
+- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
 
 ## Proof depends on
 
@@ -48,4 +51,3 @@ with $\Xi:(D\otimes\Lambda)^{n+1-*}\cong D^{n-*}\otimes\Lambda^{1-*}$ the [duali
 - [Support of a tensor product of complexes](../products/bookkeeping/product-support.md)
 - [Summands outside the support vanish](../products/bookkeeping/summand-zero.md)
 - [Differential of a tensor product on a summand](summand-differential.md)
-- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)

@@ -11,7 +11,7 @@ lean: HSP.ChainModels.basedTensorHom_add_left
 
 For graded maps $f_r,f'_r:C_r\to C'_{r+d}$ and $g_r:E_r\to E'_{r+e}$, where $E,E'$ vanish in negative degrees, the [tensors of graded maps](based-tensor-hom.md) satisfy $(f+f')\otimes g=f\otimes g+f'\otimes g$.
 
-*Proof sketch.* Blockwise: the Kronecker product is additive in its first factor.
+*Proof sketch.* Blockwise: the [Kronecker product is additive in its first factor](kron-add-left.md).
 
 ## Sources
 
@@ -23,4 +23,5 @@ For graded maps $f_r,f'_r:C_r\to C'_{r+d}$ and $g_r:E_r\to E'_{r+e}$, where $E,E
 
 ## Proof depends on
 
+- [Additivity of the Kronecker product in the first factor](kron-add-left.md)
 

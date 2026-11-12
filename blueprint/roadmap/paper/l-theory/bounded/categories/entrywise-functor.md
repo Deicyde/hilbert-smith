@@ -17,4 +17,3 @@ Let $F:A\to A'$ be an additive functor between small $\mathbb Q$-linear additive
 ## Depends on
 
 - [The bounded category](bounded-category.md)
-- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)

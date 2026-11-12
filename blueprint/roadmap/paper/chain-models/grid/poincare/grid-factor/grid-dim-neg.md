@@ -24,3 +24,4 @@ For every $k$ and $n$, the [grid complex](../../cubical/cubical-torus-grid.md) $
 ## Proof depends on
 
 - [The tensor product vanishes in negative degrees](../../tensor/tensor-dim-neg.md)
+- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)

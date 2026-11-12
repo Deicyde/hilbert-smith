@@ -35,6 +35,8 @@ where $\Xi$ is the isomorphism of [Dual of a tensor product](product-dual-iso.md
 - [Dual of a tensor product](product-dual-iso.md)
 - [Support of a tensor product of complexes](bookkeeping/product-support.md)
 - [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+- [Projection after inclusion of the same summand](bookkeeping/inclusion-projection.md)
+- [Projection after inclusion of another summand](bookkeeping/inclusion-projection-ne.md)
 - [Summands outside the support vanish](bookkeeping/summand-zero.md)
 - [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)

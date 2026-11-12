@@ -20,3 +20,7 @@ For every $k$, the iterated duality map $b^{(n)}:C(k)\to C(k)^{n-*}$ of the [gri
 - [The unit complex](../../cubical/unit-complex.md)
 - [Product of duality maps in explicit bases](../../tensor/structure-products/based-dual-prod.md)
 - [The circle inverse](../circle-data/circle-b.md)
+
+## Proof depends on
+
+- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)

@@ -17,5 +17,4 @@ For the [circle complex](../../cubical/circle-complex.md) $S=S_k$, the map $b:S\
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
-- [Cubical torus grid](../../cubical/cubical-torus-grid.md)
 - [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)

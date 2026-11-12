@@ -10,6 +10,7 @@ proof: formalized
 # Sums of Poincaré complexes
 
 If $(C,\phi)$ and $(C',\phi')$ are strict $k$-dimensional symmetric Poincaré complexes in a duality category $\mathcal B$, then so is $(C\oplus C',\phi\oplus\phi')$, with the sum of [Sum of structured complexes](../complexes/sum-of-complexes.md).
+
 *Proof sketch.* (1) $\phi\oplus\phi'=i_\%\phi+i'_\%\phi'$ is a cycle and $T$-invariant, since pushforward commutes with $\partial$ and with $T$; a sum of zero objects is a zero object. (2) $(\phi\oplus\phi')_\natural=\phi_\natural\oplus\phi'_\natural$ up to the canonical isomorphism $(C\oplus C')^{k-*}\cong C^{k-*}\oplus C'^{k-*}$, so it is an equivalence: a sum of chain homotopy equivalences is one, with the sum of the inverses and of the homotopies.
 
 ## Sources

@@ -16,6 +16,9 @@ For $j\ge0$ and $k\in\mathbb Z$, $L^{\langle -j\rangle}_k(\mathcal A):=L^p_{k+j}
 
 ## Depends on
 
-- [Projective L-group](../../base/groups/l-group.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)

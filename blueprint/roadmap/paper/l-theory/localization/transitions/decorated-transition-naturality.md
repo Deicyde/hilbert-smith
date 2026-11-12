@@ -6,7 +6,7 @@ origin: background
 
 # Naturality of the decorated transition
 
-Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be involution-invariant Karoubi filtrations, $(F,\xi):\mathcal A\to\mathcal A'$ a duality functor with $FV\in\mathcal U'$ for every $V\in\mathcal U$, and $j\ge0$. Let $\bar F:\mathcal A/\mathcal U\to\mathcal A'/\mathcal U'$ be the [functor induced on quotients](../decorations/induced-quotient-functor.md), and $F^{(j+1)}:C_{\mathbb Z^{j+1}}\mathcal A/C_{\mathbb Z^{j+1}}\mathcal U\to C_{\mathbb Z^{j+1}}\mathcal A'/C_{\mathbb Z^{j+1}}\mathcal U'$ the functor induced in the same way by $C_{\mathbb Z^{j+1}}F$. Then
+Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be involution-invariant Karoubi filtrations, $(F,\xi):\mathcal A\to\mathcal A'$ a duality functor with $FV\in\mathcal U'$ for every $V\in\mathcal U$, and $j\ge0$. Let $\bar F:\mathcal A/\mathcal U\to\mathcal A'/\mathcal U'$ be the [functor induced on quotients](../decorations/induced-quotient-functor.md), and $F^{(j+1)}:C_{\mathbb Z^{j+1}}\mathcal A/C_{\mathbb Z^{j+1}}\mathcal U\to C_{\mathbb Z^{j+1}}\mathcal A'/C_{\mathbb Z^{j+1}}\mathcal U'$ the functor induced in the same way by the [iterated bounded extension](../../bounded/categories/bounded-functor-iter.md) $C_{\mathbb Z^{j+1}}F$. Then
 $$t^{\mathrm{im}}\circ(C_{\mathbb Z^j}\bar F)_*=(F^{(j+1)})^{\mathrm{im}}_*\circ t^{\mathrm{im}}:\ L^p_m(C_{\mathbb Z^j}(\mathcal A/\mathcal U))\to L^{\mathrm{im}}_{m+1}(C_{\mathbb Z^{j+1}}\mathcal A'/C_{\mathbb Z^{j+1}}\mathcal U'),$$
 where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md) and $(F^{(j+1)})^{\mathrm{im}}_*$ the [decorated induced map](../decorations/decorated-induced-map.md), defined by [Induced quotient functors keep decorations](../decorations/induced-quotient-decorated.md).
 
@@ -27,7 +27,7 @@ where $t^{\mathrm{im}}$ is the [decorated transition](decorated-transition.md) a
 - [Functor induced on quotients](../decorations/induced-quotient-functor.md)
 - [Decorated induced map](../decorations/decorated-induced-map.md)
 - [Induced quotient functors keep decorations](../decorations/induced-quotient-decorated.md)
-- [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 
 ## Proof depends on
 

@@ -11,7 +11,7 @@ lean: HSP.quotientByEmptyIso
 Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, hence a zero object, so the ideal of maps of $\mathcal A_S$ factoring through $\mathcal A_\varnothing$ is zero. The [quotient functor](../../l-theory/base/categories/filtration-quotient.md) $q:\mathcal A_S\to\mathcal A_S/\mathcal A_\varnothing$ by the subcategory $\mathcal A_\varnothing\subset\mathcal A_S$ of the [support filtration](support-filtration.md) is an isomorphism of duality categories: it is the identity on objects and bijective on morphisms, and its inverse $q^{-1}:\mathcal A_S/\mathcal A_\varnothing\to\mathcal A_S$, $M\mapsto M$, $[u]\mapsto u$, is a strict duality functor with $q^{-1}\circ q=\mathrm{id}$ and $q\circ q^{-1}=\mathrm{id}$.
 
 *Proof sketch.*
-1. Every object of $\mathcal A_\varnothing$ is a zero object. An object $W=(n_i,x_i)$ of the [support subcategory](support-subcategory.md) $\mathcal A_\varnothing$ has, for every $\varepsilon>0$, eventually all labels in the $\varepsilon$-thickening of $\varnothing$, which is empty; so $n_i=0$ for all large $i$. Then $1_W$ and $0$ are eventually equal matrices, so $1_W=0$ in the [asymptotic category](../asymptotic/asymptotic-category.md).
+1. Every object of $\mathcal A_\varnothing$ is a zero object. An object $W=(n_i,x_i)$ of the [support subcategory](support-subcategory.md) $\mathcal A_\varnothing$ has, for every $\varepsilon>0$, eventually all labels in the $\varepsilon$-thickening of $\varnothing$, which is empty; so $n_i=0$ for all large $i$. Then $1_W$ and $0$ are eventually equal matrices, so $1_W=0$ in the [asymptotic category](../asymptotic/asymptotic-category.md) by [equality of classes](../asymptotic/structure/class-eq.md).
 2. Hence a morphism $u=ba$ factoring through $W\in\mathcal A_\varnothing$ is $b\,1_W\,a=0$. The ideal $I_{\mathcal A_\varnothing}$ is zero, so the quotient map on each hom-set is a bijection.
 3. The inverse on hom-sets therefore defines $q^{-1}$. It preserves composition, identities, sums and transposes because $q$ does, and both composites are identity functors on objects and morphisms.
 
@@ -24,6 +24,8 @@ Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, henc
 
 ## Depends on
 
+- [Group sequence](../asymptotic/group-sequence.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Support subcategory](support-subcategory.md)
@@ -35,6 +37,7 @@ Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, henc
 
 ## Proof depends on
 
-- [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Free category of a finite group](../asymptotic/free-category.md)
 - [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
+- [Equality of classes](../asymptotic/structure/class-eq.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

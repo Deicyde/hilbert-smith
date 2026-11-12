@@ -30,3 +30,4 @@ For every $k$, $n$ and $r$, the [iterated grid duality map](grid-dual-map.md) $b
 - [The grid complex vanishes in negative degrees](grid-dim-neg.md)
 - [The identity as a map of degree zero](../../tensor/id-deg0.md)
 - [The unit complex](../../cubical/unit-complex.md)
+- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)

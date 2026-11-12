@@ -17,5 +17,4 @@ For the [circle complex](../../cubical/circle-complex.md) $S=S_k$, the element $
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
-- [Cubical torus grid](../../cubical/cubical-torus-grid.md)
 - [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)

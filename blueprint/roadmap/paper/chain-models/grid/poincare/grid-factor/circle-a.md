@@ -8,7 +8,7 @@ lean: HSP.ChainModels.circleA
 
 # The degree-zero map A of the circle
 
-On the circle complex $S=S_k$ of the [cubical torus grid](../../cubical/cubical-torus-grid.md), $A=\varphi^sb$ is the map of degree $0$ whose component in degree $r$ is the [circle inverse](../circle-data/circle-b.md) $b_r:S_r\to S_{1-r}^*$ followed by the component $\varphi^s_{r,1-r}:S_{1-r}^*\to S_r$ of the [symmetric circle structure](../circle-data/circle-phi-sym.md).
+On the [circle complex](../../cubical/circle-complex.md) $S=S_k$, $A=\varphi^sb$ is the map of degree $0$ whose component in degree $r$ is the [circle inverse](../circle-data/circle-b.md) $b_r:S_r\to S_{1-r}^*$ followed by the component $\varphi^s_{r,1-r}:S_{1-r}^*\to S_r$ of the [symmetric circle structure](../circle-data/circle-phi-sym.md).
 
 ## Sources
 
@@ -17,6 +17,5 @@ On the circle complex $S=S_k$ of the [cubical torus grid](../../cubical/cubical-
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
-- [Cubical torus grid](../../cubical/cubical-torus-grid.md)
 - [The circle inverse](../circle-data/circle-b.md)
 - [The symmetric circle structure](../circle-data/circle-phi-sym.md)
