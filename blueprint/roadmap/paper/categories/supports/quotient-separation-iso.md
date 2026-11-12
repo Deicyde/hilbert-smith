@@ -32,3 +32,5 @@ Let $X$ be compact with an isometric $C_p$-action, let $S\subset X$, and let $Y,
 
 - [Maps through a disjoint support vanish](disjoint-support-vanishing.md)
 - [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [Every morphism is a class](../asymptotic/structure/class-surjective.md)

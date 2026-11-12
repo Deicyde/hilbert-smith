@@ -35,6 +35,7 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 - [The support subcategory is additive](../supports/support-dual-additive.md)
 - [Dual subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [Unitary natural isomorphism](../../l-theory/base/categories/unitary-isomorphism.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
 
 ## Proof depends on
 
@@ -42,3 +43,7 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 - [Relabelling isomorphism](relabelling-isomorphism.md)
 - [The relabelling isomorphism is unitary](relabelling-isomorphism-unitary.md)
 - [The relabelling isomorphism is natural](relabelling-isomorphism-natural.md)
+- [The levelwise transpose](../asymptotic/structure/levelwise-transpose.md)
+- [Morphisms have propagation tending to zero](../asymptotic/structure/morphism-propagation.md)
+- [Every morphism is a class](../asymptotic/structure/class-surjective.md)
+- [Equality of classes](../asymptotic/structure/class-eq.md)
