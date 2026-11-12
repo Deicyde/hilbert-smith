@@ -8,10 +8,11 @@ lean: HSP.Evaluation.theoremB
 ---
 # Theorem B
 
-Let $n\ge1$, $R>0$ and $0<s<R/\sqrt n$. Let $\kappa:\mathbb T^n\to S^n$ be the [cubical pinch](cubical-pinch.md) for $n$ and $s$, $\mathfrak m$ the [labelled-model class](germ.md) for $n$ and $R$, and $\Delta_{\mathbf 1}$ the [scalar iterated cut](../corner/theorem/scalar-iterated-cut.md) for $n$, $R$ and $s$. There is $\varepsilon\in\{\pm1\}$, depending only on $n$, such that for every continuous $c:\mathbb T^n\to S^n$ homotopic to $\kappa$,
-$$\sigma_{\rm tail}(\Delta_{\mathbf 1}\mathfrak m_c)=[(\varepsilon,\varepsilon,\dots)]\in\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)}.$$
+Let $n\ge1$. There is $\varepsilon\in\{\pm1\}$ such that for every prime $p$, all reals $D,\rho_+,R,s$ with $R>0$ and $0<s<R/\sqrt n$, every [local datum](../local-data/chart/local-datum.md) $A$ at $p$ in dimension $n$ with constants $(D,\rho_+)$, and every continuous $c:\mathbb T^n\to S^n$ homotopic to the [cubical pinch](cubical-pinch.md) $\kappa$ for $n$ and $s$,
+$$\sigma_{\rm tail}(\Delta_{\mathbf 1}\mathfrak m_c)=[(\varepsilon,\varepsilon,\dots)]\in\mathbb Z^{\mathbb N}/\mathbb Z^{(\mathbb N)},$$
+where $\mathfrak m_c$ is the [labelled-model class](germ.md) of $c$ for $A$ and $R$, $\Delta_{\mathbf 1}$ is the [scalar iterated cut](../corner/theorem/scalar-iterated-cut.md) for $p$, $n$, $R$ and $s$ (with $\mathbf 1$ the trivial group sequence with values in $\mathbb Z/p$), and $\sigma_{\rm tail}$ is the [tail signature](../signatures/tail/tail-signature.md) of $\mathbf 1$. So $\varepsilon$ is chosen before $p$, $D$, $\rho_+$, $R$, $s$, $A$ and $c$, and depends only on $n$.
 
-This rests on the open statements [lifting](../l-theory/localization/boundary/lift-to-pair.md), through every cut boundary and the tail signature; [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md), through the inner cuts (evaluation at the cubical pinch); and [Lemma U](../l-theory/comparison/lemma-u.md), through the tail signature.
+This rests on the open statements [lifting](../l-theory/localization/boundary/lift-to-pair.md), through every cut boundary and the tail signature; [the two sides of an excision boundary](../l-theory/ultimate/boundary/excision-boundary-swap.md), through the inner cuts (evaluation at the cubical pinch); and [Lemma U](../l-theory/comparison/lemma-u.md), through the tail signature. Its formal proof also reaches stated results whose formal proofs are not yet complete (these are not open statements): [Homotopic labellings have equal classes](germ-homotopy.md), [Evaluation at the cubical pinch](pinch-evaluation.md) and [Constant tail](constant-tail.md), used directly, and The labelled chain model is Poincaré, through the labelled-model class; Lifting closed complexes, Independence of the lift, Transition commutes with the boundary and Products with the line are decorated, through the cut boundaries; Point comparison for the free categories, Boundaries have zero signature, The middle form is nonsingular, symmetric and invariant, Middle form of a sum, Classes over $\mathcal V$ lift and Lifts agree eventually, through the tail signature; Naturality of the transition, through the induced maps on ultimate L; and Cobordism is an equivalence relation, through the L-groups.
 
 *Proof sketch.* $\mathfrak m_c=\mathfrak m_\kappa$ ([homotopic labellings have equal classes](germ-homotopy.md)). By [evaluation at the cubical pinch](pinch-evaluation.md), $\Delta_{\mathbf 1}\mathfrak m_\kappa=\varepsilon\,q_*\mathrm{cls}[\mathbf P]$, for the [constant sequence](constant-cp2-sequence.md) $\mathbf P$, with $\varepsilon=(-1)^{n(n+1)/2}$. The [tail signature](../signatures/tail/tail-signature.md) is additive, so it commutes with multiplication by $\varepsilon$, and the [constant tail](constant-tail.md) is $[(1,1,\dots)]$; hence $\sigma_{\rm tail}(\Delta_{\mathbf 1}\mathfrak m_c)=\varepsilon[(1,1,\dots)]=[(\varepsilon,\varepsilon,\dots)]$, with $\varepsilon$ depending only on $n$.
 
@@ -21,8 +22,12 @@ This rests on the open statements [lifting](../l-theory/localization/boundary/li
 ## Depends on
 - [Scalar iterated cut](../corner/theorem/scalar-iterated-cut.md)
 - [Labelled-model class](germ.md)
+- [Local datum](../local-data/chart/local-datum.md)
 - [Cubical pinch](cubical-pinch.md)
 - [Tail signature](../signatures/tail/tail-signature.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The torus](../chain-models/grid/torus.md)
+- [The round sphere](../corner/round-sphere.md)
 ## Proof depends on
 - [The constant sequence of CP^2](constant-cp2-sequence.md)
 - [Homotopic labellings have equal classes](germ-homotopy.md)

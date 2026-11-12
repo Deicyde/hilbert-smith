@@ -13,17 +13,17 @@ Let `n ≥ 1`, `s > 0`, and let `Y_n = {y_-, y_+}` be the last cut set, with `y_
 round sphere and the trivial group sequence `𝟏`, the scalar component projection
 `π_+ : 𝕃_4(𝒜_{Y_n}) → 𝕃_4(𝒱_𝟏)` is the composite of
 1. `q_*`, for the quotient functor `q : 𝒜_{Y_n} → 𝒜_{Y_n}/𝒜_{y_-}`;
-2. `(e_*)⁻¹`, for the excision equivalence `e : 𝒜_{y_+}/𝒜_∅ → 𝒜_{Y_n}/𝒜_{y_-}`;
+2. `(e_*)⁻¹`, for the excision equivalence `e : 𝒰_+/(𝒰_+ ∩ 𝒰_-) → 𝒜_{Y_n}/𝒜_{y_-}`, where `𝒰_±`
+   are the `y_±`-supported objects of `𝒜_{Y_n}`, followed by the map induced by the identification
+   `𝒰_+/(𝒰_+ ∩ 𝒰_-) → 𝒜_{y_+}/𝒜_∅` (`HSP.excisiveInterQuotIso` for `A = {y_+}`, `B = {y_-}`,
+   `S = Y_n`, `C = ∅`; `{y_+}` is compact);
 3. `(q'_*)⁻¹`, for the quotient isomorphism `q' : 𝒜_{y_+} → 𝒜_{y_+}/𝒜_∅`;
 4. `(P_*)⁻¹`, for the inclusion `P : 𝒜_𝟏({y_+}) → 𝒜_{y_+}` of the relabelling equivalence;
 5. `Φ_*`, for forgetting labels `Φ : 𝒜_𝟏({y_+}) → 𝒱_𝟏`.
 Each inverse is the inverse of an induced isomorphism, by equivalence invariance.
 
-The excision equivalence realizes `𝒜_{y_+}/𝒜_∅` as the quotient of the `y_+`-supported objects of
-`𝒜_{Y_n}` by those that are also `y_-`-supported; step 2 is followed by the induced map of the
-identification of that quotient with `𝒜_{y_+}/𝒜_∅` (`HSP.excisiveInterQuotIso`). For the quotient
-isomorphism, the natural isomorphisms of equivalence invariance are identities. The trivial group
-sequence is taken for a natural number `p`.
+For the quotient isomorphism, the natural isomorphisms of equivalence invariance are identities.
+The trivial group sequence is taken for a natural number `p`, which need not be prime.
 -/
 
 open CategoryTheory CategoryTheory.Limits Metric
@@ -112,8 +112,13 @@ private lemma cut_cover : cutY n s n ⊆ {yPlus n s} ∪ {yMinus n s} := by
   · exact Or.inl rfl
 
 include hn hs in
-private lemma plus_minus_disjoint : Disjoint ({yPlus n s} : Set (RoundSphere n)) {yMinus n s} :=
-  Set.disjoint_singleton.2 (cut_flag n hn s hs).2.2.symm
+private lemma plus_subset : ({yPlus n s} : Set (RoundSphere n)) ⊆ cutY n s n := by
+  rw [(cut_flag n hn s hs).2.1]
+  exact Set.singleton_subset_iff.2 (Or.inr rfl)
+
+include hn hs in
+private lemma plus_inter_minus : ({yPlus n s} : Set (RoundSphere n)) ∩ {yMinus n s} = ∅ :=
+  Set.disjoint_iff_inter_eq_empty.1 (Set.disjoint_singleton.2 (cut_flag n hn s hs).2.2.symm)
 
 /-- **The scalar component projection** `π_+ : 𝕃_4(𝒜_{Y_n}) → 𝕃_4(𝒱_𝟏)`. -/
 noncomputable def scalarComponentProj :
@@ -121,8 +126,8 @@ noncomputable def scalarComponentProj :
       ultL (VCat (GroupSeq.trivial p)) 4 :=
   let ex := excision (G := GroupSeq.trivial p) (cutY n s n) {yPlus n s} {yMinus n s}
     (cut_cover n hn s hs) fun _ _ hx => hx
-  let br := excisiveInterQuotIso (G := GroupSeq.trivial p) (cutY n s n) (isCompact_singleton)
-    (isClosed_singleton) (plus_minus_disjoint n hn s hs)
+  let br := excisiveInterQuotIso (G := GroupSeq.trivial p) (cutY n s n) isCompact_singleton
+    isClosed_singleton (plus_subset n hn s hs) (plus_inter_minus n hn s hs)
   let qe := quotientByEmptyIso (G := GroupSeq.trivial p) ({yPlus n s} : Set (RoundSphere n))
   let rel := relabelEquiv (G := GroupSeq.trivial p) (S := plusSub p n s)
     (isClosed_singleton (x := yPlus n s)) (ρ := fun _ => ⟨yPlus n s, rfl⟩)
@@ -131,7 +136,7 @@ noncomputable def scalarComponentProj :
     (indEquiv rel.P rel.R rel.unit rel.counit 4).symm.toAddMonoidHom.comp <|
     (strictEquiv qe.1.1 qe.1.2 qe.2.2.1 qe.2.2.2.1 qe.2.2.2.2.1
       qe.2.2.2.2.2 4).symm.toAddMonoidHom.comp <|
-    (ultL.map br.1 4).comp <|
+    (ultL.map br.1.1 4).comp <|
     (indEquiv (ExcisivePair.e _ _) ex.1 ex.2.1 ex.2.2 4).symm.toAddMonoidHom.comp <|
     ultL.map (FiltQuot.q _) 4
 
