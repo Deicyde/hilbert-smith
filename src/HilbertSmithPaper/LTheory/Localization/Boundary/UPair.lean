@@ -4,6 +4,8 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFunctor
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare
 import HilbertSmithPaper.LTheory.Base.Pairs.PoincarePair
 import HilbertSmithPaper.LTheory.Base.Categories.SubcategoryInclusion
+import HilbertSmithPaper.LTheory.Base.Categories.TopDualAdditive
+import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 
 /-!
 # U-pairs
@@ -15,7 +17,8 @@ and a strict `k`-dimensional Poincaré pair `(f : i P ⟶ D, δφ, i_% π)` in `
 
 Lean: the boundary condition is an equation of structured complexes
 `(V.C, V.φ) = (i P, i_% π)`, as in `HSP.Cobordant`. The zero `𝒰`-pair shows the notion is not
-vacuous.
+vacuous, for every `𝒰 ⊂ 𝒜` and `k`; the named witness at an explicit toy instance is the zero
+`0`-dimensional `𝒰`-pair for based ℚ-vector spaces (`HSP.FreeQ`) with `𝒰` all objects.
 -/
 
 open CategoryTheory CategoryTheory.Limits CategoryTheory.Idempotents
@@ -106,15 +109,27 @@ private noncomputable def zeroPair {m n : ℤ} (hmn : m + 1 = n) (C : ChainCompl
 
 end NonVacuity
 
-private theorem uPair_nonempty (U : ObjectProperty A) [IsDualAdditive U] (k : ℤ) :
-    Nonempty (UPair U k) := by
-  let P : SymPoincare (Karoubi U.FullSubcategory) (k - 1) := zeroPoincare (k - 1)
-  have hC : ∀ r, IsZero (((DualSubcategory.incl U).kar.mapCx P.C).X r) := fun r =>
+/-- The zero `𝒰`-pair: `(P, π) = (0, 0)` in `Kar 𝒰` and the pair `(1 : i 0 ⟶ i 0, 0, 0)`. -/
+private noncomputable def zeroUPair (U : ObjectProperty A) [IsDualAdditive U] (k : ℤ) :
+    UPair U k :=
+  have hC : ∀ r, IsZero (((DualSubcategory.incl U).kar.mapCx
+      (zeroPoincare (B := Karoubi U.FullSubcategory) (k - 1)).C).X r) := fun r =>
     Functor.map_isZero (DualSubcategory.incl U).kar.toFunctor
       (isZero_zeroCx (B := Karoubi U.FullSubcategory) r)
-  refine ⟨⟨P, zeroPair (by ring) _ hC, ?_⟩⟩
-  change (⟨_, 0⟩ : Σ C : ChainComplex (Karoubi A) ℤ, (StructureCx C).X (k - 1)) = ⟨_, _⟩
-  congr 1
-  exact (map_zero _).symm
+  { P := zeroPoincare (k - 1)
+    V := zeroPair (by ring) _ hC
+    boundary_eq := by
+      change (⟨_, 0⟩ : Σ C : ChainComplex (Karoubi A) ℤ, (StructureCx C).X (k - 1)) = ⟨_, _⟩
+      congr 1
+      exact (map_zero _).symm }
+
+private theorem uPair_nonempty (U : ObjectProperty A) [IsDualAdditive U] (k : ℤ) :
+    Nonempty (UPair U k) :=
+  ⟨zeroUPair U k⟩
+
+/-- Non-vacuity at an explicit toy instance: `𝒜 = ℚ` (based ℚ-vector spaces, `HSP.FreeQ`, with
+`(ℚ^d)^* = ℚ^d`, `g^* = gᵀ`), `𝒰 = 𝒜` (every object), and the zero `0`-dimensional `𝒰`-pair. -/
+private noncomputable def uPairFreeQ : UPair (⊤ : ObjectProperty FreeQ) 0 :=
+  zeroUPair ⊤ 0
 
 end HSP
