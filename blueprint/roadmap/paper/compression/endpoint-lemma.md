@@ -15,8 +15,8 @@ Let $i\ge i_0$, let $M_0,M_1,M_2$, $p_j$, $\jmath_j$ and $Q_1$ be as in the [pro
 Hence $p_2\alpha Q_1\beta\jmath_0$ is an [exterior witness](../corner/actions/exterior-witness.md) of type $c_\alpha+c_\beta$ with bound $\delta_i$.
 
 *Proof sketch.*
-1. Retained cells lie in $\mathcal B_i(t')$ ([buffers](buffer-eventually.md) (1)), so $\beta\jmath_0=\iota_u\,p_u\beta\jmath_0$ by buffers (2): a nonzero entry of $\beta$ from a retained cell lands in $\mathcal B_i(u)$. On $\mathcal B_i(u)$, $Q_1$ is the projection onto $W$, so $Q_1\beta\jmath_0=\iota_Wp_W\beta\jmath_0$.
-2. Retained cells and $W$ lie in $\mathcal B_i(u)$, so $y$ and $x$ are submatrices of $\beta^{[u]}$ and $\alpha^{[u]}$; apply buffers (3) and $\delta_i=\epsilon'_i$ for $i\ge i_0$ ([bound sequence](bound-sequence.md)).
+1. The [buffer conditions](buffer-conditions.md) hold at every $i\ge i_0$ ([start index](start-index.md)). Retained cells lie in $\mathcal B_i(t')$ (buffer condition (1)), so $\beta\jmath_0=\iota_u\,p_u\beta\jmath_0$ by buffer condition (2): a nonzero entry of $\beta$ from a retained cell lands in $\mathcal B_i(u)$. On $\mathcal B_i(u)$, $Q_1$ is the projection onto $W$, so $Q_1\beta\jmath_0=\iota_Wp_W\beta\jmath_0$.
+2. Retained cells and $W$ lie in $\mathcal B_i(u)$, so $y$ and $x$ are submatrices of $\beta^{[u]}$ and $\alpha^{[u]}$; apply buffer condition (3) and $\delta_i=\epsilon'_i$ for $i\ge i_0$ ([bound sequence](bound-sequence.md)).
 3. A cell $w$ of $W$ is discarded, so $f_T$ of its cube misses $\overline B(0,t)$; its sphere label $s_w$, the value of $f_T$ at the centre, has $|s_w|>t>R$ or $s_w=\infty$. So $s_w\in Z_0$, and $\lambda(w)$ has second coordinate $s_w$.
 For the witness: $Z$ is $C_p$-invariant and $C_p$ acts isometrically ([graph-type calculus](../corner/actions/graph-type-calculus.md)), so with the labels $\lambda'$ the labels of $W$ stay in $Z$, $y$ has type $0$ and $x$ has type $c_\alpha+c_\beta$, both with bound $\delta_i$.
 

@@ -18,7 +18,7 @@ This theorem rests on no open statement.
 
 *Proof sketch.* (1) is [the compressed complex is Poincaré](compressed-poincare.md), (2) is [the compressed action](compressed-action.md), and (3) is the [scalar image](compressed-scalar-image.md).
 
-**Remark (not formalized).** If $T$ is empty, then $Z^+$ is empty, there are no retained cells, $C$ is the zero object, and (3) says $\mathfrak m_{f_T}=0$, as the final proof uses.
+**Remark (not formalized).** If $T$ is empty, then $Z^+$ is empty, there are no retained cells, $C$ is the zero object, and (3) says $\mathfrak m_{f_T}=0$. The final proof does not use this remark: in the empty case it shows $\operatorname{cls}(C,\hat\varphi)=0$ itself, because $T\times S^n$ is empty, and then reads $\mathfrak m_{f_T}=0$ off (3).
 
 ## Sources
 - HS paper, Section 10 (compressed realization).

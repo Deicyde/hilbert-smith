@@ -7,7 +7,7 @@ lean: HSP.ChainModels.groupApprox
 ---
 # Group approximations
 
-For $g\in G_i$, put $a_g=a_{g,i}=1$ if $g=0$, and $a_{g,i}=a_i[\widehat{r_i(g)}]\otimes1_P$ otherwise, with the [chain approximation](chain-approx.md) $a_i[L]$ and the [completed representative](completed-map.md) $\widehat{r_i(g)}$.
+For $g\in G_i$, put $a_g=a_{g,i}=1$ if $g=0$, and $a_{g,i}=a_i[\widehat{r_i(g)}]\otimes1_P$ otherwise, with the [chain approximation](chain-approx.md) $a_i[L]$ and the [completed representative](maps/completed-rep.md) $\widehat{r_i(g)}$, the [completed map](completed-map.md) of the representative $r_i(g)$, which lies in the [track family](maps/track-family-members.md).
 
 ## Depends on
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
