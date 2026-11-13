@@ -45,7 +45,7 @@ noncomputable def chainApprox (A : LocalDatum p n D ρplus) (i : ℕ) {L : Torus
 
 /-- The properties of `a_i[L]`: carried by `Γ_L` (for the chosen carrier with subcomplexes
 `Γ_L(c)`), the identity on `E(k_i)`, and `ε a_i[L] = ε`. -/
-lemma chainApprox_spec (A : LocalDatum p n D ρplus) (i : ℕ) {L : Torus n → Torus n}
+private lemma chainApprox_spec (A : LocalDatum p n D ρplus) (i : ℕ) {L : Torus n → Torus n}
     (hL : L ∈ trackFamily A) :
     let Γ := (exists_chainApprox A (meshStart_le_meshSequence A i) hL).choose
     (∀ r e s, Γ.sub r e s = cubeSpan (chainApproxBox A (meshStart_le_meshSequence A i) L r e).cubes

@@ -3,7 +3,7 @@ article_id: af_736bd70c653658fbcd13facb
 declaration: def
 origin: bridged
 statement: formalized
-lean: HSP.ChainModels.meshSequence
+lean: HSP.ChainModels.meshSequence, HSP.ChainModels.meshSequence_spec, HSP.ChainModels.meshSequence_mesh_le
 ---
 # Mesh sequence
 

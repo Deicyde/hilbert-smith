@@ -41,7 +41,7 @@ noncomputable def trunc [∀ i, DecidablePred (P i)] : M ⟶ M :=
     by_contra h'
     exact h (Matrix.diagonal_apply_ne _ fun e => h' (by rw [e])))
 
-theorem mat_trunc [∀ i, DecidablePred (P i)] (i : ℕ) :
+private theorem mat_trunc [∀ i, DecidablePred (P i)] (i : ℕ) :
     FreeCat.mat (coord (M.trunc P) i) = Matrix.diagonal fun b => if P i b.2 then 1 else 0 := rfl
 
 end AsymPre

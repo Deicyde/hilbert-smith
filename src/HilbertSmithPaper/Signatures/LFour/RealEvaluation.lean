@@ -58,7 +58,7 @@ noncomputable def realEval : realHco C r →ₗ[ℝ] realH C r →ₗ[ℝ] ℝ :
       change realMap (dualHom (C.d r (r - 1)).f) w ⬝ᵥ y.1 = 0
       rw [dot_dualHom, LinearMap.mem_ker.1 y.2.2, dotProduct_zero])
 
-theorem realEval_mk (x y) :
+private theorem realEval_mk (x y) :
     realEval C r (Submodule.Quotient.mk x) (Submodule.Quotient.mk y) = x.1 ⬝ᵥ y.1 := rfl
 
 end HSP

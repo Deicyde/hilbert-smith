@@ -23,7 +23,7 @@ noncomputable abbrev lowerL (A : Type u) [Category.{v} A] [Preadditive A] [Linea
   Lp (BoundedPow A j) (k + j)
 
 /-- At stage `0` the lower L-group is the projective L-group. -/
-lemma lowerL_zero (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ A]
+private lemma lowerL_zero (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ A]
     [HasFiniteBiproducts A] [DualCat A] (k : ℤ) : lowerL A 0 k = Lp A k := by
   simp only [lowerL, Nat.cast_zero, add_zero]
   rfl

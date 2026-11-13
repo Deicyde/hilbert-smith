@@ -44,7 +44,7 @@ noncomputable def restrictInc : M.restrict P ⟶ M :=
     rw [inclMat_ne_zero' h]
     rfl)
 
-theorem mat_restrictInc (i : ℕ) :
+private theorem mat_restrictInc (i : ℕ) :
     FreeCat.mat (coord (M.restrictInc P) i) = FreeCat.inclMat (M.restrictEmb P i) := rfl
 
 end AsymPre

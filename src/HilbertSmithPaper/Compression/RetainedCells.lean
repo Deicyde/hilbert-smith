@@ -50,7 +50,7 @@ noncomputable def retainedCells (F : FixedLocalData p n D ρplus) (i : ℕ) (r :
   Finset.univ.filter (IsRetained F i r)
 
 /-- The retained dual cells of `(D_i^{N-*})_r`. -/
-noncomputable def retainedDualCells (F : FixedLocalData p n D ρplus) (i : ℕ) (r : ℤ) :
+private noncomputable def retainedDualCells (F : FixedLocalData p n D ρplus) (i : ℕ) (r : ℤ) :
     Finset (Fin ((chainModel F.toLocalDatum i).X ((n + 4 : ℕ) - r)).dim) :=
   retainedCells F i ((n + 4 : ℕ) - r)
 

@@ -28,7 +28,7 @@ private lemma dualHom_units_smul {M N : B} (u : ℤˣ) (f : M ⟶ N) :
   exact (AddMonoidHom.mk' (dualHom (M := M) (N := N)) dualHom_add).map_zsmul (u : ℤ) f
 
 /-- The involution on `M(C)_n`: `(Tf)_{r,s} = (-1)^{rs} (f_{s,r})^*`. -/
-def THom (C : ChainComplex B ℤ) (n : ℤ) :
+private def THom (C : ChainComplex B ℤ) (n : ℤ) :
     (∀ x : {x : ℤ × ℤ // x.1 + x.2 = n}, dual (C.X x.1.2) ⟶ C.X x.1.1) →ₗ[ℚ]
       (∀ x : {x : ℤ × ℤ // x.1 + x.2 = n}, dual (C.X x.1.2) ⟶ C.X x.1.1) where
   toFun f x := (x.1.1 * x.1.2).negOnePow •

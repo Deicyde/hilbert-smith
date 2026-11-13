@@ -34,7 +34,7 @@ noncomputable def locBoundary (F : KaroubiFiltration U) (k : ℤ) :
       (UPair.exists_image_eq F (x + y)).choose_spec]
 
 /-- `∂ x = [P, π]` for any `𝒰`-pair `V` over `(P, π)` with `[q V] = x`. -/
-lemma locBoundary_eq (F : KaroubiFiltration U) {k : ℤ} (V : UPair U k) :
+private lemma locBoundary_eq (F : KaroubiFiltration U) {k : ℤ} (V : UPair U k) :
     locBoundary F k (LGroup.mk V.image) = LGroup.mk V.P :=
   UPair.mk_P_eq_of_image F _ _ (UPair.exists_image_eq F _).choose_spec
 

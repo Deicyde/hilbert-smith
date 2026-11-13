@@ -28,10 +28,10 @@ namespace DualFunctor
 
 variable (F : DualFunctor A B)
 
-instance instAdditiveKar : ((functorExtension₂ A B).obj F.toFunctor).Additive where
+private instance instAdditiveKar : ((functorExtension₂ A B).obj F.toFunctor).Additive where
   map_add {_ _ f g} := Idempotents.Karoubi.hom_ext _ _ (F.toFunctor.map_add (f := f.f) (g := g.f))
 
-instance instLinearKar : ((functorExtension₂ A B).obj F.toFunctor).Linear ℚ where
+private instance instLinearKar : ((functorExtension₂ A B).obj F.toFunctor).Linear ℚ where
   map_smul f c := Idempotents.Karoubi.hom_ext _ _ (Functor.Linear.map_smul (F := F.toFunctor) f.f c)
 
 private lemma inv_natural {M N : A} (f : M ⟶ N) :

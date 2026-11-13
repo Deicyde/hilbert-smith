@@ -56,7 +56,7 @@ def mapFunctor (F : A ⥤ A') [F.Additive] : Bounded A ⥤ Bounded A' where
     exact Finset.sum_congr rfl fun m _ => F.map_comp _ _
 
 omit [HasFiniteBiproducts A] [DualCat A] [HasFiniteBiproducts A'] [DualCat A'] in
-lemma mapFunctor_map_apply (F : A ⥤ A') [F.Additive] {M N : Bounded A} (f : M ⟶ N) (m n : ℤ) :
+private lemma mapFunctor_map_apply (F : A ⥤ A') [F.Additive] {M N : Bounded A} (f : M ⟶ N) (m n : ℤ) :
     ((mapFunctor F).map f).1 m n = F.map (f.1 m n) := rfl
 
 omit [DualCat A] [DualCat A'] in

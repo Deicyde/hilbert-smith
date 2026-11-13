@@ -38,7 +38,7 @@ private lemma kron_transpose {a a' b b' : ℕ} (A : Matrix (Fin a') (Fin a) ℚ)
   rw [Matrix.transpose_submatrix, Matrix.kroneckerMap_transpose]
 
 /-- The tensor product functor `⊠ : ℚ × ℚ ⥤ ℚ`. -/
-def basedTensor : FreeQ × FreeQ ⥤ FreeQ where
+private def basedTensor : FreeQ × FreeQ ⥤ FreeQ where
   obj P := ⟨P.1.dim * P.2.dim⟩
   map f := basedKron f.1 f.2
   map_id P := by

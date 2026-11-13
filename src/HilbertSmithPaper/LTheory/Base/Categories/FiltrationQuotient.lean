@@ -87,7 +87,7 @@ instance : (functor U).Linear ℚ where
   map_smul _ _ := rfl
 
 omit [Linear ℚ A] [HasFiniteBiproducts A] [DualCat A] [IsDualAdditive U] in
-lemma functor_obj (M : A) : (functor U).obj M = ⟨M⟩ := rfl
+private lemma functor_obj (M : A) : (functor U).obj M = ⟨M⟩ := rfl
 
 lemma functor_map_eq_iff {M N : A} (f g : M ⟶ N) :
     (functor U).map f = (functor U).map g ↔ ideal U (f - g) :=
@@ -164,7 +164,7 @@ instance : DualCat (FiltQuot U) where
     rintro ⟨M⟩ _ rfl
     exact dualHomQ_id U M
 
-lemma dual_def (M : FiltQuot U) : dual M = (functor U).obj (dual M.as) := rfl
+private lemma dual_def (M : FiltQuot U) : dual M = (functor U).obj (dual M.as) := rfl
 
 lemma dualHom_map {M N : A} (g : M ⟶ N) :
     dualHom ((functor U).map g) = (functor U).map (dualHom g) := rfl

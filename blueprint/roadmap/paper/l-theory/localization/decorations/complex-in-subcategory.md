@@ -3,7 +3,7 @@ article_id: af_81fd7cd3ed500a8232583392
 declaration: def
 origin: background
 statement: formalized
-lean: HSP.SymPoincare.toSub
+lean: HSP.SymPoincare.toSub, HSP.SymPoincare.toSub_map
 ---
 
 # Complexes in a full subcategory

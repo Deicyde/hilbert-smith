@@ -92,7 +92,7 @@ instance dualCat : DualCat (Bounded A) where
     rintro M _ rfl
     exact dualHomB_id M
 
-lemma dual_X (M : Bounded A) (n : ℤ) : (dual M).X n = dual (M.X n) := rfl
+private lemma dual_X (M : Bounded A) (n : ℤ) : (dual M).X n = dual (M.X n) := rfl
 
 lemma dualHom_apply {M N : Bounded A} (f : M ⟶ N) (a b : ℤ) :
     (dualHom f).1 a b = dualHom (f.1 b a) := rfl

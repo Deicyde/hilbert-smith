@@ -28,7 +28,7 @@ namespace HSP.ChainModels
 open FreeQ Matrix
 
 /-- The realization of a based vector space `ℚ^d`: the module of functions `Fin d → ℚ`. -/
-abbrev realizeObj (X : FreeQ) : ModuleCat.{0} ℚ := ModuleCat.of ℚ (Fin X.dim → ℚ)
+private abbrev realizeObj (X : FreeQ) : ModuleCat.{0} ℚ := ModuleCat.of ℚ (Fin X.dim → ℚ)
 
 /-- The *realization* functor from based vector spaces to `ℚ`-modules: `ℚ^d` is realized as
 `Fin d → ℚ` and a matrix as multiplication of columns by it. -/
@@ -42,10 +42,10 @@ noncomputable def realization : FreeQ ⥤ ModuleCat.{0} ℚ where
     ext : 1
     simp [Matrix.mulVecLin_mul]
 
-lemma realization_map_apply {X Y : FreeQ} (f : X ⟶ Y) (z : Fin X.dim → ℚ) :
+private lemma realization_map_apply {X Y : FreeQ} (f : X ⟶ Y) (z : Fin X.dim → ℚ) :
     (realization.map f).hom z = toMatrix f *ᵥ z := rfl
 
-instance : realization.Additive where
+instance realization_additive : realization.Additive where
   map_add {X Y f g} := by
     ext : 1
     simp only [realization]
@@ -60,7 +60,7 @@ noncomputable def realizeBasis (C : ChainComplex FreeQ ℤ) (r : ℤ) :
     Module.Basis (Fin (C.X r).dim) ℚ ((realizeCx C).X r) :=
   Pi.basisFun ℚ (Fin (C.X r).dim)
 
-lemma realizeCx_d_apply (C : ChainComplex FreeQ ℤ) (r s : ℤ) (z : Fin (C.X r).dim → ℚ) :
+private lemma realizeCx_d_apply (C : ChainComplex FreeQ ℤ) (r s : ℤ) (z : Fin (C.X r).dim → ℚ) :
     ((realizeCx C).d r s).hom z = toMatrix (C.d r s) *ᵥ z := rfl
 
 lemma realizeBasis_apply (C : ChainComplex FreeQ ℤ) (r : ℤ) (a : Fin (C.X r).dim) :

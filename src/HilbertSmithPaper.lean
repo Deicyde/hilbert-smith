@@ -327,6 +327,7 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualityCategory
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.InclusionStrict
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.KaroubiEmbeddingStrict
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.KaroubiFunctorStrict
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.QuotientFunctorStrict
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor

@@ -251,7 +251,7 @@ private lemma blockInc_comp_D (n : ℤ) (p' : Fin ((n + 1).toNat + 1)) :
   · intro h; exact absurd (Finset.mem_univ _) h
 
 /-- `d² = 0` for the tensor differential. -/
-lemma basedComplexTensorD_comp (hD : ∀ q < 0, (D.X q).dim = 0) (n : ℤ) :
+private lemma basedComplexTensorD_comp (hD : ∀ q < 0, (D.X q).dim = 0) (n : ℤ) :
     basedComplexTensorD C D (n + 1) ≫ basedComplexTensorD C D n = 0 := by
   conv_lhs => rw [basedComplexTensorD]
   rw [Preadditive.sum_comp]
@@ -288,11 +288,11 @@ variable (C D : ChainComplex FreeQ ℤ)
 /-- The position of the basis vector `x_i ⊗ y_j` of the summand `C_p ⊠ D_{r-p}` in
 `(C ⊗ D)_r`: the summands are concatenated in increasing `p`, and inside a summand `x_i ⊗ y_j` is
 at the Kronecker position `i · d_{r-p} + j` (0-based). -/
-def tensorBasisIndex (r : ℤ) (p : Fin (r.toNat + 1)) (i : Fin (C.X (p : ℕ)).dim)
+private def tensorBasisIndex (r : ℤ) (p : Fin (r.toNat + 1)) (i : Fin (C.X (p : ℕ)).dim)
     (j : Fin (D.X (r - (p : ℕ))).dim) : Fin (basedComplexTensorObj C D r).dim :=
   finSigmaFinEquiv ⟨p, finProdFinEquiv (i, j)⟩
 
-lemma basedComplexTensor_X (hD : ∀ q < 0, (D.X q).dim = 0) (r : ℤ) :
+private lemma basedComplexTensor_X (hD : ∀ q < 0, (D.X q).dim = 0) (r : ℤ) :
     (basedComplexTensor C D hD).X r = basedComplexTensorObj C D r := rfl
 
 lemma basedComplexTensor_d (hD : ∀ q < 0, (D.X q).dim = 0) (n : ℤ) :

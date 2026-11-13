@@ -23,7 +23,7 @@ namespace HSP.ChainModels
 
 open Classical in
 /-- A smallest grid arc `A` of `S_k` with `J ⊆ |A|`. -/
-noncomputable def smallestGridArc (k : ℕ) (hk : 8 ≤ k) (J : Set (AddCircle (4 : ℝ))) :
+private noncomputable def smallestGridArc (k : ℕ) (hk : 8 ≤ k) (J : Set (AddCircle (4 : ℝ))) :
     GridArc k :=
   if h : ∃ A : GridArc k, J ⊆ A.realization then
     (Nat.find_spec (⟨_, h.choose, rfl, h.choose_spec⟩ :

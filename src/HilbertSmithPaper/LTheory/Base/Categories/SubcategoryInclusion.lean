@@ -21,7 +21,7 @@ variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFinite
 
 namespace DualSubcategory
 
-instance : U.ι.Linear ℚ where
+private instance : U.ι.Linear ℚ where
   map_smul _ _ := rfl
 
 private lemma ι_dual (V : U.FullSubcategory) : U.ι.obj (dual V) = dual (U.ι.obj V) := rfl
