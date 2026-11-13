@@ -14,9 +14,30 @@ There is a null sequence $(\mu_i)$ such that, for all $i$, $g\in G_i$ and $v>0$,
 ## Sources
 - HS paper, Section 9.
 ## Depends on
+
 - [Sphere propagation](../grid/buffers/sphere-prop.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
-- [Group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [control labels](../grid/buffers/control-labels.md), [restriction](../grid/buffers/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
+- [Group approximations](group-approx.md)
+- [Control labels](../grid/buffers/control-labels.md)
+- [Buffered restriction of a matrix](../grid/buffers/restriction.md)
+- [Graph-type matrices](../../corner/actions/graph-type.md)
+- [Buffered cells](../grid/buffers/buffered-cells.md)
+- [Chain model](../grid/model/chain-model.md)
+- [The round sphere](../../corner/round-sphere.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+- [The cyclic action on the control space](../../local-data/control/control-action.md)
+- [The control space](../../local-data/control/control-space.md)
+
 ## Proof depends on
-- [Carried group approximations](group-approx-carried.md), [chain approximations exist](chain-approx-exists.md), [properties](completed-maps-properties.md), [test region bounded](../../local-data/chart/test-region-bounded.md), [test region invariant](../../local-data/chart/test-region-invariant.md), [control action](../../local-data/control/control-action.md), [representatives algebra](../../local-data/control/representatives-algebra.md), [projection uniform](../../local-data/control/projection-uniform.md)
+
+- [Carried group approximations](group-approx-carried.md)
+- [Chain approximations exist](chain-approx-exists.md)
+- [Properties of completed maps](completed-maps-properties.md)
+- [The test region is bounded](../../local-data/chart/test-region-bounded.md)
+- [The test regions are invariant](../../local-data/chart/test-region-invariant.md)
+- [Algebra of the representatives](../../local-data/control/representatives-algebra.md)
+- [The orbit map is uniformly continuous](../../local-data/control/projection-uniform.md)
+- [Sphere labels](../grid/sphere-labels.md)
+- [Buffered restriction](buffered-restriction.md)

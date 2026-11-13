@@ -15,5 +15,3 @@ For full subcategories $\mathcal U_A,\mathcal U_B\subset\mathcal A$, the *inters
 - New: the intersection used by excisive pairs.
 
 ## Depends on
-
-- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)

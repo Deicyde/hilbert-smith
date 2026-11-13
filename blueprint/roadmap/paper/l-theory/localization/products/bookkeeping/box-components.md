@@ -17,4 +17,5 @@ Let $\mathcal B$ be a $\mathbb Q$-linear additive category with finite biproduct
 ## Depends on
 
 - [Objects of the box product](box-object.md)
-- [Based vector spaces](../based-vector-spaces.md)
+- [The bounded category $C_\mathbb Z(A)$](../../../bounded/categories/bounded-category.md)
+- [The category of based ℚ-vector spaces](based-category.md)

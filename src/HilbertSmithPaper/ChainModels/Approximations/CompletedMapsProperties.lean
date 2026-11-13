@@ -25,6 +25,7 @@ import HilbertSmithPaper.ChainModels.Approximations.Maps.IdentityOffBall
 import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackFamily
 import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackOscillation
 import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackOscillationBounded
+import HilbertSmithPaper.ChainModels.Approximations.Maps.TrackDefect
 
 /-!
 # Properties of completed maps
@@ -36,8 +37,8 @@ map, for a local datum and a pinch radius `0 < ρ < ρ₊`.
 
 * "Off `B̄(0, r)`" on the torus means `|x̃| > r` for the lift `x̃`; "off `B(0, r)`" means `|x̃| ≥ r`.
 * The modulus `ω_f` of item 4 is expressed as uniform continuity of `f_T` into `(Sⁿ, d_S)`.
-* `β_i` of item 5 is `trackDefect A i`, the supremum over `g, h ∈ ℤ/p^i` and `x ∈ Ω` with
-  `|x| ≤ 3/8` of `|r_i(g)·(r_i(h)·x) - r_i(g+h)·x|`; the points `L(x)` are taken in `ℝⁿ`.
+* `β_i` of item 5 is `trackDefect A i` (`ChainModels.Approximations.Maps.TrackDefect`); the points
+  `L(x)` are taken in `ℝⁿ`.
 -/
 
 open Filter Topology OnePoint Metric
@@ -45,12 +46,6 @@ open Filter Topology OnePoint Metric
 namespace HSP.ChainModels
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
-
-/-- `β_i = sup {|r_i(g)·(r_i(h)·x) - r_i(g+h)·x| : g, h ∈ ℤ/p^i, |x| ≤ 3/8}`. -/
-noncomputable def trackDefect (A : LocalDatum p n D ρplus) (i : ℕ) : ℝ :=
-  sSup {δ | ∃ g h : ZMod (p ^ i), ∃ x : A.Ω, ‖(x : EuclideanSpace ℝ (Fin n))‖ ≤ 3 / 8 ∧
-    δ = dist ((rep p i g +ᵥ (rep p i h +ᵥ x) : A.Ω) : EuclideanSpace ℝ (Fin n))
-      ((rep p i (g + h) +ᵥ x : A.Ω) : EuclideanSpace ℝ (Fin n))}
 
 /-! ### Auxiliary facts -/
 

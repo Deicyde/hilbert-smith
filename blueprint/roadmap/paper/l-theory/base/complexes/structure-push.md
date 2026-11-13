@@ -17,3 +17,4 @@ A chain map $g:C\to D$ gives a chain map $g_\%:M(C)\to M(D)$, $(g_\%f)_r=g_r f_r
 ## Depends on
 
 - [Structure complex](structure-complex.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)

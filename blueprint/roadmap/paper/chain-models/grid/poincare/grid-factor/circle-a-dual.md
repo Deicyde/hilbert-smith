@@ -17,6 +17,12 @@ On the [dual complex](../../../../l-theory/base/complexes/dual-complex.md) $S^{1
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
-- [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
 - [The circle inverse](../circle-data/circle-b.md)
 - [The symmetric circle structure](../circle-data/circle-phi-sym.md)
+- [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)

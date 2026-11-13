@@ -31,7 +31,7 @@ noncomputable def productHomotopy (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ 
   tensorOneP A i 1 ((product_homotopies A hρ hρ').choose i g h) r
 
 /-- The properties of the chosen product homotopies. -/
-lemma productHomotopy_spec (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
+private lemma productHomotopy_spec (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ)
     (hρ' : ρ < ρplus) :
     ∃ μ' : ℕ → ℝ, Tendsto μ' atTop (𝓝 0) ∧
       ∀ (i : ℕ) (g h : ZMod (p ^ i)),

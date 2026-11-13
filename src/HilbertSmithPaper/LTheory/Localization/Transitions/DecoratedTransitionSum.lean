@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Groups.LGroupAdd
 import HilbertSmithPaper.LTheory.Base.Complexes.FiniteBounded
 import HilbertSmithPaper.LTheory.Base.Complexes.FunctorPush

@@ -21,6 +21,10 @@ Let $F:\mathcal A\to\mathcal B$ and $G:\mathcal B\to\mathcal A$ be duality funct
 
 - [Induced map on ultimate L](induced-map.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Identity and composite duality functors](../../base/categories/duality-functors/composite-duality-functor.md)
+- [Ultimate L-group](ultimate-l-group.md)
 
 ## Proof depends on
 

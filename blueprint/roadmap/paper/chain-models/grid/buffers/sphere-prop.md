@@ -16,6 +16,11 @@ Fix a local datum and a radius $\rho$, with [torus test map](../../approximation
 
 ## Depends on
 
-- [Torus test map](../../approximations/torus-test-map.md)
+- [The torus](../torus.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [Propagation](../../../categories/asymptotic/propagation.md)
+- [Torus test map](../../approximations/torus-test-map.md)
 - [Round sphere](../../../corner/round-sphere.md)

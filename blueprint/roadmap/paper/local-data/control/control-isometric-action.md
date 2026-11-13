@@ -16,4 +16,11 @@ $C_p$ acts by isometries of the metric space $(T,d_T)$: the [cyclic action](cont
 
 ## Depends on
 
-- [The cyclic action is isometric](control-action-isometric.md), [cyclic action](control-action.md), [the metric on the control space](control-metric-space.md)
+- [The cyclic action on the control space](control-action.md)
+- [The metric on the control space](control-metric-space.md)
+- [Local datum](../chart/local-datum.md)
+- [The control space](control-space.md)
+
+## Proof depends on
+
+- [The cyclic action is isometric](control-action-isometric.md)

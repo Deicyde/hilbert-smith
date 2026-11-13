@@ -17,6 +17,13 @@ For every $k$, the iterated duality map $b^{(n)}:C(k)\to C(k)^{n-*}$ of the [gri
 ## Depends on
 
 - [Cubical torus grid](../../cubical/cubical-torus-grid.md)
-- [The unit complex](../../cubical/unit-complex.md)
-- [Product of duality maps in explicit bases](../../tensor/structure-products/based-dual-prod.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)
+- [The circle complex](../../cubical/circle-complex.md)
 - [The circle inverse](../circle-data/circle-b.md)
+- [Product of duality maps in explicit bases](../../tensor/structure-products/based-dual-prod.md)

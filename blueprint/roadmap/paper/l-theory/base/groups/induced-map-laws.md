@@ -24,6 +24,9 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 - [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
 - [The sum of two Poincaré complexes](../pairs/poincare-sum.md)
 - [Cobordism](../pairs/cobordism.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Duality functor](../categories/duality-functor.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)
 
 ## Proof depends on
 
@@ -33,3 +36,10 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../complexes/functors/push-id.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Image of a complex under a duality functor](../complexes/functors/functor-complex.md)
+- [Image of structures under a duality functor](../complexes/functors/functor-structure.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Strict Poincaré pair](../pairs/poincare-pair.md)

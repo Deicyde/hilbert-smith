@@ -19,15 +19,23 @@ Here $\mathcal B_i(v)$ are the [buffered cells](../chain-models/grid/buffers/buf
 
 ## Depends on
 
-- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
-- [Torus labels of dual cells](../chain-models/grid/model/chain-model-dual-label.md)
-- [Based inclusion](../chain-models/grid/buffers/based-inclusion.md)
-- [The metric on the control space](../local-data/control/control-metric-space.md)
-- [Retained cells](retained-cells.md)
-- [The family of chain-model matrices](../chain-models/approximations/chain-model-family.md)
-- [Buffered cells](../chain-models/grid/buffers/buffered-cells.md)
-- [Restriction](../chain-models/grid/buffers/restriction.md)
-- [Control labels](../chain-models/grid/buffers/control-labels.md)
-- [Graph-type matrices](../corner/actions/graph-type.md)
-- [Buffered restriction](../chain-models/approximations/buffered-restriction.md)
 - [Fixed local data](../local-data/control/fixed-local-data.md)
+
+## Proof depends on
+
+- [The family of chain-model matrices](../chain-models/approximations/chain-model-family.md)
+- [Typed labelled matrices](../chain-models/approximations/typed-matrix.md)
+- [Based inclusion](../chain-models/grid/buffers/based-inclusion.md)
+- [Buffered cells](../chain-models/grid/buffers/buffered-cells.md)
+- [Control labels](../chain-models/grid/buffers/control-labels.md)
+- [Restriction](../chain-models/grid/buffers/restriction.md)
+- [Torus labels of dual cells](../chain-models/grid/model/chain-model-dual-label.md)
+- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
+- [Retained cells](retained-cells.md)
+- [Graph-type matrices](../corner/actions/graph-type.md)
+- [The round sphere](../corner/round-sphere.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)

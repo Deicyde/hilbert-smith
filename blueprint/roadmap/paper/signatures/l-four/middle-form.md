@@ -20,11 +20,14 @@ Let $(C,\varphi)$ be a strict 4-dimensional symmetric Poincaré complex in $\mat
 ## Depends on
 
 - [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)
-- [Real homology](real-homology.md)
 - [Real cohomology](../real/real-cohomology.md)
 - [The real matrix of a morphism](../real/real-matrix.md)
-- [The evaluation pairing](real-evaluation.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
 
 ## Proof depends on
 
 - [Structure complex](../../l-theory/base/complexes/structure-complex.md)
+- [The evaluation pairing](real-evaluation.md)
+- [Real homology](real-homology.md)

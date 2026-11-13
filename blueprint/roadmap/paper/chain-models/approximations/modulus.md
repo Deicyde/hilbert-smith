@@ -14,8 +14,9 @@ the supremum of the [track oscillation](maps/track-oscillation.md) for the [trac
 ## Sources
 - HS paper, Section 9 (a common modulus for the completed maps and their tracks). New: the explicit formula.
 ## Depends on
-- [Track oscillation](maps/track-oscillation.md), [the torus](../grid/torus.md)
+
+- [Local datum](../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
-- [The track oscillation is bounded](maps/track-oscillation-bounded.md)
+- [Track oscillation](maps/track-oscillation.md)

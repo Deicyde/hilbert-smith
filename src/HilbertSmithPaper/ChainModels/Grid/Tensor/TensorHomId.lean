@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
 import HilbertSmithPaper.ChainModels.Grid.Tensor.IdDeg0
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockDecomposition
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 
 /-!

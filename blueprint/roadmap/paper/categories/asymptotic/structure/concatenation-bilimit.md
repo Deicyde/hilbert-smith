@@ -20,8 +20,9 @@ For the [concatenation](concatenation.md) bicone, $\mathrm{inl}\circ\mathrm{fst}
 ## Depends on
 
 - [Concatenation](concatenation.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
 
 ## Proof depends on
 
-- [Asymptotic category](../asymptotic-category.md)
 - [Free category of a finite group](../free-category.md)

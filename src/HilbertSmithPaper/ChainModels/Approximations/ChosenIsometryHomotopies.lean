@@ -35,7 +35,7 @@ noncomputable def isometryHomotopy (A : LocalDatum p n D ρplus) (i : ℕ) (g : 
     (isometry_homotopies A i g).choose cp2Structure
 
 /-- The properties of the chosen isometry homotopies. -/
-lemma isometryHomotopy_spec (A : LocalDatum p n D ρplus) (i : ℕ) (g : ZMod (p ^ i)) :
+private lemma isometryHomotopy_spec (A : LocalDatum p n D ρplus) (i : ℕ) (g : ZMod (p ^ i)) :
     (∀ x : {x : ℤ × ℤ // x.1 + x.2 = ((n + 4 : ℕ) : ℤ)},
       (StructureCx (chainModel A i)).d (((n + 4 : ℕ) : ℤ) + 1) ((n + 4 : ℕ) : ℤ)
           (isometryHomotopy A i g) x =

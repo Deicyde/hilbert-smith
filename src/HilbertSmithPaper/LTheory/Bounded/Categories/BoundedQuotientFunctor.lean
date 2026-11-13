@@ -8,8 +8,9 @@ import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedSubAdditive
 
 For a full additive subcategory `U ⊂ A` closed under duality, the entrywise quotient functor
 `C_ℤ(A) → C_ℤ(A/U)` kills the maps factoring through `C_ℤ(U)`, so it descends to
-`Bounded.quotientFunctor U : C_ℤ(A)/C_ℤ(U) → C_ℤ(A/U)`, a strict duality functor that is the
-identity on objects.
+`Bounded.quotientFunctor U : C_ℤ(A)/C_ℤ(U) → C_ℤ(A/U)`, a duality functor that is the identity
+on objects, with the identity duality isomorphism. That it is strict is a separate lemma
+(`HSP.Bounded.quotientFunctor_isStrict`).
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -56,7 +57,7 @@ private lemma map_eq_zero_of_ideal {M N : Bounded A} {f : M ⟶ N}
     exact h
 
 /-- The functor `C_ℤ(A)/C_ℤ(U) → C_ℤ(A/U)` induced by the entrywise quotient functor. -/
-def quotientFunctorF : FiltQuot (sub U) ⥤ Bounded (FiltQuot U) :=
+private def quotientFunctorF : FiltQuot (sub U) ⥤ Bounded (FiltQuot U) :=
   CategoryTheory.Quotient.lift _ (mapFunctor (FiltQuot.functor U)) fun _ _ f₁ f₂ h => by
     rw [← sub_eq_zero, ← Functor.map_sub]
     exact map_eq_zero_of_ideal U h
@@ -65,13 +66,13 @@ private lemma quotientFunctorF_map {M N : Bounded A} (f : M ⟶ N) :
     (quotientFunctorF U).map ((FiltQuot.functor (sub U)).map f) =
       (mapFunctor (FiltQuot.functor U)).map f := rfl
 
-instance : (quotientFunctorF U).Additive where
+private instance : (quotientFunctorF U).Additive where
   map_add {M N f g} := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective f
     obtain ⟨g, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective g
     exact hom_ext fun l n => (FiltQuot.functor U).map_add
 
-instance : (quotientFunctorF U).Linear ℚ where
+private instance : (quotientFunctorF U).Linear ℚ where
   map_smul {M N} f c := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (sub U)).map_surjective f
     exact hom_ext fun l n => (FiltQuot.functor U).map_smul _ _
@@ -87,9 +88,6 @@ def quotientFunctor : DualFunctor (FiltQuot (sub U)) (Bounded (FiltQuot U)) wher
   ξ_dual M := by
     erw [dualHom_id, Category.comp_id]
     exact (eqToHom_refl _ _).symm
-
-/-- The entrywise quotient functor is strict. -/
-lemma quotientFunctor_isStrict : (quotientFunctor U).IsStrict := fun _ => ⟨rfl, rfl⟩
 
 end Bounded
 

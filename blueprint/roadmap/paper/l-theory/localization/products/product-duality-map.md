@@ -28,13 +28,21 @@ where $\Xi$ is the isomorphism of [Dual of a tensor product](product-dual-iso.md
 - [Tensor product of complexes](complex-product.md)
 - [Dual complexes have finitely many nonzero chain objects](bookkeeping/dual-complex-finite.md)
 - [Tensor product of chain maps](bookkeeping/product-map.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Dual complex](../../base/complexes/dual-complex.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
 
 ## Proof depends on
 
-- [External product of structures](external-product.md)
-- [Dual of a tensor product](product-dual-iso.md)
 - [Support of a tensor product of complexes](bookkeeping/product-support.md)
 - [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+- [Projection after inclusion of the same summand](bookkeeping/inclusion-projection.md)
+- [Projection after inclusion of another summand](bookkeeping/inclusion-projection-ne.md)
 - [Summands outside the support vanish](bookkeeping/summand-zero.md)
 - [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)
+- [A duality pairing is additive in the first variable](bookkeeping/pairing-additive-left.md)
+- [A duality pairing is additive in the second variable](bookkeeping/pairing-additive-right.md)
+- [The sums in a tensor product of complexes exist](bookkeeping/product-sums-exist.md)
+- [Summand inclusions of a tensor product](bookkeeping/summand-inclusion.md)
+- [Signs for tensor products of chain complexes](bookkeeping/tensor-signs.md)

@@ -17,5 +17,6 @@ For the [circle complex](../../cubical/circle-complex.md) $S=S_k$, the map $b:S\
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
-- [Cubical torus grid](../../cubical/cubical-torus-grid.md)
 - [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)

@@ -12,6 +12,11 @@ For $x\in \mathbb T^n$ let $\tilde x\in[-2,2)^n$ be its [lift](../torus/lift.md)
 ## Sources
 - New: the torus closing of the chart cube.
 ## Depends on
+
+- [The torus](../grid/torus.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [The lift](../torus/lift.md)
 - [Test map](../../local-data/chart/test-map.md)
-- [The torus](../grid/torus.md)

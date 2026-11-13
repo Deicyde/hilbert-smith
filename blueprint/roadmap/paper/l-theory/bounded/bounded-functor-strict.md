@@ -21,3 +21,11 @@ If a [duality functor](../base/categories/duality-functor.md) $(F,\xi):A\to A'$ 
 
 - [Bounded extension of a duality functor](categories/bounded-functor.md)
 - [Duality functor](../base/categories/duality-functor.md)
+- [Strict duality functor](../base/categories/duality-functors/strict-duality-functor.md)
+- [Small Q-linear category with strict duality](../base/categories/duality-category.md)
+- [The bounded category $C_\mathbb Z(A)$](categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](categories/bounded-duality.md)
+
+## Proof depends on
+
+- [Diagonal morphisms of $C_\mathbb Z(A)$](categories/bounded-diag.md)

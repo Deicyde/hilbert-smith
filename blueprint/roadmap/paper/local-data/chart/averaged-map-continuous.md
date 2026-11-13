@@ -21,6 +21,7 @@ For a local datum, $F_0$ is continuous on $\Omega$.
 ## Depends on
 
 - [The averaged chart map](averaged-map.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 

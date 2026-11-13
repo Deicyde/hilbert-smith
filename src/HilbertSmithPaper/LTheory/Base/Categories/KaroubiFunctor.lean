@@ -7,7 +7,8 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 A duality functor `(F, ξ) : A → B` induces `Kar F : Kar A → Kar B`, `(M, e) ↦ (F M, F e)`,
 `f ↦ F f` (Mathlib's `functorExtension₂`), with duality isomorphism
 `ξ_{(M,e)} = ξ_M ∘ F (e^*) : (F (M^*), F (e^*)) → ((F M)^*, (F e)^*)`, whose inverse is
-`F (e^*) ∘ ξ_M⁻¹`. It is strict if `F` is.
+`F (e^*) ∘ ξ_M⁻¹`. Its strictness for strict `F` is in
+`LTheory.Base.Categories.DualityFunctors.KaroubiFunctorStrict`.
 -/
 
 open CategoryTheory CategoryTheory.Limits CategoryTheory.Idempotents
@@ -27,10 +28,10 @@ namespace DualFunctor
 
 variable (F : DualFunctor A B)
 
-instance instAdditiveKar : ((functorExtension₂ A B).obj F.toFunctor).Additive where
+private instance instAdditiveKar : ((functorExtension₂ A B).obj F.toFunctor).Additive where
   map_add {_ _ f g} := Idempotents.Karoubi.hom_ext _ _ (F.toFunctor.map_add (f := f.f) (g := g.f))
 
-instance instLinearKar : ((functorExtension₂ A B).obj F.toFunctor).Linear ℚ where
+private instance instLinearKar : ((functorExtension₂ A B).obj F.toFunctor).Linear ℚ where
   map_smul f c := Idempotents.Karoubi.hom_ext _ _ (Functor.Linear.map_smul (F := F.toFunctor) f.f c)
 
 private lemma inv_natural {M N : A} (f : M ⟶ N) :
@@ -95,19 +96,6 @@ def kar : DualFunctor (Karoubi A) (Karoubi B) where
       (dualHom (dualHom (F.toFunctor.map P.p)) ≫ eqToHom h₀) ≫
         F.toFunctor.map (dualHom (dualHom P.p)) ≫ (F.ξ (dual P.X)).hom
     simp [dualHom_dualHom, eqToHom_map, hp']
-
-/-- The completion of a strict duality functor is strict. -/
-theorem kar_isStrict (hF : F.IsStrict) : F.kar.IsStrict := by
-  intro P
-  obtain ⟨h, hξ⟩ := hF P.X
-  have hP : F.kar.toFunctor.obj (dual P) = dual (F.kar.toFunctor.obj P) :=
-    Idempotents.Karoubi.ext h (by
-      change F.toFunctor.map (dualHom P.p) ≫ eqToHom h = eqToHom h ≫ dualHom (F.toFunctor.map P.p)
-      rw [← hξ, F.ξ_natural])
-  refine ⟨hP, Idempotents.Karoubi.hom_ext _ _ ?_⟩
-  change F.toFunctor.map (dualHom P.p) ≫ (F.ξ P.X).hom = _
-  rw [hξ, Idempotents.Karoubi.eqToHom_f]
-  rfl
 
 end DualFunctor
 

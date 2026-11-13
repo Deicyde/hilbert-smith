@@ -16,4 +16,8 @@ For a local datum with constants $(D,\rho_+)$, the open test region is $U^+=\{x\
 
 ## Depends on
 
+- [Local datum](local-datum.md)
+
+## Proof depends on
+
 - [The averaged chart map](averaged-map.md)

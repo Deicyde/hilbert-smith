@@ -17,3 +17,13 @@ Let $C$ be the [compressed complex](compressed-complex.md). A morphism $f:C_r\to
 - [Compressed complex](compressed-complex.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 - [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The round sphere](../corner/round-sphere.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md)
+
+## Proof depends on
+
+- [Free category of a finite group](../categories/asymptotic/free-category.md)
+- [Group sequence](../categories/asymptotic/group-sequence.md)

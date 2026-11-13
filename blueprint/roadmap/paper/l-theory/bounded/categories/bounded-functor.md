@@ -20,7 +20,12 @@ where $C_\mathbb Z F$ is the [entrywise functor](entrywise-functor.md), $(M_n)\m
 
 ## Depends on
 
-- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [The induced duality](bounded-duality.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+
+## Proof depends on
+
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [The entrywise functor](entrywise-functor.md)

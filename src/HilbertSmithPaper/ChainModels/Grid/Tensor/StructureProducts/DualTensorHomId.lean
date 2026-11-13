@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockDecomposition
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Poincare.GridFactor.IdDualDeg0
 

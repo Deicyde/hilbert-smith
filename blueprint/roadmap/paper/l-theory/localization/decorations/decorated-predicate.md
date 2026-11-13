@@ -20,7 +20,14 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 ## Depends on
 
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
-- [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)
 - [The quotient duality functor](../../base/categories/quotient-duality-functor.md)
 - [The class of an object in $K_0$](../../bounded/categories/classes/k-zero-class.md)
+- [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)

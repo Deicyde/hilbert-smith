@@ -1,6 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedDualTensorHom
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExtraction
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockExtraction
 
 /-!
 # Blocks of a dual tensor of graded maps

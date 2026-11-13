@@ -21,3 +21,12 @@ In the setting of the [relabelling isomorphism](relabelling-isomorphism.md) $f:M
 
 - [Relabelling isomorphism](relabelling-isomorphism.md)
 - [Asymptotic duality](../asymptotic/asymptotic-duality.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+
+## Proof depends on
+
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [The levelwise transpose](../asymptotic/structure/levelwise-transpose.md)

@@ -27,10 +27,13 @@ This rests on the open statements [Lemma U](../../l-theory/comparison/lemma-u.md
 - [Induced map on ultimate L](../../l-theory/ultimate/groups/induced-map.md)
 - [Coordinate projection of the sequence category](../../categories/asymptotic/point-coordinate-projection.md)
 - [The quotient functor of the point category](../../categories/asymptotic/point-quotient-functor.md)
+- [Finite-support subcategory](../../categories/asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../../categories/asymptotic/point-filtration.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+- [Ultimate L-group](../../l-theory/ultimate/groups/ultimate-l-group.md)
 
 ## Proof depends on
 
-- [Point filtration](../../categories/asymptotic/point-filtration.md)
 - [Ultimate exactness in the middle](../../l-theory/ultimate/boundary/exact-in-middle.md)
 - [Functoriality on ultimate L](../../l-theory/ultimate/groups/induced-map-comp.md)
 - [Classes in $\mathbb L_4(\mathcal S)$ have finite support](../../l-theory/comparison/coordinates-finite-four.md)

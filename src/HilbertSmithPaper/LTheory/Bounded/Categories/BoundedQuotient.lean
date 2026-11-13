@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedKaroubiFiltration
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedQuotientFunctor
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor

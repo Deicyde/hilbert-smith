@@ -1,4 +1,6 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.KaroubiFunctorStrict
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.QuotientFunctorStrict
 import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 import HilbertSmithPaper.LTheory.Base.Categories.Sums.DualBiproduct
 import HilbertSmithPaper.LTheory.Bounded.Categories.KZeroStableEquality

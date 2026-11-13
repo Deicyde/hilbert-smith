@@ -18,9 +18,7 @@ The construction needs neither compactness of $X$ nor that the action is isometr
 
 ## Depends on
 
-- [Propagation](propagation.md)
 - [Group sequence](group-sequence.md)
-- [Free category of a finite group](free-category.md)
 
 ## Proof depends on
 
@@ -28,4 +26,5 @@ The construction needs neither compactness of $X$ nor that the action is isometr
 - [Propagation of a sum](prop-add.md)
 - [Propagation of a scalar multiple](prop-smul.md)
 - [Propagation of a product](prop-mul.md)
-- [The trivial group sequence](trivial-group-sequence.md)
+- [Free category of a finite group](free-category.md)
+- [Propagation](propagation.md)

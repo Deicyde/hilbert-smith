@@ -3,7 +3,7 @@ article_id: af_1fb521100ae4c7e68ac12183
 declaration: instance
 origin: bridged
 statement: formalized
-lean: HSP.FreeCat.dualCat
+lean: HSP.FreeCat.dualCat, HSP.FreeCat
 ---
 
 # Free category of a finite group

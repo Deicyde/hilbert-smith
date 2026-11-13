@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Evaluation.BasedToFree
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Asymptotic.PointSequenceCategory
 import HilbertSmithPaper.Categories.Asymptotic.TrivialGroupSequence
 import HilbertSmithPaper.LTheory.Base.Pairs.FunctorPoincare

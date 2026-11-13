@@ -186,7 +186,7 @@ noncomputable def transitionMap (A : Type u) [Category.{v} A] [Preadditive A] [L
     exact transitionCx_sum hm _ _
 
 /-- The value of `t` on a class: `t [C, φ] = [C ⊗ Λ, φ ⊗ λ]`. -/
-lemma transitionMap_mk (j : ℕ) {m m' : ℤ} (hm : m + 1 = m')
+private lemma transitionMap_mk (j : ℕ) {m m' : ℤ} (hm : m + 1 = m')
     (x : SymPoincare (Karoubi (BoundedPow A j)) m) :
     transitionMap A j hm (LGroup.mk x) = LGroup.mk (transitionCx hm x) :=
   rfl

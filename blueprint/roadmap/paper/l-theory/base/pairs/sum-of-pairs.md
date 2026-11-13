@@ -21,7 +21,9 @@ If $(f:C\to D,\delta\phi,\phi)$ and $(f':C'\to D',\delta\phi',\phi')$ are strict
 
 - [Strict Poincaré pair](poincare-pair.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
-- [Dual of a chain map](../complexes/functors/dual-map.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../complexes/structure-complex.md)
 
 ## Proof depends on
 
@@ -30,3 +32,12 @@ If $(f:C\to D,\delta\phi,\phi)$ and $(f':C'\to D',\delta\phi',\phi')$ are strict
 - [Duals of identity chain maps](../complexes/functors/dual-map-id.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
 - [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)
+- [Mapping cone](../complexes/cone.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Dual of a chain map](../complexes/functors/dual-map.md)
+- [The involution T](../complexes/structure-involution.md)
+- [Pushforward commutes with T](../complexes/structure-push-involution.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Pair map](pair-map.md)
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)

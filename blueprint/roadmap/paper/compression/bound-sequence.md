@@ -14,5 +14,10 @@ Fix the null sequence $(\epsilon'_i)$ chosen in [buffers hold eventually](buffer
 
 ## Depends on
 
+- [Fixed local data](../local-data/control/fixed-local-data.md)
+
+## Proof depends on
+
+- [Buffer conditions](buffer-conditions.md)
 - [Buffers hold eventually](buffer-eventually.md)
 - [Start index](start-index.md)

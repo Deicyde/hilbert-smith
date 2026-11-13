@@ -29,6 +29,8 @@ Let $\mathcal B$ be a duality category and use the [sum](../pairs/poincare-sum.m
 - [Negative of a Poincaré complex](../pairs/poincare-neg.md)
 - [Zero Poincaré complex](../pairs/poincare-zero.md)
 - [Cobordism](../pairs/cobordism.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)
 
 ## Proof depends on
 
@@ -38,3 +40,13 @@ Let $\mathcal B$ be a duality category and use the [sum](../pairs/poincare-sum.m
 - [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../complexes/functors/push-id.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Mapping cone](../complexes/cone.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [The involution T](../complexes/structure-involution.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Pair map](../pairs/pair-map.md)
+- [Strict Poincaré pair](../pairs/poincare-pair.md)

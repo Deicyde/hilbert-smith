@@ -4,8 +4,8 @@ import HilbertSmithPaper.LTheory.Base.Categories.DualSubcategory
 # Inclusion of a dual-closed subcategory
 
 For a full additive subcategory `𝒰 ⊂ 𝒜` closed under duality, the inclusion `𝒰 → 𝒜` is a
-ℚ-linear functor commuting with the duality on the nose: a strict duality functor with `ξ` the
-identity.
+ℚ-linear functor commuting with the duality on the nose: a duality functor with `ξ` the
+identity. Its strictness is in `LTheory.Base.Categories.DualityFunctors.InclusionStrict`.
 -/
 
 open CategoryTheory CategoryTheory.Limits
@@ -21,7 +21,7 @@ variable {A : Type u} [Category.{v} A] [Preadditive A] [Linear ℚ A] [HasFinite
 
 namespace DualSubcategory
 
-instance : U.ι.Linear ℚ where
+private instance : U.ι.Linear ℚ where
   map_smul _ _ := rfl
 
 private lemma ι_dual (V : U.FullSubcategory) : U.ι.obj (dual V) = dual (U.ι.obj V) := rfl
@@ -33,9 +33,6 @@ def incl : DualFunctor U.FullSubcategory A where
   ξ V := Iso.refl _
   ξ_natural f := by simp; rfl
   ξ_dual V := by simp; rfl
-
-/-- The inclusion is a strict duality functor. -/
-theorem incl_isStrict : (incl U).IsStrict := fun _ => ⟨rfl, rfl⟩
 
 end DualSubcategory
 

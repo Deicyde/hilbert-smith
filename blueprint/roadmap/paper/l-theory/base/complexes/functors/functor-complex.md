@@ -17,3 +17,4 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../../categories/d
 ## Depends on
 
 - [Duality functor](../../categories/duality-functor.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)

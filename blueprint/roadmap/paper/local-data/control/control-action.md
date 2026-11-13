@@ -17,8 +17,12 @@ For a local datum, let $C_p=\mathbb Z/p\mathbb Z$ and let $q_1:\mathbb Z_p\to C_
 
 ## Depends on
 
-- [The quotient map to the control space](control-quotient-map.md)
-- [The action on the test region](zplus-action.md)
 - [The control space](control-space.md)
+- [Local datum](../chart/local-datum.md)
 
 ## Proof depends on
+
+- [The test region](../chart/test-region.md)
+- [The quotient map to the control space](control-quotient-map.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

@@ -21,3 +21,4 @@ For $x\in\mathbb T^n$, $q(\tilde x)=x$.
 
 - [The lift](lift.md)
 - [The quotient map](proj.md)
+- [The torus](../grid/torus.md)

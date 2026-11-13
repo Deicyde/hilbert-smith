@@ -19,5 +19,10 @@ On the duality category $\mathbb Q$ of [based vector spaces](based-vector-spaces
 ## Depends on
 
 - [Based vector spaces](based-vector-spaces.md)
-- [Kronecker product of matrices](bookkeeping/based-kron.md)
 - [Duality pairings](duality-pairing.md)
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Kronecker product of matrices](bookkeeping/based-kron.md)

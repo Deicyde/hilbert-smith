@@ -16,6 +16,7 @@ Splitting duality-compatible homotopy idempotents (resting on the open statement
 - [The induced complex](induced-complex-poincare.md)
 - [The corner class](corner-class.md)
 - [Forgetting to the scalar exterior quotient](scalar-forget.md)
+- [Forgetting to the scalar exterior quotient is strict](scalar-forget-strict.md)
 - [Scalar image of the corner](scalar-image.md)
 - [Iterated cut](iterated-cut.md)
 - [Scalar iterated cut](scalar-iterated-cut.md)

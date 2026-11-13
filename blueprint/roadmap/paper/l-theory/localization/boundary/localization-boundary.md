@@ -23,14 +23,23 @@ This definition rests on the open statement [Lifting](lift-to-pair.md), through 
 ## Depends on
 
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
-- [U-pairs](u-pair.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
-- [Image of a pair with boundary in Kar U](image-pair.md)
-- [Lifting closed complexes](lift-to-pair-closed.md)
-- [L-group](../../base/groups/l-group.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Decorated objects are closed under sums and duals](../decorations/decorated-closure.md)
+- [Decorated objects](../decorations/decorated-object.md)
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 
 ## Proof depends on
 
 - [Sums of U-pairs](u-pair-sum.md)
 - [Independence of the lift](boundary-independence.md)
+- [L-group](../../base/groups/l-group.md)
+- [Image of a pair with boundary in Kar U](image-pair.md)
+- [Lifting closed complexes](lift-to-pair-closed.md)
+- [U-pairs](u-pair.md)

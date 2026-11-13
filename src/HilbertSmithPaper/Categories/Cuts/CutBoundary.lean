@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Categories.Cuts.CutSquare
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Supports.QuotientSeparationIso
 import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisionBoundary
 
@@ -19,36 +21,52 @@ namespace HSP
 
 open DualCat
 
+/-! `β` is set up for arbitrary predicates `U_A, U_B, U_Y` on a category and then specialised;
+stated for the concrete support predicates, the kernel spends minutes comparing `supp A` with
+`supp (A ∩ B)` while checking it. -/
+
+section BetaGeneric
+
+variable {C : Type*} [Category C] [Preadditive C] [Linear ℚ C] [Limits.HasFiniteBiproducts C]
+  [DualCat C]
+  {UA UB UY : ObjectProperty C} [IsDualAdditive UA] [IsDualAdditive (ExcisivePair.inter UA UB)]
+  [IsDualAdditive UY]
+
+/-- `β : U_A ∩ U_B → U_Y`, the identity on objects and morphisms. -/
+private abbrev gBeta (h : ∀ V : (ExcisivePair.inter UA UB).FullSubcategory, UY V.obj.obj) :
+    (ExcisivePair.inter UA UB).FullSubcategory ⥤ UY.FullSubcategory :=
+  ObjectProperty.lift _ ((ExcisivePair.inter _ _).ι ⋙ UA.ι) h
+
+private instance (h : ∀ V : (ExcisivePair.inter UA UB).FullSubcategory, UY V.obj.obj) :
+    (gBeta h).Additive where
+  map_add := ObjectProperty.hom_ext _ rfl
+
+private instance (h : ∀ V : (ExcisivePair.inter UA UB).FullSubcategory, UY V.obj.obj) :
+    (gBeta h).Linear ℚ where
+  map_smul _ _ := ObjectProperty.hom_ext _ rfl
+
+/-- `β` as a strict duality functor. -/
+private def gBetaDual (h : ∀ V : (ExcisivePair.inter UA UB).FullSubcategory, UY V.obj.obj) :
+    DualFunctor (ExcisivePair.inter UA UB).FullSubcategory UY.FullSubcategory where
+  toFunctor := gBeta h
+  ξ _ := Iso.refl _
+  ξ_natural f := (Category.comp_id _).trans
+    ((ObjectProperty.hom_ext _ rfl : (gBeta h).map (dualHom f) =
+      dualHom ((gBeta h).map f)).trans (Category.id_comp _).symm)
+  ξ_dual _ := (dualHom_id _).trans ((eqToHom_refl _ _).symm.trans (Category.comp_id _).symm)
+
+end BetaGeneric
+
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
   [CompactSpace X] {A B Z : Set X}
 
 variable (Z) in
-/-- `β : 𝒰_A ∩ 𝒰_B → 𝒰_Y`, the identity on objects and morphisms. -/
-private abbrev cutBeta (hA : IsClosed A) (hB : IsClosed B) :
-    (ExcisivePair.inter (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)).FullSubcategory ⥤
-      (quotSupp (G := G) (A ∪ B) Z (A ∩ B)).FullSubcategory :=
-  ObjectProperty.lift _ ((ExcisivePair.inter _ _).ι ⋙ (quotSupp (A ∪ B) Z A).ι)
-    (fun V => (supp_inter hA hB _).1 ⟨V.obj.property, V.property⟩)
-
-private instance (hA : IsClosed A) (hB : IsClosed B) : (cutBeta (G := G) Z hA hB).Additive where
-  map_add := ObjectProperty.hom_ext _ rfl
-
-private instance (hA : IsClosed A) (hB : IsClosed B) : (cutBeta (G := G) Z hA hB).Linear ℚ where
-  map_smul _ _ := ObjectProperty.hom_ext _ rfl
-
-set_option maxHeartbeats 2000000 in
-variable (Z) in
-/-- `β` as a strict duality functor. -/
+/-- `β : 𝒰_A ∩ 𝒰_B → 𝒰_Y` as a strict duality functor, the identity on objects and morphisms. -/
 private def cutBetaDual (hA : IsClosed A) (hB : IsClosed B) :
     DualFunctor
       (ExcisivePair.inter (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)).FullSubcategory
-      (quotSupp (G := G) (A ∪ B) Z (A ∩ B)).FullSubcategory where
-  toFunctor := cutBeta Z hA hB
-  ξ _ := Iso.refl _
-  ξ_natural f := (Category.comp_id _).trans
-    ((ObjectProperty.hom_ext _ rfl : (cutBeta Z hA hB).map (dualHom f) =
-      dualHom ((cutBeta Z hA hB).map f)).trans (Category.id_comp _).symm)
-  ξ_dual _ := (dualHom_id _).trans ((eqToHom_refl _ _).symm.trans (Category.comp_id _).symm)
+      (quotSupp (G := G) (A ∪ B) Z (A ∩ B)).FullSubcategory :=
+  gBetaDual fun V => (supp_inter hA hB _).1 ⟨V.obj.property, V.property⟩
 
 variable [IsIsometricVAdd (ZMod p) X]
 

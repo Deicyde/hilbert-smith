@@ -21,3 +21,7 @@ For $y,y'\in\mathbb R^n$, $d_2(q(y),q(y'))\le|y-y'|$.
 
 - [The quotient map](proj.md)
 - [The quotient Euclidean metric](dist2.md)
+
+## Proof depends on
+
+- [The torus](../grid/torus.md)

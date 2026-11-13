@@ -4,6 +4,7 @@ import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCell
 import HilbertSmithPaper.ChainModels.Grid.Cubical.CubicalTorusGrid
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridCube
+import HilbertSmithPaper.ChainModels.Grid.CubeSpan
 
 /-!
 # Boxes are acyclic
@@ -14,7 +15,7 @@ Every grid box `B ⊆ C(k)` is augmented acyclic: `H_r(B) = 0` for `r > 0`, and 
 ## Encoding
 
 * Chains of `C(k)_r` are columns `Fin dim → ℚ`, and `d`, `ε` act by `Matrix.mulVec`.
-* `cubeSpan S r` is the span in `C(k)_r` of the basis cubes in `S`: the columns vanishing off
+* `cubeSpan S r` (`ChainModels.Grid.CubeSpan`) is the span in `C(k)_r` of the basis cubes in
   `S`. For `S = B.cubes` it is the degree-`r` part of the subcomplex `B`.
 * Augmented acyclicity is spelled out on elements, as for carriers: every cycle of positive
   degree in `B` bounds in `B`; a degree-`0` chain of `B` with augmentation `0` bounds in `B`
@@ -25,14 +26,6 @@ Every grid box `B ⊆ C(k)` is augmented acyclic: `H_r(B) = 0` for `r > 0`, and 
 namespace HSP.ChainModels
 
 open FreeQ Matrix
-
-/-- The span in `C(k)_r` of the basis cubes in `S`: the columns vanishing off `S`. -/
-def cubeSpan {k n : ℕ} (S : Set (GridCube k n)) (r : ℤ) :
-    Submodule ℚ (Fin ((gridComplex k n).X r).dim → ℚ) where
-  carrier := {z | ∀ a, gridCell k n r a ∉ S → z a = 0}
-  add_mem' {x y} hx hy a ha := by simp [hx a ha, hy a ha]
-  zero_mem' _ _ := rfl
-  smul_mem' c x hx a ha := by simp [hx a ha]
 
 /-- **Boxes are acyclic.** Every grid box `B` is augmented acyclic: `H_r(B) = 0` for `r > 0`,
 and `ε` induces `H_0(B) ≅ ℚ`. -/

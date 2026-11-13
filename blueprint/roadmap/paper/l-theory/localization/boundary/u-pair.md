@@ -20,10 +20,14 @@ Let $\mathcal U\subset\mathcal A$ be as in [Decorated objects](../decorations/de
 
 ## Depends on
 
-- [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
-- [Decorated objects](../decorations/decorated-object.md)
 - [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Strict Poincaré pair](../../base/pairs/poincare-pair.md)
 - [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Image of a complex under a duality functor](../../base/complexes/functors/functor-complex.md)
+- [Image of structures under a duality functor](../../base/complexes/functors/functor-structure.md)
+- [Structure complex](../../base/complexes/structure-complex.md)

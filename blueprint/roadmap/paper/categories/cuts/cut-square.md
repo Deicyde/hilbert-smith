@@ -26,17 +26,24 @@ Let $X$ be compact with an isometric $C_p$-action, let $A,B\subset X$ be closed 
 
 ## Depends on
 
-- [Support subcategory](../supports/support-subcategory.md)
+- [Group sequence](../asymptotic/group-sequence.md)
 - [Support subcategory inside a support subcategory](../supports/relative-support.md)
 - [Supported objects of a support quotient](../supports/quotient-support.md)
-- [Supported objects of a support quotient are additive](../supports/quotient-support-additive.md)
-- [Support filtrations in a quotient](../supports/quotient-support-filtration.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Excisive pair of filtrations](../../l-theory/ultimate/boundary/excisive-pair.md)
 - [Intersection of full subcategories](../../l-theory/ultimate/boundary/excisive-intersection.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory inside a support subcategory is additive](../supports/relative-support-additive.md)
+- [The support subcategory is additive](../supports/support-dual-additive.md)
+- [Support subcategory](../supports/support-subcategory.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 
 ## Proof depends on
 
+- [Support filtrations in a quotient](../supports/quotient-support-filtration.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
 - [Lift of a duality functor to a quotient](../../l-theory/base/categories/quotient-dual-lift.md)
 - [Support intersection](../supports/support-intersection.md)
 - [Iterated quotient](../supports/iterated-quotient.md)
@@ -47,3 +54,7 @@ Let $X$ be compact with an isometric $C_p$-action, let $A,B\subset X$ be closed 
 - [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)
 - [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Supported objects of a support quotient are additive](../supports/quotient-support-additive.md)
+- [Supported objects of a relative support subcategory are additive](../supports/relative-intersection-additive.md)
+- [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)

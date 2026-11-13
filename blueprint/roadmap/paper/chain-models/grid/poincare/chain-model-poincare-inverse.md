@@ -24,6 +24,11 @@ For every $i$, with $d$ the differential of $D_i$ and of $D_i^{N-*}$ (on the lat
 - [The homotopy of the chain model](chain-model-h.md)
 - [The dual homotopy of the chain model](chain-model-h-dual.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Chain model](../model/chain-model.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 

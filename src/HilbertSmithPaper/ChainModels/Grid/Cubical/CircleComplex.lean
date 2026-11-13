@@ -55,7 +55,7 @@ def circleComplex (k : ℕ) : ChainComplex FreeQ ℤ :=
         zero_comp
     · rw [circleD_ne k h, comp_zero]
 
-lemma circleComplex_X (k : ℕ) (r : ℤ) : (circleComplex k).X r = ⟨circleDim k r⟩ := rfl
+private lemma circleComplex_X (k : ℕ) (r : ℤ) : (circleComplex k).X r = ⟨circleDim k r⟩ := rfl
 
 lemma circleComplex_d (k : ℕ) : (circleComplex k).d 1 0 = ofMatrix (circleDiffMatrix k) :=
   ChainComplex.of_d (fun r => (⟨circleDim k r⟩ : FreeQ)) (circleD k) (0 : ℤ)

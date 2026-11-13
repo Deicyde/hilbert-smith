@@ -17,3 +17,4 @@ The *fundamental cycle* of the [cellular chain complex](cp2-complex.md) $P$ of $
 ## Depends on
 
 - [The cellular chain complex of CP^2](cp2-complex.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

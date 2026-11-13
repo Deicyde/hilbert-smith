@@ -22,9 +22,14 @@ For every $i$, with $d$ the differential of $D_i$ and of $D_i^{N-*}$ (on the lat
 - [Chain-model duality](../chain-model-duality.md)
 - [Chain model](../model/chain-model.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [The unsymmetrized structure of the chain model is a cycle](chain-model-structure-u-cycle.md)
 - [Duality map of a cycle](../../../l-theory/base/complexes/cycle-chain-map.md)
 - [The chain-model inverse is exact](chain-model-inverse-exact.md)
+- [The unsymmetrized structure of the chain model](chain-model-structure-u.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)

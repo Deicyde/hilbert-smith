@@ -16,5 +16,16 @@ A *strict $n$-dimensional symmetric Poincaré pair* in a duality category $\math
 
 ## Depends on
 
-- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 - [Pair map](pair-map.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Mapping cone](../complexes/cone.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [The involution T](../complexes/structure-involution.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+
+## Proof depends on
+
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)

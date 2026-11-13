@@ -25,9 +25,13 @@ which sum to zero.
 - [Structure of the symmetric line](symmetric-line-structure.md)
 - [Structure complex](../../base/complexes/structure-complex.md)
 - [The involution T](../../base/complexes/structure-involution.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Based vector spaces](based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
+- [The symmetric line](symmetric-line.md)
 
 ## Proof depends on
 
-- [The symmetric line](symmetric-line.md)
-- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
 - [Entries of composites of constant families](bookkeeping/constant-family-comp.md)

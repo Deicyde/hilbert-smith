@@ -6,7 +6,7 @@ origin: background
 
 # Iterated induced quotient functors
 
-Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be involution-invariant Karoubi filtrations, $(F,\xi):\mathcal A\to\mathcal A'$ a duality functor with $FV\in\mathcal U'$ for every $V\in\mathcal U$, and $\bar F:\mathcal A/\mathcal U\to\mathcal A'/\mathcal U'$ the [functor induced on quotients](../decorations/induced-quotient-functor.md). For $j\ge0$ let $F^{(j)}:C_{\mathbb Z^j}\mathcal A/C_{\mathbb Z^j}\mathcal U\to C_{\mathbb Z^j}\mathcal A'/C_{\mathbb Z^j}\mathcal U'$ be the functor induced in the same way by the [bounded extension](../../bounded/categories/bounded-functor.md) $C_{\mathbb Z^j}F$, and let $e_j$, $e'_j$ be the isomorphisms of [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md) for the two filtrations. Then
+Let $\mathcal U\subset\mathcal A$ and $\mathcal U'\subset\mathcal A'$ be involution-invariant Karoubi filtrations, $(F,\xi):\mathcal A\to\mathcal A'$ a duality functor with $FV\in\mathcal U'$ for every $V\in\mathcal U$, and $\bar F:\mathcal A/\mathcal U\to\mathcal A'/\mathcal U'$ the [functor induced on quotients](../decorations/induced-quotient-functor.md). For $j\ge0$ let $F^{(j)}:C_{\mathbb Z^j}\mathcal A/C_{\mathbb Z^j}\mathcal U\to C_{\mathbb Z^j}\mathcal A'/C_{\mathbb Z^j}\mathcal U'$ be the functor induced in the same way by the [iterated bounded extension](../../bounded/categories/bounded-functor-iter.md) $C_{\mathbb Z^j}F$, and let $e_j$, $e'_j$ be the isomorphisms of [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md) for the two filtrations. Then
 $$e'_j\circ F^{(j)}=C_{\mathbb Z^j}(\bar F)\circ e_j$$
 as duality functors, duality data included.
 
@@ -21,7 +21,7 @@ by [Bounded extension is functorial](../../bounded/categories/bounded-functor-co
 ## Depends on
 
 - [Functor induced on quotients](../decorations/induced-quotient-functor.md)
-- [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
 
 ## Proof depends on

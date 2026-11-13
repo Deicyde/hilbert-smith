@@ -21,3 +21,4 @@ For a complex $C$ and $n\in\mathbb Z$, the [dual](dual-map.md) of the identity o
 
 - [Dual of a chain map](dual-map.md)
 - [Dual complex](../dual-complex.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)

@@ -16,5 +16,9 @@ Given a local datum with constants $(D,\rho_+)$ and a real $\rho$ (it is used fo
 
 ## Depends on
 
+- [Local datum](local-datum.md)
+
+## Proof depends on
+
 - [The averaged chart map](averaged-map.md)
 - [The pinch map](pinch.md)

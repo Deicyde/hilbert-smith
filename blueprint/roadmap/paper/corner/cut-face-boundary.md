@@ -17,4 +17,7 @@ Let $n\in\mathbb N$ and $s\in\mathbb R$. In the [round sphere](round-sphere.md),
 ## Depends on
 
 - [The round sphere](round-sphere.md)
+
+## Proof depends on
+
 - [The cube face](cut-face.md)

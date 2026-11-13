@@ -1,6 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.LTheory.Localization.Products.BasedVectorSpaces
 import HilbertSmithPaper.LTheory.Localization.Products.BasedTensor
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockMaps
 
 /-!
 # Tensor product of based complexes
@@ -17,8 +18,8 @@ all the summands `C_p ⊠ D_q` with `p + q = r`.
 * Degree `r` has the summands indexed by `p : Fin (r.toNat + 1)`; `tensorSummandDim C D r p` is
   `c_p d_{r-p}` and `basedComplexTensorObj C D r = ⟨∑_p c_p d_{r-p}⟩`. For `r < 0` the single
   summand `C_0 ⊠ D_r` is zero-dimensional, since `D` vanishes in negative degrees.
-* `blockInc d j` and `blockProj d j` are the inclusion and projection of the `j`-th block of
-  `ℚ^{∑ d}`, enumerated by `finSigmaFinEquiv` (concatenation in increasing `j`).
+* `blockInc d j` and `blockProj d j` (`ChainModels.Grid.Tensor.Blocks.BlockMaps`) are the
+  inclusion and projection of the `j`-th block of `ℚ^{∑ d}` (concatenation in increasing `j`).
 * On blocks the differential is `basedComplexTensorBlock`: `d_C ⊠ 1` from summand `p` to summand
   `p - 1`, and `(-1)^p 1 ⊠ d_D` from summand `p` to summand `p`, with the identity transports
   `D_{n+1-p} = D_{n-(p-1)}` and `C_p = C_p` written as `XIsoOfEq`.
@@ -34,14 +35,6 @@ namespace HSP.ChainModels
 open FreeQ
 
 /-! ### Blocks of `ℚ^{∑ d}` -/
-
-/-- The inclusion of the `j`-th block `ℚ^{d_j}` into `ℚ^{∑ d}`. -/
-def blockInc {m : ℕ} (d : Fin m → ℕ) (j : Fin m) : (⟨d j⟩ : FreeQ) ⟶ ⟨∑ i, d i⟩ :=
-  ofMatrix (Matrix.of fun a b => if finSigmaFinEquiv.symm a = ⟨j, b⟩ then 1 else 0)
-
-/-- The projection of `ℚ^{∑ d}` onto its `j`-th block `ℚ^{d_j}`. -/
-def blockProj {m : ℕ} (d : Fin m → ℕ) (j : Fin m) : (⟨∑ i, d i⟩ : FreeQ) ⟶ ⟨d j⟩ :=
-  ofMatrix (Matrix.of fun b a => if finSigmaFinEquiv.symm a = ⟨j, b⟩ then 1 else 0)
 
 private lemma blockInc_proj_apply {m : ℕ} (d : Fin m → ℕ) (j j' : Fin m) (b' : Fin (d j'))
     (b : Fin (d j)) :
@@ -258,7 +251,7 @@ private lemma blockInc_comp_D (n : ℤ) (p' : Fin ((n + 1).toNat + 1)) :
   · intro h; exact absurd (Finset.mem_univ _) h
 
 /-- `d² = 0` for the tensor differential. -/
-lemma basedComplexTensorD_comp (hD : ∀ q < 0, (D.X q).dim = 0) (n : ℤ) :
+private lemma basedComplexTensorD_comp (hD : ∀ q < 0, (D.X q).dim = 0) (n : ℤ) :
     basedComplexTensorD C D (n + 1) ≫ basedComplexTensorD C D n = 0 := by
   conv_lhs => rw [basedComplexTensorD]
   rw [Preadditive.sum_comp]
@@ -295,11 +288,11 @@ variable (C D : ChainComplex FreeQ ℤ)
 /-- The position of the basis vector `x_i ⊗ y_j` of the summand `C_p ⊠ D_{r-p}` in
 `(C ⊗ D)_r`: the summands are concatenated in increasing `p`, and inside a summand `x_i ⊗ y_j` is
 at the Kronecker position `i · d_{r-p} + j` (0-based). -/
-def tensorBasisIndex (r : ℤ) (p : Fin (r.toNat + 1)) (i : Fin (C.X (p : ℕ)).dim)
+private def tensorBasisIndex (r : ℤ) (p : Fin (r.toNat + 1)) (i : Fin (C.X (p : ℕ)).dim)
     (j : Fin (D.X (r - (p : ℕ))).dim) : Fin (basedComplexTensorObj C D r).dim :=
   finSigmaFinEquiv ⟨p, finProdFinEquiv (i, j)⟩
 
-lemma basedComplexTensor_X (hD : ∀ q < 0, (D.X q).dim = 0) (r : ℤ) :
+private lemma basedComplexTensor_X (hD : ∀ q < 0, (D.X q).dim = 0) (r : ℤ) :
     (basedComplexTensor C D hD).X r = basedComplexTensorObj C D r := rfl
 
 lemma basedComplexTensor_d (hD : ∀ q < 0, (D.X q).dim = 0) (n : ℤ) :

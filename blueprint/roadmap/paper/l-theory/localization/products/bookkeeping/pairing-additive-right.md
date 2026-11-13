@@ -19,3 +19,4 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 ## Depends on
 
 - [Duality pairings](../duality-pairing.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)

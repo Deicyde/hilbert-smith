@@ -20,3 +20,6 @@ A chain map $f:C\to D$ of chain complexes in $\mathrm{Kar}\,\mathrm{Free}(\mathb
 
 - [Real cohomology](real-cohomology.md)
 - [The real matrix of a morphism](real-matrix.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)

@@ -20,3 +20,4 @@ The cellular chain complex $P$ of $\mathbb{CP}^2$ ([the cellular chain complex](
 ## Depends on
 
 - [The cellular chain complex of CP^2](cp2-complex.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

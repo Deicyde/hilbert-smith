@@ -21,3 +21,4 @@ For chain maps $f:C\to D$ and $g:D\to E$ and $n\in\mathbb Z$, the [duals](dual-m
 
 - [Dual of a chain map](dual-map.md)
 - [Dual complex](../dual-complex.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)

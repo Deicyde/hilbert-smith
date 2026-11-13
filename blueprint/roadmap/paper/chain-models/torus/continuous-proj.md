@@ -20,3 +20,4 @@ The quotient map $q:\mathbb R^n\to\mathbb T^n$ is continuous.
 ## Depends on
 
 - [The quotient map](proj.md)
+- [The torus](../grid/torus.md)

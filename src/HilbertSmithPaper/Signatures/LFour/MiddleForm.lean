@@ -74,7 +74,7 @@ private noncomputable def phiMap : realHco x.C 2 →ₗ[ℝ] realH x.C 2 :=
 noncomputable def middleForm : LinearMap.BilinForm ℝ (realHco x.C 2) :=
   (realEval x.C 2).compl₂ (phiMap x)
 
-theorem middleForm_mk (y z) :
+private theorem middleForm_mk (y z) :
     middleForm x (Submodule.Quotient.mk y) (Submodule.Quotient.mk z) =
       y.1 ⬝ᵥ realMap (x.φ ⟨(2, 2), by norm_num⟩).f z.1 := rfl
 

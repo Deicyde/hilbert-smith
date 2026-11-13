@@ -20,6 +20,7 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 
 - [Duality functor](../categories/duality-functor.md)
 - [Strict Poincaré pair](poincare-pair.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
 
 ## Proof depends on
 
@@ -32,3 +33,11 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 - [Duality functors and dual complexes](../complexes/functors/functor-dual-iso.md)
 - [Duality functors and mapping cones](../complexes/functors/functor-cone.md)
 - [Duality functors and pair maps](../complexes/functors/functor-pair-map.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Image of a complex under a duality functor](../complexes/functors/functor-complex.md)
+- [Image of structures under a duality functor](../complexes/functors/functor-structure.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [The involution T](../complexes/structure-involution.md)
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)

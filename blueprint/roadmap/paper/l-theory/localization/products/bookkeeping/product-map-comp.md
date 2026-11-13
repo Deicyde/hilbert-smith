@@ -21,3 +21,12 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 
 - [Duality pairings](../duality-pairing.md)
 - [Tensor product of chain maps](product-map.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)
+- [Tensor product of complexes](../complex-product.md)
+
+## Proof depends on
+
+- [A duality pairing is additive in the first variable](pairing-additive-left.md)
+- [A duality pairing is additive in the second variable](pairing-additive-right.md)
+- [The sums in a tensor product of complexes exist](product-sums-exist.md)
+- [Signs for tensor products of chain complexes](tensor-signs.md)

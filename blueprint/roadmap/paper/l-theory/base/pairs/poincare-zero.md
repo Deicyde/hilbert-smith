@@ -19,3 +19,11 @@ In a duality category $\mathcal B$, the zero complex with the zero structure, $(
 ## Depends on
 
 - [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+
+## Proof depends on
+
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [The involution T](../complexes/structure-involution.md)

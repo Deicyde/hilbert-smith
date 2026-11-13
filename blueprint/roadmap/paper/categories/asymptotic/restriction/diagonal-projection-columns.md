@@ -21,3 +21,6 @@ Let $u:M\to N$ be a sequence of $G_i$-equivariant matrices with propagation tend
 ## Depends on
 
 - [Diagonal coordinate projection](diagonal-projection.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Free category of a finite group](../free-category.md)
+- [Group sequence](../group-sequence.md)

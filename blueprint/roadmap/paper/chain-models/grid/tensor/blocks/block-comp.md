@@ -1,0 +1,27 @@
+---
+article_id: af_e49009894c1f9e9900440fe3
+declaration: lemma
+origin: bridged
+statement: formalized
+proof: formalized
+lean: HSP.ChainModels.block_comp
+---
+
+# Blocks of a composite
+
+For maps $F:\mathbb Q^{\sum_ad_a}\to\mathbb Q^{\sum_{a'}d'_{a'}}$ and $G:\mathbb Q^{\sum_{a'}d'_{a'}}\to\mathbb Q^{\sum_{a''}d''_{a''}}$ of [based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md), $\pi''_q(GF)\iota_p=\sum_{a'}(\pi''_qG\iota'_{a'})(\pi'_{a'}F\iota_p)$. Here $\iota$ and $\pi$ (with primes) are the block inclusions and projections of the concatenations, as in the [concatenation of blocks](block-maps.md).
+
+*Proof sketch.* Insert the [block decomposition of the identity](block-decomposition.md) between $F$ and $G$.
+
+## Sources
+
+- New: block calculus for the explicit bases of the chain models.
+
+## Depends on
+
+- [Block inclusions and projections](block-maps.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Block decomposition of the identity](block-decomposition.md)

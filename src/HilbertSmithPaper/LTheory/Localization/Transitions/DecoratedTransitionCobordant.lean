@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Pairs.Cobordism
 import HilbertSmithPaper.LTheory.Localization.Transitions.DecoratedLineProduct
 import HilbertSmithPaper.LTheory.Localization.Decorations.SubcategoryCobordism

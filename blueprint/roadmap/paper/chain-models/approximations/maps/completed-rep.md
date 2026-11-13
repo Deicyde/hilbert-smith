@@ -16,5 +16,10 @@ The *completed representative* of $g\in\mathbb Z/p^i$ is the [completed map](../
 
 ## Depends on
 
+- [The torus](../../grid/torus.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [Completed map](../completed-map.md)
 - [Representatives of the finite quotients](../../../local-data/control/representative-map.md)

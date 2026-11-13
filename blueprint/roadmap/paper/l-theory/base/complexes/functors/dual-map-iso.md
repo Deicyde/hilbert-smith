@@ -16,7 +16,11 @@ Let $u:C\cong D$ be an isomorphism of complexes in a duality category and $n\in\
 
 ## Depends on
 
-- [Dual of a chain map](dual-map.md)
+- [Dual complex](../dual-complex.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)
+
+## Proof depends on
+
 - [Duals of chain maps reverse composition](dual-map-comp.md)
 - [Duals of identity chain maps](dual-map-id.md)
-- [Dual complex](../dual-complex.md)
+- [Dual of a chain map](dual-map.md)

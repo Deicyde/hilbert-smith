@@ -1,7 +1,7 @@
 import Mathlib
 import HilbertSmithPaper.ChainModels.Grid.Tensor.BasedTensorHom
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExt
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockComp
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockExt
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockComp
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronTransport
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronZero

@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.Categories.Asymptotic.AsymptoticDuality
 import HilbertSmithPaper.Categories.Asymptotic.Structure.ClassSurjective
 import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctor

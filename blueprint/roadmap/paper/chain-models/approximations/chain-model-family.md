@@ -8,7 +8,7 @@ lean: HSP.ChainModels.chainModelFamily
 
 # The family of chain-model matrices
 
-A *typed labelled matrix* is a matrix $u:\mathbb Q^B\to\mathbb Q^{B'}$ between finite sets of cells $B,B'$ with torus labels $x_b,x'_{b'}\in\mathbb T^n$, together with a type $c\in C_p$.
+The family consists of [typed labelled matrices](typed-matrix.md): matrices $u:\mathbb Q^B\to\mathbb Q^{B'}$ between finite sets of cells $B,B'$ with torus labels, each with a type $c\in C_p$.
 
 Let $G_i=\mathbb Z/p^i$, let $\chi_i:G_i\to C_p$ be reduction mod $p$, and $N=n+4$. The family $\mathcal P_i$ of the [chain model](../grid/model/chain-model.md) $D_i$ consists of the following typed labelled matrices, for $g,h\in G_i$:
 - of type $0$: the differentials $d$ of $D_i$ and of $D_i^{N-*}$ (on the latter $d_r=(-1)^rd^*$), the maps $\varphi_i,b_i$ of the [chain-model duality](../grid/chain-model-duality.md), $H_i,H'_i$ from [Poincaré](../grid/chain-model-poincare.md), and the [chosen isometry homotopies](chosen-isometry-homotopies.md) $U_g$;
@@ -24,5 +24,26 @@ Each map is listed in every degree, and the elements $\varphi_i,U_g,V_g$ of the 
 
 ## Depends on
 
+- [Typed labelled matrices](typed-matrix.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [The adjoint homotopy](adjoint-homotopy.md)
+- [Chosen isometry homotopies](chosen-isometry-homotopies.md)
+- [Chosen product homotopies](chosen-product-homotopies.md)
+- [Group approximations](group-approx.md)
+- [Tensor product of based complexes](../grid/based-complex-tensor.md)
+- [Chain-model duality](../grid/chain-model-duality.md)
+- [The cellular chain complex of CP^2](../grid/cp2/cp2-complex.md)
+- [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [Mesh sequence](../grid/mesh-sequence.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
-- [Chain model](../grid/model/chain-model.md), [chain-model duality](../grid/chain-model-duality.md), [Poincaré](../grid/chain-model-poincare.md), [group approximations](group-approx.md), [chosen isometry homotopies](chosen-isometry-homotopies.md), [chosen product homotopies](chosen-product-homotopies.md), [adjoint homotopy](adjoint-homotopy.md)
+- [Chain model](../grid/model/chain-model.md)
+- [The dual homotopy of the chain model](../grid/poincare/chain-model-h-dual.md)
+- [The homotopy of the chain model](../grid/poincare/chain-model-h.md)
+- [The torus](../grid/torus.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Dual complex](../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)

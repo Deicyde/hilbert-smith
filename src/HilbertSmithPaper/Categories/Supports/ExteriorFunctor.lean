@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.ExteriorQuotient
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 
 /-!
 # Induced functor on exterior quotients

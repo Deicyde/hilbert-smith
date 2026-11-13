@@ -22,3 +22,8 @@ Let $\mathbf G$ be a [group sequence](group-sequence.md). The quotient functor $
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Finite-support subcategory](eventually-zero-subcategory.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Point filtration](point-filtration.md)
+
+## Proof depends on
+
+- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)

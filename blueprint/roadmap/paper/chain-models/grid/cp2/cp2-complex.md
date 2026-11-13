@@ -16,4 +16,4 @@ $P$ is the chain complex of [based vector spaces](../../../l-theory/localization
 
 ## Depends on
 
-- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

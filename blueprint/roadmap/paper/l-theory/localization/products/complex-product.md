@@ -23,5 +23,11 @@ and differential $d\boxtimes1+(-1)^p\,1\boxtimes d$ on $C_p\boxtimes E_q$. The d
 ## Depends on
 
 - [Duality pairings](duality-pairing.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
+- [A duality pairing is additive in the first variable](bookkeeping/pairing-additive-left.md)
+- [A duality pairing is additive in the second variable](bookkeeping/pairing-additive-right.md)
 - [The sums in a tensor product of complexes exist](bookkeeping/product-sums-exist.md)
 - [Signs for tensor products of chain complexes](bookkeeping/tensor-signs.md)

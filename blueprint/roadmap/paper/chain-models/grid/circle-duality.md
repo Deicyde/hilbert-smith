@@ -29,12 +29,21 @@ and put $\varphi^{s}=\varphi+\tfrac12\partial H$. Here $\partial H=dH+Hd$. Then:
 
 - [Labels of the circle cells](cubical/circle-label.md)
 - [The circle complex](cubical/circle-complex.md)
-- [The cell of a basis vector of the circle complex](cubical/circle-cell.md)
 - [Augmentation of the circle complex](cubical/circle-aug.md)
 - [Fundamental chain of the circle complex](cubical/circle-fundamental.md)
-- [circle duality data](poincare/circle-data/circle-phi.md), [circle homotopy element](poincare/circle-data/circle-h.md), [symmetric circle structure](poincare/circle-data/circle-phi-sym.md), [circle inverse](poincare/circle-data/circle-b.md), [circle homotopy](poincare/circle-data/circle-k.md), [dual circle homotopy](poincare/circle-data/circle-k-dual.md)
-- [Cubical torus grid](cubical/cubical-torus-grid.md), [dual complex](../../l-theory/base/complexes/dual-complex.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [the involution T](../../l-theory/base/complexes/structure-involution.md), [propagation](../../categories/asymptotic/propagation.md)
-- [The shift of a complex](../../l-theory/base/complexes/shift.md)
+- [The circle structure](poincare/circle-data/circle-phi.md)
+- [The circle homotopy element](poincare/circle-data/circle-h.md)
+- [The symmetric circle structure](poincare/circle-data/circle-phi-sym.md)
+- [The circle inverse](poincare/circle-data/circle-b.md)
+- [The circle homotopy](poincare/circle-data/circle-k.md)
+- [The dual circle homotopy](poincare/circle-data/circle-k-dual.md)
+- [Dual complex](../../l-theory/base/complexes/dual-complex.md)
+- [Structure complex](../../l-theory/base/complexes/structure-complex.md)
+- [The involution T](../../l-theory/base/complexes/structure-involution.md)
+- [Propagation](../../categories/asymptotic/propagation.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 

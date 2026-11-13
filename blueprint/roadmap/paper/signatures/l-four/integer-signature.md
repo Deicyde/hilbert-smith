@@ -20,12 +20,10 @@ $\sigma_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to\mathbb Z$ is the map $[C,\varphi
 
 ## Depends on
 
-- [The middle form](middle-form.md)
-- [Invariant signature splittings exist](signature-splitting-exists.md)
-- [Middle form nonsingular](middle-form-nonsingular.md)
-- [L-group](../../l-theory/base/groups/l-group.md)
 - [Group structure on L](../../l-theory/base/groups/l-group-add.md)
 - [The projective L-group](../../l-theory/base/groups/projective-l-group.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
 
 ## Proof depends on
 
@@ -34,3 +32,13 @@ $\sigma_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to\mathbb Z$ is the map $[C,\varphi
 - [Signature of a complex](complex-signature.md)
 - [Signature hom](signature-hom.md)
 - [The sum of Poincaré complexes](../../l-theory/base/pairs/poincare-sum.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [L-group](../../l-theory/base/groups/l-group.md)
+- [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)
+- [The equivariant signature of an invariant form](../forms/form-signature.md)
+- [Middle form nonsingular](middle-form-nonsingular.md)
+- [The middle form](middle-form.md)
+- [Invariant signature splittings exist](signature-splitting-exists.md)
+- [The action of the group on real cohomology](../real/real-cohomology-action.md)
+- [Real cohomology](../real/real-cohomology.md)
+- [The real matrix of a morphism](../real/real-matrix.md)

@@ -15,5 +15,3 @@ Let $\mathcal U$ be a class of objects of a [duality category](duality-category.
 - [Carlsson-Pedersen 1995, §1](../../../../../sources/paper/carlsson-pedersen-1995.md) [U]
 
 ## Depends on
-
-- [Small Q-linear category with strict duality](duality-category.md)

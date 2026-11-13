@@ -21,7 +21,9 @@ For a strict 4-dimensional symmetric Poincaré complex $(C,\varphi)$ in $\mathrm
 
 - [The middle form](middle-form.md)
 - [The negative of a Poincaré complex](../../l-theory/base/pairs/poincare-neg.md)
-
-## Proof depends on
-
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
+- [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)
+- [Real cohomology](../real/real-cohomology.md)
 - [The real matrix of a morphism](../real/real-matrix.md)

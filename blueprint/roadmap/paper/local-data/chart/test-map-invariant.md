@@ -20,7 +20,10 @@ For a local datum and every real $\rho$, $f(a\cdot x)=f(x)$ for all $a\in\mathbb
 ## Depends on
 
 - [The test map](test-map.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The averaged map is invariant](averaged-map-invariant.md)
+- [The averaged chart map](averaged-map.md)
+- [The pinch map](pinch.md)

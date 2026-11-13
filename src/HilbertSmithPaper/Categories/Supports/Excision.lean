@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportIdeal
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Supports.ThickeningInvariant
 import HilbertSmithPaper.Categories.Supports.RelativeIntersectionAdditive
 import HilbertSmithPaper.Categories.Supports.NullThickening
@@ -13,11 +14,13 @@ import HilbertSmithPaper.LTheory.Ultimate.Boundary.ExcisiveIntersection
 /-!
 # Excision equivalence
 
-Let the action be isometric, `A, B ⊆ X` with `B` invariant, and `S = A ∪ B`. In `𝒜_S`, let
+Let the action be isometric, `A, B ⊆ X` with `B` invariant, and `S ⊆ A ∪ B`. In `𝒜_S`, let
 `𝒰_A = suppIn S A`, `𝒰_B = suppIn S B` and `𝒰_A ∩ 𝒰_B` the `B`-supported objects of `𝒰_A`
-(`ExcisivePair.inter`); `𝒰_A/(𝒰_A ∩ 𝒰_B)` realizes `𝒜_A/𝒜_{A∩B}`. The excision equivalence
-`e : 𝒰_A/(𝒰_A ∩ 𝒰_B) → 𝒜_S/𝒜_B` is the strict duality functor induced by inclusion
-(`ExcisivePair.e`). `HSP.excision` gives its inverse `R` with unitary unit `id ≅ R ∘ e` and counit
+(`ExcisivePair.inter`). The excision equivalence `e : 𝒰_A/(𝒰_A ∩ 𝒰_B) → 𝒜_S/𝒜_B` is the strict
+duality functor induced by inclusion (`ExcisivePair.e`). Its source is a quotient of `𝒰_A`, not
+in general of a support subcategory of `A`; when `A` is compact, `B` is closed and `A ⊆ S`, it is
+identified with `𝒜_A/𝒜_{A∩B}` by `HSP.excisiveInterQuotIso` (quotient of an excisive
+intersection). `HSP.excision` gives its inverse `R` with unitary unit `id ≅ R ∘ e` and counit
 `e ∘ R ≅ id`.
 
 For `M ∈ 𝒜_S` a null sequence `a` is chosen (classically) with the labels of `M` eventually in
@@ -88,8 +91,8 @@ section Excision
 
 variable (S A B : Set X)
 
-/-- The chosen null sequence for `M ∈ 𝒜_{A∪B}`: eventually all labels of `M` lie in its closed
-thickenings of `A ∪ B`. -/
+/-- The chosen null sequence for `M ∈ 𝒜_S`: eventually all labels of `M` lie in its closed
+thickenings of `S`. -/
 private noncomputable def exNull (M : (supp S : ObjectProperty (AsymCat G X)).FullSubcategory) :
     ℕ → ℝ≥0 :=
   Classical.choose (exists_null_cthickening (M := M.obj.as) S (fun _ _ => True)
@@ -353,8 +356,8 @@ private theorem counit_hom_inv (M : FiltQuot (suppIn (G := G) S B)) :
         𝟙 ((FiltQuot.functor (suppIn S B)).obj (exObj S A M.as).obj) := by
   rw [← Functor.map_comp, exInc_exPro, CategoryTheory.Functor.map_id]
 
-/-- **Excision equivalence.** For an isometric action and an invariant `B`, the strict duality
-functor `e : 𝒰_A/(𝒰_A ∩ 𝒰_B) → 𝒜_{A∪B}/𝒜_B` induced by inclusion has the inverse
+/-- **Excision equivalence.** For an isometric action, an invariant `B` and `S ⊆ A ∪ B`, the strict
+duality functor `e : 𝒰_A/(𝒰_A ∩ 𝒰_B) → 𝒜_S/𝒜_B` induced by inclusion has the inverse
 `R(M) = M_A`, `R[u] = [ι u π]`, with a unitary unit `id ≅ R ∘ e` (components `[π]`) and a unitary
 counit `e ∘ R ≅ id` (components `[ι]`). -/
 noncomputable def excision (hS : S ⊆ A ∪ B) (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :

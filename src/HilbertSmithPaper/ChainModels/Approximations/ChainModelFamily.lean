@@ -4,6 +4,7 @@ import HilbertSmithPaper.ChainModels.Approximations.ChosenIsometryHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
 import HilbertSmithPaper.ChainModels.Grid.Model.ChainModelLabel
+import HilbertSmithPaper.ChainModels.Approximations.TypedMatrix
 
 /-!
 # The family of chain-model matrices
@@ -14,9 +15,8 @@ of type `-χ_i(g)`, `B_{g,h}` of type `χ_i(g+h)` and `V_g` of type `χ_i(g)`, f
 
 ## Encoding
 
-* A *typed labelled matrix* (`TypedMatrix n p`) is a matrix `u : ℚ^B → ℚ^{B'}` between finite
-  sets of cells with torus labels `x`, `x'`, together with its type `c ∈ C_p`. The labels of a
-  dual cell are those of the cell.
+* Typed labelled matrices (`TypedMatrix n p`) are in `ChainModels.Approximations.TypedMatrix`.
+  The labels of a dual cell are those of the cell.
 * `chainModelFamily A hρ hρ' i` (the declaration of the article) is `𝒫_i`, with every map listed
   in each degree (each component for the elements `φ_i`, `U_g`, `V_g` of the structure complex),
   and the chosen `productHomotopy`, `isometryHomotopy`, `adjointHomotopy`; `χ_i = ZMod.cast`.
@@ -30,31 +30,6 @@ namespace HSP.ChainModels
 open FreeQ DualCat
 
 variable {p : ℕ} [Fact p.Prime] {n : ℕ} {D ρplus : ℝ}
-
-/-- A matrix `u : ℚ^B → ℚ^{B'}` between finite sets of cells with torus labels, with a type
-`c ∈ C_p`. -/
-structure TypedMatrix (n p : ℕ) where
-  /-- The source cells. -/
-  B : Type
-  /-- The target cells. -/
-  B' : Type
-  [fintypeB : Fintype B]
-  [fintypeB' : Fintype B']
-  /-- The torus labels of the source cells. -/
-  x : B → Torus n
-  /-- The torus labels of the target cells. -/
-  x' : B' → Torus n
-  /-- The matrix. -/
-  u : Matrix B' B ℚ
-  /-- The type. -/
-  c : ZMod p
-
-attribute [instance] TypedMatrix.fintypeB TypedMatrix.fintypeB'
-
-/-- The typed matrix `u` of type `c`, with source labels `x` and target labels `x'`. -/
-def TypedMatrix.of {B B' : Type} [Fintype B] [Fintype B'] (x : B → Torus n) (x' : B' → Torus n)
-    (u : Matrix B' B ℚ) (c : ZMod p) : TypedMatrix n p :=
-  { B := B, B' := B', x := x, x' := x', u := u, c := c }
 
 /-- The family `𝒫_i` of typed matrices of the chain model `D_i`, `N = n + 4`. -/
 def chainModelFamily (A : LocalDatum p n D ρplus) {ρ : ℝ} (hρ : 0 < ρ) (hρ' : ρ < ρplus)

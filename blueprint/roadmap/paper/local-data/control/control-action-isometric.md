@@ -19,12 +19,15 @@ For a local datum, $d_T(c\cdot s,c\cdot t)=d_T(s,t)$ for all $c\in C_p$ and $s,t
 
 ## Depends on
 
-- [The metric on the control space](control-metric-space.md)
-- [The action on the test region](zplus-action.md)
 - [The cyclic action on the control space](control-action.md)
 - [The orbit metric on the control space](control-metric.md)
-- [The orbit metric metrizes the control space](control-metric-properties.md)
+- [Local datum](../chart/local-datum.md)
+- [The control space](control-space.md)
 
 ## Proof depends on
 
 - [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)
+- [The test region](../chart/test-region.md)
+- [The orbit sup-distance on the test region](orbit-sup-metric.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

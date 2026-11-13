@@ -20,7 +20,13 @@ where $\partial$ is the [ultimate boundary](ultimate-boundary.md) of $\mathcal U
 
 - [Intersection of full subcategories](excisive-intersection.md)
 - [Excisive pair of filtrations](excisive-pair.md)
-- [Ultimate boundary](ultimate-boundary.md)
-- [Induced map on ultimate L](../groups/induced-map.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Ultimate L-group](../groups/ultimate-l-group.md)
+
+## Proof depends on
+
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [The quotient duality functor](../../base/categories/quotient-duality-functor.md)
+- [Ultimate boundary](ultimate-boundary.md)
+- [Induced map on ultimate L](../groups/induced-map.md)

@@ -21,3 +21,9 @@ For decidable $P,Q$, the [diagonal coordinate projections](diagonal-projection.m
 ## Depends on
 
 - [Diagonal coordinate projection](diagonal-projection.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
+
+## Proof depends on
+
+- [Free category of a finite group](../free-category.md)

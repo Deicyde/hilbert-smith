@@ -33,7 +33,7 @@ noncomputable def decTransition (F : KaroubiFiltration U) (j : ℕ) {m m' : ℤ}
     exact decTransitionCx_sum F j hm _ _
 
 /-- The value of `t^{im}` on a class. -/
-lemma decTransition_mk (F : KaroubiFiltration U) (j : ℕ) {m m' : ℤ} (hm : m + 1 = m')
+private lemma decTransition_mk (F : KaroubiFiltration U) (j : ℕ) {m m' : ℤ} (hm : m + 1 = m')
     (x : SymPoincare (Karoubi (BoundedPow (FiltQuot U) j)) m) :
     decTransition F j hm (LGroup.mk x) = LGroup.mk (decTransitionCx F j hm x) :=
   rfl

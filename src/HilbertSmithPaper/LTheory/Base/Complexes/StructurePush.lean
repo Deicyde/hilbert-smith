@@ -21,7 +21,7 @@ variable {B : Type u} [Category.{v} B] [Preadditive B] [Linear ℚ B] [HasFinite
 namespace StructureCx
 
 /-- The pushforward on `M(C)_n`: `(g_% f)_{r,s} = g_r f_{r,s} (g_s)^*`. -/
-def pushHom {C D : ChainComplex B ℤ} (g : C ⟶ D) (n : ℤ) :
+private def pushHom {C D : ChainComplex B ℤ} (g : C ⟶ D) (n : ℤ) :
     (∀ x : {x : ℤ × ℤ // x.1 + x.2 = n}, dual (C.X x.1.2) ⟶ C.X x.1.1) →ₗ[ℚ]
       (∀ x : {x : ℤ × ℤ // x.1 + x.2 = n}, dual (D.X x.1.2) ⟶ D.X x.1.1) where
   toFun f x := dualHom (g.f x.1.2) ≫ f x ≫ g.f x.1.1

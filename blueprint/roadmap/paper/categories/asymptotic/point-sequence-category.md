@@ -3,7 +3,7 @@ article_id: af_72e3d8e3e2fbce9cc18c9eec
 declaration: instance
 origin: bridged
 statement: formalized
-lean: HSP.PCat.dualCat
+lean: HSP.PCat.dualCat, HSP.PCat
 ---
 
 # Sequence category
@@ -18,5 +18,5 @@ Let $\mathbf G=(G_i,\chi_i)$ be a [group sequence](group-sequence.md). The duali
 
 - [Free category of a finite group](free-category.md)
 - [Group sequence](group-sequence.md)
-- [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Objects of rank zero are zero](free-zero.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

@@ -1,6 +1,6 @@
 Lean: `HSP.Compression.scalar_image` (stated, proof open).
 
-Proof plan, following the sketch. (1) `ultL.map_cls` and strictness of `scalarForget` turn the left
+Proof plan, following the sketch. (1) `ultL.map_cls` and strictness of `scalarForget` (`HSP.Corner.scalarForget_isStrict`) turn the left
 side into `cls` of `U'P`; unfold `germ` to `ultL.map q (cls (D, φ))` for the labelled model with
 labels `c = f_T` (`labelledModel_poincare`), and push `q` through `cls` the same way. (2) Replace
 `D` by `D'` (zero below `i₀`): the identity for `i ≥ i₀` is a unitary isomorphism in `𝒜_𝟏(Sⁿ)`

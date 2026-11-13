@@ -49,15 +49,6 @@ private lemma dualHom_injective_zero {X Y : A} {x : X ⟶ Y} (h : dualHom x = 0)
   have h3 := congrArg (fun q => eqToHom (dual_dual X).symm ≫ q ≫ eqToHom (dual_dual Y)) h2
   simpa using h3.symm
 
-private lemma dualHom_diag {M : Bounded A} (d : ∀ n, M.X n ⟶ M.X n) :
-    dualHom (diag d) = diag (M := dual M) (N := dual M) (fun n => dualHom (d n)) :=
-  hom_ext fun a b => by
-    rw [dualHom_apply]
-    change dualHom (diagF d b a) = diagF (M := dual M) (N := dual M) (fun n => dualHom (d n)) a b
-    by_cases h : a = b
-    · subst h; rw [diagF_self, diagF_self]
-    · rw [diagF_ne _ (Ne.symm h), diagF_ne _ h, dualHom_zero]
-
 variable {U : ObjectProperty A} [IsDualAdditive U]
 
 private lemma exists_factor_left_finset (F : KaroubiFiltration U) {X : A} {ι : Type*}
@@ -150,7 +141,7 @@ def karoubiFiltration (F : KaroubiFiltration U) : KaroubiFiltration (sub U) wher
     intro M p
     constructor
     · rintro ⟨d, rfl, hd⟩
-      exact ⟨fun n => dualHom (d n), dualHom_diag d, fun n => (F.dual_mem_iff (d n)).1 (hd n)⟩
+      exact ⟨fun n => dualHom (d n), dualHom_diag_eq d, fun n => (F.dual_mem_iff (d n)).1 (hd n)⟩
     · rintro ⟨e, he, hed⟩
       have hoff : ∀ m n, m ≠ n → p.1 m n = 0 := fun m n hmn => by
         apply dualHom_injective_zero

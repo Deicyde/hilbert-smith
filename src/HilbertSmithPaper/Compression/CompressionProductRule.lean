@@ -1,5 +1,6 @@
 import Mathlib
 import HilbertSmithPaper.Compression.CompressedMaps
+import HilbertSmithPaper.Compression.DiscardProjection
 
 /-!
 # Product rule

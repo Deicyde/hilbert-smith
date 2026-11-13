@@ -24,9 +24,11 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 - [External product of structures](external-product.md)
 - [The involution T](../../base/complexes/structure-involution.md)
 - [Tensor product of complexes](complex-product.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
 
 ## Proof depends on
 
-- [External product of structures](external-product.md)
 - [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)

@@ -2,7 +2,7 @@ import Mathlib
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopy
 import HilbertSmithPaper.ChainModels.Approximations.ChosenProductHomotopies
 import HilbertSmithPaper.Compression.CompressedComplex
-import HilbertSmithPaper.Compression.RetainedProjection
+import HilbertSmithPaper.Compression.RetainedInclusion
 import HilbertSmithPaper.ChainModels.Approximations.AdjointHomotopies
 
 /-!

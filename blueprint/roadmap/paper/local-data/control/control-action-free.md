@@ -19,10 +19,15 @@ For a local datum, if $c\in C_p$, $t\in T$ and $c\cdot t=t$, then $c=0$.
 
 ## Depends on
 
-- [The quotient map to the control space](control-quotient-map.md)
 - [The cyclic action on the control space](control-action.md)
+- [Local datum](../chart/local-datum.md)
+- [The control space](control-space.md)
 
 ## Proof depends on
 
 - [Stabilizers on the test region](../chart/stabilizers-on-test-region.md)
 - [The kernel of reduction modulo $p^i$](reduction-kernel.md)
+- [The test region](../chart/test-region.md)
+- [The quotient map to the control space](control-quotient-map.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

@@ -10,7 +10,7 @@ lean: HSP.decTransition
 
 Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration, $j\ge0$ and $m\in\mathbb Z$. The *decorated transition*
 $$t^{\mathrm{im}}:L^p_m(C_{\mathbb Z^j}(\mathcal A/\mathcal U))\to L^{\mathrm{im}}_{m+1}(C_{\mathbb Z^{j+1}}\mathcal A/C_{\mathbb Z^{j+1}}\mathcal U),\qquad[C,\phi]\mapsto\big[e_{j+1}^{-1}(C\otimes\Lambda),\ (e_{j+1}^{-1})_\%(\phi\otimes\lambda)\big],$$
-is a well-defined homomorphism. Here $e_{j+1}$ is the isomorphism of [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md), applied through its Karoubi extension.
+is a well-defined homomorphism. Here the representative is the [decorated product with the line](decorated-line-product.md), with $e_{j+1}$ the iterated bounded quotient isomorphism, applied through its Karoubi extension.
 
 *Proof sketch.* The representative $\big[e_{j+1}^{-1}(C\otimes\Lambda),(e_{j+1}^{-1})_\%(\phi\otimes\lambda)\big]$ is the [decorated product with the line](decorated-line-product.md). Its class does not depend on the representative by [The decorated transition respects cobordism](decorated-transition-cobordant.md), and the map is additive by [The decorated transition is additive](decorated-transition-sum.md).
 
@@ -24,12 +24,23 @@ is a well-defined homomorphism. Here $e_{j+1}$ is the isomorphism of [Iterated b
 - [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
 - [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 - [Decorated quotient L-group](../decorations/decorated-l-group.md)
-- [Decorated objects](../decorations/decorated-object.md)
-- [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
-- [Decorated product with the line](decorated-line-product.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Decorated objects are closed under sums and duals](../decorations/decorated-closure.md)
+- [Decorated objects](../decorations/decorated-object.md)
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 
 ## Proof depends on
 
+- [Decorated product with the line](decorated-line-product.md)
+- [L-group](../../base/groups/l-group.md)
 - [The decorated transition respects cobordism](decorated-transition-cobordant.md)
 - [The decorated transition is additive](decorated-transition-sum.md)
+- [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)

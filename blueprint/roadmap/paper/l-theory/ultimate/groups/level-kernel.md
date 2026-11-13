@@ -9,7 +9,7 @@ proof: formalized
 
 # Classes zero in the colimit
 
-For $x\in L^{\langle -j\rangle}_k(\mathcal A)$, $\iota_j x=0$ if and only if the [iterated transition](transition-iter.md) satisfies $t^m x=0$ in $L^{\langle -j-m\rangle}_k(\mathcal A)$ for some $m\ge0$.
+For $x\in L^{\langle -j\rangle}_k(\mathcal A)$ (the [lower L-group](../../localization/transitions/lower-l-group.md)), the [stage map](ultimate-stage-map.md) satisfies $\iota_j x=0$ if and only if the [iterated transition](transition-iter.md) satisfies $t^m x=0$ in $L^{\langle -j-m\rangle}_k(\mathcal A)$ for some $m\ge0$.
 
 *Proof sketch.* If $t^mx=0$ then $\iota_jx=\iota_{j+m}t^mx=0$ by [Stages are compatible with the transition](level-compatible.md). Conversely, an element of one stage that becomes zero in the colimit of a sequence of groups is already zero at some later stage.
 
@@ -19,11 +19,17 @@ For $x\in L^{\langle -j\rangle}_k(\mathcal A)$, $\iota_j x=0$ if and only if the
 
 ## Depends on
 
-- [Stages are compatible with the transition](level-compatible.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
 - [Iterated transition](transition-iter.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Ultimate L-group](ultimate-l-group.md)
 
 ## Proof depends on
 
 - [Stages are compatible with the transition](level-compatible.md)
 - [Sequence of lower L-groups](lower-l-sequence.md)
-- [Ultimate L-group](ultimate-l-group.md)
+- [Lower transition map](../../localization/transitions/transition-lower.md)

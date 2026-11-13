@@ -16,5 +16,8 @@ Fix a [local datum](../../../local-data/chart/local-datum.md). For $a,b,c\in\mat
 
 ## Depends on
 
-- [The completed map on Euclidean space](completed-map-euclid.md)
 - [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [The completed map on Euclidean space](completed-map-euclid.md)

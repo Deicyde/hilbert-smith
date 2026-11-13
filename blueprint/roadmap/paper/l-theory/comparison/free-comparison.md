@@ -24,6 +24,9 @@ This rests on the open statement [Lemma U](lemma-u.md), through [Lemma U passes 
 - [Free category](../../categories/asymptotic/free-category.md)
 - [Ultimate L-group](../ultimate/groups/ultimate-l-group.md)
 - [The class map](../ultimate/groups/ultimate-cls.md)
+- [Idempotent completion with duality](../base/categories/karoubi-duality.md)
+- [Group structure on L](../base/groups/l-group-add.md)
+- [The projective L-group](../base/groups/projective-l-group.md)
 
 ## Proof depends on
 

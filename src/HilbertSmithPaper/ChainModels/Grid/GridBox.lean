@@ -30,11 +30,11 @@ structure GridArc (k : ℕ) where
   length_le : length ≤ k - 2
 
 /-- The `j`-th vertex index `w + j` (mod `k`) of a grid arc. -/
-def GridArc.vertex {k : ℕ} (A : GridArc k) (j : ℕ) : Fin k :=
+private def GridArc.vertex {k : ℕ} (A : GridArc k) (j : ℕ) : Fin k :=
   ⟨((A.start : ℕ) + j) % k, Nat.mod_lt _ (Fin.pos A.start)⟩
 
 /-- The cells of a grid arc: `[w], …, [w+m]` and `e_w, …, e_{w+m-1}`. -/
-def GridArc.cells {k : ℕ} (A : GridArc k) : Set (Fin k × Bool) :=
+private def GridArc.cells {k : ℕ} (A : GridArc k) : Set (Fin k × Bool) :=
   {b | ∃ j, (b.2 = false ∧ j ≤ A.length ∧ b.1 = A.vertex j) ∨
     (b.2 = true ∧ j < A.length ∧ b.1 = A.vertex j)}
 

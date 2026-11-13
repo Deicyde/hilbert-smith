@@ -22,10 +22,13 @@ $\iota_{j+1}\circ t=\iota_j$ on $L^{\langle -j\rangle}_k(\mathcal A)$, for the [
 - [Stage maps into the ultimate L-group](ultimate-stage-map.md)
 - [Iterated transition](transition-iter.md)
 - [Lower transition map](../../localization/transitions/transition-lower.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+- [Ultimate L-group](ultimate-l-group.md)
 
 ## Proof depends on
 
-- [Ultimate L-group](ultimate-l-group.md)
-- [Lower transition map](../../localization/transitions/transition-lower.md)
 - [Sequence of lower L-groups](lower-l-sequence.md)
-- [Iterated transition](transition-iter.md)

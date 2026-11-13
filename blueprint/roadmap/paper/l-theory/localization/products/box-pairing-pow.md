@@ -18,5 +18,15 @@ since $C_{\mathbb Z^{j+1}}\mathcal A=C_\mathbb Z(C_{\mathbb Z^j}\mathcal A)$ by 
 
 ## Depends on
 
-- [Duals of box products](box-dual.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Based vector spaces](based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
+- [Duality pairings](duality-pairing.md)
+
+## Proof depends on
+
+- [Duals of box products](box-dual.md)

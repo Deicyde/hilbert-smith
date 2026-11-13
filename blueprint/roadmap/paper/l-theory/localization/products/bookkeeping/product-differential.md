@@ -23,6 +23,8 @@ for the [summand projections](summand-projection.md).
 
 - [Tensor product of complexes](../complex-product.md)
 - [Summand projections of a tensor product](summand-projection.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)
+- [Duality pairings](../duality-pairing.md)
 
 ## Proof depends on
 
@@ -30,3 +32,7 @@ for the [summand projections](summand-projection.md).
 - [Projection after inclusion of the same summand](inclusion-projection.md)
 - [Projection after inclusion of another summand](inclusion-projection-ne.md)
 - [Differential of a tensor product on a summand](../../line/summand-differential.md)
+- [A duality pairing is additive in the first variable](pairing-additive-left.md)
+- [A duality pairing is additive in the second variable](pairing-additive-right.md)
+- [The sums in a tensor product of complexes exist](product-sums-exist.md)
+- [Signs for tensor products of chain complexes](tensor-signs.md)

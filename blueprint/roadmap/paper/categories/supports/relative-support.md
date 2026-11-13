@@ -18,5 +18,5 @@ For $S,S'\subset X$, $\mathcal A_{S'}\subset\mathcal A_S$ is the predicate "$S'$
 ## Depends on
 
 - [Support subcategory](support-subcategory.md)
-- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
-- [The support subcategory is additive](support-dual-additive.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)

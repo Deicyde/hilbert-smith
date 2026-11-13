@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctorIter
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 
 /-!
 # Bounded extension is functorial

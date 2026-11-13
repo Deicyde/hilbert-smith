@@ -20,7 +20,9 @@ For a local datum with constants $(D,\rho_+)$, $Z^+\subseteq\overline B(0,\rho_+
 ## Depends on
 
 - [The test region](test-region.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The averaged map moves points little](averaged-map-displacement.md)
+- [The averaged chart map](averaged-map.md)

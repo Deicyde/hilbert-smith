@@ -4,7 +4,7 @@ import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.BlockDual
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronDual
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronSmulLeft
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronSmulRight
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockExt
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockExt
 import HilbertSmithPaper.LTheory.Base.Complexes.StructureInvolution
 
 /-!

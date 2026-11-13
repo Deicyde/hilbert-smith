@@ -12,5 +12,13 @@ Fix a local datum and a radius $\rho$. A cell $b$ of $D_i$ with [torus label](mo
 ## Sources
 - HS paper, Section 9 (labels through the test map).
 ## Depends on
+
+- [Chain model](model/chain-model.md)
+- [The round sphere](../../corner/round-sphere.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [Torus test map](../approximations/torus-test-map.md)
 - [Torus labels of chain-model cells](model/chain-model-label.md)
-- [Chain model](model/chain-model.md), [torus test map](../approximations/torus-test-map.md), [round sphere](../../corner/round-sphere.md)

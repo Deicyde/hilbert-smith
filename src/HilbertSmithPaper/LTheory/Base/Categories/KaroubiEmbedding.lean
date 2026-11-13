@@ -7,7 +7,8 @@ import HilbertSmithPaper.LTheory.Base.Categories.KaroubiDuality
 The Karoubi embedding `emb_A : A → Kar A`, `M ↦ (M, 1)`, `f ↦ f`, is Mathlib's
 `CategoryTheory.Idempotents.toKaroubi`; Mathlib proves it additive and fully faithful
 (`fullyFaithfulToKaroubi`). It is ℚ-linear, and `(M, 1)^* = (M^*, 1^*) = (M^*, 1)`, so it is a
-strict duality functor, with `ξ` the transport along this equality.
+duality functor, with `ξ` the transport along this equality. Its strictness is in
+`LTheory.Base.Categories.DualityFunctors.KaroubiEmbeddingStrict`.
 -/
 
 open CategoryTheory CategoryTheory.Limits CategoryTheory.Idempotents
@@ -20,7 +21,7 @@ universe v u
 
 variable (A : Type u) [Category.{v} A] [Preadditive A] [Linear ℚ A]
 
-instance instLinearToKaroubi : (toKaroubi A).Linear ℚ where
+private instance instLinearToKaroubi : (toKaroubi A).Linear ℚ where
   map_smul _ _ := rfl
 
 variable [HasFiniteBiproducts A] [DualCat A]
@@ -43,8 +44,5 @@ def karEmb : DualFunctor A (Karoubi A) where
   ξ_dual M := Idempotents.Karoubi.hom_ext _ _ (by
     simp only [eqToIso.hom, DualCat.dualHom_eqToHom, Idempotents.Karoubi.eqToHom_f,
       eqToHom_trans])
-
-/-- The Karoubi embedding is a strict duality functor. -/
-theorem karEmb_isStrict : (karEmb A).IsStrict := fun M => ⟨toKaroubi_dual A M, rfl⟩
 
 end HSP

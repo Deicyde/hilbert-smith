@@ -19,6 +19,8 @@ Cobordism of strict $k$-dimensional symmetric Poincaré complexes in a duality c
 ## Depends on
 
 - [Cobordism](cobordism.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 
 ## Proof depends on
 

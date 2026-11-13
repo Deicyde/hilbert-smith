@@ -3,7 +3,7 @@ article_id: af_e0960f3499258dc93c100414
 declaration: def
 origin: background
 statement: formalized
-lean: HSP.ChainModels.realization
+lean: HSP.ChainModels.realization, HSP.ChainModels.realizeCx, HSP.ChainModels.realizeBasis, HSP.ChainModels.realizeBasis_apply, HSP.ChainModels.realizeBasis_repr, HSP.ChainModels.realizeBasis_repr_d, HSP.ChainModels.realization_additive
 ---
 
 # Realization of based complexes
@@ -18,4 +18,4 @@ This lets a complex of based vector spaces, such as the cubical torus grid, be t
 
 ## Depends on
 
-- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)

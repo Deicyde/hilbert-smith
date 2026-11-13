@@ -19,5 +19,12 @@ If $U\subset A$ is a full additive subcategory closed under the duality, so is t
 
 ## Depends on
 
+- [The bounded subcategory](bounded-sub.md)
+- [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+
+## Proof depends on
+
 - [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
-- [The bounded subcategory](bounded-sub.md), [the induced duality](bounded-duality.md), [additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)

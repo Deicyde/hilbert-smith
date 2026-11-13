@@ -21,6 +21,7 @@ For a local datum and $z\in Z^+$, the stabilizer $\{a\in\mathbb Z_p:a\cdot z=z\}
 
 - [The test region](test-region.md)
 - [The subgroups $H_j$](../subgroups/padic-subgroups.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 

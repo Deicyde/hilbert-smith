@@ -18,8 +18,10 @@ For $Z\subset X$, $\mathcal B_{\mathbf G,Z}(X)=\mathcal A_{\mathbf G}(X)/\mathca
 
 ## Depends on
 
+- [Group sequence](../asymptotic/group-sequence.md)
+
+## Proof depends on
+
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Support subcategory](support-subcategory.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
-- [The support subcategory is additive](support-dual-additive.md)
-- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
-- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)

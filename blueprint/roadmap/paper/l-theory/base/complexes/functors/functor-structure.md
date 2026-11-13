@@ -21,3 +21,4 @@ on the [structure complexes](../structure-complex.md) is $\mathbb Q$-linear, sin
 - [Duality functor](../../categories/duality-functor.md)
 - [Image of a complex under a duality functor](functor-complex.md)
 - [Structure complex](../structure-complex.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)

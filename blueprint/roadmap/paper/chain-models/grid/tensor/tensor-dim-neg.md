@@ -20,7 +20,4 @@ Let $C$ and $E$ be complexes of based vector spaces with $E_q=0$ for $q<0$. Then
 ## Depends on
 
 - [Tensor product of based complexes](../based-complex-tensor.md)
-
-## Proof depends on
-
-
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

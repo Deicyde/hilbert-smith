@@ -16,4 +16,12 @@ For $j,m\ge0$, the *iterated transition* $t^m:L^{\langle -j\rangle}_k(\mathcal A
 
 ## Depends on
 
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+
+## Proof depends on
+
 - [Lower transition map](../../localization/transitions/transition-lower.md)

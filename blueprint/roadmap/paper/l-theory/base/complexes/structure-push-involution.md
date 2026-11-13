@@ -21,3 +21,5 @@ $g_\%T=Tg_\%$.
 
 - [The involution T](structure-involution.md)
 - [Pushforward of structures](structure-push.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Structure complex](structure-complex.md)

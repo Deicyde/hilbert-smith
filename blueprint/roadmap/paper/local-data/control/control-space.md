@@ -18,9 +18,10 @@ For a local datum, the control space is $T=Z^+/H_1$, the set of $H_1$-orbits of 
 
 ## Depends on
 
-- [The test region](../chart/test-region.md)
-- [The subgroups $H_j$](../subgroups/padic-subgroups.md)
-- [The action on the test region](zplus-action.md)
+- [Local datum](../chart/local-datum.md)
 
 ## Proof depends on
 
+- [The test region](../chart/test-region.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

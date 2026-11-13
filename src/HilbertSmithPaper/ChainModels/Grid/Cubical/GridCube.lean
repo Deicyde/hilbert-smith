@@ -24,7 +24,7 @@ open FreeQ
 abbrev GridCube (k n : ℕ) : Type := Fin n → Fin k × Bool
 
 /-- The dimension `|S|` of a cube: the number of its edge coordinates. -/
-def GridCube.dim {k n : ℕ} (c : GridCube k n) : ℕ :=
+private def GridCube.dim {k n : ℕ} (c : GridCube k n) : ℕ :=
   ∑ j, if (c j).2 then 1 else 0
 
 end HSP.ChainModels

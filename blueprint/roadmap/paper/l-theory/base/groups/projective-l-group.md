@@ -18,6 +18,9 @@ the [L-group](l-group.md) of the [idempotent completion](../categories/karoubi-d
 
 ## Depends on
 
-- [L-group](l-group.md)
-- [Idempotent completion with duality](../categories/karoubi-duality.md)
 - [Small Q-linear category with strict duality](../categories/duality-category.md)
+
+## Proof depends on
+
+- [Idempotent completion with duality](../categories/karoubi-duality.md)
+- [L-group](l-group.md)

@@ -8,7 +8,7 @@ lean: HSP.Evaluation.basedToFree
 
 # Based vector spaces over the trivial group
 
-The functor from [based vector spaces](../l-theory/localization/products/based-vector-spaces.md) to the [free category](../categories/asymptotic/free-category.md) $\mathrm{Free}(\mathbb Q[\{1\}])$ of the one-point group sends $\mathbb Q^d$ to $\mathbb Q[\{1\}]^d$, with basis $\{1\}\times\{1,\dots,d\}$, and a $d'\times d$ matrix $u$ to the matrix with the same entries on these bases, which is equivariant because the group is trivial. With $\xi=\mathrm{id}$ it is a strict [duality functor](../l-theory/base/categories/duality-functor.md), since both dualities are the transpose.
+The functor from the [category of based vector spaces](../l-theory/localization/products/bookkeeping/based-category.md), with its [duality](../l-theory/localization/products/based-vector-spaces.md), to the [free category](../categories/asymptotic/free-category.md) $\mathrm{Free}(\mathbb Q[\{1\}])$ of the one-point group sends $\mathbb Q^d$ to $\mathbb Q[\{1\}]^d$, with basis $\{1\}\times\{1,\dots,d\}$, and a $d'\times d$ matrix $u$ to the matrix with the same entries on these bases, which is equivariant because the group is trivial. With $\xi=\mathrm{id}$ it is a [duality functor](../l-theory/base/categories/duality-functor.md), since both dualities are the transpose.
 
 ## Sources
 
@@ -16,6 +16,11 @@ The functor from [based vector spaces](../l-theory/localization/products/based-v
 
 ## Depends on
 
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
 - [Based vector spaces](../l-theory/localization/products/based-vector-spaces.md)
 - [Free category of a finite group](../categories/asymptotic/free-category.md)
 - [Duality functor](../l-theory/base/categories/duality-functor.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../l-theory/base/categories/duality-category.md)

@@ -21,6 +21,11 @@ If $F,G:\mathcal A\to\mathcal A'$ are duality functors and $\eta:F\cong G$ is a 
 
 - [Induced homomorphism](induced-map.md)
 - [Unitary natural isomorphism](../categories/unitary-isomorphism.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Duality functor](../categories/duality-functor.md)
+- [Idempotent completion with duality](../categories/karoubi-duality.md)
+- [Group structure on L](l-group-add.md)
+- [The projective L-group](projective-l-group.md)
 
 ## Proof depends on
 

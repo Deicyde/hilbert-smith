@@ -18,9 +18,12 @@ Suppose the $C_p$-action on $X$ is isometric. Let $M=(n_i,x_i)$ and $M'=(n_i,x'_
 
 ## Depends on
 
-- [Asymptotic duality](../asymptotic/asymptotic-duality.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)
 
 ## Proof depends on
 
 - [Propagation of the identity](../asymptotic/prop-one.md)
 - [Relabelling changes propagation](../asymptotic/prop-relabel.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Propagation](../asymptotic/propagation.md)

@@ -20,7 +20,7 @@ variable (M : AsymPre G X) (P : ∀ i, Fin (M.n i) → Prop)
 /-- The coordinate projection `M → M_P`, the transpose of the inclusion. -/
 noncomputable def restrictPro : M ⟶ M.restrict P := transpose (M.restrictInc P)
 
-theorem mat_restrictPro (i : ℕ) :
+private theorem mat_restrictPro (i : ℕ) :
     FreeCat.mat (coord (M.restrictPro P) i) = (FreeCat.inclMat (M.restrictEmb P i)).transpose :=
   rfl
 

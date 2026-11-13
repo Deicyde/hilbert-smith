@@ -17,4 +17,9 @@ For graded maps $f_r:C_r\to C'_{r+d}$ and $g_r:E_r\to E'_{r+e}$, where $E$ and $
 ## Depends on
 
 - [Tensor product of based complexes](../based-complex-tensor.md)
-- [Tensor product of based vector spaces](../../../l-theory/localization/products/based-tensor.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Block inclusions and projections](blocks/block-maps.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

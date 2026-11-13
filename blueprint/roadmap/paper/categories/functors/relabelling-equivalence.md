@@ -3,7 +3,7 @@ article_id: af_04164e37933ca6b13008b334
 declaration: def
 origin: bridged
 statement: formalized
-lean: HSP.relabelEquiv
+lean: HSP.relabelEquiv, HSP.RelabelEquiv
 ---
 
 # Relabelling equivalence
@@ -18,9 +18,9 @@ $\mathcal A_S$ is a duality category as a [dual subcategory](../../l-theory/base
 
 Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$ needs neither that $S$ is closed nor that $X$ is compact.
 
-**Remark (not formalized).** Such a $\rho$ exists because $S$ is a nonempty closed subset of the compact space $X$, so the distance to $S$ is attained.
+*Remark.* Such a $\rho$ exists by [Nearest-point maps](nearest-point-map.md), because $S$ is a nonempty closed subset of the compact space $X$.
 
-*Remark (not formalized).* The triangle identities $\varepsilon_{P}\circ P\eta=\mathrm{id}_P$ and $R\varepsilon\circ\eta_R=\mathrm{id}_R$ hold, because every component is an identity matrix; the formalization records the data and does not state them.
+**Remark (not formalized).** The triangle identities $\varepsilon_{P}\circ P\eta=\mathrm{id}_P$ and $R\varepsilon\circ\eta_R=\mathrm{id}_R$ hold, because every component is an identity matrix. They are not part of the data listed above.
 
 *Proof sketch.* $\rho$ fixes $S$ pointwise, since $d(s,\rho s)=0$, so $RP=\mathrm{id}$. Write $\varepsilon_i(M)=\max_kd(x_i(k),S)$. It tends to $0$ for $M\in\mathcal A_S$, and by isometry it bounds the label errors of $R(M)$. By [relabelling the propagation](../asymptotic/prop-relabel.md), $\operatorname{prop}(Ru_i)\le\operatorname{prop}(u_i)+\varepsilon_i(M)+\varepsilon_i(N)\to0$. So $R$ is well defined, and it is a strict duality functor because the matrices are unchanged. $\rho$ need not be equivariant, because labels are $\chi_i(g)\rho(x_i(k))$. The counit is [natural](relabelling-isomorphism-natural.md) and [unitary](relabelling-isomorphism-unitary.md) because every component is an identity matrix; the unit is the identity, given by $RP=\mathrm{id}$.
 
@@ -30,11 +30,17 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 
 ## Depends on
 
-- [Pushforward](pushforward.md)
 - [Support subcategory](../supports/support-subcategory.md)
 - [The support subcategory is additive](../supports/support-dual-additive.md)
 - [Dual subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [Unitary natural isomorphism](../../l-theory/base/categories/unitary-isomorphism.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)
 
 ## Proof depends on
 
@@ -42,3 +48,12 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 - [Relabelling isomorphism](relabelling-isomorphism.md)
 - [The relabelling isomorphism is unitary](relabelling-isomorphism-unitary.md)
 - [The relabelling isomorphism is natural](relabelling-isomorphism-natural.md)
+- [The levelwise transpose](../asymptotic/structure/levelwise-transpose.md)
+- [Morphisms have propagation tending to zero](../asymptotic/structure/morphism-propagation.md)
+- [Every morphism is a class](../asymptotic/structure/class-surjective.md)
+- [Equality of classes](../asymptotic/structure/class-eq.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Propagation](../asymptotic/propagation.md)
+- [Pushforward](pushforward.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

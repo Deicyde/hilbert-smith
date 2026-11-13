@@ -17,6 +17,12 @@ For the [circle complex](../../cubical/circle-complex.md) $S=S_k$, the map $K'=\
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
+- [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
 - [The circle inverse](circle-b.md)
 - [The circle homotopy element](circle-h.md)
-- [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)

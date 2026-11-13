@@ -20,3 +20,5 @@ In the [asymptotic category](../asymptotic-category.md), two sequences $u,v:M\to
 ## Depends on
 
 - [Asymptotic category](../asymptotic-category.md)
+- [Free category of a finite group](../free-category.md)
+- [Group sequence](../group-sequence.md)

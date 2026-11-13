@@ -20,3 +20,6 @@ If $\phi,\phi'\in M(C)_n$ are cycles and $\phi-\phi'=\partial X$, then $\phi_\na
 ## Depends on
 
 - [Duality map of a cycle](cycle-chain-map.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Dual complex](dual-complex.md)
+- [Structure complex](structure-complex.md)

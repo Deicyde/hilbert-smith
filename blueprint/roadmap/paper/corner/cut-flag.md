@@ -33,3 +33,4 @@ Moreover $Y_n=\{y_-,y_+\}$ and $y_-\ne y_+$.
 - [The boundary of the cube face](cut-face-boundary.md)
 - [The point y₊](cut-point-plus.md)
 - [The point y₋](cut-point-minus.md)
+- [The round sphere](round-sphere.md)

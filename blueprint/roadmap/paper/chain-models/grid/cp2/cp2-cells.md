@@ -18,8 +18,17 @@ $P$ is the [cellular chain complex](cp2-complex.md) of $\mathbb{CP}^2$, with $P_
 
 ## Depends on
 
-- [The structure of CP^2](cp2-structure.md)
-- [The inverse of the structure of CP^2](cp2-inverse.md)
 - [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
 - [Symmetric Poincaré complex](../../../l-theory/base/pairs/symmetric-poincare-complex.md)
-- [Structure complex](../../../l-theory/base/complexes/structure-complex.md), [duality map of a cycle](../../../l-theory/base/complexes/cycle-chain-map.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [The cellular chain complex of CP^2](cp2-complex.md)
+- [The inverse of the structure of CP^2](cp2-inverse.md)
+- [The structure of CP^2](cp2-structure.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Duality map of a cycle](../../../l-theory/base/complexes/cycle-chain-map.md)
+- [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
+- [The involution T](../../../l-theory/base/complexes/structure-involution.md)

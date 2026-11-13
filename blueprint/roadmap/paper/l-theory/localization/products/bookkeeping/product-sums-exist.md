@@ -20,11 +20,12 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 ## Depends on
 
 - [Duality pairings](../duality-pairing.md)
-- [Support of a tensor product of complexes](product-support.md)
 - [Signs for tensor products of chain complexes](tensor-signs.md)
 - [A duality pairing is additive in the first variable](pairing-additive-left.md)
 - [A duality pairing is additive in the second variable](pairing-additive-right.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)
 
 ## Proof depends on
 
 - [Summands outside the support vanish](summand-zero.md)
+- [Support of a tensor product of complexes](product-support.md)

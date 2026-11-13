@@ -19,4 +19,8 @@ where $t$ is the transition map. The maps $\iota_j:L^{\langle -j\rangle}_k(\math
 
 ## Depends on
 
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
 - [Sequence of lower L-groups](lower-l-sequence.md)

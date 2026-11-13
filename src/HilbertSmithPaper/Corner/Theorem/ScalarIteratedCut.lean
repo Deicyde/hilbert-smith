@@ -1,4 +1,5 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 import HilbertSmithPaper.Categories.Cuts.CutBoundary
 import HilbertSmithPaper.Categories.Cuts.ExteriorCutIdentification
 import HilbertSmithPaper.Corner.CutFlag

@@ -18,7 +18,7 @@ This theorem rests on no open statement.
 
 *Proof sketch.* (1) is [the compressed complex is Poincaré](compressed-poincare.md), (2) is [the compressed action](compressed-action.md), and (3) is the [scalar image](compressed-scalar-image.md).
 
-**Remark (not formalized).** If $T$ is empty, then $Z^+$ is empty, there are no retained cells, $C$ is the zero object, and (3) says $\mathfrak m_{f_T}=0$, as the final proof uses.
+**Remark (not formalized).** If $T$ is empty, then $Z^+$ is empty, there are no retained cells, $C$ is the zero object, and (3) says $\mathfrak m_{f_T}=0$. The final proof does not use this remark: in the empty case it shows $\operatorname{cls}(C,\hat\varphi)=0$ itself, because $T\times S^n$ is empty, and then reads $\mathfrak m_{f_T}=0$ off (3).
 
 ## Sources
 - HS paper, Section 10 (compressed realization).
@@ -28,17 +28,12 @@ This theorem rests on no open statement.
 - [Fixed local data](../local-data/control/fixed-local-data.md)
 - [Torus test map](../chain-models/approximations/torus-test-map.md)
 - [Control space](../local-data/control/control-space.md)
-- [Orbit metric](../local-data/control/control-metric.md)
 - [Cyclic action](../local-data/control/control-action.md)
-- [The orbit metric metrizes the control space](../local-data/control/control-metric-properties.md)
 - [The control space is compact](../local-data/control/control-space-compact.md)
-- [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
 - [Exterior](../corner/exterior.md)
-- [The exterior is closed](../corner/exterior-closed.md)
 - [Standing data](../corner/standing-data.md)
 - [Compressed complex](compressed-complex.md)
 - [Compressed maps](compressed-maps.md)
-- [Start index](start-index.md)
 - [Bound sequence](bound-sequence.md)
 - [Standing data of the compression](compressed-standing-data.md)
 - [Strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
@@ -52,9 +47,31 @@ This theorem rests on no open statement.
 - [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
 - [L-group](../l-theory/base/groups/l-group.md)
 - [Duality functors carry Poincaré complexes](../l-theory/base/pairs/functor-poincare.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [Free category of a finite group](../categories/asymptotic/free-category.md)
+- [Group sequence](../categories/asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
+- [The torus](../chain-models/grid/torus.md)
+- [The round sphere](../corner/round-sphere.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../l-theory/base/categories/karoubi-duality.md)
+- [Group structure on L](../l-theory/base/groups/l-group-add.md)
+- [The projective L-group](../l-theory/base/groups/projective-l-group.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
 
 ## Proof depends on
 
 - [Compressed Poincaré](compressed-poincare.md)
 - [Compressed action](compressed-action.md)
 - [Scalar image](compressed-scalar-image.md)
+- [Orbit metric](../local-data/control/control-metric.md)
+- [The orbit metric metrizes the control space](../local-data/control/control-metric-properties.md)
+- [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
+- [The exterior is closed](../corner/exterior-closed.md)
+- [Start index](start-index.md)

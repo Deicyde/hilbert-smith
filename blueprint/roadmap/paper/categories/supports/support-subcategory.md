@@ -19,3 +19,4 @@ For any $S\subseteq X$ (in every use $S$ is closed and invariant; the definition
 ## Depends on
 
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)

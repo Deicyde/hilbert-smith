@@ -18,4 +18,13 @@ The basis cell $c\otimes e_{r-p}$ of $(D_i)_r=\bigoplus_pC(k_i)_p\boxtimes P_{r-
 
 - [Chain model](chain-model.md)
 - [Grid cubes](../cubical/grid-cube.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [The cube of a basis vector](../cubical/grid-cell.md)

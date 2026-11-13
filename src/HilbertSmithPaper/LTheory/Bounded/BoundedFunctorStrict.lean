@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Bounded.Categories.BoundedFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
 
 /-!
 # Bounded extensions of strict functors are strict

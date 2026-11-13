@@ -26,8 +26,14 @@ with $\xi^{-1}$ the isomorphism of [Duality functors and dual complexes](functor
 - [Image of structures under a duality functor](functor-structure.md)
 - [Duality functors and dual complexes](functor-dual-iso.md)
 - [Duality functors and mapping cones](functor-cone.md)
-
-## Proof depends on
-
-- [Images of structures commute with the boundary, T and the duality map](functor-structure-laws.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)
+- [A duality category has binary direct sums](../../categories/sums/dual-binary-biproducts.md)
+- [Mapping cone](../cone.md)
+- [Duality map of a cycle](../cycle-chain-map.md)
+- [Dual complex](../dual-complex.md)
 - [Duality functors commute with pushforward](../functor-push.md)
+- [Image of a complex under a duality functor](functor-complex.md)
+- [Images of structures commute with the boundary, T and the duality map](functor-structure-laws.md)
+- [Structure complex](../structure-complex.md)
+- [The involution T](../structure-involution.md)
+- [Pushforward of structures](../structure-push.md)

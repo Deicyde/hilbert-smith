@@ -21,3 +21,4 @@ Let $M=(n_i,x_i)$ be an object of the [asymptotic category](../asymptotic/asympt
 ## Depends on
 
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)

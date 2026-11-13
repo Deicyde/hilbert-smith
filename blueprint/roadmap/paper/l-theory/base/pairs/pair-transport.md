@@ -22,7 +22,8 @@ Let $(f:C\to D,\delta\phi,\phi)$ be a strict $n$-dimensional Poincaré pair in a
 
 - [Strict Poincaré pair](poincare-pair.md)
 - [Pushforward of structures](../complexes/structure-push.md)
-- [Dual of an isomorphism of complexes](../complexes/functors/dual-map-iso.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Structure complex](../complexes/structure-complex.md)
 
 ## Proof depends on
 
@@ -33,3 +34,7 @@ Let $(f:C\to D,\delta\phi,\phi)$ be a strict $n$-dimensional Poincaré pair in a
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../complexes/functors/push-id.md)
 - [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual of an isomorphism of complexes](../complexes/functors/dual-map-iso.md)
+- [The involution T](../complexes/structure-involution.md)

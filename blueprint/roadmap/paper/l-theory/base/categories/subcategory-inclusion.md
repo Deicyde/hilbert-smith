@@ -8,7 +8,7 @@ lean: HSP.DualSubcategory.incl
 
 # Inclusion of a dual-closed subcategory
 
-Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal U^*\subset\mathcal U$](dual-additive-subcategory.md), with the [duality category structure](dual-subcategory.md) of $\mathcal U$. The inclusion $i:\mathcal U\to\mathcal A$ is $\mathbb Q$-linear, since $\mathcal U$ has the morphisms, sums and rational multiples of $\mathcal A$, and it commutes with the duality on the nose. With the identity as duality isomorphism, it is a strict [duality functor](duality-functor.md).
+Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal U^*\subset\mathcal U$](dual-additive-subcategory.md), with the [duality category structure](dual-subcategory.md) of $\mathcal U$. The inclusion $i:\mathcal U\to\mathcal A$ is $\mathbb Q$-linear, since $\mathcal U$ has the morphisms, sums and rational multiples of $\mathcal A$, and it commutes with the duality on the nose. With the identity as duality isomorphism, it is a [duality functor](duality-functor.md); it is [strict](duality-functors/inclusion-strict.md).
 
 ## Sources
 
@@ -19,3 +19,4 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal
 - [Additive subcategory closed under duality](dual-additive-subcategory.md)
 - [Duality category of a dual-closed subcategory](dual-subcategory.md)
 - [Duality functor](duality-functor.md)
+- [Small Q-linear category with strict duality](duality-category.md)

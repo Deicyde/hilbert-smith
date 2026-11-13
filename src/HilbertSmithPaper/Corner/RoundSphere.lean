@@ -30,7 +30,7 @@ abbrev RoundSphere (n : ℕ) := OnePoint (EuclideanSpace ℝ (Fin n))
 
 /-- Inverse stereographic projection `σ⁻¹ : S^n → ℝ^{n+1} = ℝ^n × ℝ` onto the unit sphere, from the
 north pole `(0, …, 0, 1)`: `σ⁻¹ z = (2 z, |z|² - 1) / (|z|² + 1)` and `σ⁻¹ ∞ = (0, 1)`. -/
-noncomputable def invStereo {n : ℕ} (x : RoundSphere n) :
+private noncomputable def invStereo {n : ℕ} (x : RoundSphere n) :
     WithLp 2 (EuclideanSpace ℝ (Fin n) × ℝ) :=
   x.elim (WithLp.toLp 2 (0, 1))
     (fun z => WithLp.toLp 2 ((2 / (‖z‖ ^ 2 + 1)) • z, (‖z‖ ^ 2 - 1) / (‖z‖ ^ 2 + 1)))
@@ -176,7 +176,7 @@ noncomputable instance roundMetric (n : ℕ) : MetricSpace (RoundSphere n) :=
   @MetricSpace.replaceTopology (RoundSphere n) _ (instMetricAux n) topology_eq
 
 /-- The round distance is the angle between the inverse stereographic projections. -/
-theorem RoundSphere.dist_eq (x y : RoundSphere n) :
+private theorem RoundSphere.dist_eq (x y : RoundSphere n) :
     dist x y = angle (invStereo x) (invStereo y) := rfl
 
 /-- `C_p = ZMod p` acts trivially on the round sphere. -/

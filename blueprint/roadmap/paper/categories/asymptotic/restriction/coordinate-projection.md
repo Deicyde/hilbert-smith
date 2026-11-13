@@ -17,6 +17,11 @@ For a [restriction](restriction-sub-basis.md) $M_P$ of $M$, the coordinate proje
 
 ## Depends on
 
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
+- [Restriction to a sub-basis](restriction-sub-basis.md)
+
+## Proof depends on
+
 - [Coordinate inclusion of a restriction](coordinate-inclusion.md)
-- [Duality on the asymptotic category](../asymptotic-duality.md)
-- [The inclusion matrix](../structure/inclusion-matrix.md)
+- [The levelwise transpose](../structure/levelwise-transpose.md)

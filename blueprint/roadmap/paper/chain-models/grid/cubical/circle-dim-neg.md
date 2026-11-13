@@ -20,3 +20,4 @@ The [circle complex](circle-complex.md) has $S_{k,q}=0$ for $q<0$. So $S_k$ may 
 ## Depends on
 
 - [The circle complex](circle-complex.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

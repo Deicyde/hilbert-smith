@@ -21,5 +21,15 @@ the [L-group](../../base/groups/l-group.md) of that duality category: cobordism 
 
 ## Depends on
 
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
 - [Decorated objects](decorated-object.md)
 - [L-group](../../base/groups/l-group.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Decorated objects are closed under sums and duals](decorated-closure.md)
+- [Decorated objects of the completed quotient](decorated-predicate.md)

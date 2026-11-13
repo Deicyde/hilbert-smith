@@ -56,10 +56,10 @@ instance : DualCat (BoundedPow A j) := (boundedPowBundle A j).dc
 end BoundedPow
 
 /-- `C_{ℤ^0}(A) = A`. -/
-lemma boundedPow_zero : BoundedPow A 0 = A := rfl
+private lemma boundedPow_zero : BoundedPow A 0 = A := rfl
 
 /-- `C_{ℤ^{j+1}}(A) = C_ℤ(C_{ℤ^j}(A))`. -/
-lemma boundedPow_succ (j : ℕ) : BoundedPow A (j + 1) = Bounded (BoundedPow A j) := rfl
+private lemma boundedPow_succ (j : ℕ) : BoundedPow A (j + 1) = Bounded (BoundedPow A j) := rfl
 
 end HSP
 

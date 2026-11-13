@@ -20,6 +20,9 @@ $(\mathrm{id}_{\mathcal A})_*=\mathrm{id}$ on $\mathbb L_k(\mathcal A)$.
 ## Depends on
 
 - [Induced map on ultimate L](induced-map.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Identity and composite duality functors](../../base/categories/duality-functors/composite-duality-functor.md)
+- [Ultimate L-group](ultimate-l-group.md)
 
 ## Proof depends on
 
@@ -27,3 +30,12 @@ $(\mathrm{id}_{\mathcal A})_*=\mathrm{id}$ on $\mathbb L_k(\mathcal A)$.
 - [The identity on L^p](../../base/groups/lp-map-id.md)
 - [The induced map at each stage](induced-map-level.md)
 - [Every element comes from a finite stage](level-exhaustive.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Induced homomorphism](../../base/groups/induced-map.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)

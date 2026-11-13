@@ -5,7 +5,7 @@ import HilbertSmithPaper.Categories.Asymptotic.PointQuotient
 /-!
 # Forgetting labels
 
-`Φ : 𝒜_𝐆(X) → 𝒱_𝐆` is the strict duality functor `(n_i, x_i) ↦ (n_i)`, `[u] ↦ q(u_i)`, into the
+`Φ : 𝒜_𝐆(X) → 𝒱_𝐆` is the duality functor `(n_i, x_i) ↦ (n_i)`, `[u] ↦ q(u_i)`, into the
 point category.
 
 Lean encoding. On sequences, `HSP.AsymPre.forgetLabels : AsymPre G X ⥤ PCat G` keeps the
@@ -13,7 +13,7 @@ matrices (the bases of `(n_i, x_i)` and `(n_i)` are the same free `G_i`-sets). C
 quotient functor `q`, eventually equal sequences have the same image (they differ in finitely many
 coordinates, so their difference lies in the point ideal), so it descends to
 `𝒜_𝐆(X)` (`CategoryTheory.Quotient.lift`). `HSP.forgetLabels` is the resulting duality functor,
-with `ξ = id`; it is strict (`HSP.forgetLabels_isStrict`).
+with `ξ = id`. That it is strict is a separate lemma (`HSP.forgetLabels_isStrict`).
 -/
 
 open CategoryTheory CategoryTheory.Limits Filter
@@ -80,9 +80,5 @@ def forgetLabels : DualFunctor (AsymCat G X) (VCat G) where
   ξ_dual _ := by
     simp only [Iso.refl_hom, eqToHom_refl, Category.comp_id]
     exact DualCat.dualHom_id _
-
-/-- Forgetting labels is a strict duality functor. -/
-private theorem forgetLabels_isStrict : (forgetLabels (G := G) (X := X)).IsStrict :=
-  fun _ => ⟨rfl, rfl⟩
 
 end HSP

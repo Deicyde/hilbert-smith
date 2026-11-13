@@ -17,3 +17,4 @@ $T:M(C)_n\to M(C)_n$, $(Tf)_r=(-1)^{r(n-r)}f_{n-r}^*$, is a chain map: $T\partia
 ## Depends on
 
 - [Structure complex](structure-complex.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)

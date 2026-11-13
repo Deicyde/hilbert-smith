@@ -20,3 +20,7 @@ Let $\mathbb Z_p$ act on a Hausdorff space $X$, each element acting by a continu
 ## Depends on
 
 - [Fixed sets of the subgroups $H_j$](fixed-sets.md)
+
+## Proof depends on
+
+- [The subgroups $H_j$](padic-subgroups.md)

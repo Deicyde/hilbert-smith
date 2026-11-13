@@ -17,3 +17,4 @@ The $w$-th basis vector of $S_{k,0}$ in the [circle complex](circle-complex.md) 
 ## Depends on
 
 - [The circle complex](circle-complex.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

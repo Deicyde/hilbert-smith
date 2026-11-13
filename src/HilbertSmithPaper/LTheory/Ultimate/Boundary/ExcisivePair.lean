@@ -1,4 +1,5 @@
 import HilbertSmithPaper.LTheory.Base.Categories.KaroubiFiltration
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.LTheory.Base.Categories.FiltrationQuotient
 import HilbertSmithPaper.LTheory.Base.Categories.UnitaryIsomorphism
 import HilbertSmithPaper.LTheory.Base.Categories.WholeFiltration
@@ -47,11 +48,11 @@ private lemma lift_compat (x y : UA.FullSubcategory) (f₁ f₂ : x ⟶ y)
   exact ⟨V.obj, hV, a.hom, b.hom, congrArg InducedCategory.Hom.hom hab⟩
 
 /-- The underlying functor of `e`: identity on objects, `[f]_{𝒰_Y} ↦ [f]_{𝒰_B}`. -/
-abbrev eFunctor : FiltQuot (inter UA UB) ⥤ FiltQuot UB :=
+private abbrev eFunctor : FiltQuot (inter UA UB) ⥤ FiltQuot UB :=
   CategoryTheory.Quotient.lift (FiltQuot.rel (inter UA UB)) (UA.ι ⋙ FiltQuot.functor UB)
     (lift_compat UA UB)
 
-instance : (eFunctor UA UB).Additive where
+private instance : (eFunctor UA UB).Additive where
   map_add {X Y f g} := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
     obtain ⟨g, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective g
@@ -59,7 +60,7 @@ instance : (eFunctor UA UB).Additive where
       CategoryTheory.Quotient.lift_map_functor_map,
       CategoryTheory.Quotient.lift_map_functor_map, Functor.map_add]
 
-instance : (eFunctor UA UB).Linear ℚ where
+private instance : (eFunctor UA UB).Linear ℚ where
   map_smul {X Y} f c := by
     obtain ⟨f, rfl⟩ := (FiltQuot.functor (inter UA UB)).map_surjective f
     rw [← Functor.map_smul, CategoryTheory.Quotient.lift_map_functor_map,

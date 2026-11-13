@@ -14,19 +14,46 @@ is a strict $(m+1)$-dimensional symmetric Poincaré complex in the duality categ
 
 *Proof sketch.* $(C\otimes\Lambda,\phi\otimes\lambda)$ is a strict Poincaré complex ([Product of a complex with the line](transition-complex.md)), and the strict duality functor $e_{j+1}^{-1}$ carries it to one ([Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)). Its chain objects are decorated by [Products with the line are decorated](line-product-decorated.md), so it is a complex in $\mathrm{Dec}$ by [Complexes in a full subcategory](../decorations/complex-in-subcategory.md).
 
+This definition rests, until its proof is formalized, on the stated result [Products with the line are decorated](line-product-decorated.md).
+
 ## Sources
 
 - New: step 1 of the decorated transition, split out.
 
 ## Depends on
 
-- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
 - [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
+- [Decorated objects](../decorations/decorated-object.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
+- [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
+- [Decorated objects are closed under sums and duals](../decorations/decorated-closure.md)
 - [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
+
+## Proof depends on
+
 - [Product of a complex with the line](transition-complex.md)
 - [Products with the line are decorated](line-product-decorated.md)
-- [Decorated objects](../decorations/decorated-object.md)
 - [Complexes in a full subcategory](../decorations/complex-in-subcategory.md)
 - [Iterated bounded quotients](../../bounded/categories/iterated-bounded-quotient.md)
 - [Duality functors carry Poincaré complexes](../../base/pairs/functor-poincare.md)
 - [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
+- [The symmetric line](../products/symmetric-line.md)
+- [Completion of a duality functor](../../base/categories/karoubi-functor.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Strict duality functor](../../base/categories/duality-functors/strict-duality-functor.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Isomorphism classes of objects](../../bounded/categories/classes/iso-classes.md)
+- [The class of an object in $K_0$](../../bounded/categories/classes/k-zero-class.md)
+- [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)
+- [Based vector spaces](../products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../products/bookkeeping/based-category.md)
+- [Box product on iterated bounded categories](../products/box-pairing-pow.md)
+- [Tensor product of complexes](../products/complex-product.md)

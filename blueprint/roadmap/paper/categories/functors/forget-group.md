@@ -22,9 +22,16 @@ Let $e^G_n:G\times\{1..n\}\to\{1..|G|\,n\}$ be the [group enumeration](group-enu
 
 - [Asymptotic duality](../asymptotic/asymptotic-duality.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
-- [The group enumeration](group-enumeration.md)
 - [The trivial group sequence](../asymptotic/trivial-group-sequence.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
 
 ## Proof depends on
 
 - [Every morphism is a class](../asymptotic/structure/class-surjective.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Propagation](../asymptotic/propagation.md)
+- [Morphisms have propagation tending to zero](../asymptotic/structure/morphism-propagation.md)
+- [The group enumeration](group-enumeration.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

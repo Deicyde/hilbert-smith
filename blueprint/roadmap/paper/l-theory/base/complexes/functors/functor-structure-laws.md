@@ -31,3 +31,5 @@ with $\xi^{-1}$ the isomorphism of [Duality functors and dual complexes](functor
 - [Structure complex](../structure-complex.md)
 - [The involution T](../structure-involution.md)
 - [Duality map of a cycle](../cycle-chain-map.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)
+- [Dual complex](../dual-complex.md)

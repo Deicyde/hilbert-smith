@@ -24,14 +24,21 @@ the [tensor](../based-tensor-hom.md) of the maps $\varphi_{a,m-a}f_a$ and $\thet
 - [Product of structures in explicit bases](based-str-prod.md)
 - [Product of duality maps in explicit bases](based-dual-prod.md)
 - [Tensor of graded maps of based complexes](../based-tensor-hom.md)
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
-- [Maps between concatenations are determined by their blocks](../block-ext.md)
-- [Blocks of a composite](../block-comp.md)
+- [Maps between concatenations are determined by their blocks](../blocks/block-ext.md)
+- [Blocks of a composite](../blocks/block-comp.md)
 - [Blocks of a product of structures](str-prod-blocks.md)
 - [Blocks of a product of duality maps](dual-prod-blocks.md)
 - [Kronecker product of composites](../kron-composite.md)
 - [Kronecker product with a zero factor](../kron-zero.md)
 - [Composites through a zero space vanish](zero-dim-comp.md)
 - [Blocks of a transported tensor of graded maps](tensor-hom-transport-blocks.md)
+- [Block inclusions and projections](../blocks/block-maps.md)
+- [Kronecker product of matrices](../../../../l-theory/localization/products/bookkeeping/based-kron.md)

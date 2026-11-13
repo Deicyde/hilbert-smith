@@ -17,3 +17,4 @@ Given labels $l_C$ on the basis of $C$ and $l_E$ on the basis of $E$, and a map 
 ## Depends on
 
 - [Tensor product of based complexes](../based-complex-tensor.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

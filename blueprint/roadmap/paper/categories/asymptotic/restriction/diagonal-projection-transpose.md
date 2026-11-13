@@ -21,4 +21,10 @@ Every [diagonal coordinate projection](diagonal-projection.md) is self-transpose
 ## Depends on
 
 - [Diagonal coordinate projection](diagonal-projection.md)
-- [Duality on the asymptotic category](../asymptotic-duality.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
+- [The levelwise transpose](../structure/levelwise-transpose.md)
+
+## Proof depends on
+
+- [Free category of a finite group](../free-category.md)

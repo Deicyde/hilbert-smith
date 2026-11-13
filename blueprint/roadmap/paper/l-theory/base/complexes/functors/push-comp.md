@@ -21,3 +21,4 @@ For chain maps $g:C\to D$ and $h:D\to E$, the [pushforwards](../structure-push.m
 
 - [Pushforward of structures](../structure-push.md)
 - [Structure complex](../structure-complex.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)

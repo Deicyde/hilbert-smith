@@ -20,7 +20,10 @@ For every $k$ and $n$, the [grid complex](../../cubical/cubical-torus-grid.md) $
 ## Depends on
 
 - [Cubical torus grid](../../cubical/cubical-torus-grid.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [The tensor product vanishes in negative degrees](../../tensor/tensor-dim-neg.md)
+- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)
+- [The circle complex](../../cubical/circle-complex.md)

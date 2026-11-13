@@ -31,13 +31,6 @@ variable {A : Type u₁} [Category.{v₁} A] [Preadditive A] [Linear ℚ A] [Has
 omit [HasFiniteBiproducts A'] [DualCat A'] in
 private lemma diag_coe' {M N : Bounded A'} (d : ∀ n, M.X n ⟶ N.X n) : (diag d).1 = diagF d := rfl
 
-/-- The diagonal isomorphism with entries `e n : M_n ≅ N_n`. -/
-private def diagIso {M N : Bounded A'} (e : ∀ n, M.X n ≅ N.X n) : M ≅ N where
-  hom := diag fun n => (e n).hom
-  inv := diag fun n => (e n).inv
-  hom_inv_id := by rw [diag_comp_diag]; simp only [Iso.hom_inv_id]; rfl
-  inv_hom_id := by rw [diag_comp_diag]; simp only [Iso.inv_hom_id]; rfl
-
 /-- The *bounded extension* `C_ℤ(F, ξ)` of a duality functor: `F` entrywise, with duality
 isomorphism the diagonal matrix `(ξ_{M_n})_n`. -/
 def map (F : DualFunctor A A') : DualFunctor (Bounded A) (Bounded A') where

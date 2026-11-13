@@ -16,15 +16,28 @@ For $i\ge i_0$ the retained cells lie in $\mathcal B_i(t')$ by the [buffer condi
 
 ## Depends on
 
-- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
 - [The metric on the control space](../local-data/control/control-metric-space.md)
-- [Start index](start-index.md)
-- [Retained cells](retained-cells.md)
-- [Control labels](../chain-models/grid/buffers/control-labels.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
-- [The orbit metric metrizes the control space](../local-data/control/control-metric-properties.md)
-- [The control space is compact](../local-data/control/control-space-compact.md)
-- [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The round sphere](../corner/round-sphere.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The control space](../local-data/control/control-space.md)
+
+## Proof depends on
+
+- [The family of chain-model matrices](../chain-models/approximations/chain-model-family.md)
+- [Typed labelled matrices](../chain-models/approximations/typed-matrix.md)
+- [Based inclusion](../chain-models/grid/buffers/based-inclusion.md)
+- [Buffered cells](../chain-models/grid/buffers/buffered-cells.md)
+- [Control labels](../chain-models/grid/buffers/control-labels.md)
+- [Buffered restriction of a matrix](../chain-models/grid/buffers/restriction.md)
+- [Torus labels of dual cells](../chain-models/grid/model/chain-model-dual-label.md)
+- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
 - [Buffer conditions](buffer-conditions.md)
 - [Buffers hold eventually](buffer-eventually.md)
-- [Fixed local data](../local-data/control/fixed-local-data.md)
+- [Retained cells](retained-cells.md)
+- [Start index](start-index.md)
+- [Graph-type matrices](../corner/actions/graph-type.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)

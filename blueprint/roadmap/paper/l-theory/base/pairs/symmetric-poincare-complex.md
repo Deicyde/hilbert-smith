@@ -21,3 +21,6 @@ A *strict $k$-dimensional symmetric Poincaré complex* in a duality category $\m
 
 - [The involution T](../complexes/structure-involution.md)
 - [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Structure complex](../complexes/structure-complex.md)

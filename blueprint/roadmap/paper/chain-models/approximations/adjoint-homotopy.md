@@ -16,7 +16,16 @@ Fix $0<\rho<\rho_+$. Let $g\in G_i$, $a=a_g$ and $a'=a_{-g}$ ([group approximati
 
 ## Depends on
 
-- [Group approximations](group-approx.md)
-- [Chosen product homotopies](chosen-product-homotopies.md)
+- [Chain model](../grid/model/chain-model.md)
+- [Structure complex](../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [Chosen isometry homotopies](chosen-isometry-homotopies.md)
+- [Chosen product homotopies](chosen-product-homotopies.md)
+- [Group approximations](group-approx.md)
 - [Chain-model duality](../grid/chain-model-duality.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

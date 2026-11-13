@@ -19,10 +19,14 @@ For a local datum and $\varepsilon>0$ there is $\delta>0$ such that $d_T(\pi z,\
 
 ## Depends on
 
-- [The quotient topology on the control space](control-topology.md)
 - [The quotient map to the control space](control-quotient-map.md)
 - [The orbit metric on the control space](control-metric.md)
+- [Local datum](../chart/local-datum.md)
+- [The test region](../chart/test-region.md)
 
 ## Proof depends on
 
 - [The test region is compact](../chart/test-region-compact.md)
+- [The orbit sup-distance on the test region](orbit-sup-metric.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

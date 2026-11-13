@@ -17,7 +17,7 @@ Let $S,S'\subset X$, and let $\mathcal A_{S'}\subset\mathcal A_S$ be the [suppor
 4. (Factorization.) Given $g:V\to M$ with $V\in\mathcal A_{S'}$, the [support ideal](support-ideal.md) and the invariance of $S'$ give a null $r$ bounding the distance to $S'$ of the row labels of the nonzero entries of $g_i$. Then $g=\iota\pi g$. Maps $M\to V$ are handled by transposing.
 5. (Duality.) $M^*=M$, and the projection of each split is self-transpose because $\iota^{T}=\pi$.
 
-**Remark (not formalized).** Closedness of $S,S'$ and $S'\subset S$ are not used. Through the identification of $\mathcal A_X$ with $\mathcal A_{\mathbf G}(X)$, the case $S=X$ gives $\mathcal A_{S'}\subset\mathcal A_{\mathbf G}(X)$. The definition asks for no sum axiom; compatibility with sums holds in the cofinal sense ([filtrations are compatible with sums](../../l-theory/base/categories/karoubi-filtration-sums.md)). Concretely, the sum of the $r$-split of $M$ and the $s$-split of $N$ lies below the $\max(r,s)$-split of $M\oplus N$, although it is in general not itself a chosen split. Closure under isomorphism is neither claimed nor needed.
+**Remark (not formalized).** Closedness of $S,S'$ and $S'\subset S$ are not used. Through the identification of $\mathcal A_X$ with $\mathcal A_{\mathbf G}(X)$, the case $S=X$ gives $\mathcal A_{S'}\subset\mathcal A_{\mathbf G}(X)$. The definition asks for no sum axiom; compatibility with sums holds in the cofinal sense, as for every involution-invariant Karoubi filtration. Concretely, the sum of the $r$-split of $M$ and the $s$-split of $N$ lies below the $\max(r,s)$-split of $M\oplus N$, although it is in general not itself a chosen split. Closure under isomorphism is neither claimed nor needed.
 
 ## Sources
 
@@ -26,19 +26,27 @@ Let $S,S'\subset X$, and let $\mathcal A_{S'}\subset\mathcal A_S$ be the [suppor
 
 ## Depends on
 
+- [Group sequence](../asymptotic/group-sequence.md)
 - [Support subcategory](support-subcategory.md)
 - [Involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md)
-- [Restriction to a sub-basis](../asymptotic/restriction/restriction-sub-basis.md)
-- [Coordinate inclusion of a restriction](../asymptotic/restriction/coordinate-inclusion.md)
-- [Coordinate projection onto a restriction](../asymptotic/restriction/coordinate-projection.md)
-- [Diagonal coordinate projection](../asymptotic/restriction/diagonal-projection.md)
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [The support subcategory is additive](support-dual-additive.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
 
 ## Proof depends on
 
+- [Restriction to a sub-basis](../asymptotic/restriction/restriction-sub-basis.md)
+- [Coordinate inclusion of a restriction](../asymptotic/restriction/coordinate-inclusion.md)
+- [Coordinate projection onto a restriction](../asymptotic/restriction/coordinate-projection.md)
+- [Diagonal coordinate projection](../asymptotic/restriction/diagonal-projection.md)
+- [Every morphism is a class](../asymptotic/structure/class-surjective.md)
+- [The levelwise transpose](../asymptotic/structure/levelwise-transpose.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
 - [Support ideal](support-ideal.md)
 - [Null thickening radii](null-thickening.md)
 - [Projection after inclusion](../asymptotic/restriction/inclusion-projection.md)
@@ -49,8 +57,6 @@ Let $S,S'\subset X$, and let $\mathcal A_{S'}\subset\mathcal A_S$ be the [suppor
 - [Factorization through a diagonal projection, rows](../asymptotic/restriction/diagonal-projection-rows.md)
 - [Enumerated indices satisfy the predicate](../asymptotic/restriction/restriction-index-mem.md)
 - [Translates and thickenings of an invariant set](thickening-invariant.md)
-- [Asymptotic category](../asymptotic/asymptotic-category.md)
-- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
-- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Transposing twice](../asymptotic/structure/transpose-transpose.md)
 - [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
+- [Enumeration of a sub-basis](../asymptotic/restriction/restriction-index-embedding.md)

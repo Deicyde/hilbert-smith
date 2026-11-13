@@ -17,7 +17,8 @@ scalar iterated cut for `n`, `R` and `s`. Then there is `ε ∈ {±1}` with
 `theoremB_testMap F hn hs hs'` (the declaration of the article). `f_T` enters as any bundled
 continuous map `c` with `⇑c = torusTestMap F.toLocalDatum F.ρ` (it is continuous by the properties
 of completed maps, item 4). The radius `R` is the buffer radius `F.R`, positive since
-`0 < r < R`. The bound `D ≤ 1/64` of the source is not needed and is omitted.
+`0 < r < R`. The prime `p` and the local datum are those of the fixed local data (whose local
+datum carries the bounds `0 < D ≤ 1/64` and `0 < ρplus < 1/4`).
 -/
 
 open HSP.ChainModels

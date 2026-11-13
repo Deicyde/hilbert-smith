@@ -18,7 +18,9 @@ Let $\mathcal B$ be a $\mathbb Q$-linear additive category with finite biproduct
 
 ## Depends on
 
-- [Diagonal morphisms of $C_\mathbb Z(A)$](../../../bounded/categories/bounded-diag.md)
-- [Based vector spaces](../based-vector-spaces.md)
-- [Idempotent completion with duality](../../../base/categories/karoubi-duality.md)
 - [The bounded category](../../../bounded/categories/bounded-category.md)
+- [The category of based ℚ-vector spaces](based-category.md)
+
+## Proof depends on
+
+- [Diagonal morphisms of $C_\mathbb Z(A)$](../../../bounded/categories/bounded-diag.md)

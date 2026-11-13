@@ -1,4 +1,6 @@
 import Mathlib
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Functors.Pushforward
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismNatural
 import HilbertSmithPaper.Categories.Functors.RelabellingIsomorphismUnitary
@@ -81,6 +83,28 @@ omit [IsIsometricVAdd (ZMod p) X] in
 /-- `P` is a strict duality functor. -/
 private theorem relabelP_isStrict : (relabelP (G := G) hS).IsStrict := fun _ => ⟨rfl, rfl⟩
 
+omit [MetricSpace X] [IsIsometricVAdd (ZMod p) X] [CompactSpace X] in
+/-- The labels of the pushed-forward object are the images of the labels. -/
+private theorem label_push (M : AsymPre G S) (i : ℕ) :
+    AsymPre.label (⟨M.n, fun i => Subtype.val ∘ M.x i⟩ : AsymPre G X) i =
+      Subtype.val ∘ M.label i := rfl
+
+/-- The pushforward of `u : M → N` along `S ↪ X`: the matrices are unchanged. -/
+private def pushHom {M N : AsymPre G S} (u : M ⟶ N) :
+    (⟨M.n, fun i => Subtype.val ∘ M.x i⟩ : AsymPre G X) ⟶ ⟨N.n, fun i => Subtype.val ∘ N.x i⟩ :=
+  AsymPre.homMk (fun i => AsymPre.coord u i) ((AsymPre.tendsto_prop u).congr fun i => by
+    rw [label_push, label_push]
+    rfl)
+
+omit [IsIsometricVAdd (ZMod p) X] [CompactSpace X] in
+private theorem coord_pushHom {M N : AsymPre G S} (u : M ⟶ N) (i : ℕ) :
+    AsymPre.coord (pushHom (X := X) u) i = AsymPre.coord u i :=
+  AsymPre.coord_homMk _ _ i
+
+omit [IsIsometricVAdd (ZMod p) X] in
+private theorem inclPush_map_mkHom {M N : AsymPre G S} (u : M ⟶ N) :
+    (inclPush (G := G) hS).toFunctor.map (AsymCat.mkHom u) = AsymCat.mkHom (pushHom u) := rfl
+
 end P
 
 section R
@@ -133,12 +157,21 @@ private def relabelHom {P Q : AsymCat G X} (hP : supp (S : Set X) P) (hQ : supp 
       exact Finset.le_sup (f := fun k => nndist (Q.as.x i k) (ρ (Q.as.x i k) : X))
         (Finset.mem_univ b.2))
 
+/-- `R[u]` has the matrices of `u`. (Stated as a lemma so that the kernel never compares morphisms
+of `𝒜_𝐆(S)` with morphisms of `𝒜_𝐆(X)` by unfolding.) -/
+private theorem coord_relabelHom {P Q : AsymCat G X} (hP : supp (S : Set X) P)
+    (hQ : supp (S : Set X) Q) (u : P.as ⟶ Q.as) (i : ℕ) :
+    AsymPre.coord (relabelHom hρ hP hQ u) i = AsymPre.coord u i :=
+  AsymPre.coord_homMk _ _ i
+
 /-- `R` on morphisms of `𝒜_S`: `[u] ↦ [u]`. -/
 private def relabelMap {P Q : AsymCat G X} (hP : supp (S : Set X) P) (hQ : supp (S : Set X) Q)
     (f : P ⟶ Q) : (⟨AsymPre.relabelObj ρ P.as⟩ : AsymCat G S) ⟶ ⟨AsymPre.relabelObj ρ Q.as⟩ :=
   Quot.lift (fun u => AsymCat.mkHom (relabelHom hρ hP hQ u)) (fun a b h => by
     rw [HomRel.compClosure_iff_self] at h
-    exact (AsymCat.mkHom_eq_iff _ _).2 h) f
+    refine (AsymCat.mkHom_eq_iff _ _).2 (Filter.Eventually.mono h fun i hi => ?_)
+    rw [coord_relabelHom, coord_relabelHom]
+    exact hi) f
 
 private theorem relabelMap_mkHom {M N : AsymPre G X} (hM : supp (S : Set X) ⟨M⟩)
     (hN : supp (S : Set X) ⟨N⟩) (u : M ⟶ N) :
@@ -155,7 +188,10 @@ private def relabelRFunctor : (supp (G := G) (S : Set X)).FullSubcategory ⥤ As
     show relabelMap hρ _ _ (f.hom ≫ g.hom) = relabelMap hρ _ _ f.hom ≫ relabelMap hρ _ _ g.hom
     rw [← hu, ← hv, ← Functor.map_comp, relabelMap_mkHom, relabelMap_mkHom, relabelMap_mkHom,
       ← Functor.map_comp]
-    exact congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => rfl)
+    refine congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => ?_)
+    rw [AsymPre.coord_comp, coord_relabelHom, coord_relabelHom, coord_relabelHom,
+      AsymPre.coord_comp]
+    rfl
 
 private instance : (relabelRFunctor (G := G) hρ).Additive where
   map_add {V W f g} := by
@@ -164,14 +200,19 @@ private instance : (relabelRFunctor (G := G) hρ).Additive where
     show relabelMap hρ _ _ (f.hom + g.hom) = relabelMap hρ _ _ f.hom + relabelMap hρ _ _ g.hom
     rw [← hu, ← hv, ← Functor.map_add, relabelMap_mkHom, relabelMap_mkHom, relabelMap_mkHom,
       ← Functor.map_add]
-    exact congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => rfl)
+    refine congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => ?_)
+    rw [AsymPre.coord_add, coord_relabelHom, coord_relabelHom, coord_relabelHom,
+      AsymPre.coord_add]
+    rfl
 
 private instance : (relabelRFunctor (G := G) hρ).Linear ℚ where
   map_smul {V W} f c := by
     obtain ⟨u, hu⟩ := AsymCat.mkHom_surjective f.hom
     show relabelMap hρ _ _ (c • f.hom) = c • relabelMap hρ _ _ f.hom
     rw [← hu, ← Functor.map_smul, relabelMap_mkHom, relabelMap_mkHom, ← Functor.map_smul]
-    exact congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => rfl)
+    refine congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => ?_)
+    rw [AsymPre.coord_smul, coord_relabelHom, coord_relabelHom, AsymPre.coord_smul]
+    rfl
 
 /-- `R : 𝒜_S → 𝒜_𝐆(S)`, `(n_i, x_i) ↦ (n_i, ρ ∘ x_i)`, `[u] ↦ [u]`, a duality functor with
 `ξ = id`. -/
@@ -183,7 +224,9 @@ private def relabelR : DualFunctor (supp (G := G) (S : Set X)).FullSubcategory (
     simp only [Iso.refl_hom, Category.comp_id, Category.id_comp]
     show relabelMap hρ _ _ (DualCat.dualHom f.hom) = DualCat.dualHom (relabelMap hρ _ _ f.hom)
     rw [← hu, AsymCat.dualHom_mkHom, relabelMap_mkHom, relabelMap_mkHom, AsymCat.dualHom_mkHom]
-    exact congrArg AsymCat.mkHom (AsymPre.hom_ext fun _ => rfl)
+    refine congrArg AsymCat.mkHom (AsymPre.hom_ext fun i => ?_)
+    rw [coord_relabelHom, AsymPre.coord_transpose, AsymPre.coord_transpose, coord_relabelHom]
+    rfl
   ξ_dual _ := by
     simp only [Iso.refl_hom, eqToHom_refl, Category.comp_id]
     exact DualCat.dualHom_id _
@@ -230,8 +273,11 @@ private theorem relabelP_comp_relabelR :
   CategoryTheory.Functor.ext
     (fun M => congrArg (fun M => (⟨M⟩ : AsymCat G S)) (relabelObj_pushObj hρ M.as)) fun M N f => by
     obtain ⟨u, rfl⟩ := AsymCat.mkHom_surjective f
-    exact mkHom_eq_eqToHom (relabelObj_pushObj hρ M.as) (relabelObj_pushObj hρ N.as) u _
-      fun _ => HEq.rfl
+    show relabelMap hρ _ _ ((inclPush hS).toFunctor.map (AsymCat.mkHom u)) = _
+    rw [inclPush_map_mkHom]
+    exact (relabelMap_mkHom hρ _ _ (pushHom u)).trans
+      (mkHom_eq_eqToHom (relabelObj_pushObj hρ M.as) (relabelObj_pushObj hρ N.as) u _
+        fun i => heq_of_eq ((coord_relabelHom hρ _ _ _ i).trans (coord_pushHom u i)))
 
 /-- The unit `id ≅ RP`, the identity, is unitary. -/
 private noncomputable def relabelUnit :
@@ -266,10 +312,11 @@ private noncomputable def relabelCounit :
   iso := NatIso.ofComponents (relabelCounitApp hS hρ) fun {V W} f => by
     apply ObjectProperty.hom_ext
     obtain ⟨u, hu⟩ := AsymCat.mkHom_surjective f.hom
-    show ((relabelPFunctor hS).map (relabelMap hρ V.property W.property f.hom)).hom ≫
+    show (inclPush hS).toFunctor.map (relabelMap hρ V.property W.property f.hom) ≫
       (relabelIso (tendsto_counit hρ W)).hom = (relabelIso (tendsto_counit hρ V)).hom ≫ f.hom
-    rw [← hu, relabelMap_mkHom]
-    exact relabelIso_natural _ _ _ u fun _ => rfl
+    rw [← hu, relabelMap_mkHom, inclPush_map_mkHom]
+    exact relabelIso_natural _ _ _ u fun i =>
+      (coord_pushHom _ i).trans (coord_relabelHom hρ _ _ u i)
   unitary V := by
     apply ObjectProperty.hom_ext
     show (relabelIso (tendsto_counit hρ V)).hom ≫ 𝟙 _ ≫

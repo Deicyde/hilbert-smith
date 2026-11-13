@@ -18,7 +18,17 @@ Let $\mathbf 1$ be the [trivial group sequence](../categories/asymptotic/trivial
 
 - [Trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
 - [Sequence category](../categories/asymptotic/point-sequence-category.md)
-- [Duality functor](../l-theory/base/categories/duality-functor.md)
+- [Strict symmetric Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
+
+## Proof depends on
+
+- [Identity and composite duality functors](../l-theory/base/categories/duality-functors/composite-duality-functor.md)
+- [Free category of a finite group](../categories/asymptotic/free-category.md)
+- [Group sequence](../categories/asymptotic/group-sequence.md)
 - [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)
 - [Based vector spaces over the trivial group](based-to-free.md)
+- [Small Q-linear category with strict duality](../l-theory/base/categories/duality-category.md)
+- [Duality functor](../l-theory/base/categories/duality-functor.md)
 - [Duality functors carry Poincaré complexes](../l-theory/base/pairs/functor-poincare.md)
+- [Based vector spaces](../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)

@@ -33,18 +33,4 @@ structure DualFunctor.UnitaryIso (F G : DualFunctor A B) where
   unitary (M : A) :
     iso.hom.app (dual M) ≫ (G.ξ M).hom ≫ dualHom (iso.hom.app M) = (F.ξ M).hom
 
-/-- The identity natural isomorphism of a duality functor is unitary. -/
-def DualFunctor.UnitaryIso.refl (F : DualFunctor A B) : DualFunctor.UnitaryIso F F where
-  iso := Iso.refl _
-  unitary M := by simp
-
-/-- A composite of unitary natural isomorphisms is unitary. -/
-def DualFunctor.UnitaryIso.trans {F G H : DualFunctor A B} (η : DualFunctor.UnitaryIso F G)
-    (θ : DualFunctor.UnitaryIso G H) : DualFunctor.UnitaryIso F H where
-  iso := η.iso ≪≫ θ.iso
-  unitary M := by
-    rw [Iso.trans_hom, NatTrans.comp_app, NatTrans.comp_app, dualHom_comp, ← η.unitary M,
-      ← θ.unitary M]
-    simp only [Category.assoc]
-
 end HSP

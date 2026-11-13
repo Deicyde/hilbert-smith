@@ -1,4 +1,6 @@
 import HilbertSmithPaper.Categories.Supports.Excision
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.StrictDualityFunctor
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.CompositeDualityFunctor
 import HilbertSmithPaper.Categories.Supports.IteratedQuotient
 import HilbertSmithPaper.Categories.Supports.QuotientSupportFiltration
 import HilbertSmithPaper.Categories.Supports.SupportIntersection
@@ -18,6 +20,9 @@ Let the action be isometric, `A, B, Z ⊆ X` invariant, `S = A ∪ B` and `𝒬 
   the excision equivalence for `A` and `B ∪ Z`, and `K : 𝒰'_A/(𝒰'_A ∩ 𝒰'_{B ∪ Z}) → 𝒰_A/(𝒰_A ∩ 𝒰_B)`
   the identity on objects and on representatives. The unit and counit are the images of those of
   the excision equivalence under `K` and under the inverse of `I`.
+
+Non-vacuity: the private `cutSquare_unit` is the cut square for `X` a point with the trivial action
+of `C_2`, the trivial group sequence, `A = B = X` and `Z = ∅`.
 -/
 
 open CategoryTheory CategoryTheory.Limits Filter Metric
@@ -28,6 +33,170 @@ open DualCat
 
 variable {p : ℕ} {G : GroupSeq p} {X : Type*} [MetricSpace X] [AddAction (ZMod p) X]
 
+/-! ### The functor `J` and the filtration `𝒰_A ∩ 𝒰_B ⊂ 𝒰_A`
+
+`J` and the transport of filtrations along it are set up for arbitrary predicates `P ≤ Q` on
+`𝒜_𝐆(X)` and then specialised to `P = supp A`, `Q = supp S`. (Stated for the concrete support
+predicates, the kernel spends minutes comparing `supp A` with `supp (A ∪ B)` while checking these
+proofs.) -/
+
+section JGeneric
+
+variable {P Q : ObjectProperty (AsymCat G X)} [IsDualAdditive P] [IsDualAdditive Q]
+
+private instance (h : P ≤ Q) : (ObjectProperty.ιOfLE h).Additive where
+  map_add := rfl
+
+variable (Q) in
+/-- The predicate `N ↦ Y(N)` on `Q/U`, as for `quotSupp`. -/
+private abbrev gR (U : ObjectProperty Q.FullSubcategory) (Y : ObjectProperty (AsymCat G X)) :
+    ObjectProperty (FiltQuot U) :=
+  fun N => Y N.as.obj
+
+omit [IsDualAdditive P] [IsDualAdditive Q] in
+/-- A predicate of the underlying object of `M` holds for its image in `Q`. -/
+private theorem obj_mem_of_le (hPQ : P ≤ Q) (W : ObjectProperty (AsymCat G X))
+    (M : P.FullSubcategory) (hM : W M.obj) :
+    W (⟨M.obj, hPQ _ M.property⟩ : Q.FullSubcategory).obj :=
+  hM
+
+variable {U' : ObjectProperty P.FullSubcategory} {U : ObjectProperty Q.FullSubcategory}
+  [IsDualAdditive U'] [IsDualAdditive U] {R : ObjectProperty (AsymCat G X)}
+
+variable (U) in
+/-- `J₀ : P → (Q/U)_P`, `M ↦ ⟨M⟩`, `u ↦ [u]`. -/
+private abbrev gJ₀ (hPQ : P ≤ Q) : P.FullSubcategory ⥤ (gR Q U P).FullSubcategory :=
+  ObjectProperty.lift _ (ObjectProperty.ιOfLE hPQ ⋙ FiltQuot.functor U) (fun M => M.property)
+
+omit [IsDualAdditive P] [IsDualAdditive U'] in
+private theorem gJ₀_compat (hPQ : P ≤ Q)
+    (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩)
+    (x y : P.FullSubcategory) (f₁ f₂ : x ⟶ y) (h : FiltQuot.rel U' f₁ f₂) :
+    (gJ₀ U hPQ).map f₁ = (gJ₀ U hPQ).map f₂ := by
+  refine ObjectProperty.hom_ext _ ?_
+  change (FiltQuot.functor U).map ((ObjectProperty.ιOfLE hPQ).map f₁) =
+    (FiltQuot.functor U).map ((ObjectProperty.ιOfLE hPQ).map f₂)
+  rw [FiltQuot.functor_map_eq_iff]
+  obtain ⟨W, hW, a, b, hab⟩ := h
+  refine ⟨(ObjectProperty.ιOfLE hPQ).obj W, hU W hW, (ObjectProperty.ιOfLE _).map a,
+    (ObjectProperty.ιOfLE _).map b, ?_⟩
+  rw [← Functor.map_sub, ← Functor.map_comp, hab]
+
+/-- `J : P/U' → (Q/U)_P`, the identity on objects and on representatives. -/
+private abbrev gJ (hPQ : P ≤ Q) (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩) :
+    FiltQuot U' ⥤ (gR Q U P).FullSubcategory :=
+  CategoryTheory.Quotient.lift _ (gJ₀ U hPQ) (gJ₀_compat hPQ hU)
+
+omit [IsDualAdditive P] [IsDualAdditive U'] in
+private theorem gJ_map (hPQ : P ≤ Q)
+    (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩)
+    (x y : P.FullSubcategory) (f : x ⟶ y) :
+    (gJ hPQ hU).map ((FiltQuot.functor _).map f) = (gJ₀ U hPQ).map f :=
+  CategoryTheory.Quotient.lift_map_functor_map _ _ _ _
+
+private instance (hPQ : P ≤ Q) (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩)
+    : (gJ hPQ hU).Additive where
+  map_add {_ _ f g} := by
+    obtain ⟨f, rfl⟩ := (FiltQuot.functor U').map_surjective f
+    obtain ⟨g, rfl⟩ := (FiltQuot.functor U').map_surjective g
+    rw [← Functor.map_add, gJ_map, gJ_map, gJ_map]
+    exact ObjectProperty.hom_ext _
+      ((ObjectProperty.ιOfLE hPQ ⋙ FiltQuot.functor U).map_add (f := f) (g := g))
+
+private instance (hPQ : P ≤ Q) (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩) :
+    (gJ hPQ hU).Full where
+  map_surjective {M N} f := by
+    obtain ⟨g, hg⟩ := (FiltQuot.functor U).map_surjective f.hom
+    refine ⟨(FiltQuot.functor _).map (ObjectProperty.homMk g.hom : M.as ⟶ N.as), ?_⟩
+    rw [gJ_map]
+    exact ObjectProperty.hom_ext _ hg
+
+private theorem gJ_map_dualHom (hPQ : P ≤ Q)
+    (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩)
+    [IsDualAdditive (gR Q U P)] {M N : FiltQuot U'} (f : M ⟶ N) :
+    (gJ hPQ hU).map (dualHom f) = dualHom ((gJ hPQ hU).map f) := by
+  obtain ⟨g, rfl⟩ := (FiltQuot.functor U').map_surjective f
+  rw [FiltQuot.dualHom_map, gJ_map, gJ_map]
+  rfl
+
+variable [IsDualAdditive (gR Q U P)] [IsDualAdditive (gR Q U R)] [IsDualAdditive (gR P U' R)]
+
+/-- `(Q/U)_P ∩ (Q/U)_Y` is a full additive subcategory of `(Q/U)_P` closed under duality: it
+contains the images under `J` of the zero objects and biproducts of `Y`-supported objects of
+`P/U'`. -/
+private theorem gInter_isDualAdditive (hPQ : P ≤ Q)
+    (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩) :
+    IsDualAdditive (ExcisivePair.inter (gR Q U P) (gR Q U R)) where
+  exists_zero := by
+    obtain ⟨W, hW, hWz⟩ := IsDualAdditive.exists_zero (U := gR P U' R)
+    exact ⟨(gJ hPQ hU).obj W, hW, (gJ hPQ hU).map_isZero hWz⟩
+  exists_biprod {V W} hV hW := by
+    obtain ⟨c, ⟨hc⟩, hpt⟩ := IsDualAdditive.exists_biprod (U := gR P U' R)
+      (V := ⟨⟨V.obj.as.obj, V.property⟩⟩) (W := ⟨⟨W.obj.as.obj, W.property⟩⟩) hV hW
+    refine ⟨(gJ hPQ hU).mapBinaryBicone c, ⟨isBinaryBilimitOfTotal _ ?_⟩, hpt⟩
+    have h := congrArg (gJ hPQ hU).map (IsBilimit.binary_total hc)
+    rw [CategoryTheory.Functor.map_add, Functor.map_comp, Functor.map_comp,
+      CategoryTheory.Functor.map_id] at h
+    exact h
+  dual_mem hV := IsDualAdditive.dual_mem (U := gR Q U R) hV
+
+/-- The filtration of `(Q/U)_P` by `(Q/U)_P ∩ (Q/U)_Y`: the images under `J` of the chosen
+decompositions of a filtration of `P/U'` by its `Y`-supported objects. -/
+private noncomputable def gFiltY (hPQ : P ≤ Q)
+    (hU : ∀ V : P.FullSubcategory, U' V → U ⟨V.obj, hPQ _ V.property⟩)
+    [IsDualAdditive (ExcisivePair.inter (gR Q U P) (gR Q U R))]
+    (K : KaroubiFiltration (gR P U' R)) :
+    KaroubiFiltration (ExcisivePair.inter (gR Q U P) (gR Q U R)) where
+  D V := (gJ hPQ hU).map '' K.D ⟨⟨V.obj.as.obj, V.property⟩⟩
+  idem := by
+    rintro M _ ⟨q, hq, rfl⟩
+    rw [← Functor.map_comp, K.idem hq]
+  split := by
+    rintro M _ ⟨q, hq, rfl⟩
+    obtain ⟨E, hE, i, r, h1, h2⟩ := K.split hq
+    exact ⟨(gJ hPQ hU).obj E, hE, (gJ hPQ hU).map i, (gJ hPQ hU).map r,
+      by rw [← Functor.map_comp, h1, CategoryTheory.Functor.map_id],
+      by rw [← Functor.map_comp, h2]⟩
+  split_compl := by
+    rintro M _ ⟨q, hq, rfl⟩
+    obtain ⟨E, i, r, h1, h2⟩ := K.split_compl hq
+    exact ⟨(gJ hPQ hU).obj E, (gJ hPQ hU).map i, (gJ hPQ hU).map r,
+      by rw [← Functor.map_comp, h1, CategoryTheory.Functor.map_id],
+      by rw [← Functor.map_comp, h2, Functor.map_sub, CategoryTheory.Functor.map_id]; rfl⟩
+  nonempty M := by
+    obtain ⟨q, hq⟩ := K.nonempty ⟨⟨M.obj.as.obj, M.property⟩⟩
+    exact ⟨_, q, hq, rfl⟩
+  directed := by
+    rintro M _ _ ⟨q, hq, rfl⟩ ⟨q', hq', rfl⟩
+    obtain ⟨q'', hq'', ⟨h1, h2⟩, ⟨h3, h4⟩⟩ := K.directed hq hq'
+    exact ⟨(gJ hPQ hU).map q'', ⟨q'', hq'', rfl⟩,
+      ⟨by rw [← Functor.map_comp, h1], by rw [← Functor.map_comp, h2]⟩,
+      ⟨by rw [← Functor.map_comp, h3], by rw [← Functor.map_comp, h4]⟩⟩
+  factor_left {V M} g hV := by
+    let g' : (⟨⟨V.obj.as.obj, V.property⟩⟩ : FiltQuot U') ⟶ ⟨⟨M.obj.as.obj, M.property⟩⟩ :=
+      (gJ hPQ hU).preimage g
+    obtain ⟨q, hq, h⟩ := K.factor_left g' hV
+    refine ⟨(gJ hPQ hU).map q, ⟨q, hq, rfl⟩, ?_⟩
+    have h' := congrArg (gJ hPQ hU).map h
+    rwa [Functor.map_comp, Functor.map_preimage] at h'
+  factor_right {M V} g hV := by
+    let g' : (⟨⟨M.obj.as.obj, M.property⟩⟩ : FiltQuot U') ⟶ ⟨⟨V.obj.as.obj, V.property⟩⟩ :=
+      (gJ hPQ hU).preimage g
+    obtain ⟨q, hq, h⟩ := K.factor_right g' hV
+    refine ⟨(gJ hPQ hU).map q, ⟨q, hq, rfl⟩, ?_⟩
+    have h' := congrArg (gJ hPQ hU).map h
+    rwa [Functor.map_comp, Functor.map_preimage] at h'
+  dual_mem_iff {M} q := by
+    constructor
+    · rintro ⟨q₀, hq₀, rfl⟩
+      exact ⟨(dualHom q₀ :), (K.dual_mem_iff q₀).1 hq₀, gJ_map_dualHom hPQ hU q₀⟩
+    · rintro ⟨q₀, hq₀, hq⟩
+      refine ⟨(dualHom q₀ :), (K.dual_mem_iff q₀).1 hq₀, ?_⟩
+      rw [gJ_map_dualHom, hq, dualHom_dualHom]
+      erw [eqToHom_refl, Category.id_comp, Category.comp_id]
+
+end JGeneric
+
 section
 
 variable {A B Z : Set X}
@@ -36,92 +205,13 @@ private theorem supp_le_union : (supp A : ObjectProperty (AsymCat G X)) ≤ supp
   fun _ hM ε hε => (hM ε hε).mono fun _ hi k =>
     thickening_subset_of_subset ε Set.subset_union_left (hi k)
 
-private instance {P P' : ObjectProperty (AsymCat G X)} (h : P ≤ P') :
-    (ObjectProperty.ιOfLE h).Additive where
-  map_add := rfl
-
-variable (A B Z) in
-/-- `J₀ : 𝒜_A → 𝒰_A ⊂ 𝒬`, `M ↦ ⟨M⟩`, `u ↦ [u]`. -/
-private abbrev cutJ₀ :
-    (supp A : ObjectProperty (AsymCat G X)).FullSubcategory ⥤
-      (quotSupp (G := G) (A ∪ B) Z A).FullSubcategory :=
-  ObjectProperty.lift _ (ObjectProperty.ιOfLE supp_le_union ⋙ FiltQuot.functor (suppIn (A ∪ B) Z))
-    (fun M => M.property)
-
-private theorem cutJ₀_compat (x y : (supp A : ObjectProperty (AsymCat G X)).FullSubcategory)
-    (f₁ f₂ : x ⟶ y) (h : FiltQuot.rel (suppIn A Z) f₁ f₂) :
-    (cutJ₀ (G := G) A B Z).map f₁ = (cutJ₀ A B Z).map f₂ := by
-  refine ObjectProperty.hom_ext _ ?_
-  change (FiltQuot.functor (suppIn (A ∪ B) Z)).map ((ObjectProperty.ιOfLE supp_le_union).map f₁) =
-    (FiltQuot.functor _).map ((ObjectProperty.ιOfLE supp_le_union).map f₂)
-  rw [FiltQuot.functor_map_eq_iff]
-  obtain ⟨W, hW, a, b, hab⟩ := h
-  refine ⟨(ObjectProperty.ιOfLE supp_le_union).obj W, hW, (ObjectProperty.ιOfLE _).map a,
-    (ObjectProperty.ιOfLE _).map b, ?_⟩
-  rw [← Functor.map_sub, ← Functor.map_comp, hab]
-
-variable (A B Z) in
-/-- `J : 𝒜_A/𝒜_Z → 𝒰_A`, the identity on objects and on representatives. -/
-private abbrev cutJ :
-    FiltQuot (suppIn (G := G) A Z) ⥤ (quotSupp (G := G) (A ∪ B) Z A).FullSubcategory :=
-  CategoryTheory.Quotient.lift _ (cutJ₀ A B Z) cutJ₀_compat
-
-private theorem cutJ_map (x y : (supp A : ObjectProperty (AsymCat G X)).FullSubcategory)
-    (f : x ⟶ y) :
-    (cutJ (G := G) A B Z).map ((FiltQuot.functor _).map f) = (cutJ₀ A B Z).map f :=
-  CategoryTheory.Quotient.lift_map_functor_map _ _ _ _
-
-private instance : (cutJ (G := G) A B Z).Additive where
-  map_add {_ _ f g} := by
-    obtain ⟨f, rfl⟩ := (FiltQuot.functor (suppIn A Z)).map_surjective f
-    obtain ⟨g, rfl⟩ := (FiltQuot.functor (suppIn A Z)).map_surjective g
-    rw [← Functor.map_add, cutJ_map, cutJ_map, cutJ_map]
-    exact ObjectProperty.hom_ext _
-      ((ObjectProperty.ιOfLE supp_le_union ⋙ FiltQuot.functor (suppIn (A ∪ B) Z)).map_add
-        (f := f) (g := g))
-
-private instance : (cutJ (G := G) A B Z).Full where
-  map_surjective {M N} f := by
-    obtain ⟨g, hg⟩ := (FiltQuot.functor (suppIn (A ∪ B) Z)).map_surjective f.hom
-    refine ⟨(FiltQuot.functor _).map (ObjectProperty.homMk g.hom : M.as ⟶ N.as), ?_⟩
-    rw [cutJ_map]
-    exact ObjectProperty.hom_ext _ hg
-
-private theorem cutJ_map_dualHom {M N : FiltQuot (suppIn (G := G) A Z)} (f : M ⟶ N) :
-    (cutJ (G := G) A B Z).map (dualHom f) = dualHom ((cutJ A B Z).map f) := by
-  obtain ⟨g, rfl⟩ := (FiltQuot.functor (suppIn A Z)).map_surjective f
-  rw [FiltQuot.dualHom_map, cutJ_map, cutJ_map]
-  rfl
-
-private theorem cutInter_zero : ∃ Z' : (quotSupp (G := G) (A ∪ B) Z A).FullSubcategory,
-    ExcisivePair.inter (quotSupp (A ∪ B) Z A) (quotSupp (A ∪ B) Z B) Z' ∧ IsZero Z' := by
-  obtain ⟨W, hW, hWz⟩ := IsDualAdditive.exists_zero (U := quotSupp (G := G) A Z B)
-  exact ⟨(cutJ A B Z).obj W, hW, (cutJ A B Z).map_isZero hWz⟩
-
-private theorem cutInter_biprod {V W : (quotSupp (G := G) (A ∪ B) Z A).FullSubcategory}
-    (hV : ExcisivePair.inter (quotSupp (A ∪ B) Z A) (quotSupp (A ∪ B) Z B) V)
-    (hW : ExcisivePair.inter (quotSupp (A ∪ B) Z A) (quotSupp (A ∪ B) Z B) W) :
-    ∃ c : BinaryBicone V W, Nonempty c.IsBilimit ∧
-      ExcisivePair.inter (quotSupp (A ∪ B) Z A) (quotSupp (A ∪ B) Z B) c.pt := by
-  obtain ⟨c, ⟨hc⟩, hpt⟩ := IsDualAdditive.exists_biprod (U := quotSupp (G := G) A Z B)
-    (V := ⟨⟨V.obj.as.obj, V.property⟩⟩) (W := ⟨⟨W.obj.as.obj, W.property⟩⟩) hV hW
-  refine ⟨(cutJ A B Z).mapBinaryBicone c, ⟨isBinaryBilimitOfTotal _ ?_⟩, hpt⟩
-  have h := congrArg (cutJ A B Z).map (IsBilimit.binary_total hc)
-  rw [CategoryTheory.Functor.map_add, Functor.map_comp, Functor.map_comp,
-    CategoryTheory.Functor.map_id] at h
-  exact h
-
-private theorem cutInter_dual {V : (quotSupp (G := G) (A ∪ B) Z A).FullSubcategory}
-    (hV : ExcisivePair.inter (quotSupp (A ∪ B) Z A) (quotSupp (A ∪ B) Z B) V) :
-    ExcisivePair.inter (quotSupp (A ∪ B) Z A) (quotSupp (A ∪ B) Z B) (dual V) := hV
-
 /-- `𝒰_A ∩ 𝒰_B` is a full additive subcategory of `𝒰_A` closed under duality: it contains the
-images under `J` of the zero objects and biproducts of `B`-supported objects of `𝒜_A/𝒜_Z`. -/
+images under `J : 𝒜_A/𝒜_Z → 𝒰_A` (the identity on objects and on representatives) of the zero
+objects and biproducts of `B`-supported objects of `𝒜_A/𝒜_Z`. -/
 private instance cutInter_isDualAdditive :
-    IsDualAdditive (ExcisivePair.inter (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)) where
-  exists_zero := cutInter_zero
-  exists_biprod := cutInter_biprod
-  dual_mem := cutInter_dual
+    IsDualAdditive (ExcisivePair.inter (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)) :=
+  gInter_isDualAdditive (P := supp A) (Q := supp (A ∪ B)) (U' := suppIn A Z)
+    (U := suppIn (A ∪ B) Z) (R := supp B) supp_le_union (obj_mem_of_le supp_le_union (supp Z))
 
 variable [IsIsometricVAdd (ZMod p) X]
 
@@ -130,55 +220,10 @@ variable (Z) in
 of the quotient support filtration of `𝒜_A/𝒜_Z` by its `B`-supported objects. -/
 private noncomputable def cutFiltY (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B) :
     KaroubiFiltration
-      (ExcisivePair.inter (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)) where
-  D V := (cutJ A B Z).map '' (quotSupp_karoubiFiltration A Z hB).D ⟨⟨V.obj.as.obj, V.property⟩⟩
-  idem := by
-    rintro M _ ⟨q, hq, rfl⟩
-    rw [← Functor.map_comp, (quotSupp_karoubiFiltration A Z hB).idem hq]
-  split := by
-    rintro M _ ⟨q, hq, rfl⟩
-    obtain ⟨E, hE, i, r, h1, h2⟩ := (quotSupp_karoubiFiltration A Z hB).split hq
-    exact ⟨(cutJ A B Z).obj E, hE, (cutJ A B Z).map i, (cutJ A B Z).map r,
-      by rw [← Functor.map_comp, h1, CategoryTheory.Functor.map_id],
-      by rw [← Functor.map_comp, h2]⟩
-  split_compl := by
-    rintro M _ ⟨q, hq, rfl⟩
-    obtain ⟨E, i, r, h1, h2⟩ := (quotSupp_karoubiFiltration A Z hB).split_compl hq
-    exact ⟨(cutJ A B Z).obj E, (cutJ A B Z).map i, (cutJ A B Z).map r,
-      by rw [← Functor.map_comp, h1, CategoryTheory.Functor.map_id],
-      by rw [← Functor.map_comp, h2, Functor.map_sub, CategoryTheory.Functor.map_id]; rfl⟩
-  nonempty M := by
-    obtain ⟨q, hq⟩ := (quotSupp_karoubiFiltration A Z hB).nonempty ⟨⟨M.obj.as.obj, M.property⟩⟩
-    exact ⟨_, q, hq, rfl⟩
-  directed := by
-    rintro M _ _ ⟨q, hq, rfl⟩ ⟨q', hq', rfl⟩
-    obtain ⟨q'', hq'', ⟨h1, h2⟩, ⟨h3, h4⟩⟩ := (quotSupp_karoubiFiltration A Z hB).directed hq hq'
-    exact ⟨(cutJ A B Z).map q'', ⟨q'', hq'', rfl⟩,
-      ⟨by rw [← Functor.map_comp, h1], by rw [← Functor.map_comp, h2]⟩,
-      ⟨by rw [← Functor.map_comp, h3], by rw [← Functor.map_comp, h4]⟩⟩
-  factor_left {V M} g hV := by
-    obtain ⟨q, hq, h⟩ := (quotSupp_karoubiFiltration A Z hB).factor_left
-      ((cutJ A B Z).preimage (X := ⟨⟨V.obj.as.obj, V.property⟩⟩)
-        (Y := ⟨⟨M.obj.as.obj, M.property⟩⟩) g) hV
-    refine ⟨(cutJ A B Z).map q, ⟨q, hq, rfl⟩, ?_⟩
-    have h' := congrArg (cutJ A B Z).map h
-    rwa [Functor.map_comp, Functor.map_preimage] at h'
-  factor_right {M V} g hV := by
-    obtain ⟨q, hq, h⟩ := (quotSupp_karoubiFiltration A Z hB).factor_right
-      ((cutJ A B Z).preimage (X := ⟨⟨M.obj.as.obj, M.property⟩⟩)
-        (Y := ⟨⟨V.obj.as.obj, V.property⟩⟩) g) hV
-    refine ⟨(cutJ A B Z).map q, ⟨q, hq, rfl⟩, ?_⟩
-    have h' := congrArg (cutJ A B Z).map h
-    rwa [Functor.map_comp, Functor.map_preimage] at h'
-  dual_mem_iff {M} q := by
-    constructor
-    · rintro ⟨q₀, hq₀, rfl⟩
-      exact ⟨(dualHom q₀ :), ((quotSupp_karoubiFiltration A Z hB).dual_mem_iff q₀).1 hq₀,
-        cutJ_map_dualHom q₀⟩
-    · rintro ⟨q₀, hq₀, hq⟩
-      refine ⟨(dualHom q₀ :), ((quotSupp_karoubiFiltration A Z hB).dual_mem_iff q₀).1 hq₀, ?_⟩
-      rw [cutJ_map_dualHom, hq, dualHom_dualHom]
-      erw [eqToHom_refl, Category.id_comp, Category.comp_id]
+      (ExcisivePair.inter (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)) :=
+  gFiltY (P := supp A) (Q := supp (A ∪ B)) (U' := suppIn A Z) (U := suppIn (A ∪ B) Z)
+    (R := supp B) supp_le_union (obj_mem_of_le supp_le_union (supp Z))
+    (quotSupp_karoubiFiltration A Z hB)
 
 end
 
@@ -434,8 +479,7 @@ variable [IsIsometricVAdd (ZMod p) X] {A B Z : Set X}
 private theorem cutR_ξ (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
     (hZ : ∀ c : ZMod p, ∀ x ∈ Z, c +ᵥ x ∈ Z)
     (N : (supp (A ∪ B) : ObjectProperty (AsymCat G X)).FullSubcategory) :
-    ((cutR A B Z hB hZ).ξ ((FiltQuot.functor _).obj ((FiltQuot.functor _).obj N))).hom =
-      (cutK A B Z hB).map ((cutExc A B Z hB hZ).1.ξ ((FiltQuot.functor _).obj N)).hom := by
+    ((cutR A B Z hB hZ).ξ ⟨⟨N⟩⟩).hom = (cutK A B Z hB).map ((cutExc A B Z hB hZ).1.ξ ⟨N⟩).hom := by
   change ((cutF A B Z hB hZ).ξ N).hom = _
   rw [DualFunctor.comp_ξ, Iso.trans_hom, Functor.mapIso_hom, DualFunctor.comp_ξ,
     Iso.trans_hom, Functor.mapIso_hom]
@@ -444,7 +488,6 @@ private theorem cutR_ξ (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
   erw [CategoryTheory.Functor.map_id, Category.id_comp]
   exact Category.comp_id _
 
-set_option maxHeartbeats 2000000 in
 variable (A B Z) in
 /-- The unit `id ≅ r ∘ e`, the image under `K` of the unit of the excision equivalence. -/
 private noncomputable def cutUnit (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
@@ -482,7 +525,7 @@ private noncomputable def cutUnit (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x �
         ⟨⟨⟨M⟩, hM⟩⟩).hom = 𝟙 _ := rfl
     simp only [DualFunctor.comp_ξ, Iso.trans_hom, Functor.mapIso_hom, DualFunctor.id_ξ,
       Iso.refl_hom, h₁, CategoryTheory.Functor.map_id]
-    erw [cutR_ξ]
+    refine (congrArg (fun t => _ ≫ (𝟙 _ ≫ t) ≫ _) (cutR_ξ hB hZ M)).trans ?_
     exact h
 
 omit [IsIsometricVAdd (ZMod p) X] in
@@ -515,7 +558,6 @@ private theorem cut_starP (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
   obtain ⟨g, rfl⟩ := (FiltQuot.functor _).map_surjective f
   rfl
 
-set_option maxHeartbeats 2000000 in
 variable (A B Z) in
 /-- The counit `e ∘ r ≅ id`, the image under `I⁻¹` of the counit of the excision equivalence. -/
 private noncomputable def cutCounit (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x ∈ B)
@@ -523,14 +565,15 @@ private noncomputable def cutCounit (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x 
     DualFunctor.UnitaryIso ((cutR A B Z hB hZ).comp
       (ExcisivePair.e (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B)))
       (DualFunctor.id _) where
-  iso := NatIso.ofComponents (fun M => (cutP A B Z).toFunctor.mapIso
-      ((cutExc A B Z hB hZ).2.2.iso.app ((FiltQuot.functor _).obj M.as.as))) (by
+  iso := NatIso.ofComponents (fun M => (cutP A B Z).toFunctor.mapIso (Y := ⟨M.as.as⟩)
+      ((cutExc A B Z hB hZ).2.2.iso.app ⟨M.as.as⟩)) (by
     rintro ⟨⟨M⟩⟩ ⟨⟨N⟩⟩ g
     obtain ⟨g', rfl⟩ := (FiltQuot.functor _).map_surjective g
     obtain ⟨f, rfl⟩ := (FiltQuot.functor _).map_surjective g'
     have hn := congrArg (cutP A B Z).toFunctor.map
       ((cutExc A B Z hB hZ).2.2.iso.hom.naturality
-        ((FiltQuot.functor (suppIn (A ∪ B) (B ∪ Z))).map f))
+        ((FiltQuot.functor (suppIn (A ∪ B) (B ∪ Z))).map f :
+          (⟨M⟩ : FiltQuot (suppIn (G := G) (A ∪ B) (B ∪ Z))) ⟶ ⟨N⟩))
     rw [Functor.map_comp, Functor.map_comp] at hn
     have h1 : ((cutR A B Z hB hZ).comp
         (ExcisivePair.e (quotSupp (G := G) (A ∪ B) Z A) (quotSupp (A ∪ B) Z B))).toFunctor.map
@@ -538,14 +581,16 @@ private noncomputable def cutCounit (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x 
         (cutP A B Z).toFunctor.map
           ((ExcisivePair.e (suppIn (G := G) (A ∪ B) A) (suppIn (A ∪ B) (B ∪ Z))).toFunctor.map
             ((cutExc A B Z hB hZ).1.toFunctor.map
-              ((FiltQuot.functor (suppIn (A ∪ B) (B ∪ Z))).map f))) :=
+              ((FiltQuot.functor (suppIn (A ∪ B) (B ∪ Z))).map f :
+                (⟨M⟩ : FiltQuot (suppIn (G := G) (A ∪ B) (B ∪ Z))) ⟶ ⟨N⟩))) :=
       cut_starP (A := A) (Z := Z) hB
-        ((cutExc A B Z hB hZ).1.toFunctor.map ((FiltQuot.functor (suppIn (A ∪ B) (B ∪ Z))).map f))
+        ((cutExc A B Z hB hZ).1.toFunctor.map ((FiltQuot.functor (suppIn (A ∪ B) (B ∪ Z))).map f :
+          (⟨M⟩ : FiltQuot (suppIn (G := G) (A ∪ B) (B ∪ Z))) ⟶ ⟨N⟩))
     rw [h1]
     exact hn)
   unitary M := by
     rcases M with ⟨⟨M⟩⟩
-    have hc := (cutExc A B Z hB hZ).2.2.unitary ((FiltQuot.functor _).obj M)
+    have hc := (cutExc A B Z hB hZ).2.2.unitary ⟨M⟩
     have h₀ : ∀ N, ((ExcisivePair.e (suppIn (G := G) (A ∪ B) A) (suppIn (A ∪ B) (B ∪ Z))).ξ
         N).hom = 𝟙 _ := fun _ => rfl
     simp only [DualFunctor.comp_ξ, Iso.trans_hom, Functor.mapIso_hom, DualFunctor.id_ξ,
@@ -556,8 +601,8 @@ private noncomputable def cutCounit (hB : ∀ c : ZMod p, ∀ x ∈ B, c +ᵥ x 
         N).hom = 𝟙 _ := fun _ => rfl
     simp only [DualFunctor.comp_ξ, Iso.trans_hom, Functor.mapIso_hom, DualFunctor.id_ξ,
       Iso.refl_hom, h₁, Category.comp_id]
-    erw [cutR_ξ, cut_starP]
-    exact h
+    refine h.trans ((congrArg (ExcisivePair.e (quotSupp (G := G) (A ∪ B) Z A)
+      (quotSupp (A ∪ B) Z B)).toFunctor.map (cutR_ξ hB hZ M)).trans (cut_starP hB _)).symm
 end UnitCounit
 
 /-- **Cut square.** -/
@@ -577,5 +622,27 @@ noncomputable def cutSquare [IsIsometricVAdd (ZMod p) X] [CompactSpace X] {A B Z
      unit := cutUnit A B Z hBi hZi
      counit := cutCounit A B Z hBi hZi }, rfl, rfl, fun V =>
     ⟨fun h => (supp_inter hA hB _).1 ⟨V.property, h⟩, fun h => ((supp_inter hA hB _).2 h).2⟩⟩
+
+section NonVacuity
+
+/-- The trivial action of `C_2` on a point (for the non-vacuity witness). -/
+private abbrev unitAction : AddAction (ZMod 2) Unit where
+  vadd _ x := x
+  zero_vadd _ := rfl
+  add_vadd _ _ _ := rfl
+
+attribute [local instance] unitAction
+
+/-- Non-vacuity: the cut square for `X` a point with the trivial (isometric) action of `C_2`, the
+trivial group sequence, `A = B = X` and `Z = ∅`, an excisive pair in `𝒜_X/𝒜_∅`. -/
+private noncomputable def cutSquare_unit :
+    ExcisivePair (FiltQuot (suppIn (G := GroupSeq.trivial 2)
+      ((Set.univ : Set Unit) ∪ Set.univ) ∅)) :=
+  letI : IsIsometricVAdd (ZMod 2) Unit := ⟨fun _ => isometry_subsingleton⟩
+  (cutSquare (G := GroupSeq.trivial 2) (A := (Set.univ : Set Unit)) (B := Set.univ)
+    (Z := (∅ : Set Unit)) isClosed_univ isClosed_univ (fun _ _ _ => Set.mem_univ _)
+    (fun _ _ _ => Set.mem_univ _) (fun _ _ h => h)).1
+
+end NonVacuity
 
 end HSP

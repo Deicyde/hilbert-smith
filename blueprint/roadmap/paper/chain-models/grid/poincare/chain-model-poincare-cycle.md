@@ -19,6 +19,17 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 
 ## Depends on
 
+- [Chain-model duality](../chain-model-duality.md)
+- [The involution T](../../../l-theory/base/complexes/structure-involution.md)
+- [Chain model](../model/chain-model.md)
+- [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
 - [The structure of the unit complex](../model/unit-structure.md)
 - [The structure of the grid complex](../model/grid-structure.md)
 - [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
@@ -27,11 +38,6 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 - [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
 - [The unit complex](../cubical/unit-complex.md)
 - [Cubical torus grid](../cubical/cubical-torus-grid.md)
-- [Chain-model duality](../chain-model-duality.md)
-- [The involution T](../../../l-theory/base/complexes/structure-involution.md)
-
-## Proof depends on
-
 - [Leibniz rule for products of structures](../tensor/structure-products/str-prod-leibniz.md)
 - [Products of structures commute with T](../tensor/structure-products/str-prod-involution.md)
 - [Circle duality](../circle-duality.md)
@@ -40,3 +46,18 @@ For every $i$, the structure $\varphi_i$ of [chain-model duality](../chain-model
 - [A product of structures with a zero left factor](../tensor/structure-products/str-prod-zero-left.md)
 - [A product of structures with a zero right factor](../tensor/structure-products/str-prod-zero-right.md)
 - [The unit structure is a cycle](../tensor/structure-products/unit-structure-cycle.md)
+- [Mesh sequence](../mesh-sequence.md)
+- [The symmetric circle structure](circle-data/circle-phi-sym.md)
+- [Propagation](../../../categories/asymptotic/propagation.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [Augmentation of the circle complex](../cubical/circle-aug.md)
+- [Fundamental chain of the circle complex](../cubical/circle-fundamental.md)
+- [Labels of the circle cells](../cubical/circle-label.md)
+- [The circle inverse](circle-data/circle-b.md)
+- [The circle homotopy element](circle-data/circle-h.md)
+- [The dual circle homotopy](circle-data/circle-k-dual.md)
+- [The circle homotopy](circle-data/circle-k.md)
+- [The circle structure](circle-data/circle-phi.md)
+- [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)
+- [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Strict symmetric Poincaré complex](../../../l-theory/base/pairs/symmetric-poincare-complex.md)

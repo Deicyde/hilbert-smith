@@ -24,3 +24,6 @@ in $M(FD)_n$, for the [pushforward](structure-push.md) and the [image of structu
 - [Duality functor](../categories/duality-functor.md)
 - [Pushforward of structures](structure-push.md)
 - [Image of structures under a duality functor](functors/functor-structure.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Image of a complex under a duality functor](functors/functor-complex.md)
+- [Structure complex](structure-complex.md)

@@ -19,10 +19,10 @@ $\mathrm{Sign}_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to(G\to\mathbb R)$, $[C,\var
 
 ## Depends on
 
-- [Projective L-group](../../l-theory/base/groups/l-group.md)
 - [Group structure on L](../../l-theory/base/groups/l-group-add.md)
-- [Complex signature](complex-signature.md)
 - [The projective L-group](../../l-theory/base/groups/projective-l-group.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
 
 ## Proof depends on
 
@@ -36,3 +36,17 @@ $\mathrm{Sign}_G:L^p_4(\mathrm{Free}(\mathbb Q[G]))\to(G\to\mathbb R)$, $[C,\var
 - [Isometry invariance](../forms/form-signature-isometry.md)
 - [Additivity](../forms/form-signature-sum.md)
 - [Negation](../forms/form-signature-neg.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [A duality category has binary direct sums](../../l-theory/base/categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../../l-theory/base/complexes/structure-complex.md)
+- [Sum of structured complexes](../../l-theory/base/complexes/sum-of-complexes.md)
+- [Projective L-group](../../l-theory/base/groups/l-group.md)
+- [Strict Poincaré pair](../../l-theory/base/pairs/poincare-pair.md)
+- [Strict symmetric Poincaré complex](../../l-theory/base/pairs/symmetric-poincare-complex.md)
+- [The equivariant signature of an invariant form](../forms/form-signature.md)
+- [Complex signature](complex-signature.md)
+- [The middle form](middle-form.md)
+- [The action of the group on real cohomology](../real/real-cohomology-action.md)
+- [The map on real cohomology induced by a chain map](../real/real-cohomology-map.md)
+- [Real cohomology](../real/real-cohomology.md)
+- [The real matrix of a morphism](../real/real-matrix.md)

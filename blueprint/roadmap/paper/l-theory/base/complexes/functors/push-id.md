@@ -21,3 +21,4 @@ For a complex $C$, the [pushforward](../structure-push.md) along the identity is
 
 - [Pushforward of structures](../structure-push.md)
 - [Structure complex](../structure-complex.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)

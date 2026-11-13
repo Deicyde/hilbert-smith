@@ -75,7 +75,7 @@ def groupSeq : GroupSeq D.p where
   χ := D.χ
 
 /-- `q_i = |G_i|`. -/
-def q (i : ℕ) : ℕ := Fintype.card (D.groupSeq.G i)
+private def q (i : ℕ) : ℕ := Fintype.card (D.groupSeq.G i)
 
 /-- `N = n + 4`. -/
 def N : ℕ := D.n + 4

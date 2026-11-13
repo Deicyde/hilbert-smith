@@ -4,7 +4,7 @@ import HilbertSmithPaper.ChainModels.Grid.Poincare.ChainModelAug
 import HilbertSmithPaper.ChainModels.Grid.Tensor.StructureProducts.StrProdBlocks
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronComposite
 import HilbertSmithPaper.ChainModels.Grid.Tensor.KronDual
-import HilbertSmithPaper.ChainModels.Grid.Tensor.BlockDecomposition
+import HilbertSmithPaper.ChainModels.Grid.Tensor.Blocks.BlockDecomposition
 import HilbertSmithPaper.ChainModels.Grid.Cp2.Cp2DimNeg
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridFundamental
 import HilbertSmithPaper.ChainModels.Grid.Cubical.GridAug

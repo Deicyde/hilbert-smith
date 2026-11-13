@@ -17,5 +17,10 @@ For the [circle complex](../../cubical/circle-complex.md) $S=S_k$, the element $
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
-- [Cubical torus grid](../../cubical/cubical-torus-grid.md)
 - [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)

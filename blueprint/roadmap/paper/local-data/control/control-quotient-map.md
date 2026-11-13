@@ -17,3 +17,10 @@ The *quotient map* $\pi:Z^+\to T$ to the [control space](control-space.md) sends
 ## Depends on
 
 - [Control space](control-space.md)
+- [Local datum](../chart/local-datum.md)
+- [The test region](../chart/test-region.md)
+
+## Proof depends on
+
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

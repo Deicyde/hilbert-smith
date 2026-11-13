@@ -16,5 +16,9 @@ Each [cell](circle-cell.md) of the [circle complex](circle-complex.md) $S_k$ is 
 
 ## Depends on
 
-- [The cell of a basis vector of the circle complex](circle-cell.md)
 - [The circle complex](circle-complex.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [The cell of a basis vector of the circle complex](circle-cell.md)

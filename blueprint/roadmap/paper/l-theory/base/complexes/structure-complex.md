@@ -16,4 +16,4 @@ For a complex $C$, $M(C)_n=\prod_{r+s=n}\mathrm{Hom}(C_s^*,C_r)$, the product ov
 
 ## Depends on
 
-- [Dual complex](dual-complex.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)

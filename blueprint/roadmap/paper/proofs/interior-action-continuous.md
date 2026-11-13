@@ -20,3 +20,8 @@ Let a group $G$, with a topology, act jointly continuously on a topological spac
 ## Depends on
 
 - [The action on the intrinsic interior](interior-action.md)
+- [Intrinsic interior](intrinsic-interior.md)
+
+## Proof depends on
+
+- [The intrinsic interior is invariant](intrinsic-interior-invariant.md)

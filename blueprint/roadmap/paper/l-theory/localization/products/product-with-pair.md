@@ -8,9 +8,9 @@ origin: cited
 
 Let $(C,\phi)$ be a strict $m$-dimensional symmetric Poincaré complex in $\operatorname{Kar}C_{\mathbb Z^j}\mathcal A$, and let $(g:B\to E,\delta\theta,\theta)$ be a strict $n$-dimensional symmetric Poincaré pair whose chain objects lie in $C_\mathbb Z(\mathbb Q)$. Then
 $$(1\otimes g:C\otimes B\to C\otimes E,\ \phi\otimes\delta\theta,\ (-1)^m\phi\otimes\theta)$$
-is a strict $(m+n)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^{j+1}}\mathcal A$, with boundary $(C\otimes B,(-1)^m\phi\otimes\theta)$.
+is a strict $(m+n)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C_{\mathbb Z^{j+1}}\mathcal A$, with boundary $(C\otimes B,(-1)^m\phi\otimes\theta)$. Here $1\otimes g$ is the [tensor product of chain maps](bookkeeping/product-map.md).
 
-**Remark (not formalized).** For the ray pair $(f:\mathrm{pt}_0\to\Lambda_+)$ of [The symmetric ray](../../comparison/symmetric-ray.md), whose boundary structure is $\sigma_0=-1$, the boundary of the product is $C$ placed in position $0$ with structure $(-1)^{m+1}\phi$: the blocks of $\phi\otimes1$ on $C\otimes\mathrm{pt}_0$ have sign $(-1)^{0\cdot(a+m)}=1$. So the sign called $\varepsilon_m$ in [The truncated line is a pair](../../comparison/truncated-line-pair.md) is $(-1)^{m+1}$.
+**Remark (not formalized).** For the ray pair $(f:\mathrm{pt}_0\to\Lambda_+)$ of the symmetric ray, whose boundary structure is $\sigma_0=-1$, the boundary of the product is $C$ placed in position $0$ with structure $(-1)^{m+1}\phi$: the blocks of $\phi\otimes1$ on $C\otimes\mathrm{pt}_0$ have sign $(-1)^{0\cdot(a+m)}=1$. So the sign $\varepsilon_m$ of the truncated line as a pair is $(-1)^{m+1}$.
 
 *Proof sketch.* Write $s(a,b)=(-1)^{b(a+m)}$, the sign of $\phi\otimes\delta\theta$ on the block with target $C_a\boxtimes E_b$.
 1. Degrees. $C\otimes E$ has zero objects outside $[0,m+n]$ and $C\otimes B$ outside $[0,m+n-1]$.
@@ -29,6 +29,7 @@ is a strict $(m+n)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 
 - [Strict Poincaré pair](../../base/pairs/poincare-pair.md)
 - [Tensor product of complexes](complex-product.md)
+- [Tensor product of chain maps](bookkeeping/product-map.md)
 - [External product of structures](external-product.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [Duals of box products](box-dual.md)

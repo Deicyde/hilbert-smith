@@ -1,4 +1,5 @@
 import HilbertSmithPaper.Categories.Supports.SupportFiltration
+import HilbertSmithPaper.LTheory.Base.Categories.DualityFunctors.QuotientFunctorStrict
 import HilbertSmithPaper.LTheory.Base.Categories.QuotientDualityFunctor
 
 /-!

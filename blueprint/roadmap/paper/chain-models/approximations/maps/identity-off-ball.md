@@ -21,6 +21,7 @@ For $|x|\ge3/2$ and all $a,b,c\in\mathbb Z_p$, $t\in[0,1]$: $\widehat a(x)=x$ an
 
 - [The completed map on Euclidean space](completed-map-euclid.md)
 - [The track map on Euclidean space](track-map-euclid.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 

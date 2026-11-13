@@ -20,4 +20,3 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal
 
 - [Additive subcategory closed under duality](dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](duality-category.md)
-- [Duality functor](duality-functor.md)

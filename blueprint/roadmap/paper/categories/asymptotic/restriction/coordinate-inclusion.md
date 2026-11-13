@@ -21,7 +21,12 @@ For a [restriction](restriction-sub-basis.md) $M_P$ of $M$, the coordinate inclu
 ## Depends on
 
 - [Restriction to a sub-basis](restriction-sub-basis.md)
-- [Enumeration of a sub-basis](restriction-index-embedding.md)
-- [Propagation](../propagation.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
+
+## Proof depends on
+
 - [Free category of a finite group](../free-category.md)
+- [Propagation](../propagation.md)
+- [Enumeration of a sub-basis](restriction-index-embedding.md)
 - [The inclusion matrix](../structure/inclusion-matrix.md)

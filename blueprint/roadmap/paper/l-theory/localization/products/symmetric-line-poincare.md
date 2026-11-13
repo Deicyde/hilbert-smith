@@ -27,13 +27,17 @@ $\lambda_\natural:\Lambda^{1-*}\to\Lambda$ is a chain homotopy equivalence in $C
 - [The symmetric line](symmetric-line.md)
 - [Structure of the symmetric line](symmetric-line-structure.md)
 - [The symmetric line is a symmetric complex](symmetric-line-cycle.md)
-- [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Dual complex](../../base/complexes/dual-complex.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
+- [The involution T](../../base/complexes/structure-involution.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Based vector spaces](based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
 
 ## Proof depends on
 
-- [The symmetric line](symmetric-line.md)
 - [Homologous cycles give homotopic maps](../../base/complexes/cycle-chain-map-homotopy.md)
-- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
 - [Entries of composites of constant families](bookkeeping/constant-family-comp.md)
-- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)

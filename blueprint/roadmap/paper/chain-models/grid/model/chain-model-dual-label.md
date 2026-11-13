@@ -16,4 +16,11 @@ With $N=n+4$, the dual cell $a^*$ of $(D_i^{N-*})_r=((D_i)_{N-r})^*$ carries the
 
 ## Depends on
 
+- [Chain model](chain-model.md)
+- [The torus](../torus.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [Torus labels of chain-model cells](chain-model-label.md)

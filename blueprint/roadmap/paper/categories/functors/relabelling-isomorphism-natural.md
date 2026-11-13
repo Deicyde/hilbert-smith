@@ -20,3 +20,6 @@ In the setting of the [relabelling isomorphism](relabelling-isomorphism.md), let
 ## Depends on
 
 - [Relabelling isomorphism](relabelling-isomorphism.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)

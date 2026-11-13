@@ -20,3 +20,5 @@ For a local datum, $d_1$ is a metric on $Z^+$ that induces the subspace topology
 ## Depends on
 
 - [The orbit sup-distance on the test region](orbit-sup-metric.md)
+- [Local datum](../chart/local-datum.md)
+- [The test region](../chart/test-region.md)
