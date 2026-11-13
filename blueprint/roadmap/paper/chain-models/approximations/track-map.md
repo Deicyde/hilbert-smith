@@ -12,11 +12,12 @@ For $a,b,c\in\mathbb Z_p$ and $t\in[0,1]$, let $L_{a,b,c,t}=(1-t)\,\widehat a\wi
 ## Sources
 - HS paper, Section 9 (raw product tracks).
 ## Depends on
-- [The lift](../torus/lift.md)
-- [The quotient map](../torus/proj.md)
-- [The track map on Euclidean space](maps/track-map-euclid.md)
+
 - [The torus](../grid/torus.md)
+- [Local datum](../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
-- [The quotient map inverts the lift](../torus/proj-lift.md)
+- [The track map on Euclidean space](maps/track-map-euclid.md)
+- [The lift](../torus/lift.md)
+- [The quotient map](../torus/proj.md)

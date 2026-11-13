@@ -22,3 +22,4 @@ For a duality category $\mathcal A$, the *Karoubi embedding* $\mathrm{emb}_{\mat
 
 - [Idempotent completion with duality](karoubi-duality.md)
 - [Duality functor](duality-functor.md)
+- [Small Q-linear category with strict duality](duality-category.md)

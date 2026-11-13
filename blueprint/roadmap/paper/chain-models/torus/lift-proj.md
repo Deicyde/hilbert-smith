@@ -21,3 +21,7 @@ For $y\in\mathbb R^n$ with $|y|<2$, $\widetilde{q(y)}=y$.
 
 - [The lift](lift.md)
 - [The quotient map](proj.md)
+
+## Proof depends on
+
+- [The torus](../grid/torus.md)

@@ -21,6 +21,8 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 - [Decorated objects of the completed quotient](decorated-predicate.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 
 ## Proof depends on
 
@@ -30,7 +32,7 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 - [Equality in $K_0$](../../bounded/categories/k-zero-stable-equality.md)
 - [Dual of a binary sum](../../base/categories/sums/dual-biproduct.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
-- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
-- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 - [The completion of a strict duality functor is strict](../../base/categories/duality-functors/karoubi-functor-strict.md)
 - [The quotient duality functor is strict](../../base/categories/duality-functors/quotient-functor-strict.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)

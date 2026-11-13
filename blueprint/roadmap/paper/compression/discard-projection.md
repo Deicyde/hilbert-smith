@@ -24,3 +24,10 @@ is taken in each degree $r$, as a square matrix on the basis of $(D_i)_r$. For $
 
 - [Retained projection](retained-projection.md)
 - [Retained inclusion](retained-inclusion.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [Compressed complex](compressed-complex.md)
+- [The round sphere](../corner/round-sphere.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)

@@ -36,6 +36,12 @@ is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 - [Tensor product of chain maps](bookkeeping/product-map.md)
 - [The symmetric line](symmetric-line.md)
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Based vector spaces](based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
 
 ## Proof depends on
 
@@ -52,7 +58,14 @@ is a strict $(k+1)$-dimensional symmetric Poincaré pair in $\operatorname{Kar}C
 - [Product of a complex with the line](../transitions/transition-complex.md)
 - [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
 - [Pushforward preserves identities](../../base/complexes/functors/push-id.md)
-- [Structure complex](../../base/complexes/structure-complex.md)
 - [Pushforward of structures](../../base/complexes/structure-push.md)
 - [Dual complexes have finitely many nonzero chain objects](bookkeeping/dual-complex-finite.md)
 - [Duality pairings](duality-pairing.md)
+- [A duality category has binary direct sums](../../base/categories/sums/dual-binary-biproducts.md)
+- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
+- [Dual complex](../../base/complexes/dual-complex.md)
+- [The involution T](../../base/complexes/structure-involution.md)
+- [Pair map](../../base/pairs/pair-map.md)
+- [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
+- [Support of a tensor product of complexes](bookkeeping/product-support.md)
+- [Summand inclusions of a tensor product](bookkeeping/summand-inclusion.md)

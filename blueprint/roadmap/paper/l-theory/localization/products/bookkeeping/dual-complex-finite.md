@@ -20,3 +20,4 @@ Let $C$ be a complex in a duality category with all but finitely many chain obje
 ## Depends on
 
 - [Dual complex](../../../base/complexes/dual-complex.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)

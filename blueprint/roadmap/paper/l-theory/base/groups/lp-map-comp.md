@@ -20,6 +20,12 @@ For duality functors $F:\mathcal A\to\mathcal A'$ and $G:\mathcal A'\to\mathcal 
 ## Depends on
 
 - [Induced homomorphism](induced-map.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Duality functor](../categories/duality-functor.md)
+- [Identity and composite duality functors](../categories/duality-functors/composite-duality-functor.md)
+- [Idempotent completion with duality](../categories/karoubi-duality.md)
+- [Group structure on L](l-group-add.md)
+- [The projective L-group](projective-l-group.md)
 
 ## Proof depends on
 
@@ -27,3 +33,4 @@ For duality functors $F:\mathcal A\to\mathcal A'$ and $G:\mathcal A'\to\mathcal 
 - [Unitary natural isomorphism](../categories/unitary-isomorphism.md)
 - [Unitary invariance](unitary-invariance.md)
 - [Functoriality of induced maps](induced-map-comp.md)
+- [L-group](l-group.md)

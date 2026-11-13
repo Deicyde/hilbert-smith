@@ -23,9 +23,12 @@ Let $X$ be compact with an isometric $C_p$-action. If $S,Z\subset X$ are disjoin
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Support subcategory](support-subcategory.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
-- [The support subcategory is additive](support-dual-additive.md)
 
 ## Proof depends on
 
 - [Maps through a disjoint support vanish](disjoint-support-vanishing.md)
 - [Every morphism is a class](../asymptotic/structure/class-surjective.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](support-dual-additive.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

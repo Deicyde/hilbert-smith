@@ -23,8 +23,15 @@ The statement needs neither that $S$ is closed nor that the action on $T$ is iso
 
 - [Forgetting the control space](forget-control.md)
 - [Support subcategory](../supports/support-subcategory.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The trivial group sequence](../asymptotic/trivial-group-sequence.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)
 
 ## Proof depends on
 
 - [Pushforward preserves support](push-support.md)
 - [Forgetting the group preserves support](forget-group-support.md)
+- [Pushforward of labels](pushforward.md)

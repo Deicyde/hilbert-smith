@@ -20,3 +20,4 @@ Every morphism $f:M\to N$ of the [asymptotic category](../asymptotic-category.md
 ## Depends on
 
 - [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)

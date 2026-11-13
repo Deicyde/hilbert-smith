@@ -16,7 +16,12 @@ Fix a local datum and a radius $\rho$. With $N=n+4$, the dual cell $a^*$ of $(D_
 
 ## Depends on
 
-- [Torus labels of dual cells](../model/chain-model-dual-label.md)
 - [Chain model](../model/chain-model.md)
-- [Torus test map](../../approximations/torus-test-map.md)
 - [Round sphere](../../../corner/round-sphere.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [Torus test map](../../approximations/torus-test-map.md)
+- [Torus labels of dual cells](../model/chain-model-dual-label.md)

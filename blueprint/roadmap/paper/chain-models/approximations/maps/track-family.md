@@ -16,4 +16,9 @@ The *track family* $\mathcal F$ consists of the [track maps](../track-map.md) $L
 
 ## Depends on
 
+- [The torus](../../grid/torus.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [Track maps](../track-map.md)

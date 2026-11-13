@@ -22,4 +22,6 @@ The definition does not need $Z$ to be closed or invariant, the action to be iso
 
 ## Depends on
 
+## Proof depends on
+
 - [Graph-type matrices](graph-type.md)

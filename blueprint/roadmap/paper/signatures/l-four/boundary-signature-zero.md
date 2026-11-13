@@ -21,6 +21,8 @@ If $(C,\varphi)$ is the boundary of a strict 5-dimensional symmetric Poincaré p
 
 - [Strict Poincaré pair](../../l-theory/base/pairs/poincare-pair.md)
 - [Complex signature](complex-signature.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
 
 ## Proof depends on
 

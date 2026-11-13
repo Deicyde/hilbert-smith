@@ -30,7 +30,6 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 
 ## Depends on
 
-- [Pushforward](pushforward.md)
 - [Support subcategory](../supports/support-subcategory.md)
 - [The support subcategory is additive](../supports/support-dual-additive.md)
 - [Dual subcategory](../../l-theory/base/categories/dual-subcategory.md)
@@ -38,6 +37,10 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
 - [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)
 
 ## Proof depends on
 
@@ -49,3 +52,8 @@ Given $\rho$, the construction does not need $S$ to be nonempty; the functor $R$
 - [Morphisms have propagation tending to zero](../asymptotic/structure/morphism-propagation.md)
 - [Every morphism is a class](../asymptotic/structure/class-surjective.md)
 - [Equality of classes](../asymptotic/structure/class-eq.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Propagation](../asymptotic/propagation.md)
+- [Pushforward](pushforward.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

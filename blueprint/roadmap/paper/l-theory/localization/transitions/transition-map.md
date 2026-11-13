@@ -28,6 +28,7 @@ is a well-defined homomorphism.
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)
 - [Group structure on L](../../base/groups/l-group-add.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 
 ## Proof depends on
 
@@ -54,3 +55,9 @@ is a well-defined homomorphism.
 - [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
 - [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../../base/complexes/functors/push-id.md)
+- [A duality category has binary direct sums](../../base/categories/sums/dual-binary-biproducts.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Based vector spaces](../products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../products/bookkeeping/based-category.md)
+- [Tensor product of chain maps](../products/bookkeeping/product-map.md)

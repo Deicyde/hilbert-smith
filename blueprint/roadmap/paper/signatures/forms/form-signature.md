@@ -19,4 +19,6 @@ Otherwise set $\mathrm{sign}_b=0$. The trace of an endomorphism of an infinite-d
 
 ## Depends on
 
+## Proof depends on
+
 - [Signature splittings](signature-splitting.md)

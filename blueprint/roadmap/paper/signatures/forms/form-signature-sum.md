@@ -20,9 +20,9 @@ Let $(W,b,\rho)$ and $(W',b',\rho')$ be as in [the existence lemma](../l-four/si
 ## Depends on
 
 - [The equivariant signature](form-signature.md)
-- [Invariant signature splittings exist](../l-four/signature-splitting-exists.md)
 
 ## Proof depends on
 
 - [Signature splittings](signature-splitting.md)
 - [Independence](../l-four/signature-splitting-independence.md)
+- [Invariant signature splittings exist](../l-four/signature-splitting-exists.md)

@@ -17,5 +17,8 @@ The *closed cube* $|c|\subseteq\mathbb T^n$ of a [cube](grid-cube.md) $c=b_1\oti
 ## Depends on
 
 - [Grid cubes](grid-cube.md)
-- [Realization of a circle cell](cell-realization.md)
 - [The torus](../torus.md)
+
+## Proof depends on
+
+- [Realization of a circle cell](cell-realization.md)

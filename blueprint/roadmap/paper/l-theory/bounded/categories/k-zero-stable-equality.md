@@ -21,4 +21,7 @@ $[P]=[Q]$ in $K_0(\mathrm{Kar}\,A)$ iff $P\oplus M\cong Q\oplus M$ for some obje
 
 - [$K_0$ of an idempotent completion](k-zero.md)
 - [The class of an object in $K_0$](classes/k-zero-class.md)
+
+## Proof depends on
+
 - [Isomorphism classes of objects](classes/iso-classes.md)

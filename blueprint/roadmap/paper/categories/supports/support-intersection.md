@@ -20,3 +20,5 @@ Let $X$ be compact and let $A,B\subset X$ be closed (neither invariance nor isom
 ## Depends on
 
 - [Support subcategory](support-subcategory.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Group sequence](../asymptotic/group-sequence.md)

@@ -14,6 +14,12 @@ Let $u,v:E\to F$ be chain maps carried by $\Gamma$ that agree on a [based subcom
 ## Sources
 - HS paper, Section 7 (carrier lemma).
 ## Depends on
+
 - [Based subcomplexes](../based-subcomplex.md)
 - [Carriers](acyclic-carriers.md)
+- [Propagation](../../../categories/asymptotic/propagation.md)
+- [Carried maps](carried-map.md)
+
+## Proof depends on
+
 - [Carried chain maps](carried-chain-map.md)

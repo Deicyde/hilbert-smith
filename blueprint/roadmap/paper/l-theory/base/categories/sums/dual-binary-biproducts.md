@@ -18,5 +18,3 @@ A [duality category](../duality-category.md) has a direct sum of any two objects
 - New: direct from the definitions.
 
 ## Depends on
-
-- [Small Q-linear category with strict duality](../duality-category.md)

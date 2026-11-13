@@ -19,8 +19,4 @@ For maps $f:X\to Y$ and $g:Y\to Z$ of [based vector spaces](../../../../l-theory
 
 ## Depends on
 
-- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
-
-## Proof depends on
-
-
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)

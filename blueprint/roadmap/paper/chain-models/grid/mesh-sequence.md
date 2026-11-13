@@ -12,7 +12,22 @@ Fix a local datum, and let $k_0$ be the [mesh start](../mesh/mesh-start.md): the
 ## Sources
 - New: no argument compares two levels.
 ## Depends on
-- [Mesh start](../mesh/mesh-start.md)
+
 - [Modulus of the track family](../approximations/modulus.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
 ## Proof depends on
+
 - [Properties of completed maps](../approximations/completed-maps-properties.md)
+- [Completed map](../approximations/completed-map.md)
+- [The completed map on Euclidean space](../approximations/maps/completed-map-euclid.md)
+- [Track defect](../approximations/maps/track-defect.md)
+- [The track family](../approximations/maps/track-family.md)
+- [The track map on Euclidean space](../approximations/maps/track-map-euclid.md)
+- [Torus test map](../approximations/torus-test-map.md)
+- [The torus](torus.md)
+- [Mesh start](../mesh/mesh-start.md)
+- [The quotient Euclidean metric](../torus/dist2.md)
+- [The lift](../torus/lift.md)
+- [The round sphere](../../corner/round-sphere.md)
+- [Representatives of the finite quotients](../../local-data/control/representative-map.md)

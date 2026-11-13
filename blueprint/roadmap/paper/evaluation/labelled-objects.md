@@ -1,6 +1,6 @@
 ---
 article_id: af_6b200fe472dfe897a38cc977
-declaration: def
+declaration: abbrev
 origin: bridged
 statement: formalized
 lean: HSP.Evaluation.labelledObj, HSP.Evaluation.IsChainModelRep, HSP.Evaluation.labelledPre, HSP.Evaluation.unitMat
@@ -15,11 +15,17 @@ Fix a [local datum](../local-data/chart/local-datum.md), with [chain models](../
 - HS paper, Section 12 (labellings by a continuous map).
 
 ## Depends on
+
 - [Local datum](../local-data/chart/local-datum.md)
 - [Chain model](../chain-models/grid/model/chain-model.md)
-- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
 - [The torus](../chain-models/grid/torus.md)
 - [The round sphere](../corner/round-sphere.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 - [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
 - [Free category of a finite group](../categories/asymptotic/free-category.md)
+- [Group sequence](../categories/asymptotic/group-sequence.md)
+- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)

@@ -25,8 +25,7 @@ is $s(a,b)$ times $\kappa$ on the summand $(C_{m-a}\boxtimes E_{n-b})^*$, which 
 - [Tensor product of complexes](complex-product.md)
 - [Dual complex](../../base/complexes/dual-complex.md)
 - [Dual complexes have finitely many nonzero chain objects](bookkeeping/dual-complex-finite.md)
-- [Summand inclusions of a tensor product](bookkeeping/summand-inclusion.md)
-- [Summand projections of a tensor product](bookkeeping/summand-projection.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 
 ## Proof depends on
 
@@ -37,3 +36,5 @@ is $s(a,b)$ times $\kappa$ on the summand $(C_{m-a}\boxtimes E_{n-b})^*$, which 
 - [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)
 - [Differential of a tensor product on summands](bookkeeping/product-differential.md)
+- [Summand inclusions of a tensor product](bookkeeping/summand-inclusion.md)
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)

@@ -31,12 +31,15 @@ In particular this applies to complexes in $\mathcal P$ given by complexes in $\
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [A duality category has binary direct sums](../../base/categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
 
 ## Proof depends on
 
-- [Group structure on L](../../base/groups/l-group-add.md)
 - [Homotopy-isometry invariance](../../base/groups/homotopy-isometry-invariance.md)
 - [Duality functors commute with pushforward](../../base/complexes/functor-push.md)
 - [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
-- [Structure complex](../../base/complexes/structure-complex.md)
 - [The sum of two Poincaré complexes](../../base/pairs/poincare-sum.md)
+- [Duality functor](../../base/categories/duality-functor.md)

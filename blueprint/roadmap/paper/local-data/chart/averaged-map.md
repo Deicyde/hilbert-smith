@@ -18,4 +18,7 @@ $$F_0(x)=\int_{\mathbb Z_p} a\cdot x\,d\mu(a).$$
 ## Depends on
 
 - [Local datum](local-datum.md)
+
+## Proof depends on
+
 - [The Haar probability measure on $\mathbb Z_p$](../subgroups/haar-zp.md)

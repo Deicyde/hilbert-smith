@@ -21,3 +21,6 @@ For a chain complex $C$ in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$ with $C_r
 - [Real homology](real-homology.md)
 - [Real cohomology](../real/real-cohomology.md)
 - [The real matrix of a morphism](../real/real-matrix.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)

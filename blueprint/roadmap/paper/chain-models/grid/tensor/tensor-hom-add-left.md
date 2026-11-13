@@ -20,8 +20,11 @@ For graded maps $f_r,f'_r:C_r\to C'_{r+d}$ and $g_r:E_r\to E'_{r+e}$, where $E,E
 ## Depends on
 
 - [Tensor of graded maps of based complexes](based-tensor-hom.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [Additivity of the Kronecker product in the first factor](kron-add-left.md)
-
+- [Block inclusions and projections](blocks/block-maps.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

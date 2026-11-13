@@ -23,3 +23,8 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal
 - [Strict duality functor](strict-duality-functor.md)
 - [Additive subcategory closed under duality](../dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../duality-category.md)
+- [Quotient by a subcategory](../filtration-quotient.md)
+
+## Proof depends on
+
+- [Duality functor](../duality-functor.md)

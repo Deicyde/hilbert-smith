@@ -20,6 +20,12 @@ For graded maps $f_r:C_r\to C^*_{m-r}$ and $g_r:E_r\to E^*_{m'-r}$, the block of
 ## Depends on
 
 - [Product of duality maps in explicit bases](based-dual-prod.md)
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [Block inclusions and projections](../blocks/block-maps.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Kronecker product of matrices](../../../../l-theory/localization/products/bookkeeping/based-kron.md)
 
 ## Proof depends on
 

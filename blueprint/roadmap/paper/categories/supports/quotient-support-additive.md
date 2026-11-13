@@ -21,7 +21,13 @@ For all $S,Z,Y\subset X$, $\mathcal U_Y\subset\mathcal A_S/\mathcal A_Z$ ([suppo
 
 - [Supported objects of a support quotient](quotient-support.md)
 - [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
-
-## Proof depends on
-
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
+- [Support subcategory inside a support subcategory](relative-support.md)
+- [The support subcategory is additive](support-dual-additive.md)
+- [Support subcategory](support-subcategory.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)

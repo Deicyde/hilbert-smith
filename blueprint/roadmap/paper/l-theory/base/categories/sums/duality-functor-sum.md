@@ -19,5 +19,9 @@ Let $(F,\xi),(G,\zeta):\mathcal B\to\mathcal B'$ be [duality functors](../dualit
 ## Depends on
 
 - [Duality functor](../duality-functor.md)
-- [Dual of a binary sum](dual-biproduct.md)
+- [Small Q-linear category with strict duality](../duality-category.md)
+
+## Proof depends on
+
 - [A duality category has binary direct sums](dual-binary-biproducts.md)
+- [Dual of a binary sum](dual-biproduct.md)

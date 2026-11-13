@@ -25,6 +25,7 @@ For every $i$, with cells of the [chain model](../model/chain-model.md) labelled
 - [Mesh sequence](../mesh-sequence.md)
 - [Local datum](../../../local-data/chart/local-datum.md)
 - [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [The torus](../torus.md)
 
 ## Proof depends on
 
@@ -45,4 +46,10 @@ For every $i$, with cells of the [chain model](../model/chain-model.md) labelled
 - [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [The cube of a basis vector](../cubical/grid-cell.md)
 - [The center of a grid cube](../cubical/grid-cube-center.md)
-- [The torus](../torus.md)
+- [Dual tensor of graded maps of based complexes](../tensor/based-dual-tensor-hom.md)
+- [Tensor of graded maps of based complexes](../tensor/based-tensor-hom.md)
+- [Product of duality maps in explicit bases](../tensor/structure-products/based-dual-prod.md)
+- [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)

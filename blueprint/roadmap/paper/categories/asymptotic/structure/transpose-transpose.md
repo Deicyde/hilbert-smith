@@ -20,8 +20,9 @@ For a sequence $u$ of matrices of the [asymptotic category](../asymptotic-catego
 ## Depends on
 
 - [The levelwise transpose](levelwise-transpose.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
 
 ## Proof depends on
 
-- [Asymptotic category](../asymptotic-category.md)
 - [Free category of a finite group](../free-category.md)

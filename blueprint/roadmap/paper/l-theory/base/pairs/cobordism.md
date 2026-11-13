@@ -16,5 +16,18 @@ Strict $k$-dimensional symmetric Poincaré complexes $(C,\phi)$ and $(C',\phi')$
 
 ## Depends on
 
-- [Strict Poincaré pair](poincare-pair.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
+
+## Proof depends on
+
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../complexes/structure-complex.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Strict Poincaré pair](poincare-pair.md)
+- [Mapping cone](../complexes/cone.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [The involution T](../complexes/structure-involution.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Pair map](pair-map.md)

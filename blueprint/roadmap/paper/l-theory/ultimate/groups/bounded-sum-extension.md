@@ -25,6 +25,7 @@ of duality functors $C_{\mathbb Z^j}\mathcal A\to C_{\mathbb Z^j}\mathcal B$: $\
 - [Sum of duality functors](../../base/categories/sums/duality-functor-sum.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
 - [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 
 ## Proof depends on
 
@@ -32,3 +33,5 @@ of duality functors $C_{\mathbb Z^j}\mathcal A\to C_{\mathbb Z^j}\mathcal B$: $\
 - [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
 - [Diagonal morphisms of $C_\mathbb Z(A)$](../../bounded/categories/bounded-diag.md)
 - [The bounded category](../../bounded/categories/bounded-category.md)
+- [A duality category has binary direct sums](../../base/categories/sums/dual-binary-biproducts.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)

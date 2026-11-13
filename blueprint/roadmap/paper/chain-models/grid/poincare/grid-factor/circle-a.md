@@ -17,5 +17,11 @@ On the [circle complex](../../cubical/circle-complex.md) $S=S_k$, $A=\varphi^sb$
 ## Depends on
 
 - [The circle complex](../../cubical/circle-complex.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
 - [The circle inverse](../circle-data/circle-b.md)
 - [The symmetric circle structure](../circle-data/circle-phi-sym.md)
+- [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)

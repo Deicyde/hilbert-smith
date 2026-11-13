@@ -22,12 +22,13 @@ Let $\mathcal B$ be a [duality category](../../base/categories/duality-category.
 - [Duality pairings](duality-pairing.md)
 - [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
 - [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Based vector spaces](based-vector-spaces.md)
 
 ## Proof depends on
 
 - [Diagonal morphisms of $C_\mathbb Z(A)$](../../bounded/categories/bounded-diag.md)
 - [Box product with a bounded vector space](box-product.md)
-- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
 - [Objects of the box product](bookkeeping/box-object.md)
 - [Components of box products of maps](bookkeeping/box-components.md)
-- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)

@@ -29,6 +29,9 @@ Let $\mathcal P\subset\mathcal B$ be a full additive subcategory of a duality ca
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [A duality category has binary direct sums](../../base/categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
 
 ## Proof depends on
 
@@ -44,7 +47,9 @@ Let $\mathcal P\subset\mathcal B$ be a full additive subcategory of a duality ca
 - [Mapping cone](../../base/complexes/cone.md)
 - [Dual complex](../../base/complexes/dual-complex.md)
 - [Duality functors and dual complexes](../../base/complexes/functors/functor-dual-iso.md)
-- [Structure complex](../../base/complexes/structure-complex.md)
 - [Pair map](../../base/pairs/pair-map.md)
 - [Sums of Poincaré complexes](../../base/pairs/sum-of-poincare.md)
 - [Negative of a Poincaré complex](../../base/pairs/poincare-neg.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
+- [The involution T](../../base/complexes/structure-involution.md)

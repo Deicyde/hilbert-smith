@@ -19,14 +19,15 @@ For a local datum there is $\varepsilon_T>0$ such that $d_T(t,c\cdot t)\ge\varep
 
 ## Depends on
 
-- [The control space is an isometric $C_p$-space](control-isometric-action.md)
 - [The cyclic action on the control space](control-action.md)
 - [The orbit metric on the control space](control-metric.md)
+- [Local datum](../chart/local-datum.md)
+- [The control space](control-space.md)
 
 ## Proof depends on
 
 - [The metric on the control space](control-metric-space.md)
 - [The cyclic action is free](control-action-free.md)
-- [The cyclic action is isometric](control-action-isometric.md)
-- [The orbit metric metrizes the control space](control-metric-properties.md)
 - [The control space is compact](control-space-compact.md)
+- [The control space is an isometric $C_p$-space](control-isometric-action.md)
+- [The quotient topology on the control space](control-topology.md)

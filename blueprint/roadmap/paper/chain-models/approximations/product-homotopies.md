@@ -14,10 +14,32 @@ For $g,h\in G_i$ there are $B_{g,h}=B^T_{g,h}\otimes1_P$ of degree $+1$ with $a_
 ## Sources
 - HS paper, Section 9. New: box carriers, with no width induction and no track steps.
 ## Depends on
+
 - [Sphere propagation](../grid/buffers/sphere-prop.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
-- [Group approximations](group-approx.md), [tensoring with the identity of the cells of CP^2](tensor-one-p.md), [sphere labels](../grid/sphere-labels.md), [control labels](../grid/buffers/control-labels.md), [restriction](../grid/buffers/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
+- [Group approximations](group-approx.md)
+- [Tensoring with the identity of the cells of CP^2](tensor-one-p.md)
+- [Control labels](../grid/buffers/control-labels.md)
+- [Buffered restriction of a matrix](../grid/buffers/restriction.md)
+- [Graph-type matrices](../../corner/actions/graph-type.md)
+- [Buffered cells](../grid/buffers/buffered-cells.md)
+- [Mesh sequence](../grid/mesh-sequence.md)
+- [Chain model](../grid/model/chain-model.md)
+- [The round sphere](../../corner/round-sphere.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+- [The cyclic action on the control space](../../local-data/control/control-action.md)
+- [The control space](../../local-data/control/control-space.md)
+
 ## Proof depends on
-- [Carried homotopies](../grid/carriers/carried-homotopy.md), [carried group approximations](group-approx-carried.md), [box hull properties](../grid/box-hull-properties.md), [properties](completed-maps-properties.md), [test region invariant](../../local-data/chart/test-region-invariant.md), [graph type of approximations](approximations-graph-type.md)
+
+- [Carried homotopies](../grid/carriers/carried-homotopy.md)
+- [Carried group approximations](group-approx-carried.md)
+- [Box hull properties](../grid/box-hull-properties.md)
+- [Properties of completed maps](completed-maps-properties.md)
+- [The test regions are invariant](../../local-data/chart/test-region-invariant.md)
+- [Graph type of approximations](approximations-graph-type.md)
+- [Sphere labels](../grid/sphere-labels.md)
+- [Buffered restriction](buffered-restriction.md)

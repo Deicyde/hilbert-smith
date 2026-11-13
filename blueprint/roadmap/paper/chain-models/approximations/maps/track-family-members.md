@@ -21,6 +21,8 @@ The [track family](track-family.md) $\mathcal F$ contains every [completed map](
 
 - [The track family](track-family.md)
 - [Completed map](../completed-map.md)
+- [The torus](../../grid/torus.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
@@ -28,3 +30,6 @@ The [track family](track-family.md) $\mathcal F$ contains every [completed map](
 - [The track map on Euclidean space](track-map-euclid.md)
 - [Track maps](../track-map.md)
 - [The quotient map inverts the lift](../../torus/proj-lift.md)
+- [Completed cutoff](completed-cutoff.md)
+- [The lift](../../torus/lift.md)
+- [The quotient map](../../torus/proj.md)

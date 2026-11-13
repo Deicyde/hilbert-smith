@@ -23,3 +23,12 @@ For every $S\subset X$, the [support subcategory](support-subcategory.md) $\math
 - [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+
+## Proof depends on
+
+- [The concatenation is a biproduct](../asymptotic/structure/concatenation-bilimit.md)
+- [Concatenation](../asymptotic/structure/concatenation.md)
+- [The empty sequence is a zero object](../asymptotic/structure/empty-object-zero.md)
+- [The empty sequence](../asymptotic/structure/empty-object.md)

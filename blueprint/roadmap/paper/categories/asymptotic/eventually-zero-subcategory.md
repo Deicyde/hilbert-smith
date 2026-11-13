@@ -17,3 +17,8 @@ $\mathcal S_{\mathbf G}\subset\mathcal P_{\mathbf G}$ is the full subcategory of
 ## Depends on
 
 - [Sequence category](point-sequence-category.md)
+- [Group sequence](group-sequence.md)
+
+## Proof depends on
+
+- [Free category of a finite group](free-category.md)

@@ -19,17 +19,20 @@ For an involution-invariant Karoubi filtration $U\subset A$, the [entrywise quot
 
 ## Depends on
 
-- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [The entrywise quotient functor](bounded-quotient-functor.md)
 - [The bounded subcategory is closed under sums and duals](bounded-sub-additive.md)
 - [The bounded subcategory](bounded-sub.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
-- [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
 - [Karoubi filtration](../../base/categories/karoubi-filtration.md)
-- [The entrywise functor](entrywise-functor.md)
 - [Strict duality functor](../../base/categories/duality-functors/strict-duality-functor.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
 
 ## Proof depends on
 
-- [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
 - [Maps factoring through a subcategory](../../base/categories/filtration-ideal.md)
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
+- [The entrywise functor](entrywise-functor.md)

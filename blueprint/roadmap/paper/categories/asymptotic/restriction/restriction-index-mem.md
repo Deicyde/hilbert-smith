@@ -21,3 +21,5 @@ For every $i$ and every $k\le m_i$, the [enumerated](restriction-index-embedding
 ## Depends on
 
 - [Enumeration of a sub-basis](restriction-index-embedding.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)

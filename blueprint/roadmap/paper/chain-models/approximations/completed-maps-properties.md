@@ -21,23 +21,23 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and $0<\rho<\rho_+$, 
 ## Sources
 - HS paper, Section 9; it transfers.
 ## Depends on
+
 - [Track defect](maps/track-defect.md)
-- [The track oscillation is bounded](maps/track-oscillation-bounded.md)
-- [Track oscillation](maps/track-oscillation.md)
 - [The track family](maps/track-family.md)
-- [Completed and track maps are the identity off B(0,3/2)](maps/identity-off-ball.md)
 - [The track map on Euclidean space](maps/track-map-euclid.md)
 - [The completed map on Euclidean space](maps/completed-map-euclid.md)
-- [Completed cutoff](maps/completed-cutoff.md)
 - [Representatives of the finite quotients](../../local-data/control/representative-map.md)
 - [Completed map](completed-map.md)
 - [The lift](../torus/lift.md)
 - [The quotient Euclidean metric](../torus/dist2.md)
-- [Modulus of the track family](modulus.md), [track maps](track-map.md)
+- [Modulus of the track family](modulus.md)
 - [Torus test map](torus-test-map.md)
 - [The torus](../grid/torus.md)
-- [Local datum](../../local-data/chart/local-datum.md), [round sphere](../../corner/round-sphere.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+- [The round sphere](../../corner/round-sphere.md)
+
 ## Proof depends on
+
 - [The quotient map](../torus/proj.md)
 - [The quotient map inverts the lift](../torus/proj-lift.md)
 - [Continuity of the lift](../torus/continuous-lift.md)
@@ -45,6 +45,15 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and $0<\rho<\rho_+$, 
 - [The lift inverts the quotient map near the origin](../torus/lift-proj.md)
 - [The quotient map does not increase distances](../torus/dist2-proj-le.md)
 - [Continuity of the quotient map](../torus/continuous-proj.md)
-- [Test map invariant](../../local-data/chart/test-map-invariant.md), [test map continuous](../../local-data/chart/test-map-continuous.md), [averaged map displacement](../../local-data/chart/averaged-map-displacement.md), [representatives](../../local-data/control/representatives.md)
+- [The test map is invariant](../../local-data/chart/test-map-invariant.md)
+- [The test map is continuous](../../local-data/chart/test-map-continuous.md)
+- [The averaged map moves points little](../../local-data/chart/averaged-map-displacement.md)
+- [Representatives act approximately](../../local-data/control/representatives.md)
 - [Test map](../../local-data/chart/test-map.md)
 - [The pinch map](../../local-data/chart/pinch.md)
+- [Completed cutoff](maps/completed-cutoff.md)
+- [Completed and track maps are the identity off B(0,3/2)](maps/identity-off-ball.md)
+- [The track oscillation is bounded](maps/track-oscillation-bounded.md)
+- [Track oscillation](maps/track-oscillation.md)
+- [Track maps](track-map.md)
+- [The averaged chart map](../../local-data/chart/averaged-map.md)

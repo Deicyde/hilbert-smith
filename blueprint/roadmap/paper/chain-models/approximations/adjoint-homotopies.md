@@ -16,9 +16,32 @@ Let $g\in G_i$, $a=a_g$, $a'=a_{-g}$ and $S=B_{-g,g}$ ([chosen product homotopie
 ## Sources
 - HS paper, Section 9; signs rechecked.
 ## Depends on
+
 - [Sphere propagation](../grid/buffers/sphere-prop.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
-- [Adjoint homotopy](adjoint-homotopy.md), [product homotopies](product-homotopies.md), [isometry homotopies](isometry-homotopies.md), [group approximations](group-approx.md), [sphere labels](../grid/sphere-labels.md), [restriction](../grid/buffers/restriction.md), [graph-type matrices](../../corner/actions/graph-type.md), [buffered restriction](buffered-restriction.md)
+- [The adjoint homotopy](adjoint-homotopy.md)
+- [Group approximations](group-approx.md)
+- [Buffered restriction of a matrix](../grid/buffers/restriction.md)
+- [Graph-type matrices](../../corner/actions/graph-type.md)
+- [Buffered cells](../grid/buffers/buffered-cells.md)
+- [Control labels](../grid/buffers/control-labels.md)
+- [Chain-model duality](../grid/chain-model-duality.md)
+- [Chain model](../grid/model/chain-model.md)
+- [The round sphere](../../corner/round-sphere.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Structure complex](../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+- [The cyclic action on the control space](../../local-data/control/control-action.md)
+- [The control space](../../local-data/control/control-space.md)
+
 ## Proof depends on
-- [graph type of approximations](approximations-graph-type.md), [Poincaré](../grid/chain-model-poincare.md)
+
+- [Graph type of approximations](approximations-graph-type.md)
+- [The chain model is Poincaré](../grid/chain-model-poincare.md)
+- [Product homotopies](product-homotopies.md)
+- [Isometry homotopies](isometry-homotopies.md)
+- [Sphere labels](../grid/sphere-labels.md)
+- [Buffered restriction](buffered-restriction.md)

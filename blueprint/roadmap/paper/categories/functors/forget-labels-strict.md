@@ -20,6 +20,18 @@ Let $\mathbf G$ be a [group sequence](../asymptotic/group-sequence.md) and $X$ a
 ## Depends on
 
 - [Forgetting labels](forget-labels.md)
-- [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Group sequence](../asymptotic/group-sequence.md)
 - [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Finite-support subcategory](../asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../asymptotic/point-filtration.md)
+- [Point category](../asymptotic/point-quotient.md)
+- [Sequence category](../asymptotic/point-sequence-category.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)

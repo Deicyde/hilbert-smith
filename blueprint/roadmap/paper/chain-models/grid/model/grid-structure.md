@@ -16,8 +16,15 @@ The structure of the [grid complex](../cubical/cubical-torus-grid.md) is $(\cdot
 
 ## Depends on
 
-- [The structure of the unit complex](unit-structure.md)
 - [Cubical torus grid](../cubical/cubical-torus-grid.md)
-- [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)
-- [Symmetric circle structure](../poincare/circle-data/circle-phi-sym.md)
+- [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [The circle complex](../cubical/circle-complex.md)
 - [The circle complex vanishes in negative degrees](../cubical/circle-dim-neg.md)
+- [The structure of the unit complex](unit-structure.md)
+- [Symmetric circle structure](../poincare/circle-data/circle-phi-sym.md)
+- [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)

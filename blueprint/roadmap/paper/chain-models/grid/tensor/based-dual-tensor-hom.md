@@ -20,3 +20,10 @@ Let $C$ and $E$ be complexes of based vector spaces with $E$ vanishing in negati
 
 - [Tensor product of based complexes](../based-complex-tensor.md)
 - [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Block inclusions and projections](blocks/block-maps.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

@@ -30,6 +30,12 @@ is a well-defined homomorphism. Here the representative is the [decorated produc
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Decorated objects are closed under sums and duals](../decorations/decorated-closure.md)
+- [Decorated objects](../decorations/decorated-object.md)
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 
 ## Proof depends on
 
@@ -37,3 +43,4 @@ is a well-defined homomorphism. Here the representative is the [decorated produc
 - [L-group](../../base/groups/l-group.md)
 - [The decorated transition respects cobordism](decorated-transition-cobordant.md)
 - [The decorated transition is additive](decorated-transition-sum.md)
+- [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)

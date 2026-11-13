@@ -21,6 +21,11 @@ For duality functors $F,G:\mathcal A\to\mathcal A'$ and their [sum](../categorie
 
 - [Induced homomorphism](induced-map.md)
 - [Sum of duality functors](../categories/sums/duality-functor-sum.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Duality functor](../categories/duality-functor.md)
+- [Idempotent completion with duality](../categories/karoubi-duality.md)
+- [Group structure on L](l-group-add.md)
+- [The projective L-group](projective-l-group.md)
 
 ## Proof depends on
 
@@ -28,3 +33,5 @@ For duality functors $F,G:\mathcal A\to\mathcal A'$ and their [sum](../categorie
 - [Unitary natural isomorphism](../categories/unitary-isomorphism.md)
 - [Unitary invariance](unitary-invariance.md)
 - [Sums of functors](sum-of-functors.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [L-group](l-group.md)

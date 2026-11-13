@@ -17,3 +17,4 @@ The empty sequence of the [asymptotic category](../asymptotic-category.md) is th
 ## Depends on
 
 - [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)

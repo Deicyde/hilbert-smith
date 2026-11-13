@@ -18,5 +18,8 @@ For a chain map $h:C'\to C$, let $\Sigma h:\Sigma C'\to\Sigma C$ be $h_{r-1}$ on
 
 ## Depends on
 
-- [Mapping cone](cone.md)
 - [The shift of a complex](shift.md)
+
+## Proof depends on
+
+- [Mapping cone](cone.md)

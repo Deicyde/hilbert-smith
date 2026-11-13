@@ -18,7 +18,17 @@ Let $e$ be a top cube whose closed cube meets $\overline B(0,3/2)$, and $L=\wide
 ## Sources
 - New: replaces the degree argument of HS paper, Section 9.
 ## Depends on
+
 - [Fundamental cycle of the chain model](../grid/model/chain-model-fundamental.md)
-- [Group approximations](group-approx.md), [chain model](../grid/model/chain-model.md)
+- [Group approximations](group-approx.md)
+- [Chain model](../grid/model/chain-model.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
 ## Proof depends on
-- [Chain approximations exist](chain-approx-exists.md), [carried group approximations](group-approx-carried.md), [box hull properties](../grid/box-hull-properties.md), [properties](completed-maps-properties.md), [mesh sequence](../grid/mesh-sequence.md)
+
+- [Chain approximations exist](chain-approx-exists.md)
+- [Carried group approximations](group-approx-carried.md)
+- [Box hull properties](../grid/box-hull-properties.md)
+- [Properties of completed maps](completed-maps-properties.md)
+- [Mesh sequence](../grid/mesh-sequence.md)

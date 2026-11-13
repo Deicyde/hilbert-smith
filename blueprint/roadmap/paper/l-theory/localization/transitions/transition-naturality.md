@@ -25,6 +25,9 @@ $$t\circ(C_{\mathbb Z^j}F)_*=(C_{\mathbb Z^{j+1}}F)_*\circ t:\ L^p_m(C_{\mathbb 
 - [Induced homomorphism](../../base/groups/induced-map.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 
 ## Proof depends on
 

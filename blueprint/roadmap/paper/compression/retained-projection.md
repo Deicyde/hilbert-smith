@@ -19,6 +19,11 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with [start i
 - [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
 - [Compressed complex](compressed-complex.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The round sphere](../corner/round-sphere.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)
 
 ## Proof depends on
 

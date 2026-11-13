@@ -21,15 +21,18 @@ Let $\mathcal B$ be a [duality category](../../base/categories/duality-category.
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
+- [Image of a complex under a duality functor](../../base/complexes/functors/functor-complex.md)
+- [Image of structures under a duality functor](../../base/complexes/functors/functor-structure.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
 
 ## Proof depends on
 
-- [Inclusion of a dual-closed subcategory](../../base/categories/subcategory-inclusion.md)
 - [Images of structures commute with the boundary, T and the duality map](../../base/complexes/functors/functor-structure-laws.md)
 - [Duality functors and dual complexes](../../base/complexes/functors/functor-dual-iso.md)
 - [Lifting homotopy equivalences to a full subcategory](../../base/complexes/functors/lift-homotopy-equiv.md)
 - [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
 - [Dual complex](../../base/complexes/dual-complex.md)
-- [Image of a complex under a duality functor](../../base/complexes/functors/functor-complex.md)
-- [Image of structures under a duality functor](../../base/complexes/functors/functor-structure.md)
-- [Structure complex](../../base/complexes/structure-complex.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [The involution T](../../base/complexes/structure-involution.md)

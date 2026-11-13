@@ -17,7 +17,9 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal
 
 ## Depends on
 
+## Proof depends on
+
+- [Maps factoring through a subcategory](filtration-ideal.md)
 - [Additive subcategory closed under duality](dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](duality-category.md)
-- [Maps factoring through a subcategory](filtration-ideal.md)
 - [Maps factoring through a dual-closed subcategory form an ideal](filtration-ideal-closure.md)

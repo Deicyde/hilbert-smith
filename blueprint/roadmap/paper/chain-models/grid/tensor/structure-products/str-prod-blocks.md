@@ -20,6 +20,13 @@ For $\varphi\in M(C)_m$ and $\theta\in M(E)_{m'}$, the block of the [product of 
 ## Depends on
 
 - [Product of structures in explicit bases](based-str-prod.md)
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [Block inclusions and projections](../blocks/block-maps.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Kronecker product of matrices](../../../../l-theory/localization/products/bookkeeping/based-kron.md)
 
 ## Proof depends on
 

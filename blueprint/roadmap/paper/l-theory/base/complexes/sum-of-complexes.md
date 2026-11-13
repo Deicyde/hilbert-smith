@@ -19,5 +19,9 @@ $(C,\phi)\oplus(C',\phi')=(C\oplus C',\phi\oplus\phi')$, where $\phi\oplus\phi'=
 ## Depends on
 
 - [Structure complex](structure-complex.md)
-- [Pushforward of structures](structure-push.md)
 - [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+
+## Proof depends on
+
+- [Pushforward of structures](structure-push.md)

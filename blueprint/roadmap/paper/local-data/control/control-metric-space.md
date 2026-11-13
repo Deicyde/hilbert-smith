@@ -16,8 +16,11 @@ For a local datum, the control space $T$ carries the [orbit metric](control-metr
 
 ## Depends on
 
-- [The orbit metric on the control space](control-metric.md)
+- [Local datum](../chart/local-datum.md)
+- [The control space](control-space.md)
 
 ## Proof depends on
 
 - [The orbit metric metrizes the control space](control-metric-properties.md)
+- [The orbit metric on the control space](control-metric.md)
+- [The quotient topology on the control space](control-topology.md)

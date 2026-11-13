@@ -38,6 +38,13 @@ where $\partial^{(j)}$ is the [stage boundary](level-boundary.md), on the left $
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [Lower L-group](lower-l-group.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [L-group](../../base/groups/l-group.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
+- [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
 
 ## Proof depends on
 

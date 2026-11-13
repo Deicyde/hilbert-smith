@@ -21,7 +21,8 @@ For the cells of CP^2 and every degree $r$, the [inverse](../cp2/cp2-inverse.md)
 
 - [The structure of CP^2](../cp2/cp2-structure.md)
 - [The inverse of the structure of CP^2](../cp2/cp2-inverse.md)
-
-## Proof depends on
-
 - [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

@@ -20,9 +20,16 @@ Here $L^{\langle 0\rangle}_k(\mathcal A)=L^p_{k+0}(C_{\mathbb Z^0}\mathcal A)$, 
 
 ## Depends on
 
-- [Stage maps into the ultimate L-group](ultimate-stage-map.md)
-- [Lower L-group](../../localization/transitions/lower-l-group.md)
-- [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)
-- [Embedding into the idempotent completion](../../base/categories/karoubi-embedding.md)
-- [The Karoubi embedding is strict](../../base/categories/duality-functors/karoubi-embedding-strict.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Ultimate L-group](ultimate-l-group.md)
+
+## Proof depends on
+
+- [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
+- [L-group](../../base/groups/l-group.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)

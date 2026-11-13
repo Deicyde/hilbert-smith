@@ -15,4 +15,8 @@ Take [fixed local data](../local-data/control/fixed-local-data.md), with pinch r
 ## Depends on
 
 - [Fixed local data](../local-data/control/fixed-local-data.md)
+- [The torus](../chain-models/grid/torus.md)
+
+## Proof depends on
+
 - [Torus test map](../chain-models/approximations/torus-test-map.md)

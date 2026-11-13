@@ -25,5 +25,20 @@ Let $Z\subset X$. The functor $j_Z:\mathcal B_{\mathbf G,Z}(X)\to\mathcal A_X/\m
 - [The support subcategory inside a support subcategory is additive](../supports/relative-support-additive.md)
 - [Exterior quotient](../supports/exterior-quotient.md)
 - [Support subcategory](../supports/support-subcategory.md)
-- [Support filtration](../supports/support-filtration.md)
 - [The support subcategory of the whole space](../supports/support-whole.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](../supports/support-dual-additive.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+- [Inclusion of a dual-closed subcategory](../../l-theory/base/categories/subcategory-inclusion.md)
+
+## Proof depends on
+
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

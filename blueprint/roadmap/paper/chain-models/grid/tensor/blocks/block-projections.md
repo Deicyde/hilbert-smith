@@ -20,3 +20,4 @@ Let $\mathbb Q^{\sum_jd_j}$ be the concatenation of the blocks $\mathbb Q^{d_j}$
 ## Depends on
 
 - [Block inclusions and projections](block-maps.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)

@@ -17,3 +17,4 @@ For a local datum, define $d_1(z,w)=\sup_{a\in\mathbb Z_p}|a\cdot z-a\cdot w|$ f
 ## Depends on
 
 - [The test region](../chart/test-region.md)
+- [Local datum](../chart/local-datum.md)

@@ -20,7 +20,14 @@ Let $C$ and $E$ be complexes of based vector spaces, $E$ vanishing in negative d
 ## Depends on
 
 - [Product of structures in explicit bases](based-str-prod.md)
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [Kronecker product with a zero factor](../kron-zero.md)
+- [Block inclusions and projections](../blocks/block-maps.md)
+- [Kronecker product of matrices](../../../../l-theory/localization/products/bookkeeping/based-kron.md)

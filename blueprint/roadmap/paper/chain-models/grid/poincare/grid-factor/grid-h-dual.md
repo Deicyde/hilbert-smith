@@ -16,10 +16,17 @@ On the [dual complex](../../../../l-theory/base/complexes/dual-complex.md) $C(k)
 
 ## Depends on
 
-- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)
 - [Cubical torus grid](../../cubical/cubical-torus-grid.md)
-- [Dual complex](../../../../l-theory/base/complexes/dual-complex.md)
-- [Dual tensor of graded maps of based complexes](../../tensor/based-dual-tensor-hom.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [The circle complex](../../cubical/circle-complex.md)
+- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)
+- [The dual circle homotopy](../circle-data/circle-k-dual.md)
 - [The degree-zero map A' of the dual circle](circle-a-dual.md)
 - [The identity of a dual complex as a map of degree zero](id-dual-deg0.md)
-- [The dual circle homotopy](../circle-data/circle-k-dual.md)
+- [Dual tensor of graded maps of based complexes](../../tensor/based-dual-tensor-hom.md)

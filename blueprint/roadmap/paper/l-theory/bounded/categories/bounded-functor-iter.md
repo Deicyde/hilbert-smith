@@ -16,4 +16,12 @@ For a duality functor $(F,\xi):\mathcal A\to\mathcal A'$, the *iterated bounded 
 
 ## Depends on
 
-- [Bounded extension of a duality functor](bounded-functor.md), [iterated bounded categories](iterated-bounded-category.md)
+- [Iterated bounded categories](iterated-bounded-category.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+
+## Proof depends on
+
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
+- [Bounded extension of a duality functor](bounded-functor.md)

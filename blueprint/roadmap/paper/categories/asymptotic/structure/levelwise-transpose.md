@@ -17,6 +17,12 @@ For a sequence $u=(u_i)$ of matrices $M\to N$ representing a morphism of the [as
 ## Depends on
 
 - [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
+
+## Proof depends on
+
 - [Free category of a finite group](../free-category.md)
 - [Propagation of a transpose](../prop-transpose.md)
+- [Propagation](../propagation.md)
 - [Morphisms have propagation tending to zero](morphism-propagation.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)

@@ -21,7 +21,7 @@ $\mathcal A_{\mathbf G}(X)$ is a [strict duality category](../../l-theory/base/c
 - [Asymptotic category](asymptotic-category.md)
 - [Strict duality category](../../l-theory/base/categories/duality-category.md)
 - [The asymptotic category has finite biproducts](structure/biproducts.md)
-- [The levelwise transpose](structure/levelwise-transpose.md)
+- [Group sequence](group-sequence.md)
 
 ## Proof depends on
 
@@ -29,3 +29,4 @@ $\mathcal A_{\mathbf G}(X)$ is a [strict duality category](../../l-theory/base/c
 - [Every morphism is a class](structure/class-surjective.md)
 - [Free category of a finite group](free-category.md)
 - [Transposing twice](structure/transpose-transpose.md)
+- [The levelwise transpose](structure/levelwise-transpose.md)

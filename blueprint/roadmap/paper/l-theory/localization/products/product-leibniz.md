@@ -26,10 +26,12 @@ $$\partial(\phi\otimes\theta)=\partial\phi\otimes\theta+(-1)^m\,\phi\otimes\part
 - [Duality pairings](duality-pairing.md)
 - [External product of structures](external-product.md)
 - [Structure complex](../../base/complexes/structure-complex.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Tensor product of complexes](complex-product.md)
 
 ## Proof depends on
 
-- [External product of structures](external-product.md)
 - [Maps into a tensor product are determined by their components](bookkeeping/product-hom-ext.md)
 - [Maps out of the dual of a tensor product are determined by their components](bookkeeping/product-dual-hom-ext.md)
 - [Differential of a tensor product on summands](bookkeeping/product-differential.md)
+- [Summand projections of a tensor product](bookkeeping/summand-projection.md)

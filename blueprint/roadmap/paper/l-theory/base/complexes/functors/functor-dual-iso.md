@@ -21,3 +21,4 @@ between the [dual complex](../dual-complex.md) of the [image](functor-complex.md
 - [Duality functor](../../categories/duality-functor.md)
 - [Image of a complex under a duality functor](functor-complex.md)
 - [Dual complex](../dual-complex.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)

@@ -21,6 +21,12 @@ Let $(C,\phi)$ and $(C',\phi')$ be strict $k$-dimensional symmetric Poincaré co
 
 - [Cobordism](cobordism.md)
 - [Strict Poincaré pair](poincare-pair.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 
 ## Proof depends on
 

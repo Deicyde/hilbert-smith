@@ -14,8 +14,8 @@ Let $c:\mathbb T^n\to S^n$ be continuous. Give the basis cell $b$ of $D_i$ (and 
 ## Sources
 - HS paper, Section 12 (labellings by a continuous map).
 ## Depends on
+
 - [Labelled objects](labelled-objects.md)
-- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)
 - [Chain model](../chain-models/grid/model/chain-model.md)
 - [Chain-model duality](../chain-models/grid/chain-model-duality.md)
 - [The homotopy of the chain model](../chain-models/grid/poincare/chain-model-h.md)
@@ -23,14 +23,19 @@ Let $c:\mathbb T^n\to S^n$ be continuous. Give the basis cell $b$ of $D_i$ (and 
 - [Strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 - [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
-- [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
-## Proof depends on
-- [Poincaré](../chain-models/grid/chain-model-poincare.md)
-- [Propagation](../categories/asymptotic/propagation.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
 - [The torus](../chain-models/grid/torus.md)
 - [The round sphere](../corner/round-sphere.md)
-- [Group sequence](../categories/asymptotic/group-sequence.md)
-- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
-- [Dual complex](../l-theory/base/complexes/dual-complex.md)
 - [Duality map of a cycle](../l-theory/base/complexes/cycle-chain-map.md)
+- [Dual complex](../l-theory/base/complexes/dual-complex.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [The chain model is Poincaré](../chain-models/grid/chain-model-poincare.md)
+- [Propagation](../categories/asymptotic/propagation.md)
+- [Group sequence](../categories/asymptotic/group-sequence.md)
 - [Propagation of the differential of the chain model](../chain-models/grid/poincare/chain-model-d-propagation.md)
+- [Torus labels of chain-model cells](../chain-models/grid/model/chain-model-label.md)

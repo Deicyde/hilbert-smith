@@ -18,6 +18,7 @@ This rests on the open statements [lifting](../l-theory/localization/boundary/li
 ## Sources
 - HS paper, Section 12.
 ## Depends on
+
 - [Fixed local data](../local-data/control/fixed-local-data.md)
 - [Torus test map](../chain-models/approximations/torus-test-map.md)
 - [Labelled-model class](germ.md)
@@ -26,6 +27,23 @@ This rests on the open statements [lifting](../l-theory/localization/boundary/li
 - [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
 - [The torus](../chain-models/grid/torus.md)
 - [The round sphere](../corner/round-sphere.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [Finite-support subcategory](../categories/asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../categories/asymptotic/point-filtration.md)
+- [Point category](../categories/asymptotic/point-quotient.md)
+- [Sequence category](../categories/asymptotic/point-sequence-category.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [Exterior quotient](../categories/supports/exterior-quotient.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [The exterior](../corner/exterior.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)
+- [Ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)
+
 ## Proof depends on
+
 - [The torus test map is homotopic to the cubical pinch](test-map-to-pinch.md)
 - [Theorem B](theorem-b.md)
+- [Cubical pinch](cubical-pinch.md)
+- [Local datum](../local-data/chart/local-datum.md)

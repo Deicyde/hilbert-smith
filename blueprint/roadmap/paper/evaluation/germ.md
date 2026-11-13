@@ -12,6 +12,7 @@ Let $p$ be a prime, $n\ge0$ an integer and $R$ a real number (the class is used 
 ## Sources
 - HS paper, Section 10 (the scalar class of a labelling).
 ## Depends on
+
 - [Local datum](../local-data/chart/local-datum.md)
 - [The torus](../chain-models/grid/torus.md)
 - [The round sphere](../corner/round-sphere.md)
@@ -19,7 +20,15 @@ Let $p$ be a prime, $n\ge0$ an integer and $R$ a real number (the class is used 
 - [The exterior](../corner/exterior.md)
 - [Exterior quotient](../categories/supports/exterior-quotient.md)
 - [Ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)
+
 ## Proof depends on
+
 - [Labelled model](labelled-model.md)
 - [Karoubi embedding](../l-theory/base/categories/karoubi-embedding.md)
 - [Duality functors carry Poincaré complexes](../l-theory/base/pairs/functor-poincare.md)
@@ -27,3 +36,18 @@ Let $p$ be a prime, $n\ge0$ an integer and $R$ a real number (the class is used 
 - [The class map](../l-theory/ultimate/groups/ultimate-cls.md)
 - [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
 - [The quotient duality functor](../l-theory/base/categories/quotient-duality-functor.md)
+- [Chain-model duality](../chain-models/grid/chain-model-duality.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
+- [The dual homotopy of the chain model](../chain-models/grid/poincare/chain-model-h-dual.md)
+- [The homotopy of the chain model](../chain-models/grid/poincare/chain-model-h.md)
+- [Labelled objects](labelled-objects.md)
+- [Additive subcategory closed under duality](../l-theory/base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../l-theory/base/categories/duality-category.md)
+- [Idempotent completion with duality](../l-theory/base/categories/karoubi-duality.md)
+- [Duality map of a cycle](../l-theory/base/complexes/cycle-chain-map.md)
+- [Dual complex](../l-theory/base/complexes/dual-complex.md)
+- [Structure complex](../l-theory/base/complexes/structure-complex.md)
+- [Group structure on L](../l-theory/base/groups/l-group-add.md)
+- [The projective L-group](../l-theory/base/groups/projective-l-group.md)
+- [Strict symmetric Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)

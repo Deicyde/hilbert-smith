@@ -45,6 +45,17 @@ with $(C,\hat\varphi)$, the [compressed Poincaré complex](compressed-poincare.m
 - [Ultimate L-group and cls](../l-theory/ultimate/groups/ultimate-l-group.md)
 - [The class map](../l-theory/ultimate/groups/ultimate-cls.md)
 - [Induced map](../l-theory/ultimate/groups/induced-map.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [Idempotent completion with duality](../l-theory/base/categories/karoubi-duality.md)
+- [Group structure on L](../l-theory/base/groups/l-group-add.md)
+- [The projective L-group](../l-theory/base/groups/projective-l-group.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space is compact](../local-data/control/control-space-compact.md)
 
 ## Proof depends on
 
@@ -55,7 +66,6 @@ with $(C,\hat\varphi)$, the [compressed Poincaré complex](compressed-poincare.m
 - [Forgetting to the scalar exterior quotient is strict](../corner/theorem/scalar-forget-strict.md)
 - [The induced map commutes with cls](../l-theory/ultimate/groups/induced-map-cls.md)
 - [Homotopy-isometry invariance](../l-theory/base/groups/homotopy-isometry-invariance.md)
-- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 - [Support ideal](../categories/supports/support-ideal.md)
 - [Compressed differential](compressed-differential.md)
 - [Discarded subcomplex](discarded-subcomplex.md)

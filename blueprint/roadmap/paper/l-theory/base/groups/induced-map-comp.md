@@ -21,9 +21,15 @@ For duality functors $F:\mathcal B\to\mathcal B'$ and $G:\mathcal B'\to\mathcal 
 
 - [Induced homomorphism](induced-map.md)
 - [Identity and composite duality functors](../categories/duality-functors/composite-duality-functor.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Duality functor](../categories/duality-functor.md)
+- [Group structure on L](l-group-add.md)
+- [L-group](l-group.md)
 
 ## Proof depends on
 
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
 - [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
 - [Pushforward of structures](../complexes/structure-push.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)

@@ -21,3 +21,4 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 
 - [Duality pairings](../duality-pairing.md)
 - [Support of a tensor product of complexes](product-support.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)

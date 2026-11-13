@@ -12,8 +12,12 @@ Fix a [local datum](../../local-data/chart/local-datum.md) and $a\in\mathbb Z_p$
 ## Sources
 - HS paper, Section 9 (completed maps).
 ## Depends on
+
+- [Local datum](../../local-data/chart/local-datum.md)
+- [The torus](../grid/torus.md)
+
+## Proof depends on
+
+- [The completed map on Euclidean space](maps/completed-map-euclid.md)
 - [The lift](../torus/lift.md)
 - [The quotient map](../torus/proj.md)
-- [Local datum](../../local-data/chart/local-datum.md)
-- [The completed map on Euclidean space](maps/completed-map-euclid.md)
-- [The torus](../grid/torus.md)

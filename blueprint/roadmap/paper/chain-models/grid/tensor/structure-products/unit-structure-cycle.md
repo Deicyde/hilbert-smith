@@ -22,3 +22,6 @@ The structure $\mathbb 1\in M(\mathbb 1)_0$ of the [unit complex](../../cubical/
 - [The unit complex](../../cubical/unit-complex.md)
 - [The structure of the unit complex](../../model/unit-structure.md)
 - [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)

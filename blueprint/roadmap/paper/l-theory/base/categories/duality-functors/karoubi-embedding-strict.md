@@ -22,3 +22,8 @@ For a [duality category](../duality-category.md) $\mathcal A$, the [Karoubi embe
 - [Embedding into the idempotent completion](../karoubi-embedding.md)
 - [Strict duality functor](strict-duality-functor.md)
 - [Small Q-linear category with strict duality](../duality-category.md)
+- [Idempotent completion with duality](../karoubi-duality.md)
+
+## Proof depends on
+
+- [Duality functor](../duality-functor.md)

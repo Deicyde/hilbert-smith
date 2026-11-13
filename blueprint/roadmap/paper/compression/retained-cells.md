@@ -14,10 +14,14 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer r
 
 ## Depends on
 
-- [The preimage of the buffer ball](test-preimage.md)
-- [The closed cube](../chain-models/grid/cubical/grid-cube-realization.md)
-- [The cube of a chain-model cell](../chain-models/grid/model/chain-model-cube.md)
-- [Grid cubes](../chain-models/grid/cubical/grid-cube.md)
 - [Fixed local data](../local-data/control/fixed-local-data.md)
-- [Torus test map](../chain-models/approximations/torus-test-map.md)
 - [Chain model](../chain-models/grid/model/chain-model.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [The closed cube](../chain-models/grid/cubical/grid-cube-realization.md)
+- [Mesh sequence](../chain-models/grid/mesh-sequence.md)
+- [The cube of a chain-model cell](../chain-models/grid/model/chain-model-cube.md)
+- [The torus](../chain-models/grid/torus.md)
+- [The preimage of the buffer ball](test-preimage.md)

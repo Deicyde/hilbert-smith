@@ -19,4 +19,11 @@ If $\mathcal U\subset\mathcal A$ is a full additive subcategory closed under the
 
 ## Depends on
 
-- [Iterated bounded subcategories](iterated-bounded-sub.md), [the bounded subcategory is closed under sums and duals](bounded-sub-additive.md)
+- [Iterated bounded subcategories](iterated-bounded-sub.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Iterated bounded categories](iterated-bounded-category.md)
+
+## Proof depends on
+
+- [The bounded subcategory is closed under sums and duals](bounded-sub-additive.md)

@@ -20,7 +20,9 @@ For $x\in\mathbb T^n$, $|\tilde x|_\infty=d_\infty(x,0)$, where $|\cdot|_\infty$
 ## Depends on
 
 - [The lift](lift.md)
+- [The torus](../grid/torus.md)
 
 ## Proof depends on
 
 - [The quotient map inverts the lift](proj-lift.md)
+- [The quotient map](proj.md)

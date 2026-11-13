@@ -16,9 +16,14 @@ For strict $k$-dimensional symmetric Poincaré complexes $(C,\phi)$ and $(C',\ph
 
 ## Depends on
 
-- [Sums of Poincaré complexes](sum-of-poincare.md)
-- [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 
 ## Proof depends on
 
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Sums of Poincaré complexes](sum-of-poincare.md)
 - [Pushforward preserves identities](../complexes/functors/push-id.md)
+- [Pushforward of structures](../complexes/structure-push.md)

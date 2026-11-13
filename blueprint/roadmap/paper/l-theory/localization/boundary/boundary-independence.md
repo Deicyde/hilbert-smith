@@ -22,8 +22,14 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 - [U-pairs](u-pair.md)
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [L-group](../../base/groups/l-group.md)
-- [Decorated quotient L-group](../decorations/decorated-l-group.md)
-- [The projective L-group](../../base/groups/projective-l-group.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Decorated objects are closed under sums and duals](../decorations/decorated-closure.md)
+- [Decorated objects](../decorations/decorated-object.md)
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 
 ## Proof depends on
 
@@ -34,3 +40,5 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 - [Negation in L](../../base/groups/l-group-neg.md)
 - [Zero classes bound](../../base/groups/l-group-zero-iff-bounds.md)
 - [Lifting](lift-to-pair.md)
+- [Decorated quotient L-group](../decorations/decorated-l-group.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)

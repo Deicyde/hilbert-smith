@@ -19,17 +19,23 @@ where $p_j=1-\dim x_j$ is the degree of $\varphi^s(x_j^*)$. The factor $\varphi_
 ## Sources
 - [Ranicki 1980, products](../../../../sources/paper/ranicki-1980.md) [U]. New: the cubical tensor form.
 ## Depends on
-- [The iterated grid duality map](poincare/grid-factor/grid-dual-map.md)
-- [The structure of the grid complex](model/grid-structure.md)
+
+- [Chain model](model/chain-model.md)
+- [Structure complex](../../l-theory/base/complexes/structure-complex.md)
+- [Dual complex](../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [The cellular chain complex of CP^2](cp2/cp2-complex.md)
-- [The structure of CP^2](cp2/cp2-structure.md)
-- [The inverse of the structure of CP^2](cp2/cp2-inverse.md)
-- [The circle complex](cubical/circle-complex.md)
-- [The circle complex vanishes in negative degrees](cubical/circle-dim-neg.md)
-- [The unit complex](cubical/unit-complex.md)
-- [The structure of the unit complex](model/unit-structure.md)
-- [Cubical torus grid](cubical/cubical-torus-grid.md)
-- [Product of structures in explicit bases](tensor/structure-products/based-str-prod.md), [product of duality maps in explicit bases](tensor/structure-products/based-dual-prod.md)
 - [The cells of CP^2 vanish in negative degrees](cp2/cp2-dim-neg.md)
-- [symmetric circle structure](poincare/circle-data/circle-phi-sym.md), [circle inverse](poincare/circle-data/circle-b.md)
-- [Chain model](model/chain-model.md), [circle duality](circle-duality.md), [tensor product of based complexes](based-complex-tensor.md), [tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md), [structure complex](../../l-theory/base/complexes/structure-complex.md), [dual complex](../../l-theory/base/complexes/dual-complex.md)
+- [The inverse of the structure of CP^2](cp2/cp2-inverse.md)
+- [The structure of CP^2](cp2/cp2-structure.md)
+- [Cubical torus grid](cubical/cubical-torus-grid.md)
+- [Mesh sequence](mesh-sequence.md)
+- [The structure of the grid complex](model/grid-structure.md)
+- [The iterated grid duality map](poincare/grid-factor/grid-dual-map.md)
+- [Product of duality maps in explicit bases](tensor/structure-products/based-dual-prod.md)
+- [Product of structures in explicit bases](tensor/structure-products/based-str-prod.md)

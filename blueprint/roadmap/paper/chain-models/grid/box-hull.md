@@ -14,6 +14,10 @@ Let $k\ge8$ and $X\subseteq\mathbb T^n$, with coordinate projections $X_j\subset
 ## Sources
 - New.
 ## Depends on
-- [Closed arcs of the circle](circle-arcs.md)
-- [Grid cubes](cubical/grid-cube.md)
+
 - [Grid boxes](grid-box.md)
+- [The torus](torus.md)
+
+## Proof depends on
+
+- [Closed arcs of the circle](circle-arcs.md)

@@ -21,5 +21,9 @@ Let $P$ be a decidable predicate on the indices of an object $M$ of the [asympto
 ## Depends on
 
 - [Asymptotic category](../asymptotic-category.md)
-- [Propagation](../propagation.md)
+- [Group sequence](../group-sequence.md)
+
+## Proof depends on
+
 - [Free category of a finite group](../free-category.md)
+- [Propagation](../propagation.md)

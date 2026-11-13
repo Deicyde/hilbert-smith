@@ -17,7 +17,10 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory with $\mathcal 
 
 ## Depends on
 
-- [Decorated objects of the completed quotient](decorated-predicate.md)
-- [Decorated objects are closed under sums and duals](decorated-closure.md)
 - [Duality category](../../base/categories/duality-category.md)
-- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+
+## Proof depends on
+
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Decorated objects of the completed quotient](decorated-predicate.md)

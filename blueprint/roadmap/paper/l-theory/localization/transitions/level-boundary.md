@@ -28,9 +28,18 @@ This definition rests on the open statement Lifting, through the localization bo
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
 
 ## Proof depends on
 
 - [Decorated transition](decorated-transition.md)
 - [Localization boundary](../boundary/localization-boundary.md)
 - [Iterated bounded filtrations](../../bounded/categories/iterated-bounded-filtration.md)
+- [Decorated objects are closed under sums and duals](../decorations/decorated-closure.md)
+- [Decorated quotient L-group](../decorations/decorated-l-group.md)
+- [Decorated objects](../decorations/decorated-object.md)
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)

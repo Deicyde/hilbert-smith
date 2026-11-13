@@ -20,6 +20,7 @@ For $x\in\mathbb T^n$, $d_\infty(x,0)\le|\tilde x|$, with $|\cdot|$ the Euclidea
 ## Depends on
 
 - [The lift](lift.md)
+- [The torus](../grid/torus.md)
 
 ## Proof depends on
 

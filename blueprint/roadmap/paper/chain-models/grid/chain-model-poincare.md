@@ -37,6 +37,9 @@ satisfy $\varphi_ib_i-1=dH_i+H_id$ and $b_i\varphi_i-1=dH'_i+H'_id$. Tensors of 
 - [Dual complex](../../l-theory/base/complexes/dual-complex.md)
 - [Structure complex](../../l-theory/base/complexes/structure-complex.md)
 - [Local datum](../../local-data/chart/local-datum.md)
+- [The torus](torus.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 

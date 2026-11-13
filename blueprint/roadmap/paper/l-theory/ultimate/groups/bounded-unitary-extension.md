@@ -18,8 +18,15 @@ Let $\eta:F\cong G$ be a [unitary natural isomorphism](../../base/categories/uni
 
 ## Depends on
 
-- [Diagonal morphisms of $C_\mathbb Z(A)$](../../bounded/categories/bounded-diag.md)
 - [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Unitary natural isomorphism](../../base/categories/unitary-isomorphism.md)
-- [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+
+## Proof depends on
+
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [Diagonal morphisms of $C_\mathbb Z(A)$](../../bounded/categories/bounded-diag.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Bounded extension of a duality functor](../../bounded/categories/bounded-functor.md)

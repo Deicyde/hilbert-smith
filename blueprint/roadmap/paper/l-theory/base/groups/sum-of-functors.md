@@ -21,10 +21,13 @@ For duality functors $(F,\xi),(G,\zeta):\mathcal B\to\mathcal B'$, let $F\oplus 
 
 - [Induced homomorphism](induced-map.md)
 - [Sum of duality functors](../categories/sums/duality-functor-sum.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Duality functor](../categories/duality-functor.md)
+- [Group structure on L](l-group-add.md)
+- [L-group](l-group.md)
 
 ## Proof depends on
 
-- [Group structure on L](l-group-add.md)
 - [The sum of two Poincaré complexes](../pairs/poincare-sum.md)
 - [Isomorphic Poincaré complexes are cobordant](../pairs/iso-cobordism.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
@@ -33,3 +36,7 @@ For duality functors $(F,\xi),(G,\zeta):\mathcal B\to\mathcal B'$, let $F\oplus 
 - [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
 - [Image of structures under a duality functor](../complexes/functors/functor-structure.md)
 - [Image of a complex under a duality functor](../complexes/functors/functor-complex.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)

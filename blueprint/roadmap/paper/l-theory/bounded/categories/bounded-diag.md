@@ -17,8 +17,8 @@ For objects $M,N$ of the [bounded category](bounded-category.md) $C_\mathbb Z(A)
 ## Depends on
 
 - [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
-- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 
 ## Proof depends on
 
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)

@@ -20,6 +20,7 @@ Let $n\ge1$, let $M$ be a Hausdorff space with an atlas of charts onto open subs
 ## Depends on
 
 - [The action on the intrinsic interior](interior-action.md)
+- [Intrinsic interior](intrinsic-interior.md)
 
 ## Proof depends on
 

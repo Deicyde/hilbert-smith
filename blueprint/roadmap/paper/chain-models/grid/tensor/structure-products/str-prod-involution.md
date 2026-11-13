@@ -21,6 +21,10 @@ For $\varphi\in M(C)_m$ and $\theta\in M(E)_{m'}$ ($E$ vanishing in negative deg
 
 - [Product of structures in explicit bases](based-str-prod.md)
 - [The involution T](../../../../l-theory/base/complexes/structure-involution.md)
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [Structure complex](../../../../l-theory/base/complexes/structure-complex.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
@@ -30,3 +34,6 @@ For $\varphi\in M(C)_m$ and $\theta\in M(E)_{m'}$ ($E$ vanishing in negative deg
 - [Transpose of a Kronecker product](../kron-dual.md)
 - [Signs in the first factor of a Kronecker product](../kron-smul-left.md)
 - [Signs in the second factor of a Kronecker product](../kron-smul-right.md)
+- [Block inclusions and projections](../blocks/block-maps.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Kronecker product of matrices](../../../../l-theory/localization/products/bookkeeping/based-kron.md)

@@ -17,4 +17,7 @@ Let $A$ be an additive category. An object $P$ of $\mathrm{Kar}\,A$ has a *class
 ## Depends on
 
 - [$K_0$ of an idempotent completion](../k-zero.md)
+
+## Proof depends on
+
 - [Isomorphism classes of objects](iso-classes.md)

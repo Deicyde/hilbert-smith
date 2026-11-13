@@ -31,3 +31,13 @@ lean: HSP.ChainModels.tensorLabel_grid
 - [Mesh sequence](../mesh-sequence.md)
 - [The torus](../torus.md)
 - [Local datum](../../../local-data/chart/local-datum.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [The circle complex](../cubical/circle-complex.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
+- [Chain model](chain-model.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [The cell of a basis vector of the circle complex](../cubical/circle-cell.md)

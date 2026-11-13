@@ -20,7 +20,15 @@ Let $U\subset A$ be a [full additive subcategory closed under duality](../base/c
 ## Depends on
 
 - [The entrywise quotient functor](categories/bounded-quotient-functor.md)
-- [Duality functor](../base/categories/duality-functor.md)
 - [Additive subcategory closed under duality](../base/categories/dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../base/categories/duality-category.md)
 - [Strict duality functor](../base/categories/duality-functors/strict-duality-functor.md)
+- [Quotient by a subcategory](../base/categories/filtration-quotient.md)
+- [The bounded category $C_\mathbb Z(A)$](categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](categories/bounded-duality.md)
+- [The bounded subcategory is closed under sums and duals](categories/bounded-sub-additive.md)
+- [The bounded subcategory](categories/bounded-sub.md)
+
+## Proof depends on
+
+- [Duality functor](../base/categories/duality-functor.md)

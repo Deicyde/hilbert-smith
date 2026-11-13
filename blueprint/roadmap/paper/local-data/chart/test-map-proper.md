@@ -21,7 +21,10 @@ For a local datum, $0<\rho<\rho_+$ and every compact $C\subseteq\mathbb R^n$, th
 
 - [The test map](test-map.md)
 - [The open test region](open-test-region.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The test map is continuous](test-map-continuous.md)
+- [The averaged chart map](averaged-map.md)
+- [The pinch map](pinch.md)

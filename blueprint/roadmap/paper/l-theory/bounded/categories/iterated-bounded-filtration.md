@@ -23,7 +23,8 @@ Let $\mathcal U\subset\mathcal A$ be an [involution-invariant Karoubi filtration
 - [Iterated bounded subcategories](iterated-bounded-sub.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [Iterated bounded categories](iterated-bounded-category.md)
-- [Bounded Karoubi filtrations](bounded-karoubi-filtration.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 
 ## Proof depends on
 

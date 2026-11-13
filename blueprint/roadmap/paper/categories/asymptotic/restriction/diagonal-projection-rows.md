@@ -22,6 +22,8 @@ Let $u:N\to M$ be a sequence of $G_i$-equivariant matrices with propagation tend
 
 - [Diagonal coordinate projection](diagonal-projection.md)
 - [Asymptotic category](../asymptotic-category.md)
+- [Free category of a finite group](../free-category.md)
+- [Group sequence](../group-sequence.md)
 
 ## Proof depends on
 

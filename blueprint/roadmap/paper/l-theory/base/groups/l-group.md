@@ -20,6 +20,9 @@ For a [duality category](../categories/duality-category.md) $\mathcal B$, $L_k(\
 ## Depends on
 
 - [Small Q-linear category with strict duality](../categories/duality-category.md)
-- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)
-- [Cobordism](../pairs/cobordism.md)
+
+## Proof depends on
+
 - [Cobordism is an equivalence relation](../pairs/cobordism-equivalence.md)
+- [Cobordism](../pairs/cobordism.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)

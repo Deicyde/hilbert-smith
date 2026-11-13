@@ -17,4 +17,7 @@ Fix a [local datum](../../../local-data/chart/local-datum.md) and $a\in\mathbb Z
 ## Depends on
 
 - [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [Completed cutoff](completed-cutoff.md)

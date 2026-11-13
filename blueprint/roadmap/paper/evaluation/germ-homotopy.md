@@ -17,8 +17,24 @@ If $c_0,c_1:\mathbb T^n\to S^n$ are homotopic, then $\mathfrak m_{c_0}=\mathfrak
 ## Sources
 - HS paper, Section 12 (homotopies of the scalar labelling). New: the cylinder is an exact block, and no condition relative to $\infty$ is needed.
 ## Depends on
+
 - [Labelled-model class](germ.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [Exterior quotient](../categories/supports/exterior-quotient.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [The torus](../chain-models/grid/torus.md)
+- [The exterior](../corner/exterior.md)
+- [The round sphere](../corner/round-sphere.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)
+- [Ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)
+- [Local datum](../local-data/chart/local-datum.md)
+
 ## Proof depends on
+
 - [Block pair](../chain-models/blocks/block-pair.md)
 - [Block pairs in the asymptotic category](../chain-models/blocks/block-pair-asymptotic.md)
 - [Arc pair](../chain-models/blocks/arc-pair.md)

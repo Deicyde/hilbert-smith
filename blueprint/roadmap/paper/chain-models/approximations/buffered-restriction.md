@@ -20,13 +20,33 @@ Graph types are those of [graph-type matrices](../../corner/actions/graph-type.m
 ## Sources
 - HS paper, Section 9 (the eventual definition of target labels).
 ## Depends on
+
 - [Sphere propagation](../grid/buffers/sphere-prop.md)
-- [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
-- [Torus labels of dual cells](../grid/model/chain-model-dual-label.md)
-- [The control space is an isometric $C_p$-space](../../local-data/control/control-isometric-action.md)
 - [Buffered sphere labels](../grid/buffers/buffered-sphere-labels.md)
 - [The metric on the control space](../../local-data/control/control-metric-space.md)
 - [The lift](../torus/lift.md)
-- [Buffered restriction of a matrix](../grid/buffers/restriction.md), [sphere labels](../grid/sphere-labels.md), [graph-type matrices](../../corner/actions/graph-type.md), [control labels](../grid/buffers/control-labels.md), [buffered cells](../grid/buffers/buffered-cells.md), [based inclusion](../grid/buffers/based-inclusion.md), [open test region](../../local-data/chart/open-test-region.md), [test region](../../local-data/chart/test-region.md), [torus test map](torus-test-map.md)
+- [Buffered restriction of a matrix](../grid/buffers/restriction.md)
+- [Graph-type matrices](../../corner/actions/graph-type.md)
+- [Control labels](../grid/buffers/control-labels.md)
+- [Buffered cells](../grid/buffers/buffered-cells.md)
+- [Based inclusion](../grid/buffers/based-inclusion.md)
+- [The open test region](../../local-data/chart/open-test-region.md)
+- [Torus test map](torus-test-map.md)
+- [Propagation](../../categories/asymptotic/propagation.md)
+- [The torus](../grid/torus.md)
+- [The round sphere](../../corner/round-sphere.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+- [The cyclic action on the control space](../../local-data/control/control-action.md)
+- [The control space](../../local-data/control/control-space.md)
+
 ## Proof depends on
-- [Preimages](../../local-data/chart/test-map-proper.md), [test region](../../local-data/chart/test-region.md), [open test region](../../local-data/chart/open-test-region.md), [test region bounded](../../local-data/chart/test-region-bounded.md), [properties](completed-maps-properties.md), [projection uniform](../../local-data/control/projection-uniform.md)
+
+- [Preimages under the test map](../../local-data/chart/test-map-proper.md)
+- [The test region](../../local-data/chart/test-region.md)
+- [The test region is bounded](../../local-data/chart/test-region-bounded.md)
+- [Properties of completed maps](completed-maps-properties.md)
+- [The orbit map is uniformly continuous](../../local-data/control/projection-uniform.md)
+- [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
+- [Torus labels of dual cells](../grid/model/chain-model-dual-label.md)
+- [The control space is an isometric $C_p$-space](../../local-data/control/control-isometric-action.md)
+- [Sphere labels](../grid/sphere-labels.md)

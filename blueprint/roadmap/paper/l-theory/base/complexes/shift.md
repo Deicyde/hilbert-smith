@@ -16,4 +16,6 @@ For a complex $C$ in a preadditive category with binary direct sums and a zero o
 
 ## Depends on
 
+## Proof depends on
+
 - [Mapping cone](cone.md)

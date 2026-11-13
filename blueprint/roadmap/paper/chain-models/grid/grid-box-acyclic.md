@@ -14,9 +14,14 @@ Every grid box $B$, as the subcomplex of the grid complex given in each degree b
 ## Sources
 - [published: Künneth over a field] [U]. New: the arc contraction.
 ## Depends on
+
 - [Spans of cubes](cube-span.md)
-- [Grid cubes](cubical/grid-cube.md)
 - [Cubical torus grid](cubical/cubical-torus-grid.md)
-- [The cube of a basis vector](cubical/grid-cell.md)
 - [Augmentation of the grid complex](cubical/grid-aug.md)
 - [Grid boxes](grid-box.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Grid cubes](cubical/grid-cube.md)
+- [The cube of a basis vector](cubical/grid-cell.md)

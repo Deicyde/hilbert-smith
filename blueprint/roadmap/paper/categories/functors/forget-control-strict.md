@@ -20,10 +20,18 @@ Let $\mathbf G$ be a [group sequence](../asymptotic/group-sequence.md), and let 
 ## Depends on
 
 - [Forgetting the control space](forget-control.md)
-- [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Group sequence](../asymptotic/group-sequence.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The trivial group sequence](../asymptotic/trivial-group-sequence.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
 
 ## Proof depends on
 
-- [Pushforward of labels](pushforward.md)
-- [Forgetting the group](forget-group.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Propagation](../asymptotic/propagation.md)
+- [Morphisms have propagation tending to zero](../asymptotic/structure/morphism-propagation.md)
+- [The group enumeration](group-enumeration.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)

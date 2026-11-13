@@ -21,7 +21,9 @@ For a local datum, $a\cdot x\in Z^+$ for all $a\in\mathbb Z_p$ and $x\in Z^+$, a
 
 - [The test region](test-region.md)
 - [The open test region](open-test-region.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The averaged map is invariant](averaged-map-invariant.md)
+- [The averaged chart map](averaged-map.md)

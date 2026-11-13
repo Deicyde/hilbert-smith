@@ -14,6 +14,7 @@ Let $E(k)\subseteq C(k)$ be spanned by the [far cubes](far-cubes.md), those whos
 ## Sources
 - New: replaces simplicial approximation (HS paper, Section 9).
 ## Depends on
+
 - [Local datum](../../local-data/chart/local-datum.md)
 - [The torus](../grid/torus.md)
 - [Mesh start](../mesh/mesh-start.md)
@@ -22,11 +23,24 @@ Let $E(k)\subseteq C(k)$ be spanned by the [far cubes](far-cubes.md), those whos
 - [The track family](maps/track-family.md)
 - [Grid boxes](../grid/grid-box.md)
 - [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
-- [Far cubes](far-cubes.md), [approximation boxes](chain-approx-box.md), [realized augmentation](../grid/realized-augmentation.md)
-- [Boxes are acyclic](../grid/grid-box-acyclic.md), [realization](../grid/realization.md), [modulus of the track family](modulus.md), [carriers](../grid/carriers/acyclic-carriers.md), [cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [Far cubes](far-cubes.md)
+- [Approximation boxes](chain-approx-box.md)
+- [Realized augmentation](../grid/realized-augmentation.md)
+- [Realization of based complexes](../grid/realization.md)
+- [Modulus of the track family](modulus.md)
+- [Carriers](../grid/carriers/acyclic-carriers.md)
+- [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [Carried maps](../grid/carriers/carried-map.md)
+- [Spans of cubes](../grid/cube-span.md)
+
 ## Proof depends on
+
 - [The closed cube](../grid/cubical/grid-cube-realization.md)
 - [Grid cubes](../grid/cubical/grid-cube.md)
-- [Track maps](track-map.md), [mesh sequence](../grid/mesh-sequence.md)
+- [Track maps](track-map.md)
+- [Mesh sequence](../grid/mesh-sequence.md)
 - [Based subcomplexes](../grid/based-subcomplex.md)
-- [Carried chain maps](../grid/carriers/carried-chain-map.md), [box hull properties](../grid/box-hull-properties.md), [properties](completed-maps-properties.md)
+- [Carried chain maps](../grid/carriers/carried-chain-map.md)
+- [Box hull properties](../grid/box-hull-properties.md)
+- [Properties of completed maps](completed-maps-properties.md)
+- [Boxes are acyclic](../grid/grid-box-acyclic.md)

@@ -23,8 +23,18 @@ For a duality functor $F:\mathcal A\to\mathcal A'$, $F_*\circ\mathrm{cls}=\mathr
 - [Induced homomorphism](../../base/groups/induced-map.md)
 - [The class map](ultimate-cls.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Ultimate L-group](ultimate-l-group.md)
 
 ## Proof depends on
 
 - [The induced map at each stage](induced-map-level.md)
 - [Transport of L-groups along an equality of degrees](../../base/groups/l-group-cast.md)
+- [L-group](../../base/groups/l-group.md)
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)

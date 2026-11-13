@@ -17,3 +17,4 @@ The *augmentation* of the [circle complex](circle-complex.md) is $\varepsilon:S_
 ## Depends on
 
 - [The circle complex](circle-complex.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)

@@ -19,6 +19,8 @@ For the [chain model](../model/chain-model.md) $D_i=C(k_i)\otimes P$ and $N=n+4$
 - [Chain model](../model/chain-model.md)
 - [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
 - [Local datum](../../../local-data/chart/local-datum.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 

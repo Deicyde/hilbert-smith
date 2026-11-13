@@ -21,3 +21,5 @@ For a local datum, $d_1(b\cdot z,b\cdot w)=d_1(z,w)$ for all $b\in\mathbb Z_p$ a
 
 - [The orbit sup-distance on the test region](orbit-sup-metric.md)
 - [The action on the test region](zplus-action.md)
+- [Local datum](../chart/local-datum.md)
+- [The test region](../chart/test-region.md)

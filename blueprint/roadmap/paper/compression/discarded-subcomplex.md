@@ -22,6 +22,13 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with [start i
 - [Projection onto the discarded cells](discard-projection.md)
 - [Chain model](../chain-models/grid/model/chain-model.md)
 - [Based category](../l-theory/localization/products/bookkeeping/based-category.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [Compressed complex](compressed-complex.md)
+- [The round sphere](../corner/round-sphere.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)
 
 ## Proof depends on
 
@@ -29,7 +36,6 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with [start i
 - [Retained inclusion](retained-inclusion.md)
 - [Local datum](../local-data/chart/local-datum.md)
 - [The torus](../chain-models/grid/torus.md)
-- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 - [Tensor product of based complexes](../chain-models/grid/based-complex-tensor.md)
 - [Kronecker product of matrices](../l-theory/localization/products/bookkeeping/based-kron.md)
 - [The circle complex](../chain-models/grid/cubical/circle-complex.md)
@@ -42,8 +48,9 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with [start i
 - [The cellular chain complex of CP^2](../chain-models/grid/cp2/cp2-complex.md)
 - [The cells of CP^2 vanish in negative degrees](../chain-models/grid/cp2/cp2-dim-neg.md)
 - [The cube of a chain-model cell](../chain-models/grid/model/chain-model-cube.md)
-- [Compressed complex](compressed-complex.md)
 - [Realization of a circle cell](../chain-models/grid/cubical/cell-realization.md)
 - [The cell of a basis vector of the circle complex](../chain-models/grid/cubical/circle-cell.md)
 - [Realization of a grid cube](../chain-models/grid/cubical/grid-cube-realization.md)
 - [Start index](start-index.md)
+- [Block inclusions and projections](../chain-models/grid/tensor/blocks/block-maps.md)
+- [The preimage of the buffer ball](test-preimage.md)

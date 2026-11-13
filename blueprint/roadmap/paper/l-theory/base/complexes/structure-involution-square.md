@@ -20,3 +20,5 @@ $T^2=1$ on $M(C)$.
 ## Depends on
 
 - [The involution T](structure-involution.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Structure complex](structure-complex.md)

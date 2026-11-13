@@ -33,6 +33,9 @@ Let $S,S'\subset X$, and let $\mathcal A_{S'}\subset\mathcal A_S$ be the [suppor
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [The support subcategory is additive](support-dual-additive.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
 
 ## Proof depends on
 
@@ -54,7 +57,6 @@ Let $S,S'\subset X$, and let $\mathcal A_{S'}\subset\mathcal A_S$ be the [suppor
 - [Factorization through a diagonal projection, rows](../asymptotic/restriction/diagonal-projection-rows.md)
 - [Enumerated indices satisfy the predicate](../asymptotic/restriction/restriction-index-mem.md)
 - [Translates and thickenings of an invariant set](thickening-invariant.md)
-- [Asymptotic category](../asymptotic/asymptotic-category.md)
-- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
 - [Transposing twice](../asymptotic/structure/transpose-transpose.md)
 - [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
+- [Enumeration of a sub-basis](../asymptotic/restriction/restriction-index-embedding.md)

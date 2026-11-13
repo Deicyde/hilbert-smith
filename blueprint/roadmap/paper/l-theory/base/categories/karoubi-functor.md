@@ -20,3 +20,4 @@ A duality functor $(F,\xi):\mathcal A\to\mathcal B$ induces $\mathrm{Kar}\,F:(M,
 
 - [Idempotent completion with duality](karoubi-duality.md)
 - [Duality functor](duality-functor.md)
+- [Small Q-linear category with strict duality](duality-category.md)

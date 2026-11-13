@@ -18,8 +18,10 @@ The [bound sequence](bound-sequence.md) $(\delta_i)$ is a null sequence: $\delta
 ## Depends on
 
 - [Bound sequence](bound-sequence.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md)
 
 ## Proof depends on
 
 - [Buffers hold eventually](buffer-eventually.md)
 - [Start index](start-index.md)
+- [Buffer conditions](buffer-conditions.md)

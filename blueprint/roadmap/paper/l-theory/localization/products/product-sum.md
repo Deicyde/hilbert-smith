@@ -26,6 +26,9 @@ of [tensor products](complex-product.md) carrying $(\phi\oplus\phi')\otimes\thet
 - [External product of structures](external-product.md)
 - [Sum of complexes](../../base/complexes/sum-of-complexes.md)
 - [Pushforward of structures](../../base/complexes/structure-push.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [A duality category has binary direct sums](../../base/categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../../base/complexes/structure-complex.md)
 
 ## Proof depends on
 
@@ -36,3 +39,7 @@ of [tensor products](complex-product.md) carrying $(\phi\oplus\phi')\otimes\thet
 - [External products are additive in the first structure](bookkeeping/product-additive-left.md)
 - [Pushforward preserves composition](../../base/complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../../base/complexes/functors/push-id.md)
+- [A duality pairing is additive in the first variable](bookkeeping/pairing-additive-left.md)
+- [A duality pairing is additive in the second variable](bookkeeping/pairing-additive-right.md)
+- [The sums in a tensor product of complexes exist](bookkeeping/product-sums-exist.md)
+- [Signs for tensor products of chain complexes](bookkeeping/tensor-signs.md)

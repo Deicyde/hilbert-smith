@@ -22,6 +22,7 @@ For $j\ge0$ and a strict $m$-dimensional symmetric Poincaré complex $(C,\phi)$ 
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 
 ## Proof depends on
 
@@ -33,7 +34,6 @@ For $j\ge0$ and a strict $m$-dimensional symmetric Poincaré complex $(C,\phi)$ 
 - [The symmetric line](../products/symmetric-line.md)
 - [Structure of the symmetric line](../products/symmetric-line-structure.md)
 - [Bounded complexes have finitely many nonzero chain objects](../../base/complexes/finite-bounded.md)
-
 - [Products commute with T](../products/product-involution.md)
 - [Leibniz rule for products](../products/product-leibniz.md)
 - [The symmetric line is a symmetric complex](../products/symmetric-line-cycle.md)
@@ -44,3 +44,13 @@ For $j\ge0$ and a strict $m$-dimensional symmetric Poincaré complex $(C,\phi)$ 
 - [Dual complexes have finitely many nonzero chain objects](../products/bookkeeping/dual-complex-finite.md)
 - [Support of a tensor product of complexes](../products/bookkeeping/product-support.md)
 - [A tensor product is the sum of its summands](../products/bookkeeping/product-total.md)
+- [Duality map of a cycle](../../base/complexes/cycle-chain-map.md)
+- [Dual complex](../../base/complexes/dual-complex.md)
+- [The involution T](../../base/complexes/structure-involution.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Based vector spaces](../products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../products/bookkeeping/based-category.md)
+- [Tensor product of chain maps](../products/bookkeeping/product-map.md)
+- [Summand inclusions of a tensor product](../products/bookkeeping/summand-inclusion.md)
+- [Summand projections of a tensor product](../products/bookkeeping/summand-projection.md)

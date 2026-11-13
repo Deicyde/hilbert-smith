@@ -20,3 +20,6 @@ $G$ acts on $\mathbb R^{G\times\{1..n\}}$ by permuting the basis, $a(g,k)=(a+g,k
 
 - [Real cohomology](real-cohomology.md)
 - [The real matrix of a morphism](real-matrix.md)
+- [Free category of a finite group](../../categories/asymptotic/free-category.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)

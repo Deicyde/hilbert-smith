@@ -20,6 +20,10 @@ For graded maps $f_r:C_r\to C'_{r+d}$ and $g_r:E_r\to E'_{r+e}$ ($E,E'$ vanishin
 ## Depends on
 
 - [Tensor of graded maps of based complexes](based-tensor-hom.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [Block inclusions and projections](blocks/block-maps.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)
 
 ## Proof depends on
 

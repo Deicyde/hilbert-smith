@@ -27,6 +27,11 @@ The compressed maps are the compressions, for $g,h\in G_i$, of the matrices of t
 - [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
 - [Compressed complex](compressed-complex.md)
 - [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The round sphere](../corner/round-sphere.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)
 
 ## Proof depends on
 
@@ -39,3 +44,4 @@ The compressed maps are the compressions, for $g,h\in G_i$, of the matrices of t
 - [Group approximations](../chain-models/approximations/group-approx.md)
 - [Chosen product homotopies](../chain-models/approximations/chosen-product-homotopies.md)
 - [The adjoint homotopy](../chain-models/approximations/adjoint-homotopy.md)
+- [Based vector spaces](../l-theory/localization/products/based-vector-spaces.md)

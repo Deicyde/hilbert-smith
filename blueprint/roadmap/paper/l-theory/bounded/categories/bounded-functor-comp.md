@@ -19,11 +19,16 @@ Let $(F,\xi):A\to A'$ and $(G,\zeta):A'\to A''$ be duality functors and $j\ge0$.
 
 ## Depends on
 
-- [Bounded extension of a duality functor](bounded-functor.md)
 - [Duality functor](../../base/categories/duality-functor.md)
 - [Iterated bounded extension](bounded-functor-iter.md)
 - [Identity and composite duality functors](../../base/categories/duality-functors/composite-duality-functor.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Iterated bounded categories](iterated-bounded-category.md)
 
 ## Proof depends on
 
-- [Iterated bounded categories](iterated-bounded-category.md)
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
+- [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
+- [Bounded extension of a duality functor](bounded-functor.md)
+- [The entrywise functor](entrywise-functor.md)

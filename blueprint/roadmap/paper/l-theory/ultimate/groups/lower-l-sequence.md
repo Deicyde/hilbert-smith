@@ -18,5 +18,12 @@ of the [lower L-groups](../../localization/transitions/lower-l-group.md) and the
 
 ## Depends on
 
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [Lower L-group](../../localization/transitions/lower-l-group.md)
 - [Lower transition map](../../localization/transitions/transition-lower.md)

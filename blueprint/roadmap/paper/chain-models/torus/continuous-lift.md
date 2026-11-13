@@ -20,3 +20,4 @@ The lift $x\mapsto\tilde x$ is continuous at every $x\in\mathbb T^n$ with $d_\in
 ## Depends on
 
 - [The lift](lift.md)
+- [The torus](../grid/torus.md)

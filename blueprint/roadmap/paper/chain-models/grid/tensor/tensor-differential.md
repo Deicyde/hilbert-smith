@@ -24,9 +24,12 @@ a sum of [tensors of graded maps](based-tensor-hom.md), where $d_C$ and $d_E$ ha
 - [Tensor product of based complexes](../based-complex-tensor.md)
 - [Tensor of graded maps of based complexes](based-tensor-hom.md)
 - [The identity as a map of degree zero](id-deg0.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [Maps between concatenations are determined by their blocks](blocks/block-ext.md)
 - [Block extraction](blocks/block-extraction.md)
 - [Blocks of a transported tensor of graded maps](structure-products/tensor-hom-transport-blocks.md)
+- [Block inclusions and projections](blocks/block-maps.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

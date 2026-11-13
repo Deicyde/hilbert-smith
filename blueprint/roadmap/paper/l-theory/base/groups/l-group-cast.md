@@ -16,4 +16,6 @@ For a duality category $\mathcal B$ and integers $m=m'$, the *transport* $L_m(\m
 
 ## Depends on
 
-- [L-group](l-group.md), [group structure on L](l-group-add.md)
+- [L-group](l-group.md)
+- [Group structure on L](l-group-add.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)

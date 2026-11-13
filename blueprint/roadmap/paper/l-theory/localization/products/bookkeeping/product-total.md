@@ -24,9 +24,16 @@ the sum running over the [support](product-support.md) of degree $r$, for the [s
 - [Support of a tensor product of complexes](product-support.md)
 - [Summand inclusions of a tensor product](summand-inclusion.md)
 - [Summand projections of a tensor product](summand-projection.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)
+- [Tensor product of complexes](../complex-product.md)
+- [Duality pairings](../duality-pairing.md)
 
 ## Proof depends on
 
 - [Projection after inclusion of the same summand](inclusion-projection.md)
 - [Projection after inclusion of another summand](inclusion-projection-ne.md)
 - [Summands outside the support vanish](summand-zero.md)
+- [A duality pairing is additive in the first variable](pairing-additive-left.md)
+- [A duality pairing is additive in the second variable](pairing-additive-right.md)
+- [The sums in a tensor product of complexes exist](product-sums-exist.md)
+- [Signs for tensor products of chain complexes](tensor-signs.md)

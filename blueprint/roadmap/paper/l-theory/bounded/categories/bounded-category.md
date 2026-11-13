@@ -15,5 +15,3 @@ Let $A$ be a small $\mathbb Q$-linear additive category. An object of $C_\mathbb
 - [Pedersen-Weibel 1985, bounded categories](../../../../../sources/paper/pedersen-weibel-1985.md) [U]
 
 ## Depends on
-
-- [Duality category](../../base/categories/duality-category.md)

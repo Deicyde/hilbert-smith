@@ -25,6 +25,9 @@ $$e_\%(F_\%\phi\oplus F_\%\psi)=F_\%(\phi\oplus\psi).$$
 - [Image of a complex under a duality functor](functor-complex.md)
 - [Pushforward of structures](../structure-push.md)
 - [Sum of structured complexes](../sum-of-complexes.md)
+- [Small Q-linear category with strict duality](../../categories/duality-category.md)
+- [A duality category has binary direct sums](../../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../structure-complex.md)
 
 ## Proof depends on
 

@@ -18,3 +18,9 @@ The chain map $b_P:P\to P^{4-*}$, $e_{4-r}\mapsto e_r^*$, from the [cellular cha
 
 - [The cellular chain complex of CP^2](cp2-complex.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)

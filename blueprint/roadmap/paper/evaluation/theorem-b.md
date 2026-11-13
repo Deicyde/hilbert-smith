@@ -20,6 +20,7 @@ This rests on the open statements [lifting](../l-theory/localization/boundary/li
 - HS paper, Section 12 (Proposition 12.4).
 - New: the hypothesis is a homotopy to the cubical pinch, with no degree theory.
 ## Depends on
+
 - [Scalar iterated cut](../corner/theorem/scalar-iterated-cut.md)
 - [Labelled-model class](germ.md)
 - [Local datum](../local-data/chart/local-datum.md)
@@ -28,8 +29,32 @@ This rests on the open statements [lifting](../l-theory/localization/boundary/li
 - [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
 - [The torus](../chain-models/grid/torus.md)
 - [The round sphere](../corner/round-sphere.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [Finite-support subcategory](../categories/asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../categories/asymptotic/point-filtration.md)
+- [Point category](../categories/asymptotic/point-quotient.md)
+- [Sequence category](../categories/asymptotic/point-sequence-category.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [Exterior quotient](../categories/supports/exterior-quotient.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [The exterior](../corner/exterior.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)
+- [Ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)
+
 ## Proof depends on
+
 - [The constant sequence of CP^2](constant-cp2-sequence.md)
 - [Homotopic labellings have equal classes](germ-homotopy.md)
 - [Evaluation at the cubical pinch](pinch-evaluation.md)
 - [Constant tail](constant-tail.md)
+- [The quotient functor of the point category](../categories/asymptotic/point-quotient-functor.md)
+- [Idempotent completion with duality](../l-theory/base/categories/karoubi-duality.md)
+- [Embedding into the idempotent completion](../l-theory/base/categories/karoubi-embedding.md)
+- [Group structure on L](../l-theory/base/groups/l-group-add.md)
+- [L-group](../l-theory/base/groups/l-group.md)
+- [The projective L-group](../l-theory/base/groups/projective-l-group.md)
+- [Duality functors carry Poincaré complexes](../l-theory/base/pairs/functor-poincare.md)
+- [Induced map on ultimate L](../l-theory/ultimate/groups/induced-map.md)
+- [The class map](../l-theory/ultimate/groups/ultimate-cls.md)

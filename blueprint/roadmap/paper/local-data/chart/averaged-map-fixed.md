@@ -20,3 +20,8 @@ For a local datum, if $x\in\Omega$ and $a\cdot x=x$ for all $a\in\mathbb Z_p$, t
 ## Depends on
 
 - [The averaged chart map](averaged-map.md)
+- [Local datum](local-datum.md)
+
+## Proof depends on
+
+- [The Haar probability measure on $\mathbb Z_p$](../subgroups/haar-zp.md)

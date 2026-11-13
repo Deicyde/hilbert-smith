@@ -34,3 +34,4 @@ This lemma rests on the open statement [Newman's theorem on fixing an open set](
 - [Fixed sets are closed](fixed-sets-closed.md)
 - [The subgroups $H_j$ form a basis at $0$](padic-subgroups-basis.md)
 - [Newman's theorem: fixing an open set](../../inputs/newman/newman-open-set.md)
+- [The subgroups $H_j$](padic-subgroups.md)

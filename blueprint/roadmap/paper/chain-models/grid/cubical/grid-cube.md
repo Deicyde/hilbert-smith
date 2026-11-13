@@ -15,5 +15,3 @@ A *cube* of the cubical torus grid is $c=(w,S)$ with $w\in(\mathbb Z/k)^n$ and $
 - New: companion of the cubical torus grid.
 
 ## Depends on
-
-- [The circle complex](circle-complex.md)

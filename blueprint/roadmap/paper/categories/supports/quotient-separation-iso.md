@@ -28,6 +28,12 @@ Let $X$ be compact with an isometric $C_p$-action, let $S\subset X$, and let $Y,
 - [Supported objects of a support quotient are additive](quotient-support-additive.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 
 ## Proof depends on
 

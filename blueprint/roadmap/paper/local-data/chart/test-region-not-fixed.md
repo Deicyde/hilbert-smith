@@ -20,7 +20,9 @@ For a local datum, every $z\in Z^+$ is moved by some $a\in\mathbb Z_p$.
 ## Depends on
 
 - [The test region](test-region.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The averaged map at a fixed point](averaged-map-fixed.md)
+- [The averaged chart map](averaged-map.md)

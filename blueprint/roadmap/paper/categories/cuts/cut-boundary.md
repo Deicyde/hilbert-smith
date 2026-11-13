@@ -28,6 +28,11 @@ is the [excision boundary](../../l-theory/ultimate/boundary/excision-boundary.md
 - [Support subcategory inside a support subcategory](../supports/relative-support.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Ultimate L-group](../../l-theory/ultimate/groups/ultimate-l-group.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory inside a support subcategory is additive](../supports/relative-support-additive.md)
+- [The support subcategory is additive](../supports/support-dual-additive.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 
 ## Proof depends on
 
@@ -41,3 +46,8 @@ is the [excision boundary](../../l-theory/ultimate/boundary/excision-boundary.md
 - [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
 - [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
 - [Support intersection](../supports/support-intersection.md)
+- [Supported objects of a support quotient are additive](../supports/quotient-support-additive.md)
+- [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
+- [Excisive pair of filtrations](../../l-theory/ultimate/boundary/excisive-pair.md)

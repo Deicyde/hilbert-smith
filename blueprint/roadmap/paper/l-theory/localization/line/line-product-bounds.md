@@ -22,8 +22,18 @@ Let $C$ be a complex in $\operatorname{Kar}C_{\mathbb Z^j}\mathcal A$ whose chai
 - [Tensor product of complexes](../products/complex-product.md)
 - [The symmetric line](../products/symmetric-line.md)
 - [Box product on iterated bounded categories](../products/box-pairing-pow.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Based vector spaces](../products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [Support of a tensor product of complexes](../products/bookkeeping/product-support.md)
 - [A tensor product is the sum of its summands](../products/bookkeeping/product-total.md)
+- [Summand inclusions of a tensor product](../products/bookkeeping/summand-inclusion.md)
+- [Summand projections of a tensor product](../products/bookkeeping/summand-projection.md)
+- [Duality pairings](../products/duality-pairing.md)

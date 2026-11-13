@@ -17,3 +17,10 @@ The [control space](control-space.md) $T=Z^+/H_1$ carries the quotient topology 
 ## Depends on
 
 - [Control space](control-space.md)
+- [Local datum](../chart/local-datum.md)
+
+## Proof depends on
+
+- [The test region](../chart/test-region.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

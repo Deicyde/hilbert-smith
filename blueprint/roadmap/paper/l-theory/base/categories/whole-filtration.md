@@ -17,6 +17,5 @@ Let $\mathcal B$ be a [duality category](duality-category.md). [All objects of $
 ## Depends on
 
 - [Small Q-linear category with strict duality](duality-category.md)
-- [Additive subcategory closed under duality](dual-additive-subcategory.md)
 - [Involution-invariant Karoubi filtration](karoubi-filtration.md)
 - [All objects form a dual-closed additive subcategory](top-dual-additive.md)

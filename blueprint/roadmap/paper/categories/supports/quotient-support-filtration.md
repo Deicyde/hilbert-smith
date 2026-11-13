@@ -23,12 +23,19 @@ Let $S,Y,Z\subset X$, and let $\mathcal U_Y\subset\mathcal A_S/\mathcal A_Z$ be 
 - [Quotient by a filtration](../../l-theory/base/categories/filtration-quotient.md)
 - [Involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md)
 - [Group sequence](../asymptotic/group-sequence.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
+- [Support subcategory inside a support subcategory](relative-support.md)
+- [The support subcategory is additive](support-dual-additive.md)
+- [Support subcategory](support-subcategory.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 
 ## Proof depends on
 
 - [Support filtration](support-filtration.md)
-- [Support subcategory inside a support subcategory](relative-support.md)
 - [Every morphism is a class](../asymptotic/structure/class-surjective.md)
-- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
 - [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
 - [Transposing twice](../asymptotic/structure/transpose-transpose.md)
+- [The levelwise transpose](../asymptotic/structure/levelwise-transpose.md)

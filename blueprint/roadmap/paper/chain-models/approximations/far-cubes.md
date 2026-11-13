@@ -18,6 +18,10 @@ A [grid cube](../grid/cubical/grid-cube.md) $c$ of $C(k)$ is *far* if its [close
 
 ## Depends on
 
-- [The closed cube](../grid/cubical/grid-cube-realization.md)
 - [Grid cubes](../grid/cubical/grid-cube.md)
+
+## Proof depends on
+
+- [The closed cube](../grid/cubical/grid-cube-realization.md)
+- [The torus](../grid/torus.md)
 - [The quotient map](../torus/proj.md)

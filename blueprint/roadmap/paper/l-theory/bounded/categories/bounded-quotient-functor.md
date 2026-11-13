@@ -23,9 +23,12 @@ which is the identity on objects and sends the class of a bounded matrix $(f_{l,
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Duality functor](../../base/categories/duality-functor.md)
-- [The entrywise functor](entrywise-functor.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
 
 ## Proof depends on
 
 - [Maps factoring through a dual-closed subcategory form an ideal](../../base/categories/filtration-ideal-closure.md)
 - [Maps factoring through a subcategory](../../base/categories/filtration-ideal.md)
+- [The entrywise functor](entrywise-functor.md)

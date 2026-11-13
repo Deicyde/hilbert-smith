@@ -20,7 +20,4 @@ For a finite family of dimensions $d_1,\dots,d_m$, the identity of the concatena
 ## Depends on
 
 - [Block inclusions and projections](block-maps.md)
-
-## Proof depends on
-
-
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)

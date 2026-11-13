@@ -22,6 +22,8 @@ as maps $(C\otimes E)_r\to(C''\otimes E'')_{r+d+e+d'+e'}$, where $f'f$ and $g'g$
 ## Depends on
 
 - [Tensor of graded maps of based complexes](based-tensor-hom.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
@@ -32,3 +34,5 @@ as maps $(C\otimes E)_r\to(C''\otimes E'')_{r+d+e+d'+e'}$, where $f'f$ and $g'g$
 - [Kronecker product of identities](kron-transport.md)
 - [Kronecker product with a zero factor](kron-zero.md)
 - [Composites through a zero space vanish](structure-products/zero-dim-comp.md)
+- [Block inclusions and projections](blocks/block-maps.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

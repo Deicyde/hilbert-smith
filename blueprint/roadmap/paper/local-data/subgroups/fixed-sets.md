@@ -16,4 +16,6 @@ Let $\mathbb Z_p$ act on a set $X$ and let $j\in\mathbb N$. The fixed set of $H_
 
 ## Depends on
 
+## Proof depends on
+
 - [The subgroups $H_j$](padic-subgroups.md)

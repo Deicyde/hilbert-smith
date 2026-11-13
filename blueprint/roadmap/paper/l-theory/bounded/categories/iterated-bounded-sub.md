@@ -16,4 +16,11 @@ For a full subcategory $\mathcal U\subset\mathcal A$, the *iterated bounded subc
 
 ## Depends on
 
-- [Iterated bounded categories](iterated-bounded-category.md), [the bounded subcategory](bounded-sub.md)
+- [Iterated bounded categories](iterated-bounded-category.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
+- [The bounded subcategory](bounded-sub.md)

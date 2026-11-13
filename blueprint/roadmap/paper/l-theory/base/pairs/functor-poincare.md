@@ -24,6 +24,7 @@ Let $(F,\xi):\mathcal B\to\mathcal B'$ be a [duality functor](../categories/dual
 - [Image of structures under a duality functor](../complexes/functors/functor-structure.md)
 - [Structure complex](../complexes/structure-complex.md)
 - [Strict duality functor](../categories/duality-functors/strict-duality-functor.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
 
 ## Proof depends on
 

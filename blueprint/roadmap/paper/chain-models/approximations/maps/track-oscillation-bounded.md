@@ -20,7 +20,10 @@ For every real $t$, the [track oscillation](track-oscillation.md) is bounded abo
 ## Depends on
 
 - [Track oscillation](track-oscillation.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
 
 ## Proof depends on
 
 - [The torus has diameter at most two](../../torus/dist-le-two.md)
+- [The track family](track-family.md)
+- [The torus](../../grid/torus.md)

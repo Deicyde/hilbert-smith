@@ -16,5 +16,10 @@ The [augmentation](cubical/grid-aug.md) $\varepsilon:C(k)_0\to\mathbb Q$ of the 
 
 ## Depends on
 
+- [Cubical torus grid](cubical/cubical-torus-grid.md)
+- [Realization of based complexes](realization.md)
+
+## Proof depends on
+
 - [Augmentation of the grid complex](cubical/grid-aug.md)
-- [Cubical torus grid](cubical/cubical-torus-grid.md), [realization](realization.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)

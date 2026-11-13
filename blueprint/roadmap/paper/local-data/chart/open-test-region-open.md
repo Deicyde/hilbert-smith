@@ -21,7 +21,9 @@ For a local datum, $U^+$ is open in $\mathbb R^n$ and $U^+\subseteq Z^+$.
 
 - [The test region](test-region.md)
 - [The open test region](open-test-region.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The averaged map is continuous](averaged-map-continuous.md)
+- [The averaged chart map](averaged-map.md)

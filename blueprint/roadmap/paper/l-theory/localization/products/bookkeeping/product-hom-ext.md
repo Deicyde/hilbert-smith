@@ -20,7 +20,12 @@ Let $(\boxtimes,\kappa):\mathcal B\times\mathcal E\to\mathcal B''$ be a [duality
 ## Depends on
 
 - [Summand projections of a tensor product](summand-projection.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)
+- [Tensor product of complexes](../complex-product.md)
+- [Duality pairings](../duality-pairing.md)
 
 ## Proof depends on
 
 - [A tensor product is the sum of its summands](product-total.md)
+- [Support of a tensor product of complexes](product-support.md)
+- [Summand inclusions of a tensor product](summand-inclusion.md)

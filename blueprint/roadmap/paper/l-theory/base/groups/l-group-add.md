@@ -21,12 +21,14 @@ Here $(C,\phi)\oplus(C',\phi')$, $(C,-\phi)$ and $(0,0)$ are [the sum](../pairs/
 ## Depends on
 
 - [L-group](l-group.md)
-- [Sum of structured complexes](../complexes/sum-of-complexes.md)
-- [The sum of two Poincaré complexes](../pairs/poincare-sum.md)
-- [Negative of a Poincaré complex](../pairs/poincare-neg.md)
-- [Zero Poincaré complex](../pairs/poincare-zero.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
 
 ## Proof depends on
 
 - [Sum of Poincaré complexes up to cobordism](l-group-add-laws.md)
 - [Cobordism is an equivalence relation](../pairs/cobordism-equivalence.md)
+- [Cobordism](../pairs/cobordism.md)
+- [Negative of a Poincaré complex](../pairs/poincare-neg.md)
+- [The sum of two Poincaré complexes](../pairs/poincare-sum.md)
+- [Zero Poincaré complex](../pairs/poincare-zero.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)

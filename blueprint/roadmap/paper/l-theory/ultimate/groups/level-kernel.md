@@ -23,6 +23,10 @@ For $x\in L^{\langle -j\rangle}_k(\mathcal A)$ (the [lower L-group](../../locali
 - [Lower L-group](../../localization/transitions/lower-l-group.md)
 - [Iterated transition](transition-iter.md)
 - [Stage maps into the ultimate L-group](ultimate-stage-map.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Ultimate L-group](ultimate-l-group.md)
 
 ## Proof depends on
 

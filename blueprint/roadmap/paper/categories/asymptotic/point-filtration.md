@@ -26,3 +26,12 @@ $\mathcal S_{\mathbf G}\subset\mathcal P_{\mathbf G}$ is an [involution-invarian
 
 - [Finite-support subcategory](eventually-zero-subcategory.md)
 - [Involution-invariant Karoubi filtration](../../l-theory/base/categories/karoubi-filtration.md)
+- [Free category of a finite group](free-category.md)
+- [Group sequence](group-sequence.md)
+- [Sequence category](point-sequence-category.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+
+## Proof depends on
+
+- [Objects of rank zero are zero](free-zero.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

@@ -16,9 +16,20 @@ Let $(F,\xi):\mathcal A\to\mathcal A'$ be a duality functor, not necessarily str
 
 ## Depends on
 
-- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
 - [Ultimate L-group](ultimate-l-group.md)
-- [Sequence of lower L-groups](lower-l-sequence.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+
+## Proof depends on
+
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
 - [Induced homomorphism](../../base/groups/induced-map.md)
-- [Naturality of the transition](../../localization/transitions/transition-naturality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
 - [The projective L-group](../../base/groups/projective-l-group.md)
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+- [Lower transition map](../../localization/transitions/transition-lower.md)
+- [Transition map](../../localization/transitions/transition-map.md)
+- [Naturality of the transition](../../localization/transitions/transition-naturality.md)
+- [Sequence of lower L-groups](lower-l-sequence.md)

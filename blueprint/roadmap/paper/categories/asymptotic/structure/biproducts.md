@@ -16,5 +16,12 @@ $\mathcal A_{\mathbf G}(X)$ has a zero object, the [empty sequence](empty-object
 
 ## Depends on
 
-- [The empty sequence is a zero object](empty-object-zero.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
+
+## Proof depends on
+
 - [The concatenation is a biproduct](concatenation-bilimit.md)
+- [Concatenation](concatenation.md)
+- [The empty sequence is a zero object](empty-object-zero.md)
+- [The empty sequence](empty-object.md)

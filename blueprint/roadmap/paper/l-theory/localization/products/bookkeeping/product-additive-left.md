@@ -21,3 +21,12 @@ $$(\phi+\phi')\otimes\theta=\phi\otimes\theta+\phi'\otimes\theta.$$
 ## Depends on
 
 - [External product of structures](../external-product.md)
+- [Small Q-linear category with strict duality](../../../base/categories/duality-category.md)
+- [Structure complex](../../../base/complexes/structure-complex.md)
+- [Tensor product of complexes](../complex-product.md)
+- [Duality pairings](../duality-pairing.md)
+
+## Proof depends on
+
+- [Support of a tensor product of complexes](product-support.md)
+- [Summand inclusions of a tensor product](summand-inclusion.md)

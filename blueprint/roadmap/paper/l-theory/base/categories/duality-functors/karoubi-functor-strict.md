@@ -23,7 +23,4 @@ If a [duality functor](../duality-functor.md) $(F,\xi):\mathcal A\to\mathcal B$ 
 - [Strict duality functor](strict-duality-functor.md)
 - [Duality functor](../duality-functor.md)
 - [Small Q-linear category with strict duality](../duality-category.md)
-
-## Proof depends on
-
 - [Idempotent completion with duality](../karoubi-duality.md)

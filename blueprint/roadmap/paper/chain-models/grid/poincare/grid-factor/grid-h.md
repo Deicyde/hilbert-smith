@@ -18,9 +18,15 @@ On the [grid complex](../../cubical/cubical-torus-grid.md) $C(k)$ with $n$ facto
 
 ## Depends on
 
-- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)
 - [Cubical torus grid](../../cubical/cubical-torus-grid.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [The circle complex](../../cubical/circle-complex.md)
+- [The circle complex vanishes in negative degrees](../../cubical/circle-dim-neg.md)
+- [The circle homotopy](../circle-data/circle-k.md)
+- [The degree-zero map A of the circle](circle-a.md)
 - [Tensor of graded maps of based complexes](../../tensor/based-tensor-hom.md)
 - [The identity as a map of degree zero](../../tensor/id-deg0.md)
-- [The degree-zero map A of the circle](circle-a.md)
-- [The circle homotopy](../circle-data/circle-k.md)

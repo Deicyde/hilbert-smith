@@ -23,5 +23,7 @@ For $k,n\in\mathbb N$, the *grid complex* is $C(k)=S_k^{\otimes n}$, the iterate
 
 ## Proof depends on
 
-- [The circle complex](circle-complex.md), [the circle complex vanishes in negative degrees](circle-dim-neg.md), [the unit complex](unit-complex.md)
+- [The circle complex](circle-complex.md)
+- [The circle complex vanishes in negative degrees](circle-dim-neg.md)
+- [The unit complex](unit-complex.md)
 - [Tensor product of based complexes](../based-complex-tensor.md)

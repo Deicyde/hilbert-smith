@@ -18,4 +18,10 @@ Each basis vector of the [grid complex](cubical-torus-grid.md) $C(k)_r$ has a [c
 
 - [Cubical torus grid](cubical-torus-grid.md)
 - [Grid cubes](grid-cube.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Tensor product of based complexes](../based-complex-tensor.md)
 - [The cell of a basis vector of the circle complex](circle-cell.md)
+- [The circle complex](circle-complex.md)

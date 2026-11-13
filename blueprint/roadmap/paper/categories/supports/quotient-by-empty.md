@@ -29,11 +29,14 @@ Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, henc
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Support subcategory](support-subcategory.md)
-- [Support filtration](support-filtration.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [The support subcategory is additive](support-dual-additive.md)
 - [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
 
 ## Proof depends on
 
@@ -42,3 +45,4 @@ Let $S\subset X$. Every $\varnothing$-supported object is eventually empty, henc
 - [Equality of classes](../asymptotic/structure/class-eq.md)
 - [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
 - [The quotient duality functor is strict](../../l-theory/base/categories/duality-functors/quotient-functor-strict.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)

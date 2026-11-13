@@ -22,8 +22,14 @@ Let $U\subset A$ be an involution-invariant Karoubi filtration, and let $C_\math
 
 ## Depends on
 
-- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 - [The induced duality](bounded-duality.md)
 - [The bounded subcategory](bounded-sub.md)
 - [The bounded subcategory is closed under sums and duals](bounded-sub-additive.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+
+## Proof depends on
+
+- [Diagonal morphisms of $C_\mathbb Z(A)$](bounded-diag.md)

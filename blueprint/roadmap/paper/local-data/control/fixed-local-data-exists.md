@@ -26,3 +26,4 @@ This result rests, through the local datum, on the open statement [Newman's theo
 ## Proof depends on
 
 - [A local datum from a faithful action](../chart/local-datum-exists.md)
+- [Local datum](../chart/local-datum.md)

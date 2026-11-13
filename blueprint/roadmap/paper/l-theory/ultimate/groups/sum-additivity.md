@@ -21,6 +21,9 @@ For duality functors $F,G:\mathcal A\to\mathcal B$, $(F\oplus G)_*=F_*+G_*$ on $
 
 - [Induced map on ultimate L](induced-map.md)
 - [Sum of duality functors](../../base/categories/sums/duality-functor-sum.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Ultimate L-group](ultimate-l-group.md)
 
 ## Proof depends on
 
@@ -29,3 +32,11 @@ For duality functors $F,G:\mathcal A\to\mathcal B$, $(F\oplus G)_*=F_*+G_*$ on $
 - [Sums of functors on L^p](../../base/groups/lp-map-biprod.md)
 - [The induced map at each stage](induced-map-level.md)
 - [Every element comes from a finite stage](level-exhaustive.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Induced homomorphism](../../base/groups/induced-map.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
+- [Iterated bounded extension](../../bounded/categories/bounded-functor-iter.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+- [Stage maps into the ultimate L-group](ultimate-stage-map.md)

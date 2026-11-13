@@ -24,10 +24,11 @@ The functor itself needs neither that the action on $T$ is isometric nor that th
 - [The trivial group sequence](../asymptotic/trivial-group-sequence.md)
 - [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
 
 ## Proof depends on
 
 - [Pushforward of labels](pushforward.md)
 - [Forgetting the group](forget-group.md)
-- [The group enumeration](group-enumeration.md)
 - [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)

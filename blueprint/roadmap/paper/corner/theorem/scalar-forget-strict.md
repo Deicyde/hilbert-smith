@@ -20,13 +20,23 @@ Let $n\in\mathbb N$, $R\in\mathbb R$, let $T$ be a compact metric space with a $
 ## Depends on
 
 - [Forgetting to the scalar exterior quotient](scalar-forget.md)
-- [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Group sequence](../../categories/asymptotic/group-sequence.md)
+- [Asymptotic category](../../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../../categories/asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../../categories/asymptotic/structure/biproducts.md)
+- [The trivial group sequence](../../categories/asymptotic/trivial-group-sequence.md)
+- [Exterior quotient](../../categories/supports/exterior-quotient.md)
+- [The support subcategory is additive](../../categories/supports/support-dual-additive.md)
+- [Support subcategory](../../categories/supports/support-subcategory.md)
+- [The exterior](../exterior.md)
+- [The round sphere](../round-sphere.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 
 ## Proof depends on
 
 - [Induced functor on exterior quotients](../../categories/supports/exterior-functor.md)
 - [Forgetting the control space](../../categories/functors/forget-control.md)
 - [Forgetting the control space is strict](../../categories/functors/forget-control-strict.md)
-- [The round sphere](../round-sphere.md)
 - [Forgetting the control space preserves support](../../categories/functors/forget-control-support.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)

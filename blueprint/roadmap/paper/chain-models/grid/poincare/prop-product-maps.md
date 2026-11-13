@@ -33,6 +33,8 @@ Label the basis of $C\otimes E$ by [tensor labels](../model/tensor-label.md) com
 - [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
 - [Structure complex](../../../l-theory/base/complexes/structure-complex.md)
 - [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
 
 ## Proof depends on
 
@@ -41,4 +43,4 @@ Label the basis of $C\otimes E$ by [tensor labels](../model/tensor-label.md) com
 - [Propagation of a scalar multiple](../../../categories/asymptotic/prop-smul.md)
 - [Propagation of a sum](../../../categories/asymptotic/prop-add.md)
 - [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)
-- [Tensor product of based complexes](../based-complex-tensor.md)
+- [Block inclusions and projections](../tensor/blocks/block-maps.md)

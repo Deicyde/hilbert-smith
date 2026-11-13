@@ -19,5 +19,9 @@ Let $C$ be a chain complex in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$ with $
 ## Depends on
 
 - [Free category of a finite group](../../categories/asymptotic/free-category.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
 - [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
 - [The real matrix of a morphism](real-matrix.md)

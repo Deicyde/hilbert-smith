@@ -19,4 +19,7 @@ the supremum of a set of real numbers (taken to be $0$ if the set is empty or un
 ## Depends on
 
 - [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [Representatives of the finite quotients](../../../local-data/control/representative-map.md)

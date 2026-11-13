@@ -22,6 +22,11 @@ For every $i$ and $N=n+4$, the map $b_i$ of [chain-model duality](../chain-model
 - [Chain-model duality](../chain-model-duality.md)
 - [The unsymmetrized structure of the chain model](chain-model-structure-u.md)
 - [Local datum](../../../local-data/chart/local-datum.md)
+- [Chain model](../model/chain-model.md)
+- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
@@ -43,4 +48,8 @@ For every $i$ and $N=n+4$, the map $b_i$ of [chain-model duality](../chain-model
 - [Cubical torus grid](../cubical/cubical-torus-grid.md)
 - [Mesh sequence](../mesh-sequence.md)
 - [The unsymmetrized grid structure](grid-factor/grid-structure-u.md)
-- [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [Dual tensor of graded maps of based complexes](../tensor/based-dual-tensor-hom.md)
+- [Tensor of graded maps of based complexes](../tensor/based-tensor-hom.md)
+- [Product of duality maps in explicit bases](../tensor/structure-products/based-dual-prod.md)
+- [Product of structures in explicit bases](../tensor/structure-products/based-str-prod.md)

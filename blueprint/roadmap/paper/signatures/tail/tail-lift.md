@@ -26,11 +26,12 @@ This rests on the open statements [Lemma U](../../l-theory/comparison/lemma-u.md
 - [Ultimate L-group](../../l-theory/ultimate/groups/ultimate-l-group.md)
 - [Induced map on ultimate L](../../l-theory/ultimate/groups/induced-map.md)
 - [The quotient functor of the point category](../../categories/asymptotic/point-quotient-functor.md)
+- [Finite-support subcategory](../../categories/asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../../categories/asymptotic/point-filtration.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 
 ## Proof depends on
 
-- [Point filtration](../../categories/asymptotic/point-filtration.md)
-- [Finite-support subcategory](../../categories/asymptotic/eventually-zero-subcategory.md)
 - [Ultimate boundary](../../l-theory/ultimate/boundary/ultimate-boundary.md)
 - [Boundary then inclusion vanishes](../../l-theory/ultimate/boundary/composite-zero.md)
 - [Functoriality on ultimate L](../../l-theory/ultimate/groups/induced-map-comp.md)

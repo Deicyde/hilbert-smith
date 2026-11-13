@@ -23,3 +23,8 @@ The statement needs neither that $S$ and $S'$ are closed or invariant, nor that 
 
 - [Pushforward](pushforward.md)
 - [Support subcategory](../supports/support-subcategory.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Duality functor](../../l-theory/base/categories/duality-functor.md)

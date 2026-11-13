@@ -20,8 +20,6 @@ Let $X:\mathbb Q^{\sum_ad_a}\to\mathbb Q^{\sum_{a'}d'_{a'}}$ be a map of [based 
 ## Depends on
 
 - [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
-- [Tensor product of based complexes](../../based-complex-tensor.md)
-
-## Proof depends on
-
-
+- [Block inclusions and projections](../blocks/block-maps.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)

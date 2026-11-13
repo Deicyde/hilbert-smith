@@ -17,4 +17,12 @@ The *fundamental chain* of the [grid complex](cubical-torus-grid.md) is $z(k)=\b
 ## Depends on
 
 - [Cubical torus grid](cubical-torus-grid.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [The circle complex](circle-complex.md)
 - [Fundamental chain of the circle complex](circle-fundamental.md)
+- [Block inclusions and projections](../tensor/blocks/block-maps.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

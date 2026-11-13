@@ -24,6 +24,9 @@ where $\boxtimes$ of matrices is the Kronecker product. The components are the d
 
 ## Depends on
 
-- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
-- [Tensor product of based vector spaces](../../l-theory/localization/products/based-tensor.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
 - [Block inclusions and projections](tensor/blocks/block-maps.md)
+- [Kronecker product of matrices](../../l-theory/localization/products/bookkeeping/based-kron.md)

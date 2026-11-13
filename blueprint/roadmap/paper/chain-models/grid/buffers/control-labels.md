@@ -18,10 +18,21 @@ This is well defined: $\tilde x_b$ lies in the [test region](../../../local-data
 ## Sources
 - HS paper, Sections 9-10 (labels on the buffered domain).
 ## Depends on
-- [Torus labels of chain-model cells](../model/chain-model-label.md)
-- [Torus labels of dual cells](../model/chain-model-dual-label.md)
-- [The quotient map to the control space](../../../local-data/control/control-quotient-map.md)
-- [The lift](../../torus/lift.md)
-- [Buffered cells](buffered-cells.md), [sphere labels](../sphere-labels.md), [control space](../../../local-data/control/control-space.md), [test region](../../../local-data/chart/test-region.md), [open test region](../../../local-data/chart/open-test-region.md), [torus test map](../../approximations/torus-test-map.md), [preimages under the test map](../../../local-data/chart/test-map-proper.md)
+
+- [Buffered cells](buffered-cells.md)
+- [The control space](../../../local-data/control/control-space.md)
+- [The torus](../torus.md)
+- [The round sphere](../../../corner/round-sphere.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
 ## Proof depends on
+
 - [Buffered sphere labels](buffered-sphere-labels.md)
+- [Torus test map](../../approximations/torus-test-map.md)
+- [The lift](../../torus/lift.md)
+- [The averaged chart map](../../../local-data/chart/averaged-map.md)
+- [The open test region](../../../local-data/chart/open-test-region.md)
+- [Preimages under the test map](../../../local-data/chart/test-map-proper.md)
+- [The test map](../../../local-data/chart/test-map.md)
+- [The test region](../../../local-data/chart/test-region.md)
+- [The quotient map to the control space](../../../local-data/control/control-quotient-map.md)

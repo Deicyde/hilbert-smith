@@ -21,13 +21,28 @@ Let $Z_0$ be the [exterior](../corner/exterior.md) for $n$ and the buffer radius
 
 ## Depends on
 
-- [Compressed differential](compressed-differential.md)
 - [Compressed maps](compressed-maps.md)
 - [Strict Poincaré complex](../l-theory/base/pairs/symmetric-poincare-complex.md)
 - [Exterior quotient](../categories/supports/exterior-quotient.md)
 - [Exterior](../corner/exterior.md)
-- [The exterior is closed](../corner/exterior-closed.md)
 - [Morphisms represented by compressed matrices](compressed-rep.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [Chain model](../chain-models/grid/model/chain-model.md)
+- [Compressed complex](compressed-complex.md)
+- [The round sphere](../corner/round-sphere.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)
+- [Duality map of a cycle](../l-theory/base/complexes/cycle-chain-map.md)
+- [Dual complex](../l-theory/base/complexes/dual-complex.md)
+- [The category of based ℚ-vector spaces](../l-theory/localization/products/bookkeeping/based-category.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)
+- [Fixed local data](../local-data/control/fixed-local-data.md)
 
 ## Proof depends on
 
@@ -38,4 +53,5 @@ Let $Z_0$ be the [exterior](../corner/exterior.md) for $n$ and the buffer radius
 - [Buffers hold eventually](buffer-eventually.md)
 - [Sums of witnesses](../corner/actions/witness-sum.md)
 - [Support ideal](../categories/supports/support-ideal.md)
-- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Compressed differential](compressed-differential.md)
+- [The exterior is closed](../corner/exterior-closed.md)

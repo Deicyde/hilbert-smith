@@ -27,3 +27,6 @@ The augmentation $\varepsilon=\varepsilon^{\otimes n}\boxtimes\varepsilon_P:(D_i
 - [Mesh sequence](../mesh-sequence.md)
 - [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)
 - [Tensor product of based complexes](../based-complex-tensor.md)
+- [The cellular chain complex of CP^2](../cp2/cp2-complex.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)
+- [Block inclusions and projections](../tensor/blocks/block-maps.md)

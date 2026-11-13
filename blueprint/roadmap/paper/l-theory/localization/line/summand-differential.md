@@ -29,3 +29,6 @@ where the inclusions on the right map into degree $r'$, so both sides are zero u
 ## Proof depends on
 
 - [The sums in a tensor product of complexes exist](../products/bookkeeping/product-sums-exist.md)
+- [A duality pairing is additive in the first variable](../products/bookkeeping/pairing-additive-left.md)
+- [A duality pairing is additive in the second variable](../products/bookkeeping/pairing-additive-right.md)
+- [Signs for tensor products of chain complexes](../products/bookkeeping/tensor-signs.md)

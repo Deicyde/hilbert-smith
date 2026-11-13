@@ -18,4 +18,4 @@ This lets a complex of based vector spaces, such as the cubical torus grid, be t
 
 ## Depends on
 
-- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)

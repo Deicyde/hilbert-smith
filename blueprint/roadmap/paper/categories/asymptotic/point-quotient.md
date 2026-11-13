@@ -18,8 +18,10 @@ $\mathcal V_{\mathbf G}=\mathcal P_{\mathbf G}/\mathcal S_{\mathbf G}$ is the [q
 
 ## Depends on
 
+- [Group sequence](group-sequence.md)
+
+## Proof depends on
+
 - [Finite-support subcategory](eventually-zero-subcategory.md)
+- [Sequence category](point-sequence-category.md)
 - [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
-- [Point filtration](point-filtration.md)
-- [Point ideal](point-ideal.md)
-- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)

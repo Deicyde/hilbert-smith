@@ -23,9 +23,14 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory closed under d
 - [Image of a pair with boundary in Kar U](image-pair.md)
 - [L-group](../../base/groups/l-group.md)
 - [Group structure on L](../../base/groups/l-group-add.md)
-- [The projective L-group](../../base/groups/projective-l-group.md)
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Decorated objects are closed under sums and duals](../decorations/decorated-closure.md)
+- [Decorated objects](../decorations/decorated-object.md)
+- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
 
 ## Proof depends on
 
@@ -46,4 +51,6 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory closed under d
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
 - [Image of a complex under a duality functor](../../base/complexes/functors/functor-complex.md)
 - [Image of structures under a duality functor](../../base/complexes/functors/functor-structure.md)
-- [Decorated objects of the completed quotient](../decorations/decorated-predicate.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [A duality category has binary direct sums](../../base/categories/sums/dual-binary-biproducts.md)
+- [Strict symmetric Poincaré complex](../../base/pairs/symmetric-poincare-complex.md)

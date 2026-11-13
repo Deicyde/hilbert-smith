@@ -37,3 +37,6 @@ Let the $C_p$-action on $X$ be isometric and let $S\subset X$ be invariant. A mo
 - [Enumerated indices satisfy the predicate](../asymptotic/restriction/restriction-index-mem.md)
 - [Propagation](../asymptotic/propagation.md)
 - [Translates and thickenings of an invariant set](thickening-invariant.md)
+- [Coordinate inclusion of a restriction](../asymptotic/restriction/coordinate-inclusion.md)
+- [Diagonal coordinate projection](../asymptotic/restriction/diagonal-projection.md)
+- [Enumeration of a sub-basis](../asymptotic/restriction/restriction-index-embedding.md)

@@ -20,9 +20,12 @@ For a local datum and $0<\rho<\rho_+$, the test map $f$ is continuous.
 ## Depends on
 
 - [The test map](test-map.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The averaged map is continuous](averaged-map-continuous.md)
 - [The averaged map moves points little](averaged-map-displacement.md)
 - [The pinch is continuous](pinch-continuous.md)
+- [The averaged chart map](averaged-map.md)
+- [The pinch map](pinch.md)

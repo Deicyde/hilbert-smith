@@ -21,8 +21,16 @@ Let $(C,\phi)$ and $(C',\phi')$ be strict $k$-dimensional symmetric Poincaré co
 ## Depends on
 
 - [L-group](l-group.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)
 
 ## Proof depends on
 
 - [Homotopy-isometric complexes are cobordant](../pairs/cylinder-cobordism.md)
 - [Cobordism](../pairs/cobordism.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [The involution T](../complexes/structure-involution.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Strict Poincaré pair](../pairs/poincare-pair.md)

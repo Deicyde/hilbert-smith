@@ -17,4 +17,12 @@ For $j\ge0$, $\iota_j:L^{\langle -j\rangle}_k(\mathcal A)\to\mathbb L_k(\mathcal
 ## Depends on
 
 - [Ultimate L-group](ultimate-l-group.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
+- [Lower L-group](../../localization/transitions/lower-l-group.md)
+
+## Proof depends on
+
 - [Sequence of lower L-groups](lower-l-sequence.md)

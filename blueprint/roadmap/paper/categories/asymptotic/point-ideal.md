@@ -21,6 +21,8 @@ A morphism $(u_i):M\to M'$ of the [sequence category](point-sequence-category.md
 
 - [Finite-support subcategory](eventually-zero-subcategory.md)
 - [Sequence category](point-sequence-category.md)
+- [Free category of a finite group](free-category.md)
+- [Group sequence](group-sequence.md)
 
 ## Proof depends on
 

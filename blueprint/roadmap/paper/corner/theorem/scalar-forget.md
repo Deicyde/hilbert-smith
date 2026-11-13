@@ -26,6 +26,12 @@ The construction needs neither $n\ge1$, $R>0$, the isometry of the action on $T$
 - [The trivial group sequence](../../categories/asymptotic/trivial-group-sequence.md)
 - [Exterior quotient](../../categories/supports/exterior-quotient.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Asymptotic category](../../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../../categories/asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../../categories/asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](../../categories/supports/support-dual-additive.md)
+- [Support subcategory](../../categories/supports/support-subcategory.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 
 ## Proof depends on
 
@@ -33,6 +39,5 @@ The construction needs neither $n\ge1$, $R>0$, the isometry of the action on $T$
 - [Forgetting the control space is strict](../../categories/functors/forget-control-strict.md)
 - [Forgetting the control space preserves support](../../categories/functors/forget-control-support.md)
 - [Induced functor on exterior quotients](../../categories/supports/exterior-functor.md)
-- [Support subcategory](../../categories/supports/support-subcategory.md)
-- [Asymptotic category](../../categories/asymptotic/asymptotic-category.md)
-- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)

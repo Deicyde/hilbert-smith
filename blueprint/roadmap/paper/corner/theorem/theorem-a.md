@@ -47,6 +47,18 @@ This theorem rests on the open statements Idempotents split in the bounded homot
 - [Duality functors carry Poincaré complexes](../../l-theory/base/pairs/functor-poincare.md)
 - [Induced map on ultimate L](../../l-theory/ultimate/groups/induced-map.md)
 - [The class map](../../l-theory/ultimate/groups/ultimate-cls.md)
+- [Duality on the asymptotic category](../../categories/asymptotic/asymptotic-duality.md)
+- [Finite-support subcategory](../../categories/asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../../categories/asymptotic/point-filtration.md)
+- [Point category](../../categories/asymptotic/point-quotient.md)
+- [Sequence category](../../categories/asymptotic/point-sequence-category.md)
+- [The asymptotic category has finite biproducts](../../categories/asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](../../categories/supports/support-dual-additive.md)
+- [Support subcategory](../../categories/supports/support-subcategory.md)
+- [Idempotent completion with duality](../../l-theory/base/categories/karoubi-duality.md)
+- [Group structure on L](../../l-theory/base/groups/l-group-add.md)
+- [The projective L-group](../../l-theory/base/groups/projective-l-group.md)
+- [Ultimate L-group](../../l-theory/ultimate/groups/ultimate-l-group.md)
 
 ## Proof depends on
 

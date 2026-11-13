@@ -21,6 +21,9 @@ since $L^{\langle -j\rangle}_k(\mathcal A)=L^p_{k+j}(C_{\mathbb Z^j}\mathcal A)$
 
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [Lower L-group](lower-l-group.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 
 ## Proof depends on
 

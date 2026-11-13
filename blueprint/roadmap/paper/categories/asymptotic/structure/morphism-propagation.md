@@ -20,3 +20,6 @@ In the [asymptotic category](../asymptotic-category.md), the matrices $u_i$ of a
 ## Depends on
 
 - [Asymptotic category](../asymptotic-category.md)
+- [Free category of a finite group](../free-category.md)
+- [Group sequence](../group-sequence.md)
+- [Propagation](../propagation.md)

@@ -21,3 +21,15 @@ Let $F:\mathcal A_{\mathbf G}(X)\to\mathcal A_{\mathbf G'}(X')$ be a strict dual
 - [Exterior quotient](exterior-quotient.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](support-dual-additive.md)
+- [Support subcategory](support-subcategory.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

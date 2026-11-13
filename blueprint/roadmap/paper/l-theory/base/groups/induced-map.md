@@ -20,10 +20,16 @@ A duality functor $(F,\xi):\mathcal B\to\mathcal B'$ induces a homomorphism $F_*
 
 - [Group structure on L](l-group-add.md)
 - [Duality functor](../categories/duality-functor.md)
-- [Completion of a duality functor](../categories/karoubi-functor.md)
-- [The projective L-group](projective-l-group.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [L-group](l-group.md)
 
 ## Proof depends on
 
 - [Duality functors carry Poincaré complexes](../pairs/functor-poincare.md)
 - [Duality functors on cobordism classes](induced-map-laws.md)
+- [Cobordism](../pairs/cobordism.md)
+- [The sum of two Poincaré complexes](../pairs/poincare-sum.md)
+- [Strict symmetric Poincaré complex](../pairs/symmetric-poincare-complex.md)
+- [Completion of a duality functor](../categories/karoubi-functor.md)
+- [The projective L-group](projective-l-group.md)
+- [Idempotent completion with duality](../categories/karoubi-duality.md)

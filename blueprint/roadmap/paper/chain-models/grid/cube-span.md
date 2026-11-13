@@ -13,6 +13,11 @@ Let $S$ be a set of [grid cubes](cubical/grid-cube.md) of $\mathbb T^n$ for the 
 - New.
 
 ## Depends on
+
 - [Grid cubes](cubical/grid-cube.md)
 - [Cubical torus grid](cubical/cubical-torus-grid.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+
+## Proof depends on
+
 - [The cube of a basis vector](cubical/grid-cell.md)

@@ -16,4 +16,9 @@ Put $C_{\mathbb Z^0}(A)=A$ and $C_{\mathbb Z^{j+1}}(A)=C_\mathbb Z(C_{\mathbb Z^
 
 ## Depends on
 
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+
+## Proof depends on
+
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
 - [The induced duality](bounded-duality.md)

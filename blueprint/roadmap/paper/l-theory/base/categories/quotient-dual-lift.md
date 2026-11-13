@@ -20,3 +20,5 @@ Let $\mathcal U\subset\mathcal A$ be a full additive subcategory closed under du
 
 - [Quotient by a subcategory](filtration-quotient.md)
 - [Duality functor](duality-functor.md)
+- [Additive subcategory closed under duality](dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](duality-category.md)

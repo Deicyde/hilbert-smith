@@ -12,6 +12,11 @@ For a real number $v$ (in use $v>0$), the *buffered cells* $\mathcal B_i(v)$ are
 ## Sources
 - HS paper, Sections 9-10 (the buffered domain).
 ## Depends on
-- [Torus labels of chain-model cells](../model/chain-model-label.md)
-- [Torus labels of dual cells](../model/chain-model-dual-label.md)
-- [Sphere labels](../sphere-labels.md), [buffered sphere labels](buffered-sphere-labels.md)
+
+- [The torus](../torus.md)
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [Torus test map](../../approximations/torus-test-map.md)
+- [Buffered sphere labels](buffered-sphere-labels.md)

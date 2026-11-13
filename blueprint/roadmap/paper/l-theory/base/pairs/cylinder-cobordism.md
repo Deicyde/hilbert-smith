@@ -20,10 +20,14 @@ Let $\mathcal P$ be a class of objects of a duality category $\mathcal B$ such t
 
 ## Depends on
 
-- [Cobordism](cobordism.md)
 - [Strict Poincaré pair](poincare-pair.md)
-- [Dual of a chain map](../complexes/functors/dual-map.md)
-- [The shift of a complex](../complexes/shift.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../complexes/structure-complex.md)
+- [The involution T](../complexes/structure-involution.md)
+- [Pushforward of structures](../complexes/structure-push.md)
+- [Sum of structured complexes](../complexes/sum-of-complexes.md)
+- [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 
 ## Proof depends on
 
@@ -35,3 +39,9 @@ Let $\mathcal P$ be a class of objects of a duality category $\mathcal B$ such t
 - [Shifts of homotopy equivalences](../complexes/shift-equivalence.md)
 - [Pushforward preserves composition](../complexes/functors/push-comp.md)
 - [Pushforward preserves identities](../complexes/functors/push-id.md)
+- [Mapping cone](../complexes/cone.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual complex](../complexes/dual-complex.md)
+- [Dual of a chain map](../complexes/functors/dual-map.md)
+- [The shift of a complex](../complexes/shift.md)
+- [Pair map](pair-map.md)

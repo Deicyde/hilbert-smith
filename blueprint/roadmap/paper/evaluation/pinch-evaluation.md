@@ -21,6 +21,7 @@ where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) of $\kappa$ fo
 ## Sources
 - HS paper, Section 12 (boundary evaluation). New: grid boxes and exact restriction.
 ## Depends on
+
 - [The constant sequence of CP^2](constant-cp2-sequence.md)
 - [Scalar iterated cut](../corner/theorem/scalar-iterated-cut.md)
 - [Labelled-model class](germ.md)
@@ -33,12 +34,28 @@ where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) of $\kappa$ fo
 - [L-group](../l-theory/base/groups/l-group.md)
 - [Duality functors carry Poincaré complexes](../l-theory/base/pairs/functor-poincare.md)
 - [Embedding into the idempotent completion](../l-theory/base/categories/karoubi-embedding.md)
-## Proof depends on
-- [The cut sets](../corner/cut-sets.md)
-- [The exterior](../corner/exterior.md)
-- [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)
-- [Sequence category](../categories/asymptotic/point-sequence-category.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [Finite-support subcategory](../categories/asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../categories/asymptotic/point-filtration.md)
 - [Point category](../categories/asymptotic/point-quotient.md)
+- [Sequence category](../categories/asymptotic/point-sequence-category.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [Exterior quotient](../categories/supports/exterior-quotient.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Support subcategory](../categories/supports/support-subcategory.md)
+- [The exterior](../corner/exterior.md)
+- [The round sphere](../corner/round-sphere.md)
+- [Quotient by a subcategory](../l-theory/base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../l-theory/base/categories/karoubi-duality.md)
+- [Group structure on L](../l-theory/base/groups/l-group-add.md)
+- [The projective L-group](../l-theory/base/groups/projective-l-group.md)
+- [Ultimate L-group](../l-theory/ultimate/groups/ultimate-l-group.md)
+
+## Proof depends on
+
+- [The cut sets](../corner/cut-sets.md)
+- [Cells of CP^2](../chain-models/grid/cp2/cp2-cells.md)
 - [Labelled model](labelled-model.md)
 - [Pinch faces](pinch-faces.md)
 - [Inner cut formula](inner-cut-formula.md)
@@ -56,5 +73,4 @@ where $\mathfrak m_\kappa$ is the [labelled-model class](germ.md) of $\kappa$ fo
 - [Forgetting labels](../categories/functors/forget-labels.md)
 - [Homotopy-isometry invariance](../l-theory/base/groups/homotopy-isometry-invariance.md)
 - [Support of the whole space](../categories/supports/support-whole.md)
-- [Exterior quotient](../categories/supports/exterior-quotient.md)
 - [Functoriality on ultimate L](../l-theory/ultimate/groups/induced-map-comp.md)

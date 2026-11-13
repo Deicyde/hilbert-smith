@@ -30,3 +30,4 @@ $$|r_i(g)\cdot(r_i(g')\cdot x)-r_i(g+g')\cdot x|<\varepsilon.$$
 - [Algebra of the representatives](representatives-algebra.md)
 - [Uniformly small displacement near the identity](../subgroups/small-displacement.md)
 - [The subgroups $H_j$ form a basis at $0$](../subgroups/padic-subgroups-basis.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

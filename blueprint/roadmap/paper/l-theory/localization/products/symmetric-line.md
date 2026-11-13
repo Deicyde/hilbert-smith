@@ -18,6 +18,5 @@ Let $\mathbb Q$ be the duality category of [based vector spaces](based-vector-sp
 
 ## Depends on
 
-- [Based vector spaces](based-vector-spaces.md)
 - [The bounded category](../../bounded/categories/bounded-category.md)
-- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)

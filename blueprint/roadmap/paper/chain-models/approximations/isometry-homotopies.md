@@ -16,12 +16,15 @@ with $d$ the differentials of $D_i$ and $D_i^{N-*}$, and $U_g$ has $d_\infty$-pr
 ## Sources
 - HS paper, Section 9.
 ## Depends on
+
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
 - [The cellular chain complex of CP^2](../grid/cp2/cp2-complex.md)
 - [The structure of CP^2](../grid/cp2/cp2-structure.md)
 - [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
 - [The cells of CP^2 vanish in negative degrees](../grid/cp2/cp2-dim-neg.md)
-- [Group approximations](group-approx.md), [modulus of the track family](modulus.md), [chain-model duality](../grid/chain-model-duality.md)
+- [Group approximations](group-approx.md)
+- [Modulus of the track family](modulus.md)
+- [Chain-model duality](../grid/chain-model-duality.md)
 - [Local datum](../../local-data/chart/local-datum.md)
 - [Mesh sequence](../grid/mesh-sequence.md)
 - [Chain model](../grid/model/chain-model.md)
@@ -29,8 +32,20 @@ with $d$ the differentials of $D_i$ and $D_i^{N-*}$, and $U_g$ has $d_\infty$-pr
 - [Structure complex](../../l-theory/base/complexes/structure-complex.md)
 - [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
 - [Propagation](../../categories/asymptotic/propagation.md)
+- [The torus](../grid/torus.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+
 ## Proof depends on
+
 - [Poincaré](../grid/chain-model-poincare.md)
-- [Carried homotopies](../grid/carriers/carried-homotopy.md), [carried group approximations](group-approx-carried.md), [fundamental cycle](fundamental-cycle-fixed.md), [box hull properties](../grid/box-hull-properties.md)
-- [Blocks of a product of structures](../grid/tensor/structure-products/str-prod-blocks.md), [blocks of a transported tensor](../grid/tensor/structure-products/tensor-hom-transport-blocks.md), [blocks of a transpose](../grid/tensor/structure-products/block-dual.md), [Kronecker product of composites](../grid/tensor/kron-composite.md)
-- [Leibniz rule for products of structures](../grid/tensor/structure-products/str-prod-leibniz.md), [cells of CP^2](../grid/cp2/cp2-cells.md)
+- [Carried homotopies](../grid/carriers/carried-homotopy.md)
+- [Carried group approximations](group-approx-carried.md)
+- [Approximations fix the fundamental cycle](fundamental-cycle-fixed.md)
+- [Box hull properties](../grid/box-hull-properties.md)
+- [Blocks of a product of structures](../grid/tensor/structure-products/str-prod-blocks.md)
+- [Blocks of a transported tensor of graded maps](../grid/tensor/structure-products/tensor-hom-transport-blocks.md)
+- [Blocks of a transpose](../grid/tensor/structure-products/block-dual.md)
+- [Kronecker product of composites](../grid/tensor/kron-composite.md)
+- [Leibniz rule for products of structures](../grid/tensor/structure-products/str-prod-leibniz.md)
+- [Cells of CP^2](../grid/cp2/cp2-cells.md)

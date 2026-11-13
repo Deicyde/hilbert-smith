@@ -14,12 +14,16 @@ Take [fixed local data](../local-data/control/fixed-local-data.md) with buffer r
 
 ## Depends on
 
-- [The control space is an isometric $C_p$-space](../local-data/control/control-isometric-action.md)
 - [Fixed local data](../local-data/control/fixed-local-data.md)
 - [The control space](../local-data/control/control-space.md)
 - [Standing data](../corner/standing-data.md)
-- [The orbit metric on the control space](../local-data/control/control-metric.md)
-- [The cyclic action on the control space](../local-data/control/control-action.md)
-- [The control space is compact](../local-data/control/control-space-compact.md)
+
+## Proof depends on
+
+- [Local datum](../local-data/chart/local-datum.md)
 - [The cyclic action is free](../local-data/control/control-action-free.md)
-- [The cyclic action is isometric](../local-data/control/control-action-isometric.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The control space is an isometric $C_p$-space](../local-data/control/control-isometric-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space is compact](../local-data/control/control-space-compact.md)
+- [The quotient topology on the control space](../local-data/control/control-topology.md)

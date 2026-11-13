@@ -39,6 +39,15 @@ Here $Q=Q_i$ is the [projection onto the discarded cells](discard-projection.md)
 - [Retained projection](retained-projection.md)
 - [Retained inclusion](retained-inclusion.md)
 - [Projection onto the discarded cells](discard-projection.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [Compressed complex](compressed-complex.md)
+- [The round sphere](../corner/round-sphere.md)
+- [Small Q-linear category with strict duality](../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../l-theory/localization/products/based-vector-spaces.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
+- [The control space](../local-data/control/control-space.md)
 
 ## Proof depends on
 

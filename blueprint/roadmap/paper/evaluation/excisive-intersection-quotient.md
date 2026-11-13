@@ -35,14 +35,20 @@ such that:
 - [Duality functor](../l-theory/base/categories/duality-functor.md)
 - [Support subcategory](../categories/supports/support-subcategory.md)
 - [Group sequence](../categories/asymptotic/group-sequence.md)
+- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../categories/asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../categories/asymptotic/structure/biproducts.md)
+- [The support subcategory inside a support subcategory is additive](../categories/supports/relative-support-additive.md)
+- [The support subcategory is additive](../categories/supports/support-dual-additive.md)
+- [Duality category of a dual-closed subcategory](../l-theory/base/categories/dual-subcategory.md)
+- [Strict duality functor](../l-theory/base/categories/duality-functors/strict-duality-functor.md)
 
 ## Proof depends on
 
-- [Asymptotic category](../categories/asymptotic/asymptotic-category.md)
 - [Small Q-linear category with strict duality](../l-theory/base/categories/duality-category.md)
 - [Additive subcategory closed under duality](../l-theory/base/categories/dual-additive-subcategory.md)
 - [Maps factoring through a subcategory](../l-theory/base/categories/filtration-ideal.md)
-- [Duality category of a dual-closed subcategory](../l-theory/base/categories/dual-subcategory.md)
 - [The quotient duality functor](../l-theory/base/categories/quotient-duality-functor.md)
 - [Lift of a duality functor to a quotient](../l-theory/base/categories/quotient-dual-lift.md)
 - [The quotient duality functor is strict](../l-theory/base/categories/duality-functors/quotient-functor-strict.md)
+- [Identity and composite duality functors](../l-theory/base/categories/duality-functors/composite-duality-functor.md)

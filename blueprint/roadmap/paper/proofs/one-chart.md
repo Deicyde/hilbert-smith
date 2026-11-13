@@ -36,3 +36,4 @@ This result rests, through the good point, on the open statement Newman's theore
 - [The subgroups $H_j$ form a basis at $0$](../local-data/subgroups/padic-subgroups-basis.md)
 - [Closed subgroups of $\mathbb Z_p$](../local-data/subgroups/closed-subgroups.md)
 - [The subgroups $H_j$](../local-data/subgroups/padic-subgroups.md)
+- [Fixed sets of the subgroups $H_j$](../local-data/subgroups/fixed-sets.md)

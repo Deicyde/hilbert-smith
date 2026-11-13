@@ -22,7 +22,12 @@ For a [restriction](restriction-sub-basis.md) $M_P$, the [coordinate projection]
 
 - [Coordinate inclusion of a restriction](coordinate-inclusion.md)
 - [Coordinate projection onto a restriction](coordinate-projection.md)
+- [Asymptotic category](../asymptotic-category.md)
+- [Group sequence](../group-sequence.md)
+- [Restriction to a sub-basis](restriction-sub-basis.md)
 
 ## Proof depends on
 
 - [The inclusion matrix](../structure/inclusion-matrix.md)
+- [Free category of a finite group](../free-category.md)
+- [Enumeration of a sub-basis](restriction-index-embedding.md)

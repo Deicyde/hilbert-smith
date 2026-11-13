@@ -19,7 +19,7 @@ The *cubical pinch* is the continuous map $\kappa:\mathbb T^n\to S^n$, $\mathbb 
 ## Sources
 - New.
 ## Depends on
-- [The lift](../chain-models/torus/lift.md)
+
 - [The torus](../chain-models/grid/torus.md)
 
 ## Proof depends on
@@ -27,3 +27,4 @@ The *cubical pinch* is the continuous map $\kappa:\mathbb T^n\to S^n$, $\mathbb 
 - [The maximum norm of the lift](../chain-models/torus/norm-lift.md)
 - [Continuity of the lift](../chain-models/torus/continuous-lift.md)
 - [The torus norm and the Euclidean norm of the lift](../chain-models/torus/norm-le-norm-lift.md)
+- [The lift](../chain-models/torus/lift.md)

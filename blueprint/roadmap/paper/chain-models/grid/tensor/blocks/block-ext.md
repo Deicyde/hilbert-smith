@@ -20,6 +20,7 @@ Two maps $F,G:\mathbb Q^{\sum_ad_a}\to\mathbb Q^{\sum_{a'}d'_{a'}}$ of [based ve
 ## Depends on
 
 - [Block inclusions and projections](block-maps.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 

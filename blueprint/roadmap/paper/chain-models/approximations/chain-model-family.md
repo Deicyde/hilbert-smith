@@ -25,5 +25,25 @@ Each map is listed in every degree, and the elements $\varphi_i,U_g,V_g$ of the 
 ## Depends on
 
 - [Typed labelled matrices](typed-matrix.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [The adjoint homotopy](adjoint-homotopy.md)
+- [Chosen isometry homotopies](chosen-isometry-homotopies.md)
+- [Chosen product homotopies](chosen-product-homotopies.md)
+- [Group approximations](group-approx.md)
+- [Tensor product of based complexes](../grid/based-complex-tensor.md)
+- [Chain-model duality](../grid/chain-model-duality.md)
+- [The cellular chain complex of CP^2](../grid/cp2/cp2-complex.md)
+- [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [Mesh sequence](../grid/mesh-sequence.md)
 - [Torus labels of chain-model cells](../grid/model/chain-model-label.md)
-- [Chain model](../grid/model/chain-model.md), [chain-model duality](../grid/chain-model-duality.md), [Poincaré](../grid/chain-model-poincare.md), [group approximations](group-approx.md), [chosen isometry homotopies](chosen-isometry-homotopies.md), [chosen product homotopies](chosen-product-homotopies.md), [adjoint homotopy](adjoint-homotopy.md)
+- [Chain model](../grid/model/chain-model.md)
+- [The dual homotopy of the chain model](../grid/poincare/chain-model-h-dual.md)
+- [The homotopy of the chain model](../grid/poincare/chain-model-h.md)
+- [The torus](../grid/torus.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [Dual complex](../../l-theory/base/complexes/dual-complex.md)
+- [Based vector spaces](../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)

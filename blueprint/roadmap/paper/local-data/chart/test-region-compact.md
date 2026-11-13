@@ -20,8 +20,10 @@ For a local datum, $Z^+$ is compact.
 ## Depends on
 
 - [The test region](test-region.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
 - [The test region is bounded](test-region-bounded.md)
 - [The averaged map is continuous](averaged-map-continuous.md)
+- [The averaged chart map](averaged-map.md)

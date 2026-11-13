@@ -18,6 +18,7 @@ On the [chain model](../model/chain-model.md) $D_i=C(k_i)\otimes P$, $H_i=H^{(n)
 
 - [Chain model](../model/chain-model.md)
 - [Local datum](../../../local-data/chart/local-datum.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
@@ -27,3 +28,5 @@ On the [chain model](../model/chain-model.md) $D_i=C(k_i)\otimes P$, $H_i=H^{(n)
 - [The grid homotopy](grid-factor/grid-h.md)
 - [The identity as a map of degree zero](../tensor/id-deg0.md)
 - [Mesh sequence](../mesh-sequence.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)

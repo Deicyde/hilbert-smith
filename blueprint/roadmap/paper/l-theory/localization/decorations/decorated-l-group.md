@@ -28,3 +28,8 @@ the [L-group](../../base/groups/l-group.md) of that duality category: cobordism 
 
 - [Decorated objects](decorated-object.md)
 - [L-group](../../base/groups/l-group.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
+- [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Decorated objects are closed under sums and duals](decorated-closure.md)
+- [Decorated objects of the completed quotient](decorated-predicate.md)

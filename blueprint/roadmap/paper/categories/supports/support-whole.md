@@ -27,7 +27,13 @@ Every object of $\mathcal A_{\mathbf G}(X)$ lies in the [support subcategory](su
 - [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
 - [The support subcategory is additive](support-dual-additive.md)
 - [Inclusion of a dual-closed subcategory](../../l-theory/base/categories/subcategory-inclusion.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [Group sequence](../asymptotic/group-sequence.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
 
 ## Proof depends on
 
 - [The inclusion of a dual-closed subcategory is strict](../../l-theory/base/categories/duality-functors/inclusion-strict.md)
+- [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

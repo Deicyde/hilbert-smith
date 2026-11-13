@@ -20,6 +20,12 @@ For maps $F$ of $C^{m-*}$ of degree $d$ and $G$ of $E^{m'-*}$ of degree $e$ ($E$
 ## Depends on
 
 - [Dual tensor of graded maps of based complexes](../based-dual-tensor-hom.md)
+- [Tensor product of based complexes](../../based-complex-tensor.md)
+- [Block inclusions and projections](../blocks/block-maps.md)
+- [Small Q-linear category with strict duality](../../../../l-theory/base/categories/duality-category.md)
+- [Based vector spaces](../../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Kronecker product of matrices](../../../../l-theory/localization/products/bookkeeping/based-kron.md)
 
 ## Proof depends on
 

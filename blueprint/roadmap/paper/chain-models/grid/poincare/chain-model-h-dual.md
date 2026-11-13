@@ -19,6 +19,8 @@ On the dual $D_i^{N-*}$ of the [chain model](../model/chain-model.md), $N=n+4$, 
 - [Chain model](../model/chain-model.md)
 - [Dual complex](../../../l-theory/base/complexes/dual-complex.md)
 - [Local datum](../../../local-data/chart/local-datum.md)
+- [Based vector spaces](../../../l-theory/localization/products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
@@ -29,3 +31,5 @@ On the dual $D_i^{N-*}$ of the [chain model](../model/chain-model.md), $N=n+4$, 
 - [The identity of a dual complex as a map of degree zero](grid-factor/id-dual-deg0.md)
 - [Mesh sequence](../mesh-sequence.md)
 - [Small Q-linear category with strict duality](../../../l-theory/base/categories/duality-category.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [Cubical torus grid](../cubical/cubical-torus-grid.md)

@@ -25,6 +25,7 @@ For a local datum and $0<\rho<\rho_+$, the test map $f$ is homotopic to $\mathrm
 
 - [The test map](test-map.md)
 - [The test map is continuous](test-map-continuous.md)
+- [Local datum](local-datum.md)
 
 ## Proof depends on
 
@@ -32,3 +33,5 @@ For a local datum and $0<\rho<\rho_+$, the test map $f$ is homotopic to $\mathrm
 - [The averaged map moves points little](averaged-map-displacement.md)
 - [The pinch is continuous](pinch-continuous.md)
 - [The pinch is homotopic to the identity](pinch-homotopy.md)
+- [The averaged chart map](averaged-map.md)
+- [The pinch map](pinch.md)

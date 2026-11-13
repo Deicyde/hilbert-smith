@@ -17,7 +17,9 @@ For a local datum, the action of $\mathbb Z_p$ on $\Omega$ restricts to an actio
 ## Depends on
 
 - [The test region](../chart/test-region.md)
+- [Local datum](../chart/local-datum.md)
 
 ## Proof depends on
 
 - [The test regions are invariant](../chart/test-region-invariant.md)
+- [The open test region](../chart/open-test-region.md)

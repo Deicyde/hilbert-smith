@@ -24,16 +24,15 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 
 ## Depends on
 
-- [The entrywise quotient functor](bounded-quotient-functor.md)
 - [Iterated bounded subcategories are closed under sums and duals](iterated-bounded-sub-additive.md)
 - [Iterated bounded subcategories](iterated-bounded-sub.md)
-- [Iterated bounded filtrations](iterated-bounded-filtration.md)
-- [Bounded quotients](bounded-quotient.md)
 - [Iterated bounded categories](iterated-bounded-category.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
-- [Bounded extension of a duality functor](bounded-functor.md)
 - [Duality functor](../../base/categories/duality-functor.md)
-- [The entrywise functor](entrywise-functor.md)
+- [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
+- [Strict duality functor](../../base/categories/duality-functors/strict-duality-functor.md)
+- [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
 
 ## Proof depends on
 
@@ -42,3 +41,10 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration,
 - [Bounded extensions of strict functors are strict](../bounded-functor-strict.md)
 - [The entrywise quotient functor is strict](../bounded-quotient-functor-strict.md)
 - [Identity and composite duality functors](../../base/categories/duality-functors/composite-duality-functor.md)
+- [The bounded category $C_\mathbb Z(A)$](bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](bounded-duality.md)
+- [The entrywise quotient functor](bounded-quotient-functor.md)
+- [The bounded subcategory is closed under sums and duals](bounded-sub-additive.md)
+- [The bounded subcategory](bounded-sub.md)
+- [The entrywise functor](entrywise-functor.md)
+- [Iterated bounded filtrations](iterated-bounded-filtration.md)

@@ -34,8 +34,17 @@ Let $\mathcal U\subset\mathcal A$ be an involution-invariant Karoubi filtration 
 - [Additive subcategory closed under duality](../../base/categories/dual-additive-subcategory.md)
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [Completion of a duality functor](../../base/categories/karoubi-functor.md)
+- [Duality functor](../../base/categories/duality-functor.md)
+- [Strict duality functor](../../base/categories/duality-functors/strict-duality-functor.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [Isomorphism classes of objects](../../bounded/categories/classes/iso-classes.md)
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
+- [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)
+- [Based vector spaces](../products/based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](../products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [Constant objects have class zero](../../bounded/half-lines/constant-object-class.md)
-- [$K_0$ of an idempotent completion](../../bounded/categories/k-zero.md)

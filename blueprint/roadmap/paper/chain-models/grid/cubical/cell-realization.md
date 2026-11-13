@@ -15,5 +15,3 @@ The *realization* of the cell $[w]$ of the [circle complex](circle-complex.md) $
 - New: companion of the cubical torus grid.
 
 ## Depends on
-
-- [The circle complex](circle-complex.md)

@@ -19,3 +19,4 @@ Let $\mathcal U\subset\mathcal A$ be a [full additive subcategory with $\mathcal
 - [Additive subcategory closed under duality](dual-additive-subcategory.md)
 - [Duality category of a dual-closed subcategory](dual-subcategory.md)
 - [Duality functor](duality-functor.md)
+- [Small Q-linear category with strict duality](duality-category.md)

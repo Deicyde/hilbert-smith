@@ -21,8 +21,12 @@ Let $C$ and $E$ be complexes of based vector spaces, $E$ vanishing in negative d
 
 - [Tensor of graded maps of based complexes](based-tensor-hom.md)
 - [The identity as a map of degree zero](id-deg0.md)
+- [Tensor product of based complexes](../based-complex-tensor.md)
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
 
 ## Proof depends on
 
 - [Kronecker product of identities](kron-transport.md)
 - [Block decomposition of the identity](blocks/block-decomposition.md)
+- [Block inclusions and projections](blocks/block-maps.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

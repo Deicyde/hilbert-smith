@@ -17,5 +17,8 @@ Let $n\ge1$ and $s>0$. In the [round sphere](round-sphere.md) $S^n=\mathbb R^n\c
 ## Depends on
 
 - [The round sphere](round-sphere.md)
-- [The cube face](cut-face.md)
+
+## Proof depends on
+
 - [The boundary of the cube face](cut-face-boundary.md)
+- [The cube face](cut-face.md)

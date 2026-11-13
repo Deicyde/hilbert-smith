@@ -23,3 +23,10 @@ all other components being zero. Both maps have propagation $1$.
 - [The symmetric line](symmetric-line.md)
 - [Structure complex](../../base/complexes/structure-complex.md)
 - [The induced duality on $C_\mathbb Z(A)$](../../bounded/categories/bounded-duality.md)
+- [The bounded category $C_\mathbb Z(A)$](../../bounded/categories/bounded-category.md)
+- [Based vector spaces](based-vector-spaces.md)
+- [The category of based ℚ-vector spaces](bookkeeping/based-category.md)
+
+## Proof depends on
+
+- [Small Q-linear category with strict duality](../../base/categories/duality-category.md)

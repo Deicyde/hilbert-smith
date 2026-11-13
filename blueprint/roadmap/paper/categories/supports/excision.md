@@ -24,7 +24,6 @@ Let the action be isometric, let $A,B\subset X$ with $B$ invariant, and let $S\s
 ## Depends on
 
 - [Intersection of full subcategories](../../l-theory/ultimate/boundary/excisive-intersection.md)
-- [Support filtration](support-filtration.md)
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Supported objects of a relative support subcategory are additive](relative-intersection-additive.md)
@@ -34,6 +33,12 @@ Let the action be isometric, let $A,B\subset X$ with $B$ invariant, and let $S\s
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
 - [Support subcategory](support-subcategory.md)
 - [Group sequence](../asymptotic/group-sequence.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](support-dual-additive.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
+- [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
 
 ## Proof depends on
 
@@ -48,3 +53,12 @@ Let the action be isometric, let $A,B\subset X$ with $B$ invariant, and let $S\s
 - [Transposing twice](../asymptotic/structure/transpose-transpose.md)
 - [Maps factoring through a dual-closed subcategory form an ideal](../../l-theory/base/categories/filtration-ideal-closure.md)
 - [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Coordinate inclusion of a restriction](../asymptotic/restriction/coordinate-inclusion.md)
+- [Coordinate projection onto a restriction](../asymptotic/restriction/coordinate-projection.md)
+- [Diagonal coordinate projection](../asymptotic/restriction/diagonal-projection.md)
+- [Enumeration of a sub-basis](../asymptotic/restriction/restriction-index-embedding.md)
+- [Restriction to a sub-basis](../asymptotic/restriction/restriction-sub-basis.md)
+- [Every morphism is a class](../asymptotic/structure/class-surjective.md)
+- [The levelwise transpose](../asymptotic/structure/levelwise-transpose.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)

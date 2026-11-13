@@ -22,7 +22,9 @@ If $(C,\phi)$ and $(C',\phi')$ are strict $k$-dimensional symmetric Poincaré co
 
 - [Strict symmetric Poincaré complex](symmetric-poincare-complex.md)
 - [Sum of structured complexes](../complexes/sum-of-complexes.md)
-- [Dual of a chain map](../complexes/functors/dual-map.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [A duality category has binary direct sums](../categories/sums/dual-binary-biproducts.md)
+- [Structure complex](../complexes/structure-complex.md)
 
 ## Proof depends on
 
@@ -32,3 +34,6 @@ If $(C,\phi)$ and $(C',\phi')$ are strict $k$-dimensional symmetric Poincaré co
 - [Duals of chain maps reverse composition](../complexes/functors/dual-map-comp.md)
 - [Duals of identity chain maps](../complexes/functors/dual-map-id.md)
 - [Pushforward commutes with the boundary](../complexes/functors/push-boundary.md)
+- [Duality map of a cycle](../complexes/cycle-chain-map.md)
+- [Dual of a chain map](../complexes/functors/dual-map.md)
+- [The involution T](../complexes/structure-involution.md)

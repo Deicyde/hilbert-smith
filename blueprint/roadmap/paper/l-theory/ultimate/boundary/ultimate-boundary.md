@@ -29,6 +29,7 @@ This definition rests on the open statement Lifting, through the stage boundarie
 - [Small Q-linear category with strict duality](../../base/categories/duality-category.md)
 - [Quotient by a subcategory](../../base/categories/filtration-quotient.md)
 - [Involution-invariant Karoubi filtration](../../base/categories/karoubi-filtration.md)
+- [Duality category of a dual-closed subcategory](../../base/categories/dual-subcategory.md)
 
 ## Proof depends on
 
@@ -43,3 +44,10 @@ This definition rests on the open statement Lifting, through the stage boundarie
 - [Lower transition map](../../localization/transitions/transition-lower.md)
 - [Iterated bounded categories](../../bounded/categories/iterated-bounded-category.md)
 - [Lower L-group](../../localization/transitions/lower-l-group.md)
+- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+- [Group structure on L](../../base/groups/l-group-add.md)
+- [L-group](../../base/groups/l-group.md)
+- [The projective L-group](../../base/groups/projective-l-group.md)
+- [Iterated bounded subcategories are closed under sums and duals](../../bounded/categories/iterated-bounded-sub-additive.md)
+- [Iterated bounded subcategories](../../bounded/categories/iterated-bounded-sub.md)
+- [Iterated transition](../groups/transition-iter.md)

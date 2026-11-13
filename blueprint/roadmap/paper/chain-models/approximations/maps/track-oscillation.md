@@ -16,5 +16,9 @@ For real $t$, the *track oscillation* is the set $\{d_\infty(Lx,Lx'):L\in\mathca
 
 ## Depends on
 
+- [Local datum](../../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
 - [The track family](track-family.md)
 - [The torus](../../grid/torus.md)

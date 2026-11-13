@@ -16,4 +16,8 @@ For a local datum with constants $(D,\rho_+)$, the test region is $Z^+=\{x\in\Om
 
 ## Depends on
 
+- [Local datum](local-datum.md)
+
+## Proof depends on
+
 - [The averaged chart map](averaged-map.md)

@@ -21,7 +21,11 @@ For a local datum, the control space $T$ is compact in the quotient topology.
 
 - [The quotient topology on the control space](control-topology.md)
 - [The control space](control-space.md)
+- [Local datum](../chart/local-datum.md)
 
 ## Proof depends on
 
 - [The test region is compact](../chart/test-region-compact.md)
+- [The test region](../chart/test-region.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

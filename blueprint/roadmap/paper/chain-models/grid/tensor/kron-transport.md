@@ -19,8 +19,5 @@ If $X=X'$ and $Y=Y'$ are equal [based vector spaces](../../../l-theory/localizat
 
 ## Depends on
 
-- [Tensor product of based vector spaces](../../../l-theory/localization/products/based-tensor.md)
-
-## Proof depends on
-
-
+- [The category of based ℚ-vector spaces](../../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Kronecker product of matrices](../../../l-theory/localization/products/bookkeeping/based-kron.md)

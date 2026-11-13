@@ -20,11 +20,17 @@ For a local datum, $d_T$ is a metric on $T$ that induces the quotient topology.
 ## Depends on
 
 - [The quotient topology on the control space](control-topology.md)
-- [The quotient map to the control space](control-quotient-map.md)
 - [The orbit metric on the control space](control-metric.md)
+- [Local datum](../chart/local-datum.md)
+- [The control space](control-space.md)
 
 ## Proof depends on
 
 - [The orbit sup-distance is a metric](orbit-sup-metric-properties.md)
 - [The orbit sup-distance is invariant](orbit-sup-metric-invariant.md)
 - [The subgroups $H_j$ form a basis at $0$](../subgroups/padic-subgroups-basis.md)
+- [The test region](../chart/test-region.md)
+- [The quotient map to the control space](control-quotient-map.md)
+- [The orbit sup-distance on the test region](orbit-sup-metric.md)
+- [The action on the test region](zplus-action.md)
+- [The subgroups $H_j$](../subgroups/padic-subgroups.md)

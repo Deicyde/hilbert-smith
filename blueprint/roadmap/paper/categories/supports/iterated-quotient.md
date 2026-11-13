@@ -26,7 +26,13 @@ Let $S,Y,Z\subset X$. The identity on objects and on representatives gives mutua
 - [Support subcategory inside a support subcategory](relative-support.md)
 - [The support subcategory inside a support subcategory is additive](relative-support-additive.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
-- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)
+- [Asymptotic category](../asymptotic/asymptotic-category.md)
+- [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [The support subcategory is additive](support-dual-additive.md)
+- [Support subcategory](support-subcategory.md)
+- [Duality category of a dual-closed subcategory](../../l-theory/base/categories/dual-subcategory.md)
+- [Strict duality functor](../../l-theory/base/categories/duality-functors/strict-duality-functor.md)
 
 ## Proof depends on
 
@@ -41,7 +47,9 @@ Let $S,Y,Z\subset X$. The identity on objects and on representatives gives mutua
 - [Enumeration of a sub-basis](../asymptotic/restriction/restriction-index-embedding.md)
 - [Coordinate inclusion of a restriction](../asymptotic/restriction/coordinate-inclusion.md)
 - [Coordinate projection onto a restriction](../asymptotic/restriction/coordinate-projection.md)
-- [Asymptotic category](../asymptotic/asymptotic-category.md)
 - [Additive subcategory closed under duality](../../l-theory/base/categories/dual-additive-subcategory.md)
 - [Identity and composite duality functors](../../l-theory/base/categories/duality-functors/composite-duality-functor.md)
 - [The quotient duality functor is strict](../../l-theory/base/categories/duality-functors/quotient-functor-strict.md)
+- [Diagonal coordinate projection](../asymptotic/restriction/diagonal-projection.md)
+- [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
+- [The quotient duality functor](../../l-theory/base/categories/quotient-duality-functor.md)

@@ -19,4 +19,7 @@ Let $C$ be a chain complex in $\mathrm{Kar}\,\mathrm{Free}(\mathbb Q[G])$ with $
 ## Depends on
 
 - [Free category of a finite group](../../categories/asymptotic/free-category.md)
+
+## Proof depends on
+
 - [The real matrix of a morphism](../real/real-matrix.md)

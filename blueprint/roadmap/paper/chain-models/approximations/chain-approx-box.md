@@ -18,8 +18,16 @@ the [box hull](../grid/box-hull.md) of the closed $d_\infty$-neighbourhood $N_h(
 
 ## Depends on
 
-- [The closed cube](../grid/cubical/grid-cube-realization.md)
 - [Mesh start](../mesh/mesh-start.md)
-- [Grid cubes](../grid/cubical/grid-cube.md)
+- [Cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [Grid boxes](../grid/grid-box.md)
+- [The torus](../grid/torus.md)
+- [The category of based ℚ-vector spaces](../../l-theory/localization/products/bookkeeping/based-category.md)
+- [Local datum](../../local-data/chart/local-datum.md)
+
+## Proof depends on
+
+- [Modulus of the track family](modulus.md)
+- [Box hull](../grid/box-hull.md)
 - [The cube of a basis vector](../grid/cubical/grid-cell.md)
-- [Box hull](../grid/box-hull.md), [mesh sequence](../grid/mesh-sequence.md), [cubical torus grid](../grid/cubical/cubical-torus-grid.md)
+- [The closed cube](../grid/cubical/grid-cube-realization.md)

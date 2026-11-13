@@ -45,6 +45,10 @@ For the witness: $Z$ is $C_p$-invariant and $C_p$ acts isometrically ([graph-typ
 - [Retained inclusion](retained-inclusion.md)
 - [Projection onto the discarded cells](discard-projection.md)
 - [Compressed complex](compressed-complex.md)
+- [The trivial group sequence](../categories/asymptotic/trivial-group-sequence.md)
+- [Typed labelled matrices](../chain-models/approximations/typed-matrix.md)
+- [The cyclic action on the control space](../local-data/control/control-action.md)
+- [The metric on the control space](../local-data/control/control-metric-space.md)
 
 ## Proof depends on
 

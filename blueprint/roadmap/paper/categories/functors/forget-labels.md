@@ -23,13 +23,16 @@ $\Phi:\mathcal A_{\mathbf G}(X)\to\mathcal V_{\mathbf G}$ is the duality functor
 - [Duality on the asymptotic category](../asymptotic/asymptotic-duality.md)
 - [Point category](../asymptotic/point-quotient.md)
 - [Duality functor](../../l-theory/base/categories/duality-functor.md)
+- [Finite-support subcategory](../asymptotic/eventually-zero-subcategory.md)
+- [Point filtration](../asymptotic/point-filtration.md)
+- [Sequence category](../asymptotic/point-sequence-category.md)
+- [The asymptotic category has finite biproducts](../asymptotic/structure/biproducts.md)
+- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 
 ## Proof depends on
 
-- [Sequence category](../asymptotic/point-sequence-category.md)
-- [Finite-support subcategory](../asymptotic/eventually-zero-subcategory.md)
 - [Point ideal](../asymptotic/point-ideal.md)
-- [Quotient by a subcategory](../../l-theory/base/categories/filtration-quotient.md)
 - [Every morphism is a class](../asymptotic/structure/class-surjective.md)
 - [Small Q-linear category with strict duality](../../l-theory/base/categories/duality-category.md)
-
+- [Free category of a finite group](../asymptotic/free-category.md)
+- [Maps factoring through a subcategory](../../l-theory/base/categories/filtration-ideal.md)

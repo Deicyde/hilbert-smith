@@ -17,3 +17,5 @@ For $\phi\in M(C)_n$ with $\partial\phi=0$, the maps $\phi_r:C_{n-r}^*\to C_r$ f
 ## Depends on
 
 - [Structure complex](structure-complex.md)
+- [Small Q-linear category with strict duality](../categories/duality-category.md)
+- [Dual complex](dual-complex.md)

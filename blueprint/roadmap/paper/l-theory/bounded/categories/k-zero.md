@@ -16,5 +16,6 @@ $K_0(\mathrm{Kar}\,A)$ is the Grothendieck group of the commutative monoid of [i
 
 ## Depends on
 
-- [Idempotent completion with duality](../../base/categories/karoubi-duality.md)
+## Proof depends on
+
 - [Isomorphism classes of objects](classes/iso-classes.md)
